@@ -1,0 +1,455 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-signed-in.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Overseas Healthcare Services
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<style>
+/* ==========================================================================
+   SECONDARY NAV
+  ========================================================================== */
+  .nhsuk-secondary-navigation {
+  background-color: #ffffff;
+  padding-bottom: 12px;
+}
+
+.nhsuk-secondary-navigation__container {
+  text-align: justify;
+  margin: 0 30px;
+}
+
+.nhsuk-secondary-navigation__nav {
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nhsuk-secondary-navigation__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nhsuk-secondary-navigation__item {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: inline-block;
+  margin-right: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media (min-width: 40.0625em) {
+  .nhsuk-secondary-navigation__item {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.47368;
+  }
+}
+@media print {
+  .nhsuk-secondary-navigation__item {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+.nhsuk-secondary-navigation__item:last-child {
+  margin-right: 0;
+}
+
+.nhsuk-secondary-navigation__link {
+  display: block;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nhsuk-secondary-navigation__link:link, .nhsuk-secondary-navigation__link:visited {
+  color: #005eb8;
+}
+.nhsuk-secondary-navigation__link:focus {
+  color: black;
+  position: relative;
+  z-index: 1;
+  box-shadow: none;
+}
+.nhsuk-secondary-navigation__link[aria-current] {
+  color: #005eb8;
+  position: relative;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nhsuk-secondary-navigation__link[aria-current]:before {
+  background-color: #005eb8;
+  content: "";
+  display: block;
+  height: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.nhsuk-secondary-navigation__link[aria-current]:focus {
+  color: black;
+  position: relative;
+  border: none;
+}
+.nhsuk-secondary-navigation__link[aria-current]:focus:before {
+  background-color: black;
+}
+</style>
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+      <h1>
+        Member State Claims
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Welcome Isla Fields</span>
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+            Search
+      
+          </h3>
+
+          <nav class="nhsuk-secondary-navigation nav-tabs-bg" aria-label="Secondary navigation" >
+            <ul class="nhsuk-secondary-navigation__list">
+                <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" aria-current="page" href="">Person</a>
+                </li>
+                <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" href="">Claim</a>
+                </li>
+                <li class="nhsuk-secondary-navigation__item">
+                  <a class="nhsuk-secondary-navigation__link" href="">Resubmission</a>
+              </li>
+            </ul>
+        </nav>
+
+        <div style="border: 2px solid black; padding: 18px;">
+<p>To improve search results please input all information available.</p>
+        <div class="nhsuk-grid-row">
+          
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Person ID
+              </label>
+              <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                For example, 8449449
+              </div>
+              <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Surname
+              </label>
+              <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                For example, S, Sm or Smith
+              </div>
+              <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                First name
+              </label>
+              <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                For example, P, Ph or Phillip
+              </div>
+              <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                DOB
+              </label>
+              <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                For example, 15/10/1973
+              </div>
+              <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                NI Number
+              </label>
+              <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                For example, QQ123456C
+              </div>
+              <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                NHS Number
+              </label>
+              <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                For example, 7483483
+              </div>
+              <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+          </div>
+        </div>
+        <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                    Advanced search options
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+
+
+                <div class="nhsuk-grid-row">
+          
+                    <div class="nhsuk-grid-column-one-third">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="example">
+                          Surname at birth
+                        </label>
+                        <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                          For example, S, Sm, Smith
+                        </div>
+                        <input class="nhsuk-input" id="example" name="example" type="text">
+                      </div>
+                    </div>
+                    <div class="nhsuk-grid-column-one-third">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="example">
+                          Postcode
+                        </label>
+                        <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                          For example, L, LA, LA3 8FS
+                        </div>
+                        <input class="nhsuk-input" id="example" name="example" type="text">
+                      </div>
+                    </div>
+                    <div class="nhsuk-grid-column-one-third">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="example">
+                          Nationality
+                        </label>
+                        <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                          For example, Eor English
+                        </div>
+                        <input class="nhsuk-input" id="example" name="example" type="text">
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+            </div>
+        </details>
+        <div class="nhsuk-grid-row">
+          
+        <button style="margin-left:19px;" class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Search
+        </button>
+
+        </div>
+
+     </div>
+        </div>
+      </div>
+
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+      
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                FA Claims
+              </h3>
+              <p>Recently viewed:</p>
+              <table role="table" class="nhsuk-table-responsive">
+                                                                   
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Claim ID
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Year
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Country
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span><a href="">8474</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Year </span>2021
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>France
+                    </td>
+                    
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span><a href="">5477</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Year </span>2020
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Germany
+                    </td>
+                    
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span><a href="">3677</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Year </span>2020
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Switzerland
+                    </td>
+                    
+                  </tr>
+
+                </tbody>
+              </table>
+              <br />
+              <a href="">
+                <button class="nhsuk-button nhsuk-button--secondary">
+                  Create new UK claim
+                </button>
+              </a>
+            </div>
+          </div>
+      
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+      
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading">
+                Resubmissions
+              </h3>
+              <p>Recently viewed:</p>
+              <table role="table" class="nhsuk-table-responsive">
+                                                                   
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Resub ID
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Year
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Country
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Reusb ID </span><a href="">8493</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Finland
+                    </td>
+                    
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Resub ID </span><a href="">7348</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Autria
+                    </td>
+                    
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Resub ID </span><a href="">8943</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Year </span>2022
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Spain
+                    </td>
+                    
+                  </tr>
+
+                </tbody>
+              </table>
+              <br />
+              <a href="">
+                <button class="nhsuk-button nhsuk-button--secondary">
+                  Create new resub
+                </button>
+              </a>
+            </div>
+          </div>
+      
+        </li>
+      </ul>
+      
+      <!-- End of content -->
+
+    </div>
+  </div>
+  </div>
+{% endblock %}

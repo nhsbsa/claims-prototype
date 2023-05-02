@@ -1,0 +1,105 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Overseas Healthcare Services
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<style>
+    .nhsbsa-border-left {
+border-left: 1px solid black;
+}
+</style>
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <!-- Change the page title here -->
+      <h1>
+        Member State (MS) Claims
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Overseas Healthcare Services</span>
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-two-thirds ">
+
+            <h2>Sign in</h2>
+            <form action="dashboard" method="post">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="username">
+                  Username
+                </label>
+                <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                    For example, ljsmith@nhs.net
+                  </div>
+                <input class="nhsuk-input nhsuk-input--width-20" id="username" name="username" type="text">
+              </div>
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="password">
+                  Password
+                </label>
+                <input class="nhsuk-input nhsuk-input--width-20" id="password" name="password" type="password">
+              </div>
+              <button class="nhsuk-button" type="submit">
+                Sign in
+              </button>
+            </form>
+            <p><a href="">Forgot your username or password?</a><br>
+
+                <hr>
+       
+          </div>
+          </div>
+
+          <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds ">
+
+           
+          <h2 >New User?</h2>
+
+          <a href="">
+          <button class="nhsuk-button nhsuk-button--secondary">
+            Request an account
+          </button>
+        </a>
+    </div>
+        </div>
+  
+
+      </div>
+      
+      <!-- End of content -->
+
+    </div>
+  </div>
+  </div>
+{% endblock %}
