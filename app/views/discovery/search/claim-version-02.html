@@ -21,16 +21,17 @@ Overseas Healthcare Services
 {% block beforeContent %}
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
-      
-            <ol class="nhsuk-breadcrumb__list">
-                <li class="nhsuk-breadcrumb__item">Search</li>
-            </ol>
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+
+                <ol class="nhsuk-breadcrumb__list">
+                    <li class="nhsuk-breadcrumb__item">Search</li>
+                </ol>
+            </div>
         </div>
-      </div>
-  
-      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="search-results">Back to search results</a></p>
+
+        <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="search-results">Back to search
+                results</a></p>
 
     </div>
 </nav>
@@ -289,15 +290,13 @@ Overseas Healthcare Services
     /* ==========================================================================
      RANDOM BITS AND BOBS
     ========================================================================== */
-  
+
     .nhsuk-caption-s {
-        display:block;
+        display: block;
         color: #4c6272;
         font-weight: 400;
         font-size: 18px;
     }
-
-    
 </style>
 
 <div class="nhsBSA-sidebar-container">
@@ -338,11 +337,11 @@ Overseas Healthcare Services
                                                             href="">Claim</a>
                                                     </li>
                                                     <li class="nhsuk-secondary-navigation__item">
-                                                        <a class="nhsuk-secondary-navigation__link" href="">Resubmission</a>
+                                                        <a class="nhsuk-secondary-navigation__link"
+                                                            href="">Resubmission</a>
                                                     </li>
                                                     <li class="nhsuk-secondary-navigation__item">
-                                                        <a class="nhsuk-secondary-navigation__link"
-                                                            href="">Person</a>
+                                                        <a class="nhsuk-secondary-navigation__link" href="">Person</a>
                                                     </li>
                                                 </ul>
                                             </nav>
@@ -350,20 +349,38 @@ Overseas Healthcare Services
                                             <hr style="margin:-6px 0px 12px 0px;" />
 
                                             <div class="nhsuk-grid-row">
-                                                <div class="nhsuk-grid-column-one-third">
-                                                    <div class="nhsuk-form-group">
-                                                        <label class="nhsuk-label" for="example">
-                                                            Caim ID
-                                                        </label>
-                                                        <div class="nhsuk-hint" id="example-with-hint-text-hint">
-                                                            For example, 8493
+
+                                                <div class="nhsuk-grid-column-two-thirds">
+
+
+
+                                                    <div class="nhsuk-grid-column-one-half">
+                                                        <div class="nhsuk-form-group">
+                                                            <label class="nhsuk-label" for="example">
+                                                                Caim ID
+                                                            </label>
+                                                            <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                                                                For example, 8493
+                                                            </div>
+                                                            <input class="nhsuk-input " id="example" name="example"
+                                                                type="text">
                                                         </div>
-                                                        <input class="nhsuk-input " id="example" name="example"
-                                                            type="text">
-                                                    </div>
                                                     </div>
 
-                                                    <div class="nhsuk-grid-column-one-third">
+                                                    <div class="nhsuk-grid-column-one-half">
+                                                        <div class="nhsuk-form-group">
+                                                            <label class="nhsuk-label" for="example">
+                                                                FA ref
+                                                            </label>
+                                                            <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                                                                For example, 463875834
+                                                            </div>
+                                                            <input class="nhsuk-input " id="example" name="example"
+                                                                type="text">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="nhsuk-grid-column-one-half">
                                                         <div class="nhsuk-form-group">
                                                             <label class="nhsuk-label" for="example">
                                                                 Year
@@ -376,7 +393,7 @@ Overseas Healthcare Services
                                                         </div>
                                                     </div>
 
-                                                    <div class="nhsuk-grid-column-one-third">
+                                                    <div class="nhsuk-grid-column-one-half">
                                                         <div class="nhsuk-form-group">
                                                             <label class="nhsuk-label" for="example">
                                                                 Country
@@ -388,150 +405,44 @@ Overseas Healthcare Services
                                                                 type="text">
                                                         </div>
                                                     </div>
-                                                    </div>
-                                               
-                                                    <div class="nhsuk-grid-row">
-                                                        <div class="nhsuk-grid-column-full">
 
-
-
-
-                                                            <!-- <div class="nhsuk-form-group">
-
-                                                                <fieldset class="nhsuk-fieldset">
-                                                                    <legend
-                                                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                                                                    <h1 class="nhsuk-fieldset__heading">
-                                                                        Article type
-                                                                    </h1>
-                                                                </legend>
-                                                              
-                                                                  <div class="nhsuk-radios">
-                                                              
-                                                                    <div class="nhsuk-radios__item">
-                                                                      <input class="nhsuk-radios__input" id="example-hints-1" name="example-hints" type="radio" value="gateway" aria-describedby="example-hints-1-item-hint">
-                                                                      <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">
-                                                                        Article 63 to 65-S1
-                                                                      </label>
-                                                                      <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                                                                        Average cost
-                                                                      </div>
-                                                                    </div>
-                                                              
-                                                                    <div class="nhsuk-radios__item">
-                                                                      <input class="nhsuk-radios__input" id="example-hints-2" name="example-hints" type="radio" value="verify" aria-describedby="example-hints-2-item-hint">
-                                                                      <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
-                                                                        Article 62
-                                                                      </label>
-                                                                      <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-2-item-hint">
-                                                                        Actual cost
-                                                                      </div>
-                                                                    </div>
-                                                              
-                                                                  </div>
-                                                                </fieldset>
-                                                              
-                                                              </div> -->
+                                     
 
 
 
 
 
-                                                            <div class="nhsuk-form-group">
 
-                                                                <fieldset class="nhsuk-fieldset">
-                                                                    <legend
-                                                                        class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                                                                        <h1 class="nhsuk-fieldset__heading">
-                                                                            Article type
-                                                                        </h1>
-                                                                    </legend>
-        
-                                                                    <div class="nhsuk-radios nhsuk-radios--inline">
-        
-                                                                        <div class="nhsuk-radios__item">
-                                                                            <input class="nhsuk-radios__input"
-                                                                                id="example-inline-1" name="example-inline"
-                                                                                type="radio" value="yes">
-                                                                            <label class="nhsuk-label nhsuk-radios__label"
-                                                                                for="example-inline-1">
-                                                                                Article 63 to 65-S1 (Average cost)
-                                                                            </label>
-                                                                        </div>
-        
-                                                                        <div class="nhsuk-radios__item">
-                                                                            <input class="nhsuk-radios__input"
-                                                                                id="example-inline-2" name="example-inline"
-                                                                                type="radio" value="no">
-                                                                            <label class="nhsuk-label nhsuk-radios__label"
-                                                                                for="example-inline-2">
-                                                                                Article 62 (Actual cost)
-                                                                            </label>
-                                                                        </div>
-        
-                                                                    </div>
-        
-                                                            </div>
+                                                </div>
 
-                                                            </div>
-                                                            </div>
-                                             
-
-
-                                                   
-                                                
-                                                
-                                                    
-                                               
-                                                
-                                                   
-
-
-                                                   
                                                
 
-                                                <details class="nhsuk-details">
-                                                    <summary class="nhsuk-details__summary">
-                                                        <span class="nhsuk-details__summary-text">
-                                                            Advanced search options
-                                                        </span>
-                                                    </summary>
-                                                    <div class="nhsuk-details__text">
-                                                        <div class="nhsuk-form-group">
-                                                            <label class="nhsuk-label" for="example">
-                                                                FA ref
-                                                            </label>
-                                                            <div class="nhsuk-hint"
-                                                                id="example-with-hint-text-hint">
-                                                                For example, 1234A
-                                                            </div>
-                                                            <input
-                                                                class="nhsuk-input nhsuk-u-width-one-third"
-                                                                id="example" name="example" type="text">
-                                                        </div>
-
-
-                                                    </div>
-                                                </details>
 
 
 
-                                                <div class="nhsuk-grid-row">
-<a href="version-01-results">
+
+
+
+
+
+
+
+
+
+
+                                            </div>
+
+                                            <div class="nhsuk-grid-row">
+                                                <br />
+                                                <a href="claim-version-02-results">
                                                     <button style="margin-left:19px;" class="nhsuk-button"
                                                         data-module="nhsuk-button" type="submit">
                                                         Search
                                                     </button>
 
-</a>
-                                                </div>
-
-
-
-
-                                        
+                                                </a>
+                                            </div>
                                         </div>
-
 
 
                                     </div>
@@ -563,7 +474,7 @@ Overseas Healthcare Services
                 <ul>
                     <div id="options" class="options">
                         <li>
-                            <a  href="">Dashboard</a>
+                            <a href="">Dashboard</a>
                         </li>
                         <li>
                             <a class="active" href="">Search</a>
