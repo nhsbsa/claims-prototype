@@ -1,7 +1,3 @@
-<!-- Use this page as the index for your project -->
-
-<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
 <!-- 
@@ -12,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Overseas Healthcare Services
+Member State (MS) Claims
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -34,158 +30,49 @@ Overseas Healthcare Services
 
       <!-- Change the page title here -->
       <h1>
-        Member State Claims
-       
+        Overseas Healthcare Services
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Member State (MS) Claims</span>
       </h1>
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
 
-      <!-- Add your content here -->
+      <!-- start of project aim -->
+      <h2 class="nhsuk-heading-m">Project aim</h2>
+      <p class="nhsuk-body-l">To introduce a new digital system to enable BSA staff to process Memeber State (MS) claims
+        in a reliable and efficient way.</p>
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+      <!--end of project aim-->
 
-<!-- start of discovery -->
-      <div class="nhsuk-card">
-  <div class="nhsuk-card__content">
-    <h3 class="nhsuk-card__heading">
-      Discovery (March 2023 - May 2023)
+      <!-- start of project phases-->
+      <h2 class="nhsuk-heading-m">Project phases</h2>
 
-    </h3>
-     <!-- start sign in -->
-      <details class="nhsuk-details nhsuk-expander">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            Sign in screen
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <h4>Aims:</h4>
-          <ul>
-            <li>Allow existing users to login</li>
-            <li>Give a summary of what the service offers?</li>
-            <li>Allow existing users to change username?</li>
-            <li>Allow existing users to change password?</li>
-            <li>Allow new users to register for an account?</li>
-          </ul>
-          <h4>Prototypes:</h4>
-          <ul>
-            <li><a href="discovery/sign-in/version-01">Version 1</a><br />2 column horizontal layout</li>
-            <li><a href="discovery/sign-in/version-02">Version 2</a><br />Vertical layout</li>
-          </ul>
-        </div>
-      </details>
-      <!-- end sign in -->
+      <ul class="nhsuk-grid-row nhsuk-card-group">
 
-      <!-- start dashboard -->
-      <details class="nhsuk-details nhsuk-expander">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            Dashboard
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <h4>Aims:</h4>
-          <ul>
-            <li>Provide users quick and efficient access to most commonly used tasks</li>
-            <li>Provide users access to secondary tasks</li>
-            <li>Provide a personalised experience</li>
-            <li>Have an easy to use search facility</li>
-          </ul>
-          <h4>Prototypes:</h4>
-          <ul>
-            <li><a href="discovery/dashboard/version-01">Version 1</a><br />Central layout, no left nav, advanced search opens on new screen</li>
-            <li><a href="discovery/dashboard/version-02">Version 2</a><br />Full width, left nav, advanced search opens on new screen, breadcrumb</li>
-            <li><a href="discovery/dashboard/version-03">Version 3</a><br />Full width, left nav, advanced search opens in expander, no border around search, right side panels in list format, breadcrumb</li>
-            <li><a href="discovery/dashboard/version-04">Version 4</a><br />Central layout, no left nav, advanced search opens in expander, card details in table format</li>
-            <li><a href="discovery/dashboard/version-05">Version 5</a><br />Full width, left nav, advanced search opens in expander, no border around search, right side panels in table format, breadcrumb</li>
-            <li><a href="discovery/dashboard/version-06">Version 6</a><br />Left nav, two columns, notifications, claim first option on search</li>
-          </ul>
-        </div>
-      </details>
-      <!-- end dashboard -->
+        <!-- alpha -->
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                <a class="nhsuk-card__link" href="alpha/index">Alpha</a>
+              </h2>
+              <p class="nhsuk-card__description">July 2023 - Current</p>
+            </div>
+          </div>
+        </li>
 
-                  <!-- start search -->
-                  <details class="nhsuk-details nhsuk-expander">
-                    <summary class="nhsuk-details__summary">
-                      <span class="nhsuk-details__summary-text">
-                        Search
-                      </span>
-                    </summary>
-                    <div class="nhsuk-details__text">
-                      <h4>Aims</h4>
-                      <ul>
-                        <li>Provide an easy to use search facility for claims</li>
-                        <li>Provide an easy to use search facility for resubmissions</li>
-                        <li>Provide an easy to use search facility for person records</li>
-                      </ul>
-                      <h4>Prototypes:</h4>
-                      <h5 style="padding-botom:0; margin-bottom:0;">Claims</h5>
-                      <ul>
-                        <li><a href="discovery/search/claim-version-01">Version 1</a><br />Search results appear below</li>
-                        <li><a href="discovery/search/claim-version-02">Version 2</a><br />Search results appear on new screen</li>
+        <!-- discovery -->
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                <a class="nhsuk-card__link" href="discovery/index">Discovery</a>
+              </h2>
+              <p class="nhsuk-card__description">March 2023 - May 2023</p>
+            </div>
+          </div>
+        </li>
 
-                      </ul>
-                    </div>
-                  </details>
-                  <!-- end search -->
-
-            <!-- start claims -->
-            <details class="nhsuk-details nhsuk-expander">
-              <summary class="nhsuk-details__summary">
-                <span class="nhsuk-details__summary-text">
-                  Claims
-                </span>
-              </summary>
-              <div class="nhsuk-details__text">
-                <h4>Aims</h4>
-                <ul>
-                  <li>Provide an easy to use search facility for existing claims</li>
-                  <li>Allow user to create a new claims</li>
-                  <li>Allow users to see recently worked on claims</li>
-                </ul>
-                <h4>Prototypes:</h4>
-                <ul>
-                  <li><a href="discovery/claims/version-01">Version 1</a><br />Full width, left nav, vertical layout, advanced search opens in expander, border around search</li>
-                  <li><a href="discovery/claims/version-02">Version 2</a><br />Full width, left nav, vertical layout, advanced search opens in expander, no border around search</li>
-                  <li><a href="discovery/claims/version-03">Version 3</a><br />Full width, left nav, 2 column layout</li>
-                </ul>
-              </div>
-            </details>
-            <!-- end claims -->
-
-                              <!-- start search -->
-                              <details class="nhsuk-details nhsuk-expander">
-                                <summary class="nhsuk-details__summary">
-                                  <span class="nhsuk-details__summary-text">
-                                    Demo - 16 May 2023
-                                  </span>
-                                </summary>
-                                <div class="nhsuk-details__text">
-                                  <h4>Aims</h4>
-                                  <ul>
-                                    <li>Sprint review demo of potential screens</li>
-                                  </ul>
-
-
-                                  <div class="nhsuk-action-link">
-                                    <a class="nhsuk-action-link__link" href="discovery/demo-15052023/01">
-                                      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-                                        <path d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-                                      </svg>
-                                      <span class="nhsuk-action-link__text">Start demo</span>
-                                    </a>
-                                  </div>
-                                </div>
-                              </details>
-                              <!-- end search -->
-
-  </div>
-</div>
-<!-- end of discovery -->
-
-
-
-
-     
-
-
+      </ul>
+      <!-- end of project phases-->
 
       <!-- End of content -->
 

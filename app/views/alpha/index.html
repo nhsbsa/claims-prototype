@@ -1,0 +1,116 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Member State Claims
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+      <h1>
+        Overseas Healthcare Services
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Member State Claims</span>
+      </h1>
+
+
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
+      <h2 class="nhsuk-heading-l">Alpha
+        <span class="nhsuk-caption-m nhsuk-caption--bottom">July 2023 - Current</span>
+      </h2>
+
+      <!-- start templates -->
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Sprint 1 & 2 - Site-wide high level UI elements
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Aims:</h4>
+          <ul>
+            <li>To establish a solid design foundation upon which to build the new service</li>
+            <li>To create a central store of re-usable templates for efficient prototype development throughout the project</li>
+          </ul>
+          <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+          <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Prototypes:</h4>
+          <ul>
+            <!-- <li><a href="templates/standard-page">Header and left navigation</a></li>
+                        <li><a href="templates/transactional-page">Header only</a></li> -->
+            <li><a href="templates/standard-page-full">Standard page</a> - header, breadcrumb, main navigation, footer</li>
+          </ul>
+          <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+          <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Resources:</h4>
+          <ul>
+            <li><a href="https://bsa2468.atlassian.net/l/cp/LR2Mos0J" target="_blank">Confluence</a></li>
+            <li><a href="https://miro.com/app/board/uXjVMxM_Gh4=/?share_link_id=387914381265" target="_blank">Miro</a>
+            </li>
+          </ul>
+        </div>
+      </details>
+      <!-- end templates -->
+
+      <!-- start create claim -->
+      <!-- <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Layout options - July 2023
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h4>Aims:</h4>
+          <ul>
+            <li>To establish the most efficient and user friendly user interface for all journeys within the new service</li>
+          </ul>
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>Creating a new claim has been used throughout these prototypes for demo purposes only, we are not currently testing the process of creating a new claim.</p>
+          </div>
+          <h4>Prototypes:</h4>
+          <h5>Without navigation</h5>
+          <ul>
+            <li><a href="claims/transactional/v1/index">One page per question</a></li>
+            <li><a href="claims/transactional/v2/create">Single page for all questions</a></li>
+            <li><a href="claims/transactional/v3/create-1">Multi page (3 screens)</a></li>
+          </ul>
+          <h5>With navigation</h5>
+          <ul>
+            <li><a href="claims/standard/v1/submission-date">One page per question</a></li>
+            <li><a href="claims/standard/v2/create2">Single page for all questions</a></li>
+            <li><a href="claims/standard/v2/card-v-hint-text">Single card - vertical - hint text</a></li>
+            <li><a href="claims/standard/v2/card-v-no-hint">Single card - vertical - no hint text</a></li>
+            <li><a href="claims/standard/v2/card-v-no-hint-guide">Single card - vertical - no hint text - with guide</a></li>
+          </ul>
+        </div>
+      </details> -->
+      <!-- end create claim -->
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -3,6 +3,9 @@ const express = require('express');
 
 const router = express.Router();
 
-// Add your routes here - above the module.exports line
+
+
+// Alpha
+router.use('/alpha', require('./views/alpha/_routes'));
 
 module.exports = router;
