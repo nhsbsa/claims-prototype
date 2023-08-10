@@ -1,0 +1,144 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-signed-in.html -->
+{% extends 'layout-signed-in-full.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Claim type - Managing Memeber State claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="dashboard">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="claims">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="claims">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content and left navigation -->
+{% block content %}
+<div class="nhsBSA-sidebar-container">
+    <div class="nhsBSA-sidebar-wrapper">
+
+        <!-- Start of central content -->
+        <div class="nhsBSA-sidebar-content">
+            <div class="nhsuk-width-container-fluid">
+                <div class="nhsuk-main-wrapper" id="maincontent">
+
+                    <!-- Start of back link -->
+                    <div class="nhsuk-back-link">
+                        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                                <path
+                                    d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                                </path>
+                            </svg>
+                            Go back</a>
+                    </div>
+                    <!-- End of back link -->
+
+                    <!-- Start of main content -->
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            <form action="upload" method="post">
+                                <div class="nhsuk-form-group">
+                                    <fieldset class="nhsuk-fieldset">
+                                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                                            <h1 class="nhsuk-fieldset__heading">
+                                                <span class="nhsuk-caption-l">Create a new claim</span>
+                                                How was the claim submitted?
+                                            </h1>
+                                        </legend>
+                                        <div class="nhsuk-hint" id="article-hint">
+                                            Select one:
+                                        </div>
+                                        <div class="nhsuk-radios">
+                                            <div class="nhsuk-radios__item">
+                                                <input class="nhsuk-radios__input" id="data-source-rina"
+                                                    name="data-source" type="radio" value="RINA">
+                                                <label class="nhsuk-label nhsuk-radios__label" for="data-source-rina">
+                                                    RINA
+                                                </label>
+                                            </div>
+                                            <div class="nhsuk-radios__item">
+                                                <input class="nhsuk-radios__input" id="data-source-edi"
+                                                    name="data-source" type="radio" value="EDI">
+                                                <label class="nhsuk-label nhsuk-radios__label" for="data-source-edi">
+                                                    EDI
+                                                </label>
+                                            </div>
+                                            <div class="nhsuk-radios__item">
+                                                <input class="nhsuk-radios__input" id="data-source-paper"
+                                                    name="data-source" type="radio" value="Paper">
+                                                <label class="nhsuk-label nhsuk-radios__label" for="data-source-paper">
+                                                    Paper
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                                    Continue
+                                </button>
+                            </form>
+
+                            <a href="claims" class="nhsuk-link">Cancel</a>
+                        </div>
+                    </div>
+                    <!-- End of main content -->
+
+                </div>
+            </div>
+        </div>
+        <!-- End of central content -->
+
+        <!--Start left navigation-->
+        <div class="nhsBSA-sidebar-nav">
+            <div class="side-nav">
+                <ul>
+                    <div id="options" class="options">
+                        <li>
+                            <a href="dashboard">Home</a>
+                        </li>
+                        <li>
+                            <a href="">Search</a>
+                        </li>
+                        <li>
+                            <a class="active" href="claims">Claims</a>
+                        </li>
+                        <li>
+                            <a href="">Contested claims</a>
+                        </li>
+                        <li>
+                            <a href="">Reports</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <!--End left navigation-->
+
+    </div>
+</div>
+{% endblock %}
+<!-- End of page content and left navigation -->
