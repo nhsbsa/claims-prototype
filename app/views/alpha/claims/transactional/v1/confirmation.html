@@ -1,0 +1,94 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-signed-in.html -->
+{% extends 'layout-signed-in.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Member State (MS) Claims
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Start of central content and left navigation -->
+{% block content %}
+<div class="nhsBSA-sidebar-container">
+    <div class="nhsBSA-sidebar-wrapper">
+
+        <!-- Start of central content -->
+        <div class="nhsBSA-sidebar-content">
+            <div class="nhsuk-width-container-fluid">
+                <div class="nhsuk-main-wrapper" id="maincontent">
+
+
+
+                    <!-- Start of main content -->
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-two-thirds">
+                            <form action="confirmation" method="post">
+                                <div class="nhsuk-form-group">
+                                    <fieldset class="nhsuk-fieldset">
+
+
+
+                                            <div class="column-two-thirds">
+
+                                                <div class="confirmation-box">
+                                                  <h1 class="heading-xlarge"><span id="done-tick"></span>Claim created
+                                                  </h1>
+                                                  <h2 class="heading-large"><span class="heading-secondary" style="color:white;">OHS Claim Reference number<br />
+                                                
+                                                     25000002
+                                                </span> 
+                                        
+                                                               
+                                        
+                                                  </h2>
+                                                </div>
+                                        
+                                                <h2 class="heading-medium">What happens next</h2>
+                                                <p>You can now add the treatments to the claim or create another claim or assign the claim to someome?</p>
+                                        
+                                        
+                               
+                                        
+                                        
+                                              </div>
+
+
+
+
+                                    </fieldset>
+                                </div>
+                                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                                    Manage claim
+                                </button>
+                                <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                                    Create a new claim
+                                  </button>
+                            </form>
+
+                            <a href="#" class="nhsuk-link">Return to dashboard</a>
+
+
+                        </div>
+                    </div>
+                    <!-- End of main content -->
+
+                </div>
+            </div>
+        </div>
+        <!-- End of central content -->
+
+
+    </div>
+</div>
+{% endblock %}
+<!-- End of page content and left navigation -->
