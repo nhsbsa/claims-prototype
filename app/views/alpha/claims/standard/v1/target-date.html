@@ -10,7 +10,7 @@
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Article type of the claim - Managing Memeber State claims - NHSBSA
+Target date for completion of the claim - Managing Member State claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -60,43 +60,55 @@ Article type of the claim - Managing Memeber State claims - NHSBSA
                     <!-- Start of main content -->
                     <div class="nhsuk-grid-row">
                         <div class="nhsuk-grid-column-full">
-                            <form action="claim-type" method="post">
+                            <form action="cya" method="post">
                                 <div class="nhsuk-form-group">
                                     <fieldset class="nhsuk-fieldset">
                                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                                             <h1 class="nhsuk-fieldset__heading">
                                                 <span class="nhsuk-caption-l">Create a new claim</span>
-                                                What is the article type of the claim?
+                                                What is the target date for the completion of the claim?
                                             </h1>
                                         </legend>
-                                        <div class="nhsuk-hint" id="article-hint">
-                                            Select one:
+
+                                        <div class="nhsuk-hint" id="target-date-hint">
+                                            For example, 15 7 2023
                                         </div>
-                                        <div class="nhsuk-radios">
-
-                                            <div class="nhsuk-radios__item">
-                                                <input class="nhsuk-radios__input" id="article-actual" name="article"
-                                                    type="radio" value="Actual cost">
-                                                <label class="nhsuk-label nhsuk-radios__label" for="article-actual">
-                                                    Actual cost
-                                                </label>
+                                        <div class="nhsuk-date-input" id="target-date">
+                                            <div class="nhsuk-date-input__item">
+                                                <div class="nhsuk-form-group">
+                                                    <label class="nhsuk-label nhsuk-date-input__label"
+                                                        for="target-date-day">
+                                                        Day
+                                                    </label>
+                                                    <input
+                                                        class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                        id="target-date-day" name="target-date-day" type="text" pattern="[0-9]*"
+                                                        inputmode="numeric">
+                                                </div>
                                             </div>
-
-                                            <div class="nhsuk-radios__divider">or</div>
-
-                                            <div class="nhsuk-radios__item">
-                                                <input class="nhsuk-radios__input" id="article-average-2a" name="article"
-                                                    type="radio" value="Average cost - Article 63 2a">
-                                                <label class="nhsuk-label nhsuk-radios__label" for="article-average-2a">
-                                                    Average cost - Article 63 2a
-                                                </label>
+                                            <div class="nhsuk-date-input__item">
+                                                <div class="nhsuk-form-group">
+                                                    <label class="nhsuk-label nhsuk-date-input__label"
+                                                        for="target-date-month">
+                                                        Month
+                                                    </label>
+                                                    <input
+                                                        class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                        id="target-date-month" name="target-date-month" type="text"
+                                                        pattern="[0-9]*" inputmode="numeric">
+                                                </div>
                                             </div>
-                                            <div class="nhsuk-radios__item">
-                                                <input class="nhsuk-radios__input" id="article-average-2b" name="article"
-                                                    type="radio" value="Average cost - Article 63 2b">
-                                                <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
-                                                    Average cost - Article 63 2b
-                                                </label>
+                                            <div class="nhsuk-date-input__item">
+                                                <div class="nhsuk-form-group">
+                                                    <label class="nhsuk-label nhsuk-date-input__label"
+                                                        for="target-date-year">
+                                                        Year
+                                                    </label>
+                                                    <input
+                                                        class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                        id="target-date-year" name="target-date-year" type="text"
+                                                        pattern="[0-9]*" inputmode="numeric">
+                                                </div>
                                             </div>
                                         </div>
                                     </fieldset>
