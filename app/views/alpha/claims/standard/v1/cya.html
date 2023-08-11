@@ -79,13 +79,14 @@ Check your answers - Managing Member State claims - NHSBSA
                                                     Submission date
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    {{ data['submission-date-day'] }}/{{ data['submission-date-month'] }}/{{ data['submission-date-year'] }}
+                                                    {% if data['submission-date-day'] %}{{ data['submission-date-day'] }}/{% else %}10/{% endif %}{% if data['submission-date-month'] %}{{ data['submission-date-month'] }}/{% else %}8/{% endif %}{% if data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else %}2023{% endif %}
                                                 </dd>
 
                                                 <dd class="nhsuk-summary-list__actions">
 
                                                     <a href="#">
-                                                        Change<span class="nhsuk-u-visually-hidden"> submission date</span>
+                                                        Change<span class="nhsuk-u-visually-hidden"> submission
+                                                            date</span>
                                                     </a>
 
                                                 </dd>
@@ -97,17 +98,17 @@ Check your answers - Managing Member State claims - NHSBSA
                                                     Country
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
+                                                    {% if data['country'] %}
                                                     {{ data['country'] }}
+                                                    {% else %}
+                                                    France
+                                                    {% endif %}
                                                 </dd>
-
                                                 <dd class="nhsuk-summary-list__actions">
-
                                                     <a href="#">
                                                         Change<span class="nhsuk-u-visually-hidden"> country</span>
                                                     </a>
-
                                                 </dd>
-
                                             </div>
 
                                             <div class="nhsuk-summary-list__row">
@@ -115,17 +116,17 @@ Check your answers - Managing Member State claims - NHSBSA
                                                     Reference
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
+                                                    {% if data['ref'] %}
                                                     {{ data['ref'] }}
+                                                    {% else %}
+                                                    12345REF
+                                                    {% endif %}
                                                 </dd>
-
                                                 <dd class="nhsuk-summary-list__actions">
-
                                                     <a href="#">
                                                         Change<span class="nhsuk-u-visually-hidden"> reference</span>
                                                     </a>
-
                                                 </dd>
-
                                             </div>
 
                                             <div class="nhsuk-summary-list__row">
@@ -133,17 +134,18 @@ Check your answers - Managing Member State claims - NHSBSA
                                                     Financial year
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
+                                                    {% if data['financial-year'] %}
                                                     {{ data['financial-year'] }}
+                                                    {% else %}
+                                                    2023
+                                                    {% endif %}
                                                 </dd>
-
                                                 <dd class="nhsuk-summary-list__actions">
-
                                                     <a href="#">
-                                                        Change<span class="nhsuk-u-visually-hidden"> financial year</span>
+                                                        Change<span class="nhsuk-u-visually-hidden"> financial
+                                                            year</span>
                                                     </a>
-
                                                 </dd>
-
                                             </div>
 
                                             <div class="nhsuk-summary-list__row">
@@ -151,17 +153,17 @@ Check your answers - Managing Member State claims - NHSBSA
                                                     Article type
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
+                                                    {% if data['article-type'] %}
                                                     {{ data['article'] }}
+                                                    {% else %}
+                                                    Actual cost
+                                                    {% endif %}
                                                 </dd>
-
                                                 <dd class="nhsuk-summary-list__actions">
-
                                                     <a href="#">
                                                         Change<span class="nhsuk-u-visually-hidden"> article type</span>
                                                     </a>
-
                                                 </dd>
-
                                             </div>
 
                                             <div class="nhsuk-summary-list__row">
@@ -169,7 +171,25 @@ Check your answers - Managing Member State claims - NHSBSA
                                                     Claim type
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
+                                                    {% if data['type'] %}
                                                     {{ data['type'] }}
+                                                    {% else %}
+                                                    Main
+                                                    {% endif %}
+                                                </dd>
+                                                <dd class="nhsuk-summary-list__actions">
+                                                    <a href="#">
+                                                        Change<span class="nhsuk-u-visually-hidden"> claim type</span>
+                                                    </a>
+                                                </dd>
+                                            </div>
+
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Target date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {% if data['target-date-day'] %}{{ data['target-date-day'] }}/{% else %}9/{% endif %}{% if data['target-date-month'] %}{{ data['target-date-month'] }}/{% else %}2/{% endif %}{% if data['target-date-year'] %}{{ data['target-date-year'] }}{% else %}2024{% endif %}
                                                 </dd>
 
                                                 <dd class="nhsuk-summary-list__actions">
