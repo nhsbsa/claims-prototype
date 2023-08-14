@@ -10,7 +10,7 @@
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Claim type - Managing Memeber State claims - NHSBSA
+Check your answers - Managing Member State claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -59,32 +59,61 @@ Claim type - Managing Memeber State claims - NHSBSA
 
                     <!-- Start of main content -->
                     <div class="nhsuk-grid-row">
-                        <div class="nhsuk-grid-column-full">
-                            <form action="cya-add-treatments" method="post">
+                        <div class="nhsuk-grid-column-two-thirds">
+                            <form action="confirmation-treatments-added" method="post">
                                 <div class="nhsuk-form-group">
                                     <fieldset class="nhsuk-fieldset">
                                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                                             <h1 class="nhsuk-fieldset__heading">
                                                 <span class="nhsuk-caption-l">Add treatments</span>
-                                                Upload file
+                                                Check your answers
                                             </h1>
                                         </legend>
-                                        <div class="nhsuk-hint" id="article-hint">
-                                            Max file size<br />
-                                            Format
-                                        </div>
+                                        <hr class="nhsuk-section-break nhsuk-section-break--visible"
+                                            style="margin-bottom:12px;">
 
-                                        <div class="nhsuk-form-group nhsuk-grid-column-two-thirds" style="border:2px dashed #0b0c0c; padding:24px;">
-                                            <!-- <label class="nhsuk-label" for="file-upload">
-                                              Upload a file
-                                            </label> -->
-                                            <input class="nhsuk-file-upload" style="font-size:18px;" id="file-upload" name="file-upload" type="file">
-                                          </div>
+                                        <dl class="nhsuk-summary-list">
+
+
+
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Submmission type
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {% if data['data-source'] %}
+                                                    {{ data['data-source'] }}
+                                                    {% else %}
+                                                    RINA
+                                                    {% endif %}
+                                                </dd>
+                                                <dd class="nhsuk-summary-list__actions">
+                                                    <a href="#">
+                                                        Change<span class="nhsuk-u-visually-hidden"> submission type</span>
+                                                    </a>
+                                                </dd>
+                                            </div>
+
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    File
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    filename.xml
+                                                </dd>
+                                                <dd class="nhsuk-summary-list__actions">
+                                                    <a href="#">
+                                                        Change<span class="nhsuk-u-visually-hidden"> reference</span>
+                                                    </a>
+                                                </dd>
+                                            </div>
+                                        </dl>
+
 
                                     </fieldset>
                                 </div>
                                 <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                                    Continue
+                                    Submit
                                 </button>
                             </form>
 
