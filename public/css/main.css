@@ -7328,6 +7328,16 @@ b {
   }
 }
 
+body.full-width .nhsuk-width-container {
+  margin: 0 16px;
+  max-width: 100%; /* [5] */
+}
+@media (min-width: 48.0625em) {
+  body.full-width .nhsuk-width-container {
+    margin: 0 32px; /* [3] */
+  }
+}
+
 /* ==========================================================================
  SECONDARY NAV
 ========================================================================== */
@@ -7439,7 +7449,6 @@ b {
   margin: 0;
   padding: 0;
 }
-
 @media (min-width: 48.0525em) {
   .nhsBSA-sidebar-container {
     min-height: calc(100vh - 80px);
@@ -7449,56 +7458,84 @@ b {
   flex: 1 0 auto;
   display: flex;
 }
-
+@media (max-width: 48.0525em) {
+  .nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper {
+    flex-direction: column;
+  }
+}
 .nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsBSA-sidebar-content {
   flex: 1;
   background-color: #f0f4f5;
   padding: 0px;
   margin: 0px;
 }
-
-.nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsBSA-sidebar-content .nhsuk-main-wrapper {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  display: block;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsBSA-sidebar-content .nhsuk-main-wrapper {
-    padding-top: 32px;
-  }
-}
-@media (min-width: 40.0625em) {
-  .nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsBSA-sidebar-content .nhsuk-main-wrapper {
-    padding-bottom: 32px;
-  }
-}
-.nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsBSA-sidebar-nav {
+.nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation {
   width: 300px;
   order: -1;
   background-color: #d8dde0;
   margin: 0;
 }
-
-.nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsBSA-sidebar-nav .nhsuk-back-link {
-  padding: 16px;
-  margin: 0;
-}
-
-@media (min-width: 48.0525em) {
-  .nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsBSA-sidebar-nav .nhsuk-back-link {
-    padding: 32px;
-    margin: 0;
-  }
-}
 @media (max-width: 48.0525em) {
-  .nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper {
-    flex-direction: column;
-  }
-  .nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsBSA-sidebar-nav {
+  .nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation {
+    background-color: white;
     width: 100%;
   }
 }
+.nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation ul {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+}
+.nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation ul li {
+  margin: 0px;
+  text-align: left;
+  border-top: 1px solid #ccc;
+}
+.nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation ul li:last-of-type {
+  border-bottom: 1px solid #ccc;
+}
+@media (max-width: 48.0525em) {
+  .nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation ul li {
+    border-top: 1px solid #f0f4f5;
+  }
+  .nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation ul li:last-of-type {
+    border-bottom: 1px solid #f0f4f5;
+  }
+}
+.nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation ul li a {
+  display: block;
+  color: #005EB8;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 16px;
+}
+.nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation ul li a.active {
+  background-color: #005EB8;
+  color: white;
+  font-weight: 600;
+  border-top: #005EB8 1px solid;
+}
+.nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation ul li a:hover:not(.active) {
+  background-color: #005EB8;
+  color: white;
+}
+.nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation .logged-in {
+  display: none;
+  padding: 16px;
+  margin: 0;
+}
+@media (max-width: 61.875em) {
+  .nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation .logged-in {
+    display: block;
+  }
+}
+@media (max-width: 48.0525em) {
+  .nhsBSA-sidebar-container .nhsBSA-sidebar-wrapper .nhsuk-header__navigation .logged-in {
+    text-align: center;
+  }
+}
+
 @media (max-width: 61.875em) {
   .nhsBSA-sidebar-nav {
     display: none;
@@ -7514,44 +7551,11 @@ b {
     padding: 32px;
   }
 }
-.side-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0px;
-}
-
-.side-nav li {
-  margin: 0px;
-}
-
-.side-nav li a {
-  display: block;
-  color: #005EB8;
-  font-size: 18px;
-  text-decoration: none;
-  border-top: #ccc 1px solid;
-  border-bottom: #ccc 1px solid;
-  padding: 16px;
-}
-
 @media (min-width: 48.0525em) {
   .side-nav li a {
     padding: 16px 32px;
   }
 }
-.side-nav li a.active {
-  background-color: #005EB8;
-  color: white;
-  font-weight: 600;
-  border-top: #005EB8 1px solid;
-  border-bottom: #005EB8 1px solid;
-}
-
-.side-nav li a:hover:not(.active) {
-  background-color: #005EB8;
-  color: white;
-}
-
 .side-nav .action-buttons {
   padding: 16px;
 }
@@ -7570,4 +7574,19 @@ b {
   color: white;
   padding: 20px;
   margin: 30px 0;
+}
+
+header .logged-in {
+  margin: 0;
+  color: white;
+  font-size: 19px;
+  text-align: right;
+}
+@media (max-width: 61.875em) {
+  header .logged-in {
+    display: none;
+  }
+}
+header .logged-in a {
+  color: white;
 }
