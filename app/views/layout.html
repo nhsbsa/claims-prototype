@@ -14,7 +14,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Member State Claims
+  Managing Member State claims
 {% endblock %}
 
 <!-- Edit the header -->
@@ -53,10 +53,10 @@ Member State Claims
 {% endblock %}
 
 {% block bodyEnd %}
-{% block scripts %}
-<!-- Custom JavaScript files can be added to this file -->
-{% include "includes/scripts.html" %}
-<!-- For adding page specific JavsScript -->
-{% block pageScripts %}{% endblock %}
-{% endblock %}
+  {% block scripts %}
+    <!-- Custom JavaScript files can be added to this file -->
+    {% include "includes/scripts.html" %}
+    <!-- For adding page specific JavsScript -->
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
 {% endblock %}
