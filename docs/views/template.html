@@ -92,13 +92,15 @@
 
       {% block beforeContent %}{% endblock %}
 
-      {% block main %}
-        <div class="nhsuk-width-container-fluid {{ containerClasses }}">
-          {% block outerContent %}{% endblock %}
-          <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
-            {% block content %}{% endblock %}
-          </main>
-        </div>
+      {% block wrapper %}
+        {% block main %}
+          <div class="{{ containerClasses }}">
+            {% block outerContent %}{% endblock %}
+            <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+              {% block content %}{% endblock %}
+            </main>
+          </div>
+        {% endblock %}
       {% endblock %}
 
       {% block footer %}
