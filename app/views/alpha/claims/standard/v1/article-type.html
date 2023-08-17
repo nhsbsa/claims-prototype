@@ -10,7 +10,7 @@
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Article type of the claim - Managing Memeber State claims - NHSBSA
+Which article covers the claim? - Manage member state claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -66,13 +66,30 @@ Article type of the claim - Managing Memeber State claims - NHSBSA
                                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                                             <h1 class="nhsuk-fieldset__heading">
                                                 <span class="nhsuk-caption-l">Create a new claim</span>
-                                                What is the article type of the claim?
+                                                Which article covers the claim?
                                             </h1>
                                         </legend>
                                         <div class="nhsuk-hint" id="article-hint">
-                                            Select one:
+                                            Select one.
                                         </div>
                                         <div class="nhsuk-radios">
+
+                                            <div class="nhsuk-radios__item">
+                                                <input class="nhsuk-radios__input" id="article-average-2a" name="article"
+                                                    type="radio" value="Article 63 (2a) - average cost">
+                                                <label class="nhsuk-label nhsuk-radios__label" for="article-average-2a">
+                                                    Article 63 (2a) - average cost
+                                                </label>
+                                            </div>
+                                            <div class="nhsuk-radios__item">
+                                                <input class="nhsuk-radios__input" id="article-average-2b" name="article"
+                                                    type="radio" value="Article 63 (2b) - average cost">
+                                                <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
+                                                    Article 63 (2b) - average cost
+                                                </label>
+                                            </div>
+
+                                            <div class="nhsuk-radios__divider">or</div>
 
                                             <div class="nhsuk-radios__item">
                                                 <input class="nhsuk-radios__input" id="article-actual" name="article"
@@ -82,22 +99,6 @@ Article type of the claim - Managing Memeber State claims - NHSBSA
                                                 </label>
                                             </div>
 
-                                            <div class="nhsuk-radios__divider">or</div>
-
-                                            <div class="nhsuk-radios__item">
-                                                <input class="nhsuk-radios__input" id="article-average-2a" name="article"
-                                                    type="radio" value="Average cost - Article 63 2a">
-                                                <label class="nhsuk-label nhsuk-radios__label" for="article-average-2a">
-                                                    Average cost - Article 63 2a
-                                                </label>
-                                            </div>
-                                            <div class="nhsuk-radios__item">
-                                                <input class="nhsuk-radios__input" id="article-average-2b" name="article"
-                                                    type="radio" value="Average cost - Article 63 2b">
-                                                <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
-                                                    Average cost - Article 63 2b
-                                                </label>
-                                            </div>
                                         </div>
                                     </fieldset>
                                 </div>
