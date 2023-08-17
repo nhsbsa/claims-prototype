@@ -76,7 +76,7 @@ Check your answers - Managing Member State claims - NHSBSA
 
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Submission date
+                                                    When was the claim submitted?
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
                                                     {% if data['submission-date-day'] %}{{ data['submission-date-day'] }}/{% else %}10/{% endif %}{% if data['submission-date-month'] %}{{ data['submission-date-month'] }}/{% else %}8/{% endif %}{% if data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else %}2023{% endif %}
@@ -95,7 +95,7 @@ Check your answers - Managing Member State claims - NHSBSA
 
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Country
+                                                    Which country sent the claim?
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
                                                     {% if data['country'] %}
@@ -113,7 +113,7 @@ Check your answers - Managing Member State claims - NHSBSA
 
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Reference
+                                                    What is the claim reference?
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
                                                     {% if data['ref'] %}
@@ -131,7 +131,7 @@ Check your answers - Managing Member State claims - NHSBSA
 
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Financial year
+                                                    What is the financial year of the claim?
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
                                                     {% if data['financial-year'] %}
@@ -150,7 +150,7 @@ Check your answers - Managing Member State claims - NHSBSA
 
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Article type
+                                                    Which article covers the claim?
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
                                                     {% if data['article-type'] %}
@@ -168,13 +168,13 @@ Check your answers - Managing Member State claims - NHSBSA
 
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Claim type
+                                                    What type of claim is it?
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
                                                     {% if data['type'] %}
                                                     {{ data['type'] }}
                                                     {% else %}
-                                                    Main
+                                                    Main - first half year
                                                     {% endif %}
                                                 </dd>
                                                 <dd class="nhsuk-summary-list__actions">
@@ -186,7 +186,7 @@ Check your answers - Managing Member State claims - NHSBSA
 
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Target date
+                                                    What is the target date to complete this claim?
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
                                                     {% if data['target-date-day'] %}{{ data['target-date-day'] }}/{% else %}9/{% endif %}{% if data['target-date-month'] %}{{ data['target-date-month'] }}/{% else %}2/{% endif %}{% if data['target-date-year'] %}{{ data['target-date-year'] }}{% else %}2024{% endif %}
