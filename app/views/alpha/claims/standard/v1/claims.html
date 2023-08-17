@@ -1,7 +1,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout-signed-in.html -->
-{% extends 'layout-signed-in-full.html' %}
+{% extends 'layout-full-width.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -34,314 +34,267 @@ Managing Member State claims - NHSBSA
 
 <!-- Start of central content and left navigation -->
 {% block content %}
-<div class="nhsBSA-sidebar-container">
-    <div class="nhsBSA-sidebar-wrapper">
 
-        <!-- Start of central content -->
-        <div class="nhsBSA-sidebar-content">
-            <div class="nhsuk-width-container-fluid">
-                <div class="nhsuk-main-wrapper" id="maincontent">
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-grid-row">
 
-                    <!-- Start of main content -->
+            <div class="nhsuk-grid-column-full">
+                <h1 class="nhsuk-heading-xl ">
+                    Claims
+                </h1>
+            </div>
+        </div>
 
-                    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-row">
 
-                        <div class="nhsuk-grid-column-full">
-                            <h1 class="nhsuk-heading-xl ">
-                                Claims
-                            </h1>
-                        </div>
-                    </div>
-
-                    <div class="nhsuk-grid-row">
-
-                        <div class="nhsuk-grid-column-two-thirds">
+            <div class="nhsuk-grid-column-two-thirds">
 
 
 
-                            <!--start search-->
-                            <div class="nhsuk-card">
-                                <div class="nhsuk-card__content">
-                                    <h3 class="nhsuk-card__heading">
-                                        Search
+                <!--start search-->
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <h3 class="nhsuk-card__heading">
+                            Search
 
-                                    </h3>
-                                    <hr style="margin:-6px 0px 12px 0px;" />
+                        </h3>
+                        <hr style="margin:-6px 0px 12px 0px;" />
 
-                               
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label" for="example">
-                                                Claim ID
-                                            </label>
-                                            <div class="nhsuk-hint" id="example-with-hint-text-hint">
-                                                For example, 8493
-                                            </div>
-                                            <input class="nhsuk-input nhsuk-u-width-one-half" id="example"
-                                                name="example" type="text">
-                                        </div>
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label" for="example">
-                                                Country
-                                            </label>
-                                            <div class="nhsuk-hint" id="example-with-hint-text-hint">
-                                                For example, France
-                                            </div>
-                                            <input class="nhsuk-input nhsuk-u-width-one-half" id="example"
-                                                name="example" type="text">
-                                        </div>
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label" for="example">
-                                                Claim reference
-                                            </label>
-                                            <div class="nhsuk-hint" id="example-with-hint-text-hint">
-                                                For example, 33778844AA890E
-                                            </div>
-                                            <input class="nhsuk-input nhsuk-u-width-one-half" id="example"
-                                                name="example" type="text">
-                                        </div>
-
-
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label" for="example">
-                                                Financial year
-                                            </label>
-                                            <div class="nhsuk-hint" id="example-with-hint-text-hint">
-                                                For example, 2021
-                                            </div>
-                                            <input class="nhsuk-input nhsuk-u-width-one-half" id="example"
-                                                name="example" type="text">
-                                        </div>
-
-
-
-
-
-                                        <div class="nhsuk-grid-row">
-                                            <div class="nhsuk-grid-column-full">
-
-
-                                                <div class="nhsuk-form-group">
-
-                                                    <fieldset class="nhsuk-fieldset">
-                                                        <legend
-                                                            class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                                                            <h1 class="nhsuk-fieldset__heading">
-                                                                Article type
-                                                            </h1>
-                                                        </legend>
-
-                                                        <div class="nhsuk-radios nhsuk-radios--inline">
-
-                                                            <div class="nhsuk-radios__item">
-                                                                <input class="nhsuk-radios__input" id="example-inline-1"
-                                                                    name="example-inline" type="radio" value="yes">
-                                                                <label class="nhsuk-label nhsuk-radios__label"
-                                                                    for="example-inline-1">
-                                                                    Average cost
-                                                                </label>
-                                                            </div>
-
-                                                            <div class="nhsuk-radios__item">
-                                                                <input class="nhsuk-radios__input" id="example-inline-2"
-                                                                    name="example-inline" type="radio" value="no">
-                                                                <label class="nhsuk-label nhsuk-radios__label"
-                                                                    for="example-inline-2">
-                                                                    Actual cost
-                                                                </label>
-                                                            </div>
-
-                                                        </div>
-
-                                                </div>
-
-                                                <div class="nhsuk-form-group">
-
-                                                    <fieldset class="nhsuk-fieldset">
-                                                        <legend
-                                                            class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                                                            <h1 class="nhsuk-fieldset__heading">
-                                                                Claim type
-                                                            </h1>
-                                                        </legend>
-
-                                                        <div class="nhsuk-radios nhsuk-radios--inline">
-
-                                                            <div class="nhsuk-radios__item">
-                                                                <input class="nhsuk-radios__input" id="example-inline-1"
-                                                                    name="example-inline" type="radio" value="yes">
-                                                                <label class="nhsuk-label nhsuk-radios__label"
-                                                                    for="example-inline-1">
-                                                                    Main
-                                                                </label>
-                                                            </div>
-
-                                                            <div class="nhsuk-radios__item">
-                                                                <input class="nhsuk-radios__input" id="example-inline-2"
-                                                                    name="example-inline" type="radio" value="no">
-                                                                <label class="nhsuk-label nhsuk-radios__label"
-                                                                    for="example-inline-2">
-                                                                    Supplemental
-                                                                </label>
-                                                            </div>
-
-                                                        </div>
-
-                                                </div>
-
-                                                </fieldset>
-                                            </div>
-
-                                        </div>
-
-
-
-
-                                        <div class="nhsuk-grid-row">
-
-                                            <button style="margin-left:16px" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
-                                                Search
-                                            </button>
-
-                                        </div>
-
-                               
+                   
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="example">
+                                    Claim ID
+                                </label>
+                                <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                                    For example, 8493
                                 </div>
+                                <input class="nhsuk-input nhsuk-u-width-one-half" id="example"
+                                    name="example" type="text">
+                            </div>
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="example">
+                                    Country
+                                </label>
+                                <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                                    For example, France
+                                </div>
+                                <input class="nhsuk-input nhsuk-u-width-one-half" id="example"
+                                    name="example" type="text">
+                            </div>
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="example">
+                                    Claim reference
+                                </label>
+                                <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                                    For example, 33778844AA890E
+                                </div>
+                                <input class="nhsuk-input nhsuk-u-width-one-half" id="example"
+                                    name="example" type="text">
                             </div>
 
-                            <!--end search-->
 
-                        </div>
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="example">
+                                    Financial year
+                                </label>
+                                <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                                    For example, 2021
+                                </div>
+                                <input class="nhsuk-input nhsuk-u-width-one-half" id="example"
+                                    name="example" type="text">
+                            </div>
 
 
 
 
 
-                        <div class="nhsuk-grid-column-one-third">
+                            <div class="nhsuk-grid-row">
+                                <div class="nhsuk-grid-column-full">
 
-                            <!-- start add new -->
-                            <div class="nhsuk-card">
-                                <div class="nhsuk-card__content">
-                                    <h3 class="nhsuk-card__heading">
-                                        Create new
 
-                                    </h3>
-                                    <hr style="margin:-6px 0px 12px 0px;" />
+                                    <div class="nhsuk-form-group">
+
+                                        <fieldset class="nhsuk-fieldset">
+                                            <legend
+                                                class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                <h1 class="nhsuk-fieldset__heading">
+                                                    Article type
+                                                </h1>
+                                            </legend>
+
+                                            <div class="nhsuk-radios nhsuk-radios--inline">
+
+                                                <div class="nhsuk-radios__item">
+                                                    <input class="nhsuk-radios__input" id="example-inline-1"
+                                                        name="example-inline" type="radio" value="yes">
+                                                    <label class="nhsuk-label nhsuk-radios__label"
+                                                        for="example-inline-1">
+                                                        Average cost
+                                                    </label>
+                                                </div>
+
+                                                <div class="nhsuk-radios__item">
+                                                    <input class="nhsuk-radios__input" id="example-inline-2"
+                                                        name="example-inline" type="radio" value="no">
+                                                    <label class="nhsuk-label nhsuk-radios__label"
+                                                        for="example-inline-2">
+                                                        Actual cost
+                                                    </label>
+                                                </div>
+
+                                            </div>
+
+                                    </div>
+
+                                    <div class="nhsuk-form-group">
+
+                                        <fieldset class="nhsuk-fieldset">
+                                            <legend
+                                                class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                <h1 class="nhsuk-fieldset__heading">
+                                                    Claim type
+                                                </h1>
+                                            </legend>
+
+                                            <div class="nhsuk-radios nhsuk-radios--inline">
+
+                                                <div class="nhsuk-radios__item">
+                                                    <input class="nhsuk-radios__input" id="example-inline-1"
+                                                        name="example-inline" type="radio" value="yes">
+                                                    <label class="nhsuk-label nhsuk-radios__label"
+                                                        for="example-inline-1">
+                                                        Main
+                                                    </label>
+                                                </div>
+
+                                                <div class="nhsuk-radios__item">
+                                                    <input class="nhsuk-radios__input" id="example-inline-2"
+                                                        name="example-inline" type="radio" value="no">
+                                                    <label class="nhsuk-label nhsuk-radios__label"
+                                                        for="example-inline-2">
+                                                        Supplemental
+                                                    </label>
+                                                </div>
+
+                                            </div>
+
+                                    </div>
+
+                                    </fieldset>
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div class="nhsuk-grid-row">
+
+                                <button style="margin-left:16px" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                                    Search
+                                </button>
+
+                            </div>
+
+                   
+                    </div>
+                </div>
+
+                <!--end search-->
+
+            </div>
+
+
+
+
+
+            <div class="nhsuk-grid-column-one-third">
+
+                <!-- start add new -->
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <h3 class="nhsuk-card__heading">
+                            Create new
+
+                        </h3>
+                        <hr style="margin:-6px 0px 12px 0px;" />
 <a href="submission-date">
-                                    <button class="nhsuk-button nhsuk-button" data-module="nhsuk-button"
-                                        type="submit">
-                                        Create a new claim
-                                    </button>
+                        <button class="nhsuk-button nhsuk-button" data-module="nhsuk-button"
+                            type="submit">
+                            Create a new claim
+                        </button>
 </a>
-                                </div>
-                            </div>
+                    </div>
+                </div>
 
-                            <!-- end add new -->
-                            <!--start recently edited-->
+                <!-- end add new -->
+                <!--start recently edited-->
 
-                            <div class="nhsuk-card">
-                                <div class="nhsuk-card__content">
-                                    <h3 class="nhsuk-card__heading nhsuk-heading-s">
-                                        Recently edited by you
-                                    </h3>
-                                    <hr style="margin:0px 0px 12px 0px;" />
-                                   
-                                    <table role="table" class="nhsuk-table-responsive">
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <h3 class="nhsuk-card__heading nhsuk-heading-s">
+                            Recently edited by you
+                        </h3>
+                        <hr style="margin:0px 0px 12px 0px;" />
+                       
+                        <table role="table" class="nhsuk-table-responsive">
 
-                                        <thead role="rowgroup" class="nhsuk-table__head">
-                                            <tr role="row">
-                                                <th role="columnheader" class="" scope="col">
-                                                    Claim ID
-                                                </th>
-                                                <th role="columnheader" class="" scope="col">
-                                                    Country
-                                                </th>
-                                                <th role="columnheader" class="" scope="col">
-                                                    Action
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="nhsuk-table__body">
-                                            <tr role="row" class="nhsuk-table__row">
-                                                <td role="cell" class="nhsuk-table__cell">
-                                                    <span class="nhsuk-table-responsive__heading">Claim ID
-                                                    </span>8474
-                                                </td>
-                                                <td role="cell" class="nhsuk-table__cell">
-                                                    <span class="nhsuk-table-responsive__heading">Country
-                                                    </span>France
-                                                </td>
-                                                <td><a href="">View</a></td>
+                            <thead role="rowgroup" class="nhsuk-table__head">
+                                <tr role="row">
+                                    <th role="columnheader" class="" scope="col">
+                                        Claim ID
+                                    </th>
+                                    <th role="columnheader" class="" scope="col">
+                                        Country
+                                    </th>
+                                    <th role="columnheader" class="" scope="col">
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="nhsuk-table__body">
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Claim ID
+                                        </span>8474
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Country
+                                        </span>France
+                                    </td>
+                                    <td><a href="">View</a></td>
 
-                                            </tr>
-                                            <tr role="row" class="nhsuk-table__row">
-                                                <td role="cell" class="nhsuk-table__cell">
-                                                    <span class="nhsuk-table-responsive__heading">Claim ID
-                                                    </span>5477
-                                                </td>
-                                                <td role="cell" class="nhsuk-table__cell">
-                                                    <span class="nhsuk-table-responsive__heading">Country
-                                                    </span>Germany
-                                                </td>
-                                                <td><a href="">View</a></td>
-                                            </tr>
-                                            <tr role="row" class="nhsuk-table__row">
-                                                <td role="cell" class="nhsuk-table__cell">
-                                                    <span class="nhsuk-table-responsive__heading">Claim ID
-                                                    </span>3677
-                                                </td>
-                                                <td role="cell" class="nhsuk-table__cell">
-                                                    <span class="nhsuk-table-responsive__heading">Country
-                                                    </span>Switzerland
-                                                </td>
-                                                <td><a href="">View</a></td>
-                                            </tr>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Claim ID
+                                        </span>5477
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Country
+                                        </span>Germany
+                                    </td>
+                                    <td><a href="">View</a></td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Claim ID
+                                        </span>3677
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Country
+                                        </span>Switzerland
+                                    </td>
+                                    <td><a href="">View</a></td>
+                                </tr>
 
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!--end search-->
-
-
+                            </tbody>
+                        </table>
 
                     </div>
-                    <!-- End of main content -->
-
                 </div>
             </div>
-        </div>
-        <!-- End of central content -->
-
-        <!--Start left navigation-->
-        <div class="nhsBSA-sidebar-nav">
-            <div class="side-nav">
-                <ul>
-                    <div id="options" class="options">
-                        <li>
-                            <a href="dashboard">Home</a>
-                        </li>
-                        <li>
-                            <a href="">Search</a>
-                        </li>
-                        <li>
-                            <a class="active" href="claims">Claims</a>
-                        </li>
-                        <li>
-                            <a href="">Contested claims</a>
-                        </li>
-                        <li>
-                            <a href="">Reports</a>
-                        </li>
-                    </div>
-                </ul>
-            </div>
-        </div>
-        <!--End left navigation-->
-
     </div>
 </div>
 {% endblock %}
