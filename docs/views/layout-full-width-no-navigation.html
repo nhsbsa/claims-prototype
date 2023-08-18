@@ -1,0 +1,66 @@
+<!-- Extends the layout from /docs/views/template.html -->
+{% extends "template.html" %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/prism.css" rel="stylesheet">
+  <link href="/css/docs.css" rel="stylesheet">
+{% endblock %}
+
+{% set bodyClasses = "full-width" %}
+
+{% block pageTitle %}
+    {{ pageTitle({}) }}
+{% endblock %}
+
+{% block header %}
+    {% include "partials/header.njk" %}
+{% endblock %}
+
+
+{% block wrapper %}
+    <div class="nhsBSA-sidebar-container">
+        <div class="nhsBSA-sidebar-wrapper">
+            <!-- Start of central content -->
+            <div class="nhsBSA-sidebar-content">
+                <div class="nhsuk-width-container-fluid">
+                    {% block main %}
+                        <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+                            {% block content %}{% endblock %}
+                        </main>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+  <footer role="contentinfo">
+    <div class="nhsuk-footer" id="nhsuk-footer">
+        <div class="nhsuk-width-container-fluid">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Accessibility
+                        statement</a></li>
+                <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Contact us</a></li>
+                <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Cookies</a></li>
+                <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Terms and
+                        conditions</a></li>
+                <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="/">Index</a></li>
+            </ul>
+
+            <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+        </div>
+    </div>
+  </footer>
+{% endblock %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+{% endblock %}
