@@ -7,7 +7,31 @@
   <link href="/css/docs.css" rel="stylesheet">
 {% endblock %}
 
-{% set bodyClasses = "full-width" %}
+{% set bodyClasses = bodyClasses | default('full-width') %}
+
+{% set mainNavigation = [
+    {
+        name: 'Home',
+        path: '/alpha/templates/standard-page-full'
+    },
+    {
+        name: 'Search',
+        path: '/alpha/templates/search'
+    },
+    {
+        name: 'Claims',
+        path: '/alpha/templates/claims'
+    },
+    {
+        name: 'Contested claims',
+        path: '/alpha/templates/contested-claims'
+    },
+    {
+        name: 'Reports',
+        path: '/alpha/templates/reports'
+    }
+]
+%}
 
 {% block pageTitle %}
     {{ pageTitle({}) }}
@@ -16,7 +40,6 @@
 {% block header %}
     {% include "partials/header.njk" %}
 {% endblock %}
-
 
 {% block wrapper %}
     <div class="nhsBSA-sidebar-container">
@@ -32,46 +55,16 @@
                     </button>
                 </p>
                 <ul class="nhsuk-header__navigation-list">
-                    <li class="nhsuk-header__navigation-item">
-                        <a class="nhsuk-header__navigation-link" href="/">
-                            Home
-                            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
-                                <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nhsuk-header__navigation-item">
-                        <a class="nhsuk-header__navigation-link" href="#">
-                            Search
-                            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
-                            <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nhsuk-header__navigation-item">
-                        <a class="nhsuk-header__navigation-link" href="#">
-                            Claims
-                            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
-                            <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nhsuk-header__navigation-item">
-                        <a class="nhsuk-header__navigation-link" href="#">
-                            Contested claims
-                            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
-                            <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nhsuk-header__navigation-item">
-                        <a class="nhsuk-header__navigation-link" href="#">
-                            Reports
-                            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
-                            <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                            </svg>
-                        </a>
-                    </li>
+                    {% for link in mainNavigation %}
+                        <li class="nhsuk-header__navigation-item">
+                            <a class="nhsuk-header__navigation-link {% if link.path == '/' + path %}active{% endif %}" href="{{ link.path }}">
+                                {{ link.name }}
+                                <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+                                    <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                    {% endfor %}
                 </ul>
                 <p class="logged-in">Logged in as Isla Fields<br /><a href="/">Sign out</a></p>
             </nav>
@@ -90,26 +83,34 @@
 {% endblock %}
 
 {% block footer %}
-  <footer role="contentinfo">
-    <div class="nhsuk-footer" id="nhsuk-footer">
-        <div class="nhsuk-width-container-fluid">
-            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-            <ul class="nhsuk-footer__list">
-                <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Accessibility
-                        statement</a></li>
-                <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Contact us</a></li>
-                <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Cookies</a></li>
-                <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
-                </li>
-                <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Terms and
-                        conditions</a></li>
-                <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="/">Index</a></li>
-            </ul>
-
-            <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
-        </div>
-    </div>
-  </footer>
+    {{ footer({
+        "links": [
+        {
+            "URL": "#",
+            "label": "Accessibility statement"
+        },
+        {
+            "URL": "#",
+            "label": "Contact us"
+        },
+        {
+            "URL": "#",
+            "label": "Cookies"
+        },
+        {
+            "URL": "#",
+            "label": "Privacy policy"
+        },
+        {
+            "URL": "#",
+            "label": "Terms and conditions"
+        },
+        {
+            "URL": "#",
+            "label": "Index"
+        }
+        ]
+    }) }}
 {% endblock %}
 
 {% block bodyEnd %}
