@@ -1,8 +1,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout-full-width-no-navigation.html -->
-{% set bodyClasses = "full-width navigation-hide-desktop" %}
-{% extends 'layout-full-width.html' %}
+{% extends 'layout-full-width-no-navigation.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -11,7 +10,7 @@
 
 <!-- Start of page title -->
 {% block pageTitle %}
-When did you receive the claim? - Manage member state claims - NHSBSA
+    When did you receive the claim? - Manage member state claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 

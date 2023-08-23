@@ -1,8 +1,8 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout-full-width.html -->
-{% set bodyClasses = "full-width navigation-hide-desktop" %}
-{% extends 'layout-full-width.html' %}
+{% set bodyClasses = "full-width" %}
+{% extends 'layout-full-width-no-navigation.html' %}
 
 <!-- 
   In /views/layout.html you can:
@@ -10,12 +10,9 @@
     - add custom CSS and JavaScript
 -->
 
-<!-- Start of page title -->
 {% block pageTitle %}
     Manage member state claims - NHSBSA
 {% endblock %}
-<!-- End of page title -->
-
 
 {% block beforeContent %}
     {{ breadcrumb({
