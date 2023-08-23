@@ -1,5 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
+{% set mainNavigation = [
+    {
+        name: 'Home',
+        path: '/alpha/version-01/claims/screen-per-question/with-navigation/index'
+    },
+    {
+        name: 'Search',
+        path: '/alpha/version-01/claims/screen-per-question/with-navigation/search'
+    },
+    {
+        name: 'Claims',
+        path: '/alpha/version-01/claims/screen-per-question/with-navigation/claims',
+        active: true
+    },
+    {
+        name: 'Contested claims',
+        path: '/alpha/version-01/claims/screen-per-question/with-navigation/contested-claims'
+    },
+    {
+        name: 'Reports',
+        path: '/alpha/version-01/claims/screen-per-question/with-navigation/reports'
+    }
+]
+%}
 <!-- Extends the layout from /views/layout-full-width.html -->
 {% extends 'layout-full-width.html' %}
 <!-- 
@@ -37,6 +60,7 @@ What type of claim is it? - Manage member state claims - NHSBSA
 <!-- Start of central content -->
 {% block content %}
 <div class="nhsuk-grid-row">
+    {{ testVar }}
     <div class="nhsuk-grid-column-full">
 
         <!-- Start of back link -->
