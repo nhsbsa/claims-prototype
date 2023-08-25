@@ -1,4 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    {
+        name: 'Home',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/home'
+    },
+    {
+        name: 'Search',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/search'
+    },
+    {
+        name: 'Claims',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/index',
+        active: true
+    },
+    {
+        name: 'Contested claims',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/contested-claims'
+    },
+    {
+        name: 'Reports',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/reports'
+    }
+]
+%}
 
 <!-- Extends the layout from /views/layout-full-width.html -->
 {% extends 'layout-full-width.html' %}
@@ -165,16 +189,18 @@ Create a new claim - Manage member state claims - NHSBSA
 
 
 
-                <!--Type of claim -->
+                <!-- Type of claim -->
                 <div class="nhsuk-form-group nhsuk-u-padding-bottom-4">
-                    <fieldset class="nhsuk-fieldset">
+
+                    <fieldset class="nhsuk-fieldset" aria-describedby="type-hint">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
                             <h1 class="nhsuk-fieldset__heading">
                                 Type of claim
                             </h1>
                         </legend>
 
-                        <div class="nhsuk-radios">
+                        <div class="nhsuk-radios nhsuk-radios--conditional">
+
                             <div class="nhsuk-radios__item">
                                 <input class="nhsuk-radios__input" id="type-main" name="type" type="radio"
                                     value="Main - first half year">
@@ -182,18 +208,35 @@ Create a new claim - Manage member state claims - NHSBSA
                                     Main - first half year
                                 </label>
                             </div>
+
+
                             <div class="nhsuk-radios__item">
                                 <input class="nhsuk-radios__input" id="type-supplemental" name="type" type="radio"
-                                    value="Supplemental - second half year">
+                                    value="Supplemental - second half year"
+                                    aria-controls="conditional-type-supplemental" aria-expanded="false">
                                 <label class="nhsuk-label nhsuk-radios__label" for="type-supplemental">
                                     Supplemental - second half year
                                 </label>
                             </div>
+
+                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+                                id="conditional-type-supplemental">
+
+                                <div class="nhsuk-form-group">
+                                    <label class="nhsuk-label" for="subref">
+                                        Sub reference (optional)
+                                    </label>
+                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="subref" name="subref"
+                                        type="text">
+                                </div>
+
+                            </div>
+
                         </div>
                     </fieldset>
+
                 </div>
 
-              
 
                 <!-- Target date to complete claim -->
                 <div class="nhsuk-form-group nhsuk-u-padding-bottom-4">

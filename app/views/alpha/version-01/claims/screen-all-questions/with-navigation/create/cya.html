@@ -1,4 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    {
+        name: 'Home',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/home'
+    },
+    {
+        name: 'Search',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/search'
+    },
+    {
+        name: 'Claims',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/index',
+        active: true
+    },
+    {
+        name: 'Contested claims',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/contested-claims'
+    },
+    {
+        name: 'Reports',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/reports'
+    }
+]
+%}
 
 <!-- Extends the layout from /views/layout-full-width.html -->
 {% extends 'layout-full-width.html' %}
@@ -183,6 +207,28 @@ Check your answers - Managing Member State claims - NHSBSA
                                                 </a>
                                             </dd>
                                         </div>
+
+                                        {% if data['type'] %}
+                                {% if data['type'] === 'Supplemental - second half year' %}
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Claim sub-reference
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['subref'] %}
+                                        {{ data['subref'] }}
+                                        {% else %}
+                                        -
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="#">
+                                            Change<span class="nhsuk-u-visually-hidden"> claim sub reference</span>
+                                        </a>
+                                    </dd>
+                                </div>
+                                {% endif %}
+                                {% endif %}
 
                                         <div class="nhsuk-summary-list__row">
                                             <dt class="nhsuk-summary-list__key">
