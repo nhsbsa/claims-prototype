@@ -1,7 +1,31 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    {
+        name: 'Home',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/#'
+    },
+    {
+        name: 'Search',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/#'
+    },
+    {
+        name: 'Claims',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/index',
+        active: true
+    },
+    {
+        name: 'Contested claims',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/#'
+    },
+    {
+        name: 'Reports',
+        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/#'
+    }
+]
+%}
 
-<!-- Extends the layout from /views/layout-full-width-no-navigation.html -->
-{% extends 'layout-full-width-no-navigation.html' %}
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -60,12 +84,12 @@ Claim created - Manage member state claims - NHSBSA
                     %}2023{% endif %}.</p>
                 <h2 class="heading-medium">What happens next</h2>
                 <p>You can now add the treatment details the member state have sent you.</p>
-                <a href="#">
+                <a href="../summary/no-treatments">
                     <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                         Manage claim
                     </button>
                 </a>
-                <a href="#">
+                <a href="with-hint-text">
                     <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
                         Create new claim
                     </button>

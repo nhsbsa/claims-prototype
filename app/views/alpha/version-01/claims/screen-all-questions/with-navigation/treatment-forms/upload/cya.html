@@ -1,0 +1,148 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    {
+    name: 'Summary',
+    path: '/alpha/version-01/claims/screen-all-questions/with-navigation/summary/with-treatments'
+    },
+    {
+    name: 'Treatment forms',
+    path: '/alpha/version-01/claims/screen-all-questions/with-navigation/treatment-forms/with-treatments',
+    active: true
+    },
+    {
+    name: 'Documents',
+    path: ''
+    },
+    {
+    name: 'Case history',
+    path: '#'
+    }
+    ]
+    %}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Claim type - Managing Memeber State claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="dashboard">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="claims">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="claims">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+                    <!-- Start of back link -->
+                    <div class="nhsuk-back-link">
+                        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                                <path
+                                    d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                                </path>
+                            </svg>
+                            Go back</a>
+                    </div>
+                    <!-- End of back link -->
+
+                    <!-- Start of main content -->
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-two-thirds">
+                            <form action="confirmation" method="post">
+                                <div class="nhsuk-form-group">
+                               
+                                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                                            <h1 class="nhsuk-fieldset__heading">
+                                                <span class="nhsuk-caption-l">Add treatments</span>
+                                                Check your answers
+                                            </h1>
+                                        </legend>
+
+
+                                            <div class="nhsuk-card">
+                                                <div class="nhsuk-card__content">
+
+                                                    <dl class="nhsuk-summary-list">
+
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Submmission type
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                {% if data['data-source'] %}
+                                                                {{ data['data-source'] }}
+                                                                {% else %}
+                                                                RINA
+                                                                {% endif %}
+                                                            </dd>
+                                                            <dd class="nhsuk-summary-list__actions">
+                                                                <a href="#">
+                                                                    Change<span class="nhsuk-u-visually-hidden"> submission type</span>
+                                                                </a>
+                                                            </dd>
+                                                        </div>
+            
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                File
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                filename.xml
+                                                            </dd>
+                                                            <dd class="nhsuk-summary-list__actions">
+                                                                <a href="#">
+                                                                    Change<span class="nhsuk-u-visually-hidden"> reference</span>
+                                                                </a>
+                                                            </dd>
+                                                        </div>
+                                                    </dl>
+            
+            
+                                               
+                                                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                                                    Submit
+                                                </button>
+                                            </form>
+                                            </div>
+
+                                                </div>
+                                              </div>
+
+
+                            <a href="#" class="nhsuk-link">Cancel</a>
+                        </div>
+                    </div>
+  
+
+    </div>
+</div>
+{% endblock %}
+<!-- End of central content -->
