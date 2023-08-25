@@ -10,10 +10,10 @@ const axios = require('axios');
 //What type of claim is it? 
 router.post('/route-with-nav-claim-type', function(req,res){
     var type = req.session.data['type']
-    if (type == "Main - first half year"){
+    if (type == "Main"){
         res.redirect('/alpha/version-01/claims/screen-per-question/with-navigation/create/target-date')
     }
-    else if (type == "Supplemental - second half year"){
+    else if (type == "Supplementary"){
         res.redirect('/alpha/version-01/claims/screen-per-question/with-navigation/create/sub-reference')
     }
     else {
@@ -28,10 +28,10 @@ router.post('/route-with-nav-claim-type', function(req,res){
 //What type of claim is it? 
 router.post('/route-without-nav-claim-type', function(req,res){
     var type = req.session.data['type']
-    if (type == "Main - first half year"){
+    if (type == "Main"){
         res.redirect('/alpha/version-01/claims/screen-per-question/without-navigation/create/target-date')
     }
-    else if (type == "Supplemental - second half year"){
+    else if (type == "Supplementary"){
         res.redirect('/alpha/version-01/claims/screen-per-question/without-navigation/create/sub-reference')
     }
     else {
