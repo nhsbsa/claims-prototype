@@ -1,0 +1,286 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+  {
+  name: 'Summary',
+  path: '/alpha/version-01/claims/hybrid/without-navigation/summary/with-treatments'
+  },
+  {
+  name: 'Treatment forms',
+  path: '/alpha/version-01/claims/hybrid/without-navigation/treatment-forms/with-treatments',
+  active: true
+  },
+  {
+  name: 'Documents',
+  path: ''
+  },
+  {
+  name: 'Case history',
+  path: '#'
+  }
+  ]
+  %}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Managing Member State claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Claims</a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="#">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claime
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+
+
+
+                    <div class="nhsuk-grid-row">
+
+                        <div class="nhsuk-grid-column-full">
+                            <h1 class="nhsuk-heading-xl ">
+                                Treatment forms
+                            </h1>
+                        </div>
+                    </div>
+
+
+                    <div class="nhsuk-grid-row">
+
+                        <div class="nhsuk-grid-column-full">
+
+                            <div class="nhsuk-card">
+                                <div class="nhsuk-card__content">
+                                    <h3 class="nhsuk-card__heading">
+                                        Search
+
+                                    </h3>
+                                    <hr style="margin:-6px 0px 12px 0px;" />
+
+
+                                    <div class="nhsuk-grid-row">
+
+                                      <div class="nhsuk-grid-column-one-third">
+                                        <div class="nhsuk-form-group">
+                                          <label class="nhsuk-label" for="example">
+                                              Treatment ID
+                                          </label>
+                                          <div class="nhsuk-hint" id="treatment-id-hint">
+                                              For example, 6986
+                                          </div>
+                                          <input class="nhsuk-input  id="treatment-id"
+                                              name="treatment-id" type="text">
+                                      </div>
+
+                                        </div>
+
+                                        <div class="nhsuk-grid-column-one-third">
+                                          <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label" for="example">
+                                                First name
+                                            </label>
+                                            <div class="nhsuk-hint" id="treatment-id-hint">
+                                                For example, John
+                                            </div>
+                                            <input class="nhsuk-input  id="treatment-id"
+                                                name="treatment-id" type="text">
+                                        </div>
+
+                                        </div>
+
+                                        <div class="nhsuk-grid-column-one-third">
+                                          <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label" for="example">
+                                                Last name
+                                            </label>
+                                            <div class="nhsuk-hint" id="treatment-id-hint">
+                                                For example, Smith
+                                            </div>
+                                            <input class="nhsuk-input  id="treatment-id"
+                                                name="treatment-id" type="text">
+                                        </div>
+
+                                        </div>
+
+
+                                
+
+                                        </div>
+                                        <div class="nhsuk-grid-row">
+
+                                          <div class="nhsuk-grid-column-full">
+                                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                                          Search
+                                        </button>
+                                        </div>
+                                        </div>
+
+
+
+
+                              
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="nhsuk-grid-row">
+
+                        <div class="nhsuk-grid-column-full">
+
+                            <div class="nhsuk-card">
+                                <div class="nhsuk-card__content">
+                                  <h3>Showing 0 results of 0 for: Withdrawn</h2>
+
+                                  <details class="nhsuk-details">
+                                    <summary class="nhsuk-details__summary">
+                                      <span class="nhsuk-details__summary-text">
+                                        Filter and sort options
+                                      </span>
+                                    </summary>
+                                    <div class="nhsuk-details__text">
+                                      <div class="nhsuk-grid-row">
+
+                                        <div class="nhsuk-grid-column-one half">
+                               
+
+                                          <form>
+
+                                            <!-- <div class="nhsuk-form-group">
+                                          
+                                              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                  <h1 class="nhsuk-fieldset__heading">
+                                                    Filter by status
+                                                  </h1>
+                                                </legend>
+                                          
+                                                <div class="nhsuk-hint" id="example-hint">
+                                                  Select all options.
+                                                </div>
+                                          
+                                                <div class="nhsuk-checkboxes">
+                                          
+                                                  <div class="nhsuk-checkboxes__item">
+                                                    <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                                                      Accepted
+                                                    </label>
+                                                  </div>
+                                          
+                                                  <div class="nhsuk-checkboxes__item">
+                                                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                                                      Contested
+                                                    </label>
+                                                  </div>
+                                          
+                                                  <div class="nhsuk-checkboxes__item">
+                                                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                                                  To be checked
+                                                    </label>
+                                                  </div>
+
+                                                  <div class="nhsuk-checkboxes__item">
+                                                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                                                      Withdrawn
+                                                    </label>
+                                                  </div>
+                                          
+                                                </div>
+                                              </fieldset>
+                                          
+                                            </div> -->
+                                          
+                                          </form>
+
+
+
+
+                                          </div>
+                                          <div class="nhsuk-grid-column-one half">
+                                          </div>
+                                          </div>
+
+                                  
+                                    </div>
+                                  </details>
+
+
+
+                                  <table role="table" class="nhsuk-table-responsive">
+                                    <!-- <caption class="nhsuk-table__caption">Showing results for: All treatments</caption>  -->
+                                    <thead role="rowgroup" class="nhsuk-table__head">
+                                      <tr role="row">
+                                        <th role="columnheader" class="" scope="col">
+                                          Treatment ID
+                                        </th>
+                                        <th role="columnheader" class="" scope="col">
+                                          First name
+                                        </th>
+                                        <th role="columnheader" class="" scope="col">
+                                          Last name
+                                        </th>
+                                        <th role="columnheader" class="" scope="col">
+                                            Cost (£)
+                                          </th>
+                                          <th role="columnheader" class="" scope="col">
+                                            Status
+                                          </th>
+                                          <th role="columnheader" class="" scope="col">
+                                            Actions
+                                          </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody class="nhsuk-table__body">
+
+
+
+                                     
+                                    </tbody>
+                                  </table>
+
+                               
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+        
+
+
+
+    </div>
+</div>
+{% endblock %}
+<!-- End of central content -->

@@ -1,0 +1,129 @@
+<!-- Extends the layout from /docs/views/template.html -->
+{% extends "template.html" %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/prism.css" rel="stylesheet">
+  <link href="/css/docs.css" rel="stylesheet">
+{% endblock %}
+
+{% set bodyClasses = bodyClasses | default('full-width') %}
+
+{% set setNavigation = [
+    {
+        name: 'Summary',
+        path: '#'
+    },
+    {
+        name: 'Treatment forms',
+        path: '#'
+    },
+    {
+        name: 'Documents',
+        path: '#'
+    },
+    {
+        name: 'Case history',
+        path: '#'
+    }
+]
+%}
+{% set mainNavigation = mainNavigation | default(setNavigation) %}
+
+{% block pageTitle %}
+    {{ pageTitle({}) }}
+{% endblock %}
+
+{% block header %}
+    {% include "partials/header.njk" %}
+{% endblock %}
+
+{% block wrapper %}
+    <div class="nhsBSA-sidebar-container">
+        <div class="nhsBSA-sidebar-wrapper">
+            <nav class="nhsuk-header__navigation" id="header-navigation" role="navigation" aria-label="Primary navigation" aria-labelledby="label-navigation">
+                <p class="nhsuk-header__navigation-title">
+                    <span id="label-navigation">Menu</span>
+                    <button class="nhsuk-header__navigation-close" id="close-menu">
+                        <svg class="nhsuk-icon nhsuk-icon__close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="27" height="27">
+                            <path d="M13.41 12l5.3-5.29a1 1 0 1 0-1.42-1.42L12 10.59l-5.29-5.3a1 1 0 0 0-1.42 1.42l5.3 5.29-5.3 5.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l5.29-5.3 5.29 5.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"></path>
+                        </svg>
+                    <span class="nhsuk-u-visually-hidden">Close menu</span>
+                    </button>
+                </p>
+                <h3 class="nhsuk-heading-s" style="padding-top:26px; padding-left:32px; padding-right:32px; padding-bottom: 0; margin-bottom:0">
+                    Claim ID: 6784
+                </h3>
+                <p style="padding-top:0; padding-left:32px; padding-right:32px; padding-bottom: 0;">
+                    {% if data['country'] %}
+                    {{ data['country'] }}
+                    {% else %}
+                    France
+                    {% endif %}
+                </p>
+
+                <ul class="nhsuk-header__navigation-list">
+                    {% for link in mainNavigation %}
+                        <li class="nhsuk-header__navigation-item">
+                            <a class="nhsuk-header__navigation-link {% if (link.active) or (link.path == '/' + path) %}active{% endif %}" href="{{ link.path }}">
+                                {{ link.name }}
+                                <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+                                    <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <p class="logged-in">Logged in as Isla Fields<br /><a href="/">Sign out</a></p>
+            </nav>
+            <!-- Start of central content -->
+            <div class="nhsBSA-sidebar-content">
+                <div class="nhsuk-width-container-fluid">
+                    {% block main %}
+                        <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+                            {% block content %}{% endblock %}
+                        </main>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ footer({
+        "links": [
+        {
+            "URL": "#",
+            "label": "Accessibility statement"
+        },
+        {
+            "URL": "#",
+            "label": "Contact us"
+        },
+        {
+            "URL": "#",
+            "label": "Cookies"
+        },
+        {
+            "URL": "#",
+            "label": "Privacy policy"
+        },
+        {
+            "URL": "#",
+            "label": "Terms and conditions"
+        },
+        {
+            "URL": "#",
+            "label": "Index"
+        }
+        ]
+    }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+{% endblock %}
