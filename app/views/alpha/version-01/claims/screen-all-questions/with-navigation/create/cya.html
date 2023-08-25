@@ -2,11 +2,11 @@
 {% set mainNavigation = [
     {
         name: 'Home',
-        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/home'
+        path: '#'
     },
     {
         name: 'Search',
-        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/search'
+        path: '#'
     },
     {
         name: 'Claims',
@@ -15,11 +15,11 @@
     },
     {
         name: 'Contested claims',
-        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/contested-claims'
+        path: '#'
     },
     {
         name: 'Reports',
-        path: '/alpha/version-01/claims/screen-all-questions/with-navigation/reports'
+        path: '#'
     }
 ]
 %}
@@ -198,7 +198,7 @@ Check your answers - Managing Member State claims - NHSBSA
                                                 {% if data['type'] %}
                                                 {{ data['type'] }}
                                                 {% else %}
-                                                Main - first half year
+                                                Main
                                                 {% endif %}
                                             </dd>
                                             <dd class="nhsuk-summary-list__actions">
@@ -209,10 +209,10 @@ Check your answers - Managing Member State claims - NHSBSA
                                         </div>
 
                                         {% if data['type'] %}
-                                {% if data['type'] === 'Supplemental - second half year' %}
+                                {% if data['type'] === 'Supplementary' %}
                                 <div class="nhsuk-summary-list__row">
                                     <dt class="nhsuk-summary-list__key">
-                                        Claim sub-reference
+                                        Claim sub-reference (optional)
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
                                         {% if data['subref'] %}

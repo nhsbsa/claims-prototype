@@ -195,7 +195,7 @@ Check your answers - Managing Member State claims - NHSBSA
                                         {% if data['type'] %}
                                         {{ data['type'] }}
                                         {% else %}
-                                        Main - first half year
+                                        Main
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
@@ -206,10 +206,10 @@ Check your answers - Managing Member State claims - NHSBSA
                                 </div>
 
                                 {% if data['type'] %}
-                                {% if data['type'] === 'Supplemental - second half year' %}
+                                {% if data['type'] === 'Supplementary' %}
                                 <div class="nhsuk-summary-list__row">
                                     <dt class="nhsuk-summary-list__key">
-                                        What is the claim sub-reference?
+                                        What is the sub-reference for this claim? (optional)
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
                                         {% if data['subref'] %}
