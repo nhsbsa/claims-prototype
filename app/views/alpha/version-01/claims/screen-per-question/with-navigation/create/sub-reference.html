@@ -33,7 +33,7 @@
 
 <!-- Start of page title -->
 {% block pageTitle %}
-What type of claim is it? - Manage member state claims - NHSBSA
+Claim sub-reference - Manage member state claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -60,7 +60,6 @@ What type of claim is it? - Manage member state claims - NHSBSA
 <!-- Start of central content -->
 {% block content %}
 <div class="nhsuk-grid-row">
-    {{ testVar }}
     <div class="nhsuk-grid-column-full">
 
         <!-- Start of back link -->
@@ -76,37 +75,23 @@ What type of claim is it? - Manage member state claims - NHSBSA
         </div>
         <!-- End of back link -->
 
-        <!-- Start of form -->
+        <!-- Start of main form -->
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-                <form action="../../../../route-with-nav-claim-type" method="post">
+                <form action="target-date" method="post">
                     <div class="nhsuk-form-group">
                         <fieldset class="nhsuk-fieldset">
                             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                                 <h1 class="nhsuk-fieldset__heading">
                                     <span class="nhsuk-caption-l">Create a new claim</span>
-                                    What type of claim is it?
+                                    What is the claim sub-reference? (optional)
                                 </h1>
                             </legend>
-                            <div class="nhsuk-hint" id="article-hint">
-                                Select one.
+
+                            <div class="nhsuk-hint" id="subref-hint">
+                                For example, 33778844AA890E.
                             </div>
-                            <div class="nhsuk-radios">
-                                <div class="nhsuk-radios__item">
-                                    <input class="nhsuk-radios__input" id="type-main" name="type" type="radio"
-                                        value="Main - first half year">
-                                    <label class="nhsuk-label nhsuk-radios__label" for="type-main">
-                                        Main - first half year
-                                    </label>
-                                </div>
-                                <div class="nhsuk-radios__item">
-                                    <input class="nhsuk-radios__input" id="type-supplemental" name="type" type="radio"
-                                        value="Supplemental - second half year">
-                                    <label class="nhsuk-label nhsuk-radios__label" for="type-supplemental">
-                                        Supplemental - second half year
-                                    </label>
-                                </div>
-                            </div>
+                            <input class="nhsuk-input nhsuk-u-width-one-third" id="subref" name="subref" type="text">
                         </fieldset>
                     </div>
                     <button class="nhsuk-button" data-module="nhsuk-button" type="submit">

@@ -6,6 +6,7 @@ const router = express.Router();
 
 
 // Alpha
-router.use('/alpha', require('./views/alpha/_routes'));
+// router.use('/alpha', require('./views/alpha/_routes'));
+router.use('/alpha/version-01', require('./views/alpha/version-01/_routes'));
 
 module.exports = router;

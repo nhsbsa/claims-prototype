@@ -1,4 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Home',
+path: '/alpha/version-01/claims/screen-all-questions/with-navigation/home'
+},
+{
+name: 'Search',
+path: '/alpha/version-01/claims/screen-all-questions/with-navigation/search'
+},
+{
+name: 'Claims',
+path: '/alpha/version-01/claims/screen-all-questions/with-navigation/index',
+active: true
+},
+{
+name: 'Contested claims',
+path: '/alpha/version-01/claims/screen-all-questions/with-navigation/contested-claims'
+},
+{
+name: 'Reports',
+path: '/alpha/version-01/claims/screen-all-questions/with-navigation/reports'
+}
+]
+%}
 
 <!-- Extends the layout from /views/layout-full-width.html -->
 {% extends 'layout-full-width.html' %}
@@ -66,8 +90,8 @@ Create a new claim - Manage member state claims - NHSBSA
                                         Day
                                     </label>
                                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                        id="submission-date-day" name="submission-date-day" type="text"
-                                        pattern="[0-9]*" inputmode="numeric">
+                                        id="submission-date-day" name="submission-date-day" type="text" pattern="[0-9]*"
+                                        inputmode="numeric">
                                 </div>
                             </div>
                             <div class="nhsuk-date-input__item">
@@ -131,7 +155,7 @@ Create a new claim - Manage member state claims - NHSBSA
                         For example, 2023.
                     </div>
                     <input class="nhsuk-input nhsuk-input--width-4" id="financial-year" name="financial-year"
-                                type="text">
+                        type="text">
                 </div>
 
                 <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
@@ -151,15 +175,15 @@ Create a new claim - Manage member state claims - NHSBSA
                         <div class="nhsuk-radios">
 
                             <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="article-average-2a" name="article"
-                                    type="radio" value="Article 63 (2a) - average cost">
+                                <input class="nhsuk-radios__input" id="article-average-2a" name="article" type="radio"
+                                    value="Article 63 (2a) - average cost">
                                 <label class="nhsuk-label nhsuk-radios__label" for="article-average-2a">
                                     Article 63 (2a) - average cost
                                 </label>
                             </div>
                             <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="article-average-2b" name="article"
-                                    type="radio" value="Article 63 (2b) - average cost">
+                                <input class="nhsuk-radios__input" id="article-average-2b" name="article" type="radio"
+                                    value="Article 63 (2b) - average cost">
                                 <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
                                     Article 63 (2b) - average cost
                                 </label>
@@ -181,9 +205,10 @@ Create a new claim - Manage member state claims - NHSBSA
 
                 <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-                <!--Type of claim -->
+                <!-- Type of claim -->
                 <div class="nhsuk-form-group">
-                    <fieldset class="nhsuk-fieldset">
+
+                    <fieldset class="nhsuk-fieldset" aria-describedby="type-hint">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
                             <h1 class="nhsuk-fieldset__heading">
                                 Type of claim
@@ -193,7 +218,9 @@ Create a new claim - Manage member state claims - NHSBSA
                         <div class="nhsuk-hint" id="type-hint">
                             Select one.
                         </div>
-                        <div class="nhsuk-radios">
+
+                        <div class="nhsuk-radios nhsuk-radios--conditional">
+
                             <div class="nhsuk-radios__item">
                                 <input class="nhsuk-radios__input" id="type-main" name="type" type="radio"
                                     value="Main - first half year">
@@ -201,15 +228,35 @@ Create a new claim - Manage member state claims - NHSBSA
                                     Main - first half year
                                 </label>
                             </div>
+
+
                             <div class="nhsuk-radios__item">
                                 <input class="nhsuk-radios__input" id="type-supplemental" name="type" type="radio"
-                                    value="Supplemental - second half year">
+                                    value="Supplemental - second half year"
+                                    aria-controls="conditional-type-supplemental" aria-expanded="false">
                                 <label class="nhsuk-label nhsuk-radios__label" for="type-supplemental">
                                     Supplemental - second half year
                                 </label>
                             </div>
+
+                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+                                id="conditional-type-supplemental">
+
+                                <div class="nhsuk-form-group">
+                                    <label class="nhsuk-label" for="subref">
+                                        Sub reference (optional)
+                                    </label>
+                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="subref" name="subref"
+                                        type="text">
+                                </div>
+
+                            </div>
+
+
+
                         </div>
                     </fieldset>
+
                 </div>
 
                 <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">

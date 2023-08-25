@@ -2,7 +2,7 @@
 {% set mainNavigation = [
     {
         name: 'Home',
-        path: '/alpha/version-01/claims/screen-per-question/with-navigation/index'
+        path: '/alpha/version-01/claims/screen-per-question/with-navigation/home'
     },
     {
         name: 'Search',
@@ -10,7 +10,7 @@
     },
     {
         name: 'Claims',
-        path: '/alpha/version-01/claims/screen-per-question/with-navigation/claims',
+        path: '/alpha/version-01/claims/screen-per-question/with-navigation/index',
         active: true
     },
     {
@@ -205,6 +205,28 @@ Check your answers - Managing Member State claims - NHSBSA
                                     </dd>
                                 </div>
 
+                                {% if data['type'] %}
+                                {% if data['type'] === 'Supplemental - second half year' %}
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        What is the claim sub-reference?
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['subref'] %}
+                                        {{ data['subref'] }}
+                                        {% else %}
+                                        -
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="#">
+                                            Change<span class="nhsuk-u-visually-hidden"> claim sub reference</span>
+                                        </a>
+                                    </dd>
+                                </div>
+                                {% endif %}
+                                {% endif %}
+
                                 <div class="nhsuk-summary-list__row">
                                     <dt class="nhsuk-summary-list__key">
                                         What is the target date to complete this claim?
@@ -236,7 +258,7 @@ Check your answers - Managing Member State claims - NHSBSA
                     </button>
                 </form>
 
-                <a href="claims" class="nhsuk-link">Cancel</a>
+                <a href="/alpha/version-01/claims/screen-per-question/with-navigation/index" class="nhsuk-link">Cancel</a>
             </div>
         </div>
         <!-- End of cya -->

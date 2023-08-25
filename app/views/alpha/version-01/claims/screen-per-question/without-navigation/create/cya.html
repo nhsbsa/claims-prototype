@@ -182,6 +182,28 @@ Check your answers - Managing Member State claims - NHSBSA
                                     </dd>
                                 </div>
 
+                                {% if data['type'] %}
+                                {% if data['type'] === 'Supplemental - second half year' %}
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        What is the claim sub-reference?
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['subref'] %}
+                                        {{ data['subref'] }}
+                                        {% else %}
+                                        -
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="#">
+                                            Change<span class="nhsuk-u-visually-hidden"> claim sub reference</span>
+                                        </a>
+                                    </dd>
+                                </div>
+                                {% endif %}
+                                {% endif %}
+
                                 <div class="nhsuk-summary-list__row">
                                     <dt class="nhsuk-summary-list__key">
                                         What is the target date to complete this claim?

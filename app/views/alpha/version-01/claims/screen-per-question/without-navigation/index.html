@@ -1,8 +1,31 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    {
+        name: 'Home',
+        path: '/alpha/version-01/claims/screen-per-question/without-navigation/home'
+    },
+    {
+        name: 'Search',
+        path: '/alpha/version-01/claims/screen-per-question/without-navigation/search'
+    },
+    {
+        name: 'Claims',
+        path: '/alpha/version-01/claims/screen-per-question/without-navigation/index',
+        active: true
+    },
+    {
+        name: 'Contested claims',
+        path: '/alpha/version-01/claims/screen-per-question/without-navigation/contested-claims'
+    },
+    {
+        name: 'Reports',
+        path: '/alpha/version-01/claims/screen-per-question/without-navigation/reports'
+    }
+]
+%}
 
 <!-- Extends the layout from /views/layout-full-width.html -->
-{% set bodyClasses = "full-width" %}
-{% extends 'layout-full-width-no-navigation.html' %}
+{% extends 'layout-full-width.html' %}
 
 <!-- 
   In /views/layout.html you can:
