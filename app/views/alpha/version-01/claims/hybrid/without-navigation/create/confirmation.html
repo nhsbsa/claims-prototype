@@ -1,7 +1,31 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    {
+        name: 'Home',
+        path: '/alpha/version-01/claims/hybrid/without-navigation/home'
+    },
+    {
+        name: 'Search',
+        path: '/alpha/version-01/claims/hybrid/without-navigation/search'
+    },
+    {
+        name: 'Claims',
+        path: '/alpha/version-01/claims/hybrid/without-navigation/index',
+        active: true
+    },
+    {
+        name: 'Contested claims',
+        path: '/alpha/version-01/claims/hybrid/without-navigation/contested-claims'
+    },
+    {
+        name: 'Reports',
+        path: '/alpha/version-01/claims/hybrid/without-navigation/reports'
+    }
+]
+%}
 
-<!-- Extends the layout from /views/layout-full-width-no-navigation.html -->
-{% extends 'layout-full-width-no-navigation.html' %}
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
