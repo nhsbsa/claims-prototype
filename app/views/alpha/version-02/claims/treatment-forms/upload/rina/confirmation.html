@@ -1,0 +1,95 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    {
+    name: 'Summary',
+    path: '/alpha/version-02/claims/summary/with-treatments'
+    },
+    {
+    name: 'Treatment forms',
+    path: '/alpha/version-02/claims/treatment-forms/with-treatments',
+    active: true
+    },
+    {
+    name: 'Documents',
+    path: '/alpha/version-02/claims/documents/index'
+    },
+    {
+    name: 'Case history',
+    path: '/alpha/version-02/claims/case-history/index'
+    }
+    ]
+    %}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Confirmation - Managing Memeber State claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../index">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+
+        <!-- Start of confirmation -->
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+
+
+                <div class="confirmation-box">
+                    <h1 class="heading-xlarge"><span id="done-tick"></span>50 treatments added
+                    </h1>
+                    <h2 class="heading-large"><span class="heading-secondary" style="color:white;">OHS Claim ID
+                            number<br />
+                            6784
+                        </span>
+
+                    </h2>
+                </div>
+                <p>You have added treatments for {% if data['country'] %}{{data['country'] }}{% else %}France{% endif %}.</p>
+                <h2 class="heading-medium">What happens next</h2>
+                <p>You can now view the treatment details you have added.</p>
+                <a href="../../with-treatments">
+                    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                        View treatments
+                    </button>
+                </a>
+
+            </div>
+        </div>
+        <!-- End of confirmation -->
+
+  
+
+    </div>
+</div>
+{% endblock %}
+<!-- End of central content -->
