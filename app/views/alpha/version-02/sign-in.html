@@ -1,0 +1,95 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-central-no-navigation-signed-out.html -->
+{% extends 'layout.html' %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Manage member state claims - NHSBSA
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+{% block content %}
+<!-- Start of page content-->
+<div class="nhsuk-width-container"> 
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <h1>
+            Manage member state claims
+            <span class="nhsuk-caption-xl nhsuk-caption--bottom">Overseas Healthcare Services</span>
+        </h1>
+
+        <!-- Start of sign in-->
+        <div class="nhsuk-grid-row">
+
+            <!-- Start of existing user -->
+            <div class="nhsuk-grid-column-two-thirds ">
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <h2>Sign in</h2>
+                        <p>Have an account? Sign in now.</p>
+                        <form action="home" method="post">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="username">
+                                    Username
+                                </label>
+                                <div class="nhsuk-hint" id="username-hint">
+                                    For example, ljsmith@nhsbsa.nhs.uk
+                                </div>
+                                <input class="nhsuk-input nhsuk-input--width-20" id="username" name="username"
+                                    type="text">
+                            </div>
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="password">
+                                    Password
+                                </label>
+                                <input class="nhsuk-input nhsuk-input--width-20" id="password" name="password"
+                                    type="password">
+                            </div>
+                            <button class="nhsuk-button" type="submit">
+                                Sign in
+                            </button>
+                        </form>
+                        <p><a href="">Forgot your username?</a><br>
+                            <a href="">Forgot your password?</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End of existing user-->
+
+            <!-- Start of new user-->
+            <div class="nhsuk-grid-column-one-third nhsbsa-border-left ">
+
+
+
+                <h2 style="padding-top:24px;">New User?</h2>
+
+
+                <p>Request an account to start processing Member State claims.</p>
+                <a href="">
+                    <button class="nhsuk-button nhsuk-button--secondary">
+                        Request an account
+                    </button>
+                </a>
+            </div>
+            <!-- End of new user -->
+
+        </div>
+        <!-- End of sign in-->
+
+    </div>
+</div>
+</div>
+<!-- End of page content -->
+{% endblock %}

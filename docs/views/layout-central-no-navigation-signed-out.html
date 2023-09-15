@@ -1,0 +1,73 @@
+<!-- Extends the layout from /docs/views/template.html -->
+{% extends "template.html" %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/prism.css" rel="stylesheet">
+  <link href="/css/docs.css" rel="stylesheet">
+{% endblock %}
+
+{% set bodyClasses = "full-width" %}
+
+{% block pageTitle %}
+    {{ pageTitle({}) }}
+{% endblock %}
+
+{% block header %}
+    {% include "partials/header-no-nav-signed-out.njk" %}
+{% endblock %}
+
+{% block wrapper %}
+    <div class="nhsBSA-sidebar-container">
+        <div class="nhsBSA-sidebar-wrapper">
+            <!-- Start of central content -->
+            <div class="nhsBSA-sidebar-content">
+                <div class="nhsuk-width-container-fluid">
+                    {% block main %}
+                        <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+                            {% block content %}{% endblock %}
+                        </main>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ footer({
+        "links": [
+        {
+            "URL": "#",
+            "label": "Accessibility statement"
+        },
+        {
+            "URL": "#",
+            "label": "Contact us"
+        },
+        {
+            "URL": "#",
+            "label": "Cookies"
+        },
+        {
+            "URL": "#",
+            "label": "Privacy policy"
+        },
+        {
+            "URL": "#",
+            "label": "Terms and conditions"
+        },
+        {
+            "URL": "#",
+            "label": "Index"
+        }
+        ]
+    }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+{% endblock %}
