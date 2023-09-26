@@ -1,7 +1,8 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
+
 <!-- Extends the layout from /views/layout-central-no-navigation-signed-out.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-blank.html' %}
 
 <!-- Set the page title -->
 {% block pageTitle %}
@@ -20,73 +21,50 @@ Manage member state claims - NHSBSA
 
 {% block content %}
 <!-- Start of page content-->
+<style>
+    body {
+        background-color: #d8dde0;
+    }
+</style>
+
 <div class="nhsuk-width-container"> 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-        <h1>
-            Manage member state claims
-            <span class="nhsuk-caption-xl nhsuk-caption--bottom">Overseas Healthcare Services</span>
-        </h1>
+        <div class="nhsuk-card" style="max-width: 60%; margin: auto; ">
+            <div class="nhsuk-card__content">
 
-        <!-- Start of sign in-->
-        <div class="nhsuk-grid-row">
-
-            <!-- Start of existing user -->
-            <div class="nhsuk-grid-column-two-thirds ">
-                <div class="nhsuk-card">
-                    <div class="nhsuk-card__content">
-                        <h2>Sign in</h2>
-                        <p>Have an account? Sign in now.</p>
-                        <form action="home" method="post">
-                            <div class="nhsuk-form-group">
-                                <label class="nhsuk-label" for="username">
-                                    Username
-                                </label>
-                                <div class="nhsuk-hint" id="username-hint">
-                                    For example, ljsmith@nhsbsa.nhs.uk
-                                </div>
-                                <input class="nhsuk-input nhsuk-input--width-20" id="username" name="username"
-                                    type="text">
-                            </div>
-                            <div class="nhsuk-form-group">
-                                <label class="nhsuk-label" for="password">
-                                    Password
-                                </label>
-                                <input class="nhsuk-input nhsuk-input--width-20" id="password" name="password"
-                                    type="password">
-                            </div>
-                            <button class="nhsuk-button" type="submit">
-                                Sign in
-                            </button>
-                        </form>
-                        <p><a href="">Forgot your username?</a><br>
-                            <a href="">Forgot your password?</a>
-                        </p>
+                <img src="/images/nhs-bsa-logo.png" width="250px" style="margin-bottom: 18px;" >
+                <h2>Sign in</h2>
+                
+                <form action="home" method="post">
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="username">
+                            Username
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-20" id="username" name="username"
+                            type="text" value="username@nhsbsa.nhs.uk">
                     </div>
-                </div>
-            </div>
-            <!-- End of existing user-->
+                    <p><a href="#">Can't access your account?</a></p>
 
-            <!-- Start of new user-->
-            <div class="nhsuk-grid-column-one-third nhsbsa-border-left ">
-
-
-
-                <h2 style="padding-top:24px;">New User?</h2>
-
-
-                <p>Request an account to start processing Member State claims.</p>
-                <a href="">
-                    <button class="nhsuk-button nhsuk-button--secondary">
-                        Request an account
+                    <button class="nhsuk-button" type="submit" style="background-color: #005eb8">
+                        Sign in
                     </button>
-                </a>
-            </div>
-            <!-- End of new user -->
+                </form>
 
+
+               
+            </div>
+            <div class="nhsuk-card__footer" style="background-color: #eeeeee; padding: 30px;">
+                <br/>
+                <p>Welcome to the NHS Business Services Authority</p>
+                
+                                </div>
         </div>
-        <!-- End of sign in-->
+
+
+
+
 
     </div>
 </div>
