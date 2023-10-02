@@ -1,0 +1,335 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Home',
+path: '/alpha/version-02/home'
+},
+{
+name: 'Claims',
+path: '/alpha/version-02/claims/index',
+active: true
+},
+{
+name: 'Contested claims',
+path: '/alpha/version-02/contestations/index'
+},
+{
+name: 'Reports',
+path: '/alpha/version-02/reports/index'
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Search results - Manage member state claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../home">Home</a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../home">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Home
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content and left navigation -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+                <h1 class="nhsuk-heading-xl ">
+                    Claims search
+                </h1>
+            </div>
+        </div>
+
+
+
+        <!-- Start search -->
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <!-- <h3 class="nhsuk-card__heading nhsuk-heading-l">
+                Search
+              </h3>
+              <hr style="margin:-6px 0px 12px 0px;" /> -->
+
+                        <form action="results-no-treatments">
+
+                            <div class="nhsuk-grid-row">
+
+                                <div class="nhsuk-grid-column-one-half">
+                                    <div class="nhsuk-grid-row">
+
+                                        <!-- Claim ID -->
+                                        <div class="nhsuk-grid-column-one-third">
+                                            <div class="nhsuk-form-group">
+                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="claim-id">
+                                                    Claim ID
+                                                </label>
+                                                <input class="nhsuk-input " id="claim-id" name="claim-id" type="text">
+                                            </div>
+                                        </div>
+
+                                        <!-- Country submitting the claim -->
+                                        <div class="nhsuk-grid-column-two-thirds">
+                                            <div class="nhsuk-form-group">
+                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="country">
+                                                    Country submitting the claim
+                                                </label>
+                                                <input class="nhsuk-input " id="country" name="country" type="text"
+                                                    value="{% if data['country'] %}{{ data['country'] }}{% else %}France{% endif %}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="nhsuk-grid-column-one-half">
+                                    <div class="nhsuk-grid-row">
+                                        <div class="nhsuk-grid-column-one-half">
+
+
+                                            <!-- Claim reference -->
+                                            <div class="nhsuk-form-group">
+                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                                                    Claim reference
+                                                </label>
+                                                <input class="nhsuk-input" id="ref" name="ref" type="text"
+                                                    value="{% if data['ref'] %}{{ data['ref'] }}{% else %}1234REF{% endif %}">
+                                            </div>
+
+
+                                        </div>
+                                        <!-- End right column-->
+
+                                        <!-- Start right column -->
+                                        <div class="nhsuk-grid-column-one-half">
+
+
+
+
+
+                                            <!-- Financial year of claim -->
+                                            <div class="nhsuk-form-group">
+                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                    for="financial-year">
+                                                    Financial year of claim
+                                                </label>
+                                                <input class="nhsuk-input" id="financial-year" name="financial-year"
+                                                    type="text"
+                                                    value="{% if data['financial-year'] %}{{ data['financial-year'] }}{% else %}2023{% endif %}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+                                </div>
+                                <!-- End right column-->
+
+
+                            </div>
+
+                            <details class="nhsuk-details">
+                                <summary class="nhsuk-details__summary">
+                                    <span class="nhsuk-details__summary-text">
+                                        Advanced search options
+                                    </span>
+                                </summary>
+                                <div class="nhsuk-details__text">
+                                    <!-- Article covering the claim -->
+                                    <div class="nhsuk-form-group">
+                                        <fieldset class="nhsuk-fieldset">
+                                            <legend
+                                                class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
+                                                <h1 class="nhsuk-fieldset__heading">
+                                                    Article covering the claim
+                                                </h1>
+                                            </legend>
+
+                                            <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="article-hint">
+                                                Select one option.
+                                            </div>
+                                            <div class="nhsuk-radios">
+
+                                                <div class="nhsuk-radios__item">
+                                                    <input class="nhsuk-radios__input" id="article-actual"
+                                                        name="article" type="radio" value="Actual cost">
+                                                    <label class="nhsuk-label nhsuk-radios__label" for="article-actual">
+                                                        Actual cost
+                                                    </label>
+                                                </div>
+
+                                                <div class="nhsuk-radios__item">
+                                                    <input class="nhsuk-radios__input" id="article-average-2a"
+                                                        name="article" type="radio"
+                                                        value="Article 63 (2a) - average cost">
+                                                    <label class="nhsuk-label nhsuk-radios__label"
+                                                        for="article-average-2a">
+                                                        Article 63 (2a) - average cost
+                                                    </label>
+                                                </div>
+
+                                                <div class="nhsuk-radios__item">
+                                                    <input class="nhsuk-radios__input" id="article-average-2b"
+                                                        name="article" type="radio"
+                                                        value="Article 63 (2b) - average cost">
+                                                    <label class="nhsuk-label nhsuk-radios__label"
+                                                        for="article-average-2b">
+                                                        Article 63 (2b) - average cost
+                                                    </label>
+                                                </div>
+
+                                                <div class="nhsuk-radios__item">
+                                                    <input class="nhsuk-radios__input" id="article-average-2b"
+                                                        name="article" type="radio" value="AW03 - DA1 claims">
+                                                    <label class="nhsuk-label nhsuk-radios__label"
+                                                        for="article-average-2b">
+                                                        AW03 - DA1 claims
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </fieldset>
+                                    </div>
+
+                                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                                    <!-- Type of claim -->
+                                    <div class="nhsuk-form-group">
+
+                                        <fieldset class="nhsuk-fieldset" aria-describedby="type-hint">
+                                            <legend
+                                                class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
+                                                <h1 class="nhsuk-fieldset__heading">
+                                                    Type of claim
+                                                </h1>
+                                            </legend>
+
+                                            <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="type-hint">
+                                                Select one option.
+                                            </div>
+
+                                            <div class="nhsuk-radios">
+
+                                                <div class="nhsuk-radios__item">
+                                                    <input class="nhsuk-radios__input" id="type-main" name="type"
+                                                        type="radio" value="Main">
+                                                    <label class="nhsuk-label nhsuk-radios__label" for="type-main">
+                                                        Main
+                                                    </label>
+                                                </div>
+
+                                                <div class="nhsuk-radios__item">
+                                                    <input class="nhsuk-radios__input" id="type-supplementary"
+                                                        name="type" type="radio" value="Supplementary">
+                                                    <label class="nhsuk-label nhsuk-radios__label"
+                                                        for="type-supplementary">
+                                                        Supplementary
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </fieldset>
+
+                                    </div>
+
+                                    <!-- <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"> -->
+
+                                </div>
+                            </details>
+                            <button class="nhsuk-button nhsuk-u-margin-bottom-1" data-module="nhsuk-button"
+                                type="submit">
+                                Search
+                            </button>
+                        </form>
+
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- End search -->
+
+
+
+
+        <div class="nhsuk-grid-row">
+
+            <div class="nhsuk-grid-column-full">
+
+                <h2 class="nhsuk-heading-s">Showing results for <strong class="nhsuk-tag nhsuk-tag--green">
+                        {% if data['country'] %}
+                        {{ data['country'] }}
+                        {% else %}
+                        France
+                        {% endif %}
+                    </strong>
+                    <strong class="nhsuk-tag nhsuk-tag--green">
+                        {% if data['ref'] %}
+                        {{ data['ref'] }}
+                        {% else %}
+                        12345REF
+                        {% endif %}
+                    </strong>
+                    <strong class="nhsuk-tag nhsuk-tag--green">
+                        {% if data['financial-year'] %}
+                        {{ data['financial-year'] }}
+                        {% else %}
+                        2023
+                        {% endif %}
+                    </strong>
+                </h2>
+
+                <p>No results found.</p>
+            </div>
+
+        </div>
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+                <a href="../claims/create/index">
+                <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                    Create a new claim
+                  </button>
+                </a>
+
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    <!-- End of page content and left navigation -->
