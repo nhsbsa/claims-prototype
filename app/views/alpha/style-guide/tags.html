@@ -1,0 +1,230 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Managing Member State claims
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+      <h1>
+        Manage member state claims
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Style guide</span>
+      </h1>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
+      <h2 class="nhsuk-heading-l">Tags</h2>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+            Claim
+          </h3>
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                <strong class="nhsuk-tag nhsuk-tag--grey">
+                    Not started
+                </strong>
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Claim has been created but no treatments have been added
+              </dd>
+            </div>
+    
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                      Processing
+                  </strong>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Claim has been created, treatments have been added and are currently being processed by the system
+                </dd>
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <strong class="nhsuk-tag nhsuk-tag--green">
+                      In progress
+                  </strong>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Claim has been created, treatments have been added, 1 or more treatments is either 'in progress' or 'to check'
+                </dd>
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <strong class="nhsuk-tag nhsuk-tag--blue">
+                      Ready to send
+                  </strong>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Claim has been created, all treatments have been processed, 1 or more treatments have been 'contested' and these are ready to send back to MS
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <strong class="nhsuk-tag nhsuk-tag--yellow">
+                      Contestations sent
+                  </strong>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Claim has been created, all treatments have been processed, 1 or more treatments have been 'contested' and returned to MS
+                </dd>
+              </div>
+
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <strong class="nhsuk-tag nhsuk-tag--yellow">
+                      Complete
+                  </strong>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Claim has been created, all treatments have been processed and either accepted, withdrawn or partially accepted
+                </dd>
+              </div>
+    
+
+          
+          </dl>
+      
+        </div>
+      </div>
+
+    
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+            Treatment
+          </h3>
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                <strong class="nhsuk-tag nhsuk-tag--white">
+                    To check
+                </strong>
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                The treatment could not be auto validated by the system and is waiting for a Claims Officer to look at it
+              </dd>
+            </div>
+    
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <strong class="nhsuk-tag nhsuk-tag--green">
+                      In progress
+                  </strong>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  The treatment could not be auto validated by the system and a Claims Officer is looking into it
+                </dd>
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <strong class="nhsuk-tag nhsuk-tag--purple">
+                      Accepted
+                  </strong>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  The treatment was either auto accepted or manually accepted by a Claims Officer
+                </dd>
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <strong class="nhsuk-tag nhsuk-tag--red">
+                      Contested
+                  </strong>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  The treatment has been contested by a Claims Officer
+                </dd>
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <strong class="nhsuk-tag nhsuk-tag--orange">
+                      Withdrawn
+                  </strong>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  The treatment has been contested by a Claims Officer and the MS has since withdrawn the treatment from the claim
+                </dd>
+              </div>
+          
+          </dl>
+      
+        </div>
+      </div>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+           Search
+          </h3>
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                <strong class="nhsuk-tag nhsuk-tag--pink">
+                    xyz
+                </strong>
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                The phrase that has been searched or filtered by
+              </dd>
+            </div>
+    
+
+    
+
+          
+          </dl>
+      
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+</div>
+{% endblock %}
