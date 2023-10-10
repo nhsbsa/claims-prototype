@@ -70,19 +70,24 @@ Confirmation - Managing Memeber State claims - NHSBSA
 
 
                 <div class="confirmation-box">
-                    <h1 class="heading-xlarge">Upload complete
+                    <h1 class="heading-xlarge">File submitted for processing
                     </h1>
+                    <h2>The system is now processing the claim</h2>
                     
 
                 </div>
-                <p>You have uploaded treatments for {% if data['country'] %}{{data['country'] }}{% else %}France{% endif %}.</p>
+                
                
                 
                 <h2 class="heading-medium">What happens next</h2>
+
+                <p>The system will check the treatments you've uploaded and try to match them against a valid entitlement.</p>
+                <p>The status of this claim will change to 'Ready to review' when the automatic matching is complete.</p>
+                <p>Once the claim is ready for review, you can check any treatments that the system has not been able to match.</p>
                 
                 <a href="../../../summary/system-processing">
                     <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                        View claim summary
+                        Return to claim summary
                     </button>
                 </a>
 
