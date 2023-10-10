@@ -83,8 +83,8 @@ Claim summary - Manage member state claims - NHSBSA
                                 </h3>
                             </div>
                             <div class="nhsuk-grid-column-one-half">
-                                <strong class="nhsuk-tag nhsuk-tag--aqua-green" style="float:right">
-                                    Active
+                                <strong class="nhsuk-tag nhsuk-tag--green" style="float:right">
+                                    Ready to review
                                 </strong>
                             </div>
                             <div class="nhsuk-grid-column-full">
@@ -254,74 +254,103 @@ Claim summary - Manage member state claims - NHSBSA
 
 
             </div>
-            <div class="nhsuk-grid-column-one-thirds" style="float: right; padding-right:16px;">
-                <a href="../treatment-forms/upload/with-hint-text">
-                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                    Add treatments
-                </button>
+
+            <div class="nhsuk-grid-column-one-third">
+            
+              <div class="nhsuk-action-link nhsuk-u-margin-bottom-2" style="float:right;">
+                <a class="nhsuk-action-link__link" href="#">
+                  <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                    </path>
+                  </svg>
+                  <span class="nhsuk-action-link__text">Download treatments</span>
                 </a>
-            </div>
+              </div>
+
+          </div>
+
         </div>
 
-
-        <div class="nhsuk-grid-row">
-
-            <div class="nhsuk-grid-column-full">
-                <ul class="nhsuk-grid-row nhsuk-card-group">
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
-
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">45
-                                    <span class="nhsuk-u-visually-hidden">Accepted</span>
-                                </p><a href="../treatment-forms/accepted"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Accepted</a>
-                            </div>
-                        </div>
-
-                    </li>
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
-
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">0
-                                    <span class="nhsuk-u-visually-hidden">Withdrawn</span>
-                                </p><a href="../treatment-forms/withdrawn"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Withdrawn</a>
-                            </div>
-                        </div>
-
-                    </li>
-
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
-
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">0
-                                    <span class="nhsuk-u-visually-hidden">Contested</span>
-                                </p><a href="../treatment-forms/contested"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Contested</a>
-                            </div>
-                        </div>
-
-                    </li>
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
-
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">5
-                                    <span class="nhsuk-u-visually-hidden">To be checked</span>
-                                </p><a href="../treatment-forms/to-be-checked"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">To
-                                    be checked</a>
-                            </div>
-                        </div>
-
-                    </li>
-                </ul>
-
-            </div>
+            <!-- Start of stats-->
+    <div class="nhsuk-grid-row nhsuk-u-margin-bottom-0">
+        <div class="nhsuk-grid-column-full">
+          <ul class="nhsuk-grid-row nhsuk-card-group">
+  
+            <!-- To check -->
+            <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-heading-xl nhsuk-u-font-size-32">
+                    5
+                    <a href="../treatment-forms/to-be-checked#stats"><span
+                        class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">To check</span></a>
+                  </h2>
+                </div>
+              </div>
+            </li>
+  
+            <!-- In progress -->
+            <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-heading-xl nhsuk-u-font-size-32">
+                    0
+                    <a href="../treatment-forms/in-progress#stats"><span
+                        class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">In progress</span></a>
+                  </h2>
+                </div>
+              </div>
+            </li>
+  
+            <!-- Accepted -->
+            <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-heading-xl nhsuk-u-font-size-32">
+                    45
+                    <a href="../treatment-forms/accepted#stats"><span
+                        class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">Accepted</span> </a>
+                  </h2>
+                </div>
+              </div>
+            </li>
+  
+            <!-- Contested -->
+            <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-heading-xl nhsuk-u-font-size-32">
+                    0
+                    <a href="../treatment-forms/contested#stats"><span
+                        class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">Contested</span></a>
+                  </h2>
+                </div>
+              </div>
+            </li>
+  
+            <!-- Withdrawn -->
+            <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-heading-l nhsuk-u-font-size-32">
+                    0
+                    <a href="../treatment-forms/withdrawn#stats"><span
+                        class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">Withdrawn</span></a>
+                  </h2>
+                </div>
+              </div>
+            </li>
+  
+          </ul>
         </div>
+      </div>
+      <!-- End of stats -->
+
+
+
 
         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
@@ -331,58 +360,86 @@ Claim summary - Manage member state claims - NHSBSA
                 <h2 class="nhsuk-heading-l">Total amount: 4927.18</h2>
 
 
-                <ul class="nhsuk-grid-row nhsuk-card-group">
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
 
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">4725.51
-                                    <span class="nhsuk-u-visually-hidden">Accepted</span>
-                                </p><a href="#"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Accepted</a>
-                            </div>
+            <!-- Start of costs-->
+            <div class="nhsuk-grid-row nhsuk-u-margin-bottom-6">
+                <div class="nhsuk-grid-column-full">
+                  <ul class="nhsuk-grid-row nhsuk-card-group">
+          
+                    <!-- To check -->
+                    <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
+                      <div class="nhsuk-card">
+                        <div class="nhsuk-card__content">
+                          <h2 class="nhsuk-heading-xl nhsuk-u-font-size-32">
+                            201.67
+                            <span
+                                class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">To check</span>
+                          </h2>
                         </div>
-
+                      </div>
                     </li>
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
-
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">0
-                                    <span class="nhsuk-u-visually-hidden">Withdrawn</span>
-                                </p><a href="#"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Withdrawn</a>
-                            </div>
+          
+                    <!-- In progress -->
+                    <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
+                      <div class="nhsuk-card">
+                        <div class="nhsuk-card__content">
+                          <h2 class="nhsuk-heading-xl nhsuk-u-font-size-32">
+                            0
+                            <span
+                                class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">In progress</span>
+                          </h2>
                         </div>
-
+                      </div>
                     </li>
-
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
-
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">0
-                                    <span class="nhsuk-u-visually-hidden">Contested</span>
-                                </p><a href="#"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Contested</a>
-                            </div>
+          
+                    <!-- Accepted -->
+                    <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
+                      <div class="nhsuk-card">
+                        <div class="nhsuk-card__content">
+                          <h2 class="nhsuk-heading-xl nhsuk-u-font-size-32">
+                            4725.51
+                            <span
+                                class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">Accepted</span> 
+                          </h2>
                         </div>
-
+                      </div>
                     </li>
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
-
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">201.67
-                                    <span class="nhsuk-u-visually-hidden">To be checked</span>
-                                </p><a href="#"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">To be checked</a>
-                            </div>
+          
+                    <!-- Contested -->
+                    <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
+                      <div class="nhsuk-card">
+                        <div class="nhsuk-card__content">
+                          <h2 class="nhsuk-heading-xl nhsuk-u-font-size-32">
+                            0
+                            <span
+                                class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">Contested</span>
+                          </h2>
                         </div>
-
+                      </div>
                     </li>
+          
+                    <!-- Withdrawn -->
+                    <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
+                      <div class="nhsuk-card">
+                        <div class="nhsuk-card__content">
+                          <h2 class="nhsuk-heading-l nhsuk-u-font-size-32">
+                            0
+                            <span
+                                class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">Withdrawn</span>
+                          </h2>
+                        </div>
+                      </div>
+                    </li>
+          
+                  </ul>
+                </div>
+              </div>
+              <!-- End of costs -->
 
-                </ul>
+
+
+
+
 
             </div>
         </div>

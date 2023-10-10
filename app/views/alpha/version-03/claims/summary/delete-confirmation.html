@@ -1,31 +1,26 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
     {
-    name: 'Summary',
-    path: '/alpha/version-03/claims/summary/system-processing'
+    name: 'Home',
+    path: '/alpha/version-03/home'
     },
     {
-    name: 'Treatment forms',
-    path: '/alpha/version-03/claims/treatment-forms/system-processing',
+    name: 'Claims',
+    path: '/alpha/version-03/claims/index',
     active: true
     },
     {
-    name: 'Documents',
-    path: '/alpha/version-03/claims/documents/index'
+    name: 'Contested claims',
+    path: '/alpha/version-03/contestations/index'
     },
     {
-    name: 'Case history',
-    path: '/alpha/version-03/claims/case-history/index'
-    }
-    ,
-    {
-    name: 'Notes',
-    path: '/alpha/version-03/claims/notes/index'
+    name: 'Reports',
+    path: '/alpha/version-03/reports/index'
     }
     ]
     %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
-{% extends 'layout-full-width-claim.html' %}
+{% extends 'layout-full-width.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -34,7 +29,7 @@
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Confirmation - Managing Memeber State claims - NHSBSA
+Confirmation - Manage Member State claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -70,19 +65,17 @@ Confirmation - Managing Memeber State claims - NHSBSA
 
 
                 <div class="confirmation-box">
-                    <h1 class="heading-xlarge">Upload complete
+                    <h1 class="heading-xlarge">Claim deleted
                     </h1>
-                    
+                    <p>Claim ID 6784 has been deleted</p>
 
                 </div>
-                <p>You have uploaded treatments for {% if data['country'] %}{{data['country'] }}{% else %}France{% endif %}.</p>
                
-                
-                <h2 class="heading-medium">What happens next</h2>
-                
-                <a href="../../../summary/system-processing">
+               
+
+                <a href="../index">
                     <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                        View claim summary
+                        Return to claims
                     </button>
                 </a>
 

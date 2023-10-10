@@ -2,24 +2,24 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '/alpha/version-02/claims/summary-no-treatments'
+path: '/alpha/version-03/claims/summary-no-treatments'
 },
 {
 name: 'Treatment forms',
-path: '/alpha/version-02/claims/treatment-forms/no-treatments',
+path: '/alpha/version-03/claims/treatment-forms/no-treatments',
 active: true
 },
 {
 name: 'Documents',
-path: '/alpha/version-02/claims/documents/index'
+path: '/alpha/version-03/claims/documents/index'
 },
 {
 name: 'Case history',
-path: '/alpha/version-02/claims/case-history/index'
+path: '/alpha/version-03/claims/case-history/index'
 },
 {
 name: 'Notes',
-path: '/alpha/version-02/claims/notes/index'
+path: '/alpha/version-03/claims/notes/index'
 }
 ]
 %}
@@ -33,7 +33,7 @@ path: '/alpha/version-02/claims/notes/index'
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Add treatments - Managing Memeber State claims - NHSBSA
+Upload RINA treatment details - Managing Memeber State claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -87,7 +87,7 @@ Add treatments - Managing Memeber State claims - NHSBSA
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                         <h1 class="nhsuk-fieldset__heading">
                             <span class="nhsuk-caption-l">Add treatments</span>
-                            RINA upload details
+                            Upload RINA treatment details
                         </h1>
                     </legend>
             </div>
@@ -112,12 +112,11 @@ Add treatments - Managing Memeber State claims - NHSBSA
                                 <legend
                                     class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        Upload file
+                                        Upload a file
                                     </h1>
                                 </legend>
                                 <div class="nhsuk-hint" id="article-hint">
-                                    Max file size<br />
-                                    Format
+                                    This must be an XML file.
                                 </div>
 
                                 <div class="nhsuk-form-group nhsuk-grid-column-two-thirds"

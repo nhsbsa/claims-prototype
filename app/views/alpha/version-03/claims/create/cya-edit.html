@@ -1,27 +1,31 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Home',
-path: '/alpha/version-03/home'
-},
-{
-name: 'Claims',
-path: '/alpha/version-03/claims/index',
-active: true
-},
-{
-name: 'Contested claims',
-path: '#'
-},
-{
-name: 'Reports',
-path: '#'
-}
-]
-%}
+    {
+    name: 'Summary',
+    path: '/alpha/version-03/claims/summary/no-treatments',
+    active: true
+    },
+    {
+    name: 'Treatment forms',
+    path: '/alpha/version-03/claims/treatment-forms/no-treatments'
+    },
+    {
+    name: 'Documents',
+    path: '/alpha/version-03/claims/documents/index'
+    },
+    {
+    name: 'Case history',
+    path: '/alpha/version-03/claims/case-history/index'
+    },
+    {
+    name: 'Notes',
+    path: '/alpha/version-03/claims/notes/index'
+    }
+    ]
+    %}
 
 <!-- Extends the layout from /views/layout-full-width.html -->
-{% extends 'layout-full-width.html' %}
+{% extends 'layout-full-width-claim.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -78,11 +82,11 @@ Check your answers - Manage Member State claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <!-- Start of form -->
-        <form action="confirmation" method="post">
+        <form action="../summary/no-treatments" method="post">
 
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                 <h1 class="nhsuk-fieldset__heading">
-                    <span class="nhsuk-caption-l">Create a new claim</span>
+                    <span class="nhsuk-caption-l">Edit claim</span>
                     Check your answers
                 </h1>
             </legend>
@@ -107,7 +111,7 @@ Check your answers - Manage Member State claims - NHSBSA
 
                             <dd class="nhsuk-summary-list__actions">
 
-                                <a href="index#submission-date-day">
+                                <a href="edit#submission-date-day">
                                     Change<span class="nhsuk-u-visually-hidden"> submission
                                         date</span>
                                 </a>
@@ -132,7 +136,7 @@ Check your answers - Manage Member State claims - NHSBSA
 
                             <dd class="nhsuk-summary-list__actions">
 
-                                <a href="index#target-date-day">
+                                <a href="edit#target-date-day">
                                     Change<span class="nhsuk-u-visually-hidden"> target date to complete claim</span>
                                 </a>
 
@@ -152,7 +156,7 @@ Check your answers - Manage Member State claims - NHSBSA
                                 {% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
-                                <a href="index#country">
+                                <a href="edit#country">
                                     Change<span class="nhsuk-u-visually-hidden"> country</span>
                                 </a>
                             </dd>
@@ -170,7 +174,7 @@ Check your answers - Manage Member State claims - NHSBSA
                                 {% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
-                                <a href="index#ref">
+                                <a href="edit#ref">
                                     Change<span class="nhsuk-u-visually-hidden"> reference</span>
                                 </a>
                             </dd>
@@ -188,7 +192,7 @@ Check your answers - Manage Member State claims - NHSBSA
                                 {% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
-                                <a href="index#financial-year">
+                                <a href="edit#financial-year">
                                     Change<span class="nhsuk-u-visually-hidden"> financial
                                         year</span>
                                 </a>
@@ -207,7 +211,7 @@ Check your answers - Manage Member State claims - NHSBSA
                                 {% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
-                                <a href="index#article-actual">
+                                <a href="edit#article-actual">
                                     Change<span class="nhsuk-u-visually-hidden"> article type</span>
                                 </a>
                             </dd>
@@ -225,7 +229,7 @@ Check your answers - Manage Member State claims - NHSBSA
                                 {% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
-                                <a href="index#type-main">
+                                <a href="edit#type-main">
                                     Change<span class="nhsuk-u-visually-hidden"> claim type</span>
                                 </a>
                             </dd>
@@ -245,7 +249,7 @@ Check your answers - Manage Member State claims - NHSBSA
                                 {% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
-                                <a href="index#subref">
+                                <a href="edit#subref">
                                     Change<span class="nhsuk-u-visually-hidden"> claim sub
                                         reference</span>
                                 </a>
@@ -257,7 +261,7 @@ Check your answers - Manage Member State claims - NHSBSA
 
                     </dl>
                     <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                        Submit
+                        Save changes
                     </button>
                 </div>
             </div>

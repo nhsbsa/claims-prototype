@@ -2,12 +2,12 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '/alpha/version-03/claims/summary/with-treatments'
+path: '/alpha/version-03/claims/summary/no-treatments',
+active: true
 },
 {
 name: 'Treatment forms',
-path: '/alpha/version-03/claims/treatment-forms/with-treatments',
-active: true
+path: '/alpha/version-03/claims/treatment-forms/no-treatments'
 },
 {
 name: 'Documents',
@@ -16,6 +16,10 @@ path: '/alpha/version-03/claims/documents/index'
 {
 name: 'Case history',
 path: '/alpha/version-03/claims/case-history/index'
+},
+{
+name: 'Notes',
+path: '/alpha/version-03/claims/notes/index'
 }
 ]
 %}
@@ -29,7 +33,7 @@ path: '/alpha/version-03/claims/case-history/index'
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Treatment form details - Managing Member State claims - NHSBSA
+Are you sure you want to delete the claim? - Manage member state claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -38,11 +42,11 @@ Treatment form details - Managing Member State claims - NHSBSA
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../home">Home</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../index">Claims</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../index">Claims</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="../../index">
+            <a class="nhsuk-breadcrumb__backlink" href="../index">
                 <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
                 Claims
             </a>
@@ -71,42 +75,46 @@ Treatment form details - Managing Member State claims - NHSBSA
     </div>
 </div>
 <!-- End of back link -->
-
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="../../route_delete_claim" method="post">
 
-        <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-full">
-                <h1 class="nhsuk-heading-xl ">
-                    Treatment ID: 7823
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                <h1 class="nhsuk-fieldset__heading">
+                  Are you sure you want to delete Claim ID 6784 for France?
                 </h1>
-            </div>
-        </div>
+              </legend>
 
-        <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-two-thirds">
-                <div class="nhsuk-card">
-                    <div class="nhsuk-card__content">
-                      <h3 class="nhsuk-card__heading">
-                        Person details
-                      </h3>
+              <div class="nhsuk-radios nhsuk-radios--inline">
 
-                      
-                  
-                    </div>
-                  </div>
-            </div>
-            <div class="nhsuk-grid-column-one-third">
-                <div class="nhsuk-card">
-                    <div class="nhsuk-card__content">
-                      <h3 class="nhsuk-card__heading">
-                        Claim details
-                      </h3>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="delete-claim-yes" name="delete-claim" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="delete-claim-yes">
+                    Yes
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="delete-claim-no" name="delete-claim" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="delete-claim-no">
+                    No
+                  </label>
+                </div>
+          
+              </div>
+            </fieldset>
+          
+          </div>
 
-                    </div>
-                  </div>
-            </div>
-        </div>
+
+          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Submit
+          </button>
+
+          </form>
 
     </div>
 </div>
