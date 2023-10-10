@@ -1,27 +1,31 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Home',
-path: '/alpha/version-03/home'
-},
-{
-name: 'Claims',
-path: '/alpha/version-03/claims/index',
-active: true
-},
-{
-name: 'Contested claims',
-path: '/alpha/version-03/contestations/index'
-},
-{
-name: 'Reports',
-path: '/alpha/version-03/reports/index'
-}
-]
-%}
+    {
+    name: 'Summary',
+    path: '/alpha/version-03/claims/summary/no-treatments',
+    active: true
+    },
+    {
+    name: 'Treatment forms',
+    path: '/alpha/version-03/claims/treatment-forms/no-treatments'
+    },
+    {
+    name: 'Documents',
+    path: '/alpha/version-03/claims/documents/index'
+    },
+    {
+    name: 'Case history',
+    path: '/alpha/version-03/claims/case-history/index'
+    },
+    {
+    name: 'Notes',
+    path: '/alpha/version-03/claims/notes/index'
+    }
+    ]
+    %}
 
 <!-- Extends the layout from /views/layout-full-width.html -->
-{% extends 'layout-full-width.html' %}
+{% extends 'layout-full-width-claim.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -30,7 +34,7 @@ path: '/alpha/version-03/reports/index'
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Create a new claim - Manage member state claims - NHSBSA
+Edit claim details - Manage member state claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -56,68 +60,6 @@ Create a new claim - Manage member state claims - NHSBSA
 <!-- Start of central content -->
 {% block content %}
 
-<!-- Start of error summary-->
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
-            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                There is a problem
-            </h2>
-            <div class="nhsuk-error-summary__body">
-                <p>
-                    All fields are mandatory
-                </p>
-                <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
-
-                    {% if data['submission-date-day'] === '' and data['submission-date-month'] === '' and data['submission-date-year'] === '' %}
-                    <li>
-                        <a href="#submission-date-day">Enter the date you received the claim</a>
-                    </li>
-                    {% endif %}
-
-                    {% if data['country'] === '' %}
-                    <li>
-                        <a href="#country">Enter the country submitting the claim</a>
-                    </li>
-                    {% endif %}
-
-                    {% if data['ref'] === '' %}
-                    <li>
-                        <a href="#ref">Enter the claim reference</a>
-                    </li>
-                    {% endif %}
-
-                    {% if data['financial-year'] === '' %}
-                    <li>
-                        <a href="#financial-year">Enter the financial year of claim</a>
-                    </li>
-                    {% endif %}
-
-                    {% if data['article'] === '' %}
-                    <li>
-                        <a href="#">Select the article covering the claim</a>
-                    </li>
-                    {% endif %}
-
-                    {% if data['type'] === '' %}
-                    <li>
-                        <a href="#">Select the type of claim</a>
-                    </li>
-                    {% endif %}
-
-                    {% if data['target-date-day'] === '' and data['target-date-month'] === '' and data['target-date-year'] === '' %}
-                    <li>
-                        <a href="#target-date-day">Enter the target date to complete the claim</a>
-                    </li>
-                    {% endif %}
-
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End of error summary -->
-
 <!-- Start of back link -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
@@ -140,11 +82,12 @@ Create a new claim - Manage member state claims - NHSBSA
     <div class="nhsuk-grid-column-two-thirds">
 
         <!-- Start of form -->
-        <form action="../../create-claim-validation" method="post">
+        <!-- <form action="../../create-claim-validation" method="post"> -->
+        <form action="cya-edit" method="post">
             <fieldset class="nhsuk-fieldset">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                     <h1 class="nhsuk-fieldset__heading">
-                        <span class="nhsuk-caption-l">Create a new claim</span>
+                        <span class="nhsuk-caption-l">Edit claim</span>
                         Claim details
                     </h1>
                 </legend>
@@ -154,19 +97,13 @@ Create a new claim - Manage member state claims - NHSBSA
                     <div class="nhsuk-card__content">
 
                         <!-- Date you received the claim -->
-                        <div class="nhsuk-form-group {% if data['submission-date-day'] === '' and data['submission-date-month'] === '' and data['submission-date-year'] === '' %}nhsuk-form-group--error{% endif %}">
+                        <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
                                         Date you received the claim
                                     </h1>
                                 </legend>
-                                {% if data['submission-date-day'] === '' and data['submission-date-month'] === '' and data['submission-date-year'] === '' %}
-                                <span class="nhsuk-error-message" id="dob-day-error-error">
-                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter the date you received the claim
-                                  </span>
-                                  {% endif %}
-
                                 <div class="nhsuk-date-input" id="submission-date">
                                     <div class="nhsuk-date-input__item">
                                         <div class="nhsuk-form-group">
@@ -174,10 +111,10 @@ Create a new claim - Manage member state claims - NHSBSA
                                                 for="submission-date-day">
                                                 Day
                                             </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 {% if data['submission-date-day'] === '' and data['submission-date-month'] === '' and data['submission-date-year'] === '' %}nhsuk-input--error{% endif %}"
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                 id="submission-date-day" name="submission-date-day" type="text"
                                                 pattern="[0-9]*" inputmode="numeric"
-                                                value="{% if data['submission-date-day'] %}{{ data['submission-date-day'] }}{% endif %}">
+                                                value="{% if data['submission-date-day'] %}{{ data['submission-date-day'] }}{% else %}10{% endif %}">
                                         </div>
                                     </div>
                                     <div class="nhsuk-date-input__item">
@@ -186,10 +123,10 @@ Create a new claim - Manage member state claims - NHSBSA
                                                 for="submission-date-month">
                                                 Month
                                             </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 {% if data['submission-date-day'] === '' and data['submission-date-month'] === '' and data['submission-date-year'] === '' %}nhsuk-input--error{% endif %}"
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                 id="submission-date-month" name="submission-date-month" type="text"
                                                 pattern="[0-9]*" inputmode="numeric"
-                                                value="{% if data['submission-date-month'] %}{{ data['submission-date-month'] }}{% endif %}">
+                                                value="{% if data['submission-date-month'] %}{{ data['submission-date-month'] }}{% else %}8{% endif %}">
                                         </div>
                                     </div>
                                     <div class="nhsuk-date-input__item">
@@ -198,10 +135,60 @@ Create a new claim - Manage member state claims - NHSBSA
                                                 for="submission-date-year">
                                                 Year
                                             </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 {% if data['submission-date-day'] === '' and data['submission-date-month'] === '' and data['submission-date-year'] === '' %}nhsuk-input--error{% endif %}"
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
                                                 id="submission-date-year" name="submission-date-year" type="text"
                                                 pattern="[0-9]*" inputmode="numeric"
-                                                value="{% if data['submission-date-year'] %}{{ data['submission-date-year'] }}{% endif %}">
+                                                value="{% if data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else %}2023{% endif %}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Target date to complete claim -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Target date to complete claim
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="target-date-hint">
+                                    Usually 6 months after the claim was submitted by the member state.
+                                </div>
+                                <div class="nhsuk-date-input" id="target-date">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="target-date-day" name="target-date-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="{% if data['target-date-day'] %}{{ data['target-date-day'] }}{% else %}9{% endif %}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="target-date-month" name="target-date-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric"
+                                                value="{% if data['target-date-month'] %}{{ data['target-date-month'] }}{% else %}2{% endif %}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                id="target-date-year" name="target-date-year" type="text"
+                                                pattern="[0-9]*" inputmode="numeric"
+                                                value="{% if data['target-date-year'] %}{{ data['target-date-year'] }}{% else %}2024{% endif %}">
                                         </div>
                                     </div>
                                 </div>
@@ -210,49 +197,33 @@ Create a new claim - Manage member state claims - NHSBSA
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
                         <!-- Country submitting the claim -->
-                        <div class="nhsuk-form-group {% if data['country'] === '' %}nhsuk-form-group--error{% endif %}">
+                        <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="country">
                                 Country submitting the claim
                             </label>
-                            {% if data['country'] === '' %}
-                            <span class="nhsuk-error-message" id="country-error">
-                                <span class="nhsuk-u-visually-hidden">Error:</span> Enter the country submitting the
-                                claim
-                            </span>
-                            {% endif %}
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds {% if data['country'] === '' %}nhsuk-input--error{% endif %}" id="country" name="country" type="text"
-                                value="{% if data['country'] %}{{ data['country'] }}{% endif %}">
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="country" name="country" type="text"
+                                value="{% if data['country'] %}{{ data['country'] }}{% else %}France{% endif %}">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
                         <!-- Claim reference -->
-                        <div class="nhsuk-form-group {% if data['ref'] === '' %}nhsuk-form-group--error{% endif %}">
+                        <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
                                 Claim reference
                             </label>
-                            {% if data['ref'] === '' %}
-                            <span class="nhsuk-error-message" id="ref-error">
-                                <span class="nhsuk-u-visually-hidden">Error:</span> Enter the claim reference
-                            </span>
-                            {% endif %}
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds {% if data['ref'] === '' %}nhsuk-input--error{% endif %}" id="ref" name="ref" type="text"
-                                value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
+                                value="{% if data['ref'] %}{{ data['ref'] }}{% else %}12345REF{% endif %}">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
                         <!-- Financial year of claim -->
-                        <div class="nhsuk-form-group {% if data['financial-year'] === '' %}nhsuk-form-group--error{% endif %}">
+                        <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="financial-year">
                                 Financial year of claim
                             </label>
-                            {% if data['financial-year'] === '' %}
-                            <span class="nhsuk-error-message" id="financial-year-error">
-                                <span class="nhsuk-u-visually-hidden">Error:</span> Enter the financial year of the claim
-                            </span>
-                            {% endif %}
-                            <input class="nhsuk-input nhsuk-input--width-4 {% if data['financial-year'] === '' %}nhsuk-input--error{% endif %}" id="financial-year" name="financial-year"
+                            <input class="nhsuk-input nhsuk-input--width-4" id="financial-year" name="financial-year"
                                 type="text"
-                                value="{% if data['financial-year'] %}{{ data['financial-year'] }}{% endif %}">
+                                value="{% if data['financial-year'] %}{{ data['financial-year'] }}{% else %}2023{% endif %}">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
@@ -274,7 +245,7 @@ Create a new claim - Manage member state claims - NHSBSA
                                     <div class="nhsuk-radios__item">
                                         <input class="nhsuk-radios__input" id="article-actual" name="article"
                                             type="radio" value="Actual cost" {% if data['article']==='Actual cost'
-                                            %}checked{% endif %}>
+                                            %}checked{% else %}checked{% endif %}>
                                         <label class="nhsuk-label nhsuk-radios__label" for="article-actual">
                                             Actual cost
                                         </label>
@@ -331,7 +302,7 @@ Create a new claim - Manage member state claims - NHSBSA
 
                                     <div class="nhsuk-radios__item">
                                         <input class="nhsuk-radios__input" id="type-main" name="type" type="radio"
-                                            value="Main" {% if data['type']==='Main' %}checked{% endif %}>
+                                            value="Main" {% if data['type']==='Main' %}checked{% else %}checked{% endif %}>
                                         <label class="nhsuk-label nhsuk-radios__label" for="type-main">
                                             Main
                                         </label>
@@ -365,60 +336,7 @@ Create a new claim - Manage member state claims - NHSBSA
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-                        <!-- Target date to complete claim -->
-                        <div class="nhsuk-form-group {% if data['target-date-day'] === '' and data['target-date-month'] === '' and data['target-date-year'] === '' %}nhsuk-form-group--error{% endif %}">
-                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
-                                    <h1 class="nhsuk-fieldset__heading">
-                                        Target date to complete claim
-                                    </h1>
-                                </legend>
-                                <div class="nhsuk-hint" id="target-date-hint">
-                                    Usually 6 months after the claim was submitted by the member state.
-                                </div>
-                                {% if data['target-date-day'] === '' and data['target-date-month'] === '' and data['target-date-year'] === '' %}
-                                <span class="nhsuk-error-message" id="dob-day-error-error">
-                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter the target date to complete the claim
-                                  </span>
-                                  {% endif %}
-                                <div class="nhsuk-date-input" id="target-date">
-                                    <div class="nhsuk-date-input__item">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-day">
-                                                Day
-                                            </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 {% if data['target-date-day'] === '' and data['target-date-month'] === '' and data['target-date-year'] === '' %}nhsuk-input--error{% endif %}"
-                                                id="target-date-day" name="target-date-day" type="text" pattern="[0-9]*"
-                                                inputmode="numeric"
-                                                value="{% if data['target-date-day'] %}{{ data['target-date-day'] }}{% endif %}">
-                                        </div>
-                                    </div>
-                                    <div class="nhsuk-date-input__item">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-month">
-                                                Month
-                                            </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 {% if data['target-date-day'] === '' and data['target-date-month'] === '' and data['target-date-year'] === '' %}nhsuk-input--error{% endif %}"
-                                                id="target-date-month" name="target-date-month" type="text"
-                                                pattern="[0-9]*" inputmode="numeric"
-                                                value="{% if data['target-date-month'] %}{{ data['target-date-month'] }}{% endif %}">
-                                        </div>
-                                    </div>
-                                    <div class="nhsuk-date-input__item">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-year">
-                                                Year
-                                            </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 {% if data['target-date-day'] === '' and data['target-date-month'] === '' and data['target-date-year'] === '' %}nhsuk-input--error{% endif %}"
-                                                id="target-date-year" name="target-date-year" type="text"
-                                                pattern="[0-9]*" inputmode="numeric"
-                                                value="{% if data['target-date-year'] %}{{ data['target-date-year'] }}{% endif %}">
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
 
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                             Continue
@@ -432,7 +350,7 @@ Create a new claim - Manage member state claims - NHSBSA
         </form>
         <!-- End of form-->
 
-        <a href="../index" class="nhsuk-link">Cancel</a>
+        <a href="../summary/no-treatments" class="nhsuk-link">Cancel</a>
     </div>
 </div>
 <!-- End of create a claim -->

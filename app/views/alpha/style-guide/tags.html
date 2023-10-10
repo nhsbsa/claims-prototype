@@ -59,22 +59,22 @@ Managing Member State claims
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                   <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                      Processing
+                      System processing
                   </strong>
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  Claim has been created, treatments have been added and are currently being processed by the system
+                  Claim has been created, treatments have been added and are currently being uploaded and processed by the system
                 </dd>
               </div>
     
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                   <strong class="nhsuk-tag nhsuk-tag--green">
-                      In progress
+                      Ready to review
                   </strong>
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  Claim has been created, treatments have been added, 1 or more treatments is either 'in progress' or 'to check'
+                  Claim has been created, treatments have been added, uploaded and auto validation has taken place, 1 or more treatments is either 'to check' or 'in progress'
                 </dd>
               </div>
     
@@ -85,14 +85,14 @@ Managing Member State claims
                   </strong>
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  Claim has been created, all treatments have been processed, 1 or more treatments have been 'contested' and these are ready to send back to MS
+                  Claim has been created, all treatments have either been auto validated or manually processed
                 </dd>
               </div>
 
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                   <strong class="nhsuk-tag nhsuk-tag--yellow">
-                      Contestations sent
+                      Sent
                   </strong>
                 </dt>
                 <dd class="nhsuk-summary-list__value">
@@ -100,17 +100,6 @@ Managing Member State claims
                 </dd>
               </div>
 
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  <strong class="nhsuk-tag nhsuk-tag--yellow">
-                      Complete
-                  </strong>
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  Claim has been created, all treatments have been processed and either accepted, withdrawn or partially accepted
-                </dd>
-              </div>
     
 
           
@@ -171,6 +160,17 @@ Managing Member State claims
                   The treatment has been contested by a Claims Officer
                 </dd>
               </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <strong class="nhsuk-tag nhsuk-tag--pink">
+                      Partial
+                  </strong>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  The treatment has partially accepted and contested by a Claims Officer
+                </dd>
+              </div>
     
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
@@ -179,7 +179,7 @@ Managing Member State claims
                   </strong>
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  The treatment has been contested by a Claims Officer and the MS has since withdrawn the treatment from the claim
+                  The treatment has been withdrawn from the claim
                 </dd>
               </div>
           

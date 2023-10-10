@@ -22,10 +22,10 @@ router.post('/create-claim-validation', function(req,res){
         req.session.data['target-date-year'] == ""
         ) 
         {
-        res.redirect('/alpha/version-02/claims/create/error')
+        res.redirect('/alpha/version-03/claims/create/error')
         }
     else {
-        res.redirect('/alpha/version-02/claims/create/cya')
+        res.redirect('/alpha/version-03/claims/create/cya')
     }
 
 })
@@ -34,28 +34,44 @@ router.post('/create-claim-validation', function(req,res){
 router.post('/search-treatments-filter', function(req,res){
     var status = req.session.data['filter-status']
     if (status == "all treatments" ) {
-        res.redirect('/alpha/version-02/claims/treatment-forms/with-treatments')
+        res.redirect('/alpha/version-03/claims/treatment-forms/with-treatments')
         }
     else if (status == "to check"){
-            res.redirect('/alpha/version-02/claims/treatment-forms/to-be-checked')
+            res.redirect('/alpha/version-03/claims/treatment-forms/to-be-checked')
             }
     else if (status == "in progress"){
-        res.redirect('/alpha/version-02/claims/treatment-forms/in-progress')
+        res.redirect('/alpha/version-03/claims/treatment-forms/in-progress')
         }
     else if (status == "accepted" ) {
-        res.redirect('/alpha/version-02/claims/treatment-forms/accepted')
+        res.redirect('/alpha/version-03/claims/treatment-forms/accepted')
         }
     else if (status == "contested"){
-        res.redirect('/alpha/version-02/claims/treatment-forms/contested')
+        res.redirect('/alpha/version-03/claims/treatment-forms/contested')
         }
     else if (status == "withdrawn"){
-            res.redirect('/alpha/version-02/claims/treatment-forms/withdrawn')
+            res.redirect('/alpha/version-03/claims/treatment-forms/withdrawn')
         }
     else {
-        res.redirect('/alpha/version-02/claims/treatment-forms/with-treatments')
+        res.redirect('/alpha/version-03/claims/treatment-forms/with-treatments')
     }
 
 })
+
+//Delete claim
+router.post('/route_delete_claim', function(req,res){
+    var confirmation = req.session.data['delete-claim']
+    if (confirmation == "yes" ) {
+        res.redirect('/alpha/version-03/claims/summary/delete-confirmation')
+        }
+    else if (confirmation == "no"){
+            res.redirect('/alpha/version-03/claims/summary/no-treatments')
+            }
+    else {
+        res.redirect('/alpha/version-03/claims/summary/delete-check')
+    }
+
+})
+
 
 
 
