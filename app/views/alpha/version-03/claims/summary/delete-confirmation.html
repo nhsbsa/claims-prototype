@@ -1,24 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
-    name: 'Home',
-    path: '/alpha/version-03/home'
-    },
-    {
-    name: 'Claims',
-    path: '/alpha/version-03/claims/index',
-    active: true
-    },
-    {
-    name: 'Contested claims',
-    path: '/alpha/version-03/contestations/index'
-    },
-    {
-    name: 'Reports',
-    path: '/alpha/version-03/reports/index'
-    }
-    ]
-    %}
+{
+name: 'Home',
+path: '/alpha/version-03/home'
+},
+{
+name: 'Claims',
+path: '/alpha/version-03/claims/index',
+active: true
+},
+{
+name: 'Contested claims',
+path: '/alpha/version-03/contestations/index'
+},
+{
+name: 'Reports',
+path: '/alpha/version-03/reports/index'
+}
+]
+%}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width.html' %}
 <!-- 
@@ -65,13 +65,17 @@ Confirmation - Manage Member State claims - NHSBSA
 
 
                 <div class="confirmation-box">
-                    <h1 class="heading-xlarge">Claim deleted
+                    <h1 class="nhsuk-heading-xl" style="padding-top:32px;">Claim ID 6784 deleted
                     </h1>
-                    <p>Claim ID 6784 has been deleted</p>
-
                 </div>
-               
-               
+
+                <p>The claim for France has been deleted</p>
+
+                <h2>What happens next</h2>
+                <p>Deleted claims cannot be recovered.</p>
+                <p>If you have deleted this claim in error, you'll need to create a new claim.</p>
+
+
 
                 <a href="../index">
                     <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
@@ -83,7 +87,7 @@ Confirmation - Manage Member State claims - NHSBSA
         </div>
         <!-- End of confirmation -->
 
-  
+
 
     </div>
 </div>
