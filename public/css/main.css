@@ -7353,6 +7353,61 @@ body.full-width .nhsuk-width-container {
   }
 }
 
+.nhsuk-loader {
+  margin-bottom: 8px;
+  margin-top: 8px;
+  position: relative;
+  text-align: center;
+}
+
+.nhsuk-loader__spinner {
+  animation: spin 2s linear infinite;
+  border: 16px solid #d8dde0;
+  border-radius: 50%;
+  border-top: 16px solid #005eb8;
+  display: inline-block;
+  height: 120px;
+  margin: auto;
+  width: 120px;
+}
+
+.nhsuk-loader--small {
+  text-align: left;
+}
+
+.nhsuk-loader--small .nhsuk-loader__spinner {
+  border-width: 4px;
+  border-top-width: 4px;
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 24px;
+}
+
+@media (min-width: 769px) {
+  .nhsuk-loader--small .nhsuk-loader__spinner {
+    height: 28px;
+    width: 28px;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.nhsuk-loader--white .nhsuk-loader__spinner {
+  border-color: rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+}
+
+.nhsuk-loader--white .nhsuk-loader__text {
+  color: #ffffff;
+}
+
 /* ==========================================================================
  SECONDARY NAV
 ========================================================================== */

@@ -1,0 +1,95 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    {
+    name: 'Summary',
+    path: '/alpha/version-03/claims/summary/not-started'
+    },
+    {
+    name: 'Invoices',
+    path: '/alpha/version-03/claims/invoices/not-started',
+    active: true
+    },
+    {
+    name: 'History',
+    path: '#'
+    }
+    ]
+    %}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Confirmation - Managing Memeber State claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../index">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+
+        <!-- Start of confirmation -->
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+
+
+                <div class="confirmation-box">
+                    <h1 class="heading-xlarge">Invoices submitted
+                    </h1>
+                    <h2>Your file is being processed.</h2>
+                    
+
+                </div>
+                
+               <p>You have successfully submitted invoices for claim ID 6784.</p>
+                
+                <h2 class="heading-medium">What happens next</h2>
+
+                <p>The system will now start to process the file you've uploaded.</p>
+
+                
+
+                
+                <a href="../../../invoices/list-processing-progress-0">
+                    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                        View invoices
+                    </button>
+                </a>
+
+            </div>
+        </div>
+        <!-- End of confirmation -->
+
+  
+
+    </div>
+</div>
+{% endblock %}
+<!-- End of central content -->
