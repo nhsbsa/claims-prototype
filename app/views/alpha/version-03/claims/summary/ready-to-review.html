@@ -1,29 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
-    name: 'Summary',
-    path: '/alpha/version-03/claims/summary/with-treatments',
-    active: true
-    },
-    {
-    name: 'Treatment forms',
-    path: '/alpha/version-03/claims/treatment-forms/with-treatments'
-    },
-    {
-    name: 'Documents',
-    path: '/alpha/version-03/claims/documents/index'
-    },
-    {
-    name: 'Case history',
-    path: '/alpha/version-03/claims/case-history/index'
-    }
-    ,
-    {
-    name: 'Notes',
-    path: '/alpha/version-03/claims/notes/index'
-    }
-    ]
-    %}
+  {
+  name: 'Summary',
+  path: '/alpha/version-03/claims/summary/no-treatments',
+  active: true
+  },
+  {
+  name: 'Costs',
+  path: '/alpha/version-03/claims/treatment-forms/system-processing'
+  },
+  {
+  name: 'History',
+  path: '/alpha/version-03/claims/case-history/index'
+  },
+  {
+  name: 'Notes',
+  path: '/alpha/version-03/claims/notes/index'
+  }
+  ]
+  %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 

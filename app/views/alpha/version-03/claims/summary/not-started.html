@@ -2,20 +2,16 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '/alpha/version-03/claims/summary/no-treatments',
+path: '/alpha/version-03/claims/summary/not-started',
 active: true
 },
 {
-name: 'Treatment forms',
-path: '/alpha/version-03/claims/treatment-forms/system-processing'
+name: 'Invoices',
+path: '/alpha/version-03/claims/invoices/not-started'
 },
 {
-name: 'Case history',
-path: '/alpha/version-03/claims/case-history/index'
-},
-{
-name: 'Notes',
-path: '/alpha/version-03/claims/notes/index'
+name: 'History',
+path: '#'
 }
 ]
 %}
@@ -59,25 +55,19 @@ Claim summary - Manage member state claims - NHSBSA
 
         <div class="nhsuk-grid-row">
 
-            <div class="nhsuk-grid-column-full">
+            <div class="nhsuk-grid-column-two-thirds">
                 <h1 class="nhsuk-heading-xl ">
                     Summary
                 </h1>
             </div>
 
-        </div>
+            <div class="nhsuk-grid-column-one-third">
+                <a href="../invoices/upload/index">
+                    <button style="float:right;" class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                        Add invoices
+                    </button>
+                </a>
 
-        <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-full">
-                <div class="nhsuk-warning-callout" style="margin-top:0">
-                    <h3 class="nhsuk-warning-callout__label">
-                      <span role="text">
-                        <span class="nhsuk-u-visually-hidden">Important: </span>
-                        System processing
-                      </span>
-                    </h3>
-                    <p>The system is currently processing an uploaded treatment file for this claim. Please check back later.</p>
-                  </div>
             </div>
 
         </div>
@@ -96,8 +86,8 @@ Claim summary - Manage member state claims - NHSBSA
                             </div>
                             <div class="nhsuk-grid-column-one-half">
 
-                                <strong class="nhsuk-tag nhsuk-tag--aqua-green" style="float:right">
-                                    System processing
+                                <strong class="nhsuk-tag nhsuk-tag--grey" style="float:right">
+                                    Not started
                                 </strong>
 
                             </div>
@@ -169,12 +159,13 @@ Claim summary - Manage member state claims - NHSBSA
                                         </dd>
                                     </div>
 
+
+
                                 </dl>
                             </div>
 
                             <div class="nhsuk-grid-column-one-half">
                                 <dl class="nhsuk-summary-list">
-
                                     <!-- Financial year -->
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
@@ -189,13 +180,14 @@ Claim summary - Manage member state claims - NHSBSA
                                         </dd>
                                     </div>
 
+
                                     <!-- Article type -->
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
                                             Article type
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            {% if data['article-type'] %}
+                                            {% if data['article'] %}
                                             {{ data['article'] }}
                                             {% else %}
                                             Actual cost
