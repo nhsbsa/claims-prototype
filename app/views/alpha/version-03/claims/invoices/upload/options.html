@@ -1,24 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
-    name: 'Summary',
-    path: '/alpha/version-03/claims/summary/not-started'
-    },
-    {
-    name: 'Invoices',
-    path: '/alpha/version-03/claims/invoices/not-started',
-    active: true
-    },
-    {
-        name: 'Uploaded files',
-        path: '#'
-        },
-    {
-    name: 'History',
-    path: '#'
-    }
-    ]
-    %}
+{
+name: 'Summary',
+path: '/alpha/version-03/claims/summary/not-started'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-03/claims/invoices/not-started',
+active: true
+},
+{
+name: 'Uploaded files',
+path: '#'
+},
+{
+name: 'History',
+path: '#'
+}
+]
+%}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -72,13 +72,10 @@ Manage member state claims - NHSBSA
     </div>
 </div>
 <!-- End of back link -->
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-
+<form action="../../../route-additional-invoice" method="post">
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-                <form action="../../route-additional-invoice" method="post">
+                
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                         <h1 class="nhsuk-fieldset__heading">
                             <span class="nhsuk-caption-l">Add additional invoices</span>
@@ -86,62 +83,61 @@ Manage member state claims - NHSBSA
                         </h1>
                     </legend>
             </div>
+            </div>
 
+            <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
+
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
 
                         <!-- Additional invoices -->
                         <div class="nhsuk-form-group">
-                        <fieldset class="nhsuk-fieldset">
-                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m ">
-                                <h1 class="nhsuk-fieldset__heading">
-                                    How would you like to upload the additional invoices?
-                                </h1>
-                            </legend>
-                      
-                            <div class="nhsuk-radios">
-                                <div class="nhsuk-radios__item">
-                                    <input class="nhsuk-radios__input" id="additional-invoice-bulk"
-                                        name="additional-invoice" type="radio" value="bulk">
-                                    <label class="nhsuk-label nhsuk-radios__label" for="additional-invoice-bulk">
-                                        Bulk upload (xml file)
-                                    </label>
-                                </div>
-                                <div class="nhsuk-radios__item">
-                                    <input class="nhsuk-radios__input" id="additional-invoice-single"
-                                        name="additional-invoice" type="radio" value="single">
-                                    <label class="nhsuk-label nhsuk-radios__label" for="additional-invoice-single">
-                                        Individual
-                                    </label>
-                                </div>
+                            <fieldset class="nhsuk-fieldset">
+                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m ">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        How would you like to upload the additional invoices?
+                                    </h1>
+                                </legend>
 
-                            </div>
-                        </fieldset>
+                                <div class="nhsuk-radios">
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="additional-invoice-bulk"
+                                            name="additional-invoice" type="radio" value="bulk">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="additional-invoice-bulk">
+                                            Bulk upload (xml file)
+                                        </label>
+                                    </div>
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="additional-invoice-single"
+                                            name="additional-invoice" type="radio" value="single">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="additional-invoice-single">
+                                            Individual
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </fieldset>
                         </div>
-                        
+
 
 
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                             Continue
                         </button>
-                        
-        
+
+
                     </div>
                 </div>
-        
-        
+
+
                 <a href="../../../summary/not-started" class="nhsuk-link">Cancel</a>
-            </form>
+
+           
             </div>
+           
         </div>
 
-
-
-
-  
-
-    </div>
-</div>
+    </form>
 {% endblock %}
 <!-- End of central content -->

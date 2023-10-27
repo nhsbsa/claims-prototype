@@ -89,11 +89,11 @@ router.post('/route-additional-upload', function(req,res){
 
 //Upload additional invoices
 router.post('/route-additional-invoice', function(req,res){
-    var method = req.session.data['additional-invoice']
-    if (upload == "bulk" ) {
+    var type = req.session.data['additional-invoice']
+    if (type == "bulk" ) {
         res.redirect('/alpha/version-03/claims/invoices/upload/xml/additional-bulk-upload')
         }
-    else if (upload == "single"){
+    else if (type == "single"){
             res.redirect('/alpha/version-03/claims/invoices/create/index')
             }
     else {
