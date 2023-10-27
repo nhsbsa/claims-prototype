@@ -10,6 +10,10 @@
     active: true
     },
     {
+        name: 'Uploaded files',
+        path: '#'
+        },
+    {
     name: 'History',
     path: '#'
     }
@@ -115,7 +119,7 @@ Would you like to upload another file? - Manage member state claims - NHSBSA
                           
                             </div>
 
-                            {% if data['additional-upload'] === 'yes' %}
+                            {% if data['additional-upload'] === 'yes' or data['additional-upload'] === 'no' %}
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">
                                   File 2

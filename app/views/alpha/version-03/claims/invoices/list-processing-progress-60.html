@@ -10,6 +10,10 @@
   active: true
   },
   {
+    name: 'Uploaded files',
+    path: '/alpha/version-03/claims/file-uploads/index'
+    },
+  {
   name: 'History',
   path: '#'
   }
@@ -63,8 +67,8 @@ Invoices - Manage memeber state claims - NHSBSA
 
       <div class="nhsuk-grid-column-one-half" style="text-align:right;">
 
-            <a href="">
-                <button class="nhsuk-button  nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+        <a href="upload/options">
+          <button class="nhsuk-button  nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
                     Add invoices
                   </button>
                 </a>
@@ -80,13 +84,13 @@ Invoices - Manage memeber state claims - NHSBSA
       <h3 class="nhsuk-warning-callout__label">
         <span role="text">
           <span class="nhsuk-u-visually-hidden">Important: </span>
-          Processing
+          Processing uploaded invoices
         </span>
       </h3>
-      <p>The system is currently processing uploaded invoices.</p>
+    
       <label class="nhsuk-label" for="upload">60% processed</label>
 <progress id="upload" value="60" max="100"> 60% </progress>
-      <p>Estimated time left: 14 minutes</p>
+      <p>Estimated time remaining: 14 minutes</p>
 
       <p><a href="with-treatments">Refresh</a></p>
     </div>
@@ -95,82 +99,188 @@ Invoices - Manage memeber state claims - NHSBSA
 
     <!-- End of warning block -->
 
-    <!-- Start of stats-->
-    <div class="nhsuk-grid-row nhsuk-u-margin-bottom-6">
+        <!-- Start of stats -->
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+    
+    
+            <ul class="nhsuk-grid-row nhsuk-card-group">
+              <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    
+                <div class="nhsuk-card">
+                  <div class="nhsuk-card__content">
+    
+                    <dl class="nhsuk-summary-list">
+    
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          To check
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          3
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                          <a href="#">
+                            View<span class="nhsuk-u-visually-hidden"> invoices to check</span>
+                          </a>
+                        </dd>
+                      </div>
+    
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          In progress
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          0
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                          -
+                          <!-- <a href="#">
+                            View<span class="nhsuk-u-visually-hidden"> view invoices in progress</span>
+                          </a> -->
+                        </dd>
+                      </div>
+    
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          With errors
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          0
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                          -
+                          <!-- <a href="#">
+                            View<span class="nhsuk-u-visually-hidden"> invoices with errors</span>
+                          </a> -->
+                        </dd>
+                      </div>
+    
+    
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Total
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          29
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                          <a href="#">
+                            View<span class="nhsuk-u-visually-hidden"> with total number of invoices</span>
+                          </a>
+                        </dd>
+                      </div>
+    
+                    </dl>
+    
+                  </div>
+                </div>
+    
+              </li>
+              <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    
+                <div class="nhsuk-card">
+                  <div class="nhsuk-card__content">
+    
+                    <dl class="nhsuk-summary-list">
+    
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Accepted
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          26
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                          <a href="#">
+                            View<span class="nhsuk-u-visually-hidden"> accepted invoices</span>
+                          </a>
+                        </dd>
+                      </div>
+    
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Contested
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          0
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                          -
+                          <!-- <a href="#">
+                            View<span class="nhsuk-u-visually-hidden"> contested invoices</span>
+                          </a> -->
+                        </dd>
+                      </div>
+    
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Partial
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          0
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                          -
+                          <!-- <a href="#">
+                            View<span class="nhsuk-u-visually-hidden"> partially accepted and contested invoices</span>
+                          </a> -->
+                        </dd>
+                      </div>
+    
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Withdrawn
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          0
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                          -
+                          <!-- <a href="#">
+                            View<span class="nhsuk-u-visually-hidden"> withdrawn invoices</span>
+                          </a> -->
+                        </dd>
+                      </div>
+    
+                    </dl>
+    
+                  </div>
+                </div>
+    
+              </li>
+    
+            </ul>
+          </div>
+    
+    
+    
+        </div>
+        <!-- End of stats-->
+
+
+    <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible" style="margin: 0 0 36px 0; ">
+
+    <!-- Start of download results -->
+    <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
-        <ul class="nhsuk-grid-row nhsuk-card-group">
 
-          <!-- To check -->
-          <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
-            <div class="nhsuk-card nhsuk-card--clickable">
-              <div class="nhsuk-card__content">
-                <h2 class="nhsuk-heading-xl nhsuk-u-font-size-32">
-                  3
-                  <a href="to-be-checked#stats"><span
-                      class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">To check</span></a>
-                </h2>
-              </div>
-            </div>
-          </li>
 
-          <!-- In progress -->
-          <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
-            <div class="nhsuk-card nhsuk-card--clickable">
-              <div class="nhsuk-card__content">
-                <h2 class="nhsuk-heading-xl nhsuk-u-font-size-32">
-                  0
-                  <a href="in-progress#stats"><span
-                      class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">In progress</span></a>
-                </h2>
-              </div>
-            </div>
-          </li>
-
-          <!-- Accepted -->
-          <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
-            <div class="nhsuk-card nhsuk-card--clickable">
-              <div class="nhsuk-card__content">
-                <h2 class="nhsuk-heading-xl nhsuk-u-font-size-32">
-                  26
-                  <a href="accepted#stats"><span
-                      class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">Accepted</span> </a>
-                </h2>
-              </div>
-            </div>
-          </li>
-
-          <!-- Contested -->
-          <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
-            <div class="nhsuk-card nhsuk-card--clickable">
-              <div class="nhsuk-card__content">
-                <h2 class="nhsuk-heading-xl nhsuk-u-font-size-32">
-                  0
-                  <a href="contested#stats"><span
-                      class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">Contested</span></a>
-                </h2>
-              </div>
-            </div>
-          </li>
-
-          <!-- Withdrawn -->
-          <li class="nhsuk-grid-column-one-fifth nhsuk-card-group__item">
-            <div class="nhsuk-card nhsuk-card--clickable">
-              <div class="nhsuk-card__content">
-                <h2 class="nhsuk-heading-l nhsuk-u-font-size-32">
-                  0
-                  <a href="withdrawn#stats"><span
-                      class="nhsuk-caption-l nhsuk-caption--bottom nhsuk-u-font-size-19">Withdrawn</span></a>
-                </h2>
-              </div>
-            </div>
-          </li>
-
-        </ul>
+        <div class="nhsuk-action-link nhsuk-u-margin-bottom-4" style="float:right;">
+          <a class="nhsuk-action-link__link" href="#">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+              </path>
+            </svg>
+            <span class="nhsuk-action-link__text">Download results</span>
+          </a>
+        </div>
       </div>
     </div>
-    <!-- End of stats -->
-
-
+    <!-- End of download results-->
 
     <!-- Start treatments card-->
     <div class="nhsuk-grid-row">
@@ -625,73 +735,7 @@ Invoices - Manage memeber state claims - NHSBSA
     </div>
     <!-- End of treatments card-->
 
-        <!--Start file uploads info-->
 
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-full">
-    
-            <div class="nhsuk-card">
-              <div class="nhsuk-card__content">
-                <table role="table" class="nhsuk-table-responsive">
-                  <caption class="nhsuk-table__caption">File uploads</caption>
-                  <thead role="rowgroup" class="nhsuk-table__head">
-                    <tr role="row">
-                      <th role="columnheader" class="" scope="col">
-                        Date/time
-                      </th>
-                      <th role="columnheader" class="" scope="col">
-                        Author
-                      </th>
-                      <th role="columnheader" class="" scope="col">
-                        Filename
-                      </th>
-                      <th role="columnheader" class="" scope="col">
-                        Status
-                      </th>
-    
-                    </tr>
-                  </thead>
-                  <tbody class="nhsuk-table__body">
-    
-                    <tr role="row" class="nhsuk-table__row">
-                      <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Date/time </span>17 October 2023, 09:16
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Author </span>Isla Fields
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-1.xml
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Status </span>Complete
-                      </td>
-                    </tr>
-    
-                    <tr role="row" class="nhsuk-table__row">
-                      <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Date/time </span>17 October 2023, 09:18
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Author </span>Isla Fields
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-2.xml
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Status </span>In progress
-                      </td>
-                    </tr>
-    
-                  </tbody>
-                </table>
-              </div>
-            </div>
-    
-          </div>
-        </div>
-    
-        <!-- End file uploads info -->
 
 </div>
 </div>
