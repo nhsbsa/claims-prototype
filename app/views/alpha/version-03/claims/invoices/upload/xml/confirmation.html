@@ -1,24 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
-    name: 'Summary',
-    path: '/alpha/version-03/claims/summary/not-started'
-    },
-    {
-    name: 'Invoices',
-    path: '/alpha/version-03/claims/invoices/not-started',
-    active: true
-    },
-    {
-        name: 'Uploaded files',
-        path: '#'
-        },
-    {
-    name: 'History',
-    path: '#'
-    }
-    ]
-    %}
+{
+name: 'Summary',
+path: '/alpha/version-03/claims/summary/not-started'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-03/claims/invoices/not-started',
+active: true
+},
+{
+name: 'Uploaded files',
+path: '/alpha/version-03/claims/file-uploads/index'
+},
+{
+name: 'History',
+path: '#'
+}
+]
+%}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -55,33 +55,26 @@ Confirmation - Managing Memeber State claims - NHSBSA
 
 <!-- Start of central content -->
 {% block content %}
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-
 
         <!-- Start of confirmation -->
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
 
-
                 <div class="confirmation-box">
-                    <h1 class="heading-xlarge">Invoices submitted
+                    <h1 class="heading-xlarge">File upload complete for {% if data['country'] %}{{
+                        data['country'] }}{% else %}France{% endif %}
                     </h1>
-                    <h2>Your file is being processed.</h2>
-                    
-
+                    <h2>Processing invoices</h2>
                 </div>
-                
-               <p>You have successfully submitted invoices for claim ID 6784.</p>
-                
+
+                <p>You have submitted invoices for claim ID 6784.</p>
+
                 <h2 class="heading-medium">What happens next</h2>
 
-                <p>The system will now start to process the file you've uploaded.</p>
+                <p>The system will check each invoice and try to match it against a valid entitlement. </p>
+                <p>Once the invoices have been successfully processed by the system, you can check any treatments that the system has not been able to match. </p>
 
-                
-
-                
-                <a href="../../../invoices/list-processing-progress-0">
+                <a href="../../../invoices/processing-progress-0">
                     <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                         View invoices
                     </button>
@@ -91,9 +84,5 @@ Confirmation - Managing Memeber State claims - NHSBSA
         </div>
         <!-- End of confirmation -->
 
-  
-
-    </div>
-</div>
 {% endblock %}
 <!-- End of central content -->
