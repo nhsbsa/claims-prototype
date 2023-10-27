@@ -1,20 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
-    name: 'Summary',
-    path: '/alpha/version-03/claims/summary/with-treatments',
-    active: true
-    },
-    {
-    name: 'Invoices',
-    path: '/alpha/version-03/claims/invoices/no-invoices'
-    },
-    {
-    name: 'History',
-    path: '#'
-    }
-    ]
-    %}
+{
+name: 'Summary',
+path: '/alpha/version-03/claims/summary/with-treatments',
+active: true
+},
+{
+name: 'Invoices',
+path: '/alpha/version-03/claims/invoices/with-treatments'
+},
+{
+name: 'Uploaded files',
+path: '/alpha/version-03/claims/file-uploads/index'
+},
+{
+name: 'History',
+path: '#'
+}
+]
+%}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -55,10 +59,17 @@ Claim summary - Manage member state claims - NHSBSA
 
         <div class="nhsuk-grid-row">
 
-            <div class="nhsuk-grid-column-full">
+            <div class="nhsuk-grid-column-two-thirds">
                 <h1 class="nhsuk-heading-xl ">
                     Summary
                 </h1>
+            </div>
+            <div class="nhsuk-grid-column-one-thirds" style="float: right; padding-right:16px;">
+                <a href="../invoices/upload/options">
+                    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                        Add invoices
+                    </button>
+                </a>
             </div>
         </div>
 
@@ -211,15 +222,15 @@ Claim summary - Manage member state claims - NHSBSA
 
                                     </div>
 
-                                                                        <!-- Created by-->
-                                                                        <div class="nhsuk-summary-list__row">
-                                                                            <dt class="nhsuk-summary-list__key">
-                                                                                Created by
-                                                                            </dt>
-                                                                            <dd class="nhsuk-summary-list__value">
-                                                                                Isla Fields
-                                                                            </dd>
-                                                                        </div>
+                                    <!-- Created by-->
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Created by
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Isla Fields
+                                        </dd>
+                                    </div>
 
 
                                 </dl>
@@ -237,82 +248,144 @@ Claim summary - Manage member state claims - NHSBSA
         </div>
         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-<!-- Treatments -->
+        <!-- Treatments -->
         <div class="nhsuk-grid-row">
 
             <div class="nhsuk-grid-column-two-thirds">
-                <h2 class="nhsuk-heading-l">Total treatments: 50</h2>
+                <h2 class="nhsuk-heading-l">Total invoices: 50</h2>
 
 
             </div>
+
             <div class="nhsuk-grid-column-one-thirds" style="float: right; padding-right:16px;">
-                <a href="../treatment-forms/upload/with-hint-text">
-                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                    Add treatments
-                </button>
+                <a href="../invoices/with-treatments">
+                    <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                        View invoices
+                    </button>
                 </a>
-            </div>
+
         </div>
 
 
+
+
+
+
+
+
+        <!-- Start of invoice stats -->
         <div class="nhsuk-grid-row">
-
             <div class="nhsuk-grid-column-full">
+
+
                 <ul class="nhsuk-grid-row nhsuk-card-group">
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+                    <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
 
-                        <div class="nhsuk-card nhsuk-card--clickable">
+                        <div class="nhsuk-card">
                             <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">45
-                                    <span class="nhsuk-u-visually-hidden">Accepted</span>
-                                </p><a href="../treatment-forms/accepted"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Accepted</a>
+
+                                <dl class="nhsuk-summary-list">
+
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            To check
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            3
+                                        </dd>
+
+                                    </div>
+
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            In progress
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            0
+                                        </dd>
+
+                                    </div>
+
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            With errors
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            2
+                                        </dd>
+
+                                    </div>
+
+
+                                </dl>
+
                             </div>
                         </div>
 
                     </li>
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+                    <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
 
-                        <div class="nhsuk-card nhsuk-card--clickable">
+                        <div class="nhsuk-card">
                             <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">0
-                                    <span class="nhsuk-u-visually-hidden">Withdrawn</span>
-                                </p><a href="../treatment-forms/withdrawn"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Withdrawn</a>
+
+                                <dl class="nhsuk-summary-list">
+
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Accepted
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            45
+                                        </dd>
+
+                                    </div>
+
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Contested
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            0
+                                        </dd>
+
+                                    </div>
+
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Partial
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            0
+                                        </dd>
+
+                                    </div>
+
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Withdrawn
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            0
+                                        </dd>
+
+                                    </div>
+
+                                </dl>
+
                             </div>
                         </div>
 
                     </li>
 
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
-
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">0
-                                    <span class="nhsuk-u-visually-hidden">Contested</span>
-                                </p><a href="../treatment-forms/contested"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Contested</a>
-                            </div>
-                        </div>
-
-                    </li>
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
-
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">5
-                                    <span class="nhsuk-u-visually-hidden">To be checked</span>
-                                </p><a href="../treatment-forms/to-be-checked"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">To
-                                    be checked</a>
-                            </div>
-                        </div>
-
-                    </li>
                 </ul>
-
             </div>
+
+
+
         </div>
+        <!-- End of invoice stats-->
+
+
 
         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
@@ -321,59 +394,119 @@ Claim summary - Manage member state claims - NHSBSA
             <div class="nhsuk-grid-column-full">
                 <h2 class="nhsuk-heading-l">Total amount: 4927.18</h2>
 
+                <!-- Start of amount stats -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
 
-                <ul class="nhsuk-grid-row nhsuk-card-group">
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
 
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">4725.51
-                                    <span class="nhsuk-u-visually-hidden">Accepted</span>
-                                </p><a href="#"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Accepted</a>
-                            </div>
-                        </div>
+                        <ul class="nhsuk-grid-row nhsuk-card-group">
+                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
 
-                    </li>
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+                                <div class="nhsuk-card">
+                                    <div class="nhsuk-card__content">
 
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">0
-                                    <span class="nhsuk-u-visually-hidden">Withdrawn</span>
-                                </p><a href="#"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Withdrawn</a>
-                            </div>
-                        </div>
+                                        <dl class="nhsuk-summary-list">
 
-                    </li>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    To check
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    151.67
+                                                </dd>
 
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+                                            </div>
 
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">0
-                                    <span class="nhsuk-u-visually-hidden">Contested</span>
-                                </p><a href="#"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Contested</a>
-                            </div>
-                        </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    In progress
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    0
+                                                </dd>
 
-                    </li>
-                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+                                            </div>
 
-                        <div class="nhsuk-card nhsuk-card--clickable">
-                            <div class="nhsuk-card__content">
-                                <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">201.67
-                                    <span class="nhsuk-u-visually-hidden">To be checked</span>
-                                </p><a href="#"
-                                    class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">To be checked</a>
-                            </div>
-                        </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    With errors
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    50.00
+                                                </dd>
 
-                    </li>
+                                            </div>
 
-                </ul>
+
+                                        </dl>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+                                <div class="nhsuk-card">
+                                    <div class="nhsuk-card__content">
+
+                                        <dl class="nhsuk-summary-list">
+
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Accepted
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    4725.51
+                                                </dd>
+
+                                            </div>
+
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Contested
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    0
+                                                </dd>
+
+                                            </div>
+
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Partial
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    0
+                                                </dd>
+
+                                            </div>
+
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Withdrawn
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    0
+                                                </dd>
+
+                                            </div>
+
+                                        </dl>
+
+                                    </div>
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+
+                </div>
+                <!-- End of amount stats-->
+
+
 
             </div>
         </div>
