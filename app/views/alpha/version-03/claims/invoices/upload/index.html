@@ -1,20 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
-    name: 'Summary',
-    path: '/alpha/version-03/claims/summary/not-started'
-    },
-    {
-    name: 'Invoices',
-    path: '/alpha/version-03/claims/invoices/not-started',
-    active: true
-    },
-    {
-    name: 'History',
-    path: '#'
-    }
-    ]
-    %}
+{
+name: 'Summary',
+path: '/alpha/version-03/claims/summary/not-started'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-03/claims/invoices/not-started',
+active: true
+},
+{
+name: 'Uploaded files',
+path: '#'
+},
+{
+name: 'History',
+path: '#'
+}
+]
+%}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -89,61 +93,62 @@ Contact method - Manage member state claims - NHSBSA
 
                         <!-- Contact method -->
                         <div class="nhsuk-form-group">
-                        <fieldset class="nhsuk-fieldset">
-                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m nhsuk-u-margin-bottom-1">
-                                <h1 class="nhsuk-fieldset__heading">
-                                    How did the member state send the claim?
-                                </h1>
-                            </legend>
-                            <div class="nhsuk-hint" id="data-source-hint">
-                                Select one option.
-                            </div>
-                            <div class="nhsuk-radios">
-                                <div class="nhsuk-radios__item">
-                                    <input class="nhsuk-radios__input" id="data-source-rina"
-                                        name="data-source" type="radio" value="RINA">
-                                    <label class="nhsuk-label nhsuk-radios__label" for="data-source-rina">
-                                        RINA
-                                    </label>
+                            <fieldset class="nhsuk-fieldset">
+                                <legend
+                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        How did the member state send the claim?
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="data-source-hint">
+                                    Select one option.
                                 </div>
-                                <div class="nhsuk-radios__item">
-                                    <input class="nhsuk-radios__input" id="data-source-edi"
-                                        name="data-source" type="radio" value="EDI">
-                                    <label class="nhsuk-label nhsuk-radios__label" for="data-source-edi">
-                                        EDI
-                                    </label>
+                                <div class="nhsuk-radios">
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="data-source-rina" name="data-source"
+                                            type="radio" value="RINA">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="data-source-rina">
+                                            RINA
+                                        </label>
+                                    </div>
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="data-source-edi" name="data-source"
+                                            type="radio" value="EDI">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="data-source-edi">
+                                            EDI
+                                        </label>
+                                    </div>
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="data-source-paper" name="data-source"
+                                            type="radio" value="Paper">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="data-source-paper">
+                                            Paper
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="nhsuk-radios__item">
-                                    <input class="nhsuk-radios__input" id="data-source-paper"
-                                        name="data-source" type="radio" value="Paper">
-                                    <label class="nhsuk-label nhsuk-radios__label" for="data-source-paper">
-                                        Paper
-                                    </label>
-                                </div>
-                            </div>
-                        </fieldset>
+                            </fieldset>
                         </div>
-                        
+
 
 
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                             Continue
                         </button>
-                        
-        
+
+
                     </div>
                 </div>
-        
-        
+
+
                 <a href="../../summary/not-started" class="nhsuk-link">Cancel</a>
-            </form>
+                </form>
             </div>
         </div>
 
 
 
 
-  
+
 
     </div>
 </div>
