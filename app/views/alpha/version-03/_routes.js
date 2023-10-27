@@ -34,7 +34,7 @@ router.post('/create-claim-validation', function(req,res){
 router.post('/search-treatments-filter', function(req,res){
     var status = req.session.data['filter-status']
     if (status == "all treatments" ) {
-        res.redirect('/alpha/version-03/claims/invoices/with-treatments')
+        res.redirect('/alpha/version-03/claims/invoices/no-invoices')
         }
     else if (status == "to check"){
             res.redirect('/alpha/version-03/claims/invoices/to-be-checked')
@@ -52,7 +52,7 @@ router.post('/search-treatments-filter', function(req,res){
             res.redirect('/alpha/version-03/claims/invoices/withdrawn')
         }
     else {
-        res.redirect('/alpha/version-03/claims/invoices/with-treatments')
+        res.redirect('/alpha/version-03/claims/invoices/no-invoices')
     }
 
 })
