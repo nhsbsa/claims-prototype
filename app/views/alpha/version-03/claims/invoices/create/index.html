@@ -1,27 +1,27 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Home',
-path: '/alpha/version-03/home'
-},
-{
-name: 'Claims',
-path: '/alpha/version-03/claims/index',
-active: true
-},
-{
-name: 'Contested claims',
-path: '/alpha/version-03/contestations/index'
-},
-{
-name: 'Reports',
-path: '/alpha/version-03/reports/index'
-}
-]
-%}
+    {
+    name: 'Summary',
+    path: '/alpha/version-03/claims/summary/not-started'
+    },
+    {
+    name: 'Invoices',
+    path: '/alpha/version-03/claims/invoices/not-started',
+    active: true
+    },
+    {
+        name: 'Uploaded files',
+        path: '#'
+        },
+    {
+    name: 'History',
+    path: '#'
+    }
+    ]
+    %}
 
 <!-- Extends the layout from /views/layout-full-width.html -->
-{% extends 'layout-full-width.html' %}
+{% extends 'layout-full-width-claim.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -161,31 +161,29 @@ Create a new invoice - Manage member state claims - NHSBSA
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
 
-
-
-
-
-                            </fieldset>
-
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-
-
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                             Continue
                         </button>
 
                     </div>
+
+
                 </div>
-                <!-- End of card -->
+
+
 
             </fieldset>
-        </form>
-        <!-- End of form-->
 
-        <a href="../index" class="nhsuk-link">Cancel</a>
-    </div>
+
+
+
+<!-- End of card -->
+
+</form>
+<!-- End of form-->
+
+<a href="../index" class="nhsuk-link">Cancel</a>
+</div>
 </div>
 <!-- End of create a claim -->
 

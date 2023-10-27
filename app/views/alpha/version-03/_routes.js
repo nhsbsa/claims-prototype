@@ -91,7 +91,7 @@ router.post('/route-additional-upload', function(req,res){
 router.post('/route-additional-invoice', function(req,res){
     var method = req.session.data['additional-invoice']
     if (upload == "bulk" ) {
-        res.redirect('/alpha/version-03/claims/invoices/upload/additional')
+        res.redirect('/alpha/version-03/claims/invoices/upload/xml/additional-bulk-upload')
         }
     else if (upload == "single"){
             res.redirect('/alpha/version-03/claims/invoices/create/index')
