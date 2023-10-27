@@ -102,6 +102,21 @@ router.post('/route-additional-invoice', function(req,res){
 
 })
 
+//Upload additional treatments
+router.post('/route-additional-upload-2', function(req,res){
+    var upload = req.session.data['additional-upload']
+    if (upload == "yes" ) {
+        res.redirect('/alpha/version-03/claims/invoices/upload/xml/additional-bulk-upload')
+        }
+    else if (upload == "no"){
+            res.redirect('/alpha/version-03/claims/invoices/upload/xml/additional-bulk-cya')
+            }
+    else {
+        res.redirect('/alpha/version-03/claims/invoices/upload/xml/additional-file-2')
+    }
+
+})
+
 
 
 
