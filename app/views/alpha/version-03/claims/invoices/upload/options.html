@@ -10,6 +10,10 @@
     active: true
     },
     {
+        name: 'Uploaded files',
+        path: '#'
+        },
+    {
     name: 'History',
     path: '#'
     }
@@ -78,7 +82,7 @@ Manage member state claims - NHSBSA
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                         <h1 class="nhsuk-fieldset__heading">
                             <span class="nhsuk-caption-l">Add additional invoices</span>
-                            Creation method
+                            Upload method
                         </h1>
                     </legend>
             </div>
@@ -90,20 +94,18 @@ Manage member state claims - NHSBSA
                         <!-- Additional invoices -->
                         <div class="nhsuk-form-group">
                         <fieldset class="nhsuk-fieldset">
-                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m nhsuk-u-margin-bottom-1">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m ">
                                 <h1 class="nhsuk-fieldset__heading">
-                                    How would you like to include your additional invoices?
+                                    How would you like to upload the additional invoices?
                                 </h1>
                             </legend>
-                            <div class="nhsuk-hint" id="additional-invoice-hint">
-                                Select one option.
-                            </div>
+                      
                             <div class="nhsuk-radios">
                                 <div class="nhsuk-radios__item">
                                     <input class="nhsuk-radios__input" id="additional-invoice-bulk"
                                         name="additional-invoice" type="radio" value="bulk">
                                     <label class="nhsuk-label nhsuk-radios__label" for="additional-invoice-bulk">
-                                        Bulk using XML file
+                                        Bulk upload (xml file)
                                     </label>
                                 </div>
                                 <div class="nhsuk-radios__item">
