@@ -1,24 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
-    name: 'Summary',
-    path: '/alpha/version-03/claims/summary/not-started'
-    },
-    {
-    name: 'Invoices',
-    path: '/alpha/version-03/claims/invoices/not-started',
-    active: true
-    },
-    {
-        name: 'Uploaded files',
-        path: '#'
-        },
-    {
-    name: 'History',
-    path: '#'
-    }
-    ]
-    %}
+{
+name: 'Summary',
+path: '/alpha/version-03/claims/summary/not-started'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-03/claims/invoices/not-started',
+active: true
+},
+{
+name: 'Uploaded files',
+path: '#'
+},
+{
+name: 'History',
+path: '#'
+}
+]
+%}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -75,20 +75,22 @@ Upload invoices - Manage member state claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-
-
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
                 <form id="checkFile" action="additional-file" method="post">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-                        <h1 class="nhsuk-fieldset__heading">
+                        <h1 id="legend1" class="nhsuk-fieldset__heading">
                             <span class="nhsuk-caption-l">Add invoices</span>
                             Upload invoices
+                        </h1>
+                        <h1 id="legend2" style="display: none;" class="nhsuk-fieldset__heading">
+                            <span class="nhsuk-caption-l">Add invoices</span>
+                            Uploading invoices
                         </h1>
                     </legend>
             </div>
             <div id="uploadFile" class="nhsuk-grid-column-two-thirds">
-                <div  class="nhsuk-card nhsuk-u-margin-bottom-3" >
+                <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
 
                         <!-- Upload -->
@@ -117,16 +119,10 @@ Upload invoices - Manage member state claims - NHSBSA
 
                         </div>
 
-
-
-
-
-
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                             Continue
                         </button>
-
 
                     </div>
                 </div>
@@ -138,36 +134,36 @@ Upload invoices - Manage member state claims - NHSBSA
         </div>
 
 
-
-
-        <div id="upload-progress" style="display: none;" class="nhsuk-grid-column-full" aria-hidden="true" tabindex="-1">
+        <div id="upload-progress" style="display: none;" class="nhsuk-grid-column-full" aria-hidden="true"
+            tabindex="-1">
             <div class="nhsuk-loader">
-                <p>Processing file</p>
+                <p>Processing file.<br />This may take a few minutes. Do not close your browser.</p>
                 <span class="nhsuk-loader__spinner"></span>
             </div>
         </div>
-    
-    
+
+
         <script>
             // Upload in progress visual indicator
             var submitForm = document.getElementById("checkFile");
             var uploadFile = document.getElementById("uploadFile");
-            var uploadProgress =  document.getElementById("upload-progress");
-    
-            submitForm.addEventListener("submit", function(e){
+            var uploadProgress = document.getElementById("upload-progress");
+
+            submitForm.addEventListener("submit", function (e) {
                 e.preventDefault();
-    
-               
+
+
+                legend1.style.display = "none";
+                legend2.style.display = "block";
                 uploadFile.style.display = "none";
-    
                 uploadProgress.style.display = "block";
                 uploadProgress.setAttribute("role", "alert");
                 uploadProgress.setAttribute("aria-hidden", "false");
-               uploadProgress.focus();
-    
-                setTimeout(function() {
+                uploadProgress.focus();
+
+                setTimeout(function () {
                     submitForm.submit();
-                }, 3000);
+                }, 5000);
             });
         </script>
 
