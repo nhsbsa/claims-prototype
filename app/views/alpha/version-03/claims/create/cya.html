@@ -99,8 +99,8 @@ Check your answers - Manage Member State claims - NHSBSA
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['submission-date-day'] %}{{ data['submission-date-day'] }}/{%
                                 else
-                                %}10/{% endif %}{% if data['submission-date-month'] %}{{
-                                data['submission-date-month'] }}/{% else %}8/{% endif %}{% if
+                                %}10 {% endif %}{% if data['submission-date-month'] %}{{
+                                data['submission-date-month'] }}/{% else %}August {% endif %}{% if
                                 data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
                                 %}2023{% endif %}
                             </dd>
@@ -122,10 +122,10 @@ Check your answers - Manage Member State claims - NHSBSA
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['target-date-day'] %}{{ data['target-date-day'] }}/{% else
-                                %}9/{%
+                                %}9 {%
                                 endif %}{% if data['target-date-month'] %}{{ data['target-date-month']
                                 }}/{%
-                                else %}2/{% endif %}{% if data['target-date-year'] %}{{
+                                else %}February {% endif %}{% if data['target-date-year'] %}{{
                                 data['target-date-year']
                                 }}{% else %}2024{% endif %}
                             </dd>
