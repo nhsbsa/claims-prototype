@@ -1,0 +1,73 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+
+<!-- Extends the layout from /views/layout-central-no-navigation-signed-out.html -->
+{% extends 'layout-blank.html' %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Manage member state claims - NHSBSA
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+{% block content %}
+<!-- Start of page content-->
+<style>
+    body {
+        background-color: #d8dde0;
+    }
+</style>
+
+<div class="nhsuk-width-container"> 
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <div class="nhsuk-card" style="max-width: 60%; margin: auto; ">
+            <div class="nhsuk-card__content">
+
+                <img src="/images/nhs-bsa-logo.png" width="250px" style="margin-bottom: 18px;" >
+                <h2>Sign in</h2>
+                
+                <form action="home" method="post">
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="username">
+                            Username
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-20" id="username" name="username"
+                            type="text" value="username@nhsbsa.nhs.uk">
+                    </div>
+                    <p><a href="#">Can't access your account?</a></p>
+
+                    <button class="nhsuk-button" type="submit" style="background-color: #005eb8">
+                        Sign in
+                    </button>
+                </form>
+
+
+               
+            </div>
+            <div class="nhsuk-card__footer" style="background-color: #eeeeee; padding: 30px;">
+                <br/>
+                <p>Welcome to the NHS Business Services Authority</p>
+                
+                                </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+</div>
+<!-- End of page content -->
+{% endblock %}

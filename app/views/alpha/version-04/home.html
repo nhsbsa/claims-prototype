@@ -1,0 +1,453 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Home',
+path: '/alpha/version-03/home',
+active: true
+},
+{
+name: 'Claims',
+path: '/alpha/version-03/claims/index'
+},
+{
+name: 'Contested claims',
+path: '#'
+},
+{
+name: 'Reports',
+path: '#'
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage member state claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <span class="nhsuk-caption-s nhsuk-caption--bottom">Last logged in: 6 September 2023</span>
+  </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- Change the page title here -->
+    <h1 class="nhsuk-heading-xl ">
+      Welcome Isla Fields
+    </h1>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Start search -->
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading nhsuk-heading-l">
+              Search
+            </h3>
+            <hr style="margin:-6px 0px 12px 0px;" />
+
+            <div class="govuk-tabs" data-module="govuk-tabs">
+              <h2 class="govuk-tabs__title">
+                Contents
+              </h2>
+              <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                  <a class="govuk-tabs__tab" href="#claim">
+                    Claim
+                  </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                  <a class="govuk-tabs__tab" href="#treatment">
+                    Invoice
+                  </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                  <a class="govuk-tabs__tab" href="#person">
+                    Person
+                  </a>
+                </li>
+              </ul>
+              <!-- Start claim search -->
+              <div class="govuk-tabs__panel" id="claim">
+                <h2 class="nhsuk-heading-l">Claim</h2>
+                <form action="search/results-no-treatments">
+
+                  <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                      <!-- Claim ID -->
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="claim-id">
+                          Claim ID
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="claim-id" name="claim-id" type="text">
+                      </div>
+
+                      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+
+                      <!-- Country submitting the claim -->
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="country">
+                          Country submitting the claim
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="country" name="country" type="text">
+                      </div>
+
+                      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                      <!-- Claim reference -->
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                          Claim reference
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text">
+                      </div>
+
+                      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                      <!-- Financial year of claim -->
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="financial-year">
+                          Financial year of the claim
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="financial-year" name="financial-year"
+                          type="text">
+                      </div>
+
+                      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+
+
+                      <details class="nhsuk-details">
+                        <summary class="nhsuk-details__summary">
+                          <span class="nhsuk-details__summary-text">
+                            Advanced search options
+                          </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+                          <!-- Article covering the claim -->
+                          <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset">
+                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
+                                <h1 class="nhsuk-fieldset__heading">
+                                  Article covering the claim
+                                </h1>
+                              </legend>
+
+                              <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="article-hint">
+                                Select one option.
+                              </div>
+                              <div class="nhsuk-radios">
+
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="article-actual" name="article" type="radio"
+                                    value="Actual cost">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="article-actual">
+                                    Actual cost
+                                  </label>
+                                </div>
+
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="article-average-2a" name="article" type="radio"
+                                    value="Article 63 (2a) - average cost">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="article-average-2a">
+                                    Article 63 (2a) - average cost
+                                  </label>
+                                </div>
+
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="article-average-2b" name="article" type="radio"
+                                    value="Article 63 (2b) - average cost">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
+                                    Article 63 (2b) - average cost
+                                  </label>
+                                </div>
+
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="article-average-2b" name="article" type="radio"
+                                    value="AW03 - DA1 claims">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
+                                    AW03 - DA1 claims
+                                  </label>
+                                </div>
+
+                              </div>
+                            </fieldset>
+                          </div>
+
+                          <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                          <!-- Type of claim -->
+                          <div class="nhsuk-form-group">
+
+                            <fieldset class="nhsuk-fieldset" aria-describedby="type-hint">
+                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
+                                <h1 class="nhsuk-fieldset__heading">
+                                  Type of claim
+                                </h1>
+                              </legend>
+
+                              <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="type-hint">
+                                Select one option.
+                              </div>
+
+                              <div class="nhsuk-radios">
+
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="type-main" name="type" type="radio"
+                                    value="Main">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="type-main">
+                                    Main
+                                  </label>
+                                </div>
+
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="type-supplementary" name="type" type="radio"
+                                    value="Supplementary">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="type-supplementary">
+                                    Supplementary
+                                  </label>
+                                </div>
+
+                              </div>
+                            </fieldset>
+
+                          </div>
+
+                          <!-- <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"> -->
+
+                        </div>
+                      </details>
+
+                    </div>
+
+                    <div class="nhsuk-grid-column-one-half">
+
+                    </div>
+                  </div>
+
+                  <button class="nhsuk-button nhsuk-u-margin-bottom-1" data-module="nhsuk-button" type="submit">
+                    Search
+                  </button>
+                </form>
+              </div>
+              <!-- End claim search -->
+
+              <!-- Start treatment search -->
+              <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="treatment">
+                <h2 class="nhsuk-heading-l">Treatment</h2>
+                <form style="height:300px;">
+                </form>
+              </div>
+              <!-- End treatment search-->
+
+              <!-- Start person search -->
+              <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="person">
+                <h2 class="nhsuk-heading-l">Person</h2>
+                <form style="height:300px;">
+                </form>
+              </div>
+              <!-- End person search-->
+
+            </div>
+
+
+
+
+          </div>
+
+        </div>
+        <!-- End search -->
+
+
+      </div>
+
+      <!--Start right hand column-->
+      <div class="nhsuk-grid-column-one-third">
+
+        <!-- Start quick actions -->
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading nhsuk-heading-m">
+              Quick actions
+            </h3>
+            <hr style="margin:0px 0px 12px 0px;" />
+
+            <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+              <a class="nhsuk-action-link__link" href="claims/create/index">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                  </path>
+                </svg>
+                <span class="nhsuk-action-link__text">Create a new claim</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+        <!-- End quick actions -->
+
+        <!-- Start claims -->
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading nhsuk-heading-m">
+              Claims
+            </h3>
+            <hr style="margin:0px 0px 12px 0px;" />
+            <p>Recently edited by you:</p>
+
+            <table role="table" class="nhsuk-table-responsive">
+
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    ID
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Country
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Claim ID
+                    </span>8474
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Country
+                    </span>France
+                  </td>
+                  <td><a href="">View</a></td>
+
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Claim ID
+                    </span>5477
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Country
+                    </span>Germany
+                  </td>
+                  <td><a href="">View</a></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Claim ID
+                    </span>3677
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Country
+                    </span>Switzerland
+                  </td>
+                  <td><a href="">View</a></td>
+                </tr>
+
+              </tbody>
+            </table>
+            <br />
+            <a href="">View more claims edited by you</a>
+
+          </div>
+        </div>
+        <!-- End claims -->
+
+
+        <!-- Start contestations -->
+        <!-- <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading nhsuk-heading-s">
+              Contestations
+            </h3>
+            <hr style="margin:0px 0px 12px 0px;" />
+            <p>Recently edited by you:</p>
+            <table role="table" class="nhsuk-table-responsive">
+
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    ID
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Country
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Contestation ID
+                    </span>3654
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Country
+                    </span>Spain
+                  </td>
+                  <td><a href="">View</a></td>
+
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Contestation ID
+                    </span>3184
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Country
+                    </span>Austria
+                  </td>
+                  <td><a href="">View</a></td>
+                </tr>
+
+
+              </tbody>
+            </table>
+
+            <br />
+            <a href="">View more contestations edited by you</a>
+
+          </div>
+        </div> -->
+        <!-- End contestations -->
+
+      </div>
+      <!-- End right hand column -->
+
+
+    </div>
+
+
+
+
+    <!-- End of content -->
+
+  </div>
+</div>
+<!-- End of main content -->
+
+</div>
+</div>
+{% endblock %}
+<!-- End of central content -->
