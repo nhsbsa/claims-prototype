@@ -1,7 +1,5 @@
-
-
-
 // ES6 or Vanilla JavaScript
+
 !function() {
     "use strict";
     function t(t, e) {

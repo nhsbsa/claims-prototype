@@ -1,24 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-  {
-  name: 'Summary',
-  path: '/alpha/version-04/claims/summary/to-be-checked'
-  },
-  {
-  name: 'Invoices',
-  path: '/alpha/version-04/claims/invoices/no-invoices',
-  active: true
-  },
-  {
-    name: 'Uploaded files',
-    path: '/alpha/version-04/claims/file-uploads/index'
-    },
-  {
-  name: 'History',
-  path: '#'
-  }
-  ]
-  %}
+{
+name: 'Summary',
+path: '/alpha/version-04/claims/summary/with-treatments'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-04/claims/invoices/no-invoices',
+active: true
+},
+{
+name: 'Uploaded files',
+path: '/alpha/version-04/claims/file-uploads/index'
+},
+{
+name: 'History',
+path: '#'
+}
+]
+%}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -54,151 +54,138 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of central content -->
 {% block content %}
+
+
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
     <!-- Start of title block -->
     <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-xl ">
           Invoices
         </h1>
       </div>
 
-      <div class="nhsuk-grid-column-one-half" style="text-align:right;">
+      <div class="nhsuk-grid-column-one-third" style="text-align:right;">
 
         <a href="upload/options">
-          <button class="nhsuk-button  nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
-                    Add invoices
-                  </button>
-                </a>
-    </div>
+          <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+            Add invoices
+          </button>
+        </a>
+      </div>
 
     </div>
     <!-- End of title block -->
 
-    <!-- Start of warning block -->
+
+
+
+
+    <!-- Start of stats -->
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
-  <div class="nhsuk-warning-callout" style="margin-top:0;">
-      <h3 class="nhsuk-warning-callout__label">
-        <span role="text">
-          <span class="nhsuk-u-visually-hidden">Important: </span>
-          Processing uploaded invoices
-        </span>
-      </h3>
-    
-      <label class="nhsuk-label" for="upload">60% processed</label>
-<progress id="upload" value="60" max="100"> 60% </progress>
-      <p>Estimated time remaining: 14 minutes</p>
+        <h2 class="nhsuk-heading-l">Processed invoices: 50</h2>
 
-      <p><a href="full-invoice-list">Refresh</a></p>
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+          <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+
+                <dl class="nhsuk-summary-list">
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      To check
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      5
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      In progress
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      0
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Total amount
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        4927.18
+                    </dd>
+                  </div>
+
+                </dl>
+
+              </div>
+            </div>
+
+          </li>
+          <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+
+                <dl class="nhsuk-summary-list">
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Accepted
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      45
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Contested
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      0
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Partial
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      0
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Withdrawn
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      0
+                    </dd>
+                  </div>
+
+                </dl>
+
+              </div>
+            </div>
+
+          </li>
+
+        </ul>
+      </div>
+
+
+
     </div>
-</div>
-</div>
-
-    <!-- End of warning block -->
-
-        <!-- Start of stats -->
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-full">
-            <h2 class="nhsuk-heading-l">Processed invoices: 29</h2>
-
-    
-            <ul class="nhsuk-grid-row nhsuk-card-group">
-              <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-    
-                <div class="nhsuk-card">
-                  <div class="nhsuk-card__content">
-    
-                    <dl class="nhsuk-summary-list">
-    
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          To check
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          3
-                        </dd>
-
-                      </div>
-    
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          In progress
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          0
-                        </dd>
-                      </div>
-    
-                    </dl>
-    
-                  </div>
-                </div>
-    
-              </li>
-              <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-    
-                <div class="nhsuk-card">
-                  <div class="nhsuk-card__content">
-    
-                    <dl class="nhsuk-summary-list">
-    
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Accepted
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          26
-                        </dd>
-
-                      </div>
-    
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Contested
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          0
-                        </dd>
-
-                      </div>
-    
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Partial
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          0
-                        </dd>
-
-                      </div>
-    
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Withdrawn
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          0
-                        </dd>
-                      </div>
-    
-                    </dl>
-    
-                  </div>
-                </div>
-    
-              </li>
-    
-            </ul>
-          </div>
-    
-    
-    
-        </div>
-        <!-- End of stats-->
-
+    <!-- End of stats-->
 
     <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible" style="margin: 0 0 36px 0; ">
 
@@ -231,12 +218,14 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
           <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
 
 
-            <!-- Start reusult info and search-->
+
+
+            <!-- Start result info and search-->
             <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
 
               <!-- Start of result info and tags-->
               <div class="nhsuk-grid-column-two-thirds">
-                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 10 results of 29 for: </h3>
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 10 results of 50 for: </h3>
                 <p><strong class="nhsuk-tag nhsuk-tag--aqua-green">
                     All invoices
                   </strong></p>
@@ -654,7 +643,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                       <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
                         <span class="nhsuk-pagination__title">Next</span>
                         <span class="nhsuk-u-visually-hidden">:</span>
-                        <span class="nhsuk-pagination__page">Page 2 of 3</span>
+                        <span class="nhsuk-pagination__page">Page 2 of 5</span>
                         <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
                           <path
@@ -678,7 +667,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
 
 
 
+  </div>
 </div>
-</div>
-    {% endblock %}
-    <!-- End of central content -->
+{% endblock %}
+<!-- End of central content -->
