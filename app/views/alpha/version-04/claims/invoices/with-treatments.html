@@ -2,16 +2,16 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '/alpha/version-03/claims/summary/with-treatments'
+path: '/alpha/version-04/claims/summary/with-treatments'
 },
 {
 name: 'Invoices',
-path: '/alpha/version-03/claims/invoices/no-invoices',
+path: '/alpha/version-04/claims/invoices/no-invoices',
 active: true
 },
 {
 name: 'Uploaded files',
-path: '/alpha/version-03/claims/file-uploads/index'
+path: '/alpha/version-04/claims/file-uploads/index'
 },
 {
 name: 'History',
@@ -29,7 +29,7 @@ path: '#'
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Invoices - Manage memeber state claims - NHSBSA
+Invoices - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -61,16 +61,16 @@ Invoices - Manage memeber state claims - NHSBSA
 
     <!-- Start of title block -->
     <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-xl ">
           Invoices
         </h1>
       </div>
 
-      <div class="nhsuk-grid-column-one-half" style="text-align:right;">
+      <div class="nhsuk-grid-column-one-third" style="text-align:right;">
 
         <a href="upload/options">
-          <button class="nhsuk-button  nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+          <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
             Add invoices
           </button>
         </a>
@@ -78,6 +78,34 @@ Invoices - Manage memeber state claims - NHSBSA
 
     </div>
     <!-- End of title block -->
+
+    <!-- Start error details -->
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+      <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="nhsuk-error-summary__body">
+        <p>
+          1 or more uploaded files contains invoices that were unable to be processed.
+        </p>
+        <p>
+          Until these invoices have been resolved you will not be able to complete this claim.
+        </p>
+        <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+          <li>
+            <a href="../file-uploads/index-errors">View uploaded files</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- End error details -->
+
 
 
     <!-- Start of stats -->
@@ -98,12 +126,7 @@ Invoices - Manage memeber state claims - NHSBSA
                       To check
                     </dt>
                     <dd class="nhsuk-summary-list__value">
-                      3
-                    </dd>
-                    <dd class="nhsuk-summary-list__actions">
-                      <a href="to-check#results">
-                        View<span class="nhsuk-u-visually-hidden"> invoices to check</span>
-                      </a>
+                      5
                     </dd>
                   </div>
 
@@ -114,29 +137,7 @@ Invoices - Manage memeber state claims - NHSBSA
                     <dd class="nhsuk-summary-list__value">
                       0
                     </dd>
-                    <dd class="nhsuk-summary-list__actions">
-                      -
-                      <!-- <a href="#">
-                        View<span class="nhsuk-u-visually-hidden"> view invoices in progress</span>
-                      </a> -->
-                    </dd>
                   </div>
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      With errors
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      2
-                    </dd>
-                    <dd class="nhsuk-summary-list__actions">
-                      <a href="#">
-                        View<span class="nhsuk-u-visually-hidden"> invoices with errors</span>
-                      </a>
-                    </dd>
-                  </div>
-
-
 
                 </dl>
 
@@ -158,11 +159,6 @@ Invoices - Manage memeber state claims - NHSBSA
                     <dd class="nhsuk-summary-list__value">
                       45
                     </dd>
-                    <dd class="nhsuk-summary-list__actions">
-                      <a href="#">
-                        View<span class="nhsuk-u-visually-hidden"> accepted invoices</span>
-                      </a>
-                    </dd>
                   </div>
 
                   <div class="nhsuk-summary-list__row">
@@ -171,12 +167,6 @@ Invoices - Manage memeber state claims - NHSBSA
                     </dt>
                     <dd class="nhsuk-summary-list__value">
                       0
-                    </dd>
-                    <dd class="nhsuk-summary-list__actions">
-                      -
-                      <!-- <a href="#">
-                        View<span class="nhsuk-u-visually-hidden"> contested invoices</span>
-                      </a> -->
                     </dd>
                   </div>
 
@@ -187,12 +177,6 @@ Invoices - Manage memeber state claims - NHSBSA
                     <dd class="nhsuk-summary-list__value">
                       0
                     </dd>
-                    <dd class="nhsuk-summary-list__actions">
-                      -
-                      <!-- <a href="#">
-                        View<span class="nhsuk-u-visually-hidden"> partially accepted and contested invoices</span>
-                      </a> -->
-                    </dd>
                   </div>
 
                   <div class="nhsuk-summary-list__row">
@@ -201,12 +185,6 @@ Invoices - Manage memeber state claims - NHSBSA
                     </dt>
                     <dd class="nhsuk-summary-list__value">
                       0
-                    </dd>
-                    <dd class="nhsuk-summary-list__actions">
-                      -
-                      <!-- <a href="#">
-                        View<span class="nhsuk-u-visually-hidden"> withdrawn invoices</span>
-                      </a> -->
                     </dd>
                   </div>
 
@@ -258,7 +236,7 @@ Invoices - Manage memeber state claims - NHSBSA
 
 
 
-            <!-- Start reusult info and search-->
+            <!-- Start result info and search-->
             <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
 
               <!-- Start of result info and tags-->
@@ -340,7 +318,7 @@ Invoices - Manage memeber state claims - NHSBSA
                                   <input class="nhsuk-checkboxes__input" id="filter-status-tobechecked"
                                     name="filter-status" type="checkbox" value="To check">
                                   <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-tobechecked">
-                                    To check (3)
+                                    To check (5)
                                   </label>
                                 </div>
 
