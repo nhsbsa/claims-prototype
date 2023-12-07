@@ -5,6 +5,20 @@ const axios = require('axios');
 
 //CREATE CLAIM
 
+router.get('/claims/create/cya', function(req, res) {
+
+    let fullSubmissionMonth = req.session.data['submission-date-month'] ?? 'August';
+    let fullTargetMonth = req.session.data['target-date-month'] ?? 'February';
+
+    if(req.session.data['submission-date-month']) {
+        fullSubmissionMonth = Intl.DateTimeFormat('en', { month: 'long' }).format(new Date(req.session.data['submission-date-month']));
+    }
+    if(req.session.data['target-date-month']) {
+        fullTargetMonth = Intl.DateTimeFormat('en', { month: 'long' }).format(new Date(req.session.data['target-date-month']));
+    }
+    res.render('alpha/version-04/claims/create/cya', {fullSubmissionMonth: fullSubmissionMonth, fullTargetMonth: fullTargetMonth});
+})
+
 //Error validation 
 router.post('/create-claim-validation', function(req,res){
 
