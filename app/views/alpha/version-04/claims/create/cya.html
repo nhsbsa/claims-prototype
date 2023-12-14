@@ -97,9 +97,10 @@ Check your answers - Manage incoming international healthcare claims - NHSBSA
                                 Date you received the claim
                             </dt>
                             <dd class="nhsuk-summary-list__value">
+                                {% set elaine = "Foo" %}
                                 {% if data['submission-date-day'] %}{{ data['submission-date-day'] }} {%
                                 else
-                                %}10 {% endif %}{{ fullSubmissionMonth }} {% if
+                                %}10 {% endif %}{% if data['submission-date-month'] %}{{ fullSubmissionMonth }} {% else %}August {% endif %}{% if
                                 data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
                                 %}2023{% endif %}
                             </dd>
@@ -122,7 +123,7 @@ Check your answers - Manage incoming international healthcare claims - NHSBSA
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['target-date-day'] %}{{ data['target-date-day'] }} {% else
                                 %}9 {%
-                                endif %} {{ fullTargetMonth }} {% if data['target-date-year'] %}{{
+                                endif %} {% if data['target-date-month'] %}{{ fullTargetMonth }}{% else %}February {% endif %} {% if data['target-date-year'] %}{{
                                 data['target-date-year']
                                 }}{% else %}2024{% endif %}
                             </dd>

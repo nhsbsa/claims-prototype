@@ -217,6 +217,21 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
 
     <!-- End file uploads info -->
 
+                    <!-- Start download-->
+                    <div class="nhsuk-action-link nhsuk-u-margin-bottom-4">
+                      <a class="nhsuk-action-link__link" href="#">
+                          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                              <path d="M0 0h24v24H0z" fill="none"></path>
+                              <path
+                                  d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                              </path>
+                          </svg>
+                          <span class="nhsuk-action-link__text">Download error log</span>
+                      </a>
+                  </div>
+                  <!-- End download -->
+
         <!--Start error log-->
 
         <div class="nhsuk-grid-row">
@@ -231,7 +246,11 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
                           Error log
                       </h3>
                   </div>
-
+                  <div class="nhsuk-grid-column-one-half">
+                  <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="float:right;">
+                    Mark selected as resolved
+                  </button>
+</div>
                   <div class="nhsuk-grid-column-full">
                       <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
                       <br>
@@ -246,19 +265,26 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
                   <!-- <caption class="nhsuk-table__caption">Showing results for: All treatments</caption>  -->
                   <thead role="rowgroup" class="nhsuk-table__head">
                     <tr role="row">
+                      <th role="columnheader" class="" scope="col" style="width:15%">
+                        <a href="">Select all</a>
+                      </th>
                       <th role="columnheader" class="" scope="col">
                         ID
                       </th>
                       <th role="columnheader" class="" scope="col">
                         Error
                       </th>
-                      <th role="columnheader" class="" scope="col">
-                        Actions
-                      </th>
+
                     </tr>
                   </thead>
                   <tbody class="nhsuk-table__body">
                     <tr role="row" class="nhsuk-table__row">
+                      <td>        <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                         
+                        </label>
+                      </div></td>
                       <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">ID </span>7846
                       </td>
@@ -266,12 +292,16 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
                         <span class="nhsuk-table-responsive__heading">Error</span>Unexpected data type
                       </td>
                     
-                      <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Actions </span><a href="">Manage invoice</a>
-                      </td>
+
                     </tr>
                     
                     <tr role="row" class="nhsuk-table__row">
+                      <td>        <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                         
+                        </label>
+                      </div></td>
                       <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">ID </span>6483
                       </td>
@@ -279,13 +309,17 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
                         <span class="nhsuk-table-responsive__heading">Error</span>Unexpected data type
                       </td>
                     
-                      <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Actions </span><a href="">Manage invoice</a>
-                      </td>
+   
                     </tr>
                     
 
                     <tr role="row" class="nhsuk-table__row">
+                      <td>        <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                         
+                        </label>
+                      </div></td>
                       <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">ID </span>5784
                       </td>
@@ -293,9 +327,7 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
                         <span class="nhsuk-table-responsive__heading">Error</span>Unexpected data type
                       </td>
                     
-                      <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Actions </span><a href="">Manage invoice</a>
-                      </td>
+      
                     </tr>
                     
 
