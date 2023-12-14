@@ -1,24 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-04/claims/summary/with-treatments'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-04/claims/invoices/no-invoices'
-},
-{
-name: 'Uploaded files',
-path: '/alpha/version-04/claims/file-uploads/index',
-active: true
-},
-{
-name: 'History',
-path: '#'
-}
-]
-%}
+  {
+  name: 'Summary',
+  path: '/alpha/version-04/claims/summary/processing-progress-0'
+  },
+  {
+  name: 'Invoices',
+  path: '/alpha/version-04/claims/invoices/processing-progress-0'
+  },
+  {
+  name: 'Uploaded files',
+  path: '/alpha/version-04/claims/file-uploads/processing',
+  active: true
+  },
+  {
+  name: 'History',
+  path: '/alpha/version-04/claims/history/processing'
+  }
+  ]
+  %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -69,6 +69,23 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
 
     </div>
     <!-- End of title block -->
+
+<!-- Start of warning -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-warning-callout" style="margin-top:0">
+          <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                  <span class="nhsuk-u-visually-hidden">Important: </span>
+                  Processing uploaded invoices
+              </span>
+          </h3>
+          <p>The system is currently processing uploaded invoices for this claim.</p>
+          <p><a href="">Refresh</a></p>
+      </div>
+  </div>
+</div>
+<!-- End of warning -->
 
     <!--Start file uploads info-->
 
@@ -130,6 +147,14 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
                                                 type="checkbox" value="all treatments">
                                               <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-all">
                                                 All uploads (2)
+                                              </label>
+                                            </div>
+
+                                            <div class="nhsuk-checkboxes__item">
+                                              <input class="nhsuk-checkboxes__input" id="filter-status-tobechecked"
+                                                name="filter-status" type="checkbox" value="To check">
+                                              <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-tobechecked">
+                                                Processing (2)
                                               </label>
                                             </div>
             
@@ -206,10 +231,10 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-1.xml
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Status </span>Complete
+                    <span class="nhsuk-table-responsive__heading">Status </span>Processing
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="">View report</a>
+                    <span class="nhsuk-table-responsive__heading">Action </span>-
                   </td>
                 </tr>
 
@@ -224,10 +249,10 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-2.xml
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Status </span>Complete
+                    <span class="nhsuk-table-responsive__heading">Status </span>Processing
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="">View report</a>
+                    <span class="nhsuk-table-responsive__heading">Action </span>-
                   </td>
                 </tr>
 

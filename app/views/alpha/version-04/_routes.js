@@ -50,8 +50,8 @@ router.post('/search-treatments-filter', function(req,res){
     if (status == "all treatments" ) {
         res.redirect('/alpha/version-04/claims/invoices/no-invoices')
         }
-    else if (status == "to check"){
-            res.redirect('/alpha/version-04/claims/invoices/to-be-checked')
+    else if (status == "check"){
+            res.redirect('/alpha/version-04/claims/invoices/to-check#search-results')
             }
     else if (status == "in progress"){
         res.redirect('/alpha/version-04/claims/invoices/in-progress')

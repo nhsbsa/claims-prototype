@@ -113,12 +113,13 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                                             Date received
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            {% if data['submission-date-day'] %}{{ data['submission-date-day'] }}/{%
-                                            else %}10 {% endif %}{% if data['submission-date-month'] %}{{
-                                            data['submission-date-month'] }}/{% else %}August {% endif %}{% if
-                                            data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
-                                            %}2023{% endif %}
+                                            {% if data['submission-date-day'] %}{{ data['submission-date-day'] }} {%
+                                                else
+                                                %}10 {% endif %}{% if data['submission-date-month'] %}{{ fullSubmissionMonth }} {% else %}August {% endif %}{% if
+                                                data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
+                                                %}2023{% endif %}
                                         </dd>
+                                        <dd class="nhsuk-summary-list__actions"></dd>
                                     </div>
 
                                     <!-- Target date -->
@@ -132,6 +133,9 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                                             else %}February {% endif %}{% if data['target-date-year'] %}{{
                                             data['target-date-year'] }}{% else %}2024{% endif %}
                                         </dd>
+                                        <dd class="nhsuk-summary-list__actions"><a href="edit-target-date">
+                                            Change<span class="nhsuk-u-visually-hidden"> target date</span>
+                                          </a></dd>
 
                                     </div>
 
@@ -147,6 +151,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                                             France
                                             {% endif %}
                                         </dd>
+                                        <dd class="nhsuk-summary-list__actions"></dd>
                                     </div>
 
                                     <!-- Reference -->
@@ -161,6 +166,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                                             12345REF
                                             {% endif %}
                                         </dd>
+                                        <dd class="nhsuk-summary-list__actions"></dd>
                                     </div>
 
 

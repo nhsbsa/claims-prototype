@@ -2,11 +2,11 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '/alpha/version-04/claims/summary/with-treatments'
+path: '/alpha/version-04/claims/summary/invoices-uploaded'
 },
 {
 name: 'Invoices',
-path: '/alpha/version-04/claims/invoices/no-invoices',
+path: '/alpha/version-04/claims/invoices/full-invoice-list',
 active: true
 },
 {
@@ -81,120 +81,12 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
 
 
 
-
-
-    <!-- Start of stats -->
+    <!-- Start treatments card-->
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
-        <h2 class="nhsuk-heading-l">Processed invoices: 50</h2>
-
-        <ul class="nhsuk-grid-row nhsuk-card-group">
-          <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-
-            <div class="nhsuk-card">
-              <div class="nhsuk-card__content">
-
-                <dl class="nhsuk-summary-list">
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      To check
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      5
-                    </dd>
-                  </div>
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      In progress
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      0
-                    </dd>
-                  </div>
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Total amount
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                        4927.18
-                    </dd>
-                  </div>
-
-                </dl>
-
-              </div>
-            </div>
-
-          </li>
-          <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-
-            <div class="nhsuk-card">
-              <div class="nhsuk-card__content">
-
-                <dl class="nhsuk-summary-list">
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Accepted
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      45
-                    </dd>
-                  </div>
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Contested
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      0
-                    </dd>
-                  </div>
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Partial
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      0
-                    </dd>
-                  </div>
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Withdrawn
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      0
-                    </dd>
-                  </div>
-
-                </dl>
-
-              </div>
-            </div>
-
-          </li>
-
-        </ul>
-      </div>
-
-
-
-    </div>
-    <!-- End of stats-->
-
-    <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible" style="margin: 0 0 36px 0; ">
-
-    <!-- Start of download results -->
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full">
-
-
-        <div class="nhsuk-action-link nhsuk-u-margin-bottom-4" style="float:right;">
+        
+        <!-- Start download-->
+        <div class="nhsuk-action-link nhsuk-u-margin-bottom-4">
           <a class="nhsuk-action-link__link" href="#">
             <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
@@ -206,19 +98,10 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <span class="nhsuk-action-link__text">Download results</span>
           </a>
         </div>
-      </div>
-    </div>
-    <!-- End of download results-->
-
-    <!-- Start treatments card-->
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full">
+        <!-- End download -->
 
         <div class="nhsuk-card">
           <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
-
-
-
 
             <!-- Start result info and search-->
             <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
@@ -232,8 +115,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
               </div>
               <!-- End of result info and tags -->
 
-              <!-- Start search-->
-              <div class="nhsuk.nhsuk-grid-column-one-third">
+              <!-- Start of search -->
+              <div class="nhsuk-grid-column-one-third">
                 <div class="nhsuk-header__search" style="float:right;">
                   <form class="nhsuk-header__search-form" id="search" action="" method="get" role="search">
                     <label class="nhsuk-u-visually-hidden" for="search-field">Search invoices within claim ID
@@ -254,7 +137,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                   </form>
                 </div>
               </div>
-              <!-- End search -->
+              <!-- End of search -->
+
 
             </div>
             <!-- End result info and search-->
@@ -300,17 +184,9 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
 
                                 <div class="nhsuk-checkboxes__item">
                                   <input class="nhsuk-checkboxes__input" id="filter-status-tobechecked"
-                                    name="filter-status" type="checkbox" value="To check">
+                                    name="filter-status" type="checkbox" value="check">
                                   <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-tobechecked">
                                     To check (5)
-                                  </label>
-                                </div>
-
-                                <div class="nhsuk-checkboxes__item">
-                                  <input class="nhsuk-checkboxes__input" id="filter-status-inprogress"
-                                    name="filter-status" type="checkbox" value="in progress">
-                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-inprogress">
-                                    In progress (0)
                                   </label>
                                 </div>
 
@@ -327,6 +203,14 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                                     name="filter-status" type="checkbox" value="contested">
                                   <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-contested">
                                     Contested (0)
+                                  </label>
+                                </div>
+
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="filter-status-contested"
+                                    name="filter-status" type="checkbox" value="contested">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-contested">
+                                    Partial (0)
                                   </label>
                                 </div>
 
@@ -418,6 +302,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                     </div>
                   </details>
                 </form>
+
 
 
               </div>
