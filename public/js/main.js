@@ -1,68 +1,64 @@
-// ES6 or Vanilla JavaScript
-accessibleAutocomplete.enhanceSelectElement({
-  selectElement: document.querySelector('#select-autocomplete')
+import Tabs from './tabs.js';
+
+// Initialize components
+document.addEventListener('DOMContentLoaded', () => {
+  Tabs();
 });
+
+// ES6 or Vanilla JavaScript
+const selectElement = document.querySelector('#select-autocomplete');
+if (selectElement) {
+  accessibleAutocomplete.enhanceSelectElement({
+    selectElement: selectElement
+  });
+}
 !function () {
   "use strict";
 
   function t(t, e) {
     if (window.NodeList.prototype.forEach) return t.forEach(e);
-
     for (var n = 0; n < t.length; n++) e.call(window, t[n], n, t);
   }
-
   function e() {
     for (var t = function (t) {
-      var e = {},
+        var e = {},
           n = function (t, i) {
-        for (var o in t) if (Object.prototype.hasOwnProperty.call(t, o)) {
-          var s = t[o],
-              r = i ? i + "." + o : o;
-          "object" == typeof s ? n(s, r) : e[r] = s;
-        }
-      };
-
-      return n(t), e;
-    }, e = {}, n = 0; n < arguments.length; n++) {
+            for (var o in t) if (Object.prototype.hasOwnProperty.call(t, o)) {
+              var s = t[o],
+                r = i ? i + "." + o : o;
+              "object" == typeof s ? n(s, r) : e[r] = s;
+            }
+          };
+        return n(t), e;
+      }, e = {}, n = 0; n < arguments.length; n++) {
       var i = t(arguments[n]);
-
       for (var o in i) Object.prototype.hasOwnProperty.call(i, o) && (e[o] = i[o]);
     }
-
     return e;
   }
-
   function n(t, e) {
     if (!t || "object" != typeof t) throw new Error('Provide a `configObject` of type "object".');
     if (!e || "string" != typeof e) throw new Error('Provide a `namespace` of type "string" to filter the `configObject` by.');
     var n = {};
-
     for (var i in t) {
       var o = i.split(".");
       if (Object.prototype.hasOwnProperty.call(t, i) && o[0] === e) o.length > 1 && o.shift(), n[o.join(".")] = t[i];
     }
-
     return n;
   }
-
   function i(t) {
     if ("string" != typeof t) return t;
     var e = t.trim();
     return "true" === e || "false" !== e && (e.length > 0 && isFinite(Number(e)) ? Number(e) : t);
   }
-
   function o(t) {
     var e = {};
-
     for (var n in t) e[n] = i(t[n]);
-
     return e;
   }
-
   function s(t, e) {
     this.translations = t || {}, this.locale = e && e.locale || document.documentElement.lang || "en";
   }
-
   (function (t) {
     var e, n, i, o;
     "defineProperty" in Object && function () {
@@ -78,26 +74,21 @@ accessibleAutocomplete.enhanceSelectElement({
       if (null === t || !(t instanceof Object || "object" == typeof t)) throw new TypeError("Object.defineProperty called on non-object");
       if (!(r instanceof Object)) throw new TypeError("Property description must be an object");
       var a = String(s),
-          l = "value" in r || "writable" in r,
-          c = "get" in r && typeof r.get,
-          u = "set" in r && typeof r.set;
-
+        l = "value" in r || "writable" in r,
+        c = "get" in r && typeof r.get,
+        u = "set" in r && typeof r.set;
       if (c) {
         if ("function" !== c) throw new TypeError("Getter must be a function");
         if (!n) throw new TypeError(i);
         if (l) throw new TypeError(o);
-
         Object.__defineGetter__.call(t, a, r.get);
       } else t[a] = r.value;
-
       if (u) {
         if ("function" !== u) throw new TypeError("Setter must be a function");
         if (!n) throw new TypeError(i);
         if (l) throw new TypeError(o);
-
         Object.__defineSetter__.call(t, a, r.set);
       }
-
       return "value" in r && (t[a] = r.value), t;
     });
   }).call("object" == typeof window && window || "object" == typeof self && self || "object" == typeof global && global || {}), function (t) {
@@ -106,31 +97,26 @@ accessibleAutocomplete.enhanceSelectElement({
     "Element" in this && "HTMLElement" in this || function () {
       if (!window.Element || window.HTMLElement) {
         window.Element = window.HTMLElement = new Function("return function Element() {}")();
-
         var t,
-            e = document.appendChild(document.createElement("body")),
-            n = e.appendChild(document.createElement("iframe")).contentWindow.document,
-            i = Element.prototype = n.appendChild(n.createElement("*")),
-            o = {},
-            s = function (t, e) {
-          var n,
+          e = document.appendChild(document.createElement("body")),
+          n = e.appendChild(document.createElement("iframe")).contentWindow.document,
+          i = Element.prototype = n.appendChild(n.createElement("*")),
+          o = {},
+          s = function (t, e) {
+            var n,
               i,
               r,
               a = t.childNodes || [],
               l = -1;
-          if (1 === t.nodeType && t.constructor !== Element) for (n in t.constructor = Element, o) i = o[n], t[n] = i;
-
-          for (; r = e && a[++l];) s(r, e);
-
-          return t;
-        },
-            r = document.getElementsByTagName("*"),
-            a = document.createElement,
-            l = 100;
-
+            if (1 === t.nodeType && t.constructor !== Element) for (n in t.constructor = Element, o) i = o[n], t[n] = i;
+            for (; r = e && a[++l];) s(r, e);
+            return t;
+          },
+          r = document.getElementsByTagName("*"),
+          a = document.createElement,
+          l = 100;
         i.attachEvent("onpropertychange", function (t) {
           for (var e, n = t.propertyName, s = !o.hasOwnProperty(n), a = i[n], l = o[n], c = -1; e = r[++c];) 1 === e.nodeType && (s || e[n] === l) && (e[n] = a);
-
           o[n] = a;
         }), i.constructor = Element, i.hasAttribute || (i.hasAttribute = function (t) {
           return null !== this.getAttribute(t);
@@ -139,7 +125,6 @@ accessibleAutocomplete.enhanceSelectElement({
           return s(e);
         }, document.removeChild(e);
       } else window.HTMLElement = window.Element;
-
       function c() {
         return l-- || clearTimeout(t), !(!document.body || document.body.prototype || !/(complete|interactive)/.test(document.readyState)) && (s(document, !0), t && document.body.prototype && clearTimeout(t), !!document.body.prototype);
       }
@@ -153,13 +138,12 @@ accessibleAutocomplete.enhanceSelectElement({
       get: function () {
         for (var t = this.attributes, e = {}, n = 0; n < t.length; n++) {
           var i = t[n];
-
           if (i && i.name && /^data-\w[.\w-]*$/.test(i.name)) {
             var o = i.name,
-                s = i.value,
-                r = o.substr(5).replace(/-./g, function (t) {
-              return t.charAt(1).toUpperCase();
-            });
+              s = i.value,
+              r = o.substr(5).replace(/-./g, function (t) {
+                return t.charAt(1).toUpperCase();
+              });
             "__defineGetter__" in Object.prototype && "__defineSetter__" in Object.prototype ? Object.defineProperty(e, r, {
               enumerable: !0,
               get: function () {
@@ -173,7 +157,6 @@ accessibleAutocomplete.enhanceSelectElement({
             }) : e[r] = s;
           }
         }
-
         return e;
       }
     });
@@ -185,16 +168,13 @@ accessibleAutocomplete.enhanceSelectElement({
     if (!t) throw new Error("i18n: lookup key missing");
     e && "number" == typeof e.count && (t = t + "." + this.getPluralSuffix(t, e.count));
     var n = this.translations[t];
-
     if ("string" == typeof n) {
       if (n.match(/%{(.\S+)}/)) {
         if (!e) throw new Error("i18n: cannot replace placeholders in string if no option data provided");
         return this.replacePlaceholders(n, e);
       }
-
       return n;
     }
-
     return t;
   }, s.prototype.replacePlaceholders = function (t, e) {
     var n;
@@ -203,7 +183,6 @@ accessibleAutocomplete.enhanceSelectElement({
         var o = e[i];
         return !1 === o || "number" != typeof o && "string" != typeof o ? "" : "number" == typeof o ? n ? n.format(o) : o.toString() : o;
       }
-
       throw new Error("i18n: no data found to replace " + t + " placeholder in string");
     });
   }, s.prototype.hasIntlPluralRulesSupport = function () {
@@ -222,8 +201,7 @@ accessibleAutocomplete.enhanceSelectElement({
     return e ? s.pluralRules[e](t) : "other";
   }, s.prototype.getPluralRulesForLocale = function () {
     var t = this.locale,
-        e = t.split("-")[0];
-
+      e = t.split("-")[0];
     for (var n in s.pluralRulesMap) if (Object.prototype.hasOwnProperty.call(s.pluralRulesMap, n)) for (var i = s.pluralRulesMap[n], o = 0; o < i.length; o++) if (i[o] === t || i[o] === e) return n;
   }, s.pluralRulesMap = {
     arabic: ["ar"],
@@ -253,7 +231,7 @@ accessibleAutocomplete.enhanceSelectElement({
     },
     russian: function (t) {
       var e = t % 100,
-          n = e % 10;
+        n = e % 10;
       return 1 === n && 11 !== e ? "one" : n >= 2 && n <= 4 && !(e >= 12 && e <= 14) ? "few" : 0 === n || n >= 5 && n <= 9 || e >= 11 && e <= 14 ? "many" : "other";
     },
     scottish: function (t) {
@@ -271,45 +249,40 @@ accessibleAutocomplete.enhanceSelectElement({
       var n;
       "DOMTokenList" in e && e.DOMTokenList && (!document.createElementNS || !document.createElementNS("http://www.w3.org/2000/svg", "svg") || document.createElementNS("http://www.w3.org/2000/svg", "svg").classList instanceof DOMTokenList) || (e.DOMTokenList = function () {
         var e = !0,
-            i = function (t, n, i, o) {
-          Object.defineProperty ? Object.defineProperty(t, n, {
-            configurable: !1 === e || !!o,
-            get: i
-          }) : t.__defineGetter__(n, i);
-        };
-
+          i = function (t, n, i, o) {
+            Object.defineProperty ? Object.defineProperty(t, n, {
+              configurable: !1 === e || !!o,
+              get: i
+            }) : t.__defineGetter__(n, i);
+          };
         try {
           i({}, "support");
         } catch (n) {
           e = !1;
         }
-
         return function (e, n) {
           var o = this,
-              s = [],
-              r = {},
-              a = 0,
-              l = 0,
-              c = function (t) {
-            i(o, t, function () {
-              return d(), s[t];
-            }, !1);
-          },
-              u = function () {
-            if (a >= l) for (; l < a; ++l) c(l);
-          },
-              d = function () {
-            var t,
+            s = [],
+            r = {},
+            a = 0,
+            l = 0,
+            c = function (t) {
+              i(o, t, function () {
+                return d(), s[t];
+              }, !1);
+            },
+            u = function () {
+              if (a >= l) for (; l < a; ++l) c(l);
+            },
+            d = function () {
+              var t,
                 i,
                 o = arguments,
                 l = /\s+/;
-            if (o.length) for (i = 0; i < o.length; ++i) if (l.test(o[i])) throw (t = new SyntaxError('String "' + o[i] + '" contains an invalid character')).code = 5, t.name = "InvalidCharacterError", t;
-
-            for ("" === (s = "object" == typeof e[n] ? ("" + e[n].baseVal).replace(/^\s+|\s+$/g, "").split(l) : ("" + e[n]).replace(/^\s+|\s+$/g, "").split(l))[0] && (s = []), r = {}, i = 0; i < s.length; ++i) r[s[i]] = !0;
-
-            a = s.length, u();
-          };
-
+              if (o.length) for (i = 0; i < o.length; ++i) if (l.test(o[i])) throw (t = new SyntaxError('String "' + o[i] + '" contains an invalid character')).code = 5, t.name = "InvalidCharacterError", t;
+              for ("" === (s = "object" == typeof e[n] ? ("" + e[n].baseVal).replace(/^\s+|\s+$/g, "").split(l) : ("" + e[n]).replace(/^\s+|\s+$/g, "").split(l))[0] && (s = []), r = {}, i = 0; i < s.length; ++i) r[s[i]] = !0;
+              a = s.length, u();
+            };
           return d(), i(o, "length", function () {
             return d(), a;
           }), o.toLocaleString = o.toString = function () {
@@ -320,17 +293,12 @@ accessibleAutocomplete.enhanceSelectElement({
             return d(), !!r[t];
           }, o.add = function () {
             d.apply(o, t = arguments);
-
             for (var t, i, l = 0, c = t.length; l < c; ++l) r[i = t[l]] || (s.push(i), r[i] = !0);
-
             a !== s.length && (a = s.length >>> 0, "object" == typeof e[n] ? e[n].baseVal = s.join(" ") : e[n] = s.join(" "), u());
           }, o.remove = function () {
             d.apply(o, t = arguments);
-
             for (var t, i = {}, l = 0, c = []; l < t.length; ++l) i[t[l]] = !0, delete r[t[l]];
-
             for (l = 0; l < s.length; ++l) i[s[l]] || c.push(s[l]);
-
             s = c, a = c.length >>> 0, "object" == typeof e[n] ? e[n].baseVal = s.join(" ") : e[n] = s.join(" "), u();
           }, o.toggle = function (e, n) {
             return d.apply(o, [e]), t !== n ? n ? (o.add(e), !0) : (o.remove(e), !1) : r[e] ? (o.remove(e), !1) : (o.add(e), !0);
@@ -338,29 +306,23 @@ accessibleAutocomplete.enhanceSelectElement({
         };
       }()), "classList" in (n = document.createElement("span")) && (n.classList.toggle("x", !1), n.classList.contains("x") && (n.classList.constructor.prototype.toggle = function (e) {
         var n = arguments[1];
-
         if (n === t) {
           var i = !this.contains(e);
           return this[i ? "add" : "remove"](e), i;
         }
-
         return this[(n = !!n) ? "add" : "remove"](e), n;
       })), function () {
         var t = document.createElement("span");
-
         if ("classList" in t && (t.classList.add("a", "b"), !t.classList.contains("b"))) {
           var e = t.classList.constructor.prototype.add;
-
           t.classList.constructor.prototype.add = function () {
             for (var t = arguments, n = arguments.length, i = 0; i < n; i++) e.call(this, t[i]);
           };
         }
       }(), function () {
         var t = document.createElement("span");
-
         if ("classList" in t && (t.classList.add("a"), t.classList.add("b"), t.classList.remove("a", "b"), t.classList.contains("b"))) {
           var e = t.classList.constructor.prototype.remove;
-
           t.classList.constructor.prototype.remove = function () {
             for (var t = arguments, n = arguments.length, i = 0; i < n; i++) e.call(this, t[i]);
           };
@@ -371,47 +333,40 @@ accessibleAutocomplete.enhanceSelectElement({
     var e;
     "document" in this && "classList" in document.documentElement && "Element" in this && "classList" in Element.prototype && ((e = document.createElement("span")).classList.add("a", "b"), e.classList.contains("b")) || function (t) {
       var n = !0,
-          i = function (t, e, i, o) {
-        Object.defineProperty ? Object.defineProperty(t, e, {
-          configurable: !1 === n || !!o,
-          get: i
-        }) : t.__defineGetter__(e, i);
-      };
-
+        i = function (t, e, i, o) {
+          Object.defineProperty ? Object.defineProperty(t, e, {
+            configurable: !1 === n || !!o,
+            get: i
+          }) : t.__defineGetter__(e, i);
+        };
       try {
         i({}, "support");
       } catch (e) {
         n = !1;
       }
-
       var o = function (t, e, s) {
         i(t.prototype, e, function () {
           var t,
-              r = this,
-              a = "__defineGetter__DEFINE_PROPERTY" + e;
+            r = this,
+            a = "__defineGetter__DEFINE_PROPERTY" + e;
           if (r[a]) return t;
-
           if (r[a] = !0, !1 === n) {
             for (var l, c = o.mirror || document.createElement("div"), u = c.childNodes, d = u.length, h = 0; h < d; ++h) if (u[h]._R === r) {
               l = u[h];
               break;
             }
-
             l || (l = c.appendChild(document.createElement("div"))), t = DOMTokenList.call(l, r, s);
           } else t = new DOMTokenList(r, s);
-
           return i(r, e, function () {
             return t;
           }), delete r[a], t;
         }, !0);
       };
-
       o(t.Element, "classList", "className"), o(t.HTMLElement, "classList", "className"), o(t.HTMLLinkElement, "relList", "rel"), o(t.HTMLAnchorElement, "relList", "rel"), o(t.HTMLAreaElement, "relList", "rel");
     }(this);
   }.call("object" == typeof window && window || "object" == typeof self && self || "object" == typeof global && global || {}), function (t) {
     "document" in this && "matches" in document.documentElement || (Element.prototype.matches = Element.prototype.webkitMatchesSelector || Element.prototype.oMatchesSelector || Element.prototype.msMatchesSelector || Element.prototype.mozMatchesSelector || function (t) {
       for (var e = this, n = (e.document || e.ownerDocument).querySelectorAll(t), i = 0; n[i] && n[i] !== e;) ++i;
-
       return !!n[i];
     });
   }.call("object" == typeof window && window || "object" == typeof self && self || "object" == typeof global && global || {}), function (t) {
@@ -420,7 +375,6 @@ accessibleAutocomplete.enhanceSelectElement({
         if (e.matches(t)) return e;
         e = "SVGElement" in window && e instanceof SVGElement ? e.parentNode : e.parentElement;
       }
-
       return null;
     });
   }.call("object" == typeof window && window || "object" == typeof self && self || "object" == typeof global && global || {}), function (t) {
@@ -431,7 +385,6 @@ accessibleAutocomplete.enhanceSelectElement({
     (function (t) {
       if (!("Event" in t)) return !1;
       if ("function" == typeof t.Event) return !0;
-
       try {
         return new Event("click"), !0;
       } catch (e) {
@@ -455,20 +408,17 @@ accessibleAutocomplete.enhanceSelectElement({
         storagecommit: 1,
         textinput: 1
       };
-
       if ("undefined" != typeof document && "undefined" != typeof window) {
         var n = window.Event && window.Event.prototype || null;
         window.Event = Window.prototype.Event = function (e, n) {
           if (!e) throw new Error("Not enough arguments");
           var i;
-
           if ("createEvent" in document) {
             i = document.createEvent("Event");
             var o = !(!n || n.bubbles === t) && n.bubbles,
-                s = !(!n || n.cancelable === t) && n.cancelable;
+              s = !(!n || n.cancelable === t) && n.cancelable;
             return i.initEvent(e, o, s), i;
           }
-
           return (i = document.createEventObject()).type = e, i.bubbles = !(!n || n.bubbles === t) && n.bubbles, i.cancelable = !(!n || n.cancelable === t) && n.cancelable, i;
         }, n && Object.defineProperty(window.Event, "prototype", {
           configurable: !1,
@@ -477,16 +427,15 @@ accessibleAutocomplete.enhanceSelectElement({
           value: n
         }), "createEvent" in document || (window.addEventListener = Window.prototype.addEventListener = Document.prototype.addEventListener = Element.prototype.addEventListener = function () {
           var t = this,
-              n = arguments[0],
-              o = arguments[1];
+            n = arguments[0],
+            o = arguments[1];
           if (t === window && n in e) throw new Error("In IE8 the event: " + n + " is not available on the window object. Please see https://github.com/Financial-Times/polyfill-service/issues/317 for more information.");
           t._events || (t._events = {}), t._events[n] || (t._events[n] = function (e) {
             var n,
-                o = t._events[e.type].list,
-                s = o.slice(),
-                r = -1,
-                a = s.length;
-
+              o = t._events[e.type].list,
+              s = o.slice(),
+              r = -1,
+              a = s.length;
             for (e.preventDefault = function () {
               !1 !== e.cancelable && (e.returnValue = !1);
             }, e.stopPropagation = function () {
@@ -497,36 +446,30 @@ accessibleAutocomplete.enhanceSelectElement({
           }, t._events[n].list = [], t.attachEvent && t.attachEvent("on" + n, t._events[n])), t._events[n].list.push(o);
         }, window.removeEventListener = Window.prototype.removeEventListener = Document.prototype.removeEventListener = Element.prototype.removeEventListener = function () {
           var t,
-              e = this,
-              n = arguments[0],
-              o = arguments[1];
+            e = this,
+            n = arguments[0],
+            o = arguments[1];
           e._events && e._events[n] && e._events[n].list && -1 !== (t = i(e._events[n].list, o)) && (e._events[n].list.splice(t, 1), e._events[n].list.length || (e.detachEvent && e.detachEvent("on" + n, e._events[n]), delete e._events[n]));
         }, window.dispatchEvent = Window.prototype.dispatchEvent = Document.prototype.dispatchEvent = Element.prototype.dispatchEvent = function (t) {
           if (!arguments.length) throw new Error("Not enough arguments");
           if (!t || "string" != typeof t.type) throw new Error("DOM Events Exception 0");
           var e = this,
-              n = t.type;
-
+            n = t.type;
           try {
             if (!t.bubbles) {
               t.cancelBubble = !0;
-
               var i = function (t) {
                 t.cancelBubble = !0, (e || window).detachEvent("on" + n, i);
               };
-
               this.attachEvent("on" + n, i);
             }
-
             this.fireEvent("on" + n, t);
           } catch (o) {
             t.target = e;
-
             do {
               t.currentTarget = e, "_events" in e && "function" == typeof e._events[n] && e._events[n].call(e, t), "function" == typeof e["on" + n] && e["on" + n].call(e, t), e = 9 === e.nodeType ? e.parentWindow : e.parentNode;
             } while (e && !t.cancelBubble);
           }
-
           return !0;
         }, document.attachEvent("onreadystatechange", function () {
           "complete" === document.readyState && document.dispatchEvent(new Event("DOMContentLoaded", {
@@ -534,10 +477,8 @@ accessibleAutocomplete.enhanceSelectElement({
           }));
         }));
       }
-
       function i(t, e) {
         for (var n = -1, i = t.length; ++n < i;) if (n in t && t[n] === e) return n;
-
         return -1;
       }
     }();
@@ -545,15 +486,14 @@ accessibleAutocomplete.enhanceSelectElement({
     "bind" in Function.prototype || Object.defineProperty(Function.prototype, "bind", {
       value: function (t) {
         var e,
-            n = Array,
-            i = Object,
-            o = i.prototype,
-            s = n.prototype,
-            r = function () {},
-            a = o.toString,
-            l = "function" == typeof Symbol && "symbol" == typeof Symbol.toStringTag,
-            c = Function.prototype.toString;
-
+          n = Array,
+          i = Object,
+          o = i.prototype,
+          s = n.prototype,
+          r = function () {},
+          a = o.toString,
+          l = "function" == typeof Symbol && "symbol" == typeof Symbol.toStringTag,
+          c = Function.prototype.toString;
         e = function (t) {
           if ("function" != typeof t) return !1;
           if (l) return function (t) {
@@ -566,22 +506,18 @@ accessibleAutocomplete.enhanceSelectElement({
           var e = a.call(t);
           return "[object Function]" === e || "[object GeneratorFunction]" === e;
         };
-
         var u = s.slice,
-            d = s.concat,
-            h = s.push,
-            p = Math.max,
-            m = this;
+          d = s.concat,
+          h = s.push,
+          p = Math.max,
+          m = this;
         if (!e(m)) throw new TypeError("Function.prototype.bind called on incompatible " + m);
-
         for (var f, v = u.call(arguments, 1), b = p(0, m.length - v.length), g = [], y = 0; y < b; y++) h.call(g, "$" + y);
-
         return f = Function("binder", "return function (" + g.join(",") + "){ return binder.apply(this, arguments); }")(function () {
           if (this instanceof f) {
             var e = m.apply(this, d.call(v, u.call(arguments)));
             return i(e) === e ? e : this;
           }
-
           return m.apply(t, d.call(v, u.call(arguments)));
         }), m.prototype && (r.prototype = m.prototype, f.prototype = new r(), r.prototype = null), f;
       }
@@ -595,7 +531,6 @@ accessibleAutocomplete.enhanceSelectElement({
     showSection: "Show",
     showSectionAriaLabel: "Show this section"
   };
-
   function a(t, i) {
     if (!(t instanceof HTMLElement)) return this;
     this.$module = t;
@@ -608,7 +543,6 @@ accessibleAutocomplete.enhanceSelectElement({
     if (!c.length) return this;
     this.$sections = c, this.browserSupportsSessionStorage = l.checkForSessionStorage(), this.$showAllButton = null, this.$showAllIcon = null, this.$showAllText = null;
   }
-
   a.prototype.init = function () {
     if (this.$module && this.$sections) {
       this.initControls(), this.initSectionHeaders();
@@ -627,18 +561,15 @@ accessibleAutocomplete.enhanceSelectElement({
     });
   }, a.prototype.constructHeaderMarkup = function (t, e) {
     var n = t.querySelector("." + this.sectionButtonClass),
-        i = t.querySelector("." + this.sectionHeadingClass),
-        o = t.querySelector("." + this.sectionSummaryClass);
-
+      i = t.querySelector("." + this.sectionHeadingClass),
+      o = t.querySelector("." + this.sectionSummaryClass);
     if (n && i) {
       var s = document.createElement("button");
       s.setAttribute("type", "button"), s.setAttribute("aria-controls", this.$module.id + "-content-" + (e + 1).toString());
-
       for (var r = 0; r < n.attributes.length; r++) {
         var a = n.attributes.item(r);
         "id" !== a.nodeName && s.setAttribute(a.nodeName, a.nodeValue);
       }
-
       var l = document.createElement("span");
       l.classList.add(this.sectionHeadingTextClass), l.id = n.id;
       var c = document.createElement("span");
@@ -648,27 +579,22 @@ accessibleAutocomplete.enhanceSelectElement({
       var d = document.createElement("span");
       d.classList.add(this.sectionShowHideToggleFocusClass), u.appendChild(d);
       var h = document.createElement("span"),
-          p = document.createElement("span");
-
+        p = document.createElement("span");
       if (p.classList.add(this.upChevronIconClass), d.appendChild(p), h.classList.add(this.sectionShowHideTextClass), d.appendChild(h), s.appendChild(l), s.appendChild(this.getButtonPunctuationEl()), o) {
         var m = document.createElement("span"),
-            f = document.createElement("span");
+          f = document.createElement("span");
         f.classList.add(this.sectionSummaryFocusClass), m.appendChild(f);
-
         for (var v = 0, b = o.attributes.length; v < b; ++v) {
           var g = o.attributes.item(v).nodeName,
-              y = o.attributes.item(v).nodeValue;
+            y = o.attributes.item(v).nodeValue;
           m.setAttribute(g, y);
         }
-
         f.innerHTML = o.innerHTML, o.parentNode.replaceChild(m, o), s.appendChild(m), s.appendChild(this.getButtonPunctuationEl());
       }
-
       s.appendChild(u), i.removeChild(n), i.appendChild(s);
     }
   }, a.prototype.onBeforeMatch = function (t) {
     var e = t.target;
-
     if (e instanceof Element) {
       var n = e.closest("." + this.sectionClass);
       n && this.setExpanded(!0, n);
@@ -678,22 +604,21 @@ accessibleAutocomplete.enhanceSelectElement({
     this.setExpanded(!e, t), this.storeState(t);
   }, a.prototype.onShowOrHideAllToggle = function () {
     var e = this,
-        n = this.$sections,
-        i = !this.checkIfAllSectionsOpen();
+      n = this.$sections,
+      i = !this.checkIfAllSectionsOpen();
     t(n, function (t) {
       e.setExpanded(i, t), e.storeState(t);
     }), e.updateShowAllButton(i);
   }, a.prototype.setExpanded = function (t, e) {
     var n = e.querySelector("." + this.upChevronIconClass),
-        i = e.querySelector("." + this.sectionShowHideTextClass),
-        o = e.querySelector("." + this.sectionButtonClass),
-        s = e.querySelector("." + this.sectionContentClass);
-
+      i = e.querySelector("." + this.sectionShowHideTextClass),
+      o = e.querySelector("." + this.sectionButtonClass),
+      s = e.querySelector("." + this.sectionContentClass);
     if (n && i instanceof HTMLElement && o && s) {
       var r = t ? this.i18n.t("hideSection") : this.i18n.t("showSection");
       i.innerText = r, o.setAttribute("aria-expanded", t.toString());
       var a = [],
-          l = e.querySelector("." + this.sectionHeadingTextClass);
+        l = e.querySelector("." + this.sectionHeadingTextClass);
       l instanceof HTMLElement && a.push(l.innerText.trim());
       var c = e.querySelector("." + this.sectionSummaryClass);
       c instanceof HTMLElement && a.push(c.innerText.trim());
@@ -713,8 +638,7 @@ accessibleAutocomplete.enhanceSelectElement({
   var l = {
     checkForSessionStorage: function () {
       var t,
-          e = "this is the test string";
-
+        e = "this is the test string";
       try {
         return window.sessionStorage.setItem(e, e), t = window.sessionStorage.getItem(e) === e.toString(), window.sessionStorage.removeItem(e), t;
       } catch (n) {
@@ -725,20 +649,18 @@ accessibleAutocomplete.enhanceSelectElement({
   a.prototype.storeState = function (t) {
     if (this.browserSupportsSessionStorage && this.config.rememberExpanded) {
       var e = t.querySelector("." + this.sectionButtonClass);
-
       if (e) {
         var n = e.getAttribute("aria-controls"),
-            i = e.getAttribute("aria-expanded");
+          i = e.getAttribute("aria-expanded");
         n && i && window.sessionStorage.setItem(n, i);
       }
     }
   }, a.prototype.setInitialState = function (t) {
     if (this.browserSupportsSessionStorage && this.config.rememberExpanded) {
       var e = t.querySelector("." + this.sectionButtonClass);
-
       if (e) {
         var n = e.getAttribute("aria-controls"),
-            i = n ? window.sessionStorage.getItem(n) : null;
+          i = n ? window.sessionStorage.getItem(n) : null;
         null !== i && this.setExpanded("true" === i, t);
       }
     }
@@ -746,7 +668,6 @@ accessibleAutocomplete.enhanceSelectElement({
     var t = document.createElement("span");
     return t.classList.add("govuk-visually-hidden", this.sectionHeadingDividerClass), t.innerHTML = ", ", t;
   };
-
   function c(t, n) {
     if (!(t instanceof HTMLElement)) return this;
     this.$module = t, this.debounceFormSubmitTimer = null;
@@ -754,7 +675,6 @@ accessibleAutocomplete.enhanceSelectElement({
       preventDoubleClick: !1
     }, n || {}, o(t.dataset));
   }
-
   c.prototype.init = function () {
     this.$module && (this.$module.addEventListener("keydown", this.handleKeyDown), this.$module.addEventListener("click", this.debounce.bind(this)));
   }, c.prototype.handleKeyDown = function (t) {
@@ -792,20 +712,19 @@ accessibleAutocomplete.enhanceSelectElement({
       other: ""
     }
   };
-
   function d(t, i) {
     if (!(t instanceof HTMLElement)) return this;
     var r = t.querySelector(".govuk-js-character-count");
     if (!(r instanceof HTMLTextAreaElement || r instanceof HTMLInputElement)) return this;
     var a,
-        l,
-        c,
-        d = {
-      threshold: 0,
-      i18n: u
-    },
-        h = o(t.dataset),
-        p = {};
+      l,
+      c,
+      d = {
+        threshold: 0,
+        i18n: u
+      },
+      h = o(t.dataset),
+      p = {};
     if (("maxwords" in h || "maxlength" in h) && (p = {
       maxlength: !1,
       maxwords: !1
@@ -817,19 +736,16 @@ accessibleAutocomplete.enhanceSelectElement({
     }
     this.$module = t, this.$textarea = r, this.$visibleCountMessage = null, this.$screenReaderCountMessage = null, this.lastInputTimestamp = null, this.lastInputValue = "", this.valueChecker = null;
   }
-
   function h(t) {
     if (!(t instanceof HTMLElement)) return this;
     var e = t.querySelectorAll('input[type="checkbox"]');
     if (!e.length) return this;
     this.$module = t, this.$inputs = e;
   }
-
   d.prototype.init = function () {
     if (this.$module && this.$textarea) {
       var t = this.$textarea,
-          e = document.getElementById(t.id + "-info");
-
+        e = document.getElementById(t.id + "-info");
       if (e) {
         e.innerText.match(/^\s*$/) && (e.innerText = this.i18n.t("textareaDescription", {
           count: this.maxLength
@@ -857,8 +773,8 @@ accessibleAutocomplete.enhanceSelectElement({
     this.updateVisibleCountMessage(), this.updateScreenReaderCountMessage();
   }, d.prototype.updateVisibleCountMessage = function () {
     var t = this.$textarea,
-        e = this.$visibleCountMessage,
-        n = this.maxLength - this.count(t.value);
+      e = this.$visibleCountMessage,
+      n = this.maxLength - this.count(t.value);
     this.isOverThreshold() ? e.classList.remove("govuk-character-count__message--disabled") : e.classList.add("govuk-character-count__message--disabled"), n < 0 ? (t.classList.add("govuk-textarea--error"), e.classList.remove("govuk-hint"), e.classList.add("govuk-error-message")) : (t.classList.remove("govuk-textarea--error"), e.classList.remove("govuk-error-message"), e.classList.add("govuk-hint")), e.innerText = this.getCountMessage();
   }, d.prototype.updateScreenReaderCountMessage = function () {
     var t = this.$screenReaderCountMessage;
@@ -867,7 +783,7 @@ accessibleAutocomplete.enhanceSelectElement({
     return "maxwords" in this.config && this.config.maxwords ? (t.match(/\S+/g) || []).length : t.length;
   }, d.prototype.getCountMessage = function () {
     var t = this.maxLength - this.count(this.$textarea.value),
-        e = "maxwords" in this.config && this.config.maxwords ? "words" : "characters";
+      e = "maxwords" in this.config && this.config.maxwords ? "words" : "characters";
     return this.formatCountMessage(t, e);
   }, d.prototype.formatCountMessage = function (t, e) {
     if (0 === t) return this.i18n.t(e + "AtLimit");
@@ -878,7 +794,7 @@ accessibleAutocomplete.enhanceSelectElement({
   }, d.prototype.isOverThreshold = function () {
     if (!this.config.threshold) return !0;
     var t = this.$textarea,
-        e = this.count(t.value);
+      e = this.count(t.value);
     return this.maxLength * this.config.threshold / 100 <= e;
   }, h.prototype.init = function () {
     if (this.$module && this.$inputs) {
@@ -892,10 +808,8 @@ accessibleAutocomplete.enhanceSelectElement({
     t(this.$inputs, this.syncConditionalRevealWithInputState.bind(this));
   }, h.prototype.syncConditionalRevealWithInputState = function (t) {
     var e = t.getAttribute("aria-controls");
-
     if (e) {
       var n = document.getElementById(e);
-
       if (n && n.classList.contains("govuk-checkboxes__conditional")) {
         var i = t.checked;
         t.setAttribute("aria-expanded", i.toString()), n.classList.toggle("govuk-checkboxes__conditional--hidden", !i);
@@ -915,12 +829,10 @@ accessibleAutocomplete.enhanceSelectElement({
     var e = t.target;
     e instanceof HTMLInputElement && "checkbox" === e.type && (e.getAttribute("aria-controls") && this.syncConditionalRevealWithInputState(e), e.checked && ("exclusive" === e.getAttribute("data-behaviour") ? this.unCheckAllInputsExcept(e) : this.unCheckExclusiveInputs(e)));
   };
-
   function p(t) {
     if (!(t instanceof HTMLElement)) return this;
     this.$module = t, this.$summary = null, this.$content = null;
   }
-
   function m(t, n) {
     if (!(t instanceof HTMLElement)) return this;
     this.$module = t;
@@ -928,14 +840,13 @@ accessibleAutocomplete.enhanceSelectElement({
       disableAutoFocus: !1
     }, n || {}, o(t.dataset));
   }
-
   p.prototype.init = function () {
     this.$module && ("HTMLDetailsElement" in window && this.$module instanceof HTMLDetailsElement || this.polyfillDetails());
   }, p.prototype.polyfillDetails = function () {
     var t,
-        e = this.$module,
-        n = this.$summary = e.getElementsByTagName("summary").item(0),
-        i = this.$content = e.getElementsByTagName("div").item(0);
+      e = this.$module,
+      n = this.$summary = e.getElementsByTagName("summary").item(0),
+      i = this.$content = e.getElementsByTagName("div").item(0);
     n && i && (i.id || (i.id = "details-content-" + (t = new Date().getTime(), void 0 !== window.performance && "function" == typeof window.performance.now && (t += window.performance.now()), "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (e) {
       var n = (t + 16 * Math.random()) % 16 | 0;
       return t = Math.floor(t / 16), ("x" === e ? n : 3 & n | 8).toString(16);
@@ -977,19 +888,16 @@ accessibleAutocomplete.enhanceSelectElement({
     if (-1 !== t.indexOf("#")) return t.split("#").pop();
   }, m.prototype.getAssociatedLegendOrLabel = function (t) {
     var e = t.closest("fieldset");
-
     if (e) {
       var n = e.getElementsByTagName("legend");
-
       if (n.length) {
         var i = n[0];
         if (t instanceof HTMLInputElement && ("checkbox" === t.type || "radio" === t.type)) return i;
         var o = i.getBoundingClientRect().top,
-            s = t.getBoundingClientRect();
+          s = t.getBoundingClientRect();
         if (s.height && window.innerHeight) if (s.top + s.height - o < window.innerHeight / 2) return i;
       }
     }
-
     return document.querySelector("label[for='" + t.getAttribute("id") + "']") || t.closest("label");
   };
   var f = {
@@ -998,7 +906,6 @@ accessibleAutocomplete.enhanceSelectElement({
     pressTwoMoreTimes: "Shift, press 2 more times to exit.",
     pressOneMoreTime: "Shift, press 1 more time to exit."
   };
-
   function v(t, i) {
     var r = {
       i18n: f
@@ -1008,12 +915,10 @@ accessibleAutocomplete.enhanceSelectElement({
     if (!(a instanceof HTMLElement)) return this;
     this.config = e(r, i || {}, o(t.dataset)), this.i18n = new s(n(this.config, "i18n")), this.$module = t, this.$button = a, this.$skiplinkButton = document.querySelector(".govuk-js-exit-this-page-skiplink"), this.$updateSpan = null, this.$indicatorContainer = null, this.$overlay = null, this.keypressCounter = 0, this.lastKeyWasModified = !1, this.timeoutTime = 5e3, this.keypressTimeoutId = null, this.timeoutMessageId = null;
   }
-
   function b(t) {
     if (!(t instanceof HTMLElement)) return this;
     this.$module = t, this.$menuButton = t.querySelector(".govuk-js-header-toggle"), this.$menu = this.$menuButton && t.querySelector("#" + this.$menuButton.getAttribute("aria-controls")), this.menuIsOpen = !1, this.mql = null;
   }
-
   function g(t, n) {
     if (!(t instanceof HTMLElement)) return this;
     this.$module = t;
@@ -1021,19 +926,16 @@ accessibleAutocomplete.enhanceSelectElement({
       disableAutoFocus: !1
     }, n || {}, o(t.dataset));
   }
-
   function y(t) {
     if (!(t instanceof HTMLElement)) return this;
     var e = t.querySelectorAll('input[type="radio"]');
     if (!e.length) return this;
     this.$module = t, this.$inputs = e;
   }
-
   function w(t) {
     if (!(t instanceof HTMLAnchorElement)) return this;
     this.$module = t, this.$linkedElement = null, this.linkedElementListener = !1;
   }
-
   function E(t) {
     if (!(t instanceof HTMLElement)) return this;
     var e = t.querySelectorAll("a.govuk-tabs__tab");
@@ -1045,19 +947,16 @@ accessibleAutocomplete.enhanceSelectElement({
       down: 40
     }, this.jsHiddenClass = "govuk-tabs__panel--hidden", this.boundTabClick = this.onTabClick.bind(this), this.boundTabKeydown = this.onTabKeydown.bind(this), this.boundOnHashChange = this.onHashChange.bind(this), this.changingHash = !1;
   }
-
   v.prototype.initUpdateSpan = function () {
     this.$updateSpan = document.createElement("span"), this.$updateSpan.setAttribute("role", "status"), this.$updateSpan.className = "govuk-visually-hidden", this.$module.appendChild(this.$updateSpan);
   }, v.prototype.initButtonClickHandler = function () {
     this.$button.addEventListener("click", this.handleClick.bind(this)), this.$skiplinkButton && this.$skiplinkButton.addEventListener("click", this.handleClick.bind(this));
   }, v.prototype.buildIndicator = function () {
     this.$indicatorContainer = document.createElement("div"), this.$indicatorContainer.className = "govuk-exit-this-page__indicator", this.$indicatorContainer.setAttribute("aria-hidden", "true");
-
     for (var t = 0; t < 3; t++) {
       var e = document.createElement("div");
       e.className = "govuk-exit-this-page__indicator-light", this.$indicatorContainer.appendChild(e);
     }
-
     this.$button.appendChild(this.$indicatorContainer);
   }, v.prototype.updateIndicator = function () {
     this.keypressCounter > 0 ? this.$indicatorContainer.classList.add("govuk-exit-this-page__indicator--visible") : this.$indicatorContainer.classList.remove("govuk-exit-this-page__indicator--visible"), t(this.$indicatorContainer.querySelectorAll(".govuk-exit-this-page__indicator-light"), function (t, e) {
@@ -1104,10 +1003,8 @@ accessibleAutocomplete.enhanceSelectElement({
     t(this.$inputs, this.syncConditionalRevealWithInputState.bind(this));
   }, y.prototype.syncConditionalRevealWithInputState = function (t) {
     var e = t.getAttribute("aria-controls");
-
     if (e) {
       var n = document.getElementById(e);
-
       if (n && n.classList.contains("govuk-radios__conditional")) {
         var i = t.checked;
         t.setAttribute("aria-expanded", i.toString()), n.classList.toggle("govuk-radios__conditional--hidden", !i);
@@ -1115,12 +1012,11 @@ accessibleAutocomplete.enhanceSelectElement({
     }
   }, y.prototype.handleClick = function (e) {
     var n = this,
-        i = e.target;
-
+      i = e.target;
     if (i instanceof HTMLInputElement && "radio" === i.type) {
       var o = document.querySelectorAll('input[type="radio"][aria-controls]'),
-          s = i.form,
-          r = i.name;
+        s = i.form,
+        r = i.name;
       t(o, function (t) {
         var e = t.form === s;
         t.name === r && e && n.syncConditionalRevealWithInputState(t);
@@ -1145,7 +1041,6 @@ accessibleAutocomplete.enhanceSelectElement({
     "document" in this && "nextElementSibling" in document.documentElement || Object.defineProperty(Element.prototype, "nextElementSibling", {
       get: function () {
         for (var t = this.nextSibling; t && 1 !== t.nodeType;) t = t.nextSibling;
-
         return t;
       }
     });
@@ -1153,7 +1048,6 @@ accessibleAutocomplete.enhanceSelectElement({
     "document" in this && "previousElementSibling" in document.documentElement || Object.defineProperty(Element.prototype, "previousElementSibling", {
       get: function () {
         for (var t = this.previousSibling; t && 1 !== t.nodeType;) t = t.previousSibling;
-
         return t;
       }
     });
@@ -1165,11 +1059,10 @@ accessibleAutocomplete.enhanceSelectElement({
     this.mql.matches ? this.setup() : this.teardown();
   }, E.prototype.setup = function () {
     var e = this,
-        n = this.$module,
-        i = this.$tabs,
-        o = n.querySelector(".govuk-tabs__list"),
-        s = n.querySelectorAll(".govuk-tabs__list-item");
-
+      n = this.$module,
+      i = this.$tabs,
+      o = n.querySelector(".govuk-tabs__list"),
+      s = n.querySelectorAll(".govuk-tabs__list-item");
     if (i && o && s) {
       o.setAttribute("role", "tablist"), t(s, function (t) {
         t.setAttribute("role", "presentation");
@@ -1181,10 +1074,10 @@ accessibleAutocomplete.enhanceSelectElement({
     }
   }, E.prototype.teardown = function () {
     var e = this,
-        n = this.$module,
-        i = this.$tabs,
-        o = n.querySelector(".govuk-tabs__list"),
-        s = n.querySelectorAll("a.govuk-tabs__list-item");
+      n = this.$module,
+      i = this.$tabs,
+      o = n.querySelector(".govuk-tabs__list"),
+      s = n.querySelectorAll("a.govuk-tabs__list-item");
     i && o && s && (o.removeAttribute("role"), t(s, function (t) {
       t.removeAttribute("role");
     }), t(i, function (t) {
@@ -1192,7 +1085,7 @@ accessibleAutocomplete.enhanceSelectElement({
     }), window.removeEventListener("hashchange", this.boundOnHashChange, !0));
   }, E.prototype.onHashChange = function () {
     var t = window.location.hash,
-        e = this.getTab(t);
+      e = this.getTab(t);
     if (e) if (this.changingHash) this.changingHash = !1;else {
       var n = this.getCurrentTab();
       n && (this.hideTab(n), this.showTab(e), e.focus());
@@ -1214,11 +1107,10 @@ accessibleAutocomplete.enhanceSelectElement({
     e && (e.removeAttribute("role"), e.removeAttribute("aria-labelledby"), e.classList.remove(this.jsHiddenClass));
   }, E.prototype.onTabClick = function (t) {
     var e = this.getCurrentTab(),
-        n = t.currentTarget;
+      n = t.currentTarget;
     e && n instanceof HTMLAnchorElement && (t.preventDefault(), this.hideTab(e), this.showTab(n), this.createHistoryEntry(n));
   }, E.prototype.createHistoryEntry = function (t) {
     var e = this.getPanel(t);
-
     if (e) {
       var n = e.id;
       e.id = "", this.changingHash = !0, window.location.hash = this.getHref(t).slice(1), e.id = n;
@@ -1229,17 +1121,14 @@ accessibleAutocomplete.enhanceSelectElement({
       case this.keys.up:
         this.activatePreviousTab(), t.preventDefault();
         break;
-
       case this.keys.right:
       case this.keys.down:
         this.activateNextTab(), t.preventDefault();
     }
   }, E.prototype.activateNextTab = function () {
     var t = this.getCurrentTab();
-
     if (t && t.parentElement) {
       var e = t.parentElement.nextElementSibling;
-
       if (e) {
         var n = e.querySelector("a.govuk-tabs__tab");
         n && (this.hideTab(t), this.showTab(n), n.focus(), this.createHistoryEntry(n));
@@ -1247,10 +1136,8 @@ accessibleAutocomplete.enhanceSelectElement({
     }
   }, E.prototype.activatePreviousTab = function () {
     var t = this.getCurrentTab();
-
     if (t && t.parentElement) {
       var e = t.parentElement.previousElementSibling;
-
       if (e) {
         var n = e.querySelector("a.govuk-tabs__tab");
         n && (this.hideTab(t), this.showTab(n), n.focus(), this.createHistoryEntry(n));
