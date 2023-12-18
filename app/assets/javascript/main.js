@@ -1,8 +1,18 @@
-// ES6 or Vanilla JavaScript
+import Tabs from './tabs.js';
 
-accessibleAutocomplete.enhanceSelectElement({
-    selectElement: document.querySelector('#select-autocomplete')
-})
+// Initialize components
+document.addEventListener('DOMContentLoaded', () => {
+    Tabs();
+});
+
+// ES6 or Vanilla JavaScript
+const selectElement = document.querySelector('#select-autocomplete');
+
+if(selectElement) {
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: selectElement
+    })
+}
 
 !function() {
     "use strict";
