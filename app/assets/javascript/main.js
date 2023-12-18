@@ -1228,6 +1228,7 @@ accessibleAutocomplete.enhanceSelectElement({
         this.$linkedElement = null,
         this.linkedElementListener = !1
     }
+
     function E(t) {
         if (!(t instanceof HTMLElement))
             return this;
