@@ -10,7 +10,7 @@
   },
   {
   name: 'Uploaded files',
-  path: '/alpha/version-04/claims/file-uploads/processing',
+  path: '/alpha/version-04/claims/file-uploads/processing-progress-0',
   active: true
   },
   {
@@ -54,6 +54,25 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of central content -->
 {% block content %}
+
+    <!-- Start of warning block -->
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-warning-callout" style="margin-top:0;">
+          <h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              Processing uploaded invoices
+            </span>
+          </h3>
+          <label class="nhsuk-label" for="upload">0% processed | Estimated time left: 53 minutes</label>
+          <progress class="nhsuk-u-width-one-third" id="upload" value="0" max="100"> 0% </progress>
+          <p><a href="processing-progress-60">Refresh</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- End of warning block -->
+
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
@@ -70,22 +89,7 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
     </div>
     <!-- End of title block -->
 
-<!-- Start of warning -->
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
-      <div class="nhsuk-warning-callout" style="margin-top:0">
-          <h3 class="nhsuk-warning-callout__label">
-              <span role="text">
-                  <span class="nhsuk-u-visually-hidden">Important: </span>
-                  Processing uploaded invoices
-              </span>
-          </h3>
-          <p>The system is currently processing uploaded invoices for this claim.</p>
-          <p><a href="">Refresh</a></p>
-      </div>
-  </div>
-</div>
-<!-- End of warning -->
+
 
     <!--Start file uploads info-->
 
