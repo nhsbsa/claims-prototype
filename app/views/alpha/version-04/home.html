@@ -99,12 +99,47 @@ Manage incoming international healthcare claims - NHSBSA
                       <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
 
-                      <!-- Country submitting the claim -->
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="country">
-                          Country submitting the claim
-                        </label>
-                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="country" name="country" type="text">
+                        <!-- Country submitting the claim -->
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="select-autocomplete">
+                              Country submitting the claim
+                          </label>
+                          <div class="nhsuk-u-width-two-thirds">
+                              <select name="country" id="select-autocomplete" value="{% if data['country'] %}{{ data['country'] }}{% endif %}">
+                                  <option value=""></option>
+                                  <option value="Austria">Austria</option>
+                                  <option value="Belgium">Belgium</option>
+                                  <option value="Bulgaria">Bulgaria</option>
+                                  <option value="Croatia">Croatia</option>
+                                  <option value="Cyprus">Cyprus</option>
+                                  <option value="Czech Republic">Czech Republic</option>
+                                  <option value="Denmark">Denmark</option>
+                                  <option value="Estonia">Estonia</option>
+                                  <option value="Finland">Finland</option>
+                                  <option value="France">France</option>
+                                  <option value="Germany">Germany</option>
+                                  <option value="Greece">Greece</option>
+                                  <option value="Hungary">Hungary</option>
+                                  <option value="Iceland">Iceland</option>
+                                  <option value="Ireland">Ireland</option>
+                                  <option value="Italy">Italy</option>
+                                  <option value="Latvia">Latvia</option>
+                                  <option value="Liechtenstein">Liechtenstein</option>
+                                  <option value="Lithuania">Lithuania</option>
+                                  <option value="Luxemburg">Luxemburg</option>
+                                  <option value="Malta">Malta</option>
+                                  <option value="Netherlands">Netherlands</option>
+                                  <option value="Norway">Norway</option>
+                                  <option value="Poland">Poland</option>
+                                  <option value="Portugal">Portugal</option>
+                                  <option value="Romania">Romania</option>
+                                  <option value="Slovakia">Slovakia</option>
+                                  <option value="Slovenia">Slovenia</option>
+                                  <option value="Spain">Spain</option>
+                                  <option value="Sweden">Sweden</option>
+                                  <option value="Switzerland">Switzerland</option>
+                              </select>
+                          </div>
                       </div>
 
                       <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
@@ -142,22 +177,19 @@ Manage incoming international healthcare claims - NHSBSA
                           <!-- Article covering the claim -->
                           <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset">
-                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
+                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-2">
                                 <h1 class="nhsuk-fieldset__heading">
                                   Article covering the claim
                                 </h1>
                               </legend>
 
-                              <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="article-hint">
-                                Select one option.
-                              </div>
                               <div class="nhsuk-radios">
 
                                 <div class="nhsuk-radios__item">
                                   <input class="nhsuk-radios__input" id="article-actual" name="article" type="radio"
                                     value="Actual cost">
                                   <label class="nhsuk-label nhsuk-radios__label" for="article-actual">
-                                    Actual cost
+                                    Article 62 - actual cost
                                   </label>
                                 </div>
 
@@ -194,15 +226,12 @@ Manage incoming international healthcare claims - NHSBSA
                           <div class="nhsuk-form-group">
 
                             <fieldset class="nhsuk-fieldset" aria-describedby="type-hint">
-                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
+                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-2">
                                 <h1 class="nhsuk-fieldset__heading">
                                   Type of claim
                                 </h1>
                               </legend>
 
-                              <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="type-hint">
-                                Select one option.
-                              </div>
 
                               <div class="nhsuk-radios">
 
@@ -331,13 +360,13 @@ Manage incoming international healthcare claims - NHSBSA
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Claim ID
-                    </span>8474
+                    </span>6784
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Country
                     </span>France
                   </td>
-                  <td><a href="">View</a></td>
+                  <td><a href="claims/summary/processing-progress-60">View</a></td>
 
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
