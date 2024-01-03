@@ -97,7 +97,15 @@ Claims - Manage incoming international healthcare claims - NHSBSA
 
           <!-- Start of search inputs-->
           <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-grid-column-one-quarter">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="claim-id">
+                  Claim ID
+                </label>
+                <input class="nhsuk-input" id="claim-id" name="claim-id" type="text">
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter">
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="claim-ref">
                   Claim reference
@@ -105,7 +113,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                 <input class="nhsuk-input" id="claim-ref" name="claim-ref" type="text">
               </div>
             </div>
-            <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-grid-column-one-quarter">
               <!-- Country submitting the claim -->
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="select-autocomplete">
@@ -149,7 +157,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                 </div>
               </div>
             </div>
-            <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-grid-column-one-quarter">
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="financial-year">
                   Financial year
@@ -182,38 +190,38 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                           </legend>
                           <div class="nhsuk-checkboxes">
                             <div class="nhsuk-checkboxes__item">
-                              <input class="nhsuk-checkboxes__input" id="filter-by-62" name="filter-by"
-                                type="checkbox" value="Article 62">
+                              <input class="nhsuk-checkboxes__input" id="filter-by-62" name="filter-by" type="checkbox"
+                                value="Article 62">
                               <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-62">
-                                Article 62 
+                                Article 62
                               </label>
                             </div>
                             <div class="nhsuk-checkboxes__item">
                               <input class="nhsuk-checkboxes__input" id="filter-by-632a" name="filter-by"
                                 type="checkbox" value="Article 63 (2a)">
                               <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-632a">
-                                Article 63 (2a) 
+                                Article 63 (2a)
                               </label>
                             </div>
                             <div class="nhsuk-checkboxes__item">
                               <input class="nhsuk-checkboxes__input" id="filter-by-632b" name="filter-by"
                                 type="checkbox" value="Article 63 (2b)">
                               <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-632b">
-                                Article 63 (2b) 
+                                Article 63 (2b)
                               </label>
                             </div>
                             <div class="nhsuk-checkboxes__item">
                               <input class="nhsuk-checkboxes__input" id="filter-by-aw03" name="filter-by"
                                 type="checkbox" value="AW03">
                               <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-aw03">
-                                AW03 
+                                AW03
                               </label>
                             </div>
                             <div class="nhsuk-checkboxes__item">
                               <input class="nhsuk-checkboxes__input" id="filter-by-main" name="filter-by"
                                 type="checkbox" value="Main">
                               <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-main">
-                                Main 
+                                Main
                               </label>
                             </div>
                             <div class="nhsuk-checkboxes__item">
@@ -240,8 +248,15 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                           </legend>
                           <div class="nhsuk-radios">
                             <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="sort-by-ref" name="sort-by" type="radio" value="Claim reference"
-                                checked="checked">
+                              <input class="nhsuk-radios__input" id="sort-by-id" name="sort-by" type="radio"
+                                value="Claim ID" checked="checked">
+                              <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
+                                Claim ID
+                              </label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                              <input class="nhsuk-radios__input" id="sort-by-ref" name="sort-by" type="radio"
+                                value="Claim reference">
                               <label class="nhsuk-label nhsuk-radios__label" for="sort-by-ref">
                                 Claim reference
                               </label>
@@ -369,6 +384,9 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                   <thead role="rowgroup" class="nhsuk-table__head">
                     <tr role="row">
                       <th role="columnheader" class="" scope="col">
+                        Claim ID
+                      </th>
+                      <th role="columnheader" class="" scope="col">
                         Claim reference
                       </th>
                       <th role="columnheader" class="" scope="col">
@@ -391,6 +409,9 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                   <tbody class="nhsuk-table__body">
                     <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>6784
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Claim reference </span>12345REF
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
@@ -406,10 +427,14 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                         <span class="nhsuk-table-responsive__heading">Claim type </span>Main
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Actions </span><a href="summary/processing-progress-60">View claim</a>
+                        <span class="nhsuk-table-responsive__heading">Actions </span><a
+                          href="summary/processing-progress-60">View claim</a>
                       </td>
                     </tr>
                     <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>6783
+                      </td>
                       <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Claim reference </span>12344REF
                       </td>
@@ -431,6 +456,9 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                     </tr>
                     <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>6782
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Claim reference </span>12343REF
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
@@ -450,6 +478,9 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                       </td>
                     </tr>
                     <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>6781
+                      </td>
                       <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Claim reference </span>12342REF
                       </td>
@@ -471,6 +502,9 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                     </tr>
                     <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>6780
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Claim reference </span>12341REF
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
@@ -490,6 +524,9 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                       </td>
                     </tr>
                     <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>6779
+                      </td>
                       <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Claim reference </span>12340REF
                       </td>
@@ -511,6 +548,9 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                     </tr>
                     <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>6778
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Claim reference </span>12339REF
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
@@ -530,6 +570,9 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                       </td>
                     </tr>
                     <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>6777
+                      </td>
                       <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Claim reference </span>12338REF
                       </td>
@@ -551,6 +594,9 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                     </tr>
                     <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>6776
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Claim reference </span>12337REF
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
@@ -570,6 +616,9 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                       </td>
                     </tr>
                     <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>6775
+                      </td>
                       <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Claim reference </span>12336REF
                       </td>
