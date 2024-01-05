@@ -91,78 +91,63 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
 
-                                                <!-- Target date to complete claim -->
-                                                <div class="nhsuk-form-group">
-                                                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                                                        <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
-                                                            <h1 class="nhsuk-fieldset__heading">
-                                                                Target date to complete the claim
-                                                            </h1>
-                                                        </legend>
-                                                        <div class="nhsuk-hint" id="target-date-hint">
-                                                            Internal deadline to complete the claim.
-                                                        </div>
-                                                        <div class="nhsuk-date-input" id="target-date">
-                                                            <div class="nhsuk-date-input__item">
-                                                                <div class="nhsuk-form-group">
-                                                                    <label class="nhsuk-label nhsuk-date-input__label" for="target-date-day">
-                                                                        Day
-                                                                    </label>
-                                                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                                        id="target-date-day" name="target-date-day" type="text" pattern="[0-9]*"
-                                                                        inputmode="numeric"
-                                                                        value="{% if data['target-date-day'] %}{{ data['target-date-day'] }}{% endif %}">
-                                                                </div>
-                                                            </div>
-                                                            <div class="nhsuk-date-input__item">
-                                                                <div class="nhsuk-form-group">
-                                                                    <label class="nhsuk-label nhsuk-date-input__label" for="target-date-month">
-                                                                        Month
-                                                                    </label>
-                                                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                                        id="target-date-month" name="target-date-month" type="text"
-                                                                        pattern="[0-9]*" inputmode="numeric"
-                                                                        value="{% if data['target-date-month'] %}{{ data['target-date-month'] }}{% endif %}">
-                                                                </div>
-                                                            </div>
-                                                            <div class="nhsuk-date-input__item">
-                                                                <div class="nhsuk-form-group">
-                                                                    <label class="nhsuk-label nhsuk-date-input__label" for="target-date-year">
-                                                                        Year
-                                                                    </label>
-                                                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                                                                        id="target-date-year" name="target-date-year" type="text"
-                                                                        pattern="[0-9]*" inputmode="numeric"
-                                                                        value="{% if data['target-date-year'] %}{{ data['target-date-year'] }}{% endif %}">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-
-
-
-
+                        <!-- Target date to complete claim -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Target date to complete the claim
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="target-date-hint">
+                                    Internal deadline to complete the claim.
+                                </div>
+                                <div class="nhsuk-date-input" id="target-date">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="target-date-day" name="target-date-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="target-date-month" name="target-date-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                id="target-date-year" name="target-date-year" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
 
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                             Save changes
                         </button>
 
-
                     </div>
                 </div>
-
 
                 <a href="../../summary/not-started" class="nhsuk-link">Cancel</a>
                 </form>
             </div>
         </div>
-
-
-
-
-
-
     </div>
 </div>
 {% endblock %}
