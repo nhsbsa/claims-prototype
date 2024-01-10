@@ -79,10 +79,10 @@ Claims - Manage incoming international healthcare claims - NHSBSA
 
 
     <!-- Start of filter results -->
-    <div class="nhsuk-card" id="filter-results">
+    <div class="nhsuk-card">
       <div class="nhsuk-card__content">
 
-        <form action="#" method="post">
+        <form action="search-results#filter-results" method="post">
 
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
@@ -95,11 +95,13 @@ Claims - Manage incoming international healthcare claims - NHSBSA
             </div>
           </div>
 
+          <hr style="margin:0px 0px 24px 0px;" />
+
           <!-- Start of search inputs-->
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-one-quarter">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="claim-id">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claim-id">
                   Claim ID
                 </label>
                 <input class="nhsuk-input" id="claim-id" name="claim-id" type="text" value="6784">
@@ -107,7 +109,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
             </div>
             <div class="nhsuk-grid-column-one-quarter">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="claim-ref">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claim-ref">
                   Claim reference
                 </label>
                 <input class="nhsuk-input" id="claim-ref" name="claim-ref" type="text">
@@ -116,7 +118,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
             <div class="nhsuk-grid-column-one-quarter">
               <!-- Country submitting the claim -->
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="select-autocomplete">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="select-autocomplete">
                   Country
                 </label>
                 <div>
@@ -159,7 +161,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
             </div>
             <div class="nhsuk-grid-column-one-quarter">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="financial-year">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="financial-year">
                   Financial year
                 </label>
                 <input class="nhsuk-input" id="financial-year" name="financial-year" type="text">
@@ -169,7 +171,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
           <!-- End of text inputs -->
 
           <!-- Start of additional filter and sort options -->
-          <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
             <div class="nhsuk-grid-column-full">
               <details class="nhsuk-details">
                 <summary class="nhsuk-details__summary">
@@ -179,16 +181,37 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                 </summary>
                 <div class="nhsuk-details__text">
                   <div class="nhsuk-grid-row">
-                    <!-- Start filter by-->
-                    <div class="nhsuk-grid-column-one-third">
+                    <!-- Start filter by article type-->
+                    <div class="nhsuk-grid-column-one-quarter">
                       <div class="nhsuk-form-group">
                         <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
                           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                            <h1 class="nhsuk-fieldset__heading">
-                              Filter by
+                            <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                              Filter by article type
                             </h1>
                           </legend>
                           <div class="nhsuk-checkboxes">
+                            <div class="nhsuk-checkboxes__item">
+                              <input class="nhsuk-checkboxes__input" id="filter-by-20" name="filter-by" type="checkbox"
+                                value="Article 20(2) - S2">
+                              <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-20">
+                                Article 20 (2)
+                              </label>
+                            </div>
+                            <div class="nhsuk-checkboxes__item">
+                              <input class="nhsuk-checkboxes__input" id="filter-by-22" name="filter-by" type="checkbox"
+                                value="Article 22(i)(c) - E112">
+                              <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-22">
+                                Article 22 (ic)
+                              </label>
+                            </div>
+                            <div class="nhsuk-checkboxes__item">
+                              <input class="nhsuk-checkboxes__input" id="filter-by-55" name="filter-by" type="checkbox"
+                                value="Article 55(i)(a) - E123">
+                              <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-55">
+                                Article 55 (ia)
+                              </label>
+                            </div>
                             <div class="nhsuk-checkboxes__item">
                               <input class="nhsuk-checkboxes__input" id="filter-by-62" name="filter-by" type="checkbox"
                                 value="Article 62">
@@ -211,12 +234,56 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                               </label>
                             </div>
                             <div class="nhsuk-checkboxes__item">
+                              <input class="nhsuk-checkboxes__input" id="filter-by-65" name="filter-by" type="checkbox"
+                                value="Article 65">
+                              <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-65">
+                                Article 65
+                              </label>
+                            </div>
+                            <div class="nhsuk-checkboxes__item">
+                              <input class="nhsuk-checkboxes__input" id="filter-by-93" name="filter-by" type="checkbox"
+                                value="Article 93 - E125">
+                              <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-93">
+                                Article 93
+                              </label>
+                            </div>
+                            <div class="nhsuk-checkboxes__item">
+                              <input class="nhsuk-checkboxes__input" id="filter-by-94" name="filter-by" type="checkbox"
+                                value="Article 94 - E109">
+                              <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-94">
+                                Article 94
+                              </label>
+                            </div>
+                            <div class="nhsuk-checkboxes__item">
+                              <input class="nhsuk-checkboxes__input" id="filter-by-95" name="filter-by" type="checkbox"
+                                value="Article 95 - E121">
+                              <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-95">
+                                Article 95
+                              </label>
+                            </div>
+                            <div class="nhsuk-checkboxes__item">
                               <input class="nhsuk-checkboxes__input" id="filter-by-aw03" name="filter-by"
                                 type="checkbox" value="AW03">
                               <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-by-aw03">
                                 AW03
                               </label>
                             </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <!-- End filter by -->
+
+                    <!-- Start filter by claim type-->
+                    <div class="nhsuk-grid-column-one-quarter">
+                      <div class="nhsuk-form-group">
+                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                            <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                              Filter by claim type
+                            </h1>
+                          </legend>
+                          <div class="nhsuk-checkboxes">
                             <div class="nhsuk-checkboxes__item">
                               <input class="nhsuk-checkboxes__input" id="filter-by-main" name="filter-by"
                                 type="checkbox" value="Main">
@@ -238,15 +305,22 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                     <!-- End filter by -->
 
                     <!-- Start sort by -->
-                    <div class="nhsuk-grid-column-one-third">
+                    <div class="nhsuk-grid-column-one-quarter">
                       <div class="nhsuk-form-group">
                         <fieldset class="nhsuk-fieldset">
                           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                            <h1 class="nhsuk-fieldset__heading">
+                            <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
                               Sort by
                             </h1>
                           </legend>
                           <div class="nhsuk-radios">
+                            <div class="nhsuk-radios__item">
+                              <input class="nhsuk-radios__input" id="sort-by-article" name="sort-by" type="radio"
+                                value="Article type">
+                              <label class="nhsuk-label nhsuk-radios__label" for="sort-by-article">
+                                Article type
+                              </label>
+                            </div>
                             <div class="nhsuk-radios__item">
                               <input class="nhsuk-radios__input" id="sort-by-id" name="sort-by" type="radio"
                                 value="Claim ID" checked="checked">
@@ -259,6 +333,13 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                 value="Claim reference">
                               <label class="nhsuk-label nhsuk-radios__label" for="sort-by-ref">
                                 Claim reference
+                              </label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                              <input class="nhsuk-radios__input" id="sort-by-type" name="sort-by" type="radio"
+                                value="Claim type">
+                              <label class="nhsuk-label nhsuk-radios__label" for="sort-by-type">
+                                Claim type
                               </label>
                             </div>
                             <div class="nhsuk-radios__item">
@@ -275,21 +356,6 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                 Financial year
                               </label>
                             </div>
-                            <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="sort-by-article" name="sort-by" type="radio"
-                                value="Article type">
-                              <label class="nhsuk-label nhsuk-radios__label" for="sort-by-article">
-                                Article type
-                              </label>
-                            </div>
-                            <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="sort-by-type" name="sort-by" type="radio"
-                                value="Claim type">
-                              <label class="nhsuk-label nhsuk-radios__label" for="sort-by-type">
-                                Claim type
-                              </label>
-                            </div>
-
                           </div>
                         </fieldset>
                       </div>
@@ -297,12 +363,12 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                     <!-- End sort by -->
 
                     <!-- Start order -->
-                    <div class="nhsuk-grid-column-one-third">
+                    <div class="nhsuk-grid-column-one-quarter">
                       <div class="nhsuk-form-group">
                         <fieldset class="nhsuk-fieldset">
                           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                            <h1 class="nhsuk-fieldset__heading">
-                              Order
+                            <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                              Order results
                             </h1>
                           </legend>
                           <div class="nhsuk-radios">
@@ -357,7 +423,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
               <div class="nhsuk-grid-column-two-thirds">
                 <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 results of 1 for</h3>
                 <p class="nhsuk-u-margin-bottom-2"><strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                    6784 &nbsp; X
+                    6784
                   </strong></p>
               </div>
               <div class="nhsuk-grid-column-one-third">
