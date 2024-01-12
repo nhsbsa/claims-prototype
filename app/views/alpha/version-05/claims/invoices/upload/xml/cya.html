@@ -1,0 +1,130 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    {
+    name: 'Summary',
+    path: '/alpha/version-04/claims/summary/not-started'
+    },
+    {
+    name: 'Invoices',
+    path: '/alpha/version-04/claims/invoices/not-started',
+    active: true
+    },
+    {
+        name: 'Uploaded files',
+        path: '#'
+        },
+    {
+    name: 'History',
+    path: '#'
+    }
+    ]
+    %}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Check your answers - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../index">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+                    <!-- Start of main content -->
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            <form action="confirmation" method="post">
+                                <div class="nhsuk-form-group">
+                               
+                                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                                            <h1 class="nhsuk-fieldset__heading">
+                                                <span class="nhsuk-caption-l">Add invoices</span>
+                                                Check your answers
+                                            </h1>
+                                        </legend>
+
+
+                                            <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                                                <div class="nhsuk-card__content">
+
+                                                    <dl class="nhsuk-summary-list">
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Contact method
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                RINA
+                                                            </dd>
+                                                            <dd class="nhsuk-summary-list__actions">
+                                                                
+                                                            </dd>
+                                                        </div>
+            
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Files uploaded
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                invoice-file-1.xml<br />
+                                                                invoice-file-2.xml
+
+                                                            </dd>
+                                                            <dd class="nhsuk-summary-list__actions">
+                                                                <a href="additional-file">
+                                                                    Change<span class="nhsuk-u-visually-hidden"> files uploaded</span>
+                                                                </a>
+                                                            </dd>
+                                                        </div>
+
+                                                    </dl>
+            
+            
+                                               
+                                                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                                                    Submit
+                                                </button>
+                                            </form>
+                                            </div>
+
+                                                </div>
+                                              </div>
+
+
+                            <a href="#" class="nhsuk-link">Cancel</a>
+                        </div>
+                    </div>
+  
+
+    </div>
+</div>
+{% endblock %}
+<!-- End of central content -->
