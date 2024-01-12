@@ -1,24 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-04/claims/summary/invoices-uploaded'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-04/claims/invoices/full-invoice-list'
-},
-{
-name: 'Uploaded files',
-path: '/alpha/version-04/claims/file-uploads/index',
-active: true
-},
-{
-name: 'History',
-path: '/alpha/version-04/claims/history/invoices-uploaded'
-}
-]
-%}
+  {
+  name: 'Summary',
+  path: '/alpha/version-04/claims/summary/invoices-uploaded'
+  },
+  {
+  name: 'Invoices',
+  path: '/alpha/version-04/claims/invoices/full-invoice-list'
+  },
+  {
+  name: 'Uploaded files',
+  path: '/alpha/version-04/claims/file-uploads/index'
+  },
+  {
+  name: 'History',
+  path: '/alpha/version-04/claims/history/invoices-uploaded',
+  active: true
+  }
+  ]
+  %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -29,7 +29,7 @@ path: '/alpha/version-04/claims/history/invoices-uploaded'
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Uploaded files - Manage incoming international healthcare claims - NHSBSA
+History - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -54,6 +54,7 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of central content -->
 {% block content %}
+
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
@@ -61,7 +62,7 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <h1 class="nhsuk-heading-xl ">
-          Uploaded files
+          History
         </h1>
       </div>
 
@@ -69,6 +70,8 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
 
     </div>
     <!-- End of title block -->
+
+
 
     <!--Start file uploads info-->
 
@@ -78,6 +81,7 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
         <div class="nhsuk-card">
           <div class="nhsuk-card__content">
 
+
             <table role="table" class="nhsuk-table-responsive">
               <!-- <caption class="nhsuk-table__caption">File uploads</caption> -->
               <thead role="rowgroup" class="nhsuk-table__head">
@@ -86,55 +90,48 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
                     Date/time
                   </th>
                   <th role="columnheader" class="" scope="col">
-                    Author
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Filename
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Status
-                  </th>
-                  <th role="columnheader" class="" scope="col">
                     Action
                   </th>
-
+                  <th role="columnheader" class="" scope="col">
+                    Author
+                  </th>
                 </tr>
               </thead>
               <tbody class="nhsuk-table__body">
 
                 <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Date/time </span>1 December 2023, 10:59
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action </span>Auto validation complete
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Author </span>System
+                    </td>
+                  </tr>
+
+                <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Date/time </span>1 December 2023
+                    <span class="nhsuk-table-responsive__heading">Date/time </span>1 December 2023, 10:12
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action </span>Invoices submitted
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Author </span>Isla Fields
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-1.xml
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Status </span>Complete
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="">View report</a>
                   </td>
                 </tr>
 
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Date/time </span>1 December 2023
+                    <span class="nhsuk-table-responsive__heading">Date/time </span>1 December 2023, 09:42
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action </span>Claim created
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Author </span>Isla Fields
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-2.xml
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Status </span>Complete
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="">View report</a>
                   </td>
                 </tr>
 
