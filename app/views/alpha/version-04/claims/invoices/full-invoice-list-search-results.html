@@ -76,7 +76,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-card">
   <div class="nhsuk-card__content">
 
-    <form action="full-invoice-list-search-results#search-results" method="post">
+    <form action="#" method="post">
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
@@ -89,33 +89,40 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
         </div>
       </div>
 
+      <hr style="margin:0px 0px 24px 0px;" />
+
       <!-- Start of search inputs-->
       <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-grid-column-one-quarter">
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="invoice-ref">
+            <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-id">
+              Invoice ID
+            </label>
+            <input class="nhsuk-input" id="invoice-id" name="invoice-id" type="text">
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-one-quarter">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-ref">
               Invoice reference
             </label>
-            <input class="nhsuk-input" id="invoice-ref" name="invoice-ref" type="text"
-            {% if data['invoice-ref'] %} value="0039795410"{% endif %}>
+            <input class="nhsuk-input" id="invoice-ref" name="invoice-ref" type="text" value="0039795410">
           </div>
         </div>
-        <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-grid-column-one-quarter">
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="last-name">
+            <label class="nhsuk-label nhsuk-u-font-weight-bold" for="last-name">
               Last name
             </label>
-            <input class="nhsuk-input" id="last-name" name="last-name" type="text"
-            {% if data['last-name'] %} value="Pearce"{% endif %}>
+            <input class="nhsuk-input" id="last-name" name="last-name" type="text" value="Pearce">
           </div>
         </div>
-        <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-grid-column-one-quarter">
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="first-name">
+            <label class="nhsuk-label nhsuk-u-font-weight-bold" for="first-name">
               First name
             </label>
-            <input class="nhsuk-input" id="first-name" name="first-name" type="text"
-            {% if data['first-name'] %} value="Saun"{% endif %}>
+            <input class="nhsuk-input" id="first-name" name="first-name" type="text">
           </div>
         </div>
       </div>
@@ -132,23 +139,16 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             </summary>
             <div class="nhsuk-details__text">
               <div class="nhsuk-grid-row">
-                <!-- Start filter by-->
+                <!-- Start filter by status-->
                 <div class="nhsuk-grid-column-one-third">
                   <div class="nhsuk-form-group">
                     <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
                       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                        <h1 class="nhsuk-fieldset__heading">
-                          Filter by
+                        <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                          Filter by status
                         </h1>
                       </legend>
                       <div class="nhsuk-checkboxes">
-                        <div class="nhsuk-checkboxes__item">
-                          <input class="nhsuk-checkboxes__input" id="filter-status-all" name="filter-status"
-                            type="checkbox" value="all" checked>
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-all">
-                            All invoices
-                          </label>
-                        </div>
                         <div class="nhsuk-checkboxes__item">
                           <input class="nhsuk-checkboxes__input" id="filter-status-tobechecked" name="filter-status"
                             type="checkbox" value="check">
@@ -188,48 +188,107 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                     </fieldset>
                   </div>
                 </div>
-                <!-- End filter by -->
+                <!-- End filter by status -->
 
-                <!-- Start sort by -->
+                <!-- Start filter by entitlement -->
                 <div class="nhsuk-grid-column-one-third">
                   <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                        <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                          Filter by entitlement
+                        </h1>
+                      </legend>
+                      <div class="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-da1" name="filter-enitltment"
+                            type="checkbox" value="da1">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-da1">
+                            DA1
+                          </label>
+                        </div>
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-ehic" name="filter-enitltment"
+                            type="checkbox" value="ehic">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-ehic">
+                            EHIC
+                          </label>
+                        </div>
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-prc" name="filter-enitltment"
+                            type="checkbox" value="prc">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-prc">
+                            PRC
+                          </label>
+                        </div>
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-s1" name="filter-enitltment"
+                            type="checkbox" value="s1">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s1">
+                            S1
+                          </label>
+                        </div>
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-s2" name="filter-enitltment"
+                            type="checkbox" value="s2">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s2">
+                            S2
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+
+                </div>
+                <!-- End filter by entitlement -->
+
+                <!-- Start sort by and sort order -->
+                <div class="nhsuk-grid-column-one-third">
+                  <div class="nhsuk-form-group nhsuk-u-padding-bottom-5">
                     <fieldset class="nhsuk-fieldset">
                       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                        <h1 class="nhsuk-fieldset__heading">
+                        <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
                           Sort by
                         </h1>
                       </legend>
                       <div class="nhsuk-radios">
                         <div class="nhsuk-radios__item">
-                          <input class="nhsuk-radios__input" id="sort-by-id" name="sort-by" type="radio" value="yes"
+                          <input class="nhsuk-radios__input" id="sort-by-id" name="sort-by" type="radio" value="id"
                             checked="checked">
                           <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
+                            Invoice ID
+                          </label>
+                        </div>
+                        <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" id="sort-by-ref" name="sort-by" type="radio" value="ref">
+                          <label class="nhsuk-label nhsuk-radios__label" for="sort-by-ref">
                             Invoice reference
                           </label>
                         </div>
                         <div class="nhsuk-radios__item">
                           <input class="nhsuk-radios__input" id="sort-by-last-name" name="sort-by" type="radio"
-                            value="no">
+                            value="last-name">
                           <label class="nhsuk-label nhsuk-radios__label" for="sort-by-last-name">
                             Last name
                           </label>
                         </div>
                         <div class="nhsuk-radios__item">
                           <input class="nhsuk-radios__input" id="sort-by-first-name" name="sort-by" type="radio"
-                            value="no">
+                            value="first-name">
                           <label class="nhsuk-label nhsuk-radios__label" for="sort-by-first-name">
                             First name
                           </label>
                         </div>
                         <div class="nhsuk-radios__item">
                           <input class="nhsuk-radios__input" id="sort-by-entitlement" name="sort-by" type="radio"
-                            value="no">
+                            value="entitlement">
                           <label class="nhsuk-label nhsuk-radios__label" for="sort-by-entitlement">
                             Entitlement
                           </label>
                         </div>
                         <div class="nhsuk-radios__item">
-                          <input class="nhsuk-radios__input" id="sort-by-status" name="sort-by" type="radio" value="no">
+                          <input class="nhsuk-radios__input" id="sort-by-status" name="sort-by" type="radio"
+                            value="status">
                           <label class="nhsuk-label nhsuk-radios__label" for="sort-by-status">
                             Status
                           </label>
@@ -237,29 +296,24 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                       </div>
                     </fieldset>
                   </div>
-                </div>
-                <!-- End sort by -->
-
-                <!-- Start order -->
-                <div class="nhsuk-grid-column-one-third">
                   <div class="nhsuk-form-group">
                     <fieldset class="nhsuk-fieldset">
                       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                        <h1 class="nhsuk-fieldset__heading">
-                          Order
+                        <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                          Order results
                         </h1>
                       </legend>
                       <div class="nhsuk-radios">
                         <div class="nhsuk-radios__item">
                           <input class="nhsuk-radios__input" id="order-by-asc" name="order-by" type="radio"
-                            value="ascending" checked="checked">
+                            value="ascending">
                           <label class="nhsuk-label nhsuk-radios__label" for="order-by-asc">
                             Ascending
                           </label>
                         </div>
                         <div class="nhsuk-radios__item">
-                          <input class="nhsuk-radios__input" id="order-by-desc" name="order-by" type="descending"
-                            value="descending">
+                          <input class="nhsuk-radios__input" id="order-by-desc" name="order-by" type="radio"
+                            value="descending" checked="checked">
                           <label class="nhsuk-label nhsuk-radios__label" for="order-by-desc">
                             Descending
                           </label>
@@ -268,7 +322,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                     </fieldset>
                   </div>
                 </div>
-                <!-- End order -->
+                <!-- End sort by and sort order -->
               </div>
             </div>
           </details>
@@ -318,9 +372,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
           <div class="nhsuk-grid-column-two-thirds">
             <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 results of 1 for</h3>
             <p class="nhsuk-u-margin-bottom-2">
-                {% if data['invoice-ref'] %} <strong class="nhsuk-tag nhsuk-tag--aqua-green">0039795410 &nbsp; X</strong>{% endif %}
-                {% if data['last-name'] %} <strong class="nhsuk-tag nhsuk-tag--aqua-green">Pearce &nbsp; X</strong>{% endif %}
-                {% if data['first-name'] %} <strong class="nhsuk-tag nhsuk-tag--aqua-green">Saun &nbsp; X</strong>{% endif %}
+                <strong class="nhsuk-tag nhsuk-tag--aqua-green">0039795410 &nbsp; X</strong>
+                <strong class="nhsuk-tag nhsuk-tag--aqua-green">Pearce &nbsp; X</strong>
             </p>
           </div>
           <div class="nhsuk-grid-column-one-third">
@@ -347,6 +400,9 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                   <th role="columnheader" class="" scope="col">
+                    Invoice ID
+                  </th>
+                  <th role="columnheader" class="" scope="col">
                     Invoice reference
                   </th>
                   <th role="columnheader" class="" scope="col">
@@ -362,12 +418,15 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                     Status
                   </th>
                   <th role="columnheader" class="" scope="col">
-                    Actions
+                    View
                   </th>
                 </tr>
               </thead>
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>01554
+                  </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039795410
                   </td>
@@ -377,13 +436,15 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">First name</span>Sean
                   </td>
-                  <td>S1</td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                  </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>To check
                   </td>
 
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Actions </span><a href="details/person-not-found/summary-1">View invoice</a>
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="#">View invoice</a>
                   </td>
                 </tr>
 
