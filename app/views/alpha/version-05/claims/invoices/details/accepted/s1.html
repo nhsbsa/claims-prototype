@@ -167,6 +167,11 @@ Invoice reference: 0039795410 - Invoice details - Manage incoming international 
                                                     Sean
                                                 </dd>
                                             </div>
+                                        </dl>
+                                    </div>
+
+                                    <div class="nhsuk-grid-column-one-half">
+                                        <dl class="nhsuk-summary-list">
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
                                                     Date of birth
@@ -185,19 +190,20 @@ Invoice reference: 0039795410 - Invoice details - Manage incoming international 
                                             </div>
                                         </dl>
                                     </div>
+                                </div>
 
-                                    <div class="nhsuk-grid-column-one-half">
-                                        <dl class="nhsuk-summary-list">
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    OHS number
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    8755643
-                                                </dd>
-                                            </div>
-                                        </dl>
-                                    </div>
+                                <div class="nhsuk-action-link">
+                                    <a class="nhsuk-action-link__link" href="#">
+                                        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
+                                            width="36" height="36">
+                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                            <path
+                                                d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                                            </path>
+                                        </svg>
+                                        <span class="nhsuk-action-link__text">View person record</span>
+                                    </a>
                                 </div>
 
                             </div>
@@ -208,12 +214,13 @@ Invoice reference: 0039795410 - Invoice details - Manage incoming international 
                 </div>
                 <!-- End person details -->
 
-                <!-- Start of claim and entitlement details -->
+                <!-- Start of treatment and entitlement details -->
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <ul class="nhsuk-grid-row nhsuk-card-group">
-                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
 
+                            <!-- Start of treatment details -->
+                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
                                 <div class="nhsuk-card">
                                     <div class="nhsuk-card__content nhsuk-card__content--primary">
                                         <h3 class="nhsuk-card__heading nhsuk-heading-m">
@@ -261,8 +268,10 @@ Invoice reference: 0039795410 - Invoice details - Manage incoming international 
 
                                     </div>
                                 </div>
-
                             </li>
+                            <!-- End of treatment details-->
+
+                            <!-- Start of entitlement details-->
                             <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
 
                                 <div class="nhsuk-card ">
@@ -272,11 +281,6 @@ Invoice reference: 0039795410 - Invoice details - Manage incoming international 
                                         </h3>
                                         <hr style="margin:0px 0px 12px 0px;">
                                         <dl class="nhsuk-summary-list">
-
-
-
-
-
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
                                                     Type
@@ -322,9 +326,7 @@ Invoice reference: 0039795410 - Invoice details - Manage incoming international 
                                 </div>
 
                             </li>
-
-
-
+                            <!-- End of entitlement details-->
 
                         </ul>
                     </div>
@@ -338,219 +340,59 @@ Invoice reference: 0039795410 - Invoice details - Manage incoming international 
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <div class="nhsuk-card">
-                            <div class="nhsuk-card__content">
+                            <div class="nhsuk-card__content nhsuk-u-padding-bottom-0">
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-two-thirds">
                                         <h3 class="nhsuk-card__heading">
                                             Status
                                         </h3>
                                     </div>
-
                                 </div>
-                                <hr style="margin:0px 0px 12px 0px;">
-                                <div class="nhsuk-grid-row">
-                                    <div class="nhsuk-grid-column-one-third">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
-                                                Accepted
-                                            </label>
-                                            <input class="nhsuk-input " id="accepted" name="accepted" type="text"
-                                                value="0">
-                                        </div>
-                                    </div>
-                                    <div class="nhsuk-grid-column-one-third">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="withdrawn">
-                                                Withdrawn
-                                            </label>
-                                            <input class="nhsuk-input " id="withdrawn" name="withdrawn" type="text"
-                                                value="0">
-                                        </div>
-                                    </div>
-                                    <div class="nhsuk-grid-column-one-third">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
-                                                Contested
-                                            </label>
-                                            <input class="nhsuk-input " id="contested" name="contested" type="text"
-                                                value="2134.75">
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <hr style="margin:0px 0px 30px 0px;">
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-full">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                for="contestation-reason">
-                                                Contestation reason
-                                            </label>
-                                            <select class="nhsuk-select nhsuk-u-width-full" id="contestation-reason"
-                                                name="contestation-reason">
-                                                <option value="">Select contestation reason</option>
-                                                <option value="This document does not concern us">This document does not
-                                                    concern us</option>
 
-                                                <option
-                                                    value="Institution code is incorrect. Please provide correct institution code.">
-                                                    Institution
-                                                    code is incorrect. Please provide correct institution code.</option>
+                                        <ul class="nhsuk-grid-row nhsuk-card-group">
 
-                                                <option
-                                                    value="Unable to identify the person from the information provided. Please check."
-                                                    selected>
-                                                    Unable to
-                                                    identify the person from the information provided. Please check.
-                                                </option>
+                                            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                                                <div class="nhsuk-card">
+                                                    <div class="nhsuk-card__content">
+                                                        <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">2134.75 <span
+                                                                class="nhsuk-u-visually-hidden">Accepted</span></p>
+                                                        Accepted
+                                                    </div>
+                                                </div>
+                                            </li>
 
-                                                <option
-                                                    value="Entitlement document is unknown or not found. Please provide copy.">
-                                                    Entitlement
-                                                    document is unknown or not found. Please provide copy.</option>
+                                            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                                                <div class="nhsuk-card">
+                                                    <div class="nhsuk-card__content">
+                                                        <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">0 <span
+                                                                class="nhsuk-u-visually-hidden">Withdrawn</span></p>
+                                                        Withdrawn
+                                                    </div>
+                                                </div>
+                                            </li>
 
-                                                <option value="Scheduled treatment may be suspected. Please check.">
-                                                    Scheduled treatment may
-                                                    be
-                                                    suspected. Please check.</option>
+                                            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                                                <div class="nhsuk-card">
+                                                    <div class="nhsuk-card__content">
+                                                        <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">0 <span
+                                                                class="nhsuk-u-visually-hidden">Contested</span></p>
+                                                        Contested
+                                                    </div>
+                                                </div>
+                                            </li>
 
-                                                <option
-                                                    value="There is an overlapping in hospitalisation periods. Please adjust the claim.">
-                                                    There
-                                                    is an overlapping in hospitalisation periods. Please adjust the
-                                                    claim.</option>
+                                        </ul>
 
-                                                <option
-                                                    value="Person was not insured during benefits period. Please provide copy of entitlement document.">
-                                                    Person was not insured during benefits period. Please provide copy
-                                                    of entitlement
-                                                    document.
-                                                </option>
-
-                                                <option
-                                                    value="The period of benefits in kind is not covered by the entitlement period">
-                                                    The
-                                                    period
-                                                    of benefits in kind is not covered by the entitlement period
-                                                </option>
-
-                                                <option
-                                                    value="The period of benefits in kind is partially covered by the entitlement period. Please adjust the claim.">
-                                                    The period of benefits in kind is partially covered by the
-                                                    entitlement period. Please
-                                                    adjust the
-                                                    claim.</option>
-
-                                                <option
-                                                    value="The costs are to be settled by lump-sum as from [date should be filled in].">
-                                                    The
-                                                    costs are to be settled by lump-sum as from [date should be filled
-                                                    in].</option>
-
-                                                <option
-                                                    value="The costs are to be settled by lump-sum until [date should be filled in].">
-                                                    The costs
-                                                    are to be settled by lump-sum until [date should be filled in].
-                                                </option>
-
-                                                <option
-                                                    value="The person is not registered on the entitlement document">The
-                                                    person is not
-                                                    registered on the entitlement document</option>
-
-                                                <option value="The entitlement document has not been registered.">The
-                                                    entitlement document
-                                                    has not
-                                                    been registered.</option>
-
-                                                <option
-                                                    value="Double invoice [duplicated invoice number should be filled in]">
-                                                    Double
-                                                    invoice
-                                                    [duplicated invoice number should be filled in]</option>
-
-                                                <option
-                                                    value="The entitlement in the state of residence started on [date should be filled in].">
-                                                    The
-                                                    entitlement in the state of residence started on [date should be
-                                                    filled in].</option>
-
-                                                <option
-                                                    value="The benefits seem to concern an accident at work that happened on [date should be filled in].">
-                                                    The benefits seem to concern an accident at work that happened on
-                                                    [date should be filled
-                                                    in].
-                                                </option>
-
-                                                <option value="The person died on [date should be filled in]">The person
-                                                    died on [date
-                                                    should be
-                                                    filled in]</option>
-
-                                                <option
-                                                    value="Lack of information about the other benefits provided. Please specify">
-                                                    Lack
-                                                    of
-                                                    information about the other benefits provided. Please specify
-                                                </option>
-
-                                                <option
-                                                    value="Total amount of claim different to the sum of individual claims">
-                                                    Total amount
-                                                    of
-                                                    claim different to the sum of individual claims</option>
-
-                                                <option
-                                                    value="Total amount of individual claim different to the sum of benefits">
-                                                    Total
-                                                    amount of
-                                                    individual claim different to the sum of benefits</option>
-
-                                                <option
-                                                    value="Cost of benefits have been refunded in full or partially to the insured person">
-                                                    Cost
-                                                    of benefits have been refunded in full or partially to the insured
-                                                    person</option>
-
-                                                <option
-                                                    value="Claim introduced after deadline [date should be filled in]">
-                                                    Claim introduced
-                                                    after
-                                                    deadline [date should be filled in]</option>
-
-                                                <option
-                                                    value="Contestation reply received after deadline [date should be filled in].">
-                                                    Contestation
-                                                    reply received after deadline [date should be filled in].</option>
-
-                                                <option value="Other">Other</option>
-
-                                            </select>
-                                        </div>
                                     </div>
                                 </div>
-                                </fieldset>
-                                </form>
-                                <br />
-                                <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button"
-                                    type="submit">
-                                    Save changes
-                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- End of status -->
-
-
-
-
-
-
-
-
-
-
-
 
             </div>
             <!-- *** End of summary tab *** -->
@@ -560,16 +402,10 @@ Invoice reference: 0039795410 - Invoice details - Manage incoming international 
             <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
                 <h2 class="nhsuk-heading-l">Notes</h2>
 
-
-
-
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <div class="nhsuk-card">
                             <div class="nhsuk-card__content" style="padding-top:12px;">
-
-
-
 
                                 <table role="table" class="nhsuk-table-responsive nhsuk-u-padding-bottom-6">
                                     <!-- <caption class="nhsuk-table__caption">Notes</caption> -->
@@ -680,10 +516,7 @@ Invoice reference: 0039795410 - Invoice details - Manage incoming international 
                                                 validation
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
-                                                <span class="nhsuk-table-responsive__heading">Status </span>To check -
-                                                Unable to identify
-                                                the person
-                                                from the information provided. Please check.
+                                                <span class="nhsuk-table-responsive__heading">Status </span>Accepted
                                             </td>
                                         </tr>
                                         <tr role="row" class="nhsuk-table__row">
