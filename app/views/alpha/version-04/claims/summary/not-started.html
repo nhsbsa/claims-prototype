@@ -128,10 +128,13 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                                             Target date
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            {% if data['target-date-day'] %}{{ data['target-date-day'] }}/{% else %}9 {%
-                                            endif %}{% if data['target-date-month'] %}{{ data['target-date-month'] }}/{%
-                                            else %}February {% endif %}{% if data['target-date-year'] %}{{
-                                            data['target-date-year'] }}{% else %}2024{% endif %}
+                                            {% if data['edit-target-date-day'] %}
+                                                {{ targetDateEditFormatted }}
+                                            {% elif data['target-date-day'] %}
+                                                {{ targetDateFormatted }}
+                                            {% else %}
+                                                9 February 2024
+                                            {% endif %}
                                         </dd>
                                         <dd class="nhsuk-summary-list__actions"><a href="edit-target-date">
                                             Change<span class="nhsuk-u-visually-hidden"> target date</span>
