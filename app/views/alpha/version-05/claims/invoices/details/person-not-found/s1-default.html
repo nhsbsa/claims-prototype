@@ -59,14 +59,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <div class="nhsuk-back-link">
-            <a class="nhsuk-back-link__link" href="javascript:history.back()">
+            <a class="nhsuk-back-link__link" href="../../full-invoice-list">
                 <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                     aria-hidden="true" height="24" width="24">
                     <path
                         d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
                     </path>
                 </svg>
-                Go back</a>
+                View full invoice list</a>
         </div>
     </div>
 </div>
@@ -99,6 +99,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 Contents
             </h2>
 
+            <!-- Start of tab titles -->
             <ul class="nhsuk-tabs__list">
                 <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
                     <a class="nhsuk-tabs__tab" href="#summary">
@@ -120,14 +121,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         Imported invoice
                     </a>
                 </li>
-
             </ul>
+            <!-- End of tab titles -->
 
-            <!-- *** Start of summary tab *** -->
+            <!-- *** Start of summary tab content *** -->
             <div class="nhsuk-tabs__panel" id="summary">
 
-
-
+                <!-- Start of header block -->
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-two-thirds">
                         <h2 class="nhsuk-heading-l">Summary</h2>
@@ -138,598 +138,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </strong>
                     </div>
                 </div>
-
-
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-full">
-
-                        <div class="nhsuk-error-summary nhsuk-u-padding-bottom-1 nhsuk-u-margin-bottom-4"
-                            aria-labelledby="error-summary-title" role="alert" tabindex="-1">
-                            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                                Person not found
-                            </h2>
-                            <div class="nhsuk-error-summary__body">
-                                <p>
-                                    The system was unable to find the person from the information
-                                    provided
-                                </p>
-                                <!-- <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
-                                        <li>
-                                          <a href="#example-error-1">Date of birth must be in the past</a>
-                                        </li>
-                                      </ul> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Start of warning -->
-                <!-- <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-full">
-                <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
-                    <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                      There is a problem
-                    </h2>
-                    <div class="nhsuk-error-summary__body">
-                      <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
-                        <li>
-                          <a href="#person-details">The system was unable to identify the person from the information provided</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  </div>
-                  </div> -->
-                <!-- End of warning -->
-
-
-                <!-- Start person details -->
-                <div class="nhsuk-grid-row" id="person-details">
-                    <div class="nhsuk-grid-column-full">
-
-                        <!-- Start card -->
-                        <div class="nhsuk-card">
-                            <div class="nhsuk-card__content">
-
-                                <div class="nhsuk-grid-row">
-                                    <div class="nhsuk-grid-column-full">
-
-
-                                        <h3 class="nhsuk-card__heading">
-                                            Person details
-                                        </h3>
-                                        <hr style="margin:0px 0px 12px 0px;">
-
-                                    </div>
-                                </div>
-
-
-
-                                <div class="nhsuk-grid-row">
-                                    <div class="nhsuk-grid-column-full">
-                                        <dl class="nhsuk-summary-list">
-
-
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Last name
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    Pearce
-                                                </dd>
-
-                                            </div>
-
-
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    First name
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    Sean
-                                                </dd>
-
-                                            </div>
-
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Date of birth
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    8 August 1952
-                                                </dd>
-
-                                            </div>
-
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Unique ID
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    QQ 23 34 54 C
-                                                </dd>
-
-                                            </div>
-
-
-                                        </dl>
-                                    </div>
-                                </div>
-
-
-
-
-
-<!-- start of expander person search -->
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-<details class="nhsuk-details nhsuk-expander">
-    <summary class="nhsuk-details__summary">
-      <span class="nhsuk-details__summary-text">
-        Edit person
-      </span>
-    </summary>
-    <div class="nhsuk-details__text">
-
-        <h3 class="nhsuk-card__heading">
-            Search </h3>
-        <hr style="margin:0px 0px 12px 0px;">
-
-
-        <form action="summary-2#search-person" method="post">
-
-            <div class="nhsuk-grid-row">
-                <div class="nhsuk-grid-column-one-third">
-                    <div class="nhsuk-form-group">
-                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                            for="accepted">
-                            Last name
-                        </label>
-                        <input class="nhsuk-input " id="accepted"
-                            name="accepted" type="text">
-                    </div>
-                </div>
-                <div class="nhsuk-grid-column-one-third">
-                    <div class="nhsuk-form-group">
-                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                            for="accepted">
-                            First name
-                        </label>
-                        <input class="nhsuk-input " id="accepted"
-                            name="accepted" type="text">
-                    </div>
-                </div>
-                <div class="nhsuk-grid-column-one-third">
-                    <div class="nhsuk-form-group">
-                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                            for="accepted">
-                            Residential country
-                        </label>
-                        <input class="nhsuk-input " id="accepted"
-                            name="accepted" type="text">
-                    </div>
-                </div>
-            </div>
-
-            <div class="nhsuk-grid-row">
-                <div class="nhsuk-grid-column-one-third">
-                    <div class="nhsuk-form-group">
-                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                            for="contested">
-                            National insurance number
-                        </label>
-                        <input class="nhsuk-input" id="contested"
-                            name="contested" type="text">
-                    </div>
-                </div>
-                <div class="nhsuk-grid-column-one-third">
-                    <div class="nhsuk-form-group">
-                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                            for="contested">
-                            OHS number
-                        </label>
-                        <input class="nhsuk-input " id="contested"
-                            name="contested" type="text">
-                    </div>
-                </div>
-                <div class="nhsuk-grid-column-one-third">
-                    <div class="nhsuk-form-group">
-                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                            for="accepted">
-                            NHS number
-                        </label>
-                        <input class="nhsuk-input" id="accepted" name="accepted"
-                            type="text" value="">
-                    </div>
-                </div>
-            </div>
-
-            <div class="nhsuk-grid-row">
-                <div class="nhsuk-grid-column-one-third">
-                    <div class="nhsuk-form-group">
-                        <fieldset class="nhsuk-fieldset"
-                            aria-describedby="example-hint" role="group">
-
-
-                            <label
-                                class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                for="dob">
-                                Date of birth
-                            </label>
-                            <div class="nhsuk-date-input" id="example">
-                                <div class="nhsuk-date-input__item">
-                                    <div class="nhsuk-form-group">
-                                        <label
-                                            class="nhsuk-label nhsuk-date-input__label"
-                                            for="example-day">
-                                            Day
-                                        </label>
-                                        <input
-                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                            id="example-day" name="example-day"
-                                            type="text" pattern="[0-9]*"
-                                            inputmode="numeric" value="">
-                                    </div>
-                                </div>
-                                <div class="nhsuk-date-input__item">
-                                    <div class="nhsuk-form-group">
-                                        <label
-                                            class="nhsuk-label nhsuk-date-input__label"
-                                            for="example-month">
-                                            Month
-                                        </label>
-                                        <input
-                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                            id="example-month"
-                                            name="example-month" type="text"
-                                            pattern="[0-9]*" inputmode="numeric"
-                                            value="">
-                                    </div>
-                                </div>
-                                <div class="nhsuk-date-input__item">
-                                    <div class="nhsuk-form-group">
-                                        <label
-                                            class="nhsuk-label nhsuk-date-input__label"
-                                            for="example-year">
-                                            Year
-                                        </label>
-                                        <input
-                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                                            id="example-year"
-                                            name="example-year" type="text"
-                                            pattern="[0-9]*" inputmode="numeric"
-                                            value="">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <button
-                class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0"
-                data-module="nhsuk-button" type="submit">
-                Search
-            </button>
-
-        </form>
-
-    </div>
-  </details>
-  </div>
-  </div>
-<!-- end of expander person search -->
-
-
-
-
-<!-- start of details person search -->
-                                <!-- <div class="nhsuk-grid-row">
-                                    <div class="nhsuk-grid-column-full">
-                                        <details class="nhsuk-details">
-                                            <summary class="nhsuk-details__summary">
-                                                <span class="nhsuk-details__summary-text">
-Person search                                               </span>
-                                            </summary>
-                                            <div class="nhsuk-details__text">
-
-                                                <h3 class="nhsuk-card__heading">
-                                                    Search </h3>
-                                                <hr style="margin:0px 0px 12px 0px;">
-
-
-                                                <form action="summary-2#search-person" method="post">
-
-                                                    <div class="nhsuk-grid-row">
-                                                        <div class="nhsuk-grid-column-one-third">
-                                                            <div class="nhsuk-form-group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                                    for="accepted">
-                                                                    Last name
-                                                                </label>
-                                                                <input class="nhsuk-input " id="accepted"
-                                                                    name="accepted" type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="nhsuk-grid-column-one-third">
-                                                            <div class="nhsuk-form-group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                                    for="accepted">
-                                                                    First name
-                                                                </label>
-                                                                <input class="nhsuk-input " id="accepted"
-                                                                    name="accepted" type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="nhsuk-grid-column-one-third">
-                                                            <div class="nhsuk-form-group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                                    for="accepted">
-                                                                    Residential country
-                                                                </label>
-                                                                <input class="nhsuk-input " id="accepted"
-                                                                    name="accepted" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="nhsuk-grid-row">
-                                                        <div class="nhsuk-grid-column-one-third">
-                                                            <div class="nhsuk-form-group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                                    for="contested">
-                                                                    National insurance number
-                                                                </label>
-                                                                <input class="nhsuk-input" id="contested"
-                                                                    name="contested" type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="nhsuk-grid-column-one-third">
-                                                            <div class="nhsuk-form-group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                                    for="contested">
-                                                                    OHS number
-                                                                </label>
-                                                                <input class="nhsuk-input " id="contested"
-                                                                    name="contested" type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="nhsuk-grid-column-one-third">
-                                                            <div class="nhsuk-form-group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                                    for="accepted">
-                                                                    NHS number
-                                                                </label>
-                                                                <input class="nhsuk-input" id="accepted" name="accepted"
-                                                                    type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="nhsuk-grid-row">
-                                                        <div class="nhsuk-grid-column-one-third">
-                                                            <div class="nhsuk-form-group">
-                                                                <fieldset class="nhsuk-fieldset"
-                                                                    aria-describedby="example-hint" role="group">
-
-
-                                                                    <label
-                                                                        class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                                        for="dob">
-                                                                        Date of birth
-                                                                    </label>
-                                                                    <div class="nhsuk-date-input" id="example">
-                                                                        <div class="nhsuk-date-input__item">
-                                                                            <div class="nhsuk-form-group">
-                                                                                <label
-                                                                                    class="nhsuk-label nhsuk-date-input__label"
-                                                                                    for="example-day">
-                                                                                    Day
-                                                                                </label>
-                                                                                <input
-                                                                                    class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                                                    id="example-day" name="example-day"
-                                                                                    type="text" pattern="[0-9]*"
-                                                                                    inputmode="numeric" value="">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="nhsuk-date-input__item">
-                                                                            <div class="nhsuk-form-group">
-                                                                                <label
-                                                                                    class="nhsuk-label nhsuk-date-input__label"
-                                                                                    for="example-month">
-                                                                                    Month
-                                                                                </label>
-                                                                                <input
-                                                                                    class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                                                    id="example-month"
-                                                                                    name="example-month" type="text"
-                                                                                    pattern="[0-9]*" inputmode="numeric"
-                                                                                    value="">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="nhsuk-date-input__item">
-                                                                            <div class="nhsuk-form-group">
-                                                                                <label
-                                                                                    class="nhsuk-label nhsuk-date-input__label"
-                                                                                    for="example-year">
-                                                                                    Year
-                                                                                </label>
-                                                                                <input
-                                                                                    class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                                                                                    id="example-year"
-                                                                                    name="example-year" type="text"
-                                                                                    pattern="[0-9]*" inputmode="numeric"
-                                                                                    value="">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </fieldset>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <button
-                                                        class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0"
-                                                        data-module="nhsuk-button" type="submit">
-                                                        Search
-                                                    </button>
-
-                                                </form>
-
-
-                                            </div>
-
-                                        </details>
-
-                                    </div>
-                                </div> -->
-<!-- end of details person search -->
-
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- End person details -->
-
-
-
-                <!-- Start of claim and entitlement details -->
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-full">
-                        <ul class="nhsuk-grid-row nhsuk-card-group">
-                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-
-                                <div class="nhsuk-card">
-                                    <div class="nhsuk-card__content nhsuk-card__content--primary">
-                                        <h3 class="nhsuk-card__heading nhsuk-heading-m">
-                                            Treatment details
-                                        </h3>
-                                        <hr style="margin:0px 0px 12px 0px;">
-                                        <dl class="nhsuk-summary-list">
-
-
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Total amount
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    2134.75
-                                                </dd>
-
-                                            </div>
-
-
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Start date
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    1 June 2023
-                                                </dd>
-
-                                            </div>
-
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    End date
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    2 June 2023
-                                                </dd>
-
-                                            </div>
-
-
-                                        </dl>
-
-
-
-                                    </div>
-                                </div>
-
-                            </li>
-                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-
-                                <div class="nhsuk-card ">
-                                    <div class="nhsuk-card__content nhsuk-card__content--primary">
-                                        <h3 class="nhsuk-card__heading nhsuk-heading-m">
-                                            Entitlement details
-                                        </h3>
-                                        <hr style="margin:0px 0px 12px 0px;">
-                                        <dl class="nhsuk-summary-list">
-
-
-
-
-
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Type
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    S1
-                                                </dd>
-                                            </div>
-
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Start date
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    1 January 2023
-                                                </dd>
-                                            </div>
-
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    End date
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    1 December 2023
-                                                </dd>
-                                            </div>
-
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Issue date
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    1 January 2023
-                                                </dd>
-                                            </div>
-
-
-                                        </dl>
-
-
-
-                                    </div>
-                                </div>
-
-                            </li>
-
-
-
-
-                        </ul>
-                    </div>
-                </div>
-                <!-- End of claim and entitlement details -->
-
-
-
+                <!-- End of header block -->
 
                 <!-- Start of status -->
                 <div class="nhsuk-grid-row">
@@ -738,13 +147,12 @@ Person search                                               </span>
                             <div class="nhsuk-card__content">
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-two-thirds">
-                                        <h3 class="nhsuk-card__heading">
+                                        <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
                                             Status
                                         </h3>
                                     </div>
-
                                 </div>
-                                <hr style="margin:0px 0px 12px 0px;">
+                                <hr style="margin:0px 0px 28px 0px;">
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
@@ -937,6 +345,373 @@ Person search                                               </span>
                     </div>
                 </div>
                 <!-- End of status -->
+
+
+                <!-- Start of treatment and entitlement details -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <ul class="nhsuk-grid-row nhsuk-card-group">
+
+                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+                                <div class="nhsuk-card">
+                                    <div class="nhsuk-card__content nhsuk-card__content">
+                                        <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-2">
+                                            Treatment details
+                                        </h3>
+                                        <hr style="margin:0px 0px 28px 0px;">
+                                        <dl class="nhsuk-summary-list">
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Total amount
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    2134.75
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Start date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    1 June 2023
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    End date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    2 June 2023
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+                                <div class="nhsuk-card ">
+                                    <div class="nhsuk-card__content nhsuk-card__content">
+                                        <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-2">
+                                            Entitlement details
+                                        </h3>
+                                        <hr style="margin:0px 0px 28px 0px;">
+                                        <dl class="nhsuk-summary-list">
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Type
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    S1
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Start date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    1 January 2023
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    End date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    1 December 2023
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Issue date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    1 January 2023
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- End of claim and entitlement details -->
+
+
+                <!-- Start person details -->
+                <div class="nhsuk-grid-row" id="person-details">
+                    <div class="nhsuk-grid-column-full">
+
+                        <!-- Start card -->
+                        <div class="nhsuk-card">
+                            <div class="nhsuk-card__content">
+
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+
+
+                                        <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
+                                            Person details
+                                        </h3>
+                                        <hr style="margin:0px 0px 28px 0px;">
+
+                                    </div>
+                                </div>
+
+                                <!-- start error -->
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+
+
+
+                                        <span class="nhsuk-error-message" id="person-search-error">
+
+                                            <span class="nhsuk-u-visually-hidden">Error:</span> The system was
+                                            unable to find the person from the information provided
+                                        </span>
+
+
+                                        <div class="nhsuk-grid-row">
+                                            <div class="nhsuk-grid-column-one-half">
+                                                <div class="nhsuk-form-group--error">
+                                                    <dl class="nhsuk-summary-list">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Last name
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Pearce
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                First name
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Sean
+                                                            </dd>
+                                                        </div>
+                                                    </dl>
+                                                </div>
+                                            </div>
+
+                                            <div class="nhsuk-grid-column-one-half">
+                                                <dl class="nhsuk-summary-list">
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Date of birth
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            8 August 1952
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Unique ID
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            QQ 23 34 54 C
+                                                        </dd>
+                                                    </div>
+                                                </dl>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                                <!-- end error -->
+
+
+
+
+
+
+<!-- Start person search -->
+
+<div class="nhsuk-grid-row" style="padding-top:36px;">
+    <div class="nhsuk-grid-column-full">
+
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
+                            Person search
+                        </h3>
+                    </div>
+
+                </div>
+
+
+
+
+                <hr style="margin:0px 0px 28px 0px;" />
+
+                <form action="summary-2#search-person" method="post">
+
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-one-third">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                    Last name
+                                </label>
+                                <input class="nhsuk-input " id="accepted" name="accepted" type="text">
+                            </div>
+                        </div>
+                        <div class="nhsuk-grid-column-one-third">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                    First name
+                                </label>
+                                <input class="nhsuk-input " id="accepted" name="accepted" type="text">
+                            </div>
+                        </div>
+                        <div class="nhsuk-grid-column-one-third">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                    Residential country
+                                </label>
+                                <input class="nhsuk-input " id="accepted" name="accepted" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-one-third">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                    National insurance number
+                                </label>
+                                <input class="nhsuk-input" id="contested" name="contested" type="text">
+                            </div>
+                        </div>
+                        <div class="nhsuk-grid-column-one-third">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                    OHS number
+                                </label>
+                                <input class="nhsuk-input " id="contested" name="contested" type="text">
+                            </div>
+                        </div>
+                        <div class="nhsuk-grid-column-one-third">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                    NHS number
+                                </label>
+                                <input class="nhsuk-input" id="accepted" name="accepted" type="text"
+                                    value="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-one-third">
+                            <div class="nhsuk-form-group">
+                                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
+                                    role="group">
+
+
+                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="dob">
+                                        Date of birth
+                                    </label>
+                                    <div class="nhsuk-date-input" id="example">
+                                        <div class="nhsuk-date-input__item">
+                                            <div class="nhsuk-form-group">
+                                                <label class="nhsuk-label nhsuk-date-input__label"
+                                                    for="example-day">
+                                                    Day
+                                                </label>
+                                                <input
+                                                    class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                    id="example-day" name="example-day" type="text"
+                                                    pattern="[0-9]*" inputmode="numeric" value="">
+                                            </div>
+                                        </div>
+                                        <div class="nhsuk-date-input__item">
+                                            <div class="nhsuk-form-group">
+                                                <label class="nhsuk-label nhsuk-date-input__label"
+                                                    for="example-month">
+                                                    Month
+                                                </label>
+                                                <input
+                                                    class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                    id="example-month" name="example-month" type="text"
+                                                    pattern="[0-9]*" inputmode="numeric" value="">
+                                            </div>
+                                        </div>
+                                        <div class="nhsuk-date-input__item">
+                                            <div class="nhsuk-form-group">
+                                                <label class="nhsuk-label nhsuk-date-input__label"
+                                                    for="example-year">
+                                                    Year
+                                                </label>
+                                                <input
+                                                    class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                    id="example-year" name="example-year" type="text"
+                                                    pattern="[0-9]*" inputmode="numeric" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- start filter and sort options-->
+                    <details class="nhsuk-details">
+                        <summary class="nhsuk-details__summary">
+                            <span class="nhsuk-details__summary-text">
+                                Filter and sort options
+                            </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+
+
+                        </div>
+                    </details>
+
+                    <!-- end filter and sort options -->
+
+                    <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0"
+                        data-module="nhsuk-button" type="submit">
+                        Search
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- End person search -->
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End person details -->
+
+
+
+
+
+
+
+
 
 
 
