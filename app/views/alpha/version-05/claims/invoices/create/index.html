@@ -40,8 +40,8 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../index">Claims
-                </a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../claims/index">Claims</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../full-invoice-list">Invoices</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
             <a class="nhsuk-breadcrumb__backlink" href="index">
@@ -62,7 +62,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
 
         <!-- Start of form -->
         <!-- <form action="../../create-claim-validation" method="post"> -->
-        <form action="" method="post">
+        <form action="cya" method="post">
             <fieldset class="nhsuk-fieldset">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                     <h1 class="nhsuk-fieldset__heading">
@@ -81,7 +81,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                 Invoice reference
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-two-thirds" id="invoice-ref" name="invoice-ref"
-                                type="text">
+                                type="text" value="0039795426">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
@@ -97,16 +97,16 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                 Last name
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name" name="last-name"
-                                type="text" value="{% if data['last-name'] %}{{ data['last-name'] }}{% endif %}">
+                                type="text" value="Bell">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
                         <!-- Last name at birth -->
                         <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name-birth">
                                 Last name at birth (optional)
                             </label>
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name" name="last-name"
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name-birth" name="last-name-birth"
                                 type="text">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
@@ -117,17 +117,17 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                 First name
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-two-thirds" id="first-name" name="first-name"
-                                type="text" value="{% if data['first-name'] %}{{ data['first-name'] }}{% endif %}">
+                                type="text" value="Reece">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
                         <!-- Person ID number -->
                         <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="person-id">
                                 Person ID number
                             </label>
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name" name="last-name"
-                                type="text">
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="person-id" name="person-id"
+                                type="text" value="8449449">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
@@ -148,7 +148,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                 id="dob-day" name="dob-day" type="text" pattern="[0-9]*"
                                                 inputmode="numeric"
-                                                value="{% if data['dob-day'] %}{{ data['dob-day'] }}{% endif %}">
+                                                value="5">
                                         </div>
                                     </div>
                                     <div class="nhsuk-date-input__item">
@@ -159,7 +159,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                 id="dob-month" name="dob-month" type="text" pattern="[0-9]*"
                                                 inputmode="numeric"
-                                                value="{% if data['dob-month'] %}{{ data['dob-month'] }}{% endif %}">
+                                                value="10">
                                         </div>
                                     </div>
                                     <div class="nhsuk-date-input__item">
@@ -170,7 +170,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
                                                 id="dob-year" name="dob-year" type="text" pattern="[0-9]*"
                                                 inputmode="numeric"
-                                                value="{% if data['dob-year'] %}{{ data['dob-year'] }}{% endif %}">
+                                                value="1956">
                                         </div>
                                     </div>
                                 </div>
@@ -184,99 +184,99 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                             </h1>
                         </legend>
 
-                                                <!-- Date from -->
-                                                <div class="nhsuk-form-group">
-                                                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                                                        <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
-                                                            <h1 class="nhsuk-fieldset__heading">
-                                                                Date from
-                                                            </h1>
-                                                        </legend>
-                                                        <div class="nhsuk-date-input" id="dob">
-                                                            <div class="nhsuk-date-input__item">
-                                                                <div class="nhsuk-form-group">
-                                                                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">
-                                                                        Day
-                                                                    </label>
-                                                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                                        id="dob-day" name="dob-day" type="text" pattern="[0-9]*"
-                                                                        inputmode="numeric"
-                                                                        value="{% if data['dob-day'] %}{{ data['dob-day'] }}{% endif %}">
-                                                                </div>
-                                                            </div>
-                                                            <div class="nhsuk-date-input__item">
-                                                                <div class="nhsuk-form-group">
-                                                                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">
-                                                                        Month
-                                                                    </label>
-                                                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                                        id="dob-month" name="dob-month" type="text" pattern="[0-9]*"
-                                                                        inputmode="numeric"
-                                                                        value="{% if data['dob-month'] %}{{ data['dob-month'] }}{% endif %}">
-                                                                </div>
-                                                            </div>
-                                                            <div class="nhsuk-date-input__item">
-                                                                <div class="nhsuk-form-group">
-                                                                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">
-                                                                        Year
-                                                                    </label>
-                                                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                                                                        id="dob-year" name="dob-year" type="text" pattern="[0-9]*"
-                                                                        inputmode="numeric"
-                                                                        value="{% if data['dob-year'] %}{{ data['dob-year'] }}{% endif %}">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                                <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        
-                                                <!-- Date to -->
-                                                <div class="nhsuk-form-group">
-                                                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                                                        <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
-                                                            <h1 class="nhsuk-fieldset__heading">
-                                                                Date to
-                                                            </h1>
-                                                        </legend>
-                                                        <div class="nhsuk-date-input" id="dob">
-                                                            <div class="nhsuk-date-input__item">
-                                                                <div class="nhsuk-form-group">
-                                                                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">
-                                                                        Day
-                                                                    </label>
-                                                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                                        id="dob-day" name="dob-day" type="text" pattern="[0-9]*"
-                                                                        inputmode="numeric"
-                                                                        value="{% if data['dob-day'] %}{{ data['dob-day'] }}{% endif %}">
-                                                                </div>
-                                                            </div>
-                                                            <div class="nhsuk-date-input__item">
-                                                                <div class="nhsuk-form-group">
-                                                                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">
-                                                                        Month
-                                                                    </label>
-                                                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                                        id="dob-month" name="dob-month" type="text" pattern="[0-9]*"
-                                                                        inputmode="numeric"
-                                                                        value="{% if data['dob-month'] %}{{ data['dob-month'] }}{% endif %}">
-                                                                </div>
-                                                            </div>
-                                                            <div class="nhsuk-date-input__item">
-                                                                <div class="nhsuk-form-group">
-                                                                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">
-                                                                        Year
-                                                                    </label>
-                                                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                                                                        id="dob-year" name="dob-year" type="text" pattern="[0-9]*"
-                                                                        inputmode="numeric"
-                                                                        value="{% if data['dob-year'] %}{{ data['dob-year'] }}{% endif %}">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                                <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                        <!-- Date from -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Date from
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-date-input" id="dob">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-from-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="date-from-day" name="date-from-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="14">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-from-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="date-from-month" name="date-from-month" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="2">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-from-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                id="date-from-year" name="date-from-year" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="2022">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Date to -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Date to
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-date-input" id="dob">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-to-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="date-to-day" name="date-to-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="27">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-to-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="date-to-month" name="date-to-month" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="2">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-to-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                id="date-to-year" name="date-to-year" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="2022">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
                         <!-- Amount -->
                         <div class="nhsuk-form-group">
@@ -286,8 +286,8 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                             <div class="nhsuk-hint" id="contact-hint">
                                 Number of months or monetary value
                               </div>
-                            <input class="nhsuk-input nhsuk-u-width-one-third" id="last-name" name="last-name"
-                                type="text">
+                            <input class="nhsuk-input nhsuk-u-width-one-third" id="amount-or-months" name="amount-or-months"
+                                type="text" value="121.7">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
@@ -312,54 +312,54 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
 
                                     <div class="nhsuk-radios__item">
                                         <input class="nhsuk-radios__input" id="entitlement-ehic" name="entitlement" type="radio"
-                                            value="ehic" aria-controls="conditional-contact-1" aria-expanded="false">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                                            value="ehic" aria-controls="conditional-entitlement-1" aria-expanded="false">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-ehic">
                                             European Health Insurance Card (EHIC)
                                         </label>
                                     </div>
 
-                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-entitlement-1">
 
                                         <div class="nhsuk-form-group">
-                                          <label class="nhsuk-label" for="email">
+                                          <label class="nhsuk-label" for="ehic-number">
                                             EHIC number
                                           </label>
-                                          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+                                          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ehic-number" name="ehic-number" type="text">
                                         </div>
                                 
                                       </div>
 
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="example-2" name="entitlement" type="radio"
-                                            value="prc" aria-controls="conditional-contact-2" aria-expanded="false">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                                        <input class="nhsuk-radios__input" id="entitlement-prc" name="entitlement" type="radio"
+                                            value="prc" aria-controls="conditional-entitlement-2" aria-expanded="false">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-prc">
                                             Provisional Replacement Certificate (PRC)
                                         </label>
                                     </div>
 
-                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
+                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-entitlement-2">
 
                                         <div class="nhsuk-form-group">
-                                          <label class="nhsuk-label" for="email">
+                                          <label class="nhsuk-label" for="prc-number">
                                             PRC number
                                           </label>
-                                          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+                                          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="prc-number" name="prc-number" type="text">
                                         </div>
                                 
                                       </div>
 
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="example-2" name="entitlement" type="radio"
-                                            value="no">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                                        <input class="nhsuk-radios__input" id="entitlement-s2" name="entitlement" type="radio"
+                                            value="S2">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-s2">
                                             S2
                                         </label>
                                     </div>
 
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="example-2" name="entitlement" type="radio"
-                                            value="no">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                                        <input class="nhsuk-radios__input" id="entitlement-da1" name="entitlement" type="radio"
+                                            value="DA1">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-da1">
                                             DA1
                                         </label>
                                     </div>
@@ -371,31 +371,16 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
 
-
-
-
-
-
-
-
-
-
-
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                             Continue
                         </button>
 
                     </div>
 
-
                 </div>
 
 
-
             </fieldset>
-
-
-
 
             <!-- End of card -->
 
