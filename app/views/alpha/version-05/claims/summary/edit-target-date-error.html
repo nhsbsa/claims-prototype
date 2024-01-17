@@ -77,8 +77,29 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-column-full">
 
         <div class="nhsuk-grid-row">
+
+            <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+                <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                  There is a problem
+                </h2>
+                <div class="nhsuk-error-summary__body">
+                  
+                  <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+                    <li>
+                      <a href="#edit-target-day">Date must include a day</a>
+                    </li>
+                    <li>
+                      <a href="#edit-target-month">Date must include a month</a>
+                    </li>
+                    <li>
+                      <a href="#edit-target-year">Date must include a year</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
             <div class="nhsuk-grid-column-full">
-                <form action="edit-target-date" method="post">
+                <form action="edit-target-date-error" method="post">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                         <h1 class="nhsuk-fieldset__heading">
                             <span class="nhsuk-caption-l">Edit claim</span>
@@ -92,7 +113,7 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
                     <div class="nhsuk-card__content">
 
                         <!-- Target date to complete claim -->
-                        <div class="nhsuk-form-group">
+                        <div class="nhsuk-form-group--error">
                             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
@@ -102,13 +123,19 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-hint" id="target-date-hint">
                                     Internal deadline to complete the claim.
                                 </div>
+
+                                <span class="nhsuk-error-message">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span>
+                                    Date must include a day, month and year
+                                  </span>
+
                                 <div class="nhsuk-date-input" id="target-date">
                                     <div class="nhsuk-date-input__item">
                                         <div class="nhsuk-form-group">
                                             <label class="nhsuk-label nhsuk-date-input__label" for="edit-target-date-day">
                                                 Day
                                             </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error"
                                                 id="target-date-day" name="edit-target-date-day" type="text" pattern="[0-9]*"
                                                 inputmode="numeric" value="{% if data['edit-target-date-day'] %}{{ data['edit-target-date-day'] }}{% elif data['target-date-day'] %}{{ data['target-date-day'] }}{% else %}9{% endif %}">
                                         </div>
@@ -118,7 +145,7 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
                                             <label class="nhsuk-label nhsuk-date-input__label" for="edit-target-date-month">
                                                 Month
                                             </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error"
                                                 id="target-date-month" name="edit-target-date-month" type="text"
                                                 pattern="[0-9]*" inputmode="numeric" value="{% if data['edit-target-date-month'] %}{{ data['edit-target-date-month'] }}{% elif data['target-date-month'] %}{{ data['target-date-month'] }}{% else %}2{% endif %}">
                                         </div>
@@ -128,7 +155,7 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
                                             <label class="nhsuk-label nhsuk-date-input__label" for="edit-target-date-year">
                                                 Year
                                             </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error"
                                                 id="target-date-year" name="edit-target-date-year" type="text"
                                                 pattern="[0-9]*" inputmode="numeric" value="{% if data['edit-target-date-year'] %}{{ data['edit-target-date-year'] }}{% elif data['target-date-year'] %}{{ data['target-date-year'] }}{% else %}2024{% endif %}">
                                         </div>
