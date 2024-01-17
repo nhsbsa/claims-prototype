@@ -99,47 +99,48 @@ Manage incoming international healthcare claims - NHSBSA
                       <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
 
-                        <!-- Country submitting the claim -->
-                        <div class="nhsuk-form-group">
-                          <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="select-autocomplete">
-                              Country submitting the claim
-                          </label>
-                          <div class="nhsuk-u-width-two-thirds">
-                              <select name="country" id="select-autocomplete" value="{% if data['country'] %}{{ data['country'] }}{% endif %}">
-                                  <option value=""></option>
-                                  <option value="Austria">Austria</option>
-                                  <option value="Belgium">Belgium</option>
-                                  <option value="Bulgaria">Bulgaria</option>
-                                  <option value="Croatia">Croatia</option>
-                                  <option value="Cyprus">Cyprus</option>
-                                  <option value="Czech Republic">Czech Republic</option>
-                                  <option value="Denmark">Denmark</option>
-                                  <option value="Estonia">Estonia</option>
-                                  <option value="Finland">Finland</option>
-                                  <option value="France">France</option>
-                                  <option value="Germany">Germany</option>
-                                  <option value="Greece">Greece</option>
-                                  <option value="Hungary">Hungary</option>
-                                  <option value="Iceland">Iceland</option>
-                                  <option value="Ireland">Ireland</option>
-                                  <option value="Italy">Italy</option>
-                                  <option value="Latvia">Latvia</option>
-                                  <option value="Liechtenstein">Liechtenstein</option>
-                                  <option value="Lithuania">Lithuania</option>
-                                  <option value="Luxemburg">Luxemburg</option>
-                                  <option value="Malta">Malta</option>
-                                  <option value="Netherlands">Netherlands</option>
-                                  <option value="Norway">Norway</option>
-                                  <option value="Poland">Poland</option>
-                                  <option value="Portugal">Portugal</option>
-                                  <option value="Romania">Romania</option>
-                                  <option value="Slovakia">Slovakia</option>
-                                  <option value="Slovenia">Slovenia</option>
-                                  <option value="Spain">Spain</option>
-                                  <option value="Sweden">Sweden</option>
-                                  <option value="Switzerland">Switzerland</option>
-                              </select>
-                          </div>
+                      <!-- Country submitting the claim -->
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="select-autocomplete">
+                          Country submitting the claim
+                        </label>
+                        <div class="nhsuk-u-width-two-thirds">
+                          <select name="country" id="select-autocomplete"
+                            value="{% if data['country'] %}{{ data['country'] }}{% endif %}">
+                            <option value=""></option>
+                            <option value="Austria">Austria</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Croatia">Croatia</option>
+                            <option value="Cyprus">Cyprus</option>
+                            <option value="Czech Republic">Czech Republic</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Estonia">Estonia</option>
+                            <option value="Finland">Finland</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="Iceland">Iceland</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Latvia">Latvia</option>
+                            <option value="Liechtenstein">Liechtenstein</option>
+                            <option value="Lithuania">Lithuania</option>
+                            <option value="Luxemburg">Luxemburg</option>
+                            <option value="Malta">Malta</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="Norway">Norway</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Slovakia">Slovakia</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Switzerland">Switzerland</option>
+                          </select>
+                        </div>
                       </div>
 
                       <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
@@ -332,134 +333,10 @@ Manage incoming international healthcare claims - NHSBSA
         </div>
         <!-- End quick actions -->
 
-        <!-- Start claims -->
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
-            <h3 class="nhsuk-card__heading nhsuk-heading-m">
-              Claims
-            </h3>
-            <hr style="margin:0px 0px 12px 0px;" />
-            <p>Recently edited by you:</p>
-
-            <table role="table" class="nhsuk-table-responsive">
-
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                    ID
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Country
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Action
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Claim ID
-                    </span>6784
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Country
-                    </span>France
-                  </td>
-                  <td><a href="claims/summary/processing-progress-60">View</a></td>
-
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Claim ID
-                    </span>5477
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Country
-                    </span>Germany
-                  </td>
-                  <td><a href="">View</a></td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Claim ID
-                    </span>3677
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Country
-                    </span>Switzerland
-                  </td>
-                  <td><a href="">View</a></td>
-                </tr>
-
-              </tbody>
-            </table>
-            <br />
-            <a href="">View more claims edited by you</a>
-
-          </div>
-        </div>
-        <!-- End claims -->
 
 
-        <!-- Start contestations -->
-        <!-- <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
-            <h3 class="nhsuk-card__heading nhsuk-heading-s">
-              Contestations
-            </h3>
-            <hr style="margin:0px 0px 12px 0px;" />
-            <p>Recently edited by you:</p>
-            <table role="table" class="nhsuk-table-responsive">
-
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                    ID
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Country
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Action
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Contestation ID
-                    </span>3654
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Country
-                    </span>Spain
-                  </td>
-                  <td><a href="">View</a></td>
-
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Contestation ID
-                    </span>3184
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Country
-                    </span>Austria
-                  </td>
-                  <td><a href="">View</a></td>
-                </tr>
 
 
-              </tbody>
-            </table>
-
-            <br />
-            <a href="">View more contestations edited by you</a>
-
-          </div>
-        </div> -->
-        <!-- End contestations -->
 
       </div>
       <!-- End right hand column -->
