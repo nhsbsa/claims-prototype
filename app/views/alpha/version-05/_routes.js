@@ -134,6 +134,101 @@ router.post('/route-additional-upload-2', function(req,res){
 
 
 
+// Edit target date
+router.post(['/claims/summary/edit-target-date', '/claims/summary/edit-target-date-past-error', '/claims/summary/edit-target-date-day-error', '/claims/summary/edit-target-date-month-error', '/claims/summary/edit-target-date-year-error', '/claims/summary/edit-target-date-day-month-error', '/claims/summary/edit-target-date-month-year-error', '/claims/summary/edit-target-date-day-year-error', '/claims/summary/edit-target-date-invalid-error', '/claims/summary/edit-target-date-error'], function(req,res){
+    const targetDayEdit = req.session.data['edit-target-day'];
+    const targetMonthEdit = req.session.data['edit-target-month'];
+    const targetYearEdit = req.session.data['edit-target-year'];
+    const formatTargetDateEdit = targetDayEdit + '/' + targetMonthEdit + '/' + targetYearEdit;
+
+    var targetDateEdit = new Date(formatTargetDateEdit.split('/')[2], formatTargetDateEdit.split('/')[1] - 1, formatTargetDateEdit.split('/')[0]);
+    console.log(targetDateEdit);
+
+    //Today's date
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    let mm = now.getMonth() + 1; 
+    const dd = now.getDate();
+    const formatToday = dd + '/' + mm + '/' + yyyy;
+
+    console.log(formatToday);
+
+    var todayDate = new Date(formatToday.split('/')[2], formatToday.split('/')[1] - 1, formatToday.split('/')[0]);
+    console.log(todayDate);
+
+    ///// Validate date input values using regular expressions
+    var yearReg = /^(202[4-9])$/;            ///< Allows a number between 2024 and 2029
+    var monthReg = /^(0?[1-9]|1[0-2])$/;               ///< Allows a number between 00 and 12
+    var dayReg = /^([1-9]|1[0-9]|2[0-9]|3[0-1])$/;   ///< Allows a number between 00 and 31
+
+    if (dayReg.test(targetDayEdit) && monthReg.test(targetMonthEdit) && yearReg.test(targetYearEdit) && targetDateEdit >= todayDate) {
+        res.redirect('not-started');
+      } else if (dayReg.test(targetDayEdit) && monthReg.test(targetMonthEdit) && yearReg.test(targetYearEdit) && targetDateEdit < todayDate) {
+          res.redirect('edit-target-date-past-error');
+      } else if (targetDayEdit == '' && monthReg.test(targetMonthEdit) && yearReg.test(targetYearEdit)) {
+          res.redirect('edit-target-date-day-error');
+      } else if (dayReg.test(targetDayEdit) && targetMonthEdit == '' && yearReg.test(targetYearEdit)) {
+          res.redirect('edit-target-date-month-error');
+      } else if (dayReg.test(targetDayEdit) && monthReg.test(targetMonthEdit) && targetYearEdit == '') {
+          res.redirect('edit-target-date-year-error');
+      } else if (targetDayEdit == '' && targetMonthEdit == '' && yearReg.test(targetYearEdit)) {
+          res.redirect('edit-target-date-day-month-error');
+      } else if (dayReg.test(targetDayEdit) && targetMonthEdit == '' && targetYearEdit == '') {
+          res.redirect('edit-target-date-month-year-error');
+      } else if (targetDayEdit == '' && monthReg.test(targetMonthEdit) && targetYearEdit == '') {
+          res.redirect('edit-target-date-day-year-error');
+      } else if (targetDayEdit == '' && targetMonthEdit == '' && targetYearEdit == '') {
+          res.redirect('edit-target-date-error');
+      } else {
+          res.redirect('edit-target-date-invalid-error');
+      }
+
+})
+
+
+// Render target date on summary in correct format
+router.get('/claims/summary/not-started', function(req, res) {
+
+    const targetDay = req.session.data['target-day'];
+    const targetMonth = req.session.data['target-month'];
+    const targetYear = req.session.data['target-year'];
+    const formatTargetDate = targetDay + '/' + targetMonth + '/' + targetYear;
+
+    const targetDayEdit = req.session.data['edit-target-day'];
+    const targetMonthEdit = req.session.data['edit-target-month'];
+    const targetYearEdit = req.session.data['edit-target-year'];
+    const formatTargetDateEdit = targetDayEdit + '/' + targetMonthEdit + '/' + targetYearEdit;
+
+    if (targetDayEdit) {
+
+        var targetDateEdit = new Date(formatTargetDateEdit.split('/')[2], formatTargetDateEdit.split('/')[1] - 1, formatTargetDateEdit.split('/')[0]);
+    
+        // Convert format
+        const targetDateEditOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    
+        const targetDateEditTimeFormat = new Intl.DateTimeFormat('en-GB', targetDateEditOptions);
+
+        var targetDateEditFormatted = targetDateEditTimeFormat.format(targetDateEdit);
+
+    } else if(!targetDayEdit && targetDay) {
+
+        var targetDate = new Date(formatTargetDate.split('/')[2], formatTargetDate.split('/')[1] - 1, formatTargetDate.split('/')[0]);
+    
+        // Convert format
+        const targetDateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    
+        const targetDateTimeFormat = new Intl.DateTimeFormat('en-GB', targetDateOptions);
+
+        var targetDateFormatted = targetDateTimeFormat.format(targetDate);
+
+    } else {
+
+        var targetDateFormatted = "9 February 2024";
+
+    }
+
+    res.render('alpha/version-05/claims/summary/not-started', { targetDateEditFormatted: targetDateEditFormatted, targetDateFormatted: targetDateFormatted });
+})
 
 
 
