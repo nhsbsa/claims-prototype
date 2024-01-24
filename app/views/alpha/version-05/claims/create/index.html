@@ -181,7 +181,10 @@ Create a new claim - Manage incoming international healthcare claims - NHSBSA
                                 Country submitting the claim
                             </label>
                             <div class="nhsuk-u-width-two-thirds">
-                                <select name="country" id="select-autocomplete" value="{% if data['country'] %}{{ data['country'] }}{% endif %}">
+                                <select name="country" id="select-autocomplete" value="">
+                                    {% if data['country'] %}
+                                    <option value="{{ data['country'] }}" selected>{{ data['country'] }}</option>
+                                    {% endif %}
                                     <option value=""></option>
                                     <option value="Austria">Austria</option>
                                     <option value="Belgium">Belgium</option>
@@ -357,8 +360,6 @@ Create a new claim - Manage incoming international healthcare claims - NHSBSA
             </fieldset>
         </form>
         <!-- End of form-->
-
-        <a href="../index" class="nhsuk-link">Cancel</a>
     </div>
 </div>
 <!-- End of create a claim -->
