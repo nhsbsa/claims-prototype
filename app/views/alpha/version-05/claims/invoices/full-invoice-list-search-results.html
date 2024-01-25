@@ -1,24 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-05/claims/summary/invoices-uploaded'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-05/claims/invoices/full-invoice-list',
-active: true
-},
-{
-name: 'Uploaded files',
-path: '/alpha/version-05/claims/file-uploads/index'
-},
-{
-name: 'History',
-path: '#'
-}
-]
-%}
+  {
+  name: 'Summary',
+  path: '/alpha/version-05/claims/summary/invoices-uploaded'
+  },
+  {
+  name: 'Invoices',
+  path: '/alpha/version-05/claims/invoices/full-invoice-list',
+  active: true
+  },
+  {
+  name: 'Uploaded files',
+  path: '/alpha/version-05/claims/file-uploads/complete'
+  },
+  {
+  name: 'History',
+  path: '/alpha/version-05/claims/history/invoices-uploaded'
+  }
+  ]
+  %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
