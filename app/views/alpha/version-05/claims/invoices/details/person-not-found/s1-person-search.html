@@ -1073,7 +1073,7 @@ Search person results - Invoice details - Manage incoming international healthca
                         <details class="nhsuk-details nhsuk-expander" open>
                             <summary class="nhsuk-details__summary">
                                 <span class="nhsuk-details__summary-text">
-                                    Summary
+                                    Invoice summary
                                 </span>
                             </summary>
                             <div class="nhsuk-details__text">
@@ -1086,13 +1086,13 @@ Search person results - Invoice details - Manage incoming international healthca
                                             {% if data['ref'] %}
                                             {{ data['ref'] }}
                                             {% else %}
-                                            12345REF
+                                            0039795410
                                             {% endif %}
                                         </dd>
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Claim recorded date
+                                            Date claim was recorded
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             2 June 2023
@@ -1106,32 +1106,6 @@ Search person results - Invoice details - Manage incoming international healthca
                                             0039795410
                                         </dd>
                                     </div>
-                                </dl>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-                <!-- end expander -->
-
-                <!-- start institution expander -->
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-full">
-                        <details class="nhsuk-details nhsuk-expander">
-                            <summary class="nhsuk-details__summary">
-                                <span class="nhsuk-details__summary-text">
-                                    Institution details
-                                </span>
-                            </summary>
-                            <div class="nhsuk-details__text">
-                                <dl class="nhsuk-summary-list">
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Creditor institution ID
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            2100
-                                        </dd>
-                                    </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
                                             Creditor institution name
@@ -1142,18 +1116,10 @@ Search person results - Invoice details - Manage incoming international healthca
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Debtor institution ID
+                                            Creditor institution ID
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            UK033
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Debtor institution name
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            Department of Health and Social Care
+                                            2100
                                         </dd>
                                     </div>
                                 </dl>
@@ -1200,18 +1166,18 @@ Search person results - Invoice details - Manage incoming international healthca
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Sex
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            -
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
                                             Unique ID
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             QQ 23 34 C
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Sex
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            -
                                         </dd>
                                     </div>
                                 </dl>
@@ -1234,7 +1200,7 @@ Search person results - Invoice details - Manage incoming international healthca
                                 <dl class="nhsuk-summary-list">
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Type
+                                            Type of entitlement
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             S1
@@ -1264,6 +1230,22 @@ Search person results - Invoice details - Manage incoming international healthca
                                             1 January 2023
                                         </dd>
                                     </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Debtor institution name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Department of Health and Social Care
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Debtor institution ID
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            UK033
+                                        </dd>
+                                    </div>
                                 </dl>
                             </div>
                         </details>
@@ -1284,7 +1266,7 @@ Search person results - Invoice details - Manage incoming international healthca
                                 <dl class="nhsuk-summary-list">
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Total amount
+                                            Total treatment amount
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             2134.75
@@ -1300,7 +1282,7 @@ Search person results - Invoice details - Manage incoming international healthca
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Provided benefits
+                                            Benefits provided
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             -
@@ -1335,7 +1317,7 @@ Search person results - Invoice details - Manage incoming international healthca
                         <details class="nhsuk-details nhsuk-expander">
                             <summary class="nhsuk-details__summary">
                                 <span class="nhsuk-details__summary-text">
-                                    Costs breakdown
+                                    Treatment breakdown
                                 </span>
                             </summary>
                             <div class="nhsuk-details__text">
