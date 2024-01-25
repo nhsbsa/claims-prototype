@@ -7,15 +7,15 @@ active: true
 },
 {
 name: 'Invoices',
-path: '/alpha/version-05/claims/invoices/no-invoices'
+path: '/alpha/version-05/claims/invoices/not-started'
 },
 {
-    name: 'Uploaded files',
-    path: '/alpha/version-05/claims/file-uploads/no-uploads'
-    },
+name: 'Uploaded files',
+path: '/alpha/version-05/claims/file-uploads/not-started'
+},
 {
 name: 'History',
-path: '#'
+path: '/alpha/version-05/claims/history/not-started'
 }
 ]
 %}
@@ -57,23 +57,20 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-        <div class="nhsuk-grid-row">
 
+        <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
                 <h1 class="nhsuk-heading-xl ">
                     Summary
                 </h1>
             </div>
-
             <div class="nhsuk-grid-column-one-third">
                 <a href="../invoices/upload/index">
                     <button style="float:right;" class="nhsuk-button" data-module="nhsuk-button" type="submit">
                         Add invoices
                     </button>
                 </a>
-
             </div>
-
         </div>
 
         <div class="nhsuk-grid-row">
@@ -114,10 +111,11 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             {% if data['submission-date-day'] %}{{ data['submission-date-day'] }} {%
-                                                else
-                                                %}10 {% endif %}{% if data['submission-date-month'] %}{{ fullSubmissionMonth }} {% else %}August {% endif %}{% if
-                                                data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
-                                                %}2023{% endif %}
+                                            else
+                                            %}10 {% endif %}{% if data['submission-date-month'] %}{{ fullSubmissionMonth
+                                            }} {% else %}August {% endif %}{% if
+                                            data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
+                                            %}2023{% endif %}
                                         </dd>
                                         <dd class="nhsuk-summary-list__actions"></dd>
                                     </div>
@@ -134,10 +132,11 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                                             data['target-date-year'] }}{% else %}2024{% endif %}
                                         </dd>
                                         <dd class="nhsuk-summary-list__actions"><a href="edit-target-date">
-                                            Change<span class="nhsuk-u-visually-hidden"> target date</span>
-                                          </a></dd>
-
+                                                Change<span class="nhsuk-u-visually-hidden"> target date</span>
+                                            </a></dd>
                                     </div>
+
+
 
                                     <!-- Country -->
                                     <div class="nhsuk-summary-list__row">
@@ -163,14 +162,11 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                                             {% if data['ref'] %}
                                             {{ data['ref'] }}
                                             {% else %}
-                                            12345REF
+                                            0039795410
                                             {% endif %}
                                         </dd>
                                         <dd class="nhsuk-summary-list__actions"></dd>
                                     </div>
-
-
-
                                 </dl>
                             </div>
 

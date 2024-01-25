@@ -6,16 +6,16 @@ path: '/alpha/version-05/claims/summary/invoices-uploaded'
 },
 {
 name: 'Invoices',
-path: '/alpha/version-05/claims/invoices/full-invoice-list',
+path: '/alpha/version-05/claims/treatment-forms/full-invoice-list',
 active: true
 },
 {
 name: 'Uploaded files',
-path: '/alpha/version-05/claims/file-uploads/complete'
+path: '/alpha/version-05/claims/treatment-forms/with-treatments'
 },
 {
 name: 'History',
-path: '/alpha/version-05/claims/case-history/invoices-uploaded'
+path: '/alpha/version-05/claims/case-history/index'
 }
 ]
 %}
@@ -39,8 +39,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../home">Home</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../index">Claims</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../index">Claims</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
             <a class="nhsuk-breadcrumb__backlink" href="../../index">
@@ -553,7 +553,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 </div>
                                                 <hr style="margin:0px 0px 12px 0px;" />
 
-                                                <form action="s1-default-search-results#search-results" method="post">
+                                                <form action="" method="post">
                                                     <div class="nhsuk-grid-row">
                                                         <div class="nhsuk-grid-column-one-third">
                                                             <div class="nhsuk-form-group">
@@ -594,7 +594,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                     National insurance number
                                                                 </label>
                                                                 <input class="nhsuk-input" id="contested"
-                                                                    name="contested" type="text">
+                                                                    name="contested" type="text" value="QQ 23 34 54 C">
                                                             </div>
                                                         </div>
                                                         <div class="nhsuk-grid-column-one-third">
@@ -640,7 +640,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                     class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                                                     id="example-day" name="example-day"
                                                                                     type="text" pattern="[0-9]*"
-                                                                                    inputmode="numeric" value="">
+                                                                                    inputmode="numeric" value="8">
                                                                             </div>
                                                                         </div>
                                                                         <div class="nhsuk-date-input__item">
@@ -655,7 +655,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                     id="example-month"
                                                                                     name="example-month" type="text"
                                                                                     pattern="[0-9]*" inputmode="numeric"
-                                                                                    value="">
+                                                                                    value="8">
                                                                             </div>
                                                                         </div>
                                                                         <div class="nhsuk-date-input__item">
@@ -670,7 +670,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                     id="example-year"
                                                                                     name="example-year" type="text"
                                                                                     pattern="[0-9]*" inputmode="numeric"
-                                                                                    value="">
+                                                                                    value="1952">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -819,9 +819,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                 </div>
                                                                                 <div class="nhsuk-radios__item">
                                                                                     <input class="nhsuk-radios__input"
-                                                                                        id="sort-by-dob"
-                                                                                        name="sort-by" type="radio"
-                                                                                        value="dob">
+                                                                                        id="sort-by-dob" name="sort-by"
+                                                                                        type="radio" value="dob">
                                                                                     <label
                                                                                         class="nhsuk-label nhsuk-radios__label"
                                                                                         for="sort-by-first-name">
@@ -830,9 +829,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                 </div>
                                                                                 <div class="nhsuk-radios__item">
                                                                                     <input class="nhsuk-radios__input"
-                                                                                        id="sort-by-nino"
-                                                                                        name="sort-by" type="radio"
-                                                                                        value="nino">
+                                                                                        id="sort-by-nino" name="sort-by"
+                                                                                        type="radio" value="nino">
                                                                                     <label
                                                                                         class="nhsuk-label nhsuk-radios__label"
                                                                                         for="sort-by-first-name">
@@ -899,6 +897,156 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     </button>
 
                                                 </form>
+<hr />
+                                                <!-- Start search results -->
+                                                <div class="nhsuk-grid-row" id="search-results">
+                                                    <div class="nhsuk-grid-column-full">
+
+
+
+                                                        <!-- Start header block-->
+                                                        <div class="nhsuk-grid-row nhsuk-u-padding-bottom-6">
+                                                            <div class="nhsuk-grid-column-two-thirds">
+                                                                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
+                                                                    Showing 1 results of 1 for</h3>
+                                                                <p class="nhsuk-u-margin-bottom-2">
+                                                                    <strong
+                                                                        class="nhsuk-tag nhsuk-tag--aqua-green">QQ233454C</strong>
+                                                                    <strong
+                                                                        class="nhsuk-tag nhsuk-tag--aqua-green">08/08/1952</strong>
+                                                                </p>
+                                                            </div>
+                                                            <div class="nhsuk-grid-column-one-third">
+                                                                <div class="nhsuk-form-group" style="float:right;">
+                                                                    <label class="nhsuk-label" for="results">
+                                                                        Results per page
+                                                                    </label>
+                                                                    <select class="nhsuk-select" id="results"
+                                                                        name="results" style="float:right;">
+                                                                        <option value="10" selected>10</option>
+                                                                        <option value="100">100</option>
+                                                                        <option value="200">200</option>
+                                                                    </select>
+                                                                </div>
+                                                 
+                                                            </div>
+                                                        </div>
+                                                    <div class="nhsuk-grid-row" >
+                                                    <div class="nhsuk-grid-column-full">
+                                                        <p style="float:right;">
+                                                            <a href="s1-default-person-assigned#person-details">Assign selected person to invoice</a>
+                                                        </p>
+                                                        </div>
+                                                        </div>
+                                                        <!-- End header block -->
+
+
+
+                                                        <!-- Start of table data -->
+                                                        <div class="nhsuk-grid-row">
+                                                            <div class="nhsuk-grid-column-full">
+
+                                                                <table role="table"
+                                                                    class="nhsuk-table-responsive nhsuk-u-margin-bottom-6">
+                                                                    <!-- <caption class="nhsuk-table__caption">Showing results for: All treatments</caption>  -->
+                                                                    <thead role="rowgroup" class="nhsuk-table__head">
+                                                                        <tr role="row">
+                                                                            <th role="columnheader" class=""
+                                                                                scope="col">
+                                                                                Select
+                                                                            </th>
+                                                                            <th role="columnheader" class=""
+                                                                                scope="col">
+                                                                                OHS ref
+                                                                            </th>
+                                                                            <th role="columnheader" class=""
+                                                                                scope="col">
+                                                                                Last name
+                                                                            </th>
+                                                                            <th role="columnheader" class=""
+                                                                                scope="col">
+                                                                                First name
+                                                                            </th>
+                                                                            <th role="columnheader" class=""
+                                                                                scope="col">
+                                                                                DOB
+                                                                            </th>
+                                                                            <th role="columnheader" class=""
+                                                                                scope="col">
+                                                                                NINO
+                                                                            </th>
+                                                                            <th role="columnheader" class=""
+                                                                                scope="col">
+                                                                                View
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody class="nhsuk-table__body">
+                                                                        <tr role="row" class="nhsuk-table__row">
+                                                                            <td role="cell" class="nhsuk-table__cell">
+                                                                                <span
+                                                                                    class="nhsuk-table-responsive__heading">Select
+                                                                                    person </span>
+                                                                                <div class="nhsuk-checkboxes__item">
+                                                                                    <input
+                                                                                        class="nhsuk-checkboxes__input"
+                                                                                        id="example-1" name="example"
+                                                                                        type="checkbox" value="email">
+                                                                                    <label
+                                                                                        class="nhsuk-label nhsuk-checkboxes__label"
+                                                                                        for="example-1">
+
+                                                                                    </label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td role="cell" class="nhsuk-table__cell">
+                                                                                <span
+                                                                                    class="nhsuk-table-responsive__heading">OHS
+                                                                                    number </span>54329883
+                                                                            </td>
+                                                                            <td role="cell" class="nhsuk-table__cell">
+                                                                                <span
+                                                                                    class="nhsuk-table-responsive__heading">Last
+                                                                                    name </span>Pearce
+                                                                            </td>
+                                                                            <td role="cell" class="nhsuk-table__cell">
+                                                                                <span
+                                                                                    class="nhsuk-table-responsive__heading">First
+                                                                                    name</span>Shaun
+                                                                            </td>
+                                                                            <td role="cell" class="nhsuk-table__cell">
+                                                                                <span
+                                                                                    class="nhsuk-table-responsive__heading">DOB</span>08/08/1952
+                                                                            </td>
+                                                                            <td role="cell" class="nhsuk-table__cell">
+                                                                                <span
+                                                                                    class="nhsuk-table-responsive__heading">National
+                                                                                    insurance number </span>QQ 23 34 54
+                                                                                C
+                                                                            </td>
+
+                                                                            <td role="cell" class="nhsuk-table__cell">
+                                                                                <span
+                                                                                    class="nhsuk-table-responsive__heading">View
+                                                                                </span><a href="">View person</a>
+                                                                            </td>
+                                                                        </tr>
+
+
+
+                                                                    </tbody>
+                                                                </table>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- End of table data -->
+
+
+                                                    </div>
+                                                </div>
+                                                <!-- End search results -->
 
                                             </div>
                                         </div>
@@ -942,16 +1090,17 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         {% if data['note'] %}
                                         <tr role="row" class="nhsuk-table__row">
                                             <td role="cell" class="nhsuk-table__cell">
-                                              <span class="nhsuk-table-responsive__heading">Date </span>18 Jan 2024
+                                                <span class="nhsuk-table-responsive__heading">Date </span>18 Jan 2024
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
-                                              <span class="nhsuk-table-responsive__heading">Note </span>{{ data['note'] }}
+                                                <span class="nhsuk-table-responsive__heading">Note </span>{{
+                                                data['note'] }}
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Author </span>Isla Fields
-                                              </td>
-                                          </tr>
-                                          {% endif %}
+                                            </td>
+                                        </tr>
+                                        {% endif %}
                                     </tbody>
                                 </table>
                                 {% if data['note'] %}
@@ -971,18 +1120,18 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     Add a new note
                                 </h3>
                                 <hr style="margin:0px 0px 12px 0px;">
-                                <form action="s1-default#notes" method="post">
-                                <div class="nhsuk-form-group">
-                                    <label class="nhsuk-label" for="note">
-                                        Note </label>
-                                    <textarea class="nhsuk-textarea" id="note" name="note" rows="3"
-                                        aria-describedby="note-hint"></textarea>
-                                </div>
-                                <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button"
-                                    type="submit">
-                                    Save note
-                                </button>
-                            </form>
+                                <form action="s1-default#notes">
+                                    <div class="nhsuk-form-group">
+                                        <label class="nhsuk-label" for="note">
+                                            Note </label>
+                                        <textarea class="nhsuk-textarea" id="note" name="note" rows="3"
+                                            aria-describedby="note-hint"></textarea>
+                                    </div>
+                                    <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button"
+                                        type="submit">
+                                        Save note
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
