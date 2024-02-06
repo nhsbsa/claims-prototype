@@ -3,22 +3,43 @@ const router = express.Router()
 
 const axios = require('axios');
 
-//CREATE CLAIM
+//// CREATE CLAIM ////
 
 //Are you sure you want to cancel
 router.post('/route-cancel-create-claim', function(req,res){
+    var back = req.header('Referer') || '/';
     var cancel = req.session.data['cancel']
     if (cancel == "yes" ) {
         res.redirect('/alpha/version-05/claims/index')
         }
     else if (cancel == "no"){
-            res.redirect('/alpha/version-05/claims/create/cya')
+            res.redirect(back)
             }
     else {
         res.redirect('/alpha/version-05/claims/create/cancel-confirmation')
     }
 
 })
+
+
+//// UPLOAD INVOICES ////
+
+//Contact method - how was the claim submitted
+router.post('/route-upload-method', function(req,res){
+    var method = req.session.data['contact-method']
+    if (method == "RINA" ) {
+        res.redirect('/alpha/version-05/claims/invoices/upload/xml/index')
+        }
+    else if (method == "EDI"){
+            res.redirect('/alpha/version-05/claims/invoices/upload/xml/index')
+            }
+    else {
+        res.redirect('/alpha/version-05/claims/invoices/upload/index')
+    }
+
+})
+
+
 
 router.get('/claims/create/cya', function(req, res) {
 
