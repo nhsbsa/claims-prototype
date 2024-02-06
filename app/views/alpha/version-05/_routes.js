@@ -5,6 +5,21 @@ const axios = require('axios');
 
 //CREATE CLAIM
 
+//Are you sure you want to cancel
+router.post('/route-cancel-create-claim', function(req,res){
+    var cancel = req.session.data['cancel']
+    if (cancel == "yes" ) {
+        res.redirect('/alpha/version-05/claims/index')
+        }
+    else if (cancel == "no"){
+            res.redirect('/alpha/version-05/claims/create/cya')
+            }
+    else {
+        res.redirect('/alpha/version-05/claims/create/cancel-confirmation')
+    }
+
+})
+
 router.get('/claims/create/cya', function(req, res) {
 
     let fullSubmissionMonth = req.session.data['submission-date-month'] ?? 'August';
@@ -44,32 +59,6 @@ router.post('/create-claim-validation', function(req,res){
 
 })
 
-//Treatment forms
-router.post('/search-treatments-filter', function(req,res){
-    var status = req.session.data['filter-status']
-    if (status == "all treatments" ) {
-        res.redirect('/alpha/version-05/claims/invoices/no-invoices')
-        }
-    else if (status == "check"){
-            res.redirect('/alpha/version-05/claims/invoices/to-check#search-results')
-            }
-    else if (status == "in progress"){
-        res.redirect('/alpha/version-05/claims/invoices/in-progress')
-        }
-    else if (status == "accepted" ) {
-        res.redirect('/alpha/version-05/claims/invoices/accepted')
-        }
-    else if (status == "contested"){
-        res.redirect('/alpha/version-05/claims/invoices/contested')
-        }
-    else if (status == "withdrawn"){
-            res.redirect('/alpha/version-05/claims/invoices/withdrawn')
-        }
-    else {
-        res.redirect('/alpha/version-05/claims/invoices/no-invoices')
-    }
-
-})
 
 //Delete claim (post MVP)
 router.post('/route_delete_claim', function(req,res){
