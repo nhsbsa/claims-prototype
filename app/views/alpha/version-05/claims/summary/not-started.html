@@ -73,196 +73,179 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
             </div>
         </div>
 
+
+<!-- Start of main summary box -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
+        <!--Start of card header-->
         <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-full">
-                <div class="nhsuk-card">
-                    <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
-                        <!--Start of card header-->
-                        <div class="nhsuk-grid-row">
-                            <div class="nhsuk-grid-column-one-half">
-                                <h3 class="nhsuk-card__heading">
-                                    Claim ID: 6784
-                                </h3>
+          <div class="nhsuk-grid-column-two-thirds">
+            <h3 class="nhsuk-card__heading">
+              Claim ID: 6784 &#8212; Claim reference {% if data['ref'] %}{{ data['ref'] }}{% else %}0039795410{% endif
+              %}
+            </h3>
 
-                            </div>
-                            <div class="nhsuk-grid-column-one-half">
+          </div>
+          <div class="nhsuk-grid-column-one-third">
 
-                                <strong class="nhsuk-tag nhsuk-tag--grey" style="float:right">
-                                    Not started
-                                </strong>
+            <strong class="nhsuk-tag nhsuk-tag--grey" style="float:right">
+              Not started
+            </strong>
 
-                            </div>
-                            <div class="nhsuk-grid-column-full">
-                                <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
-                                <br />
-                            </div>
-                        </div>
-
-                        <!-- Start of card content-->
-                        <div class="nhsuk-grid-row">
-
-                            <div class="nhsuk-grid-column-one-half">
-                                <dl class="nhsuk-summary-list">
-
-                                    <!-- Date received-->
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Date received
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            {% if data['submission-date-day'] %}{{ data['submission-date-day'] }} {%
-                                            else
-                                            %}10 {% endif %}{% if data['submission-date-month'] %}{{ fullSubmissionMonth
-                                            }} {% else %}August {% endif %}{% if
-                                            data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
-                                            %}2023{% endif %}
-                                        </dd>
-                                        <dd class="nhsuk-summary-list__actions"></dd>
-                                    </div>
-
-                                    <!-- Target date -->
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Target date
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            {% if data['target-date-day'] %}{{ data['target-date-day'] }}/{% else %}9 {%
-                                            endif %}{% if data['target-date-month'] %}{{ data['target-date-month'] }}/{%
-                                            else %}February {% endif %}{% if data['target-date-year'] %}{{
-                                            data['target-date-year'] }}{% else %}2024{% endif %}
-                                        </dd>
-                                        <dd class="nhsuk-summary-list__actions"><a href="edit-target-date">
-                                                Change<span class="nhsuk-u-visually-hidden"> target date</span>
-                                            </a></dd>
-                                    </div>
-
-
-
-                                    <!-- Country -->
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Country
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            {% if data['country'] %}
-                                            {{ data['country'] }}
-                                            {% else %}
-                                            France
-                                            {% endif %}
-                                        </dd>
-                                        <dd class="nhsuk-summary-list__actions"></dd>
-                                    </div>
-
-                                    <!-- Reference -->
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Reference
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            {% if data['ref'] %}
-                                            {{ data['ref'] }}
-                                            {% else %}
-                                            0039795410
-                                            {% endif %}
-                                        </dd>
-                                        <dd class="nhsuk-summary-list__actions"></dd>
-                                    </div>
-                                </dl>
-                            </div>
-
-                            <div class="nhsuk-grid-column-one-half">
-                                <dl class="nhsuk-summary-list">
-                                    <!-- Financial year -->
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Financial year
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            {% if data['financial-year'] %}
-                                            {{ data['financial-year'] }}
-                                            {% else %}
-                                            2023
-                                            {% endif %}
-                                        </dd>
-                                    </div>
-
-
-                                    <!-- Article type -->
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Article type
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            {% if data['article'] %}
-                                            {{ data['article'] }}
-                                            {% else %}
-                                            Actual cost
-                                            {% endif %}
-                                        </dd>
-                                    </div>
-
-                                    <!-- Claim type -->
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Claim type
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            {% if data['type'] %}
-                                            {{ data['type'] }}
-                                            {% else %}
-                                            Main
-                                            {% endif %}
-                                        </dd>
-                                    </div>
-
-                                    <!-- Sub reference -->
-                                    {% if data['type'] %}
-                                    {% if data['type'] === 'Supplementary' %}
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Sub-reference
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            {% if data['subref'] %}
-                                            {{ data['subref'] }}
-                                            {% else %}
-                                            -
-                                            {% endif %}
-                                        </dd>
-                                    </div>
-                                    {% endif %}
-                                    {% endif %}
-
-
-
-                                    <!-- Created by-->
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Created by
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            Isla Fields
-                                        </dd>
-                                    </div>
-
-                                </dl>
-
-
-                            </div>
-
-                        </div>
-
-
-
-
-
-
-
-                    </div>
-                </div>
-
-            </div>
+          </div>
+          <div class="nhsuk-grid-column-full">
+            <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
+            <br />
+          </div>
         </div>
+
+        <!-- Start of card content-->
+        <div class="nhsuk-grid-row">
+
+          <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list">
+
+              <!-- Sub reference -->
+              {% if data['type'] %}
+              {% if data['type'] === 'Supplementary' %}
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Sub-reference
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['subref'] %}
+                  {{ data['subref'] }}
+                  {% else %}
+                  -
+                  {% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+              {% endif %}
+              {% endif %}
+
+              <!-- Country -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Country
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['country'] %}
+                  {{ data['country'] }}
+                  {% else %}
+                  France
+                  {% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+
+              <!-- Financial year -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Financial year
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['financial-year'] %}
+                  {{ data['financial-year'] }}
+                  {% else %}
+                  2023
+                  {% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+
+              <!-- Claim type -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Claim type
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['type'] %}
+                  {{ data['type'] }}
+                  {% else %}
+                  Main
+                  {% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+
+              <!-- Article type -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Article type
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['article'] %}
+                  {{ data['article'] }}
+                  {% else %}
+                  Article 62 - actual cost
+                  {% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+
+            </dl>
+          </div>
+
+          <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list">
+
+              <!-- Target date -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Target date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['target-date-day'] %}{{ data['target-date-day'] }}/{% else %}1 {%
+                  endif %}{% if data['target-date-month'] %}{{ data['target-date-month'] }}/{%
+                  else %}March {% endif %}{% if data['target-date-year'] %}{{
+                  data['target-date-year'] }}{% else %}2024{% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"><a href="edit-target-date">
+                    Change<span class="nhsuk-u-visually-hidden"> target date</span>
+                  </a></dd>
+              </div>
+
+              <!-- Deadline -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Deadline
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  9 February 2025
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+
+              <!-- Date received-->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Date received
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['submission-date-day'] %}{{ data['submission-date-day'] }} {%
+                  else
+                  %}10 {% endif %}{% if data['submission-date-month'] %}{{ fullSubmissionMonth
+                  }} {% else %}August {% endif %}{% if
+                  data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
+                  %}2023{% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+            </dl>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End of main summary box -->
 
 
 
