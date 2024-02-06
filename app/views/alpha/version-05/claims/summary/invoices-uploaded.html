@@ -82,13 +82,14 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
       <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
         <!--Start of card header-->
         <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-half">
+          <div class="nhsuk-grid-column-two-thirds">
             <h3 class="nhsuk-card__heading">
-              Claim ID: 6784
+              Claim ID: 6784 &#8212; Claim reference {% if data['ref'] %}{{ data['ref'] }}{% else %}0039795410{% endif
+              %}
             </h3>
 
           </div>
-          <div class="nhsuk-grid-column-one-half">
+          <div class="nhsuk-grid-column-one-third">
 
             <strong class="nhsuk-tag nhsuk-tag--purple" style="float:right">
               Active
@@ -106,84 +107,6 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
 
           <div class="nhsuk-grid-column-one-half">
             <dl class="nhsuk-summary-list">
-
-              <!-- Reference -->
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Reference
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  {% if data['ref'] %}
-                  {{ data['ref'] }}
-                  {% else %}
-                  0039795410
-                  {% endif %}
-                </dd>
-                <dd class="nhsuk-summary-list__actions"></dd>
-              </div>
-
-              <!-- Country -->
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Country
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  {% if data['country'] %}
-                  {{ data['country'] }}
-                  {% else %}
-                  France
-                  {% endif %}
-                </dd>
-                <dd class="nhsuk-summary-list__actions"></dd>
-              </div>
-
-
-
-
-              <!-- Article type -->
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Article type
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  {% if data['article'] %}
-                  {{ data['article'] }}
-                  {% else %}
-                  Article 62 - actual cost
-                  {% endif %}
-                </dd>
-                <dd class="nhsuk-summary-list__actions"></dd>
-              </div>
-
-                            <!-- Financial year -->
-                            <div class="nhsuk-summary-list__row">
-                              <dt class="nhsuk-summary-list__key">
-                                Financial year
-                              </dt>
-                              <dd class="nhsuk-summary-list__value">
-                                {% if data['financial-year'] %}
-                                {{ data['financial-year'] }}
-                                {% else %}
-                                2023
-                                {% endif %}
-                              </dd>
-                              <dd class="nhsuk-summary-list__actions"></dd>
-                            </div>
-
-              <!-- Claim type -->
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Claim type
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  {% if data['type'] %}
-                  {{ data['type'] }}
-                  {% else %}
-                  Main
-                  {% endif %}
-                </dd>
-                <dd class="nhsuk-summary-list__actions"></dd>
-              </div>
 
               <!-- Sub reference -->
               {% if data['type'] %}
@@ -204,15 +127,65 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               {% endif %}
               {% endif %}
 
+              <!-- Country -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Country
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['country'] %}
+                  {{ data['country'] }}
+                  {% else %}
+                  France
+                  {% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
 
+              <!-- Financial year -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Financial year
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['financial-year'] %}
+                  {{ data['financial-year'] }}
+                  {% else %}
+                  2023
+                  {% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
 
+              <!-- Claim type -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Claim type
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['type'] %}
+                  {{ data['type'] }}
+                  {% else %}
+                  Main
+                  {% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
 
-
-
-
-
-
-
+              <!-- Article type -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Article type
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['article'] %}
+                  {{ data['article'] }}
+                  {% else %}
+                  Article 62 - actual cost
+                  {% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
 
             </dl>
           </div>
@@ -234,14 +207,9 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                 <dd class="nhsuk-summary-list__actions"><a href="edit-target-date">
                     Change<span class="nhsuk-u-visually-hidden"> target date</span>
                   </a></dd>
-
               </div>
 
-
-
-
-
-              <!-- Regulatory deadline -->
+              <!-- Deadline -->
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                   Deadline
@@ -252,40 +220,32 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                 <dd class="nhsuk-summary-list__actions"></dd>
               </div>
 
-                            <!-- Date received-->
-                            <div class="nhsuk-summary-list__row">
-                              <dt class="nhsuk-summary-list__key">
-                                Date received
-                              </dt>
-                              <dd class="nhsuk-summary-list__value">
-                                {% if data['submission-date-day'] %}{{ data['submission-date-day'] }} {%
-                                else
-                                %}10 {% endif %}{% if data['submission-date-month'] %}{{ fullSubmissionMonth
-                                }} {% else %}August {% endif %}{% if
-                                data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
-                                %}2023{% endif %}
-                              </dd>
-                              <dd class="nhsuk-summary-list__actions"></dd>
-                            </div>
+              <!-- Date received-->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Date received
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['submission-date-day'] %}{{ data['submission-date-day'] }} {%
+                  else
+                  %}10 {% endif %}{% if data['submission-date-month'] %}{{ fullSubmissionMonth
+                  }} {% else %}August {% endif %}{% if
+                  data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
+                  %}2023{% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
             </dl>
-
 
           </div>
 
         </div>
-
-
-
-
-
-
 
       </div>
     </div>
 
   </div>
 </div>
-<!-- <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"> -->
 <!-- End of main summary box -->
 
 
