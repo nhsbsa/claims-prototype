@@ -6,16 +6,19 @@ const axios = require('axios');
 //// CREATE CLAIM ////
 
 //Are you sure you want to cancel
+router.get("/claims/create/cancel-confirmation", (req, res)=> {
+    res.render("alpha/version-05/claims/create/cancel-confirmation", {referer: req.headers.referer});
+});
+
 router.post('/route-cancel-create-claim', function(req,res){
-    var back = req.header('Referer') || '/';
     var cancel = req.session.data['cancel']
+    var back = req.session.data['referer'] || "/";
+
     if (cancel == "yes" ) {
         res.redirect('/alpha/version-05/claims/index')
-        }
-    else if (cancel == "no"){
-            res.redirect(back)
-            }
-    else {
+    } else if (cancel == "no"){
+        return res.redirect(back)
+    } else {
         res.redirect('/alpha/version-05/claims/create/cancel-confirmation')
     }
 
