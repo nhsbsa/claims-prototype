@@ -86,11 +86,11 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
                                         Upload a file
                                     </h1>
                                 </legend>
-                                <div class="nhsuk-hint" id="article-hint">
-                                    This must be an XML or CIP file.
+                                <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="article-hint">
+                                    This must be an XML file, or a ZIP file containing XML files.
                                 </div>
 
-                                <div class="nhsuk-form-group nhsuk-grid-column-two-thirds"
+                                <div class="nhsuk-form-group nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-6"
                                     style="border:2px dashed #0b0c0c; padding:24px;">
                                     <!-- <label class="nhsuk-label" for="file-upload">
                                       Upload a file
@@ -103,7 +103,7 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
 
                         </div>
 
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                        
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                             Continue
                         </button>
@@ -121,9 +121,11 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
         <div id="upload-progress" style="display: none;" class="nhsuk-grid-column-full" aria-hidden="true"
             tabindex="-1">
             <div class="nhsuk-loader">
-                <p>Checking file.<br />This may take a few minutes.<br />Do not move away from this page or close your browser.</p>
-                <span class="nhsuk-loader__spinner"></span>
+                <p>Checking file.<br />This may take a few minutes.<br />Do leave this page or close your browser, or your file will not be saved.</p>
+                <span class="nhsuk-loader__spinner nhsuk-u-margin-bottom-9"></span>
+                <p><a href="">Cancel upload</a></p>
             </div>
+
         </div>
 
 
