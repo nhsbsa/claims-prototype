@@ -14,6 +14,18 @@ if(selectElement) {
     })
 }
 
+// Table row expander
+const $details = document.querySelectorAll('details[rowExpander]');
+
+if($details.length > 0) {
+    console.log('length');
+    $details.forEach(($detail) => {
+        $detail.addEventListener("click", () => {
+            document.getElementById($detail.getAttribute('rowExpander')).classList.toggle("nhsuk-u-visually-hidden");
+        })
+    })
+}
+
 !function() {
     "use strict";
     function t(t, e) {
