@@ -1301,8 +1301,19 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                             <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
                                                                                 <span
                                                                                     class="nhsuk-table-responsive__heading">View
-                                                                                </span><a href="../ohs-blank" target="_blank">View person</a>
+                                                                                </span>
+  
+                                                                                {{ details({
+                                                                                    "text": "View person",
+                                                                                    "attributes": {
+                                                                                        rowExpander: "rowExpander1"
+                                                                                    },
+                                                                                    "HTML": ""
+                                                                                }) }}
                                                                             </td>
+                                                                        </tr>
+                                                                        <tr class="nhsuk-u-visually-hidden" id="rowExpander1">
+                                                                            <td>Expander content</td>
                                                                         </tr>
 
 
