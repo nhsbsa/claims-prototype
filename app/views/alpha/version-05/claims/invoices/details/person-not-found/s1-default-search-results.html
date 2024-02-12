@@ -58,6 +58,26 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
 
 
+                <!-- Start of error message -->
+                <!-- <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert"
+                            tabindex="-1">
+                            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                                There is a problem
+                            </h2>
+                            <div class="nhsuk-error-summary__body">
+                                <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+                                    <li>
+                                        <a href="#person-search-error">Could not match the invoice to an existing person's record. You can search for the person record instead.</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- End of error message -->
+
 <!-- Start of back link -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
@@ -69,7 +89,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
                     </path>
                 </svg>
-                Return to invoice search results</a>
+                Go back to invoice search results</a>
         </div>
     </div>
 </div>
@@ -87,10 +107,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
     </div>
     <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+        <a href="s1-default-error-total-value">
         <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" 
         type="submit">
         Save changes
     </button>
+    </a>
+
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit" >
             Mark complete
         </button>
@@ -274,34 +297,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </div>
                 <!-- End of header block -->
 
-                <!-- Start of error message -->
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-full">
-                        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert"
-                            tabindex="-1">
-                            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                                The invoice could not be auto validated
-                            </h2>
-                            <div class="nhsuk-error-summary__body">
-                                <p>
-                                    The system was unable to find the person from the information provided
-                                </p>
-                                <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
-                                    <li>
-                                        <a href="#person-search-error">Manually search for the person record</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of error message -->
+
 
                 <!-- Start of status -->
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
-                        <div class="nhsuk-card">
-                            <div class="nhsuk-card__content">
+                        <div class="nhsuk-card" id="status">
+                            <div class="nhsuk-card__content nhsuk-u-padding-bottom-0">
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-two-thirds">
                                         <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
@@ -516,7 +518,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-card__content nhsuk-card__content">
                                         <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-2">
                                             Treatment dates
-                                            <span class="nhsuk-caption-m nhsuk-caption--bottom">Sent by France</span>
+                                            <!-- <span class="nhsuk-caption-m nhsuk-caption--bottom">Sent by France</span> -->
                                         </h3>
 
                                         <hr style="margin:0px 0px 20px 0px;">
@@ -547,7 +549,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-card__content nhsuk-card__content">
                                         <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-2">
                                             Entitlement details
-                                            <span class="nhsuk-caption-m nhsuk-caption--bottom">Sent by France</span>
+                                            <!-- <span class="nhsuk-caption-m nhsuk-caption--bottom">Sent by France</span> -->
                                         </h3>
                                         <hr style="margin:0px 0px 20px 0px;">
                                         <dl class="nhsuk-summary-list">
@@ -606,7 +608,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-grid-column-full">
                                         <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
                                             Person details
-                                            <span class="nhsuk-caption-m nhsuk-caption--bottom">Sent by France</span>
+                                            <!-- <span class="nhsuk-caption-m nhsuk-caption--bottom">Sent by France</span> -->
                                         </h3>
                                         <hr style="margin:0px 0px 20px 0px;">
                                     </div>
@@ -633,6 +635,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                         Sean
                                                     </dd>
                                                 </div>
+                                                
                                             </dl>
                                         </div>
 
@@ -675,28 +678,22 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
             
                                     <!-- Start card -->
                                     <div class="nhsuk-card">
-                                        <div class="nhsuk-card__content">
+                                        <div class="nhsuk-card__content nhsuk-u-padding-bottom-2">
             
                                             <div class="nhsuk-grid-row">
                                                 <div class="nhsuk-grid-column-full">
                                                     <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
-                                                        Person details
-                                                        <span class="nhsuk-caption-m nhsuk-caption--bottom">Held by us</span>
+                                                        Linked OHS record
+                                                        <!-- <span class="nhsuk-caption-m nhsuk-caption--bottom">Held by us</span> -->
                                                     </h3>
                                                     <hr style="margin:0px 0px 20px 0px;">
                                                 </div>
                                             </div>
             
             
-                                            <div class="nhsuk-form-group--error">
-                                                <div class="nhsuk-grid-row">
-                                                    <div class="nhsuk-grid-column-full">
-                                                        <span class="nhsuk-error-message" id="person-search-error">
-                                                            <span class="nhsuk-u-visually-hidden">Error:</span> The system
-                                                            was
-                                                            unable to find the person from the information provided
-                                                        </span>
-                                                    </div>
+                                       
+                                                <!-- <div class="nhsuk-grid-row">
+                                                 
                                                     <div class="nhsuk-grid-column-one-half">
                                                         <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
                                                             <div class="nhsuk-summary-list__row">
@@ -740,8 +737,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                         </dl>
                                                     </div>
             
+                                                </div> -->
+
+                                                <div class="nhsuk-grid-row">
+                                                <div class="nhsuk-grid-column-full">
+                                                    <p>No match found.</p>
                                                 </div>
-                                            </div>
+                                                </div>
             
             
             
@@ -939,77 +941,56 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                     </h1>
                                                                                 </legend>
                                                                                 <div class="nhsuk-checkboxes">
-                                                                                    <div
-                                                                                        class="nhsuk-checkboxes__item">
-                                                                                        <input
-                                                                                            class="nhsuk-checkboxes__input"
-                                                                                            id="filter-entitlement-da1"
-                                                                                            name="filter-enitltment"
-                                                                                            type="checkbox"
-                                                                                            value="da1">
-                                                                                        <label
-                                                                                            class="nhsuk-label nhsuk-checkboxes__label"
-                                                                                            for="filter-entitlement-da1">
-                                                                                            DA1
-                                                                                        </label>
+                                                                                    <div class="nhsuk-checkboxes__item">
+                                                                                      <input class="nhsuk-checkboxes__input" id="filter-entitlement-s1" name="filter-entitlement"
+                                                                                        type="checkbox" value="s1">
+                                                                                      <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s1">
+                                                                                        S1
+                                                                                      </label>
                                                                                     </div>
-                                                                                    <div
-                                                                                        class="nhsuk-checkboxes__item">
-                                                                                        <input
-                                                                                            class="nhsuk-checkboxes__input"
-                                                                                            id="filter-entitlement-ehic"
-                                                                                            name="filter-enitltment"
-                                                                                            type="checkbox"
-                                                                                            value="ehic">
-                                                                                        <label
-                                                                                            class="nhsuk-label nhsuk-checkboxes__label"
-                                                                                            for="filter-entitlement-ehic">
-                                                                                            EHIC
-                                                                                        </label>
+                                                                                    <div class="nhsuk-checkboxes__item">
+                                                                                      <input class="nhsuk-checkboxes__input" id="filter-entitlement-ehic" name="filter-entitlement"
+                                                                                        type="checkbox" value="ehic">
+                                                                                      <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-ehic">
+                                                                                        EHIC
+                                                                                      </label>
                                                                                     </div>
-                                                                                    <div
-                                                                                        class="nhsuk-checkboxes__item">
-                                                                                        <input
-                                                                                            class="nhsuk-checkboxes__input"
-                                                                                            id="filter-entitlement-prc"
-                                                                                            name="filter-enitltment"
-                                                                                            type="checkbox"
-                                                                                            value="prc">
-                                                                                        <label
-                                                                                            class="nhsuk-label nhsuk-checkboxes__label"
-                                                                                            for="filter-entitlement-prc">
-                                                                                            PRC
-                                                                                        </label>
+                                                                                    <div class="nhsuk-checkboxes__item">
+                                                                                      <input class="nhsuk-checkboxes__input" id="filter-entitlement-uk-ehic"
+                                                                                        name="filter-entitlement" type="checkbox" value="uk ehic">
+                                                                                      <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-uk-ehic">
+                                                                                        UK EHIC
+                                                                                      </label>
                                                                                     </div>
-                                                                                    <div
-                                                                                        class="nhsuk-checkboxes__item">
-                                                                                        <input
-                                                                                            class="nhsuk-checkboxes__input"
-                                                                                            id="filter-entitlement-s1"
-                                                                                            name="filter-enitltment"
-                                                                                            type="checkbox"
-                                                                                            value="s1">
-                                                                                        <label
-                                                                                            class="nhsuk-label nhsuk-checkboxes__label"
-                                                                                            for="filter-entitlement-s1">
-                                                                                            S1
-                                                                                        </label>
+                                                                                    <div class="nhsuk-checkboxes__item">
+                                                                                      <input class="nhsuk-checkboxes__input" id="filter-entitlement-uk-ghic"
+                                                                                        name="filter-entitlement" type="checkbox" value="uk ghic">
+                                                                                      <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-uk-ghic">
+                                                                                        UK GHIC
+                                                                                      </label>
                                                                                     </div>
-                                                                                    <div
-                                                                                        class="nhsuk-checkboxes__item">
-                                                                                        <input
-                                                                                            class="nhsuk-checkboxes__input"
-                                                                                            id="filter-entitlement-s2"
-                                                                                            name="filter-enitltment"
-                                                                                            type="checkbox"
-                                                                                            value="s2">
-                                                                                        <label
-                                                                                            class="nhsuk-label nhsuk-checkboxes__label"
-                                                                                            for="filter-entitlement-s2">
-                                                                                            S2
-                                                                                        </label>
+                                                                                    <div class="nhsuk-checkboxes__item">
+                                                                                      <input class="nhsuk-checkboxes__input" id="filter-entitlement-prc" name="filter-entitlement"
+                                                                                        type="checkbox" value="prc">
+                                                                                      <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-prc">
+                                                                                        PRC
+                                                                                      </label>
                                                                                     </div>
-                                                                                </div>
+                                                                                    <div class="nhsuk-checkboxes__item">
+                                                                                      <input class="nhsuk-checkboxes__input" id="filter-entitlement-s2" name="filter-entitlement"
+                                                                                        type="checkbox" value="s2">
+                                                                                      <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s2">
+                                                                                        S2
+                                                                                      </label>
+                                                                                    </div>
+                                                                                    <div class="nhsuk-checkboxes__item">
+                                                                                      <input class="nhsuk-checkboxes__input" id="filter-entitlement-da1" name="filter-entitlement"
+                                                                                        type="checkbox" value="da1">
+                                                                                      <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-da1">
+                                                                                        DA1
+                                                                                      </label>
+                                                                                    </div>
+                                                                                  </div>
                                                                             </fieldset>
                                                                         </div>
 
@@ -1098,7 +1079,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         <label
                                                                                             class="nhsuk-label nhsuk-radios__label"
                                                                                             for="sort-by-first-name">
-                                                                                            NI number 
+                                                                                            National Insurance number 
                                                                                         </label>
                                                                                     </div>
                                                                                 </div>
@@ -1198,6 +1179,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                     </select>
                                                                 </div>
                                                  
+                                                                
                                                             </div>
                                                         </div>
                                                     <div class="nhsuk-grid-row" >
