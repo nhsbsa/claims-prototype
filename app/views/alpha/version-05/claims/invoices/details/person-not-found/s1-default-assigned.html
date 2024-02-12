@@ -56,7 +56,24 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <!-- Start of central content -->
 {% block content %}
 
+                <!-- Start of confirmation message -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert"
+                            tabindex="-1" style="border-color:#007f3b;">
+                            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                                Person assigned
+                            </h2>
+                            <div class="nhsuk-error-summary__body">
+                                <p>
+                                    The person has been assigned and the system has run an auto-validation
+                                </p>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of confirmation message -->
 
 <!-- Start of back link -->
 <div class="nhsuk-grid-row">
@@ -98,82 +115,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 </div>
 <!-- End of header block -->
 
-<!-- <div class="nhsuk-grid-row">
-<div class="nhsuk-grid-column-full">
-    <div class="nhsuk-card">
-  <div class="nhsuk-card__content">
-<div class="nhsuk-grid-row">
-<div class="nhsuk-grid-column-one-third">
-    <h1 class="nhsuk-heading-m nhsuk-u-margin-bottom-9">
-            Invoice ID
-            <span class="nhsuk-caption-xl nhsuk-caption--bottom">01554</span>
-        </h1>
-</div>
-<div class="nhsuk-grid-column-one-third">
-        <h1 class="nhsuk-heading-m nhsuk-u-margin-bottom-9">
-            Invoice reference
-            <span class="nhsuk-caption-xl nhsuk-caption--bottom">0039795410</span>
-        </h1>
-</div>
-<div class="nhsuk-grid-column-one-third">
-            <h1 class="nhsuk-heading-m nhsuk-u-margin-bottom-9">
-            Total value
-            <span class="nhsuk-caption-xl nhsuk-caption--bottom">2134.75</span>
-        </h1>
-</div>
-</div>
 
-  </div>
-</div>
-
-</div>
-</div> -->
-
-<!-- <div class="nhsuk-grid-row">
-<div class="nhsuk-grid-column-full">
-    <ul class="nhsuk-grid-row nhsuk-card-group">
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-      
-          <div class="nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Invoice ID
-              </h2>
-              <p class="nhsuk-card__description">01554</p>
-      
-            </div>
-          </div>
-      
-        </li>
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-      
-          <div class="nhsuk-card">
-            <div class="nhsuk-card__content">
-                <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                    Invoice reference
-                  </h2>
-              <p class="nhsuk-card__description">0039795410</p>
-      
-            </div>
-          </div>
-      
-        </li>
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-      
-          <div class="nhsuk-card">
-            <div class="nhsuk-card__content">
-                <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                    Total value
-                  </h2>
-              <p class="nhsuk-card__description">2134.75</p>
-      
-            </div>
-          </div>
-      
-        </li>
-      </ul>
-</div>
-</div> -->
 
 <div class="nhsuk-grid-row">
 <div class="nhsuk-grid-column-two-thirds">
@@ -322,7 +264,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 Accepted
                                             </label>
                                             <input class="nhsuk-input " id="accepted" name="accepted" type="text"
-                                                value="0">
+                                                value="2134.75">
                                         </div>
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
@@ -340,7 +282,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 Contested
                                             </label>
                                             <input class="nhsuk-input " id="contested" name="contested" type="text"
-                                                value="2134.75">
+                                                value="0">
                                         </div>
                                     </div>
                                 </div>
@@ -365,7 +307,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                                 <option
                                                     value="Unable to identify the person from the information provided. Please check."
-                                                    selected>
+                                                    >
                                                     Unable to
                                                     identify the person from the information provided. Please check.
                                                 </option>
