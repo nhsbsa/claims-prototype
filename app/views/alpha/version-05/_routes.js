@@ -43,6 +43,30 @@ router.post('/route-upload-method', function(req,res){
 })
 
 
+//Are you sure you want to cancel
+router.get("/claims/invoices/upload/cancel-confirmation", (req, res)=> {
+    res.render("alpha/version-05/claims/invoices/upload/cancel-confirmation", {referer: req.headers.referer});
+});
+
+router.post('/route-cancel-upload-invoices', function(req,res){
+    var cancel = req.session.data['cancel']
+    var back = req.session.data['referer'] || "/";
+
+    if (cancel == "yes" ) {
+        res.redirect('/alpha/version-05/claims/invoices/not-started')
+    } else if (cancel == "no"){
+        return res.redirect(back)
+    } else {
+        res.redirect('/alpha/version-05/claims/invoices/upload/cancel-confirmation')
+    }
+
+})
+
+
+
+
+
+
 
 router.get('/claims/create/cya', function(req, res) {
 
@@ -99,11 +123,11 @@ router.post('/route_delete_claim', function(req,res){
 
 })
 
-//Upload additional treatments
+//Upload additional invoices - initial journey
 router.post('/route-additional-upload', function(req,res){
     var upload = req.session.data['additional-upload']
     if (upload == "yes" ) {
-        res.redirect('/alpha/version-05/claims/invoices/upload/xml/index')
+        res.redirect('/alpha/version-05/claims/invoices/upload/xml/index-additional-file')
         }
     else if (upload == "no"){
             res.redirect('/alpha/version-05/claims/invoices/upload/xml/cya')
