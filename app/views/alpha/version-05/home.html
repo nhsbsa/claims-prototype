@@ -55,10 +55,10 @@ Home - Manage incoming international healthcare claims - NHSBSA
         <!-- Start search -->
         <div class="nhsuk-card">
           <div class="nhsuk-card__content">
-            <h3 class="nhsuk-card__heading nhsuk-heading-l">
-              Search
+            <h3 class="nhsuk-card__heading nhsuk-heading-m">
+              Quick find
             </h3>
-            <hr style="margin:-6px 0px 12px 0px;" />
+            <hr style="margin:0px 0px 24px 0px;">
 
             <div class="govuk-tabs" data-module="govuk-tabs">
               <h2 class="govuk-tabs__title">
@@ -71,20 +71,20 @@ Home - Manage incoming international healthcare claims - NHSBSA
                   </a>
                 </li>
                 <li class="govuk-tabs__list-item">
-                  <a class="govuk-tabs__tab" href="#treatment">
+                  <a class="govuk-tabs__tab" href="#invoice">
                     Invoice
                   </a>
                 </li>
-                <li class="govuk-tabs__list-item">
+                <!-- <li class="govuk-tabs__list-item">
                   <a class="govuk-tabs__tab" href="#person">
                     Person
                   </a>
-                </li>
+                </li> -->
               </ul>
               <!-- Start claim search -->
               <div class="govuk-tabs__panel" id="claim">
                 <h2 class="nhsuk-heading-l">Claim</h2>
-                <form action="search/results-no-treatments">
+                <form action="claims/summary/invoices-uploaded">
 
                   <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
@@ -96,55 +96,6 @@ Home - Manage incoming international healthcare claims - NHSBSA
                         <input class="nhsuk-input nhsuk-u-width-two-thirds" id="claim-id" name="claim-id" type="text">
                       </div>
 
-                      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-
-                      <!-- Country submitting the claim -->
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="select-autocomplete">
-                          Country submitting the claim
-                        </label>
-                        <div class="nhsuk-u-width-two-thirds">
-                          <select name="country" id="select-autocomplete"
-                            value="{% if data['country'] %}{{ data['country'] }}{% endif %}">
-                            <option value=""></option>
-                            <option value="Austria">Austria</option>
-                            <option value="Belgium">Belgium</option>
-                            <option value="Bulgaria">Bulgaria</option>
-                            <option value="Croatia">Croatia</option>
-                            <option value="Cyprus">Cyprus</option>
-                            <option value="Czech Republic">Czech Republic</option>
-                            <option value="Denmark">Denmark</option>
-                            <option value="Estonia">Estonia</option>
-                            <option value="Finland">Finland</option>
-                            <option value="France">France</option>
-                            <option value="Germany">Germany</option>
-                            <option value="Greece">Greece</option>
-                            <option value="Hungary">Hungary</option>
-                            <option value="Iceland">Iceland</option>
-                            <option value="Ireland">Ireland</option>
-                            <option value="Italy">Italy</option>
-                            <option value="Latvia">Latvia</option>
-                            <option value="Liechtenstein">Liechtenstein</option>
-                            <option value="Lithuania">Lithuania</option>
-                            <option value="Luxemburg">Luxemburg</option>
-                            <option value="Malta">Malta</option>
-                            <option value="Netherlands">Netherlands</option>
-                            <option value="Norway">Norway</option>
-                            <option value="Poland">Poland</option>
-                            <option value="Portugal">Portugal</option>
-                            <option value="Romania">Romania</option>
-                            <option value="Slovakia">Slovakia</option>
-                            <option value="Slovenia">Slovenia</option>
-                            <option value="Spain">Spain</option>
-                            <option value="Sweden">Sweden</option>
-                            <option value="Switzerland">Switzerland</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
                       <!-- Claim reference -->
                       <div class="nhsuk-form-group">
                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
@@ -152,116 +103,6 @@ Home - Manage incoming international healthcare claims - NHSBSA
                         </label>
                         <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text">
                       </div>
-
-                      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                      <!-- Financial year of claim -->
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="financial-year">
-                          Financial year of the claim
-                        </label>
-                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="financial-year" name="financial-year"
-                          type="text">
-                      </div>
-
-                      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-
-
-                      <details class="nhsuk-details">
-                        <summary class="nhsuk-details__summary">
-                          <span class="nhsuk-details__summary-text">
-                            Advanced search options
-                          </span>
-                        </summary>
-                        <div class="nhsuk-details__text">
-                          <!-- Article covering the claim -->
-                          <div class="nhsuk-form-group">
-                            <fieldset class="nhsuk-fieldset">
-                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-2">
-                                <h1 class="nhsuk-fieldset__heading">
-                                  Article covering the claim
-                                </h1>
-                              </legend>
-
-                              <div class="nhsuk-radios">
-
-                                <div class="nhsuk-radios__item">
-                                  <input class="nhsuk-radios__input" id="article-actual" name="article" type="radio"
-                                    value="Actual cost">
-                                  <label class="nhsuk-label nhsuk-radios__label" for="article-actual">
-                                    Article 62 - actual cost
-                                  </label>
-                                </div>
-
-                                <div class="nhsuk-radios__item">
-                                  <input class="nhsuk-radios__input" id="article-average-2a" name="article" type="radio"
-                                    value="Article 63 (2a) - average cost">
-                                  <label class="nhsuk-label nhsuk-radios__label" for="article-average-2a">
-                                    Article 63 (2a) - average cost
-                                  </label>
-                                </div>
-
-                                <div class="nhsuk-radios__item">
-                                  <input class="nhsuk-radios__input" id="article-average-2b" name="article" type="radio"
-                                    value="Article 63 (2b) - average cost">
-                                  <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
-                                    Article 63 (2b) - average cost
-                                  </label>
-                                </div>
-
-                                <div class="nhsuk-radios__item">
-                                  <input class="nhsuk-radios__input" id="article-average-2b" name="article" type="radio"
-                                    value="AW03 - DA1 claims">
-                                  <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
-                                    AW03 - DA1 claims
-                                  </label>
-                                </div>
-
-                              </div>
-                            </fieldset>
-                          </div>
-
-                          <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                          <!-- Type of claim -->
-                          <div class="nhsuk-form-group">
-
-                            <fieldset class="nhsuk-fieldset" aria-describedby="type-hint">
-                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-2">
-                                <h1 class="nhsuk-fieldset__heading">
-                                  Type of claim
-                                </h1>
-                              </legend>
-
-
-                              <div class="nhsuk-radios">
-
-                                <div class="nhsuk-radios__item">
-                                  <input class="nhsuk-radios__input" id="type-main" name="type" type="radio"
-                                    value="Main">
-                                  <label class="nhsuk-label nhsuk-radios__label" for="type-main">
-                                    Main
-                                  </label>
-                                </div>
-
-                                <div class="nhsuk-radios__item">
-                                  <input class="nhsuk-radios__input" id="type-supplementary" name="type" type="radio"
-                                    value="Supplementary">
-                                  <label class="nhsuk-label nhsuk-radios__label" for="type-supplementary">
-                                    Supplementary
-                                  </label>
-                                </div>
-
-                              </div>
-                            </fieldset>
-
-                          </div>
-
-                          <!-- <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"> -->
-
-                        </div>
-                      </details>
-
                     </div>
 
                     <div class="nhsuk-grid-column-one-half">
@@ -270,19 +111,47 @@ Home - Manage incoming international healthcare claims - NHSBSA
                   </div>
 
                   <button class="nhsuk-button nhsuk-u-margin-bottom-1" data-module="nhsuk-button" type="submit">
-                    Search
+                    Go to claim
                   </button>
                 </form>
               </div>
               <!-- End claim search -->
 
-              <!-- Start treatment search -->
-              <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="treatment">
-                <h2 class="nhsuk-heading-l">Treatment</h2>
-                <form style="height:300px;">
+              <!-- Start invoice search -->
+              <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="invoice">
+                <h2 class="nhsuk-heading-l">Invoice</h2>
+                <form action="claims/invoices/details/person-not-found/s1-default">
+
+                  <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                      <!-- Claim ID -->
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="claim-id">
+                          Invoice ID
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="claim-id" name="claim-id" type="text">
+                      </div>
+
+                      <!-- Claim reference -->
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                          Invoice reference
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text">
+                      </div>
+                    </div>
+
+                    <div class="nhsuk-grid-column-one-half">
+
+                    </div>
+                  </div>
+
+                  <button class="nhsuk-button nhsuk-u-margin-bottom-1" data-module="nhsuk-button" type="submit">
+                    Go to invoice
+                  </button>
                 </form>
               </div>
-              <!-- End treatment search-->
+              <!-- End invoice search-->
 
               <!-- Start person search -->
               <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="person">
@@ -314,7 +183,7 @@ Home - Manage incoming international healthcare claims - NHSBSA
             <h3 class="nhsuk-card__heading nhsuk-heading-m">
               Quick actions
             </h3>
-            <hr style="margin:0px 0px 12px 0px;" />
+            <hr style="margin:0px 0px 24px 0px;">
 
             <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
               <a class="nhsuk-action-link__link" href="claims/create/index">
