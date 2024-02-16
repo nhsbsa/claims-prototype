@@ -57,7 +57,7 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
 {% block content %}
 
 <!-- Start of back link -->
-<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-row" id="backLink">
     <div class="nhsuk-grid-column-full">
         <div class="nhsuk-back-link">
             <a class="nhsuk-back-link__link" href="javascript:history.back()">
@@ -156,6 +156,7 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
                 e.preventDefault();
 
 
+                backLink.style.display = "none";
                 legend1.style.display = "none";
                 legend2.style.display = "block";
                 uploadFile.style.display = "none";
