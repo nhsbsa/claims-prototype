@@ -53,7 +53,7 @@ router.post('/route-cancel-upload-invoices', function(req,res){
     var back = req.session.data['referer'] || "/";
 
     if (cancel == "yes" ) {
-        res.redirect('/alpha/version-05/claims/invoices/not-started')
+        res.redirect('/alpha/version-05/claims/summary/not-started')
     } else if (cancel == "no"){
         return res.redirect(back)
     } else {
