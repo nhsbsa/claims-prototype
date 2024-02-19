@@ -68,21 +68,23 @@ Invoice created - Manage incoming international healthcare claims - NHSBSA
                     <h1 class="heading-xlarge"><span id="done-tick"></span>Invoice created for {% if data['first-name'] %}{{
                         data['first-name'] }}{{data['last-name']}}{% else %}Reece Bell{% endif %}
                     </h1>
-                    <h2 class="heading-large"><span class="heading-secondary" style="color:white;">Invoice ID: 
+                    <h2 class="heading-large"><span class="heading-secondary" style="color:white;">Invoice ID 
                             <br />
                             01578
                         </span>
 
                     </h2>
                 </div>
-                <p>You have created a new invoice for {% if data['first-name'] %}{{
-                    data['first-name'] }}{{data['last-name']}}{% else %}Reece Bell{% endif %}
-                    for a total treatment amount of {% if data['amount-or-months'] %}{{ data['amount-or-months'] }}{% else
-                    %}121.7{% endif %} starting from 14 February 2022 and ending on 27 February 2022.</p>
-                    <p>The Invoice Reference Number is {% if data['invoice-ref'] %}{{ data['invoice-ref'] }}{% else
+                <p>You've created a new invoice for {% if data['first-name'] %}{{data['first-name'] }}{{data['last-name']}}{% else %}Reece Bell{% endif %}
+                    for treatment that started on 14 February 2022 and ended on 27 February 2022. 
+                    The total value of this treatment is {% if data['amount-or-months'] %}{{ data['amount-or-months'] }}{% else
+                        %}121.7{% endif %}</p>
+
+                    <p>The invoice reference is {% if data['invoice-ref'] %}{{ data['invoice-ref'] }}{% else
                         %}0039795426{% endif %}.</p>
                 <h2 class="heading-medium">What happens next</h2>
-                <p>System will try to auto validate the invoice.</p>
+                <p>The system will now try to match the invoice to a valid entitlement.</p>
+                <p>If the system cannot find a match, you'll need to search for a possible match manually instead.</p>
                 
                 <a href="index">
                     <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
@@ -92,7 +94,7 @@ Invoice created - Manage incoming international healthcare claims - NHSBSA
                 
                 <a href="../full-invoice-list">
                     <button style="margin-right:12px;" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
-                        Go to Invoices
+                        Manage invoices
                     </button>
                 </a>
                 
