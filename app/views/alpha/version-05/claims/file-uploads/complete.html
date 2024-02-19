@@ -59,25 +59,31 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
 
     <!-- Start of title block -->
     <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-xl ">
           Uploaded files
         </h1>
       </div>
-
-
-
+      <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+        <a href="../invoices/upload/index">
+          <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+            Add invoices
+          </button>
+        </a>
+      </div>
+        <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-hint" id="uploaded-files-hint">
+          These are the files containing invoices which have been uploaded against this claim.
+        </div>
+      </div>
     </div>
     <!-- End of title block -->
 
     <!--Start file uploads info-->
-
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
-
         <div class="nhsuk-card">
           <div class="nhsuk-card__content">
-
             <table role="table" class="nhsuk-table-responsive">
               <!-- <caption class="nhsuk-table__caption">File uploads</caption> -->
               <thead role="rowgroup" class="nhsuk-table__head">
@@ -142,10 +148,8 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
             </table>
           </div>
         </div>
-
       </div>
     </div>
-
     <!-- End file uploads info -->
 
   </div>
