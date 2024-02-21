@@ -82,9 +82,13 @@ Additional invoices - Upload invoices - Manage incoming international healthcare
             <div class="nhsuk-grid-column-full">
                 <form id="checkFile" action="additional-file-2" method="post">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-                        <h1 class="nhsuk-fieldset__heading">
+                        <h1 class="nhsuk-fieldset__heading" id="uploadH1">
                             <span class="nhsuk-caption-l">Additional invoices</span>
-                            Upload additional invoices
+                            Upload extra invoices
+                        </h1>
+                        <h1 class="nhsuk-fieldset__heading" id="uploadingH1" style="display: none;">
+                            <span class="nhsuk-caption-l">Additional invoices</span>
+                            Uploading extra invoices
                         </h1>
                     </legend>
             </div>
@@ -161,7 +165,9 @@ Additional invoices - Upload invoices - Manage incoming international healthcare
     
                 goBackLink.style.display = "none";
                 uploadFile.style.display = "none";
+                uploadH1.style.display = "none";
     
+                uploadingH1.style.display = "block";
                 uploadProgress.style.display = "block";
                 uploadProgress.setAttribute("role", "alert");
                 uploadProgress.setAttribute("aria-hidden", "false");
