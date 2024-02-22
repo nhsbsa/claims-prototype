@@ -56,13 +56,31 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
 <!-- Start of central content -->
 {% block content %}
 
+<!-- Start of back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" height="24" width="24">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back</a>
+        </div>
+    </div>
+</div>
+<!-- End of back link -->
+
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-                <form action="edit-target-date" method="post">
+                <form action="javascript:history.back()" method="post">
+                <!-- <form action="edit-target-date" method="post"> -->
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                         <h1 class="nhsuk-fieldset__heading">
                             <span class="nhsuk-caption-l">Edit claim</span>
@@ -96,7 +114,7 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
 
                                                 id="target-date-day" name="edit-target-date-day" type="text" pattern="[0-9]*"
-                                                inputmode="numeric" value="{% if data['edit-target-date-day'] %}{{ data['edit-target-date-day'] }}{% elif data['target-date-day'] %}{{ data['target-date-day'] }}{% else %}9{% endif %}">
+                                                inputmode="numeric" value="{% if data['edit-target-date-day'] %}{{ data['edit-target-date-day'] }}{% elif data['target-date-day'] %}{{ data['target-date-day'] }}{% else %}1{% endif %}">
 
                                         </div>
                                     </div>
@@ -108,7 +126,7 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                    
                                                 id="target-date-month" name="edit-target-date-month" type="text"
-                                                pattern="[0-9]*" inputmode="numeric" value="{% if data['edit-target-date-month'] %}{{ data['edit-target-date-month'] }}{% elif data['target-date-month'] %}{{ data['target-date-month'] }}{% else %}2{% endif %}">
+                                                pattern="[0-9]*" inputmode="numeric" value="{% if data['edit-target-date-month'] %}{{ data['edit-target-date-month'] }}{% elif data['target-date-month'] %}{{ data['target-date-month'] }}{% else %}3{% endif %}">
 
                                         </div>
                                     </div>
@@ -135,7 +153,7 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
                     </div>
                 </div>
 
-                <a href="" class="nhsuk-link">Cancel</a>
+              
                 </form>
             </div>
         </div>
