@@ -1,0 +1,325 @@
+    <!-- ******* -->
+
+    <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    {
+    name: 'Summary',
+    path: '/alpha/version-05/claims/summary/not-started'
+    },
+    {
+    name: 'Invoices',
+    path: '/alpha/version-05/claims/invoices/not-started',
+    active: true
+    },
+    {
+    name: 'Uploaded files',
+    path: '#'
+    },
+    {
+    name: 'History',
+    path: '#'
+    }
+    ]
+    %}
+    
+    <!-- Extends the layout from /views/layout-full-width.html -->
+    {% extends 'layout-full-width-claim.html' %}
+    <!-- 
+      In /views/layout.html you can:
+        - change the header and footer 
+        - add custom CSS and JavaScript
+    -->
+    
+    <!-- Start of page title -->
+    {% block pageTitle %}
+    Create a new invoice - Manage incoming international healthcare claims - NHSBSA
+    {% endblock %}
+    <!-- End of page title -->
+
+    <!-- ******* -->
+    {% block beforeContent %}
+    <!-- Start of breadcrumb -->
+    <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+        <div class="nhsuk-width-container-fluid">
+            <ol class="nhsuk-breadcrumb__list">
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../claims/index">Claims</a></li>
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../full-invoice-list">Invoices</a></li>
+            </ol>
+            <p class="nhsuk-breadcrumb__back">
+                <a class="nhsuk-breadcrumb__backlink" href="../full-invoice-list">
+                    <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                    invoice list
+                </a>
+            </p>
+        </div>
+    </nav>
+    <!-- End of breadcrumb -->
+    {% endblock %}
+    
+    <!-- Start of central content -->
+    {% block content %}
+    
+    <!-- Start of cya -->
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+            <!-- Start of form -->
+            <form action="confirmation" method="post">
+    
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                    <h1 class="nhsuk-fieldset__heading">
+                        <span class="nhsuk-caption-l">Create a new invoice</span>
+                        Check invoice details
+                    </h1>
+                </legend>
+    
+                <!-- Start of card -->
+                <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                    <div class="nhsuk-card__content">
+
+                        <!-- <h2 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2">
+                            <span class="nhsuk-caption-xl nhsuk-caption--bottom">Invoice ID: 01578</span>
+                        </h2> -->
+
+                        <dl class="nhsuk-summary-list">
+    
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Invoice reference
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    {% if data['invoice-ref'] %}
+                                        {{ data['invoice-ref'] }} 
+                                    {% else %}
+                                        0039795426
+                                    {% endif %}
+                                </dd>
+    
+                                <dd class="nhsuk-summary-list__actions">
+    
+                                    <a href="index#invoice-ref">
+                                        Change<span class="nhsuk-u-visually-hidden"> invoice reference</span>
+                                    </a>
+    
+                                </dd>
+    
+                            </div>
+
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l" style="padding-top:30px;">
+                                <h1 class="nhsuk-fieldset__heading">
+                                    Person details
+                                </h1>
+                            </legend>
+    
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                   Last name
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    {% if data['last-name'] %}
+                                        {{ data['last-name'] }}
+                                    {% else %}
+                                        Bell
+                                    {% endif %}
+                                </dd>
+    
+                                <dd class="nhsuk-summary-list__actions">
+    
+                                    <a href="index#last-name">
+                                        Change<span class="nhsuk-u-visually-hidden">last name</span>
+                                    </a>
+    
+                                </dd>
+    
+                            </div>
+    
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Last name at birth (optional)
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    {% if data['last-name-birth'] %}
+                                        {{ data['last-name-birth'] }}
+                                    {% else %}
+                                        &#8212;
+                                    {% endif %}
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                    <a href="index#last-name-birth">
+                                        Change<span class="nhsuk-u-visually-hidden"> last name at birth</span>
+                                    </a>
+                                </dd>
+                            </div>
+    
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    First name
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    {% if data['first-name'] %}
+                                        {{ data['first-name'] }}
+                                    {% else %}
+                                        Reece
+                                    {% endif %}
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                    <a href="index#first-name">
+                                        Change<span class="nhsuk-u-visually-hidden"> first name</span>
+                                    </a>
+                                </dd>
+                            </div>
+    
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Unique ID
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    {% if data['person-id'] %}
+                                        {{ data['person-id'] }}
+                                    {% else %}
+                                        8449449
+                                    {% endif %}
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                    <a href="index#person-id">
+                                        Change<span class="nhsuk-u-visually-hidden"> person ID number</span>
+                                    </a>
+                                </dd>
+                            </div>
+    
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Date of birth
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    5 October 1956
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                    <a href="index#dob-day">
+                                        Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                                    </a>
+                                </dd>
+                            </div>
+
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l" style="padding-top:30px;">
+                                <h1 class="nhsuk-fieldset__heading">
+                                    Treatment details
+                                </h1>
+                            </legend>
+    
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Start date
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    14 February 2022
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                    <a href="index#date-from-day">
+                                        Change<span class="nhsuk-u-visually-hidden"> treatment start date</span>
+                                    </a>
+                                </dd>
+                            </div>
+    
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    End date
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    27 February 2022
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                    <a href="index#date-to-day">
+                                        Change<span class="nhsuk-u-visually-hidden"> treatment end date</span>
+                                    </a>
+                                </dd>
+                            </div>
+
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Total value (number of months or monetary amount)
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    121.7
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                    <a href="index#amount-or-months">
+                                        Change<span class="nhsuk-u-visually-hidden"> amount</span>
+                                    </a>
+                                </dd>
+                            </div>
+    
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Entitlement type
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    {% if data['entitlement'] %}
+                                        {{ data['entitlement']}}
+                                    {% else %}
+                                        S1
+                                    {% endif %}
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                    <a href="index#entitlement">
+                                        Change<span class="nhsuk-u-visually-hidden"> type of entitlement</span>
+                                    </a>
+                                </dd>
+                            </div>
+
+                            {% if data['entitlement'] == "ehic" %}
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    EHIC number
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    {% if data['ehic-number'] %}
+                                        {{ data['ehic-number']}}
+                                    {% else %}
+                                        32768015772547244577
+                                    {% endif %}
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                    <a href="index#ehic-number">
+                                        Change<span class="nhsuk-u-visually-hidden"> EHIC number</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% elif data['entitlement'] == "prc" %}
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    PRC number
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    {% if data['prc-number'] %}
+                                        {{ data['prc-number']}}
+                                    {% else %}
+                                        43879115642547233688
+                                    {% endif %}
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                    <a href="index#prc-number">
+                                        Change<span class="nhsuk-u-visually-hidden"> PRC number</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% endif %}
+    
+                        </dl>
+                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+                <!-- End of card -->
+    
+            </form>
+            <!-- End of form -->
+    
+            <a href="../index" class="nhsuk-link">Cancel</a>
+        </div>
+    </div>
+    <!-- End of cya -->
+    
+    {% endblock %}
+    <!-- End of central content -->
