@@ -7,7 +7,7 @@ const axios = require('axios');
 
 //Are you sure you want to cancel
 router.get("/claims/create/cancel-confirmation", (req, res)=> {
-    res.render("alpha/version-05/claims/create/cancel-confirmation", {referer: req.headers.referer});
+    res.render("alpha/version-06/claims/create/cancel-confirmation", {referer: req.headers.referer});
 });
 
 router.post('/route-cancel-create-claim', function(req,res){
@@ -15,11 +15,11 @@ router.post('/route-cancel-create-claim', function(req,res){
     var back = req.session.data['referer'] || "/";
 
     if (cancel == "yes" ) {
-        res.redirect('/alpha/version-05/claims/index')
+        res.redirect('/alpha/version-06/claims/index')
     } else if (cancel == "no"){
         return res.redirect(back)
     } else {
-        res.redirect('/alpha/version-05/claims/create/cancel-confirmation')
+        res.redirect('/alpha/version-06/claims/create/cancel-confirmation')
     }
 
 })
@@ -31,13 +31,13 @@ router.post('/route-cancel-create-claim', function(req,res){
 router.post('/route-upload-method', function(req,res){
     var method = req.session.data['contact-method']
     if (method == "RINA" ) {
-        res.redirect('/alpha/version-05/claims/invoices/upload/xml/index')
+        res.redirect('/alpha/version-06/claims/invoices/upload/xml/index')
         }
     else if (method == "EDI"){
-            res.redirect('/alpha/version-05/claims/invoices/upload/xml/index')
+            res.redirect('/alpha/version-06/claims/invoices/upload/xml/index')
             }
     else {
-        res.redirect('/alpha/version-05/claims/invoices/upload/index')
+        res.redirect('/alpha/version-06/claims/invoices/upload/index')
     }
 
 })
@@ -45,7 +45,7 @@ router.post('/route-upload-method', function(req,res){
 
 //Are you sure you want to cancel the journey
 router.get("/claims/invoices/upload/cancel-confirmation", (req, res)=> {
-    res.render("alpha/version-05/claims/invoices/upload/cancel-confirmation", {referer: req.headers.referer});
+    res.render("alpha/version-06/claims/invoices/upload/cancel-confirmation", {referer: req.headers.referer});
 });
 
 router.post('/route-cancel-upload-invoices', function(req,res){
@@ -53,18 +53,18 @@ router.post('/route-cancel-upload-invoices', function(req,res){
     var back = req.session.data['referer'] || "/";
 
     if (cancel == "yes" ) {
-        res.redirect('/alpha/version-05/claims/summary/not-started')
+        res.redirect('/alpha/version-06/claims/summary/not-started')
     } else if (cancel == "no"){
         return res.redirect(back)
     } else {
-        res.redirect('/alpha/version-05/claims/invoices/upload/cancel-confirmation')
+        res.redirect('/alpha/version-06/claims/invoices/upload/cancel-confirmation')
     }
 
 })
 
 //Are you sure you want to delete an uploaded invoice file
 router.get("/claims/invoices/upload/delete-confirmation", (req, res)=> {
-    res.render("alpha/version-05/claims/invoices/upload/delete-confirmation", {referer: req.headers.referer});
+    res.render("alpha/version-06/claims/invoices/upload/delete-confirmation", {referer: req.headers.referer});
 });
 
 router.post('/route-delete-invoice-file', function(req,res){
@@ -72,11 +72,11 @@ router.post('/route-delete-invoice-file', function(req,res){
     var back = req.session.data['referer'] || "/";
 
     if (cancel == "yes" ) {
-        res.redirect('/alpha/version-05/claims/invoices/upload/xml/index')
+        res.redirect('/alpha/version-06/claims/invoices/upload/xml/index')
     } else if (cancel == "no"){
         return res.redirect(back)
     } else {
-        res.redirect('/alpha/version-05/claims/invoices/upload/delete-confirmation')
+        res.redirect('/alpha/version-06/claims/invoices/upload/delete-confirmation')
     }
 
 })
@@ -98,7 +98,7 @@ router.get('/claims/create/cya', function(req, res) {
     if(req.session.data['target-date-month']) {
         fullTargetMonth = Intl.DateTimeFormat('en', { month: 'long' }).format(new Date(req.session.data['target-date-month']));
     }
-    res.render('alpha/version-05/claims/create/cya', {fullSubmissionMonth: fullSubmissionMonth, fullTargetMonth: fullTargetMonth});
+    res.render('alpha/version-06/claims/create/cya', {fullSubmissionMonth: fullSubmissionMonth, fullTargetMonth: fullTargetMonth});
 })
 
 //Error validation 
@@ -118,10 +118,10 @@ router.post('/create-claim-validation', function(req,res){
         req.session.data['target-date-year'] == ""
         ) 
         {
-        res.redirect('/alpha/version-05/claims/create/error')
+        res.redirect('/alpha/version-06/claims/create/error')
         }
     else {
-        res.redirect('/alpha/version-05/claims/create/cya')
+        res.redirect('/alpha/version-06/claims/create/cya')
     }
 
 })
@@ -131,13 +131,13 @@ router.post('/create-claim-validation', function(req,res){
 router.post('/route_delete_claim', function(req,res){
     var confirmation = req.session.data['delete-claim']
     if (confirmation == "yes" ) {
-        res.redirect('/alpha/version-05/post-mvp/claim-summary/delete-confirmation')
+        res.redirect('/alpha/version-06/post-mvp/claim-summary/delete-confirmation')
         }
     else if (confirmation == "no"){
-            res.redirect('/alpha/version-05/post-mvp/claim-summary/not-started')
+            res.redirect('/alpha/version-06/post-mvp/claim-summary/not-started')
             }
     else {
-        res.redirect('/alpha/version-05/post-mvp/claim-summary/delete-check')
+        res.redirect('/alpha/version-06/post-mvp/claim-summary/delete-check')
     }
 
 })
@@ -146,13 +146,13 @@ router.post('/route_delete_claim', function(req,res){
 router.post('/route-additional-upload', function(req,res){
     var upload = req.session.data['additional-upload']
     if (upload == "yes" ) {
-        res.redirect('/alpha/version-05/claims/invoices/upload/xml/index-additional-file')
+        res.redirect('/alpha/version-06/claims/invoices/upload/xml/index-additional-file')
         }
     else if (upload == "no"){
-            res.redirect('/alpha/version-05/claims/invoices/upload/xml/cya')
+            res.redirect('/alpha/version-06/claims/invoices/upload/xml/cya')
             }
     else {
-        res.redirect('/alpha/version-05/claims/invoices/upload/xml/additional-file')
+        res.redirect('/alpha/version-06/claims/invoices/upload/xml/additional-file')
     }
 
 })
@@ -161,13 +161,13 @@ router.post('/route-additional-upload', function(req,res){
 router.post('/route-additional-invoice', function(req,res){
     var type = req.session.data['additional-invoice']
     if (type == "bulk" ) {
-        res.redirect('/alpha/version-05/claims/invoices/upload/xml/additional-bulk-upload')
+        res.redirect('/alpha/version-06/claims/invoices/upload/xml/additional-bulk-upload')
         }
     else if (type == "single"){
-            res.redirect('/alpha/version-05/claims/invoices/create/index')
+            res.redirect('/alpha/version-06/claims/invoices/create/index')
             }
     else {
-        res.redirect('/alpha/version-05/claims/invoices/upload/options')
+        res.redirect('/alpha/version-06/claims/invoices/upload/options')
     }
 
 })
@@ -176,13 +176,13 @@ router.post('/route-additional-invoice', function(req,res){
 router.post('/route-additional-upload-2', function(req,res){
     var upload = req.session.data['additional-upload']
     if (upload == "yes" ) {
-        res.redirect('/alpha/version-05/claims/invoices/upload/xml/additional-bulk-upload')
+        res.redirect('/alpha/version-06/claims/invoices/upload/xml/additional-bulk-upload')
         }
     else if (upload == "no"){
-            res.redirect('/alpha/version-05/claims/invoices/upload/xml/additional-bulk-cya')
+            res.redirect('/alpha/version-06/claims/invoices/upload/xml/additional-bulk-cya')
             }
     else {
-        res.redirect('/alpha/version-05/claims/invoices/upload/xml/additional-file-2')
+        res.redirect('/alpha/version-06/claims/invoices/upload/xml/additional-file-2')
     }
 
 })
@@ -283,7 +283,7 @@ router.get('/claims/summary/not-started', function(req, res) {
 
     }
 
-    res.render('alpha/version-05/claims/summary/not-started', { targetDateEditFormatted: targetDateEditFormatted, targetDateFormatted: targetDateFormatted });
+    res.render('alpha/version-06/claims/summary/not-started', { targetDateEditFormatted: targetDateEditFormatted, targetDateFormatted: targetDateFormatted });
 })
 
 
