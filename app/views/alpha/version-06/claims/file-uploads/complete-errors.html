@@ -2,20 +2,20 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '/alpha/version-06/claims/summary/with-treatments'
+path: '/alpha/version-06/claims/summary/invoices-uploaded'
 },
 {
 name: 'Invoices',
-path: '/alpha/version-06/claims/invoices/no-invoices'
+path: '/alpha/version-06/claims/invoices/full-invoice-list'
 },
 {
 name: 'Uploaded files',
-path: '/alpha/version-06/claims/file-uploads/index',
+path: '/alpha/version-06/claims/file-uploads/complete',
 active: true
 },
 {
 name: 'History',
-path: '#'
+path: '/alpha/version-06/claims/history/invoices-uploaded'
 }
 ]
 %}
@@ -52,8 +52,11 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
 <!-- End of breadcrumb -->
 {% endblock %}
 
+
+
 <!-- Start of central content -->
 {% block content %}
+
 
         <!-- Start error details -->
         <div class="nhsuk-grid-row">
@@ -64,7 +67,7 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
           </h2>
           <div class="nhsuk-error-summary__body">
             <p>
-              Until you have replaced the affected invoices, you cannot complete this claim.
+              Until you have replaced these invoices, you cannot complete the claim.
             </p>
             <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
               <li>
@@ -77,7 +80,6 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
         </div>
     
         <!-- End error details -->
-
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
@@ -104,101 +106,68 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
     </div>
     <!-- End of title block -->
 
-
-
-    
-
-
     <!--Start file uploads info-->
-
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
-
         <div class="nhsuk-card">
           <div class="nhsuk-card__content">
+            <table role="table" class="nhsuk-table-responsive">
+              <!-- <caption class="nhsuk-table__caption">File uploads</caption> -->
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Date and time
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Filename
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Status
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    View
+                  </th>
 
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
 
-            <div class="nhsuk-grid-row">
-              <div class="nhsuk-grid-column-full">
-        
-                <div class="nhsuk-card">
-                  <div class="nhsuk-card__content">
-        
-                    <table role="table" class="nhsuk-table-responsive" id="results-table">
-                      <!-- <caption class="nhsuk-table__caption">File uploads</caption> -->
-                      <thead role="rowgroup" class="nhsuk-table__head">
-                        <tr role="row">
-                          <th role="columnheader" class="" scope="col">
-                            Date and time
-                          </th>
-                          <th role="columnheader" class="" scope="col">
-                            Filename
-                          </th>
-                          <th role="columnheader" class="" scope="col">
-                            Status
-                          </th>
-                          <th role="columnheader" class="" scope="col">
-                            Author
-                          </th>
-                          <th role="columnheader" class="" scope="col">
-                            View
-                          </th>
-        
-                        </tr>
-                      </thead>
-                      <tbody class="nhsuk-table__body">
-        
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Date and time time </span>1 December 2023, 10:13am
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-2.xml
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Status </span>Errors
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Created by </span>Isla Fields
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">View </span><a href="report-errors">View report</a>
-                          </td>
-                        </tr>
-        
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Date and time </span>1 December 2023, 10:12am
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-1.xml
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Status </span>Complete
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Created by </span>Isla Fields
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">View </span><a href="">View report</a>
-                          </td>
-                        </tr>
-        
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-        
-              </div>
-            </div>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date and time time </span>1 December 2023, 10:13am
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-2.xml
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>Complete - with errors
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="report-errors">View report</a>
+                  </td>
+                </tr>
 
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date and time </span>1 December 2023, 10:12am
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-1.xml
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>Complete
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="">View report</a>
+                  </td>
+                </tr>
 
+              </tbody>
+            </table>
           </div>
         </div>
-
       </div>
     </div>
-
     <!-- End file uploads info -->
 
   </div>
