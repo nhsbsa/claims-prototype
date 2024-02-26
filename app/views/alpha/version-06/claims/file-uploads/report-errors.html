@@ -2,20 +2,20 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '/alpha/version-06/claims/summary/invoices-uploaded'
+path: '/alpha/version-06/claims/summary/invoices-uploaded-error'
 },
 {
 name: 'Invoices',
-path: '/alpha/version-06/claims/invoices/full-invoice-list'
+path: '/alpha/version-06/claims/invoices/full-invoice-list-error'
 },
 {
 name: 'Uploaded files',
-path: '/alpha/version-06/claims/file-uploads/complete',
+path: '/alpha/version-06/claims/file-uploads/complete-errors',
 active: true
 },
 {
 name: 'History',
-path: '/alpha/version-06/claims/history/invoices-uploaded'
+path: '/alpha/version-06/claims/history/invoices-uploaded-errors'
 }
 ]
 %}
@@ -29,7 +29,7 @@ path: '/alpha/version-06/claims/history/invoices-uploaded'
 
 <!-- Start of page title -->
 {% block pageTitle %}
-File upload report - Uploaded files - Manage incoming international healthcare claims - NHSBSA
+File upload report - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -72,246 +72,349 @@ File upload report - Uploaded files - Manage incoming international healthcare c
 </div>
 <!-- End of back link -->
 
+<!-- Start of title block -->
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-
-    <!-- Start of title block -->
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full">
-
-        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-9">
-          File upload report
-        
-        </h1>
-
-
-
-
-      </div>
-
-
-
-    </div>
-    <!-- End of title block -->
-
-
-
-
-
-
-    <!--Start file uploads info-->
-
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-two-thirds">
-
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
-
-            <!-- <div class="nhsuk-grid-row">
-              <div class="nhsuk-grid-column-one-half">
-                <h3 class="nhsuk-card__heading">
-                  Summary
-                </h3>
-              </div>
-              <div class="nhsuk-grid-column-one-half">
-                <strong class="nhsuk-tag nhsuk-tag--red" style="float:right">
-                  Complete - with errors
-                </strong>
-              </div>
-              <div class="nhsuk-grid-column-full">
-                <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
-                <br>
-              </div>
-            </div> -->
-
-            <div class="nhsuk-grid-row">
-              <div class="nhsuk-grid-column-full">
-                <dl class="nhsuk-summary-list">
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Filename
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      invoice-file-2.xml
-                    </dd>
-                  </div>
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Status
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      <strong class="nhsuk-tag nhsuk-tag--red" >
-                        Complete - with errors
-                      </strong>
-                    </dd>
-                  </div>
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Total invoices - success
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      10
-                    </dd>
-                  </div>
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Total invoices - error
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      3
-                    </dd>
-                  </div>
-
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Date uploaded
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      1 December 2023
-                    </dd>
-                  </div>
-
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-Created by                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      Isla Fields
-                    </dd>
-                  </div>
-
-
-
-
-                </dl>
-
-              </div>
-
-
-
-            </div>
-
-
-
-
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- End file uploads info -->
-
-    <!-- Start download-->
-    <div class="nhsuk-action-link nhsuk-u-margin-bottom-4">
-      <a class="nhsuk-action-link__link" href="#">
-        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-          aria-hidden="true" width="36" height="36">
-          <path d="M0 0h24v24H0z" fill="none"></path>
-          <path
-            d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
-          </path>
-        </svg>
-        <span class="nhsuk-action-link__text">Download error log</span>
-      </a>
-    </div>
-    <!-- End download -->
-
-    <!--Start error log-->
-
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full">
-
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
-
-            <div class="nhsuk-grid-row">
-              <div class="nhsuk-grid-column-full">
-                <h3 class="nhsuk-card__heading">
-                  Error log
-                </h3>
-              </div>
-
-              <div class="nhsuk-grid-column-full">
-                <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
-                <br>
-              </div>
-            </div>
-
-            <!-- Start of treatment list -->
-            <div class="nhsuk-grid-row">
-              <div class="nhsuk-grid-column-full">
-
-                <table role="table" class="nhsuk-table-responsive">
-                  <!-- <caption class="nhsuk-table__caption">Showing results for: All treatments</caption>  -->
-                  <thead role="rowgroup" class="nhsuk-table__head">
-                    <tr role="row">
-
-                      <th role="columnheader" class="" scope="col">
-                        Invoice reference
-                      </th>
-                      <th role="columnheader" class="" scope="col">
-                        Error
-                      </th>
-
-                    </tr>
-                  </thead>
-                  <tbody class="nhsuk-table__body">
-                    <tr role="row" class="nhsuk-table__row">
-                      <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                        <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039795309
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                        <span class="nhsuk-table-responsive__heading">Error</span>InsuredSurname
-                      </td>
-                    </tr>
-
-                    <tr role="row" class="nhsuk-table__row">
-                      <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                        <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039795284
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                        <span class="nhsuk-table-responsive__heading">Error</span>EndDate
-                      </td>
-                    </tr>
-
-
-                    <tr role="row" class="nhsuk-table__row">
-                      <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                        <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039795271
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                        <span class="nhsuk-table-responsive__heading">Error</span>Hosp1StartDate
-                      </td>
-                    </tr>
-
-
-
-                  </tbody>
-                </table>
-
-              </div>
-            </div>
-            <!-- End treatment list -->
-
-
-
-
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- End error log -->
-
+    <h1 class="nhsuk-heading-xl">
+      File upload report
+    </h1>
   </div>
 </div>
+<!-- End of title block -->
+
+<!--Start file key information box-->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-two-thirds">
+            <h3 class="nhsuk-card__heading">
+              Filename &#8212; invoice-file-2.xml
+            </h3>
+          </div>
+          <div class="nhsuk-grid-column-one-third">
+            <strong class="nhsuk-tag nhsuk-tag--red" style="float:right">
+              Complete - with errors
+            </strong>
+          </div>
+          <div class="nhsuk-grid-column-full">
+            <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
+            <br>
+          </div>
+        </div>
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Total invoices - processed
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  34,258
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Total invoices - with errors
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  12
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Date uploaded
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  1 December 2023
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Created by </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Isla Fields
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of key information box -->
+
+<!-- Start download error log-->
+<div class="nhsuk-action-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-action-link__link" href="#">
+    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true" width="36" height="36">
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path
+        d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+      </path>
+    </svg>
+    <span class="nhsuk-action-link__text">Download error log</span>
+  </a>
+</div>
+<!-- End download error log -->
+
+<!--Start error log results-->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+        <div class="nhsuk-grid-row nhsuk-u-padding-bottom-0">
+          <div class="nhsuk-grid-column-two-thirds">
+            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Showing 10 results of 12</h3>
+          </div>
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group" style="float:right;">
+              <label class="nhsuk-label" for="results">
+                Results per page
+              </label>
+              <select class="nhsuk-select" id="results" name="results" style="float:right;">
+                <option value="10" selected="">10</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Start table -->
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <table role="table" class="nhsuk-table-responsive">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col" width="15%">
+                    Invoice reference
+                  </th>
+                  <th role="columnheader" class="" scope="col" width="10%">
+                    Line number
+                  </th>
+                  <th role="columnheader" class="" scope="col" width="60%">
+                    Error
+                  </th>
+                  <th role="columnheader" class="" scope="col" width="15%">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039795284
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Line number</span>1794
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Error</span>Invoice number must only include
+                    positive numbers
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action</span><a href="../invoices/create/index">Add
+                      invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039795271
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Line number</span>1577
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Error</span>Invoice number must only include
+                    numbers
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action</span><a href="../invoices/create/index">Add
+                      invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039794678
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Line number</span>1435
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Error</span>Insured surname must include a name
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action</span><a href="../invoices/create/index">Add
+                      invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039793888
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Line number</span>1336
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Error</span>End date must be formatted as
+                    yyyy/mm/dd
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action</span><a href="../invoices/create/index">Add
+                      invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039792956
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Line number</span>1290
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Error</span>Dental amount must contain a value
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action</span><a href="../invoices/create/index">Add
+                      invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039791126
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Line number</span>1135
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Error</span>Hospital start date must contain a
+                    date
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action</span><a href="../invoices/create/index">Add
+                      invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039790674
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Line number</span>1078
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Error</span>Creditor institution code must only
+                    include letters and numbers
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action</span><a href="../invoices/create/index">Add
+                      invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039787594
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Line number</span>957
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Error</span>Column 15 - cannot include the
+                    character '&'
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action</span><a href="../invoices/create/index">Add
+                      invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039786542
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Line number</span>733
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Error</span>Column 27 - field has closing tag
+                    'state' but should have closing tag 'address'
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action</span><a href="../invoices/create/index">Add
+                      invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039785338
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Line number</span>529
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Error</span>Column 12 - field must contain a start
+                    tag
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action</span><a href="../invoices/create/index">Add
+                      invoice</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- End table-->
+
+        <!-- Start pagination -->
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <nav class="nhsuk-pagination nhsuk-u-margin-bottom-1" role="navigation" aria-label="Pagination">
+              <div class="nhsuk-pagination__prev">
+                <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="prev">
+                  <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg"
+                    height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path
+                      d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z">
+                    </path>
+                  </svg>
+                  <span class="nhsuk-pagination__link-title">Previous<span class="nhsuk-visually-hidden">
+                      page</span></span></a>
+              </div>
+              <ul class="nhsuk-pagination__list">
+                <li class="nhsuk-pagination__item nhsuk-pagination__item--current">
+                  <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 1">
+                    1
+                  </a>
+                </li>
+                <li class="nhsuk-pagination__item">
+                  <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 2">
+                    2
+                  </a>
+                </li>
+              </ul>
+              <div class="nhsuk-pagination__next">
+                <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="next"> <span
+                    class="nhsuk-pagination__link-title">Next<span class="nhsuk-visually-hidden">
+                      page</span></span>
+                  <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg"
+                    height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path
+                      d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                    </path>
+                  </svg></a>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!-- End pagination -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End error log results -->
 {% endblock %}
 <!-- End of central content -->
