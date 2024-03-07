@@ -2,19 +2,19 @@
 {% set mainNavigation = [
   {
   name: 'Summary',
-  path: '/alpha/version-06/claims/summary/invoices-uploaded'
+  path: '/alpha/version-06/claims/summary/invoices-uploaded-errors'
   },
   {
   name: 'Invoices',
-  path: '/alpha/version-06/claims/invoices/full-invoice-list'
+  path: '/alpha/version-06/claims/invoices/invoice-list-errors'
   },
   {
   name: 'Uploaded files',
-  path: '/alpha/version-06/claims/file-uploads/complete'
+  path: '/alpha/version-06/claims/file-uploads/complete-errors'
   },
   {
   name: 'History',
-  path: '/alpha/version-06/claims/history/invoices-uploaded',
+  path: '/alpha/version-06/claims/history/invoices-uploaded-errors',
   active: true
   }
   ]
@@ -57,26 +57,25 @@ History - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start error message -->
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
-        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-          There is a problem
-        </h2>
-        <div class="nhsuk-error-summary__body">
-          <p>One or more files contain invoices that could not be processed.</p>
-          <p>
-            Until you have replaced these invoices, you cannot complete the claim.
-          </p>
-          <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
-            <li>
-              <a href="../file-uploads/complete-errors">View uploaded files</a>
-            </li>
-          </ul>
-        </div>
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+      <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+        One or more files contain invoices that could not be processed.
+      </h2>
+      <div class="nhsuk-error-summary__body">
+        <p>
+          Until you have replaced these invoices, you cannot complete the claim.
+        </p>
+        <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+          <li>
+            <a href="../file-uploads/complete-errors#results-table">invoice-file-2.xml contains errors</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
-  <!-- End error message -->
+</div>
+<!-- End error message -->
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">

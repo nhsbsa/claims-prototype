@@ -2,20 +2,20 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '/alpha/version-06/claims/summary/invoices-uploaded-error'
+path: '/alpha/version-06/claims/summary/invoices-uploaded-errors'
 },
 {
 name: 'Invoices',
-path: '/alpha/version-06/claims/invoices/full-invoice-list'
+path: '/alpha/version-06/claims/invoices/invoice-list-errors'
 },
 {
 name: 'Uploaded files',
-path: '/alpha/version-06/claims/file-uploads/complete-error',
+path: '/alpha/version-06/claims/file-uploads/complete-errors',
 active: true
 },
 {
 name: 'History',
-path: '/alpha/version-06/claims/history/invoices-uploaded'
+path: '/alpha/version-06/claims/history/invoices-uploaded-errors'
 }
 ]
 %}
@@ -98,7 +98,7 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
 <!-- End title block -->
 
 <!--Start file uploads info-->
-<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-row" id="results-table">
   <div class="nhsuk-grid-column-full">
     <div class="nhsuk-card">
       <div class="nhsuk-card__content">
