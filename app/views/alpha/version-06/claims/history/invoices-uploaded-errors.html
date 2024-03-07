@@ -1,24 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-  {
-  name: 'Summary',
-  path: '/alpha/version-06/claims/summary/invoices-uploaded-errors'
-  },
-  {
-  name: 'Invoices',
-  path: '/alpha/version-06/claims/invoices/invoice-list-errors'
-  },
-  {
-  name: 'Uploaded files',
-  path: '/alpha/version-06/claims/file-uploads/complete-errors'
-  },
-  {
-  name: 'History',
-  path: '/alpha/version-06/claims/history/invoices-uploaded-errors',
-  active: true
-  }
-  ]
-  %}
+{
+name: 'Summary',
+path: '/alpha/version-06/claims/summary/invoices-uploaded-errors'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-06/claims/invoices/invoice-list-errors'
+},
+{
+name: 'Uploaded files',
+path: '/alpha/version-06/claims/file-uploads/complete-errors'
+},
+{
+name: 'History',
+path: '/alpha/version-06/claims/history/invoices-uploaded-errors',
+active: true
+}
+]
+%}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -68,7 +68,7 @@ History - Manage incoming international healthcare claims - NHSBSA
         </p>
         <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
           <li>
-            <a href="../file-uploads/complete-errors#results-table">invoice-file-2.xml contains errors</a>
+            <a href="../file-uploads/report-errors">invoice-file-2.xml contains errors</a>
           </li>
         </ul>
       </div>
@@ -122,16 +122,16 @@ History - Manage incoming international healthcare claims - NHSBSA
               <tbody class="nhsuk-table__body">
 
                 <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Date/time </span>1 December 2023, 10:59
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Action </span>Auto validation complete
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Created by </span>System
-                    </td>
-                  </tr>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date/time </span>1 December 2023, 10:59
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action </span>Auto validation complete
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Created by </span>System
+                  </td>
+                </tr>
 
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
