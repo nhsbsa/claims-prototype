@@ -81,6 +81,25 @@ router.post('/route-delete-invoice-file', function(req,res){
 
 })
 
+//Are you sure you want to delete the additoinal uploaded invoice file
+router.get("/claims/invoices/upload/xml/additional-delete-confirmation", (req, res)=> {
+    res.render("alpha/version-06/claims/invoices/upload/xml/additional-delete-confirmation", {referer: req.headers.referer});
+});
+
+router.post('/route-delete-invoice-additional-file', function(req,res){
+    var cancel = req.session.data['delete']
+    var back = req.session.data['referer'] || "/";
+
+    if (cancel == "yes" ) {
+        res.redirect('/alpha/version-06/claims/invoices/upload/xml/additional-bulk-upload')
+    } else if (cancel == "no"){
+        return res.redirect(back)
+    } else {
+        res.redirect('/alpha/version-06/claims/invoices/upload/delete-confirmation')
+    }
+
+})
+
 
 
 
