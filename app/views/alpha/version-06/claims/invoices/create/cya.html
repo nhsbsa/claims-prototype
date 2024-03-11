@@ -105,11 +105,6 @@
     
                             </div>
 
-                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l" style="padding-top:30px;">
-                                <h1 class="nhsuk-fieldset__heading">
-                                    Person details
-                                </h1>
-                            </legend>
     
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">
@@ -140,8 +135,7 @@
                                 <dd class="nhsuk-summary-list__value">
                                     {% if data['last-name-birth'] %}
                                         {{ data['last-name-birth'] }}
-                                    {% else %}
-                                        &#8212;
+                                 
                                     {% endif %}
                                 </dd>
                                 <dd class="nhsuk-summary-list__actions">
@@ -171,7 +165,7 @@
     
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">
-                                    Unique ID
+                                    Person ID number
                                 </dt>
                                 <dd class="nhsuk-summary-list__value">
                                     {% if data['person-id'] %}
@@ -201,15 +195,11 @@
                                 </dd>
                             </div>
 
-                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l" style="padding-top:30px;">
-                                <h1 class="nhsuk-fieldset__heading">
-                                    Treatment details
-                                </h1>
-                            </legend>
+
     
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">
-                                    Start date
+                                    Treatment start date
                                 </dt>
                                 <dd class="nhsuk-summary-list__value">
                                     14 February 2022
@@ -223,7 +213,7 @@
     
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">
-                                    End date
+                                    Treatment end date
                                 </dt>
                                 <dd class="nhsuk-summary-list__value">
                                     27 February 2022
@@ -237,7 +227,7 @@
 
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">
-                                    Total value (number of months or monetary amount)
+                                    Total value 
                                 </dt>
                                 <dd class="nhsuk-summary-list__value">
                                     121.7

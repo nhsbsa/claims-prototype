@@ -104,15 +104,6 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
 
 
 
-
-
-
-                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l" style="padding-top:30px;">
-                            <h1 class="nhsuk-fieldset__heading">
-                                Person details
-                            </h1>
-                        </legend>
-
                         <!-- Last name -->
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">
@@ -203,18 +194,14 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l" style="padding-top:30px;">
-                            <h1 class="nhsuk-fieldset__heading">
-                                Treatment details
-                            </h1>
-                        </legend>
+
 
                         <!-- Start date -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        Start date
+                                        Treatment start date
                                     </h1>
                                 </legend>
                                 <div class="nhsuk-hint" id="start-date-hint">
@@ -264,7 +251,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        End date
+                                        Treatment end date
                                     </h1>
                                 </legend>
                                 <div class="nhsuk-hint" id="end-date-hint">
@@ -345,7 +332,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                         <input class="nhsuk-radios__input" id="entitlement-ehic" name="entitlement" type="radio"
                                             value="EHIC" aria-controls="conditional-entitlement-1" aria-expanded="false">
                                         <label class="nhsuk-label nhsuk-radios__label" for="entitlement-ehic">
-                                            European Health Insurance Card (EHIC)
+                                            EHIC
                                         </label>
                                     </div>
 
@@ -360,43 +347,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                 
                                       </div>
 
-                                    <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="entitlement-uk-ehic" name="entitlement" type="radio"
-                                            value="UK EHIC" aria-controls="conditional-entitlement-uk-ehic" aria-expanded="false">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-uk-ehic">
-                                            UK European Health Insurance Card (UK EHIC)
-                                        </label>
-                                    </div>
 
-                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-entitlement-uk-ehic">
-
-                                        <div class="nhsuk-form-group">
-                                          <label class="nhsuk-label" for="uk-ehic-number">
-                                            UK EHIC number
-                                          </label>
-                                          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="uk-ehic-number" name="uk-ehic-number" type="text">
-                                        </div>
-                                
-                                      </div>
-
-                                      <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="entitlement-uk-ghic" name="entitlement" type="radio"
-                                            value="UK GHIC" aria-controls="conditional-entitlement-uk-ghic" aria-expanded="false">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-uk-ghic">
-                                            UK Global Health Insurance Card (UK GHIC)
-                                        </label>
-                                    </div>
-
-                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-entitlement-uk-ghic">
-
-                                        <div class="nhsuk-form-group">
-                                          <label class="nhsuk-label" for="uk-ghic-number">
-                                            UK GHIC number
-                                          </label>
-                                          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="uk-ghic-number" name="uk-ghic-number" type="text">
-                                        </div>
-                                
-                                      </div>
 
 
 
@@ -404,7 +355,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                         <input class="nhsuk-radios__input" id="entitlement-prc" name="entitlement" type="radio"
                                             value="prc" aria-controls="conditional-entitlement-2" aria-expanded="false">
                                         <label class="nhsuk-label nhsuk-radios__label" for="entitlement-prc">
-                                            Provisional Replacement Certificate (PRC)
+                                            PRC
                                         </label>
                                     </div>
 
@@ -458,7 +409,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
         </form>
         <!-- End of form-->
 
-        <a href="" class="nhsuk-link">Cancel</a>
+
     </div>
 </div>
 <!-- End of create a claim -->
