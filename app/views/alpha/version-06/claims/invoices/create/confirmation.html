@@ -1,27 +1,27 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
     {
-    name: 'Home',
-    path: '/alpha/version-06/home'
+    name: 'Summary',
+    path: '/alpha/version-06/claims/summary/not-started'
     },
     {
-    name: 'Claims',
-    path: '/alpha/version-06/claims/index',
+    name: 'Invoices',
+    path: '/alpha/version-06/claims/invoices/not-started',
     active: true
     },
     {
-    name: 'Contested claims',
+    name: 'Uploaded files',
     path: '#'
     },
     {
-    name: 'Reports',
+    name: 'History',
     path: '#'
     }
     ]
     %}
 
 <!-- Extends the layout from /views/layout-full-width.html -->
-{% extends 'layout-full-width.html' %}
+{% extends 'layout-full-width-claim.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -77,8 +77,11 @@ Invoice created - Manage incoming international healthcare claims - NHSBSA
                     </h2>
                 </div>
                 <p>You've created a new invoice for {% if data['first-name'] %}{{data['first-name'] }}{{data['last-name']}}{% else %}Reece Bell{% endif %}
-                    for treatment that started on 14 February 2022 and ended on 27 February 2022. 
-                    The total value of this treatment is {% if data['amount-or-months'] %}{{ data['amount-or-months'] }}{% else
+                    for treatment in France.</p>
+
+                    <p>The treatment started on 14 February 2022 and ended on 27 February 2022.</p> 
+                    
+                    <p>The total value of this treatment is {% if data['amount-or-months'] %}{{ data['amount-or-months'] }}{% else
                         %}121.7{% endif %}</p>
 
                     <p>The invoice reference is {% if data['invoice-ref'] %}{{ data['invoice-ref'] }}{% else
