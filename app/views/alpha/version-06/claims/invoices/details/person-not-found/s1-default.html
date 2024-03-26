@@ -1067,21 +1067,28 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
             <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
                 <h2 class="nhsuk-heading-l">Notes</h2>
 
+                
+
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
-                        <div class="nhsuk-card">
-                            <div class="nhsuk-card__content">
 
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Add a new note
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
                                 <h3 class="nhsuk-card__heading">
                                     Add a new note
                                 </h3>
-
+        
                                 <div class="nhsuk-hint" id="new-note-hint">
                                     Summarise the note details in the title.
                                 </div>
-
+        
                                 <hr style="margin:0px 0px 12px 0px;">
-
+        
                                 <form action="s1-default#notes" method="post">
                                     <div class="nhsuk-form-group">
                                         <label class="nhsuk-label" for="new-note-title">
@@ -1089,7 +1096,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         </label>
                                         <input class="nhsuk-input" id="new-note-title" name="new-note-title" type="text">
                                     </div>
-
+        
                                     <div class="nhsuk-form-group">
                                         <label class="nhsuk-label" for="note">
                                             Note</label>
@@ -1102,7 +1109,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </button>
                                 </form>
                             </div>
-                        </div>
+                        </details>
+                        <!-- <div class="nhsuk-card">
+                            <div class="nhsuk-card__content">
+
+                                
+                            </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -1162,10 +1175,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </details>
                 {% endif %}
 
-                <details class="nhsuk-details nhsuk-expander">
+                <details class="nhsuk-details nhsuk-expander" open>
                     <summary class="nhsuk-details__summary">
                         <span class="nhsuk-details__summary-text">
-                            Title 4
+                            Title 8
                         </span>
                     </summary>
                     <div class="nhsuk-details__text">
@@ -1197,7 +1210,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                     <td role="cell" class="nhsuk-table__cell">
                                         <span class="nhsuk-table-responsive__heading">Note</span>
-                                        Note 4 description
+                                        Note 8 description
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell">
                                         <span class="nhsuk-table-responsive__heading">Created by </span>Isla
@@ -1215,10 +1228,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </details>
 
                 <!-- 1 Jan 2024  Note Title 3  Isla Fields -->
-                <details class="nhsuk-details nhsuk-expander">
+                <details class="nhsuk-details nhsuk-expander" open>
                     <summary class="nhsuk-details__summary">
                         <span class="nhsuk-details__summary-text">
-                            Title 3
+                            Title 7
                         </span>
                     </summary>
                     <div class="nhsuk-details__text">
@@ -1249,7 +1262,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                     <td role="cell" class="nhsuk-table__cell">
                                         <span class="nhsuk-table-responsive__heading">Note</span>
-                                        Note 3 description
+                                        Note 7 description
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell">
                                         <span class="nhsuk-table-responsive__heading">Created by </span>Isla
@@ -1267,10 +1280,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </details>
 
                 <!-- 20 March 2023  Note Title 2  Isla Fields -->
-                <details class="nhsuk-details nhsuk-expander">
+                <details class="nhsuk-details nhsuk-expander" open>
                     <summary class="nhsuk-details__summary">
                         <span class="nhsuk-details__summary-text">
-                            Title 2
+                            Title 6
                         </span>
                     </summary>
                     <div class="nhsuk-details__text">
@@ -1302,7 +1315,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                     <td role="cell" class="nhsuk-table__cell">
                                         <span class="nhsuk-table-responsive__heading">Note</span>
-                                        Note 2 description
+                                        Note 6 description
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell">
                                         <span class="nhsuk-table-responsive__heading">Created by </span>Isla
@@ -1320,10 +1333,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </details>
 
                 <!-- 15 August 2022  Note Title 1  Isla Fields -->
-                <details class="nhsuk-details nhsuk-expander">
+                <details class="nhsuk-details nhsuk-expander" open>
                     <summary class="nhsuk-details__summary">
                         <span class="nhsuk-details__summary-text">
-                            Title 1
+                            Title 5
                         </span>
                     </summary>
                     <div class="nhsuk-details__text">
@@ -1355,7 +1368,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                     <td role="cell" class="nhsuk-table__cell">
                                         <span class="nhsuk-table-responsive__heading">Note</span>
-                                        Note 1 description
+                                        Note 5 description
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell">
                                         <span class="nhsuk-table-responsive__heading">Created by </span>Isla
