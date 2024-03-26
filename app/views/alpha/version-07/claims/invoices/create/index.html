@@ -1,0 +1,419 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '/alpha/version-07/claims/summary/not-started'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-07/claims/invoices/not-started',
+active: true
+},
+{
+name: 'Uploaded files',
+path: '#'
+},
+{
+name: 'History',
+path: '#'
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Create a new invoice - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../claims/index">Claims</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../full-invoice-list">Invoices</a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                claims </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" height="24" width="24">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back</a>
+        </div>
+    </div>
+</div>
+<!-- End of back link -->
+
+<!-- Start of create a claim -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Start of form -->
+        <!-- <form action="../../create-claim-validation" method="post"> -->
+        <form action="cya" method="post">
+            <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                    <h1 class="nhsuk-fieldset__heading">
+                        <span class="nhsuk-caption-l">Create a new invoice</span>
+                        Invoice details
+                    </h1>
+                </legend>
+
+                <!-- Start of card -->
+                <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                    <div class="nhsuk-card__content">
+
+                        <!-- Invoice ref -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="invoice-ref">
+                                Invoice reference
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="invoice-ref" name="invoice-ref"
+                                type="text" value="{{ data['invoice-reference'] }}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+
+
+                        <!-- Last name -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">
+                                Last name
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name" name="last-name"
+                                type="text" value="">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Last name at birth -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name-birth">
+                                Last name at birth (optional)
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name-birth" name="last-name-birth"
+                                type="text">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- First name -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="first-name">
+                                First name
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="first-name" name="first-name"
+                                type="text" value="">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Person ID number -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="person-id">
+                                Unique ID
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="person-id" name="person-id"
+                                type="text" value="">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Date of birth -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Date of birth
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="dob-hint">
+                                    For example, 28 9 2023
+                                </div>
+                                <div class="nhsuk-date-input" id="dob">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="dob-day" name="dob-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="dob-month" name="dob-month" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                id="dob-year" name="dob-year" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+
+
+                        <!-- Start date -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Treatment start date
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="start-date-hint">
+                                    For example, 28 9 2023
+                                </div>
+                                <div class="nhsuk-date-input" id="dob">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-from-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="date-from-day" name="date-from-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-from-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="date-from-month" name="date-from-month" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-from-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                id="date-from-year" name="date-from-year" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- End date -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Treatment end date
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="end-date-hint">
+                                    For example, 28 9 2023
+                                </div>
+                                <div class="nhsuk-date-input" id="dob">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-to-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="date-to-day" name="date-to-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-to-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="date-to-month" name="date-to-month" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-to-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                id="date-to-year" name="date-to-year" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Total value -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">
+                                Total value
+                            </label>
+                            <div class="nhsuk-hint" id="contact-hint">
+                                Number of months or monetary amount.
+                              </div>
+                            <input class="nhsuk-input nhsuk-u-width-one-third" id="amount-or-months" name="amount-or-months"
+                                type="text" value="">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <div class="nhsuk-form-group">
+
+                            <fieldset class="nhsuk-fieldset">
+                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                                    <h1 class="nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                        Entitlement type
+                                    </h1>
+                                </legend>
+
+                                <div class="nhsuk-radios nhsuk-radios--conditional">
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="entitlement-s1" name="entitlement" type="radio"
+                                            value="S1">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-s1">
+                                            S1
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="entitlement-ehic" name="entitlement" type="radio"
+                                            value="EHIC" aria-controls="conditional-entitlement-1" aria-expanded="false">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-ehic">
+                                            EHIC
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-entitlement-1">
+
+                                        <div class="nhsuk-form-group">
+                                          <label class="nhsuk-label" for="ehic-number">
+                                            EHIC number
+                                          </label>
+                                          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ehic-number" name="ehic-number" type="text">
+                                        </div>
+                                
+                                      </div>
+
+
+
+
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="entitlement-prc" name="entitlement" type="radio"
+                                            value="prc" aria-controls="conditional-entitlement-2" aria-expanded="false">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-prc">
+                                            PRC
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-entitlement-2">
+
+                                        <div class="nhsuk-form-group">
+                                          <label class="nhsuk-label" for="prc-number">
+                                            PRC number
+                                          </label>
+                                          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="prc-number" name="prc-number" type="text">
+                                        </div>
+                                
+                                      </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="entitlement-s2" name="entitlement" type="radio"
+                                            value="S2">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-s2">
+                                            S2
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="entitlement-da1" name="entitlement" type="radio"
+                                            value="DA1">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-da1">
+                                            DA1
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+
+                        </div>
+                      
+
+
+                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                            Continue
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </fieldset>
+
+            <!-- End of card -->
+
+        </form>
+        <!-- End of form-->
+
+
+    </div>
+</div>
+<!-- End of create a claim -->
+
+
+{% endblock %}
+<!-- End of central content -->

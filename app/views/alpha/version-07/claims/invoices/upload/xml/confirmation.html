@@ -1,0 +1,87 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '/alpha/version-07/claims/summary/not-started'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-07/claims/invoices/not-started',
+active: true
+},
+{
+name: 'Uploaded files',
+path: '/alpha/version-07/claims/file-uploads/index'
+},
+{
+name: 'History',
+path: '#'
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+File upload submitted - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../index">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of confirmation -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <div class="confirmation-box">
+            <h1 class="heading-xlarge">File upload submitted for {% if data['country'] %}{{
+                data['country'] }}{% else %}France{% endif %}
+            </h1>
+            <h2>Processing invoices</h2>
+        </div>
+
+        <p>You have submitted invoices for claim ID 6784.</p>
+
+        <h2 class="heading-medium">What happens next</h2>
+        <p>The system will check each invoice and try to match it against a valid entitlement. </p>
+        <p>Once the system has processed the invoices, you can check any that the system could not match.</p>
+
+        <a href="../../../invoices/processing-progress-60">
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Manage invoices
+            </button>
+        </a>
+
+    </div>
+</div>
+<!-- End of confirmation -->
+
+{% endblock %}
+<!-- End of central content -->
