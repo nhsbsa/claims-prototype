@@ -1,6 +1,6 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
+    { 
     name: 'Summary',
     path: '/alpha/version-07/claims/summary/not-started'
     },
@@ -11,11 +11,11 @@
     },
     {
     name: 'Uploaded files',
-    path: '#'
+    path: '/alpha/version-07/claims/file-upload/complete-errors'
     },
     {
     name: 'History',
-    path: '#'
+    path: '/alpha/version-07/claims/history/invoices-uploaded-errors'
     }
     ]
     %}
@@ -67,7 +67,7 @@ Invoice created - Manage incoming international healthcare claims - NHSBSA
                 <div class="confirmation-box">
                     <h1 class="heading-xlarge">
                         Invoice created for {% if data['first-name'] %}{{
-                        data['first-name'] }}{{data['last-name']}}{% else %}Reece Bell{% endif %}
+                        data['first-name'] }} {{data['last-name']}}{% else %}Reece Bell{% endif %}
                     </h1>
                     <h2 class="heading-large"><span class="heading-secondary" style="color:white;">Invoice ID 
                             <br />
@@ -76,13 +76,13 @@ Invoice created - Manage incoming international healthcare claims - NHSBSA
 
                     </h2>
                 </div>
-                <p>You've created a new invoice for {% if data['first-name'] %}{{data['first-name'] }}{{data['last-name']}}{% else %}Reece Bell{% endif %}
+                <p>You've created a new invoice for {% if data['first-name']%}{{data['first-name'] }} {{data['last-name']}}{% else %}Reece Bell{% endif %}
                     for treatment in France.</p>
 
-                    <p>The treatment started on 14 February 2022 and ended on 27 February 2022.</p> 
+                    <p>The treatment started on 6 March 2020 and ended on 8 March 2020.</p> 
                     
                     <p>The total value of this treatment is {% if data['amount-or-months'] %}{{ data['amount-or-months'] }}{% else
-                        %}121.7{% endif %}</p>
+                        %}453.87{% endif %}</p>
 
                     <p>The invoice reference is {% if data['invoice-ref'] %}{{ data['invoice-ref'] }}{% else
                         %}0039795426{% endif %}.</p>
