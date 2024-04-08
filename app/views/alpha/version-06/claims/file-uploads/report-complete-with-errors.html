@@ -21,11 +21,6 @@ path: '/alpha/version-06/claims/history/invoices-uploaded-errors'
 %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
-<!-- 
-  In /views/layout.html you can:
-    - change the header and footer 
-    - add custom CSS and JavaScript
--->
 
 <!-- Start of page title -->
 {% block pageTitle %}
@@ -119,7 +114,11 @@ File upload report - Manage incoming international healthcare claims - NHSBSA
                   Total invoices with errors
                 </dt>
                 <dd class="nhsuk-summary-list__value">
+                  {% if data['invoice-reference'] %}
+                  1
+                  {% else %}
                   2
+                  {% endif%}
                 </dd>
               </div>
               <div class="nhsuk-summary-list__row">
@@ -205,6 +204,8 @@ File upload report - Manage incoming international healthcare claims - NHSBSA
                 </tr>
               </thead>
               <tbody class="nhsuk-table__body">
+                {% if data['invoice-reference'] %}
+                {% else %}
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039793888
@@ -217,10 +218,12 @@ File upload report - Manage incoming international healthcare claims - NHSBSA
                     yyyy/mm/dd
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action</span><a href="../invoices/create/index?invoice-reference=0039793888">Add
+                    <span class="nhsuk-table-responsive__heading">Action</span><a
+                      href="../invoices/create/index?invoice-reference=0039793888">Add
                       invoice</a>
                   </td>
                 </tr>
+                {% endif%}
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039791126
@@ -233,7 +236,8 @@ File upload report - Manage incoming international healthcare claims - NHSBSA
                     date
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action</span><a href="../invoices/create/index?invoice-reference=0039791126">Add
+                    <span class="nhsuk-table-responsive__heading">Action</span><a
+                      href="">Add
                       invoice</a>
                   </td>
                 </tr>
@@ -242,49 +246,6 @@ File upload report - Manage incoming international healthcare claims - NHSBSA
           </div>
         </div>
         <!-- End table-->
-
-        <!-- Start pagination -->
-        <!-- <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-full">
-            <nav class="nhsuk-pagination nhsuk-u-margin-bottom-1" role="navigation" aria-label="Pagination">
-              <div class="nhsuk-pagination__prev">
-                <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="prev">
-                  <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg"
-                    height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-                    <path
-                      d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z">
-                    </path>
-                  </svg>
-                  <span class="nhsuk-pagination__link-title">Previous<span class="nhsuk-visually-hidden">
-                      page</span></span></a>
-              </div>
-              <ul class="nhsuk-pagination__list">
-                <li class="nhsuk-pagination__item nhsuk-pagination__item--current">
-                  <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 1">
-                    1
-                  </a>
-                </li>
-                <li class="nhsuk-pagination__item">
-                  <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 2">
-                    2
-                  </a>
-                </li>
-              </ul>
-              <div class="nhsuk-pagination__next">
-                <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="next"> <span
-                    class="nhsuk-pagination__link-title">Next<span class="nhsuk-visually-hidden">
-                      page</span></span>
-                  <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg"
-                    height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-                    <path
-                      d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
-                    </path>
-                  </svg></a>
-              </div>
-            </nav>
-          </div>
-        </div> -->
-        <!-- End pagination -->
       </div>
     </div>
   </div>
