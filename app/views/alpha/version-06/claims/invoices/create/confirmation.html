@@ -76,12 +76,11 @@ Invoice created - Manage incoming international healthcare claims - NHSBSA
 
                     </h2>
                 </div>
-                <p>You've created a new invoice for {% if data['first-name']%}{{data['first-name'] }} {{data['last-name']}}{% else %}Reece Bell{% endif %}
-                    for treatment in France.</p>
+                <p>You've created a new invoice for {% if data['first-name']%}{{data['first-name'] }} {{data['last-name']}}{% else %}Reece Bell{% endif %}. The invoice is from France.</p>
 
-                    <p>The treatment started on 6 March 2020 and ended on 8 March 2020.</p> 
+                    <p>The invoice start date is 6 March 2020 and the end date is 8 March 2020.</p> 
                     
-                    <p>The total value of this treatment is {% if data['amount-or-months'] %}{{ data['amount-or-months'] }}{% else
+                    <p>The total amount of this invoice is {% if data['amount-or-months'] %}{{ data['amount-or-months'] }}{% else
                         %}453.87{% endif %}</p>
 
                     <p>The invoice reference is {% if data['invoice-ref'] %}{{ data['invoice-ref'] }}{% else
