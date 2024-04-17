@@ -232,6 +232,6 @@ app.use((err, req, res) => {
 });
 
 // Run the application
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
 
 module.exports = app;
