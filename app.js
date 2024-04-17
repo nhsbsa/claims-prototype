@@ -2,6 +2,15 @@
 const path = require('path');
 const fs = require('fs');
 
+app.use(express.static('public')); // Serve static files
+app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
+
+// Use your routes
+app.use('/', routes);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 // External dependencies
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
