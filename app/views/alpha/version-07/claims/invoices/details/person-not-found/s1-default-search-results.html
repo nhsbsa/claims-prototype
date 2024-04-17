@@ -1238,7 +1238,29 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                 </div>
                                                                 <!-- End header block -->
 
-
+                                                                <!-- Inside s1-default-search-results.html, where the results table is defined -->
+                                                                <tbody class="nhsuk-table__body">
+                                                                    {% for person in searchResults %}
+                                                                    <tr role="row" class="nhsuk-table__row">
+                                                                        <td role="cell" class="nhsuk-table__cell">
+                                                                            <div class="nhsuk-checkboxes__item">
+                                                                                <input class="nhsuk-checkboxes__input" id="select-{{ loop.index }}" name="selectedPerson" type="checkbox" value="{{ person.reference }}">
+                                                                                <label class="nhsuk-label nhsuk-checkboxes__label" for="select-{{ loop.index }}"></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td role="cell" class="nhsuk-table__cell">{{ person.lastName }}</td>
+                                                                        <td role="cell" class="nhsuk-table__cell">{{ person.firstName }}</td>
+                                                                        <!-- <td role="cell" class="nhsuk-table__cell">{{ person.dob.day }}/{{ person.dob.month }}/{{ person.dob.year }}</td> -->
+                                                                        <td role="cell" class="nhsuk-table__cell">{{ person.dobFormatted }}</td>
+                                                                        <td role="cell" class="nhsuk-table__cell">{{ person.nationalInsuranceNumber or 'N/A' }}</td>
+                                                                        <td role="cell" class="nhsuk-table__cell">
+                                                                            <a href="/view-person-details/{{ person.reference }}">View more</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    {% else %}
+                                                                    <tr><td colspan="6">No results found.</td></tr>
+                                                                    {% endfor %}
+                                                                </tbody>
 
                                                                 <!-- Start of table data -->
                                                                 <div class="nhsuk-grid-row">
