@@ -160,8 +160,12 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                 <label class="nhsuk-label nhsuk-u-font-weight-bold" for="financial-year">
                   Financial year
                 </label>
-                <input class="nhsuk-input" id="financial-year" name="financial-year" type="text" {% if
-                  data['financial-year'] %}value="{{ data['financial-year'] }}" {% else %}value="2023" {% endif %}>
+                <input class="nhsuk-input" id="financial-year" name="financial-year" type="text"
+                {% if data['claim-id'] or data['claim-ref'] or data['country'] or data['financial-year'] %} 
+                value="" 
+                {% else %}
+                value="2023"
+                {% endif %}>
               </div>
             </div>
           </div>
