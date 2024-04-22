@@ -183,13 +183,13 @@ router.post('/route-additional-upload', function(req,res){
 router.post('/route-additional-invoice', function(req,res){
     var type = req.session.data['additional-invoice']
     if (type == "bulk" ) {
-        res.redirect('/alpha/version-07/claims/invoices/upload/xml/additional-bulk-upload')
+        res.redirect('/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/upload/xml/additional-bulk-upload')
         }
     else if (type == "single"){
-            res.redirect('/alpha/version-07/claims/invoices/create/index')
+            res.redirect('/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/create/index')
             }
     else {
-        res.redirect('/alpha/version-07/claims/invoices/upload/options')
+        res.redirect('/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/upload/options')
     }
 
 })
