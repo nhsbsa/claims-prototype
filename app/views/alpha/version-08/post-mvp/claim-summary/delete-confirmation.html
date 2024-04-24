@@ -1,0 +1,95 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Home',
+path: '/alpha/version-07/home'
+},
+{
+name: 'Claims',
+path: '/alpha/version-07/claims/index',
+active: true
+},
+{
+name: 'Contested claims',
+path: '/alpha/version-07/contestations/index'
+},
+{
+name: 'Reports',
+path: '/alpha/version-07/reports/index'
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Confirmation - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="#">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+
+        <!-- Start of confirmation -->
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+
+
+                <div class="confirmation-box">
+                    <h1 class="nhsuk-heading-xl" style="padding-top:32px;">Claim ID 6784 deleted
+                    </h1>
+                </div>
+
+                <p>The claim for France has been deleted</p>
+
+                <h2>What happens next</h2>
+                <p>Deleted claims cannot be recovered.</p>
+                <p>If you have deleted this claim in error, you'll need to create a new claim.</p>
+
+
+
+                <a href="#">
+                    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                        Return to claims
+                    </button>
+                </a>
+
+            </div>
+        </div>
+        <!-- End of confirmation -->
+
+
+
+    </div>
+</div>
+{% endblock %}
+<!-- End of central content -->

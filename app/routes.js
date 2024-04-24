@@ -3,7 +3,10 @@ const express = require('express');
 
 const router = express.Router();
 
+const app = express();
 
+// Set the view engine to ejs
+app.set('view engine', 'ejs');
 
 // Alpha
 // router.use('/alpha', require('./views/alpha/_routes'));
@@ -13,4 +16,7 @@ router.use('/alpha/version-03', require('./views/alpha/version-03/_routes'));
 router.use('/alpha/version-04', require('./views/alpha/version-04/_routes'));
 router.use('/alpha/version-05', require('./views/alpha/version-05/_routes'));
 router.use('/alpha/version-06', require('./views/alpha/version-06/_routes'));
+router.use('/alpha/version-06', require('./views/alpha/version-07/_routes'));
+router.use('/alpha/version-06', require('./views/alpha/version-08/_routes'));
+
 module.exports = router;
