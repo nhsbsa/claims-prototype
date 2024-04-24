@@ -34,13 +34,13 @@ router.post('/route-cancel-create-claim', function(req,res){
 router.post('/route-upload-method', function(req,res){
     var method = req.session.data['contact-method']
     if (method == "RINA" ) {
-        res.redirect('/alpha/version-07/claims/invoices/upload/xml/index')
+        res.redirect('/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/upload/xml/index')
         }
     else if (method == "EDI"){
-            res.redirect('/alpha/version-07/claims/invoices/upload/xml/index')
+            res.redirect('/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/upload/xml/index')
             }
     else {
-        res.redirect('/alpha/version-07/claims/invoices/upload/index')
+        res.redirect('/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/upload/index')
     }
 
 })
@@ -168,13 +168,13 @@ router.post('/route_delete_claim', function(req,res){
 router.post('/route-additional-upload', function(req,res){
     var upload = req.session.data['additional-upload']
     if (upload == "yes" ) {
-        res.redirect('/alpha/version-07/claims/invoices/upload/xml/index-additional-file')
+        res.redirect('/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/upload/xml/index-additional-file')
         }
     else if (upload == "no"){
-            res.redirect('/alpha/version-07/claims/invoices/upload/xml/cya')
+            res.redirect('/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/upload/xml/cya')
             }
     else {
-        res.redirect('/alpha/version-07/claims/invoices/upload/xml/additional-file')
+        res.redirect('/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/upload/xml/additional-file')
     }
 
 })
@@ -183,13 +183,13 @@ router.post('/route-additional-upload', function(req,res){
 router.post('/route-additional-invoice', function(req,res){
     var type = req.session.data['additional-invoice']
     if (type == "bulk" ) {
-        res.redirect('/alpha/version-07/claims/invoices/upload/xml/additional-bulk-upload')
+        res.redirect('/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/upload/xml/additional-bulk-upload')
         }
     else if (type == "single"){
-            res.redirect('/alpha/version-07/claims/invoices/create/index')
+            res.redirect('/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/create/index')
             }
     else {
-        res.redirect('/alpha/version-07/claims/invoices/upload/options')
+        res.redirect('/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/upload/options')
     }
 
 })
