@@ -1,0 +1,176 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '/alpha/version-04/claims/summary/not-started',
+active: true
+},
+{
+name: 'Invoices',
+path: '/alpha/version-04/claims/invoices/no-invoices'
+},
+{
+name: 'Uploaded files',
+path: '/alpha/version-04/claims/file-uplaods/no-uploads'
+},
+{
+name: 'History',
+path: '#'
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Contact method - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../index">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" height="24" width="24">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back</a>
+        </div>
+    </div>
+</div>
+<!-- End of back link -->
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <div class="nhsuk-grid-row">
+
+            <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+                <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                  There is a problem
+                </h2>
+                <div class="nhsuk-error-summary__body">
+                  
+                  <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+                    <li>
+                      <a href="#edit-target-day">Date must be a valid date</a>
+                    </li>
+                  
+                  </ul>
+                </div>
+              </div>
+
+            <div class="nhsuk-grid-column-full">
+                <form action="edit-target-date-invalid-error" method="post">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                        <h1 class="nhsuk-fieldset__heading">
+                            <span class="nhsuk-caption-l">Edit claim</span>
+                            Target date
+                        </h1>
+                    </legend>
+            </div>
+
+            <div class="nhsuk-grid-column-two-thirds">
+                <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                    <div class="nhsuk-card__content">
+
+                        <!-- Target date to complete claim -->
+                        <div class="nhsuk-form-group--error">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Target date to complete the claim
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="target-date-hint">
+                                    Internal deadline to complete the claim.
+                                </div>
+
+                                <span class="nhsuk-error-message">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span>
+                                    Date must be a valid date
+                                  </span>
+
+                                <div class="nhsuk-date-input" id="target-date">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="edit-target-date-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error"
+                                                id="target-date-day" name="edit-target-date-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric" value="{% if data['edit-target-date-day'] %}{{ data['edit-target-date-day'] }}{% elif data['target-date-day'] %}{{ data['target-date-day'] }}{% else %}9{% endif %}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="edit-target-date-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error"
+                                                id="target-date-month" name="edit-target-date-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric" value="{% if data['edit-target-date-month'] %}{{ data['edit-target-date-month'] }}{% elif data['target-date-month'] %}{{ data['target-date-month'] }}{% else %}2{% endif %}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="edit-target-date-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error"
+                                                id="target-date-year" name="edit-target-date-year" type="text"
+                                                pattern="[0-9]*" inputmode="numeric" value="{% if data['edit-target-date-year'] %}{{ data['edit-target-date-year'] }}{% elif data['target-date-year'] %}{{ data['target-date-year'] }}{% else %}2024{% endif %}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                            Save changes
+                        </button>
+
+                    </div>
+                </div>
+
+                <a href="../../summary/not-started" class="nhsuk-link">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- End of central content -->
