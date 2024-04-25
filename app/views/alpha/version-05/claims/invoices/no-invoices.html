@@ -1,0 +1,116 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '/alpha/version-05/claims/summary/not-started'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-05/claims/invoices/no-invoices',
+active: true
+},
+{
+name: 'Uploaded files',
+path: '/alpha/version-05/claims/file-uploads/no-uploads'
+},
+{
+name: 'History',
+path: '#'
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Invoices - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../claims/index">Claims</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../claims/index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl ">
+            Invoices
+        </h1>
+    </div>
+
+    <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+        <a href="upload/index">
+            <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                Add invoices
+            </button>
+        </a>
+    </div>
+</div>
+
+<div class="nhsuk-grid-row">
+
+
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <p>There are no invoices added to this claim.</p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+{% endblock %}
+<!-- End of central content -->

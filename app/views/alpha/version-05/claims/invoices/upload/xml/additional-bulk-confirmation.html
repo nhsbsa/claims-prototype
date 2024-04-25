@@ -1,24 +1,26 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
-    name: 'Summary',
-    path: '/alpha/version-05/claims/summary/invoices-uploaded'
-    },
-    {
-    name: 'Invoices',
-    path: '/alpha/version-05/claims/invoices/full-invoice-list',
-    active: true
-    },
-    {
-    name: 'Uploaded files',
-    path: '/alpha/version-05/claims/file-uploads/complete'
-    },
-    {
-    name: 'History',
-    path: '/alpha/version-05/claims/history/invoices-uploaded'
-    }
-    ]
-    %}
+
+{
+name: 'Summary',
+path: '/alpha/version-05/claims/summary/not-started'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-05/claims/invoices/not-started',
+active: true
+},
+{
+name: 'Uploaded files',
+path: '/alpha/version-05/claims/file-uploads/index'
+},
+{
+name: 'History',
+path: '#'
+}
+]
+%}
+
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -29,7 +31,9 @@
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Additional file upload submitted - Manage incoming international healthcare claims - NHSBSA
+
+Confirmation - Managing Memeber State claims - NHSBSA
+
 {% endblock %}
 <!-- End of page title -->
 
@@ -61,7 +65,9 @@ Additional file upload submitted - Manage incoming international healthcare clai
     <div class="nhsuk-grid-column-two-thirds">
 
         <div class="confirmation-box">
-            <h1 class="heading-xlarge">Additional file upload submitted for {% if data['country'] %}{{
+
+            <h1 class="heading-xlarge">Additional file upload complete for {% if data['country'] %}{{
+
                 data['country'] }}{% else %}France{% endif %}
             </h1>
             <h2>Processing invoices</h2>

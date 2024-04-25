@@ -2,20 +2,24 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '/alpha/version-05/claims/summary/invoices-uploaded'
+
+path: '/alpha/version-05/claims/summary/with-treatments'
 },
 {
 name: 'Invoices',
-path: '/alpha/version-05/claims/invoices/full-invoice-list'
+path: '/alpha/version-05/claims/invoices/no-invoices'
 },
 {
 name: 'Uploaded files',
-path: '/alpha/version-05/claims/file-uploads/complete',
+path: '/alpha/version-05/claims/file-uploads/index',
+
 active: true
 },
 {
 name: 'History',
-path: '/alpha/version-05/claims/history/invoices-uploaded'
+
+path: '#'
+
 }
 ]
 %}
@@ -54,93 +58,124 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of central content -->
 {% block content %}
+
+<!-- Start of back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" height="24" width="24">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back</a>
+        </div>
+    </div>
+</div>
+<!-- End of back link -->
+
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
     <!-- Start of title block -->
     <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-two-thirds">
-        <h1 class="nhsuk-heading-xl ">
-          Uploaded files
+
+      <div class="nhsuk-grid-column-full">
+
+        <h1 class="nhsuk-heading-xl">
+            <span class="nhsuk-caption-l">Uploaded files</span>
+            Report
         </h1>
+
+
+
+
       </div>
-      <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-        <a href="../invoices/upload/index">
-          <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
-            Add invoices
-          </button>
-        </a>
-      </div>
-        <div class="nhsuk-grid-column-full">
-          <div class="nhsuk-hint" id="file-upload-hint">
-            These are the files containing invoices that have been uploaded to this claim.
-          </div>
-      </div>
+
+
+
     </div>
     <!-- End of title block -->
 
+
+
+
     <!--Start file uploads info-->
+
     <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-grid-column-two-thirds">
+
         <div class="nhsuk-card">
           <div class="nhsuk-card__content">
-            <table role="table" class="nhsuk-table-responsive">
-              <!-- <caption class="nhsuk-table__caption">File uploads</caption> -->
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                    Date and time
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Filename
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Status
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    View
-                  </th>
 
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
+            <dl class="nhsuk-summary-list">
 
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Date and time time </span>1 December 2023, 10:13am
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-2.xml
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Status </span>Complete - with errors
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">View </span><a href="report-errors">View report</a>
-                  </td>
-                </tr>
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Filename
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      invoice-file-1.xml
+                    </dd>
+                  </div>
 
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Date and time </span>1 December 2023, 10:12am
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-1.xml
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Status </span>Complete
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">View </span><a href="">View report</a>
-                  </td>
-                </tr>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Status
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Complete
+                    </dd>
+                  </div>
 
-              </tbody>
-            </table>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Total number of invoices
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    40
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Total amount
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      3483.33
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Date/time uploaded
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      1 December 2023, 09:26
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Author
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Isla Fields
+                    </dd>
+                  </div>
+              
+    
+              
+              </dl>
+
           </div>
         </div>
+
       </div>
     </div>
+
     <!-- End file uploads info -->
 
   </div>

@@ -11,7 +11,9 @@ active: true
 },
 {
 name: 'Uploaded files',
-path: '/alpha/version-05/claims/file-uploads/complete'
+
+path: '/alpha/version-05/claims/file-uploads/index'
+
 },
 {
 name: 'History',
@@ -140,71 +142,6 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <div class="nhsuk-details__text">
               <div class="nhsuk-grid-row">
 
-                <!-- Start filter by entitlement -->
-                <div class="nhsuk-grid-column-one-third">
-                  <div class="nhsuk-form-group">
-                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-                      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                        <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
-                          Filter by entitlement
-                        </h1>
-                      </legend>
-                      <div class="nhsuk-checkboxes">
-                        <div class="nhsuk-checkboxes__item">
-                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-s1" name="filter-entitlement"
-                            type="checkbox" value="s1">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s1">
-                            S1
-                          </label>
-                        </div>
-                        <div class="nhsuk-checkboxes__item">
-                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-ehic" name="filter-entitlement"
-                            type="checkbox" value="ehic">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-ehic">
-                            EHIC
-                          </label>
-                        </div>
-                        <div class="nhsuk-checkboxes__item">
-                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-uk-ehic"
-                            name="filter-entitlement" type="checkbox" value="uk ehic">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-uk-ehic">
-                            UK EHIC
-                          </label>
-                        </div>
-                        <div class="nhsuk-checkboxes__item">
-                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-uk-ghic"
-                            name="filter-entitlement" type="checkbox" value="uk ghic">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-uk-ghic">
-                            UK GHIC
-                          </label>
-                        </div>
-                        <div class="nhsuk-checkboxes__item">
-                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-prc" name="filter-entitlement"
-                            type="checkbox" value="prc">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-prc">
-                            PRC
-                          </label>
-                        </div>
-                        <div class="nhsuk-checkboxes__item">
-                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-s2" name="filter-entitlement"
-                            type="checkbox" value="s2">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s2">
-                            S2
-                          </label>
-                        </div>
-                        <div class="nhsuk-checkboxes__item">
-                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-da1" name="filter-entitlement"
-                            type="checkbox" value="da1">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-da1">
-                            DA1
-                          </label>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </div>
-                </div>
-                <!-- End filter by entitlement -->
-
                 <!-- Start filter by status-->
                 <div class="nhsuk-grid-column-one-third">
                   <div class="nhsuk-form-group">
@@ -255,6 +192,59 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                   </div>
                 </div>
                 <!-- End filter by status -->
+
+
+                <!-- Start filter by entitlement -->
+                <div class="nhsuk-grid-column-one-third">
+                  <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                        <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                          Filter by entitlement
+                        </h1>
+                      </legend>
+                      <div class="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-da1" name="filter-enitltment"
+                            type="checkbox" value="da1">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-da1">
+                            DA1
+                          </label>
+                        </div>
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-ehic" name="filter-enitltment"
+                            type="checkbox" value="ehic">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-ehic">
+                            EHIC
+                          </label>
+                        </div>
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-prc" name="filter-enitltment"
+                            type="checkbox" value="prc">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-prc">
+                            PRC
+                          </label>
+                        </div>
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-s1" name="filter-enitltment"
+                            type="checkbox" value="s1">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s1">
+                            S1
+                          </label>
+                        </div>
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="filter-entitlement-s2" name="filter-enitltment"
+                            type="checkbox" value="s2">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s2">
+                            S2
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+
+                </div>
+                <!-- End filter by entitlement -->
 
                 <!-- Start sort by and sort order -->
                 <div class="nhsuk-grid-column-one-third">
@@ -366,7 +356,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
           </path>
         </svg>
-        <span class="nhsuk-action-link__text">Download filter results</span>
+
+        <span class="nhsuk-action-link__text">Download results</span>
       </a>
     </div>
 
@@ -384,7 +375,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
         <!-- Start header block-->
         <div class="nhsuk-grid-row nhsuk-u-padding-bottom-6">
           <div class="nhsuk-grid-column-two-thirds">
-            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 10 results of 92,412</h3>
+
+            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 10 results of 92,412 for</h3>
             <p class="nhsuk-u-margin-bottom-2"><strong class="nhsuk-tag nhsuk-tag--aqua-green">
                 All invoices
               </strong></p>

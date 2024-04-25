@@ -13,6 +13,7 @@ if (selectElement) {
   });
 }
 
+
 // Table row expander
 const $details = document.querySelectorAll('details[rowExpander]');
 if ($details.length > 0) {

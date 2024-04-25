@@ -30,7 +30,7 @@ path: '/alpha/version-05/reports/index'
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Claim details - Manage incoming international healthcare claims - NHSBSA
+Create a new claim - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -56,22 +56,6 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
 <!-- Start of central content -->
 {% block content %}
 
-<!-- Start of back link -->
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-back-link">
-            <a class="nhsuk-back-link__link" href="javascript:history.back()">
-                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                    aria-hidden="true" height="24" width="24">
-                    <path
-                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-                    </path>
-                </svg>
-                Go back</a>
-        </div>
-    </div>
-</div>
-<!-- End of back link -->
 
 <!-- Start of create a claim -->
 <div class="nhsuk-grid-row">
@@ -100,9 +84,6 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                                         Date you received the claim
                                     </h1>
                                 </legend>
-                                <div class="nhsuk-hint" id="target-date-hint">
-                                    For example, 28 9 2023
-                                </div>
                                 <div class="nhsuk-date-input" id="submission-date">
                                     <div class="nhsuk-date-input__item">
                                         <div class="nhsuk-form-group">
@@ -154,8 +135,9 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                                     </h1>
                                 </legend>
                                 <div class="nhsuk-hint" id="target-date-hint">
-                                    Internal deadline to complete the claim.<br />
-                                    For example, 28 9 2023
+
+                                    Internal deadline to complete the claim.
+
                                 </div>
                                 <div class="nhsuk-date-input" id="target-date">
                                     <div class="nhsuk-date-input__item">
@@ -202,10 +184,8 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                                 Country submitting the claim
                             </label>
                             <div class="nhsuk-u-width-two-thirds">
-                                <select name="country" id="select-autocomplete" value="">
-                                    {% if data['country'] %}
-                                    <option value="{{ data['country'] }}" selected>{{ data['country'] }}</option>
-                                    {% endif %}
+
+                                <select name="country" id="select-autocomplete" value="{% if data['country'] %}{{ data['country'] }}{% endif %}">
                                     <option value=""></option>
                                     <option value="Austria">Austria</option>
                                     <option value="Belgium">Belgium</option>
@@ -366,11 +346,13 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                             </fieldset>
 
                         </div>
-                      
+
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
 
 
-                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top:12px;">
+                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+
                             Continue
                         </button>
 
@@ -381,6 +363,8 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
             </fieldset>
         </form>
         <!-- End of form-->
+
+        <a href="../index" class="nhsuk-link">Cancel</a>
     </div>
 </div>
 <!-- End of create a claim -->

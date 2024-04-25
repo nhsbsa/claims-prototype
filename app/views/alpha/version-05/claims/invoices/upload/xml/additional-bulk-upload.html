@@ -2,20 +2,20 @@
 {% set mainNavigation = [
     {
     name: 'Summary',
-    path: '/alpha/version-05/claims/summary/invoices-uploaded'
+    path: '/alpha/version-05/claims/summary/not-started'
     },
     {
     name: 'Invoices',
-    path: '/alpha/version-05/claims/invoices/full-invoice-list',
+    path: '/alpha/version-05/claims/invoices/not-started',
     active: true
     },
     {
-    name: 'Uploaded files',
-    path: '/alpha/version-05/claims/file-uploads/complete'
-    },
+        name: 'Uploaded files',
+        path: '#'
+        },
     {
     name: 'History',
-    path: '/alpha/version-05/claims/history/invoices-uploaded'
+    path: '#'
     }
     ]
     %}
@@ -29,7 +29,7 @@
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Upload extra invoices - Manage incoming international healthcare claims - NHSBSA
+Additional invoices - Upload invoices - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -56,22 +56,6 @@ Upload extra invoices - Manage incoming international healthcare claims - NHSBSA
 <!-- Start of central content -->
 {% block content %}
 
-<!-- Start of back link -->
-<div class="nhsuk-grid-row" id="goBackLink">
-    <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-back-link">
-            <a class="nhsuk-back-link__link" href="javascript:history.back()">
-                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                    aria-hidden="true" height="24" width="24">
-                    <path
-                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-                    </path>
-                </svg>
-                Go back</a>
-        </div>
-    </div>
-</div>
-<!-- End of back link -->
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
@@ -80,15 +64,12 @@ Upload extra invoices - Manage incoming international healthcare claims - NHSBSA
 
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-                <form id="checkFile" action="additional-bulk-cya" method="post">
+
+                <form id="checkFile" action="additional-file-2" method="post">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-                        <h1 class="nhsuk-fieldset__heading" id="uploadH1">
+                        <h1 class="nhsuk-fieldset__heading">
                             <span class="nhsuk-caption-l">Additional invoices</span>
-                            Upload extra invoices
-                        </h1>
-                        <h1 class="nhsuk-fieldset__heading" id="uploadingH1" style="display: none;">
-                            <span class="nhsuk-caption-l">Additional invoices</span>
-                            Uploading extra invoices
+                            Upload invoices
                         </h1>
                     </legend>
             </div>
@@ -105,11 +86,11 @@ Upload extra invoices - Manage incoming international healthcare claims - NHSBSA
                                         Upload a file
                                     </h1>
                                 </legend>
-                                <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="article-hint">
-                                    This must be an XML file, or a ZIP file containing XML files.
+                                <div class="nhsuk-hint" id="article-hint">
+                                    This must be an XML file.
                                 </div>
 
-                                <div class="nhsuk-form-group nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-6"
+                                <div class="nhsuk-form-group nhsuk-grid-column-two-thirds"
                                     style="border:2px dashed #0b0c0c; padding:24px;">
                                     <!-- <label class="nhsuk-label" for="file-upload">
                                       Upload a file
@@ -127,7 +108,7 @@ Upload extra invoices - Manage incoming international healthcare claims - NHSBSA
 
 
 
-                      
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                             Continue
                         </button>
@@ -137,7 +118,7 @@ Upload extra invoices - Manage incoming international healthcare claims - NHSBSA
                 </div>
 
 
-                <a href="../cancel-confirmation" class="nhsuk-link">Cancel</a>
+                <a href="../../../summary/no-treatments" class="nhsuk-link">Cancel</a>
                 </form>
             </div>
         </div>
@@ -147,9 +128,8 @@ Upload extra invoices - Manage incoming international healthcare claims - NHSBSA
 
         <div id="upload-progress" style="display: none;" class="nhsuk-grid-column-full" aria-hidden="true" tabindex="-1">
             <div class="nhsuk-loader">
-                <p>Checking file.<br />This may take a few minutes.<br />Do not leave this page or close your browser, or your file will not be saved.</p>
-                <span class="nhsuk-loader__spinner nhsuk-u-margin-bottom-9"></span>
-                <p><a href="">Cancel upload</a></p>
+                <p>Checking file</p>
+                <span class="nhsuk-loader__spinner"></span>
             </div>
         </div>
     
@@ -162,12 +142,10 @@ Upload extra invoices - Manage incoming international healthcare claims - NHSBSA
     
             submitForm.addEventListener("submit", function(e){
                 e.preventDefault();
-    
-                goBackLink.style.display = "none";
+
+               
                 uploadFile.style.display = "none";
-                uploadH1.style.display = "none";
-    
-                uploadingH1.style.display = "block";
+
                 uploadProgress.style.display = "block";
                 uploadProgress.setAttribute("role", "alert");
                 uploadProgress.setAttribute("aria-hidden", "false");

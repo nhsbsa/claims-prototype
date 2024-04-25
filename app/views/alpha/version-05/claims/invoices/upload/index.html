@@ -11,11 +11,12 @@ active: true
 },
 {
 name: 'Uploaded files',
-path: '/alpha/version-05/claims/file-uploads/not-started'
+
+path: '/alpha/version-05/claims/file-uplaods/no-uploads'
 },
 {
 name: 'History',
-path: '/alpha/version-05/claims/history/not-started'
+path: '#'
 }
 ]
 %}
@@ -55,29 +56,13 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of central content -->
 {% block content %}
-<!-- Start of back link -->
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-back-link">
-            <a class="nhsuk-back-link__link" href="javascript:history.back()">
-                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                    aria-hidden="true" height="24" width="24">
-                    <path
-                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-                    </path>
-                </svg>
-                Go back</a>
-        </div>
-    </div>
-</div>
-<!-- End of back link -->
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
         <div class="nhsuk-grid-row">
-            <form action="../../../route-upload-method" method="post">
             <div class="nhsuk-grid-column-full">
+                <form action="xml/index" method="post">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                         <h1 class="nhsuk-fieldset__heading">
                             <span class="nhsuk-caption-l">Add invoices</span>
@@ -93,30 +78,32 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
                         <!-- Contact method -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset">
-                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m ">
+                                <legend
+                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m ">
                                     <h1 class="nhsuk-fieldset__heading">
                                         How was the claim submitted?
                                     </h1>
                                 </legend>
                                 <div class="nhsuk-radios">
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="contact-method-rina" name="contact-method"
+                                        <input class="nhsuk-radios__input" id="data-source-rina" name="data-source"
                                             type="radio" value="RINA">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="contact-method-rina">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="data-source-rina">
                                             RINA
                                         </label>
                                     </div>
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="contact-method-edi" name="contact-method"
+                                        <input class="nhsuk-radios__input" id="data-source-edi" name="data-source"
                                             type="radio" value="EDI">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="contact-method-edi">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="data-source-edi">
                                             EDI
                                         </label>
                                     </div>
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="contact-method-paper" name="contact-method"
+
+                                        <input class="nhsuk-radios__input" id="data-source-paper" name="data-source"
                                             type="radio" value="Paper">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="contact-method-paper">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="data-source-paper">
                                             Paper
                                         </label>
                                     </div>
@@ -130,11 +117,19 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
 
                     </div>
                 </div>
-            </div>
 
-             </form>
+
+                <a href="../../summary/not-started" class="nhsuk-link">Cancel</a>
+                </form>
+            </div>
         </div>
 
+
+
+
+
+
+>>>>>>> 6b9a79d64571d8d052f87e0e78d67cc54b311354
     </div>
 </div>
 {% endblock %}

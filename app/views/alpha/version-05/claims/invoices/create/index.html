@@ -56,22 +56,6 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
 <!-- Start of central content -->
 {% block content %}
 
-<!-- Start of back link -->
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-back-link">
-            <a class="nhsuk-back-link__link" href="javascript:history.back()">
-                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                    aria-hidden="true" height="24" width="24">
-                    <path
-                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-                    </path>
-                </svg>
-                Go back</a>
-        </div>
-    </div>
-</div>
-<!-- End of back link -->
 
 <!-- Start of create a claim -->
 <div class="nhsuk-grid-row">
@@ -98,7 +82,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                 Invoice reference
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-two-thirds" id="invoice-ref" name="invoice-ref"
-                                type="text" value="">
+                                type="text" value="0039795426">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
@@ -114,7 +98,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                 Last name
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name" name="last-name"
-                                type="text" value="">
+                                type="text" value="Bell">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
@@ -134,7 +118,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                 First name
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-two-thirds" id="first-name" name="first-name"
-                                type="text" value="">
+                                type="text" value="Reece">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
@@ -144,7 +128,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                 Person ID number
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-two-thirds" id="person-id" name="person-id"
-                                type="text" value="">
+                                type="text" value="8449449">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
@@ -156,9 +140,6 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                         Date of birth
                                     </h1>
                                 </legend>
-                                <div class="nhsuk-hint" id="dob-hint">
-                                    For example, 28 9 2023
-                                </div>
                                 <div class="nhsuk-date-input" id="dob">
                                     <div class="nhsuk-date-input__item">
                                         <div class="nhsuk-form-group">
@@ -168,7 +149,8 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                 id="dob-day" name="dob-day" type="text" pattern="[0-9]*"
                                                 inputmode="numeric"
-                                                value="">
+
+                                                value="5">
                                         </div>
                                     </div>
                                     <div class="nhsuk-date-input__item">
@@ -179,7 +161,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                 id="dob-month" name="dob-month" type="text" pattern="[0-9]*"
                                                 inputmode="numeric"
-                                                value="">
+                                                value="10">
                                         </div>
                                     </div>
                                     <div class="nhsuk-date-input__item">
@@ -190,7 +172,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
                                                 id="dob-year" name="dob-year" type="text" pattern="[0-9]*"
                                                 inputmode="numeric"
-                                                value="">
+                                                value="1956">
                                         </div>
                                     </div>
                                 </div>
@@ -204,17 +186,16 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                             </h1>
                         </legend>
 
-                        <!-- Start date -->
+                        <!-- Date from -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        Start date
+                  </div>
+
+                                        Date from
                                     </h1>
                                 </legend>
-                                <div class="nhsuk-hint" id="start-date-hint">
-                                    For example, 28 9 2023
-                                </div>
                                 <div class="nhsuk-date-input" id="dob">
                                     <div class="nhsuk-date-input__item">
                                         <div class="nhsuk-form-group">
@@ -224,7 +205,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                 id="date-from-day" name="date-from-day" type="text" pattern="[0-9]*"
                                                 inputmode="numeric"
-                                                value="">
+                                                value="14">
                                         </div>
                                     </div>
                                     <div class="nhsuk-date-input__item">
@@ -235,7 +216,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                 id="date-from-month" name="date-from-month" type="text" pattern="[0-9]*"
                                                 inputmode="numeric"
-                                                value="">
+                                                value="2">
                                         </div>
                                     </div>
                                     <div class="nhsuk-date-input__item">
@@ -246,7 +227,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
                                                 id="date-from-year" name="date-from-year" type="text" pattern="[0-9]*"
                                                 inputmode="numeric"
-                                                value="">
+                                                value="2022">
                                         </div>
                                     </div>
                                 </div>
@@ -254,17 +235,14 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-                        <!-- End date -->
+                        <!-- Date to -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        End date
+                                        Date to
                                     </h1>
                                 </legend>
-                                <div class="nhsuk-hint" id="end-date-hint">
-                                    For example, 28 9 2023
-                                </div>
                                 <div class="nhsuk-date-input" id="dob">
                                     <div class="nhsuk-date-input__item">
                                         <div class="nhsuk-form-group">
@@ -274,7 +252,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                 id="date-to-day" name="date-to-day" type="text" pattern="[0-9]*"
                                                 inputmode="numeric"
-                                                value="">
+                                                value="27">
                                         </div>
                                     </div>
                                     <div class="nhsuk-date-input__item">
@@ -285,7 +263,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                 id="date-to-month" name="date-to-month" type="text" pattern="[0-9]*"
                                                 inputmode="numeric"
-                                                value="">
+                                                value="2">
                                         </div>
                                     </div>
                                     <div class="nhsuk-date-input__item">
@@ -296,7 +274,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                             <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
                                                 id="date-to-year" name="date-to-year" type="text" pattern="[0-9]*"
                                                 inputmode="numeric"
-                                                value="">
+                                                value="2022">
                                         </div>
                                     </div>
                                 </div>
@@ -304,16 +282,16 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-                        <!-- Total value -->
+                        <!-- Amount -->
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">
-                                Total value
+                                Amount
                             </label>
                             <div class="nhsuk-hint" id="contact-hint">
-                                Number of months or monetary amount.
+                                Number of months or monetary value
                               </div>
                             <input class="nhsuk-input nhsuk-u-width-one-third" id="amount-or-months" name="amount-or-months"
-                                type="text" value="">
+                                type="text" value="121.7">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
@@ -338,7 +316,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
 
                                     <div class="nhsuk-radios__item">
                                         <input class="nhsuk-radios__input" id="entitlement-ehic" name="entitlement" type="radio"
-                                            value="EHIC" aria-controls="conditional-entitlement-1" aria-expanded="false">
+                                            value="ehic" aria-controls="conditional-entitlement-1" aria-expanded="false">
                                         <label class="nhsuk-label nhsuk-radios__label" for="entitlement-ehic">
                                             European Health Insurance Card (EHIC)
                                         </label>
@@ -355,47 +333,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                                 
                                       </div>
 
-                                    <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="entitlement-uk-ehic" name="entitlement" type="radio"
-                                            value="UK EHIC" aria-controls="conditional-entitlement-uk-ehic" aria-expanded="false">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-uk-ehic">
-                                            UK European Health Insurance Card (UK EHIC)
-                                        </label>
-                                    </div>
-
-                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-entitlement-uk-ehic">
-
-                                        <div class="nhsuk-form-group">
-                                          <label class="nhsuk-label" for="uk-ehic-number">
-                                            UK EHIC number
-                                          </label>
-                                          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="uk-ehic-number" name="uk-ehic-number" type="text">
-                                        </div>
-                                
-                                      </div>
-
-                                      <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="entitlement-uk-ghic" name="entitlement" type="radio"
-                                            value="UK GHIC" aria-controls="conditional-entitlement-uk-ghic" aria-expanded="false">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="entitlement-uk-ghic">
-                                            UK Global Health Insurance Card (UK GHIC)
-                                        </label>
-                                    </div>
-
-                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-entitlement-uk-ghic">
-
-                                        <div class="nhsuk-form-group">
-                                          <label class="nhsuk-label" for="uk-ghic-number">
-                                            UK GHIC number
-                                          </label>
-                                          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="uk-ghic-number" name="uk-ghic-number" type="text">
-                                        </div>
-                                
-                                      </div>
-
-
-
-                                    <div class="nhsuk-radios__item">
+                                    <div class="nhsuk-radios__item>
                                         <input class="nhsuk-radios__input" id="entitlement-prc" name="entitlement" type="radio"
                                             value="prc" aria-controls="conditional-entitlement-2" aria-expanded="false">
                                         <label class="nhsuk-label nhsuk-radios__label" for="entitlement-prc">
@@ -434,7 +372,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
                             </fieldset>
 
                         </div>
-                      
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
 
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
@@ -453,7 +391,7 @@ Create a new invoice - Manage incoming international healthcare claims - NHSBSA
         </form>
         <!-- End of form-->
 
-        <a href="" class="nhsuk-link">Cancel</a>
+        <a href="../index" class="nhsuk-link">Cancel</a>
     </div>
 </div>
 <!-- End of create a claim -->

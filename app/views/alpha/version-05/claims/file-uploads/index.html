@@ -1,24 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-  {
-  name: 'Summary',
-  path: '/alpha/version-05/claims/summary/processing-progress-60'
-  },
-  {
-  name: 'Invoices',
-  path: '/alpha/version-05/claims/invoices/processing-progress-60'
-  },
-  {
-  name: 'Uploaded files',
-  path: '/alpha/version-05/claims/file-uploads/processing-progress-60',
-  active: true
-  },
-  {
-  name: 'History',
-  path: '/alpha/version-05/claims/history/processing-progress-60'
-  }
-  ]
-  %}
+{
+name: 'Summary',
+path: '/alpha/version-05/claims/summary/invoices-uploaded'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-05/claims/invoices/full-invoice-list'
+},
+{
+name: 'Uploaded files',
+path: '/alpha/version-05/claims/file-uploads/index',
+active: true
+},
+{
+name: 'History',
+path: '/alpha/version-05/claims/history/invoices-uploaded'
+}
+]
+%}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -54,41 +54,21 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of central content -->
 {% block content %}
-
-<!-- Start of warning block -->
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
-    <div class="nhsuk-warning-callout" style="margin-top:0;">
-      <h3 class="nhsuk-warning-callout__label">
-        <span role="text">
-          <span class="nhsuk-u-visually-hidden">Important: </span>
-          Processing uploaded invoices
-        </span>
-      </h3>
-      <label class="nhsuk-label" for="upload">60% processed | Estimated time left: 21 minutes</label>
-      <progress class="nhsuk-u-width-one-third" id="upload" value="60" max="100"> 60% </progress>
-      <p><a href="index">Refresh</a></p>
-    </div>
-  </div>
-</div>
-<!-- End of warning block -->
-
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
     <!-- Start of title block -->
     <div class="nhsuk-grid-row">
-
       <div class="nhsuk-grid-column-full">
-
         <h1 class="nhsuk-heading-xl ">
           Uploaded files
         </h1>
       </div>
+
+
+
     </div>
     <!-- End of title block -->
-
-
 
     <!--Start file uploads info-->
 
@@ -103,7 +83,6 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                   <th role="columnheader" class="" scope="col">
-
                     Date/time
                   </th>
                   <th role="columnheader" class="" scope="col">
@@ -116,8 +95,7 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
                     Status
                   </th>
                   <th role="columnheader" class="" scope="col">
-
-                    View
+                    Action
                   </th>
 
                 </tr>
@@ -126,7 +104,6 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
 
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
-
                     <span class="nhsuk-table-responsive__heading">Date/time </span>1 December 2023
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
@@ -139,7 +116,7 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Status </span>Complete
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">View </span> <a href="#">View report</a>
+                    <span class="nhsuk-table-responsive__heading">Action </span><a href="">View report</a>
                   </td>
                 </tr>
 
@@ -154,10 +131,10 @@ Uploaded files - Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Filename </span>invoice-file-2.xml
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Status </span>Processing
+                    <span class="nhsuk-table-responsive__heading">Status </span>Complete
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">View </span>-
+                    <span class="nhsuk-table-responsive__heading">Action </span><a href="">View report</a>
                   </td>
                 </tr>
 

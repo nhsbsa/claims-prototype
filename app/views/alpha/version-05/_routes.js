@@ -3,89 +3,8 @@ const router = express.Router()
 
 const axios = require('axios');
 
-//// CREATE CLAIM ////
 
-//Are you sure you want to cancel
-router.get("/claims/create/cancel-confirmation", (req, res)=> {
-    res.render("alpha/version-05/claims/create/cancel-confirmation", {referer: req.headers.referer});
-});
-
-router.post('/route-cancel-create-claim', function(req,res){
-    var cancel = req.session.data['cancel']
-    var back = req.session.data['referer'] || "/";
-
-    if (cancel == "yes" ) {
-        res.redirect('/alpha/version-05/claims/index')
-    } else if (cancel == "no"){
-        return res.redirect(back)
-    } else {
-        res.redirect('/alpha/version-05/claims/create/cancel-confirmation')
-    }
-
-})
-
-
-//// UPLOAD INVOICES INITIAL JOURNEY ////
-
-//Contact method - how was the claim submitted
-router.post('/route-upload-method', function(req,res){
-    var method = req.session.data['contact-method']
-    if (method == "RINA" ) {
-        res.redirect('/alpha/version-05/claims/invoices/upload/xml/index')
-        }
-    else if (method == "EDI"){
-            res.redirect('/alpha/version-05/claims/invoices/upload/xml/index')
-            }
-    else {
-        res.redirect('/alpha/version-05/claims/invoices/upload/index')
-    }
-
-})
-
-
-//Are you sure you want to cancel the journey
-router.get("/claims/invoices/upload/cancel-confirmation", (req, res)=> {
-    res.render("alpha/version-05/claims/invoices/upload/cancel-confirmation", {referer: req.headers.referer});
-});
-
-router.post('/route-cancel-upload-invoices', function(req,res){
-    var cancel = req.session.data['cancel']
-    var back = req.session.data['referer'] || "/";
-
-    if (cancel == "yes" ) {
-        res.redirect('/alpha/version-05/claims/summary/not-started')
-    } else if (cancel == "no"){
-        return res.redirect(back)
-    } else {
-        res.redirect('/alpha/version-05/claims/invoices/upload/cancel-confirmation')
-    }
-
-})
-
-//Are you sure you want to delete an uploaded invoice file
-router.get("/claims/invoices/upload/delete-confirmation", (req, res)=> {
-    res.render("alpha/version-05/claims/invoices/upload/delete-confirmation", {referer: req.headers.referer});
-});
-
-router.post('/route-delete-invoice-file', function(req,res){
-    var cancel = req.session.data['delete']
-    var back = req.session.data['referer'] || "/";
-
-    if (cancel == "yes" ) {
-        res.redirect('/alpha/version-05/claims/invoices/upload/xml/index')
-    } else if (cancel == "no"){
-        return res.redirect(back)
-    } else {
-        res.redirect('/alpha/version-05/claims/invoices/upload/delete-confirmation')
-    }
-
-})
-
-
-
-
-
-
+//CREATE CLAIM
 
 router.get('/claims/create/cya', function(req, res) {
 
@@ -142,11 +61,11 @@ router.post('/route_delete_claim', function(req,res){
 
 })
 
-//Upload additional invoices - initial journey
+//Upload additional treatments
 router.post('/route-additional-upload', function(req,res){
     var upload = req.session.data['additional-upload']
     if (upload == "yes" ) {
-        res.redirect('/alpha/version-05/claims/invoices/upload/xml/index-additional-file')
+        res.redirect('/alpha/version-05/claims/invoices/upload/xml/index')
         }
     else if (upload == "no"){
             res.redirect('/alpha/version-05/claims/invoices/upload/xml/cya')

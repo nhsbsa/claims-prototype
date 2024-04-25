@@ -24,7 +24,7 @@ const documentationRoutes = require('./docs/documentation_routes');
 const utils = require('./lib/utils');
 
 // Set configuration variables
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || config.port;
 const useDocumentation = process.env.SHOW_DOCS || config.useDocumentation;
 const onlyDocumentation = process.env.DOCS_ONLY;
 
@@ -232,6 +232,6 @@ app.use((err, req, res) => {
 });
 
 // Run the application
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port);
 
 module.exports = app;

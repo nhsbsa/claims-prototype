@@ -30,7 +30,8 @@ path: '#'
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Check claim details - Manage incoming international healthcare claims - NHSBSA
+
+Check your answers - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -59,7 +60,8 @@ Check claim details - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of cya -->
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-grid-column-full">
         <!-- Start of form -->
         <form action="confirmation" method="post">
 
@@ -147,7 +149,7 @@ Check claim details - Manage incoming international healthcare claims - NHSBSA
                                 {% if data['ref'] %}
                                 {{ data['ref'] }}
                                 {% else %}
-                                0039795410
+                                12345REF
                                 {% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
@@ -247,7 +249,7 @@ Check claim details - Manage incoming international healthcare claims - NHSBSA
         </form>
         <!-- End of form -->
 
-        <a href="cancel-confirmation" class="nhsuk-link">Cancel</a>
+        <a href="../index" class="nhsuk-link">Cancel</a>
     </div>
 </div>
 <!-- End of cya -->
