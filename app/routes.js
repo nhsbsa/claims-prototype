@@ -16,7 +16,7 @@ router.use('/alpha/version-03', require('./views/alpha/version-03/_routes'));
 router.use('/alpha/version-04', require('./views/alpha/version-04/_routes'));
 router.use('/alpha/version-05', require('./views/alpha/version-05/_routes'));
 router.use('/alpha/version-06', require('./views/alpha/version-06/_routes'));
-router.use('/alpha/version-06', require('./views/alpha/version-07/_routes'));
-router.use('/alpha/version-06', require('./views/alpha/version-08/_routes'));
+router.use('/alpha/version-07', require('./views/alpha/version-07/_routes'));
+router.use('/alpha/version-08', require('./views/alpha/version-08/_routes'));
 
 module.exports = router;
