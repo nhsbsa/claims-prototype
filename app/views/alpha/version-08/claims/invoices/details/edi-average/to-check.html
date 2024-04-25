@@ -1,0 +1,717 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '/alpha/version-07/claims/summary/invoices-uploaded'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-07/claims/invoices/full-invoice-list',
+active: true
+},
+{
+name: 'Uploaded files',
+path: '/alpha/version-07/claims/file-uploads/complete'
+},
+{
+name: 'History',
+path: '/alpha/version-07/claims/case-history/invoices-uploaded'
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+      In /views/layout.html you can:
+        - change the header and footer 
+        - add custom CSS and JavaScript
+    -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Invoice details - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../index">Claims</a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+<!-- Start of back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="../../full-invoice-list">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" height="24" width="24">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back to invoice search results</a>
+        </div>
+    </div>
+</div>
+<!-- End of back link -->
+
+<!-- Start of header block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-9">
+            Invoice details
+            <!-- <span class="nhsuk-caption-xl nhsuk-caption--bottom">Invoice ID 01554 &ndash; Invoice reference 0039795410</span> -->
+        </h1>
+    </div>
+    <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+        <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+            Save changes
+        </button>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Mark complete
+        </button>
+    </div>
+</div>
+<!-- End of header block -->
+
+<!-- Start of key information box-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Invoice ID
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            01554
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Invoice reference
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            0039795410
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of key information box -->
+
+<!-- Start of tabs-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+            <h2 class="nhsuk-tabs__title">
+                Contents
+            </h2>
+
+            <!-- Start of tab titles -->
+            <ul class="nhsuk-tabs__list">
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#summary">
+                        Summary
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#notes">
+                        Notes
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#history">
+                        History
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                    <a class="nhsuk-tabs__tab" href="#import">
+                        Imported invoice
+                    </a>
+                </li>
+            </ul>
+            <!-- End of tab titles -->
+
+            <!-- *** Start of summary tab content *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="summary">
+                <h2 class="nhsuk-heading-l">Summary</h2>
+            </div>
+            <!-- *** End of summary tab *** -->
+
+            <!-- *** Start of notes tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
+                <h2 class="nhsuk-heading-l">Notes</h2>
+            </div>
+            <!-- *** End of notes tab *** -->
+
+
+            <!-- *** Start of history tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="history">
+                <h2 class="nhsuk-heading-l">History</h2>
+            </div>
+            <!-- *** End of history tab *** -->
+
+            <!-- *** Start of imported invoice tab *** -->
+            <div class="nhsuk-tabs__panel" id="import">
+                <h2 class="nhsuk-heading-l">Imported invoice</h2>
+                <!-- start invoice summary expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Invoice summary
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Claim reference
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {% if data['ref'] %}
+                                            {{ data['ref'] }}
+                                            {% else %}
+                                            0039795410
+                                            {% endif %}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Claim form
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            E127FR
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Date claim was recorded
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            2 June 2023
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Invoice reference
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            UK1S08000004633000007
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Financial year
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            2023
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end invoice summary expander -->
+
+                <!-- start creditor expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Creditor institution
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Name line 1
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Caisse Primaire D'Assurance Maladie
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Name line 2
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Name line 3
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Address line 1
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            43 rue Bonneterie
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Address line 2
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Montauban
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Town
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Midi-Pyrénées
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Postcode
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            82000
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Country
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            France
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Institution ID
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            0146100000
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end creditor expander -->
+
+                <!-- start person details expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Person details
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Last name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Pearce
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            First name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Sean
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Maiden name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Date of birth
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            8 August 1952
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Address line 1
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            1 Kingsway
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Town
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Bradford
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Postcode
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            BD90 7DT
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Insured ID number
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            250200004
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Registration number
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            National insurance number
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            QQ 78 43 89 A
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            OHS reference
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            
+                                        </dd>
+                                    </div>
+
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end person details expander -->
+
+                <!-- start dependants details expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Dependant details
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Last name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Pearce
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            First name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Chloe
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Date of birth
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            28 August 1990
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            National insurance number
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            QQ 89 43 75 C
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            OHS number
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            
+                                        </dd>
+                                    </div>
+
+
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end dependants details expander -->
+
+                <!-- start entitlement details expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Entitlement details
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Type of entitlement
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            S1
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Start date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            1 January 2023
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            End date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            1 December 2023
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Issue date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            1 January 2023
+                                        </dd>
+                                    </div>
+
+
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end entitlement details expander -->
+
+                <!-- start debtor expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Debtor institution
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Name line 1
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Department for Health and Social Care
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Name line 2
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Name line 3
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Address line 1
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            39 Victoria Street
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Address line 2
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Town
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            London
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Postcode
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            SW1H 0EU
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Country
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            UK
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Institution ID
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            UK033
+                                        </dd>
+                                    </div>
+
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end debtor expander -->
+
+                <!-- start treatment details expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Treatment details
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Total treatment value
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            2134.75
+                                        </dd>
+                                    </div>
+
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end treatment details expander -->
+
+                <!-- start unknown expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Unknown
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Beneficiary code
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            3
+                                        </dd>
+                                    </div>
+
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Lum sum category
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            2
+                                        </dd>
+                                    </div>
+
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end unknown expander -->
+
+
+            </div>
+            <!-- *** End of imported invoice tab *** -->
+
+        </div>
+    </div>
+</div>
+<!-- End of tabs-->
+
+</div>
+</div>
+
+{% endblock %}
+<!-- End of central content -->
