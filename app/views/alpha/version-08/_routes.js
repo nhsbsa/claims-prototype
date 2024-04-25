@@ -311,8 +311,6 @@ router.get('/claims/summary/not-started', function(req, res) {
 
 // Configure PostgreSQL connection
 
-const { Pool } = require('pg');
-
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL || 'postgres://postgres:CrystalClearQuartz9785@localhost:5432/postgres',
     ssl: process.env.NODE_ENV === 'production' ? {
@@ -340,7 +338,7 @@ router.post('/personSearch', async (req, res) => {
             ($7::text IS NULL OR (data->'person'->'uniqueID'->>'nhs' = $7 OR 
                                   data->'person'->'uniqueID'->>'ohs' = $7 OR 
                                   data->'person'->'uniqueID'->>'nino' = $7)) AND
-            ($8::text IS NULL OR data->'person'->'entitlements' @> $8::jsonb) AND
+            ($8::text IS NULL OR data->'person'->'entitlements' @> $8::jsonb) OR
             ($9::text IS NULL OR data->'person'->'entitlements' @> $9::jsonb);
         `;
         const params = [
