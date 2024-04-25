@@ -1,24 +1,24 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
-    name: 'Summary',
-    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
-    },
-    {
-    name: 'Invoices',
-    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
-    active: true
-    },
-    {
-    name: 'Uploaded files',
-    path: ''
-    },
-    {
-    name: 'History',
-    path: ''
-    }
-    ]
-    %}
+{
+name: 'Summary',
+path: '/alpha/version-08/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
+active: true
+},
+{
+name: 'Uploaded files',
+path: ''
+},
+{
+name: 'History',
+path: ''
+}
+]
+%}
 
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
@@ -39,8 +39,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../../home">Home</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../index">Claims</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../../../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../../../../index">Claims</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
             <a class="nhsuk-breadcrumb__backlink" href="../../../../../../index">
@@ -184,6 +186,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             Status
                                         </h3>
                                     </div>
+                                 
                                 </div>
                                 <hr style="margin:0px 0px 20px 0px;">
 
@@ -377,6 +380,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </div>
                 <!-- End of status -->
 
+
                 <!-- Start of treatment and entitlement details -->
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
@@ -553,14 +557,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 </div>
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-full">
-                                        <details class="nhsuk-details">
+                                        <details class="nhsuk-details" open>
                                             <summary class="nhsuk-details__summary">
                                                 <span class="nhsuk-details__summary-text">
                                                     Search for a person
                                                 </span>
                                             </summary>
                                             <div class="nhsuk-details__text">
-
                                                 <!-- Start person search -->
                                                 <div class="nhsuk-grid-row">
                                                     <div class=" nhsuk-grid-column-full">
@@ -587,7 +590,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                             Last name
                                                                         </label>
                                                                         <input class="nhsuk-input" id="last-name"
-                                                                            name="lastName" type="text">
+                                                                            name="lastName" type="text" value="Pearce">
                                                                     </div>
                                                                 </div>
                                                                 <div class="nhsuk-grid-column-one-third">
@@ -598,7 +601,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                             First name
                                                                         </label>
                                                                         <input class="nhsuk-input" id="first-name"
-                                                                            name="firstName" type="text">
+                                                                            name="firstName" type="text" value="Sean">
                                                                     </div>
                                                                 </div>
 
@@ -635,13 +638,12 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                     <div class="nhsuk-form-group">
                                                                                         <label
                                                                                             class="nhsuk-label nhsuk-date-input__label"
-                                                                                            for="dob-day">
+                                                                                            for="for-day">
                                                                                             Day
                                                                                         </label>
                                                                                         <input
                                                                                             class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                                                            id="dob-day"
-                                                                                            name="day"
+                                                                                            id="dob-day" name="day"
                                                                                             type="text" pattern="[0-9]*"
                                                                                             inputmode="numeric"
                                                                                             value="">
@@ -657,8 +659,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         <input
                                                                                             class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                                                             id="dob-month"
-                                                                                            name="month"
-                                                                                            type="text" pattern="[0-9]*"
+                                                                                            name="month" type="text"
+                                                                                            pattern="[0-9]*"
                                                                                             inputmode="numeric"
                                                                                             value="">
                                                                                     </div>
@@ -673,8 +675,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         <input
                                                                                             class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
                                                                                             id="dob-year"
-                                                                                            name="year"
-                                                                                            type="text" pattern="[0-9]*"
+                                                                                            name="year" type="text"
+                                                                                            pattern="[0-9]*"
                                                                                             inputmode="numeric"
                                                                                             value="">
                                                                                     </div>
@@ -709,8 +711,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                             for="nino">
                                                                             National Insurance number
                                                                         </label>
-                                                                        <input class="nhsuk-input" id="nino"
-                                                                            name="nino" type="text">
+                                                                        <input class="nhsuk-input" id="nino" name="nino"
+                                                                            type="text">
                                                                     </div>
                                                                 </div>
                                                                 <div class="nhsuk-grid-column-one-third">
@@ -720,8 +722,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                             for="nhs">
                                                                             NHS number
                                                                         </label>
-                                                                        <input class="nhsuk-input" id="nhs"
-                                                                            name="nhs" type="text" value="">
+                                                                        <input class="nhsuk-input" id="nhs" name="nhs"
+                                                                            type="text" value="">
                                                                     </div>
                                                                 </div>
                                                                 <div class="nhsuk-grid-column-one-third">
@@ -731,8 +733,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                             for="pin">
                                                                             EHIC or GHIC PIN
                                                                         </label>
-                                                                        <input class="nhsuk-input" id="pin"
-                                                                            name="pin" type="text">
+                                                                        <input class="nhsuk-input" id="pin" name="pin"
+                                                                            type="text">
                                                                     </div>
                                                                 </div>
                                                                 <div class="nhsuk-grid-column-one-third">
@@ -750,8 +752,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                                             </div>
 
-                                                            <button
-                                                                class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0"
+                                                            <button class="nhsuk-button nhsuk-button--secondary"
                                                                 data-module="nhsuk-button" type="submit"
                                                                 style="margin-top:20px;">
                                                                 Search
@@ -760,6 +761,563 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     </div>
                                                 </div>
                                                 <!-- End person search -->
+
+                                                <!-- Start person search results -->
+                                                <div class="nhsuk-grid-row" id="search-results">
+                                                    <div class="nhsuk-grid-column-full">
+                                                        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
+                                                            Showing 10 results of 15</h3>
+                                                        <p class="nhsuk-u-margin-bottom-4">
+
+                                                            <strong
+                                                                class="nhsuk-tag nhsuk-tag--aqua-green">Pearce</strong>
+                                                            <strong
+                                                                class="nhsuk-tag nhsuk-tag--aqua-green">Sean</strong>
+                                                        </p>
+
+                                                        <!-- Start of filter and sort options -->
+                                                        <details class="nhsuk-details">
+                                                            <summary class="nhsuk-details__summary">
+                                                                <span class="nhsuk-details__summary-text">
+                                                                    Filter and sort options
+                                                                </span>
+                                                            </summary>
+                                                            <div class="nhsuk-details__text">
+                                                                <div class="nhsuk-grid-row">
+
+                                                                    <!-- Start filter by entitlement -->
+                                                                    <div class="nhsuk-grid-column-one-third">
+                                                                        <div class="nhsuk-form-group">
+                                                                            <fieldset class="nhsuk-fieldset"
+                                                                                aria-describedby="example-hint">
+                                                                                <legend
+                                                                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                                                    <h1
+                                                                                        class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                                                                        Filter by entitlements
+                                                                                        held
+                                                                                    </h1>
+                                                                                </legend>
+                                                                                <div class="nhsuk-checkboxes">
+                                                                                    <div class="nhsuk-checkboxes__item">
+                                                                                        <input
+                                                                                            class="nhsuk-checkboxes__input"
+                                                                                            id="filter-entitlement-s1"
+                                                                                            name="filter-entitlement"
+                                                                                            type="checkbox" value="s1">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-checkboxes__label"
+                                                                                            for="filter-entitlement-s1">
+                                                                                            S1
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="nhsuk-checkboxes__item">
+                                                                                        <input
+                                                                                            class="nhsuk-checkboxes__input"
+                                                                                            id="filter-entitlement-ehic"
+                                                                                            name="filter-entitlement"
+                                                                                            type="checkbox"
+                                                                                            value="ehic">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-checkboxes__label"
+                                                                                            for="filter-entitlement-ehic">
+                                                                                            EHIC
+                                                                                        </label>
+                                                                                    </div>
+
+                                                                                    <div class="nhsuk-checkboxes__item">
+                                                                                        <input
+                                                                                            class="nhsuk-checkboxes__input"
+                                                                                            id="filter-entitlement-prc"
+                                                                                            name="filter-entitlement"
+                                                                                            type="checkbox" value="prc">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-checkboxes__label"
+                                                                                            for="filter-entitlement-prc">
+                                                                                            PRC
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="nhsuk-checkboxes__item">
+                                                                                        <input
+                                                                                            class="nhsuk-checkboxes__input"
+                                                                                            id="filter-entitlement-s2"
+                                                                                            name="filter-entitlement"
+                                                                                            type="checkbox" value="s2">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-checkboxes__label"
+                                                                                            for="filter-entitlement-s2">
+                                                                                            S2
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="nhsuk-checkboxes__item">
+                                                                                        <input
+                                                                                            class="nhsuk-checkboxes__input"
+                                                                                            id="filter-entitlement-da1"
+                                                                                            name="filter-entitlement"
+                                                                                            type="checkbox" value="da1">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-checkboxes__label"
+                                                                                            for="filter-entitlement-da1">
+                                                                                            DA1
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- End filter by entitlement -->
+
+                                                                    <!-- Start sort by  -->
+                                                                    <div class="nhsuk-grid-column-one-third">
+                                                                        <div
+                                                                            class="nhsuk-form-group nhsuk-u-padding-bottom-5">
+                                                                            <fieldset class="nhsuk-fieldset">
+                                                                                <legend
+                                                                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                                                    <h1
+                                                                                        class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                                                                        Sort by
+                                                                                    </h1>
+                                                                                </legend>
+                                                                                <div class="nhsuk-radios">
+
+                                                                                    <div class="nhsuk-radios__item">
+                                                                                        <input
+                                                                                            class="nhsuk-radios__input"
+                                                                                            id="sort-by-last-name"
+                                                                                            name="sort-by" type="radio"
+                                                                                            value="last-name"
+                                                                                            checked="checked">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-radios__label"
+                                                                                            for="sort-by-last-name">
+                                                                                            Last name
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="nhsuk-radios__item">
+                                                                                        <input
+                                                                                            class="nhsuk-radios__input"
+                                                                                            id="sort-by-first-name"
+                                                                                            name="sort-by" type="radio"
+                                                                                            value="first-name">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-radios__label"
+                                                                                            for="sort-by-first-name">
+                                                                                            First name
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="nhsuk-radios__item">
+                                                                                        <input
+                                                                                            class="nhsuk-radios__input"
+                                                                                            id="sort-by-dob"
+                                                                                            name="sort-by" type="radio"
+                                                                                            value="dob">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-radios__label"
+                                                                                            for="sort-by-first-name">
+                                                                                            Date of birth
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="nhsuk-radios__item">
+                                                                                        <input
+                                                                                            class="nhsuk-radios__input"
+                                                                                            id="sort-by-id"
+                                                                                            name="sort-by" type="radio"
+                                                                                            value="id">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-radios__label"
+                                                                                            for="sort-by-id">
+                                                                                            OHS number
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <!-- <div
+                                                                                    class="nhsuk-radios__item">
+                                                                                    <input
+                                                                                        class="nhsuk-radios__input"
+                                                                                        id="sort-by-nino"
+                                                                                        name="sort-by"
+                                                                                        type="radio"
+                                                                                        value="nino">
+                                                                                    <label
+                                                                                        class="nhsuk-label nhsuk-radios__label"
+                                                                                        for="sort-by-first-name">
+                                                                                        National Insurance number 
+                                                                                    </label>
+                                                                                </div> -->
+                                                                                </div>
+                                                                            </fieldset>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End sort by  -->
+
+                                                                    <!-- Start sort order -->
+                                                                    <div class="nhsuk-grid-column-one-third">
+                                                                        <div class="nhsuk-form-group">
+                                                                            <fieldset class="nhsuk-fieldset">
+                                                                                <legend
+                                                                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                                                    <h1
+                                                                                        class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                                                                        Order results
+                                                                                    </h1>
+                                                                                </legend>
+                                                                                <div class="nhsuk-radios">
+                                                                                    <div class="nhsuk-radios__item">
+                                                                                        <input
+                                                                                            class="nhsuk-radios__input"
+                                                                                            id="order-by-asc"
+                                                                                            name="order-by" type="radio"
+                                                                                            value="ascending">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-radios__label"
+                                                                                            for="order-by-asc">
+                                                                                            Ascending
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="nhsuk-radios__item">
+                                                                                        <input
+                                                                                            class="nhsuk-radios__input"
+                                                                                            id="order-by-desc"
+                                                                                            name="order-by" type="radio"
+                                                                                            value="descending"
+                                                                                            checked="checked">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-radios__label"
+                                                                                            for="order-by-desc">
+                                                                                            Descending
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </fieldset>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End sort order -->
+                                                                    <div class="nhsuk-grid-column-full">
+                                                                        <button
+                                                                            class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4"
+                                                                            data-module="nhsuk-button" type="submit"
+                                                                            style="margin-top: 6px;">
+                                                                            Apply filters
+                                                                        </button><br />
+                                                                        <a href="">Reset all filters</a>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </details>
+                                                        <!-- End of filter and sort options -->
+
+                                                    </div>
+
+                                                    <div class="nhsuk-grid-column-full">
+
+                                                        <ul class="nhsuk-grid-row nhsuk-card-group">
+
+                                                            <% searchResults.forEach(function(result) { %>
+                                                            <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+                                                                <div class="nhsuk-card nhsuk-card--secondary">
+                                                                    <div
+                                                                        class="nhsuk-card__content nhsuk-card__content--secondary">
+
+                                                                        <div class="nhsuk-grid-column-two-thirds">
+                                                                            <dl
+                                                                                class="nhsuk-summary-list nhsuk-u-margin-bottom-4">
+
+
+                                                                                <div class="nhsuk-summary-list__row ">
+                                                                                    <dt class="nhsuk-summary-list__key">
+                                                                                        Last name
+                                                                                    </dt>
+                                                                                    <dd
+                                                                                        class="nhsuk-summary-list__value">
+                                                                                        <%= result.lastName %>
+                                                                                    </dd>
+
+                                                                                </div>
+
+                                                                                <div class="nhsuk-summary-list__row">
+                                                                                    <dt class="nhsuk-summary-list__key">
+                                                                                        First name
+                                                                                    </dt>
+                                                                                    <dd
+                                                                                        class="nhsuk-summary-list__value">
+                                                                                        <%= result.firstName %>
+                                                                                    </dd>
+
+                                                                                </div>
+
+                                                                                <div class="nhsuk-summary-list__row">
+                                                                                    <dt class="nhsuk-summary-list__key">
+                                                                                        Date of birth
+                                                                                    </dt>
+                                                                                    <dd
+                                                                                        class="nhsuk-summary-list__value">
+                                                                                        <% var dobDate = new Date(result.dob.year, result.dob.month - 1, result.dob.day); %>
+                                                                                        <%= dobDate.toLocaleDateString('en-GB') %>
+                                                                                    </dd>
+
+                                                                                </div>
+                                                                                <div class="nhsuk-summary-list__row">
+                                                                                    <dt class="nhsuk-summary-list__key">
+                                                                                        <%= result.residenceCountry %>
+                                                                                    </dt>
+                                                                                    <dd
+                                                                                        class="nhsuk-summary-list__value">
+                                                                                        UK
+                                                                                    </dd>
+
+                                                                                </div>
+                                                                                <div class="nhsuk-summary-list__row">
+                                                                                    <dt class="nhsuk-summary-list__key">
+                                                                                        OHS number
+                                                                                    </dt>
+                                                                                    <dd
+                                                                                        class="nhsuk-summary-list__value">
+                                                                                        <%= result.ohs %>
+                                                                                    </dd>
+                                                                                </div>
+
+                                                                                <div class="nhsuk-summary-list__row">
+                                                                                    <dt class="nhsuk-summary-list__key">
+                                                                                        NINO
+                                                                                    </dt>
+                                                                                    <dd
+                                                                                        class="nhsuk-summary-list__value">
+                                                                                        <%= result.nino %>
+                                                                                    </dd>
+                                                                                </div>
+
+                                                                                <div class="nhsuk-summary-list__row">
+                                                                                    <dt class="nhsuk-summary-list__key">
+                                                                                        NHS number
+                                                                                    </dt>
+                                                                                    <dd
+                                                                                        class="nhsuk-summary-list__value">
+                                                                                        <%= result.ohs %>
+                                                                                    </dd>
+                                                                                </div>
+
+
+
+                                                                            </dl>
+                                                                            <details class="nhsuk-details">
+                                                                                <summary class="nhsuk-details__summary">
+                                                                                    <span
+                                                                                        class="nhsuk-details__summary-text">
+                                                                                        View entitlement details
+                                                                                    </span>
+                                                                                </summary>
+                                                                                <div class="nhsuk-details__text"
+                                                                                    style="border:none; padding-left:0;">
+                                                                                    <h4
+                                                                                        class="nhsuk-heading-s nhsuk-u-margin-bottom-4">
+                                                                                        Entitlement details</h4>
+
+                                                                                    <% if (result.entitlements && result.entitlements.length > 0) { %>
+                                                                                        <% result.entitlements.forEach(function(entitlement) { %>
+                                                                                        <dl class="nhsuk-summary-list"
+                                                                                            style="border-bottom:4px solid #d8dde0;">
+
+                                                                                            <div
+                                                                                                class="nhsuk-summary-list__row">
+                                                                                                <dt
+                                                                                                    class="nhsuk-summary-list__key">
+                                                                                                    Type
+                                                                                                </dt>
+                                                                                                <dd
+                                                                                                    class="nhsuk-summary-list__value">
+                                                                                                    <%= result.entitlementType %>
+                                                                                                </dd>
+
+                                                                                            </div>
+                                                                                            <% if (entitlement.type === 'EHIC' || entitlement.type === 'GHIC' || entitlement.type === 'PRC') { %>
+                                                                                                <div
+                                                                                                    class="nhsuk-summary-list__row">
+                                                                                                    <dt
+                                                                                                        class="nhsuk-summary-list__key">
+                                                                                                        PIN
+                                                                                                    </dt>
+                                                                                                    <dd
+                                                                                                        class="nhsuk-summary-list__value">
+                                                                                                        <%= result.pin %>
+                                                                                                    </dd>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="nhsuk-summary-list__row">
+                                                                                                    <dt
+                                                                                                        class="nhsuk-summary-list__key">
+                                                                                                        Issue number
+                                                                                                    </dt>
+                                                                                                    <dd
+                                                                                                        class="nhsuk-summary-list__value">
+                                                                                                        <%= result.issueNumber %>
+                                                                                                    </dd>
+                                                                                                </div>
+                                                                                            <% } %>
+                                                                                            <div
+                                                                                                class="nhsuk-summary-list__row">
+                                                                                                <dt
+                                                                                                    class="nhsuk-summary-list__key">
+                                                                                                    Start date
+                                                                                                </dt>
+                                                                                                <dd
+                                                                                                    class="nhsuk-summary-list__value">
+                                                                                                    <%= new Date(result.startDate).toLocaleDateString('en-GB') %>
+                                                                                                </dd>
+
+                                                                                            </div>
+
+                                                                                            <div
+                                                                                                class="nhsuk-summary-list__row">
+                                                                                                <dt
+                                                                                                    class="nhsuk-summary-list__key">
+                                                                                                    End date
+                                                                                                </dt>
+                                                                                                <dd
+                                                                                                    class="nhsuk-summary-list__value">
+                                                                                                    <%= new Date(result.endDate).toLocaleDateString('en-GB') %>
+                                                                                                </dd>
+
+                                                                                            </div>
+
+                                                                                            <div
+                                                                                                class="nhsuk-summary-list__row">
+                                                                                                <dt
+                                                                                                    class="nhsuk-summary-list__key">
+                                                                                                    Main/Dependant
+                                                                                                </dt>
+                                                                                                <dd
+                                                                                                    class="nhsuk-summary-list__value">
+                                                                                                    <%= entitlement.holder %>
+                                                                                                </dd>
+
+                                                                                            </div>
+
+                                                                                            <div
+                                                                                                class="nhsuk-summary-list__row">
+                                                                                                <dt
+                                                                                                    class="nhsuk-summary-list__key">
+                                                                                                    Status
+                                                                                                </dt>
+                                                                                                <dd
+                                                                                                    class="nhsuk-summary-list__value">
+                                                                                                    <%= result.status %>
+                                                                                                </dd>
+
+                                                                                            </div>
+
+                                                                                        </dl>
+                                                                                        <% }); %>
+                                                                                    <% } %>
+
+                                                                                </div>
+                                                                            </details>
+                                                                        </div>
+
+                                                                        <div class="nhsuk-grid-column-one-third"
+                                                                            style="text-align:right;">
+
+                                                                            <button
+                                                                                class="nhsuk-button nhsuk-u-margin-bottom-3"
+                                                                                style="display:inline; width:100%;"
+                                                                                data-module="nhsuk-button"
+                                                                                type="submit">
+                                                                                Assign to invoice
+                                                                            </button><br />
+                                                                            <a href="../../../../../../ohs-blank"
+                                                                                target="_blank"
+                                                                                style="text-decoration: none;">
+                                                                                <button
+                                                                                    class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3"
+                                                                                    style="display:inline; width:100%;"
+                                                                                    data-module="nhsuk-button"
+                                                                                    type="submit">
+                                                                                    View OHS record
+                                                                                </button></a><br />
+                                                                            <button
+                                                                                class="nhsuk-button nhsuk-button--secondary"
+                                                                                style="display:inline; width:100%;"
+                                                                                data-module="nhsuk-button"
+                                                                                type="submit">
+                                                                                View claim history
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </li>
+                                                            <% }); %>
+
+                                                        </ul>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- Start pagination -->
+
+                                                <div class="nhsuk-grid-row">
+                                                    <div class="nhsuk-grid-column-full">
+                                                        <nav class="nhsuk-pagination" role="navigation"
+                                                            aria-label="Pagination" style="margin-top:0; margin-bottom:0;">
+
+                                                            <div class="nhsuk-pagination__prev">
+                                                                <!-- <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="prev">
+                                                            <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--prev"
+                                                              xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false"
+                                                              viewBox="0 0 15 13">
+                                                              <path
+                                                                d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z">
+                                                              </path>
+                                                            </svg>
+                                                            <span class="nhsuk-pagination__link-title">Previous<span class="nhsuk-visually-hidden">
+                                                                page</span></span></a> -->
+                                                            </div>
+
+
+                                                            <ul class="nhsuk-pagination__list">
+                                                                <li
+                                                                    class="nhsuk-pagination__item nhsuk-pagination__item--current">
+                                                                    <a class="nhsuk-link nhsuk-pagination__link"
+                                                                        href="#" aria-label="Page 1">
+                                                                        1
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nhsuk-pagination__item">
+                                                                    <a class="nhsuk-link nhsuk-pagination__link"
+                                                                        href="#" aria-label="Page 2">
+                                                                        2
+                                                                    </a>
+                                                                </li>
+
+                                                            </ul>
+
+                                                            <div class="nhsuk-pagination__next">
+                                                                <a class="nhsuk-link nhsuk-pagination__link" href="#"
+                                                                    rel="next"> <span
+                                                                        class="nhsuk-pagination__link-title">Next<span
+                                                                            class="nhsuk-visually-hidden">
+                                                                            page</span></span>
+                                                                    <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--next"
+                                                                        xmlns="http://www.w3.org/2000/svg" height="13"
+                                                                        width="15" aria-hidden="true" focusable="false"
+                                                                        viewBox="0 0 15 13">
+                                                                        <path
+                                                                            d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                                                                        </path>
+                                                                    </svg></a>
+                                                            </div>
+
+                                                        </nav>
+                                                    </div>
+                                                </div>
+
+                                                <!-- End pagination -->
+
+                                                <!-- End person search results -->
                                             </div>
                                         </details>
                                     </div>
