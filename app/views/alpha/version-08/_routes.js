@@ -1,10 +1,6 @@
 const express = require('express')
 const router = express.Router()
 
-const { Pool } = require('pg');
-
-
-
 //// CREATE CLAIM ////
 
 //Are you sure you want to cancel
