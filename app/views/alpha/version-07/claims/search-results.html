@@ -162,7 +162,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                 </label>
                 <input class="nhsuk-input" id="financial-year" name="financial-year" type="text"
                 {% if data['claim-id'] or data['claim-ref'] or data['country'] or data['financial-year'] %} 
-                value="" 
+                value="{{ data['financial-year'] }}" 
                 {% else %}
                 value="2023"
                 {% endif %}>
@@ -198,6 +198,21 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                 <strong class="nhsuk-tag nhsuk-tag--aqua-green">
                   {{ data['claim-id'] }}
                 </strong>
+                {% if data['claim-ref'] %}
+                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                  {{ data['claim-ref'] }}
+                </strong>
+                {% endif %}
+                {% if data['country'] %}
+                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                  {{ data['country'] }}
+                </strong>
+                {% endif %}
+                {% if data['financial-year'] %}
+                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                  {{ data['financial-year'] }}
+                </strong>
+                {% endif %}
                 {% else %}
                 <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 0 results of 0</h3>
                 <strong class="nhsuk-tag nhsuk-tag--aqua-green">
@@ -211,7 +226,6 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                 <strong class="nhsuk-tag nhsuk-tag--aqua-green">
                   2023
                 </strong>
-
                 {% endif %}
 
               </div>
