@@ -57,7 +57,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <!-- Start of central content -->
 {% block content %}
 
+
+
                 <!-- Start of confirmation message -->
+                {% if data['message'] !== 'Hide' %}
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert"
@@ -77,6 +80,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </div>
                     </div>
                 </div>
+                  {% endif %}
+
                 <!-- End of confirmation message -->
 
 

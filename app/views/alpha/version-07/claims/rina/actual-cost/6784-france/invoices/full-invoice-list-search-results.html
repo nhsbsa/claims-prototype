@@ -471,49 +471,70 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Entitlement</span>EHIC
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Status </span>To check
+                    <span class="nhsuk-table-responsive__heading">Status </span>
+                    {% if data['01554-status'] and data['01554-status'] === 'Accepted' %}
+                    Accepted
+                    {% else %}
+                    To check
+                    {% endif %}
                   </td>
 
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">View </span><a href="details/01554/01-to-check">View
-                      invoice</a>
+                    <span class="nhsuk-table-responsive__heading">View </span>
+                    {% if data['01554-status'] and data['01554-status'] === 'Accepted' %}
+                    <a href="details/01554/03-accepted?message=Hide">View invoice</a>
+                    {% else %}
+                    <a href="details/01554/01-to-check">View invoice</a>
+                    {% endif %}
                   </td>
+
                 </tr>
               </tbody>
             </table>
             {% else %}
-          </table>
-          <p class="nhsuk-body nhsuk-u-padding-bottom-3">No results found.</p>
-          {% endif %}
-          {% else %}
-          <tbody class="nhsuk-table__body">
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Invoice reference </span>01554
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039795410
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Last name </span>Pearce
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">First name</span>Sean
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Entitlement</span>EHIC
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Status </span>To check
-              </td>
+            </table>
+            <p class="nhsuk-body nhsuk-u-padding-bottom-3">No results found.</p>
+            {% endif %}
+            {% else %}
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Invoice reference </span>01554
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039795410
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Last name </span>Pearce
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">First name</span>Sean
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Entitlement</span>EHIC
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Status </span>
+                  {% if data['01554-status'] and data['01554-status'] === 'Accepted' %}
+                  Accepted
+                  {% else %}
+                  To check
+                  {% endif %}
+                </td>
 
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">View </span><a href="details/01554/01-to-check">View
-                  invoice</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">View </span>
+                  {% if data['01554-status'] and data['01554-status'] === 'Accepted' %}
+                  <a href="details/01554/03-accepted?message=Hide">View
+                    invoice</a>
+                  {% else %}
+                  <a href="details/01554/01-to-check">View
+                    invoice</a>
+                  {% endif %}
+                </td>
+              </tr>
+            </tbody>
+            </table>
             {% endif %}
 
 
