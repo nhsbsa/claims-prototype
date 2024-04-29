@@ -19,4 +19,10 @@ router.use('/alpha/version-06', require('./views/alpha/version-06/_routes'));
 router.use('/alpha/version-07', require('./views/alpha/version-07/_routes'));
 router.use('/alpha/version-08', require('./views/alpha/version-08/_routes'));
 
+// clear session data - link in footer
+router.post('/clear-session-data/', (req, res) => {
+    req.session.data = {}
+    res.render('index')
+})
+
 module.exports = router;
