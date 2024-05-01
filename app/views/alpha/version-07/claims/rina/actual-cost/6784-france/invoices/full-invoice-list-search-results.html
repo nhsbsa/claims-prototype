@@ -472,8 +472,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>
-                    {% if data['01554-status'] and data['01554-status'] === 'Accepted' %}
-                    Accepted
+                    {% if data['01554-status'] %}
+                    {{data['01554-status'] }}
                     {% else %}
                     To check
                     {% endif %}
@@ -483,6 +483,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">View </span>
                     {% if data['01554-status'] and data['01554-status'] === 'Accepted' %}
                     <a href="details/01554/03-accepted?message=Hide">View invoice</a>
+                    {% elif data['01554-status'] and data['01554-status'] === 'Contested'  %}
+                    <a href="details/01554/03-contested?message=Hide">View invoice</a>
                     {% else %}
                     <a href="details/01554/01-to-check">View invoice</a>
                     {% endif %}
@@ -515,8 +517,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading">Status </span>
-                  {% if data['01554-status'] and data['01554-status'] === 'Accepted' %}
-                  Accepted
+                  {% if data['01554-status'] %}
+                  {{data['01554-status'] }}
                   {% else %}
                   To check
                   {% endif %}
@@ -525,11 +527,11 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                 <td role="cell" class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading">View </span>
                   {% if data['01554-status'] and data['01554-status'] === 'Accepted' %}
-                  <a href="details/01554/03-accepted?message=Hide">View
-                    invoice</a>
+                  <a href="details/01554/03-accepted?message=Hide">View invoice</a>
+                  {% elif data['01554-status'] and data['01554-status'] === 'Contested'  %}
+                  <a href="details/01554/03-contested?message=Hide">View invoice</a>
                   {% else %}
-                  <a href="details/01554/01-to-check">View
-                    invoice</a>
+                  <a href="details/01554/01-to-check">View invoice</a>
                   {% endif %}
                 </td>
               </tr>
