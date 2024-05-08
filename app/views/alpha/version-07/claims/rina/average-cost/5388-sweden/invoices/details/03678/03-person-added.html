@@ -67,16 +67,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-column-full">
         <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="border-color:#007f3b;">
             <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                Person added
+                Person added but the invoice could not be accepted
             </h2>
             <div class="nhsuk-error-summary__body">
-                <p>
-                    The person has been assigned.<br>
-                    Auto validation has run.<br/>
-                    Auto validation was unsuccessful<br />
-                    The invoice still has a status of to check.
-                </p>
-
+                <p>This invoice is for <strong>Elizabeth MacFarlane</strong>, date of birth <strong>8 August 1950</strong>.</p>
+                <p>The OHS person record you assigned to it is for <strong>Elizabeth MacFarlane</strong>, date of birth <strong>8 August 1952</strong>.</p>
+                <p>The system has checked the OHS record you selected and could not match it with the invoice details. </p>
+                <p>The system has suggested a reason the invoice should be contested. You can select another reason if you need to.</p>
+                <p>You can now contest some or all of the claim.</p> 
             </div>
         </div>
     </div>
@@ -791,7 +789,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                             Person unique ID
                                                                         </label>
                                                                         <div class="nhsuk-hint">
-                                                                OHS reference, NINO or NHS number.
+                                                                Reference, National Insurance number, NHS number or PIN.
                                                             </div>
                                                                         <input class="nhsuk-input " id="contested"
                                                                             name="contested" type="text">
