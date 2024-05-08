@@ -76,7 +76,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-9">
-            Invoice details
+            Invoice details from France
         </h1>
     </div>
     <div class="nhsuk-grid-column-one-third" style="text-align:right;">
@@ -111,7 +111,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Status
+                            Current status
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             <strong class="nhsuk-tag nhsuk-tag--green">
@@ -178,7 +178,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-full">
                                         <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
-                                            Status
+                                            Status breakdown
                                         </h3>
                                     </div>
                                 </div>
@@ -188,7 +188,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
                                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
-                                                Accepted
+                                                Accepted amount
                                             </label>
                                             <input class="nhsuk-input " id="accepted" name="accepted" type="text"
                                                 value="2134.75">
@@ -197,7 +197,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
                                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
-                                                Contested
+                                                Contested amount
                                             </label>
                                             <input class="nhsuk-input " id="contested" name="contested" type="text"
                                                 value="0">
@@ -206,7 +206,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
                                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="withdrawn">
-                                                Withdrawn
+                                                Withdrawn amount
                                             </label>
                                             <input class="nhsuk-input " id="withdrawn" name="withdrawn" type="text"
                                                 value="0">
@@ -221,9 +221,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 for="contestation-reason">
                                                 Contestation reason
                                             </label>
+    <div class="nhsuk-hint" id="contact-hint">
+      Select a reason or select <strong>None - invoice accepted</strong>.
+    </div>
                                             <select class="nhsuk-select nhsuk-u-width-full" id="contestation-reason"
                                                 name="contestation-reason">
                                                 <option value="">Select contestation reason</option>
+<option value="None">None - invoice accepted</option>
                                                 <option value="This document does not concern us">This document does not
                                                     concern us</option>
 
@@ -382,7 +386,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-card">
                                     <div class="nhsuk-card__content nhsuk-card__content">
                                         <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-2">
-                                            Treatment details
+                                            Invoice period and amount
                                         </h3>
                                         <hr style="margin:0px 0px 20px 0px;">
                                         <dl class="nhsuk-summary-list">
@@ -404,7 +408,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             </div>
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Total value
+                                                    Total amount
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
                                                     2134.75
@@ -538,7 +542,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             <div class="nhsuk-grid-row">
                                                 <div class="nhsuk-grid-column-one-third">
                                                     <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
-                                                        Linked OHS record
+                                                        Matched OHS record
                                                         <!-- <span class="nhsuk-caption-m nhsuk-caption--bottom">Held by us</span> -->
                                                     </h3>
                                                     
@@ -629,7 +633,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                             method="post">
                 
                                                                             <div class="nhsuk-hint" id="contact-hint">
-                                                                                Search using a combination of person details fields.
+                                                                                Search using a combination of personal details.
                                                                             </div>
                                                                             <div class="nhsuk-grid-row">
                                                                                 <div class="nhsuk-grid-column-one-third">
