@@ -67,16 +67,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-column-full">
         <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="border-color:#007f3b;">
             <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                Person added
+                Person added but the invoice could not be accepted
             </h2>
             <div class="nhsuk-error-summary__body">
-                <p>
-                    The person has been assigned.<br>
-                    Auto validation has run.<br/>
-                    Auto validation was unsuccessful<br />
-                    The invoice still has a status of to check.
-                </p>
-
+                <p>This invoice is for <strong>Elizabeth MacFarlane</strong>, date of birth <strong>8 August 1950</strong>.</p>
+                <p>The OHS person record you assigned to it is for <strong>Elizabeth MacFarlane</strong>, date of birth <strong>8 August 1952</strong>.</p>
+                <p>The system has checked the OHS record you selected and could not match it with the invoice details. </p>
+                <p>The system has suggested a reason the invoice should be contested. You can select another reason if you need to.</p>
+                <p>You can now contest some or all of the claim.</p> 
             </div>
         </div>
     </div>
@@ -106,7 +104,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-9">
-            Invoice details
+            Invoice details from Sweden
             <!-- <span class="nhsuk-caption-xl nhsuk-caption--bottom">Invoice ID 01554 &ndash; Invoice reference 0039795410</span> -->
         </h1>
     </div>
@@ -143,7 +141,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Status
+                            Current status
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             <strong class="nhsuk-tag nhsuk-tag--yellow">
@@ -210,7 +208,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-full">
                                         <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
-                                            Status
+                                            Status breakdown
                                         </h3>
                                     </div>
                                 </div>
@@ -220,7 +218,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
                                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
-                                                Accepted
+                                                Accepted amount
                                             </label>
                                             <input class="nhsuk-input " id="accepted" name="accepted" type="text"
                                                 value="0">
@@ -229,7 +227,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
                                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
-                                                Contested
+                                                Contested amount
                                             </label>
                                             <input class="nhsuk-input " id="contested" name="contested" type="text"
                                                 value="2">
@@ -238,7 +236,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
                                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="withdrawn">
-                                                Withdrawn
+                                                Withdrawn amount
                                             </label>
                                             <input class="nhsuk-input " id="withdrawn" name="withdrawn" type="text"
                                                 value="0">
@@ -253,9 +251,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 for="contestation-reason">
                                                 Contestation reason
                                             </label>
+    <div class="nhsuk-hint" id="contact-hint">
+      Select a reason or select <strong>None - invoice accepted</strong>.
+    </div>
                                             <select class="nhsuk-select nhsuk-u-width-full" id="contestation-reason"
                                                 name="contestation-reason">
                                                 <option value="">Select contestation reason</option>
+<option value="None">None - invoice accepted</option>
                                                 <option value="This document does not concern us">This document does not
                                                     concern us</option>
 
@@ -415,7 +417,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-card">
                                     <div class="nhsuk-card__content nhsuk-card__content">
                                         <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-2">
-                                            Treatment details
+                                            Invoice period and amount
                                         </h3>
                                         <hr style="margin:0px 0px 20px 0px;">
                                         <dl class="nhsuk-summary-list">
@@ -437,7 +439,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             </div>
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Total value
+                                                    Total amount
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
                                                     2
@@ -571,7 +573,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-two-thirds">
                                         <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
-                                            Linked OHS record
+                                           Matched OHS record
                                             <!-- <span class="nhsuk-caption-m nhsuk-caption--bottom">Held by us</span> -->
                                         </h3>
                                         
@@ -787,7 +789,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                             Person unique ID
                                                                         </label>
                                                                         <div class="nhsuk-hint">
-                                                                OHS reference, NINO or NHS number.
+                                                                Reference, National Insurance number or NHS number.
                                                             </div>
                                                                         <input class="nhsuk-input " id="contested"
                                                                             name="contested" type="text">
@@ -798,10 +800,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                         <label
                                                                             class="nhsuk-label--s nhsuk-u-margin-bottom-1"
                                                                             for="contested">
-                                                                            Entitlement PIN or issue number
+                                                                            Entitlement issue number
                                                                         </label>
                                                                         <div class="nhsuk-hint">
-                                                                            EHIC, GHIC or PRC issue number or PIN.
+                                                                            EHIC, GHIC or PRC issue number.
                                                                         </div>
                                                                         <input class="nhsuk-input" id="contested"
                                                                             name="contested" type="text">

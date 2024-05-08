@@ -57,6 +57,26 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of central content -->
 {% block content %}
+<!-- Start of message block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="border-color:#ffeb3b;">
+            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                Check invoice
+            </h2>
+            <div class="nhsuk-error-summary__body">
+                <p>
+                    The system has not been able to match this invoice to an OHS record.</p> 
+<p>You can search for a matching OHS person record using the invoice details. </p>
+<p>If you find a matching OHS person record, you can assign it  to the invoice.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of message block -->
+
 <!-- Start of back link -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
@@ -78,7 +98,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-9">
-            Invoice details
+            Invoice details from France
         </h1>
     </div>
     <div class="nhsuk-grid-column-one-third" style="text-align:right;">
@@ -113,7 +133,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Status
+                            Current status
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             <strong class="nhsuk-tag nhsuk-tag--yellow">
@@ -180,7 +200,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-full">
                                         <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
-                                            Status
+                                            Status breakdown
                                         </h3>
                                     </div>
 
@@ -191,7 +211,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
                                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
-                                                Accepted
+                                                Accepted amount
                                             </label>
                                             <input class="nhsuk-input " id="accepted" name="accepted" type="text"
                                                 value="0">
@@ -200,7 +220,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
                                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
-                                                Contested
+                                                Contested amount
                                             </label>
                                             <input class="nhsuk-input " id="contested" name="contested" type="text"
                                                 value="2134.75">
@@ -209,7 +229,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
                                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="withdrawn">
-                                                Withdrawn
+                                                Withdrawn amount
                                             </label>
                                             <input class="nhsuk-input " id="withdrawn" name="withdrawn" type="text"
                                                 value="0">
@@ -224,9 +244,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 for="contestation-reason">
                                                 Contestation reason
                                             </label>
+    <div class="nhsuk-hint" id="contact-hint">
+      Select a reason or select <strong>None - invoice accepted</strong>.
+    </div>
                                             <select class="nhsuk-select nhsuk-u-width-full" id="contestation-reason"
                                                 name="contestation-reason">
                                                 <option value="">Select contestation reason</option>
+<option value="None">None - invoice accepted</option>
                                                 <option value="This document does not concern us">This document does not
                                                     concern us</option>
 
@@ -386,7 +410,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-card">
                                     <div class="nhsuk-card__content nhsuk-card__content">
                                         <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-2">
-                                            Treatment details
+                                            Invoice period and amount
                                         </h3>
                                         <hr style="margin:0px 0px 20px 0px;">
                                         <dl class="nhsuk-summary-list">
@@ -408,7 +432,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             </div>
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Total value
+                                                    Total amount
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
                                                     2134.75
@@ -541,7 +565,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-full">
                                         <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
-                                            Linked OHS record
+                                           Matched OHS record
                                             <!-- <span class="nhsuk-caption-m nhsuk-caption--bottom">Held by us</span> -->
                                         </h3>
                                         <hr style="margin:0px 0px 20px 0px;">
@@ -576,7 +600,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                             method="post">
 
                                                             <div class="nhsuk-hint" id="contact-hint">
-                                                                Search using a combination of person details fields.
+                                                                Search using a combination of personal details.
                                                             </div>
                                                             <div class="nhsuk-grid-row">
                                                                 <div class="nhsuk-grid-column-one-third">
@@ -686,8 +710,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                                             <div class="nhsuk-hint" id="contact-hint"
                                                                 style="padding-top:30px;">
-                                                                Or search using either OHS reference, National Insurance
-                                                                number, NHS number, PIN or issue number.
+                                                                Or search using either reference, National Insurance number, NHS number, PIN, or issue number.
                                                             </div>
                                                             <div class="nhsuk-grid-row">
                                                                 <div class="nhsuk-grid-column-one-third">
@@ -695,7 +718,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                         <label
                                                                             class="nhsuk-label--s nhsuk-u-margin-bottom-1"
                                                                             for="ohs-ref">
-                                                                            OHS reference
+                                                                            Reference
                                                                         </label>
                                                                         <input class="nhsuk-input" id="ohs-ref"
                                                                             name="ohs-ref" type="text">
@@ -926,7 +949,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         <label
                                                                                             class="nhsuk-label nhsuk-radios__label"
                                                                                             for="sort-by-id">
-                                                                                            OHS number
+                                                                                            Reference
                                                                                         </label>
                                                                                     </div>
                                                                                     <!-- <div
@@ -1033,7 +1056,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                         Date of birth
                                                                     </th>
                                                                     <th role="columnheader" class="" scope="col">
-                                                                        Reference number
+                                                                        Reference
                                                                     </th>
                                                                     <th role="columnheader" class="" scope="col">
                                                                         View
@@ -1094,14 +1117,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
 
 
-                                                                    <div class="nhsuk-grid-row"
-                                                                        style="margin-top:24px;">
+                                                                    <div class="nhsuk-grid-row">
                                                                         <div class="nhsuk-grid-column-full">
+                                                                            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-6" style="padding-left:16px; padding-right:16px;">OHS person record</h3>
                                                                             <div
                                                                                 class="nhsuk-grid-column-two-thirds ">
-
+                                                                            
                                                                                 <!-- Start person details -->
-                                                                                <h4 class="nhsuk-u-margin-bottom-2">
+                                                                                <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
                                                                                     Person details</h4>
                                                                                 <dl
                                                                                     class="nhsuk-summary-list nhsuk-u-margin-bottom-8">
@@ -1121,11 +1144,11 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         class="nhsuk-summary-list__row">
                                                                                         <dt
                                                                                             class="nhsuk-summary-list__key">
-                                                                                            NINO
+                                                                                            National Insurance number
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
-                                                                                            QQ 78 67 54 A
+                                                                                            QQ 78 67 54 C
                                                                                         </dd>
 
                                                                                     </div>
@@ -1149,7 +1172,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                 <!-- End person details -->
 
                                                                                 <!-- Start entitlement details-->
-                                                                                <h4 class="nhsuk-u-margin-bottom-2">
+                                                                                <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
                                                                                     Entitlement details</h4>
 
                                                                                 <dl class="nhsuk-summary-list"
@@ -1205,7 +1228,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         class="nhsuk-summary-list__row">
                                                                                         <dt
                                                                                             class="nhsuk-summary-list__key">
-                                                                                            Main/Dependant
+                                                                                            Main or dependant
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
@@ -1324,14 +1347,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
 
 
-                                                                    <div class="nhsuk-grid-row"
-                                                                        style="margin-top:24px;">
+                                                                    <div class="nhsuk-grid-row">
                                                                         <div class="nhsuk-grid-column-full">
+                                                                            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-6" style="padding-left:16px; padding-right:16px;">OHS person record</h3>
                                                                             <div
                                                                                 class="nhsuk-grid-column-two-thirds ">
-
+                                                                            
                                                                                 <!-- Start person details -->
-                                                                                <h4 class="nhsuk-u-margin-bottom-2">
+                                                                                <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
                                                                                     Person details</h4>
                                                                                 <dl
                                                                                     class="nhsuk-summary-list nhsuk-u-margin-bottom-8">
@@ -1351,7 +1374,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         class="nhsuk-summary-list__row">
                                                                                         <dt
                                                                                             class="nhsuk-summary-list__key">
-                                                                                            NINO
+                                                                                            National Insurance number
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
@@ -1379,7 +1402,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                 <!-- End person details -->
 
                                                                                 <!-- Start entitlement details-->
-                                                                                <h4 class="nhsuk-u-margin-bottom-2">
+                                                                                <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
                                                                                     Entitlement details</h4>
 
 
@@ -1429,7 +1452,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         class="nhsuk-summary-list__row">
                                                                                         <dt
                                                                                             class="nhsuk-summary-list__key">
-                                                                                            Main/Dependant
+                                                                                            Main or dependant
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
@@ -1467,158 +1490,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                                                                 </dl>
 
-                                                                                <dl class="nhsuk-summary-list"
-                                                                                    style="border-bottom:4px solid #d8dde0;">
-                                                                                    <div
-                                                                                        class="nhsuk-summary-list__row">
-                                                                                        <dt
-                                                                                            class="nhsuk-summary-list__key">
-                                                                                            Type
-                                                                                        </dt>
-                                                                                        <dd
-                                                                                            class="nhsuk-summary-list__value">
-                                                                                            GHIC
-                                                                                        </dd>
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="nhsuk-summary-list__row">
-                                                                                        <dt
-                                                                                            class="nhsuk-summary-list__key">
-                                                                                            Issue number
-                                                                                        </dt>
-                                                                                        <dd
-                                                                                            class="nhsuk-summary-list__value">
-                                                                                            00874637746658873542
-                                                                                        </dd>
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="nhsuk-summary-list__row">
-                                                                                        <dt
-                                                                                            class="nhsuk-summary-list__key">
-                                                                                            Start date
-                                                                                        </dt>
-                                                                                        <dd
-                                                                                            class="nhsuk-summary-list__value">
-                                                                                            10 December 2015
-                                                                                        </dd>
-                                                                                    </div>
 
-
-                                                                                    <div
-                                                                                        class="nhsuk-summary-list__row">
-                                                                                        <dt
-                                                                                            class="nhsuk-summary-list__key">
-                                                                                            End date
-                                                                                        </dt>
-                                                                                        <dd
-                                                                                            class="nhsuk-summary-list__value">
-                                                                                            09 December 2020
-                                                                                        </dd>
-                                                                                    </div>
-
-                                                                                    <div
-                                                                                        class="nhsuk-summary-list__row">
-                                                                                        <dt
-                                                                                            class="nhsuk-summary-list__key">
-                                                                                            Main/Dependant
-                                                                                        </dt>
-                                                                                        <dd
-                                                                                            class="nhsuk-summary-list__value">
-                                                                                            Main
-                                                                                        </dd>
-
-                                                                                    </div>
-
-                                                                                    <div
-                                                                                        class="nhsuk-summary-list__row">
-                                                                                        <dt
-                                                                                            class="nhsuk-summary-list__key">
-                                                                                            Status
-                                                                                        </dt>
-                                                                                        <dd
-                                                                                            class="nhsuk-summary-list__value">
-                                                                                            Expired
-                                                                                        </dd>
-
-                                                                                    </div>
-                                                                                </dl>
-
-                                                                                <dl class="nhsuk-summary-list"
-                                                                                style="border-bottom:4px solid #d8dde0;">
-                                                                                <div
-                                                                                    class="nhsuk-summary-list__row">
-                                                                                    <dt
-                                                                                        class="nhsuk-summary-list__key">
-                                                                                        Type
-                                                                                    </dt>
-                                                                                    <dd
-                                                                                        class="nhsuk-summary-list__value">
-                                                                                        EHIC
-                                                                                    </dd>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="nhsuk-summary-list__row">
-                                                                                    <dt
-                                                                                        class="nhsuk-summary-list__key">
-                                                                                        Issue number
-                                                                                    </dt>
-                                                                                    <dd
-                                                                                        class="nhsuk-summary-list__value">
-                                                                                        00453937746658877744<br />
-                                                                                        00267938546658834543
-                                                                                    </dd>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="nhsuk-summary-list__row">
-                                                                                    <dt
-                                                                                        class="nhsuk-summary-list__key">
-                                                                                        Start date
-                                                                                    </dt>
-                                                                                    <dd
-                                                                                        class="nhsuk-summary-list__value">
-                                                                                        24 September 2010
-                                                                                    </dd>
-                                                                                </div>
-
-
-                                                                                <div
-                                                                                    class="nhsuk-summary-list__row">
-                                                                                    <dt
-                                                                                        class="nhsuk-summary-list__key">
-                                                                                        End date
-                                                                                    </dt>
-                                                                                    <dd
-                                                                                        class="nhsuk-summary-list__value">
-                                                                                        23 September 2015
-                                                                                    </dd>
-                                                                                </div>
-
-                                                                                <div
-                                                                                    class="nhsuk-summary-list__row">
-                                                                                    <dt
-                                                                                        class="nhsuk-summary-list__key">
-                                                                                        Main/Dependant
-                                                                                    </dt>
-                                                                                    <dd
-                                                                                        class="nhsuk-summary-list__value">
-                                                                                        Main
-                                                                                    </dd>
-
-                                                                                </div>
-
-                                                                                <div
-                                                                                    class="nhsuk-summary-list__row">
-                                                                                    <dt
-                                                                                        class="nhsuk-summary-list__key">
-                                                                                        Status
-                                                                                    </dt>
-                                                                                    <dd
-                                                                                        class="nhsuk-summary-list__value">
-                                                                                        Expired
-                                                                                    </dd>
-
-                                                                                </div>
-                                                                            </dl>
 
                                                                                 <!-- End entitlement details-->
 
@@ -1710,14 +1582,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
 
 
-                                                                        <div class="nhsuk-grid-row"
-                                                                            style="margin-top:24px;">
+                                                                        <div class="nhsuk-grid-row">
                                                                             <div class="nhsuk-grid-column-full">
+                                                                                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-6" style="padding-left:16px; padding-right:16px;">OHS person record</h3>
                                                                                 <div
                                                                                     class="nhsuk-grid-column-two-thirds ">
-
+                                                                                
                                                                                     <!-- Start person details -->
-                                                                                    <h4 class="nhsuk-u-margin-bottom-2">
+                                                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
                                                                                         Person details</h4>
                                                                                     <dl
                                                                                         class="nhsuk-summary-list nhsuk-u-margin-bottom-8">
@@ -1737,7 +1609,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                             class="nhsuk-summary-list__row">
                                                                                             <dt
                                                                                                 class="nhsuk-summary-list__key">
-                                                                                                NINO
+                                                                                                National Insurance number
                                                                                             </dt>
                                                                                             <dd
                                                                                                 class="nhsuk-summary-list__value">
@@ -1765,7 +1637,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                     <!-- End person details -->
 
                                                                                     <!-- Start entitlement details-->
-                                                                                    <h4 class="nhsuk-u-margin-bottom-2">
+                                                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
                                                                                         Entitlement details</h4>
 
 
@@ -1791,7 +1663,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                             </dt>
                                                                                             <dd
                                                                                                 class="nhsuk-summary-list__value">
-                                                                                                00874637746658873542
+                                                                                                00874637746658873542<br />
+                                                                                                00649437746658873541
                                                                                             </dd>
                                                                                         </div>
                                                                                         <div
@@ -1827,7 +1700,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                             class="nhsuk-summary-list__row">
                                                                                             <dt
                                                                                                 class="nhsuk-summary-list__key">
-                                                                                                Main/Dependant
+                                                                                                Main or dependant
                                                                                             </dt>
                                                                                             <dd
                                                                                                 class="nhsuk-summary-list__value">
@@ -1853,6 +1726,83 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
 
                                                                                     </dl>
+
+                                                                                    <dl class="nhsuk-summary-list"
+                                                                                    style="border-bottom:4px solid #d8dde0;">
+                                                                                    <div
+                                                                                        class="nhsuk-summary-list__row">
+                                                                                        <dt
+                                                                                            class="nhsuk-summary-list__key">
+                                                                                            Type
+                                                                                        </dt>
+                                                                                        <dd
+                                                                                            class="nhsuk-summary-list__value">
+                                                                                            PRC
+                                                                                        </dd>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="nhsuk-summary-list__row">
+                                                                                        <dt
+                                                                                            class="nhsuk-summary-list__key">
+                                                                                            Issue number
+                                                                                        </dt>
+                                                                                        <dd
+                                                                                            class="nhsuk-summary-list__value">
+                                                                                            00467329746658899305
+                                                                                        </dd>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="nhsuk-summary-list__row">
+                                                                                        <dt
+                                                                                            class="nhsuk-summary-list__key">
+                                                                                            Start date
+                                                                                        </dt>
+                                                                                        <dd
+                                                                                            class="nhsuk-summary-list__value">
+                                                                                            10 September 2022
+                                                                                        </dd>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="nhsuk-summary-list__row">
+                                                                                        <dt
+                                                                                            class="nhsuk-summary-list__key">
+                                                                                            End date
+                                                                                        </dt>
+                                                                                        <dd
+                                                                                            class="nhsuk-summary-list__value">
+                                                                                            14 September 2022
+                                                                                        </dd>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="nhsuk-summary-list__row">
+                                                                                        <dt
+                                                                                            class="nhsuk-summary-list__key">
+                                                                                            Country
+                                                                                        </dt>
+                                                                                        <dd
+                                                                                            class="nhsuk-summary-list__value">
+                                                                                            Spain
+                                                                                        </dd>
+
+                                                                                    </div>
+
+
+                                                                                    <div
+                                                                                        class="nhsuk-summary-list__row">
+                                                                                        <dt
+                                                                                            class="nhsuk-summary-list__key">
+                                                                                            Status
+                                                                                        </dt>
+                                                                                        <dd
+                                                                                            class="nhsuk-summary-list__value">
+                                                                                            Expired
+                                                                                        </dd>
+
+                                                                                    </div>
+
+
+
+                                                                                </dl>
 
                                                                         
 
@@ -1947,14 +1897,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                     <td colspan="7">
 
 
-                                                                        <div class="nhsuk-grid-row"
-                                                                            style="margin-top:24px;">
+                                                                        <div class="nhsuk-grid-row">
                                                                             <div class="nhsuk-grid-column-full">
+                                                                                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-6" style="padding-left:16px; padding-right:16px;">OHS person record</h3>
                                                                                 <div
                                                                                     class="nhsuk-grid-column-two-thirds ">
-
+                                                                                
                                                                                     <!-- Start person details -->
-                                                                                    <h4 class="nhsuk-u-margin-bottom-2">
+                                                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
                                                                                         Person details</h4>
                                                                                     <dl
                                                                                         class="nhsuk-summary-list nhsuk-u-margin-bottom-8">
@@ -1991,7 +1941,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                     <!-- End person details -->
 
                                                                                     <!-- Start entitlement details-->
-                                                                                    <h4 class="nhsuk-u-margin-bottom-2">
+                                                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
                                                                                         Entitlement details</h4>
 
                                                                                     <dl class="nhsuk-summary-list"
@@ -2146,14 +2096,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
 
 
-                                                                    <div class="nhsuk-grid-row"
-                                                                        style="margin-top:24px;">
+                                                                    <div class="nhsuk-grid-row">
                                                                         <div class="nhsuk-grid-column-full">
+                                                                            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-6" style="padding-left:16px; padding-right:16px;">OHS person record</h3>
                                                                             <div
                                                                                 class="nhsuk-grid-column-two-thirds ">
-
+                                                                            
                                                                                 <!-- Start person details -->
-                                                                                <h4 class="nhsuk-u-margin-bottom-2">
+                                                                                <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
                                                                                     Person details</h4>
                                                                                 <dl
                                                                                     class="nhsuk-summary-list nhsuk-u-margin-bottom-8">
@@ -2173,7 +2123,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         class="nhsuk-summary-list__row">
                                                                                         <dt
                                                                                             class="nhsuk-summary-list__key">
-                                                                                            NINO
+                                                                                            National Insurance number
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
@@ -2201,7 +2151,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                 <!-- End person details -->
 
                                                                                 <!-- Start entitlement details-->
-                                                                                <h4 class="nhsuk-u-margin-bottom-2">
+                                                                                <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
                                                                                     Entitlement details</h4>
 
 
@@ -2215,9 +2165,20 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
-                                                                                            EHIC
+                                                                                            GHIC
                                                                                         </dd>
                                                                                     </div>
+                                                                                    <div
+                                                                                    class="nhsuk-summary-list__row">
+                                                                                    <dt
+                                                                                        class="nhsuk-summary-list__key">
+                                                                                        Issue number
+                                                                                    </dt>
+                                                                                    <dd
+                                                                                        class="nhsuk-summary-list__value">
+                                                                                        00974637746658873366
+                                                                                    </dd>
+                                                                                </div>
                                                                                     <div
                                                                                         class="nhsuk-summary-list__row">
                                                                                         <dt
@@ -2226,7 +2187,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
-                                                                                            1 January 2023
+                                                                                            20 April 2024
                                                                                         </dd>
                                                                                     </div>
 
@@ -2239,19 +2200,15 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
-                                                                                            31 December 2023
+                                                                                            19 April 2029
                                                                                         </dd>
                                                                                     </div>
-
-
-
-
 
                                                                                     <div
                                                                                         class="nhsuk-summary-list__row">
                                                                                         <dt
                                                                                             class="nhsuk-summary-list__key">
-                                                                                            Main/Dependant
+                                                                                            Main or dependant
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
@@ -2260,18 +2217,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                                                                     </div>
 
-                                                                                    <div
-                                                                                        class="nhsuk-summary-list__row">
-                                                                                        <dt
-                                                                                            class="nhsuk-summary-list__key">
-                                                                                            Country
-                                                                                        </dt>
-                                                                                        <dd
-                                                                                            class="nhsuk-summary-list__value">
-                                                                                            Sweden
-                                                                                        </dd>
-
-                                                                                    </div>
                                                                                     <div
                                                                                         class="nhsuk-summary-list__row">
                                                                                         <dt
@@ -2303,27 +2248,16 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         </dd>
                                                                                     </div>
                                                                                     <div
-                                                                                        class="nhsuk-summary-list__row">
-                                                                                        <dt
-                                                                                            class="nhsuk-summary-list__key">
-                                                                                            PIN
-                                                                                        </dt>
-                                                                                        <dd
-                                                                                            class="nhsuk-summary-list__value">
-                                                                                            UK78436743
-                                                                                        </dd>
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="nhsuk-summary-list__row">
-                                                                                        <dt
-                                                                                            class="nhsuk-summary-list__key">
-                                                                                            Issue number
-                                                                                        </dt>
-                                                                                        <dd
-                                                                                            class="nhsuk-summary-list__value">
-                                                                                            00874637746658873542
-                                                                                        </dd>
-                                                                                    </div>
+                                                                                    class="nhsuk-summary-list__row">
+                                                                                    <dt
+                                                                                        class="nhsuk-summary-list__key">
+                                                                                        Issue number
+                                                                                    </dt>
+                                                                                    <dd
+                                                                                        class="nhsuk-summary-list__value">
+                                                                                        00674637746658879243
+                                                                                    </dd>
+                                                                                </div>
                                                                                     <div
                                                                                         class="nhsuk-summary-list__row">
                                                                                         <dt
@@ -2332,7 +2266,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
-                                                                                            10 December 2020
+                                                                                            15 January 2019
                                                                                         </dd>
                                                                                     </div>
 
@@ -2345,19 +2279,15 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
-                                                                                            09 December 2025
+                                                                                            14 January 2024
                                                                                         </dd>
                                                                                     </div>
-
-
-
-
 
                                                                                     <div
                                                                                         class="nhsuk-summary-list__row">
                                                                                         <dt
                                                                                             class="nhsuk-summary-list__key">
-                                                                                            Main/Dependant
+                                                                                            Main or dependant
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
@@ -2365,7 +2295,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         </dd>
 
                                                                                     </div>
-
 
                                                                                     <div
                                                                                         class="nhsuk-summary-list__row">
@@ -2375,7 +2304,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                                         </dt>
                                                                                         <dd
                                                                                             class="nhsuk-summary-list__value">
-                                                                                            Issued
+                                                                                            Expired
                                                                                         </dd>
 
                                                                                     </div>
@@ -2383,6 +2312,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
 
                                                                                 </dl>
+
+                                                                                
 
                                                                                 <!-- End entitlement details-->
 
