@@ -1,0 +1,255 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+  {
+  name: 'Summary',
+  path: '/alpha/version-08/claims/summary/invoices-uploaded-errors'
+  },
+  {
+  name: 'Invoices',
+  path: '/alpha/version-08/claims/invoices/full-invoice-list-errors'
+  },
+  {
+  name: 'Uploaded files',
+  path: '/alpha/version-08/claims/file-uploads/complete-errors',
+  active: true
+  },
+  {
+  name: 'History',
+  path: '/alpha/version-08/claims/history/invoices-uploaded-errors'
+  }
+  ]
+  %}
+  <!-- Extends the layout from /views/layout-full-width-claim.html -->
+  {% extends 'layout-full-width-claim.html' %}
+  
+  <!-- Start of page title -->
+  {% block pageTitle %}
+  File upload report - Manage incoming international healthcare claims - NHSBSA
+  {% endblock %}
+  <!-- End of page title -->
+  
+  {% block beforeContent %}
+  <!-- Start of breadcrumb -->
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../index">Claims</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back">
+        <a class="nhsuk-breadcrumb__backlink" href="../index">
+          <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+          Claims
+        </a>
+      </p>
+    </div>
+  </nav>
+  <!-- End of breadcrumb -->
+  {% endblock %}
+  
+  <!-- Start of central content -->
+  {% block content %}
+  
+  <!-- Start of back link -->
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true" height="24" width="24">
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+          </svg>
+          Go back</a>
+      </div>
+    </div>
+  </div>
+  <!-- End of back link -->
+  
+  <!-- Start of title block -->
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <h1 class="nhsuk-heading-xl">
+        File upload report
+      </h1>
+    </div>
+  </div>
+  <!-- End of title block -->
+  
+  <!--Start file key information box-->
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+              <h3 class="nhsuk-card__heading">
+                Filename: invoice-file-2.xml
+              </h3>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <strong class="nhsuk-tag nhsuk-tag--red" style="float:right">
+                Processed - with errors
+              </strong>
+            </div>
+            <div class="nhsuk-grid-column-full">
+              <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
+              <br>
+            </div>
+          </div>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Total invoices processed
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    34,258
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Total invoices with errors
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {% if data['invoice-reference'] %}
+                    1
+                    {% else %}
+                    2
+                    {% endif%}
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date uploaded
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    1 December 2023
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Created by </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Isla Fields
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of key information box -->
+  
+  <!-- Start download error log-->
+  <div class="nhsuk-action-link nhsuk-u-margin-bottom-4">
+    <a class="nhsuk-action-link__link" href="#">
+      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        aria-hidden="true" width="36" height="36">
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path
+          d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+        </path>
+      </svg>
+      <span class="nhsuk-action-link__text">Download error log</span>
+    </a>
+  </div>
+  <!-- End download error log -->
+  
+  <!--Start error log results-->
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <div class="nhsuk-grid-row nhsuk-u-padding-bottom-0">
+            <div class="nhsuk-grid-column-two-thirds">
+              <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Showing 2 results of 2</h3>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <div class="nhsuk-form-group" style="float:right;">
+                <label class="nhsuk-label" for="results">
+                  Results per page
+                </label>
+                <select class="nhsuk-select" id="results" name="results" style="float:right;">
+                  <option value="10" selected="">10</option>
+                  <option value="100">100</option>
+                  <option value="200">200</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Start table -->
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <table role="table" class="nhsuk-table-responsive">
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col" width="15%">
+                      Invoice reference
+                    </th>
+                    <th role="columnheader" class="" scope="col" width="10%">
+                      Line number
+                    </th>
+                    <th role="columnheader" class="" scope="col" width="60%">
+                      Error
+                    </th>
+                    <th role="columnheader" class="" scope="col" width="15%">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  {% if data['invoice-reference'] %}
+                  {% else %}
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039793888
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Line number</span>1336
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Error</span>End date must be formatted as
+                      yyyy/mm/dd
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action</span><a
+                        href="../invoices/create/index?invoice-reference=0039793888">Add
+                        invoice</a>
+                    </td>
+                  </tr>
+                  {% endif%}
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039791126
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Line number</span>1135
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Error</span>Hospital start date must contain a
+                      date
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action</span><a
+                        href="">Add
+                        invoice</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- End table-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End error log results -->
+  {% endblock %}
+  <!-- End of central content -->

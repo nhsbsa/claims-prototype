@@ -1,0 +1,952 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Home',
+path: '/alpha/version-08/home'
+},
+{
+name: 'Claims',
+path: '/alpha/version-08/claims/index',
+active: true
+},
+{
+name: 'Contested claims',
+path: '/alpha/version-08/contestations/index'
+},
+{
+name: 'Reports',
+path: '/alpha/version-08/reports/index'
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Claims - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../home">Home</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="../home">
+        <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+        Home
+      </a>
+    </p>
+  </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content and left navigation -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- Start of header block -->
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl ">
+          Claims
+        </h1>
+      </div>
+      <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+        <a href="create/index">
+          <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" data-module="nhsuk-button"
+            type="submit">
+            Create a new claim
+          </button>
+        </a>
+      </div>
+    </div>
+    <!-- End of header block -->
+
+    <!-- Start of search block -->
+    <div class="nhsuk-card" id="filter-results">
+      <div class="nhsuk-card__content">
+        <form action="#" method="post">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <h3 class="nhsuk-card__heading">
+                Search for a claim
+              </h3>
+            </div>
+          </div>
+          <hr style="margin:0px 0px 24px 0px;" />
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <div class="nhsuk-hint" id="contact-hint">
+                Search using one or more fields.
+              </div>
+            </div>
+            </div>
+
+          <!-- Start of search inputs-->
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-quarter">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claim-id">
+                  Claim ID
+                </label>
+                <input class="nhsuk-input" id="claim-id" name="claim-id" type="text" {% if data['claim-id']
+                  %}value="{{ data['claim-id'] }}" {% endif %}>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claim-ref">
+                  Claim reference
+                </label>
+                <input class="nhsuk-input" id="claim-ref" name="claim-ref" type="text" {% if data['claim-ref']
+                  %}value="{{ data['claim-ref'] }}" {% endif %}>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter">
+              <!-- Country submitting the claim -->
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="select-autocomplete">
+                  Country
+                </label>
+                <div>
+                  <select name="country" id="select-autocomplete">
+                    {% if data['country'] %}<option value="{{ data['country'] }}" selected>{{ data['country'] }}
+                    </option>{% endif %}
+                    <option value=""></option>
+                    <option value="Austria">Austria</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Bulgaria">Bulgaria</option>
+                    <option value="Croatia">Croatia</option>
+                    <option value="Cyprus">Cyprus</option>
+                    <option value="Czech Republic">Czech Republic</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Estonia">Estonia</option>
+                    <option value="Finland">Finland</option>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Greece">Greece</option>
+                    <option value="Hungary">Hungary</option>
+                    <option value="Iceland">Iceland</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Latvia">Latvia</option>
+                    <option value="Liechtenstein">Liechtenstein</option>
+                    <option value="Lithuania">Lithuania</option>
+                    <option value="Luxemburg">Luxemburg</option>
+                    <option value="Malta">Malta</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Slovakia">Slovakia</option>
+                    <option value="Slovenia">Slovenia</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Switzerland">Switzerland</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="financial-year">
+                  Financial year
+                </label>
+                <input class="nhsuk-input" id="financial-year" name="financial-year" type="text"
+                {% if data['claim-id'] or data['claim-ref'] or data['country'] or data['financial-year'] %} 
+                value="{{ data['financial-year'] }}" 
+                {% else %}
+                value="2023"
+                {% endif %}>
+              </div>
+            </div>
+          </div>
+          <!-- End of search inputs -->
+
+          <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- End of search fields -->
+
+    <!-- Start search results -->
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
+
+            <!-- Start header block-->
+            <div class="nhsuk-grid-row nhsuk-u-padding-bottom-2">
+              <div class="nhsuk-grid-column-two-thirds">
+
+                {% if data['claim-id'] %}
+
+                {% if data['claim-id'] %}
+                {% if data['claim-id'] === '5388' or data['claim-id'] === '6784' %}
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 results of 1</h3>
+                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                  {{ data['claim-id'] }}
+                </strong>
+                {% if data['claim-ref'] %}
+                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                  {{ data['claim-ref'] }}
+                </strong>
+                {% endif %}
+                {% if data['country'] %}
+                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                  {{ data['country'] }}
+                </strong>
+                {% endif %}
+                {% if data['financial-year'] %}
+                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                  {{ data['financial-year'] }}
+                </strong>
+                {% endif %}
+                {% else %}
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 0 results of 0</h3>
+                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                  {{ data['claim-id'] }}
+                </strong>
+                {% endif %}
+                {% endif %}
+
+                {% else %}
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 10 results of 63</h3>
+                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                  2023
+                </strong>
+                {% endif %}
+
+              </div>
+              <div class="nhsuk-grid-column-one-third">
+                <div class="nhsuk-form-group" style="float:right;">
+                  <label class="nhsuk-label" for="results">
+                    Results per page
+                  </label>
+                  <select class="nhsuk-select" id="results" name="results" style="float:right;">
+                    <option value="10" selected>10</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- End of header block -->
+
+            <!-- Start of filter and sort options -->
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full">
+                <details class="nhsuk-details nhsuk-u-margin-bottom-4">
+                  <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                      Filter and sort options
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+                    <div class="nhsuk-grid-row">
+                      <!-- Start filter by article type-->
+                      <div class="nhsuk-grid-column-one-quarter">
+                        <div class="nhsuk-form-group">
+                          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                              <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                Filter by article type
+                              </h1>
+                            </legend>
+                            <div class="nhsuk-checkboxes">
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="article-filter-20" name="article-filter"
+                                  type="checkbox" value="Article 20(2) - S2">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-20">
+                                  Article 20 (2)
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="article-filter-22" name="article-filter"
+                                  type="checkbox" value="Article 22(i)(c) - E112">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-22">
+                                  Article 22 (1c)
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="article-filter-55" name="article-filter"
+                                  type="checkbox" value="Article 55(i)(a) - E123">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-55">
+                                  Article 55 (1a)
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="article-filter-62" name="article-filter"
+                                  type="checkbox" value="Article 62">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-62">
+                                  Article 62
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="article-filter-63-2a" name="article-filter"
+                                  type="checkbox" value="Article 63 (2a)">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-63-2a">
+                                  Article 63 (2a)
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="article-filter-63-2b" name="article-filter"
+                                  type="checkbox" value="Article 63 (2b)">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-63-2b">
+                                  Article 63 (2b)
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="article-filter-65" name="article-filter"
+                                  type="checkbox" value="Article 65">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-65">
+                                  Article 65
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="article-filter-93" name="article-filter"
+                                  type="checkbox" value="Article 93 - E125">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-93">
+                                  Article 93
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="article-filter-94" name="article-filter"
+                                  type="checkbox" value="Article 94 - E109">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-94">
+                                  Article 94
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="article-filter-95" name="article-filter"
+                                  type="checkbox" value="Article 95 - E121">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-95">
+                                  Article 95
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="article-filter-aw03" name="article-filter"
+                                  type="checkbox" value="AW03">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-aw03">
+                                  AW03
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+
+                      </div>
+                      <!-- End filter by -->
+
+                      <!-- Start filter by claim type-->
+                      <div class="nhsuk-grid-column-one-quarter">
+                        <div class="nhsuk-form-group">
+                          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                              <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                Filter by claim type
+                              </h1>
+                            </legend>
+                            <div class="nhsuk-checkboxes">
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="type-filter-main" name="type-filter"
+                                  type="checkbox" value="Main">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-filter-main">
+                                  Main
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="type-filter-supplementary" name="type-filter"
+                                  type="checkbox" value="Supplementary">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-filter-supplementary">
+                                  Supplementary
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+
+
+                      </div>
+                      <!-- End filter by -->
+
+                      <!-- Start filter by claim status -->
+                      <div class="nhsuk-grid-column-one-quarter">
+                        <div class="nhsuk-form-group">
+                          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                              <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                Filter by claim status
+                              </h1>
+                            </legend>
+                            <div class="nhsuk-checkboxes">
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="status-filter-not-started"
+                                  name="status-filter" type="checkbox" value="Not started">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="status-filter-not-started">
+                                  Not started
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="status-filter-active" name="status-filter"
+                                  type="checkbox" value="Active">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="status-filter-active">
+                                  Active
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="status-filter-contested" name="status-filter"
+                                  type="checkbox" value="Contested">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="status-filter-contested">
+                                  Contested
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="status-filter-sent" name="status-filter"
+                                  type="checkbox" value="Sent">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="status-filter-sent">
+                                  Letters sent
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <!-- End sort by -->
+
+                      <!-- Start by and sort order -->
+                      <div class="nhsuk-grid-column-one-quarter">
+
+                        <div class="nhsuk-form-group nhsuk-u-padding-bottom-5">
+                          <fieldset class="nhsuk-fieldset">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                              <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                Sort by
+                              </h1>
+                            </legend>
+                            <div class="nhsuk-radios">
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="sort-by-id" name="sort-by" type="radio"
+                                  value="Claim ID" checked="checked">
+                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
+                                  Claim ID
+                                </label>
+                              </div>
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="sort-by-ref" name="sort-by" type="radio"
+                                  value="Claim reference">
+                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-ref">
+                                  Claim reference
+                                </label>
+                              </div>
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="sort-by-country" name="sort-by" type="radio"
+                                  value="Country">
+                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-country">
+                                  Country
+                                </label>
+                              </div>
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="sort-by-year" name="sort-by" type="radio"
+                                  value="Financial year">
+                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-year">
+                                  Financial year
+                                </label>
+                              </div>
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="sort-by-article" name="sort-by" type="radio"
+                                  value="Article type">
+                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-article">
+                                  Article type
+                                </label>
+                              </div>
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="sort-by-type" name="sort-by" type="radio"
+                                  value="Claim type">
+                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-type">
+                                  Claim type
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+
+                        <div class="nhsuk-form-group">
+                          <fieldset class="nhsuk-fieldset">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                              <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                Order results
+                              </h1>
+                            </legend>
+                            <div class="nhsuk-radios">
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="order-by-asc" name="order-by" type="radio"
+                                  value="ascending">
+                                <label class="nhsuk-label nhsuk-radios__label" for="order-by-asc">
+                                  Ascending
+                                </label>
+                              </div>
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="order-by-desc" name="order-by" type="radio"
+                                  value="descending" checked="checked">
+                                <label class="nhsuk-label nhsuk-radios__label" for="order-by-desc">
+                                  Descending
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <!-- End order -->
+
+                      <div class="nhsuk-grid-column-full">
+                        <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                          Apply filters
+                        </button>
+                        <p class="nhsuk-u-margin-bottom-0"><a href="">Reset all filters</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+            <!-- End of filter and sort options -->
+
+
+            <!-- Start of table data -->
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full">
+
+                <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-6">
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                        Claim ID
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                        Claim reference
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                        Country
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                        Financial year
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                        Article type
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                        Claim type
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                        View
+                      </th>
+                    </tr>
+                  </thead>
+
+
+                  {% if data['claim-id'] %}
+                  {% if data['claim-id'] === '5388' %}
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>5388
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim reference </span>230640736739
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Country </span>Sweden
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Article type </span>Article 63 (2a)
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">View </span><a
+                          href="rina/average-cost/5388-sweden/summary/active-invoices-uploaded">View claim</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                {% elif data['claim-id'] === '6784' %}
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6784
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>11322249AT2301E
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>France
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a
+                        href="rina/actual-cost/6784-france/summary/active-invoices-uploaded">View claim</a>
+                    </td>
+                  </tr>
+                </tbody>
+                </table>
+                {% else %}
+                </table>
+                <p>No results found.</p>
+
+
+                {% endif %}
+                {% else %}
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6788
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>2/2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Portugal
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 63 (2a)
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6787
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>25520224764
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Italy
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6786
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>HU-UK/2023/1
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Hungary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6785
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>UK1S08000000386
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Germany
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6784
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>11322249AT2301E
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>France
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a
+                        href="rina/actual-cost/6784-france/summary/active-invoices-uploaded">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6783
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>20333GB 932023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Spain
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 63 (2a)
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6782
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>CY20231E175EURO
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Cyprus
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 63 (2a)
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6781
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>62 UK 2023 02
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Finland
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6780
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>AT-UK/23-354
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Austria
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6779
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>PCHGB145_0623_GB23091
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Switzerland
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+
+                </tbody>
+
+                </table>
+
+                <div class="nhsuk-grid-row">
+                  <div class="nhsuk-grid-column-full">
+                    <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+
+                      <div class="nhsuk-pagination__prev">
+                        <!-- <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="prev">
+                            <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--prev"
+                              xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false"
+                              viewBox="0 0 15 13">
+                              <path
+                                d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z">
+                              </path>
+                            </svg>
+                            <span class="nhsuk-pagination__link-title">Previous<span class="nhsuk-visually-hidden">
+                                page</span></span></a> -->
+                      </div>
+
+
+                      <ul class="nhsuk-pagination__list">
+                        <li class="nhsuk-pagination__item nhsuk-pagination__item--current">
+                          <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 1">
+                            1
+                          </a>
+                        </li>
+                        <li class="nhsuk-pagination__item">
+                          <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 2">
+                            2
+                          </a>
+                        </li>
+                        <li class="nhsuk-pagination__item ">
+                          <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 3" aria-current="page">
+                            3
+                          </a>
+                        </li>
+                        <li class="nhsuk-pagination__item nhsuk-pagination__item--ellipses">⋯</li>
+                        <li class="nhsuk-pagination__item">
+                          <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 7">
+                            7
+                          </a>
+                        </li>
+                      </ul>
+
+                      <div class="nhsuk-pagination__next">
+                        <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="next"> <span
+                            class="nhsuk-pagination__link-title">Next<span class="nhsuk-visually-hidden">
+                              page</span></span>
+                          <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--next"
+                            xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true"
+                            focusable="false" viewBox="0 0 15 13">
+                            <path
+                              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                            </path>
+                          </svg></a>
+                      </div>
+
+                    </nav>
+                  </div>
+                </div>
+
+
+                {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+            <!-- End of table data -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of search results -->
+
+  </div>
+  {% endblock %}
+  <!-- End of page content and left navigation -->
