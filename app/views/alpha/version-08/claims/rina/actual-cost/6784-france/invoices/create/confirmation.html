@@ -1,0 +1,111 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    { 
+    name: 'Summary',
+    path: '/alpha/version-08/claims/summary/not-started'
+    },
+    {
+    name: 'Invoices',
+    path: '/alpha/version-08/claims/invoices/not-started',
+    active: true
+    },
+    {
+    name: 'Uploaded files',
+    path: '/alpha/version-08/claims/file-upload/complete-errors'
+    },
+    {
+    name: 'History',
+    path: '/alpha/version-08/claims/history/invoices-uploaded-errors'
+    }
+    ]
+    %}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Invoice created - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../claims/index">Claims</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../full-invoice-list">Invoices</a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../full-invoice-list.html">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+               invoice list
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content  -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Start of cya -->
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+
+
+                <div class="confirmation-box">
+                    <h1 class="heading-xlarge">
+                        Invoice created for {% if data['first-name'] %}{{
+                        data['first-name'] }} {{data['last-name']}}{% else %}Reece Bell{% endif %}
+                    </h1>
+                    <h2 class="heading-large"><span class="heading-secondary" style="color:white;">Invoice ID 
+                            <br />
+                            01578
+                        </span>
+
+                    </h2>
+                </div>
+                <p>You've created a new invoice for {% if data['first-name']%}{{data['first-name'] }} {{data['last-name']}}{% else %}Reece Bell{% endif %}. The invoice is from France.</p>
+
+                    <p>The invoice start date is 6 March 2020 and the end date is 8 March 2020.</p> 
+                    
+                    <p>The total amount of this invoice is {% if data['amount-or-months'] %}{{ data['amount-or-months'] }}{% else
+                        %}453.87{% endif %}</p>
+
+                    <p>The invoice reference is {% if data['invoice-ref'] %}{{ data['invoice-ref'] }}{% else
+                        %}0039795426{% endif %}.</p>
+                <h2 class="heading-medium">What happens next</h2>
+                <p>The system will now try to match the invoice to a valid entitlement.</p>
+                <p>If the system cannot find a match, you'll need to search for a possible match manually instead.</p>
+                
+                <a href="../invoice-list-errors">
+                    <button class="nhsuk-button" style="margin-right:12px;" data-module="nhsuk-button" type="submit">
+                        Manage invoices
+                    </button>
+                </a>
+                
+                <a href="../../invoices/upload/options">
+                    <button style="margin-right:12px;" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                        Add another invoice
+                    </button>
+                </a>
+                
+            </div>
+        </div>
+        <!-- End of cya -->
+
+    </div>
+</div>
+{% endblock %}
+<!-- End of central content -->

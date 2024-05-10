@@ -1,0 +1,228 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Home',
+path: '/alpha/version-08/home',
+active: true
+},
+{
+name: 'Claims',
+path: '/alpha/version-08/claims/index'
+},
+{
+name: 'Contested claims',
+path: '#'
+},
+{
+name: 'Reports',
+path: '#'
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Home - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <span class="nhsuk-caption-s nhsuk-caption--bottom">Last logged in: 6 December 2023</span>
+  </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- Change the page title here -->
+    <h1 class="nhsuk-heading-xl ">
+      Welcome Isla Fields
+    </h1>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Start search -->
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading nhsuk-heading-m">
+              Quick find
+            </h3>
+            <hr style="margin:0px 0px 24px 0px;">
+
+            <div class="govuk-tabs" data-module="govuk-tabs">
+              <h2 class="govuk-tabs__title">
+                Contents
+              </h2>
+              <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                  <a class="govuk-tabs__tab" href="#claim">
+                    Claim
+                  </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                  <a class="govuk-tabs__tab" href="#invoice">
+                    Invoice
+                  </a>
+                </li>
+                <!-- <li class="govuk-tabs__list-item">
+                  <a class="govuk-tabs__tab" href="#person">
+                    Person
+                  </a>
+                </li> -->
+              </ul>
+              <!-- Start claim search -->
+              <div class="govuk-tabs__panel" id="claim">
+                <h2 class="nhsuk-heading-l">Claim</h2>
+                <form action="">
+
+                  <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                      <!-- Claim ID -->
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="claim-id">
+                          Claim ID
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="claim-id" name="claim-id" type="text">
+                      </div>
+
+                      <!-- Claim reference -->
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                          Claim reference
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text">
+                      </div>
+                    </div>
+
+                    <div class="nhsuk-grid-column-one-half">
+
+                    </div>
+                  </div>
+
+                  <button class="nhsuk-button nhsuk-u-margin-bottom-1" data-module="nhsuk-button" type="submit">
+                    Go to claim
+                  </button>
+                </form>
+              </div>
+              <!-- End claim search -->
+
+              <!-- Start invoice search -->
+              <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="invoice">
+                <h2 class="nhsuk-heading-l">Invoice</h2>
+                <form action="">
+
+                  <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                      <!-- Claim ID -->
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="claim-id">
+                          Invoice ID
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="claim-id" name="claim-id" type="text">
+                      </div>
+
+                      <!-- Claim reference -->
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                          Invoice reference
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text">
+                      </div>
+                    </div>
+
+                    <div class="nhsuk-grid-column-one-half">
+
+                    </div>
+                  </div>
+
+                  <button class="nhsuk-button nhsuk-u-margin-bottom-1" data-module="nhsuk-button" type="submit">
+                    Go to invoice
+                  </button>
+                </form>
+              </div>
+              <!-- End invoice search-->
+
+              <!-- Start person search -->
+              <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="person">
+                <h2 class="nhsuk-heading-l">Person</h2>
+                <form style="height:300px;">
+                </form>
+              </div>
+              <!-- End person search-->
+
+            </div>
+
+
+
+
+          </div>
+
+        </div>
+        <!-- End search -->
+
+
+      </div>
+
+      <!--Start right hand column-->
+      <div class="nhsuk-grid-column-one-third">
+
+        <!-- Start quick actions -->
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading nhsuk-heading-m">
+              Quick actions
+            </h3>
+            <hr style="margin:0px 0px 24px 0px;">
+
+            <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+              <a class="nhsuk-action-link__link" href="claims/create/index">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                  </path>
+                </svg>
+                <span class="nhsuk-action-link__text">Create a new claim</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+        <!-- End quick actions -->
+
+
+
+
+
+
+      </div>
+      <!-- End right hand column -->
+
+
+    </div>
+
+
+
+
+    <!-- End of content -->
+
+  </div>
+</div>
+<!-- End of main content -->
+
+</div>
+</div>
+{% endblock %}
+<!-- End of central content -->
