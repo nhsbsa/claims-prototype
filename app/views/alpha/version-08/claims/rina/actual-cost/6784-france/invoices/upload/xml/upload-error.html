@@ -1,24 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-08/claims/summary/not-started'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-08/claims/invoices/not-started',
-active: true
-},
-{
-name: 'Uploaded files',
-path: '#'
-},
-{
-name: 'History',
-path: '#'
-}
-]
-%}
+    {
+    name: 'Summary',
+    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/summary/not-started'
+    },
+    {
+    name: 'Invoices',
+    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/not-started',
+    active: true
+    },
+    {
+    name: 'Contestations',
+    path: ''
+    },
+    {
+    name: 'Notes',
+    path: ''
+    },
+    {
+    name: 'History',
+    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/history/not-started'
+    }
+    ]
+    %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -67,7 +71,7 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
             <div class="nhsuk-error-summary__body">
                 <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
                     <li>
-                        <a href="#file-upload">The selected file is empty</a>
+                        <a href="#file-upload">Error message shows here</a>
                     </li>
                 </ul>
             </div>
@@ -116,7 +120,7 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
                     <div class="nhsuk-card__content">
 
                         <!-- Upload -->
-                        <div class="form-group nhsuk-form-group--error">
+                        <div class="form-group nhsuk-form-group--error nhsuk-u-margin-bottom-6">
                             <fieldset class="nhsuk-fieldset">
                                 <legend
                                     class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
@@ -129,10 +133,10 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
                                 </div>
 
                                 <span class="nhsuk-error-message" id="dob-day-error-error">
-                                    <span class="nhsuk-u-visually-hidden">Error:</span> The selected file is empty
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Error message shows here
                                   </span>
 
-                                <div class="nhsuk-form-group nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-6"
+                                <div class="nhsuk-form-group nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-0"
                                     style="border:2px dashed #0b0c0c; padding:24px;">
                                     <!-- <label class="nhsuk-label" for="file-upload">
                                       Upload a file
