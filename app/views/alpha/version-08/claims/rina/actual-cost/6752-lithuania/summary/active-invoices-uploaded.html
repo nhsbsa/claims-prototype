@@ -2,24 +2,20 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '/alpha/version-08/claims/rina/actual-cost/6784-france/summary/not-started',
+path: '/alpha/version-08/claims/rina/actual-cost/6752-lithuania/summary/active-invoices-uploaded',
 active: true
 },
 {
 name: 'Invoices',
-path: '/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/not-started'
-},
-{
-name: 'Contestations',
 path: ''
 },
 {
-  name: 'Notes',
-  path: ''
-  },
+name: 'Uploaded files',
+path: ''
+},
 {
 name: 'History',
-path: '/alpha/version-08/claims/rina/actual-cost/6784-france/history/not-started'
+path: '/alpha/version-08/claims/rina/actual-cost/6752-lithuania/history/timeline-active'
 }
 ]
 %}
@@ -30,6 +26,15 @@ path: '/alpha/version-08/claims/rina/actual-cost/6784-france/history/not-started
     - change the header and footer 
     - add custom CSS and JavaScript
 -->
+
+<!-- Start of claim details -->
+{% block ClaimId %}
+6752
+{% endblock %}
+{% block submittingCountry %}
+Lithuania
+{% endblock %}
+<!-- End of claim details-->
 
 <!-- Start of page title -->
 {% block pageTitle %}
@@ -58,24 +63,27 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of central content -->
 {% block content %}
+
+<!-- Start of header -->
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
 
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-xl ">
+      Claim summary
+    </h1>
+  </div>
 
-        <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-two-thirds">
-                <h1 class="nhsuk-heading-xl ">
-                  Claim summary
-                </h1>
-            </div>
-            <div class="nhsuk-grid-column-one-third">
-                <a href="../invoices/upload/index">
-                    <button style="float:right;" class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                        Add invoices
-                    </button>
-                </a>
-            </div>
-        </div>
+  <div class="nhsuk-grid-column-one-third">
+    <a href="">
+      <button style="float:right;" class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Mark ready for letters
+      </button>
+    </a>
+  </div>
+
+</div>
+<!-- End of header-->
+
 
 
 <!-- Start of main summary box -->
@@ -87,15 +95,14 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
             <h3 class="nhsuk-card__heading">
-              Claim ID 6784 &ndash; Claim reference {% if data['ref'] %}{{ data['ref'] }}{% else %}11322249AT2301E{% endif
-              %}
+              Claim ID 6752 &ndash; Claim reference 1E-2023-10213
             </h3>
 
           </div>
           <div class="nhsuk-grid-column-one-third">
 
-            <strong class="nhsuk-tag nhsuk-tag--grey" style="float:right">
-              Not started
+            <strong class="nhsuk-tag nhsuk-tag--purple" style="float:right">
+              Active
             </strong>
 
           </div>
@@ -136,11 +143,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   Country
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {% if data['country'] %}
-                  {{ data['country'] }}
-                  {% else %}
-                  France
-                  {% endif %}
+                  Lithuania
                 </dd>
                 <dd class="nhsuk-summary-list__actions"></dd>
               </div>
@@ -202,10 +205,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   Target date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {% if data['target-date-day'] %}{{ data['target-date-day'] }}/{% else %}1 {%
-                  endif %}{% if data['target-date-month'] %}{{ data['target-date-month'] }}/{%
-                  else %}March {% endif %}{% if data['target-date-year'] %}{{
-                  data['target-date-year'] }}{% else %}2024{% endif %}
+                  28 June 2024
                 </dd>
                 <dd class="nhsuk-summary-list__actions"><a href="edit-target-date">
                     Change<span class="nhsuk-u-visually-hidden"> target date</span>
@@ -218,7 +218,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   Deadline
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  9 February 2025
+                  28 December 2024
                 </dd>
                 <dd class="nhsuk-summary-list__actions"></dd>
               </div>
@@ -229,12 +229,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   Date received
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {% if data['submission-date-day'] %}{{ data['submission-date-day'] }} {%
-                  else
-                  %}10 {% endif %}{% if data['submission-date-month'] %}{{ fullSubmissionMonth
-                  }} {% else %}August {% endif %}{% if
-                  data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
-                  %}2023{% endif %}
+                  28 December 2023
                 </dd>
                 <dd class="nhsuk-summary-list__actions"></dd>
               </div>
@@ -254,7 +249,204 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
 
 
 
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-half">
+
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <h3 class="nhsuk-card__heading">
+              Number of invoices
+            </h3>
+            <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
+          </div>
+        </div>
+
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Total
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              593
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="">
+                View<span class="nhsuk-u-visually-hidden"> all invoices</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              To check
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              0
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="">
+                View<span class="nhsuk-u-visually-hidden"> to check invoices</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Accepted
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              581
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="">
+                View<span class="nhsuk-u-visually-hidden"> accepted invoices</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Contested
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              12
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="">
+                View<span class="nhsuk-u-visually-hidden"> contested invoices</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Partial
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              0
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="">
+                View<span class="nhsuk-u-visually-hidden"> partial invoices</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Withdrawn
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>0</p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="">
+                View<span class="nhsuk-u-visually-hidden"> withdrawn invoices</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+      </div>
     </div>
+
+  </div>
+
+  <div class="nhsuk-grid-column-one-half">
+
+
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <h3 class="nhsuk-card__heading">
+              Claim amount (cost)
+            </h3>
+            <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
+          </div>
+        </div>
+
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Total
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              96,526.27
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              To check
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              0
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Accepted
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              92,891.41
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Contested
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              3,634.86
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Partial
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              0
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Withdrawn
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>0</p>
+            </dd>
+          </div>
+
+        </dl>
+
+      </div>
+    </div>
+
+  </div>
+
 </div>
+
+
+
+
+
+<!-- Start of amount stats -->
+
+
+
+<!-- End of invoice stats -->
+
+
+
 {% endblock %}
 <!-- End of central content -->

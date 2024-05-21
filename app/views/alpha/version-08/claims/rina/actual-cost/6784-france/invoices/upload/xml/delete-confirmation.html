@@ -1,24 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-08/claims/summary/not-started'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-08/claims/invoices/not-started',
-active: true
-},
-{
-name: 'Uploaded files',
-path: '/alpha/version-08/claims/file-uploads/not-started'
-},
-{
-name: 'History',
-path: '/alpha/version-08/claims/history/not-started'
-}
-]
-%}
+  {
+  name: 'Summary',
+  path: '/alpha/version-08/claims/rina/actual-cost/6784-france/summary/not-started'
+  },
+  {
+  name: 'Invoices',
+  path: '/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/not-started',
+  active: true
+  },
+  {
+  name: 'Contestations',
+  path: ''
+  },
+  {
+  name: 'Notes',
+  path: ''
+  },
+  {
+  name: 'History',
+  path: '/alpha/version-08/claims/rina/actual-cost/6784-france/history/not-started'
+  }
+  ]
+  %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -59,7 +63,7 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="../../../route-delete-invoice-file" method="post">
+    <form action="../../../../../../../route-delete-invoice-file" method="post">
 
       <div class="nhsuk-form-group">
 
