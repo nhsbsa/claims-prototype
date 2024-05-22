@@ -72,9 +72,9 @@ router.post('/route-delete-invoice-file', function(req,res){
     var back = req.session.data['referer'] || "/";
 
     if (cancel == "yes" ) {
-        res.redirect('/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/upload/xml/index')
+        res.redirect('/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/upload/xml/index?show-back=No')
     } else if (cancel == "no"){
-        return res.redirect(back)
+        res.redirect('/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/upload/xml/cya')
     } else {
         res.redirect('/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/upload/xml/delete-confirmation')
     }

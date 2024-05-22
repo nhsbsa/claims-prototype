@@ -61,7 +61,7 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
 {% block content %}
 
 <!-- Start of back link -->
-<div class="nhsuk-grid-row" id="backLink">
+<div class="nhsuk-grid-row" id="backLink" {% if data['show-back'] === 'No' %}style="display:none"{% endif %}>
     <div class="nhsuk-grid-column-full">
         <div class="nhsuk-back-link">
             <a class="nhsuk-back-link__link" href="javascript:history.back()">
