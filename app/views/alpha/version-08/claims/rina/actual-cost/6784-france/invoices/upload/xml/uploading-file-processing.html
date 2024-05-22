@@ -94,30 +94,10 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
 
         </div>
 
-
         <script>
-            // Upload in progress visual indicator
-            var submitForm = document.getElementById("checkFile");
-            var uploadFile = document.getElementById("uploadFile");
-            var uploadProgress = document.getElementById("upload-progress");
-
-            submitForm.addEventListener("submit", function (e) {
-                e.preventDefault();
-
-
-                backLink.style.display = "none";
-                legend1.style.display = "none";
-                legend2.style.display = "block";
-                uploadFile.style.display = "none";
-                uploadProgress.style.display = "block";
-                uploadProgress.setAttribute("role", "alert");
-                uploadProgress.setAttribute("aria-hidden", "false");
-                uploadProgress.focus();
-
-                setTimeout(function () {
-                    submitForm.submit();
-                }, 3000);
-            });
+            setTimeout(function () {
+                window.location.href = "./cya";
+            }, 3000);
         </script>
 
 
