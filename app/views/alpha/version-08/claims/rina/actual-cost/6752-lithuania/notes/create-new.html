@@ -1,0 +1,106 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '/alpha/version-08/claims/rina/actual-cost/6752-lithuania/summary/active-invoices-uploaded'
+},
+{
+name: 'Invoices',
+path: ''
+},
+{
+name: 'Contestations',
+path: '/alpha/version-08/claims/rina/actual-cost/6752-lithuania/contestations/not-started'
+},
+{
+name: 'Notes',
+path: '/alpha/version-08/claims/rina/actual-cost/6752-lithuania/notes/index',
+active: true
+},
+{
+name: 'History',
+path: '/alpha/version-08/claims/rina/actual-cost/6752-lithuania/history/timeline-active'
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of claim details -->
+{% block ClaimId %}
+6752
+{% endblock %}
+{% block submittingCountry %}
+Lithuania
+{% endblock %}
+<!-- End of claim details-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Contestations - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../home">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../index">Claims</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="index" method="post">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                <h1 class="nhsuk-fieldset__heading">
+                    <span class="nhsuk-caption-l">Notes</span>
+                    Add a new note
+                </h1>
+            </legend>
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="title">
+                    Title
+                </label>
+                <input class="nhsuk-input" id="title" name="title" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="note">
+                    Note
+                </label>
+                <textarea class="nhsuk-textarea" id="note" name="note" rows="5" aria-describedby="note-hint"></textarea>
+            </div>
+
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Save
+            </button>
+
+        </form>
+
+    </div>
+</div>
+{% endblock %}
+<!-- End of central content -->
