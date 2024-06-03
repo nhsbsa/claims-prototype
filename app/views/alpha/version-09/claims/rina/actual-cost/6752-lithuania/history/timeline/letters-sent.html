@@ -1,0 +1,717 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '/alpha/version-09/claims/rina/actual-cost/6752-lithuania/summary/active-invoices-uploaded'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-09/claims/rina/actual-cost/6752-lithuania/invoices-full-invoice-list'
+},
+{
+name: 'Contestations',
+path: ''
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: '/alpha/version-09/claims/rina/actual-cost/6752-lithuania/history/timeline/letters-sent',
+active: true
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of claim details -->
+{% block ClaimId %}
+6752
+{% endblock %}
+{% block submittingCountry %}
+Lithuania
+{% endblock %}
+<!-- End of claim details-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+History - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../index">Claims</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="../index">
+        <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+        Claims
+      </a>
+    </p>
+  </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+<style>
+  .nhsbsa-timeline {
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative
+  }
+
+  .nhsbsa-timeline:before {
+    background-color: #005eb8;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 5px
+  }
+
+  .nhsbsa-timeline--full {
+    margin-bottom: 0
+  }
+
+  .nhsbsa-timeline--full:before {
+    height: calc(100% - 75px)
+  }
+
+  .nhsbsa-timeline__item {
+    padding-bottom: 30px;
+    padding-left: 20px;
+    position: relative
+  }
+
+  .nhsbsa-timeline__item:before {
+    background-color: #1d70b8;
+    content: "";
+    height: 5px;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 15px
+  }
+
+  .nhsbsa-timeline__title {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.25;
+    display: inline
+  }
+</style>
+
+<!-- Start of title block -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-heading-xl ">
+      History
+    </h1>
+  </div>
+</div>
+<!-- End of title block -->
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsbsa-timeline">
+
+                  <!-- Start reply sent -->
+                  <div class="nhsbsa-timeline__item">
+                    <div class="nhsbsa-timeline__header">
+                      <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Reply sent
+                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by Isla Fields</span>
+                      </h2>
+                      <p class="nhsuk-body nhsuk-u-margin-bottom-1">13 May 2024 at 9:23am</p>
+                    </div>
+                    <div class="nhsbsa-timeline__description">
+                      <details class="nhsuk-details">
+                        <summary class="nhsuk-details__summary">
+                          <span class="nhsuk-details__summary-text">
+                            View details
+                          </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+                          <dl class="nhsuk-summary-list">
+            
+                            <div class="nhsuk-summary-list__row">
+                              <dt class="nhsuk-summary-list__key">
+                                Accepted invoices
+                              </dt>
+                              <dd class="nhsuk-summary-list__value">
+                                1245ID1234
+                              </dd>
+                            </div>
+            
+                            <div class="nhsuk-summary-list__row">
+                              <dt class="nhsuk-summary-list__key">
+                                Contested invoices
+                              </dt>
+                              <dd class="nhsuk-summary-list__value">
+                                3,634.86
+                              </dd>
+                            </div>
+            
+                            <div class="nhsuk-summary-list__row">
+                              <dt class="nhsuk-summary-list__key">
+                                Accepted amount
+                              </dt>
+                              <dd class="nhsuk-summary-list__value">
+                                3
+                              </dd>
+                            </div>
+      
+                            <div class="nhsuk-summary-list__row">
+                              <dt class="nhsuk-summary-list__key">
+                                Contested amount
+                              </dt>
+                              <dd class="nhsuk-summary-list__value">
+                                13 May 2025
+                              </dd>
+                            </div>
+      
+                            <div class="nhsuk-summary-list__row">
+                              <dt class="nhsuk-summary-list__key">
+                                Withdrawn amount
+                              </dt>
+                              <dd class="nhsuk-summary-list__value">
+                                13 May 2025
+                              </dd>
+                            </div>
+      
+                            <div class="nhsuk-summary-list__row">
+                              <dt class="nhsuk-summary-list__key">
+                                Completed (letter date)
+                              </dt>
+                              <dd class="nhsuk-summary-list__value">
+                                13 May 2025
+                              </dd>
+                            </div>
+
+                            <div class="nhsuk-summary-list__row">
+                              <dt class="nhsuk-summary-list__key">
+                                Date returned
+                              </dt>
+                              <dd class="nhsuk-summary-list__value">
+                                13 May 2025
+                              </dd>
+                            </div>
+
+                            <div class="nhsuk-summary-list__row">
+                              <dt class="nhsuk-summary-list__key">
+                                Expected reply date
+                              </dt>
+                              <dd class="nhsuk-summary-list__value">
+                                13 May 2025
+                              </dd>
+                            </div>
+            
+                          </dl>
+            
+            
+                        </div>
+                      </details>
+            
+                    </div>
+                  </div>
+                  <!-- End reply sent -->
+
+            <!-- Start contestation received -->
+            <div class="nhsbsa-timeline__item">
+              <div class="nhsbsa-timeline__header">
+                <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Contestation received
+                  <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by Isla Fields</span>
+                </h2>
+                <p class="nhsuk-body nhsuk-u-margin-bottom-1">13 May 2024 at 9:23am</p>
+              </div>
+              <div class="nhsbsa-timeline__description">
+                <details class="nhsuk-details">
+                  <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                      View details
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+                    <dl class="nhsuk-summary-list">
+      
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Submission ID
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          1245ID1234
+                        </dd>
+                      </div>
+      
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Amount
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          3,634.86
+                        </dd>
+                      </div>
+      
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Total invoices
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          3
+                        </dd>
+                      </div>
+
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Letter dated
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          13 May 2025
+                        </dd>
+                      </div>
+
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Date received
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          13 May 2025
+                        </dd>
+                      </div>
+
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Processing deadline
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          13 May 2025
+                        </dd>
+                      </div>
+      
+                    </dl>
+      
+      
+                  </div>
+                </details>
+      
+              </div>
+            </div>
+            <!-- End contestation recieved -->
+
+      <!-- Start contestation created -->
+      <div class="nhsbsa-timeline__item">
+        <div class="nhsbsa-timeline__header">
+          <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Contestation created
+            <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by System</span>
+          </h2>
+          <p class="nhsuk-body nhsuk-u-margin-bottom-1">13 May 2024 at 9:23am</p>
+        </div>
+        <div class="nhsbsa-timeline__description">
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View details
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Contested ID
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    00112233
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Contested invoices
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    12
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Contested amount
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    3,634.86
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Expected reply date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    13 May 2025
+                  </dd>
+                </div>
+
+              </dl>
+
+
+            </div>
+          </details>
+
+        </div>
+      </div>
+      <!-- End contestation created -->
+
+      <!-- Start letters sent -->
+      <div class="nhsbsa-timeline__item">
+        <div class="nhsbsa-timeline__header">
+          <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Status changed to "Letters sent"
+            <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by Isla Fields</span>
+          </h2>
+          <p class="nhsuk-body nhsuk-u-margin-bottom-1">13 May 2024 at 9:23am</p>
+        </div>
+        <div class="nhsbsa-timeline__description">
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View claim summary snapshot
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                  <h3 class="nhsuk-card__heading">
+                    Number of invoices
+                  </h3>
+                  <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
+
+                  <dl class="nhsuk-summary-list">
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Total
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        593
+                      </dd>
+
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        To check
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        0
+                      </dd>
+
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Accepted
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        581
+                      </dd>
+
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Contested
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        12
+                      </dd>
+
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Partial
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        0
+                      </dd>
+
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Withdrawn
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        <p>0</p>
+                      </dd>
+
+                    </div>
+
+                  </dl>
+
+                  <h3 class="nhsuk-card__heading">
+                    Claim amount (cost)
+                  </h3>
+                  <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
+
+                  <dl class="nhsuk-summary-list">
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Total
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        96,526.27
+                      </dd>
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        To check
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        0
+                      </dd>
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Accepted
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        92,891.41
+                      </dd>
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Contested
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        3,634.86
+                      </dd>
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Partial
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        0
+                      </dd>
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Withdrawn
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        <p>0</p>
+                      </dd>
+                    </div>
+
+                  </dl>
+
+
+
+
+
+
+
+                </div>
+
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+      </div>
+      <!-- End letteres -->
+
+      <!-- Start target date -->
+      <div class="nhsbsa-timeline__item">
+        <div class="nhsbsa-timeline__header">
+          <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Target date changed
+            <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by George Harrison</span>
+          </h2>
+          <p class="nhsuk-body nhsuk-u-margin-bottom-1">23 January 2024 at 14:23am</p>
+        </div>
+        <div class="nhsbsa-timeline__description">
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View details
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Old target date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    28 July 2024
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    New target date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    28 June 2024
+                  </dd>
+                </div>
+
+              </dl>
+
+
+            </div>
+          </details>
+
+        </div>
+      </div>
+      <!-- End target date -->
+
+      <!-- Start auto-validation -->
+      <div class="nhsbsa-timeline__item">
+        <div class="nhsbsa-timeline__header">
+          <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Auto validation complete
+            <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by System</span>
+          </h2>
+          <p class="nhsuk-body nhsuk-u-margin-bottom-1">28 December 2023 at 13:08pm</p>
+        </div>
+        <div class="nhsbsa-timeline__description">
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View auto validation report
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Total invoices
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    593
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    To check
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    12
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Accepted
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    581
+                  </dd>
+                </div>
+
+              </dl>
+
+
+            </div>
+          </details>
+
+        </div>
+
+      </div>
+      <!-- End auto-validation -->
+
+      <!-- Start invoices uploaded -->
+      <div class="nhsbsa-timeline__item">
+        <div class="nhsbsa-timeline__header">
+          <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">File upload submitted
+            <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by George Harrison</span>
+          </h2>
+          <p class="nhsuk-body nhsuk-u-margin-bottom-1">28 December 2023 at 11:51am</p>
+        </div>
+        <div class="nhsbsa-timeline__description">
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View uploaded file details
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Filename
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    invoice-file.xml
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Total invoices
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    593
+                  </dd>
+                </div>
+
+              </dl>
+
+
+            </div>
+          </details>
+
+        </div>
+      </div>
+      <!-- End invoices uploaded -->
+
+      <!-- Start claim created -->
+      <div class="nhsbsa-timeline__item">
+        <div class="nhsbsa-timeline__header">
+          <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Claim created
+            <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by George Harrison</span>
+          </h2>
+          <p class="nhsuk-body">28 December 2023 at 11:42am</p>
+        </div>
+      </div>
+      <!-- End claim created -->
+
+    </div>
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+<!-- End of central content -->
