@@ -1,0 +1,114 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Home',
+path: '/alpha/version-09/home'
+},
+{
+name: 'Claims',
+path: '/alpha/version-09/claims/index',
+active: true
+},
+{
+name: 'Contested claims',
+path: '#'
+},
+{
+name: 'Reports',
+path: '#'
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Check your answers - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../index">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of are you sure -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+            <form action="../../route-cancel-create-claim" method="post">
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                    <h1 class="nhsuk-fieldset__heading">
+                      Are you sure you want to cancel?
+                    </h1>
+                  </legend>
+
+                  <div class="nhsuk-hint nhsuk-u-margin-bottom-2">
+                    If you select yes, any changes you've made will not be saved.
+                  </div>
+              
+                  <div class="nhsuk-radios">
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="cancel-yes" name="cancel" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="cancel-yes">
+                        Yes
+                      </label>
+                    </div>
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="cancel-no" name="cancel" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="cancel">
+                        No
+                      </label>
+                    </div>
+              
+                  </div>
+                </fieldset>
+              
+              </div>
+              <input type="hidden" name="referer" value="{{ referer }}"> 
+
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Submit
+              </button>
+
+</form>
+
+
+
+    </div>
+</div>
+<!-- End of are you sure -->
+
+{% endblock %}
+<!-- End of central content -->
