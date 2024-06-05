@@ -350,5 +350,13 @@ router.post('/personSearch', (req, res) => {
     });
   });
 
+const notes = [];
+
+router.post('/claims/createNote', function(req, res) {
+    notes.push(res.locals.data.notes);
+    req.session.data.notes = notes;
+    res.redirect('rina/actual-cost/6752-lithuania/notes/index');
+});
+
 
 module.exports = router
