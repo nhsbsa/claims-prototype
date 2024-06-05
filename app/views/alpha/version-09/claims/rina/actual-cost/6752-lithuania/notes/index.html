@@ -89,37 +89,28 @@ Contestations - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
-    {% if data['note'] %}
+    {{ data | dump }}
 
-    <details class="nhsuk-details nhsuk-expander" open>
-      <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">
-          {{ data['title'] }}
-        </span>
-      </summary>
-      <div class="nhsuk-details__text">
-
-        <h4 class="nhsuk-heading-xs">17 January 2024, 12.43pm</h4>
-        <p class="nhsuk-body">{{ data['note'] }}</p>
-        <p class="nhsuk-body">Author: Isla Fields</p>
-
-
-
-
-      </div>
-    </details>
-
-
-
+    {% if data.notes %}
+      {% for note in data.notes %}
+        {% for content in note %}
+          <details class="nhsuk-details nhsuk-expander" open>
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                {{ content.title }}
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <h4 class="nhsuk-heading-xs">17 January 2024, 12.43pm</h4>
+              <p class="nhsuk-body">{{ content.message }}</p>
+              <p class="nhsuk-body">Author: Isla Fields</p>
+            </div>
+          </details>
+        {% endfor %}
+      {% endfor %}
     {% else %}
     <p class="nhsuk-body">There are currently no notes.</p>
     {% endif %}
-
-
-
-
-
-
   </div>
 </div>
 
