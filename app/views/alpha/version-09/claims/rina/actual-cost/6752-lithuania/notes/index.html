@@ -89,10 +89,8 @@ Contestations - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
-    {{ data | dump }}
-
     {% if data.notes %}
-      {% for note in data.notes %}
+      {% for note in data.notes | reverse %}
         {% for content in note %}
           <details class="nhsuk-details nhsuk-expander" open>
             <summary class="nhsuk-details__summary">
@@ -101,7 +99,7 @@ Contestations - Manage incoming international healthcare claims - NHSBSA
               </span>
             </summary>
             <div class="nhsuk-details__text">
-              <h4 class="nhsuk-heading-xs">17 January 2024, 12.43pm</h4>
+              <h4 class="nhsuk-heading-xs">{{ content.date }}</h4>
               <p class="nhsuk-body">{{ content.message }}</p>
               <p class="nhsuk-body">Author: Isla Fields</p>
             </div>
