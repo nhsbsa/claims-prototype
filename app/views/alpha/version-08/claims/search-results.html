@@ -101,20 +101,20 @@ Claims - Manage incoming international healthcare claims - NHSBSA
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-one-quarter">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claim-id">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claimID">
                   Claim ID
                 </label>
-                <input class="nhsuk-input" id="claim-id" name="claim-id" type="text" {% if data['claim-id']
+                <input class="nhsuk-input" id="claimID" name="claimID" type="text" {% if data['claimID']
                   %}value="{{ data['claim-id'] }}" {% endif %}>
               </div>
             </div>
             <div class="nhsuk-grid-column-one-quarter">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claim-ref">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claimReference ">
                   Claim reference
                 </label>
-                <input class="nhsuk-input" id="claim-ref" name="claim-ref" type="text" {% if data['claim-ref']
-                  %}value="{{ data['claim-ref'] }}" {% endif %}>
+                <input class="nhsuk-input" id="claimReference " name="claimReference " type="text" {% if data['claimReference']
+                  %}value="{{ data['claimReference'] }}" {% endif %}>
               </div>
             </div>
             <div class="nhsuk-grid-column-one-quarter">
@@ -165,12 +165,12 @@ Claims - Manage incoming international healthcare claims - NHSBSA
             </div>
             <div class="nhsuk-grid-column-one-quarter">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="financial-year">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="financialYear">
                   Financial year
                 </label>
-                <input class="nhsuk-input" id="financial-year" name="financial-year" type="text"
-                {% if data['claim-id'] or data['claim-ref'] or data['country'] or data['financial-year'] %} 
-                value="{{ data['financial-year'] }}" 
+                <input class="nhsuk-input" id="financialYear" name="financialYear" type="text"
+                {% if data['claimID'] or data['claimReference'] or data['country'] or data['financialYear'] %} 
+                value="{{ data['financialYear'] }}" 
                 {% else %}
                 value="2023"
                 {% endif %}>
@@ -198,43 +198,39 @@ Claims - Manage incoming international healthcare claims - NHSBSA
             <div class="nhsuk-grid-row nhsuk-u-padding-bottom-2">
               <div class="nhsuk-grid-column-two-thirds">
 
-                {% if data['claim-id'] %}
 
-                {% if data['claim-id'] %}
-                {% if data['claim-id'] === '5388' or data['claim-id'] === '6784' %}
-                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 results of 1</h3>
-                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                  {{ data['claim-id'] }}
-                </strong>
-                {% if data['claim-ref'] %}
-                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                  {{ data['claim-ref'] }}
-                </strong>
-                {% endif %}
-                {% if data['country'] %}
-                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                  {{ data['country'] }}
-                </strong>
-                {% endif %}
-                {% if data['financial-year'] %}
-                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                  {{ data['financial-year'] }}
-                </strong>
-                {% endif %}
+                {% if searchResults.length > 0 %}
+
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing {{ searchResults.length }} result(s)</h3>
+                <p class="nhsuk-u-margin-bottom-2">
+                  {% if searchQuery.claimID %}
+                  <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                    {{ searchQuery.claimID }}
+                  </strong>
+                  {% endif %}
+    
+                  {% if searchQuery.claimReference %}
+                  <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                    {{ searchQuery.claimReference }}
+                  </strong>
+                  {% endif %}
+
+                  {% if searchQuery.country %}
+                  <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                    {{ searchQuery.country }}
+                  </strong>
+                  {% endif %}
+
+                  {% if searchQuery.financialYear %}
+                  <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                    {{ searchQuery.financialYear }}
+                  </strong>
+                  {% endif %}
+
                 {% else %}
                 <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 0 results of 0</h3>
-                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                  {{ data['claim-id'] }}
-                </strong>
                 {% endif %}
-                {% endif %}
-
-                {% else %}
-                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 10 results of 63</h3>
-                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                  2023
-                </strong>
-                {% endif %}
+                </p>
 
               </div>
               <div class="nhsuk-grid-column-one-third">
@@ -563,308 +559,95 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                     </tr>
                   </thead>
 
-
-                  {% if data['claim-id'] %}
-                  {% if data['claim-id'] === '5388' %}
                   <tbody class="nhsuk-table__body">
+                  {% if searchResults.length > 0 %}
+                    {% for result in searchResults %}
                     <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Claim ID </span>5388
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>
+                        {{ result.claimID or '5388' }}
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Claim reference </span>230640736739
+                        <span class="nhsuk-table-responsive__heading">Claim reference </span>
+                        {{ result.claimReference or '230640736739' }}
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Country </span>Sweden
+                        <span class="nhsuk-table-responsive__heading">Country </span>
+                        {{ result.country or 'Sweden' }}
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                        <span class="nhsuk-table-responsive__heading">Financial year </span>
+                        {{ result.financialYear or '2023' }}
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Article type </span>Article 63 (2a)
+                        <span class="nhsuk-table-responsive__heading">Article type </span>
+                        {{ result.articleType or 'Article 63 (2a)' }}>
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+                        <span class="nhsuk-table-responsive__heading">Claim type </span>
+                        {{ result.claimType or 'Main' }}
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">View </span><a
-                          href="rina/average-cost/5388-sweden/summary/active-invoices-uploaded">View claim</a>
+                          href="rina/summary/active-invoices-uploaded">View claim</a>
                       </td>
                     </tr>
+                    {% endfor %}
+                  {% else %}
+
+                        <tr>
+                            <p class="nhsuk-body nhsuk-u-padding-bottom-3">No results found.</p>
+                        </tr>
+                  {% endif %}
+
                   </tbody>
                 </table>
-                {% elif data['claim-id'] === '6784' %}
-                <tbody class="nhsuk-table__body">
-                  <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6784
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim reference </span>11322249AT2301E
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Country </span>France
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">View </span><a
-                        href="rina/actual-cost/6784-france/summary/active-invoices-uploaded">View claim</a>
-                    </td>
-                  </tr>
-                </tbody>
-                </table>
-                {% else %}
-                </table>
-                <p>No results found.</p>
+                
+                {% if searchResults.length < 10 and searchResults.length > 0 %}
+                <div class="nhsuk-grid-row">
+                  <div class="nhsuk-grid-column-full">
+                    <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+
+                      <div class="nhsuk-pagination__prev">
+                        <!-- <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="prev">
+                            <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--prev"
+                              xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false"
+                              viewBox="0 0 15 13">
+                              <path
+                                d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z">
+                              </path>
+                            </svg>
+                            <span class="nhsuk-pagination__link-title">Previous<span class="nhsuk-visually-hidden">
+                                page</span></span></a> -->
+                      </div>
 
 
-                {% endif %}
-                {% else %}
-                <tbody class="nhsuk-table__body">
-                  <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6788
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim reference </span>2/2023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Country </span>Portugal
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 63 (2a)
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
-                    </td>
-                  </tr>
-                  <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6787
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim reference </span>25520224764
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Country </span>Italy
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
-                    </td>
-                  </tr>
-                  <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6786
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim reference </span>HU-UK/2023/1
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Country </span>Hungary
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
-                    </td>
-                  </tr>
-                  <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6785
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim reference </span>UK1S08000000386
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Country </span>Germany
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
-                    </td>
-                  </tr>
-                  <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6784
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim reference </span>11322249AT2301E
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Country </span>France
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">View </span><a
-                        href="rina/actual-cost/6784-france/summary/active-invoices-uploaded">View claim</a>
-                    </td>
-                  </tr>
-                  <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6783
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim reference </span>20333GB 932023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Country </span>Spain
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 63 (2a)
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
-                    </td>
-                  </tr>
-                  <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6782
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim reference </span>CY20231E175EURO
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Country </span>Cyprus
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 63 (2a)
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
-                    </td>
-                  </tr>
-                  <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6781
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim reference </span>62 UK 2023 02
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Country </span>Finland
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
-                    </td>
-                  </tr>
-                  <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6780
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim reference </span>AT-UK/23-354
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Country </span>Austria
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
-                    </td>
-                  </tr>
-                  <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6779
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim reference </span>PCHGB145_0623_GB23091
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Country </span>Switzerland
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
-                    </td>
-                  </tr>
+                      <ul class="nhsuk-pagination__list">
+                        <li class="nhsuk-pagination__item nhsuk-pagination__item--current">
+                          <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 1">
+                            1
+                          </a>
+                        </li>
+                      </ul>
 
-                </tbody>
+                      <div class="nhsuk-pagination__next">
+                        <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="next"> <span
+                            class="nhsuk-pagination__link-title">Next<span class="nhsuk-visually-hidden">
+                              page</span></span>
+                          <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--next"
+                            xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true"
+                            focusable="false" viewBox="0 0 15 13">
+                            <path
+                              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                            </path>
+                          </svg></a>
+                      </div>
 
-                </table>
+                    </nav>
+                  </div>
+                </div>
 
+                {% elif searchResults.length > 10 %}
                 <div class="nhsuk-grid-row">
                   <div class="nhsuk-grid-column-full">
                     <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
@@ -924,18 +707,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                   </div>
                 </div>
 
-
                 {% endif %}
-
-
-
-
-
-
-
-
-
-
 
               </div>
             </div>

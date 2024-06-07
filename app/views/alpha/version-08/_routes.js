@@ -1,10 +1,15 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
+const { Pool } = require('pg');
 
-const fs = require('fs');
-const path = require('path');
+const isProduction = process.env.NODE_ENV === 'production';
+const connectionString = isProduction ? process.env.DATABASE_URL : 'postgres://postgres:CrystalClearQuartz9785@localhost:5432/my_new_database';
 
-const axios = require('axios');
+const pool = new Pool({
+    connectionString: connectionString,
+    ssl: isProduction ? { rejectUnauthorized: false } : false
+});
+
 
 //// CREATE CLAIM ////
 
@@ -241,25 +246,25 @@ router.post(['/claims/summary/edit-target-date', '/claims/summary/edit-target-da
 
     if (dayReg.test(targetDayEdit) && monthReg.test(targetMonthEdit) && yearReg.test(targetYearEdit) && targetDateEdit >= todayDate) {
         res.redirect('not-started');
-      } else if (dayReg.test(targetDayEdit) && monthReg.test(targetMonthEdit) && yearReg.test(targetYearEdit) && targetDateEdit < todayDate) {
-          res.redirect('edit-target-date-past-error');
-      } else if (targetDayEdit == '' && monthReg.test(targetMonthEdit) && yearReg.test(targetYearEdit)) {
-          res.redirect('edit-target-date-day-error');
-      } else if (dayReg.test(targetDayEdit) && targetMonthEdit == '' && yearReg.test(targetYearEdit)) {
-          res.redirect('edit-target-date-month-error');
-      } else if (dayReg.test(targetDayEdit) && monthReg.test(targetMonthEdit) && targetYearEdit == '') {
-          res.redirect('edit-target-date-year-error');
-      } else if (targetDayEdit == '' && targetMonthEdit == '' && yearReg.test(targetYearEdit)) {
-          res.redirect('edit-target-date-day-month-error');
-      } else if (dayReg.test(targetDayEdit) && targetMonthEdit == '' && targetYearEdit == '') {
-          res.redirect('edit-target-date-month-year-error');
-      } else if (targetDayEdit == '' && monthReg.test(targetMonthEdit) && targetYearEdit == '') {
-          res.redirect('edit-target-date-day-year-error');
-      } else if (targetDayEdit == '' && targetMonthEdit == '' && targetYearEdit == '') {
-          res.redirect('edit-target-date-error');
-      } else {
-          res.redirect('edit-target-date-invalid-error');
-      }
+    } else if (dayReg.test(targetDayEdit) && monthReg.test(targetMonthEdit) && yearReg.test(targetYearEdit) && targetDateEdit < todayDate) {
+        res.redirect('edit-target-date-past-error');
+    } else if (targetDayEdit == '' && monthReg.test(targetMonthEdit) && yearReg.test(targetYearEdit)) {
+        res.redirect('edit-target-date-day-error');
+    } else if (dayReg.test(targetDayEdit) && targetMonthEdit == '' && yearReg.test(targetYearEdit)) {
+        res.redirect('edit-target-date-month-error');
+    } else if (dayReg.test(targetDayEdit) && monthReg.test(targetMonthEdit) && targetYearEdit == '') {
+        res.redirect('edit-target-date-year-error');
+    } else if (targetDayEdit == '' && targetMonthEdit == '' && yearReg.test(targetYearEdit)) {
+        res.redirect('edit-target-date-day-month-error');
+    } else if (dayReg.test(targetDayEdit) && targetMonthEdit == '' && targetYearEdit == '') {
+        res.redirect('edit-target-date-month-year-error');
+    } else if (targetDayEdit == '' && monthReg.test(targetMonthEdit) && targetYearEdit == '') {
+        res.redirect('edit-target-date-day-year-error');
+    } else if (targetDayEdit == '' && targetMonthEdit == '' && targetYearEdit == '') {
+        res.redirect('edit-target-date-error');
+    } else {
+        res.redirect('edit-target-date-invalid-error');
+    }
 
 })
 
@@ -310,48 +315,100 @@ router.get('/claims/summary/not-started', function(req, res) {
 
 // DYNAMIC SEARCH
 
-router.post('/personSearch', (req, res) => {
-    const formData = req.body; // Contains all the form data
-    const jsonDataPath = path.join(__dirname, '/records/person_records.json');
-  
-    fs.readFile(jsonDataPath, (err, data) => {
-      if (err) {
-        console.error('Error reading person records file:', err);
-        return res.status(500).send('Internal Server Error');
-      }
-  
-      const persons = JSON.parse(data).persons;
-      const filteredResults = persons.filter(person => {
-        // Check each field for a match. For fields not submitted, assume a match.
-        const dobMatch = (!formData.dobDay || person.dob.day == formData.dobDay) &&
-                         (!formData.dobMonth || person.dob.month == formData.dobMonth) &&
-                         (!formData.dobYear || person.dob.year == formData.dobYear);
-        return (!formData.type || person.type.toLowerCase().includes(formData.type.toLowerCase())) &&
-               (!formData.lastName || person.lastName.toLowerCase().includes(formData.lastName.toLowerCase())) &&
-               (!formData.firstName || person.firstName.toLowerCase().includes(formData.firstName.toLowerCase())) &&
-               dobMatch &&
-               (!formData.residentialCountry || person.residentialCountry.toLowerCase().includes(formData.residentialCountry.toLowerCase())) &&
-               (!formData.nationalInsuranceNumber || person.nationalInsuranceNumber.toLowerCase().includes(formData.nationalInsuranceNumber.toLowerCase())) &&
-               (!formData.nhsNumber || person.nhsNumber.includes(formData.nhsNumber)) &&
-               (!formData.ehicGhicPin || person.ehicGhicPin.includes(formData.ehicGhicPin)) &&
-               (!formData.issueNumber || person.issueNumber.includes(formData.issueNumber)) &&
-               (!formData.reference || person.reference.includes(formData.reference));
-      });
+// Claim Search
+router.post('/claimSearch', async (req, res) => {
+    const { claimID, claimReference, country, financialYear, claimType } = req.body;
 
-        // Assume 'filteredResults' is obtained after filtering the 'person_records.json'
+    try {
+        const query = `
+            SELECT * FROM claims
+            WHERE 
+            ($1::int IS NULL OR claimID = $1) AND
+            ($2::text IS NULL OR claimReference ILIKE $2) AND
+            ($3::text IS NULL OR country ILIKE $3) AND
+            ($4::int IS NULL OR financialYear = $4) AND
+            ($5::text IS NULL OR claimType ILIKE $5);
+        `;
+        const params = [
+            claimID ? parseInt(claimID) : null,
+            claimReference ? `%${claimReference}%` : null,
+            country ? `%${country}%` : null,
+            financialYear ? parseInt(financialYear) : null,
+            claimType ? `%${claimType}%` : null
+        ];
+        const result = await pool.query(query, params);
+        res.render('claims/search-results', { searchResults: result.rows, searchQuery: req.body });
+    } catch (err) {
+        console.error('Error executing search query:', err);
+        res.status(500).send('Internal Server Error');
+    }
+});
 
-        const dobOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-        const dobFormatter = new Intl.DateTimeFormat('en-GB', dobOptions);
+// Invoice Search
+router.post('/invoiceSearch', async (req, res) => {
+    const { invoiceID, invoiceReference, lastName, firstName } = req.body;
 
-        // Format DOB for each person in the results
-        filteredResults.forEach(person => {
-            const dob = new Date(person.dob.year, person.dob.month - 1, person.dob.day);
-            person.dobFormatted = dobFormatter.format(dob);
-        });
-      
-      res.render('version-08/claims/invoices/details/person-not-found/s1-default-search-results', { searchResults: filteredResults });
-    });
-  });
+    try {
+        const query = `
+            SELECT * FROM invoices
+            WHERE 
+            ($1::int IS NULL OR invoiceID = $1) AND
+            ($2::text IS NULL OR invoiceReference ILIKE $2) AND
+            ($3::text IS NULL OR person->>'lastName' ILIKE $3) AND
+            ($4::text IS NULL OR person->>'firstName' ILIKE $4);
+        `;
+        const params = [
+            invoiceID ? parseInt(invoiceID) : null,
+            invoiceReference ? `%${invoiceReference}%` : null,
+            lastName ? `%${lastName}%` : null,
+            firstName ? `%{firstName}%` : null
+        ];
 
+        const result = await pool.query(query, params);
+        res.render('invoices/full-invoice-list-search-results', { searchResults: result.rows, searchQuery: req.body });
+    } catch (err) {
+        console.error('Error executing search query:', err);
+        res.status(500).send('Internal Server Error');
+    }
+});
 
-module.exports = router
+// Person Search
+router.post('/personSearch', async (req, res) => {
+    const { lastName, firstName, dobDay, dobMonth, dobYear, uniqueID, issuePin, residenceCountry } = req.body;
+
+    try {
+        const query = `
+            SELECT * FROM invoices
+            WHERE 
+            ($1::text IS NULL OR person->>'lastName' ILIKE $1) AND
+            ($2::text IS NULL OR person->>'firstName' ILIKE $2) AND
+            ($3::int IS NULL OR (person->'dob'->>'day')::int = $3) AND
+            ($4::int IS NULL OR (person->'dob'->>'month')::int = $4) AND
+            ($5::int IS NULL OR (person->'dob'->>'year')::int = $5) AND
+            ($6::text IS NULL OR person->'address'->>'residenceCountry' ILIKE $6) AND
+            ($7::text IS NULL OR (person->'uniqueID'->>'nhs' = $7 OR
+                                    person->'uniqueID'->>'ohs' = $7 OR 
+                                    person->'uniqueID'->>'nino' = $7)) AND
+            ($8::jsonb IS NULL OR person->'entitlements' @> $8) AND
+            ($9::jsonb IS NULL OR person->'entitlements' @> $9);
+        `;
+        const params = [
+            lastName ? `%${lastName}%` : null,
+            firstName ? `%${firstName}%` : null,
+            dobDay ? parseInt(dobDay) : null,
+            dobMonth ? parseInt(dobMonth) : null,
+            dobYear ? parseInt(dobYear) : null,
+            residenceCountry ? `%${residenceCountry}%` : null,
+            uniqueID ? JSON.stringify({ nhs: uniqueID }) : null,
+            issuePin ? JSON.stringify({ issueNumber: issuePin }) : null,
+            issuePin ? JSON.stringify({ pin: issuePin }) : null
+        ];
+        const result = await pool.query(query, params);
+        res.render('02-person-search-results', { searchResults: result.rows, searchQuery: req.body });
+    } catch (err) {
+        console.error('Error executing search query:', err);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+module.exports = router;
