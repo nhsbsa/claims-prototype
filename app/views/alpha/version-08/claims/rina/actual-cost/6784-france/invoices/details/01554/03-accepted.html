@@ -10,9 +10,13 @@
     active: true
     },
     {
-    name: 'Uploaded files',
-    path: ''
-    },
+        name: 'Contestations',
+        path: ''
+        },
+        {
+        name: 'Notes',
+        path: ''
+        },
     {
     name: 'History',
     path: ''
@@ -57,6 +61,57 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <!-- Start of central content -->
 {% block content %}
 
+<style>
+    .nhsbsa-timeline {
+        margin-bottom: 20px;
+        overflow: hidden;
+        position: relative
+    }
+
+    .nhsbsa-timeline:before {
+        background-color: #005eb8;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 10px;
+        width: 5px
+    }
+
+    .nhsbsa-timeline--full {
+        margin-bottom: 0
+    }
+
+    .nhsbsa-timeline--full:before {
+        height: calc(100% - 75px)
+    }
+
+    .nhsbsa-timeline__item {
+        padding-bottom: 30px;
+        padding-left: 20px;
+        position: relative
+    }
+
+    .nhsbsa-timeline__item:before {
+        background-color: #1d70b8;
+        content: "";
+        height: 5px;
+        left: 0;
+        position: absolute;
+        top: 10px;
+        width: 15px
+    }
+
+    .nhsbsa-timeline__title {
+        font-family: "GDS Transport", arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1.25;
+        display: inline
+    }
+</style>
 
 
                 <!-- Start of confirmation message -->
@@ -684,6 +739,78 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
             <!-- *** Start of history tab *** -->
             <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="history">
                 <h2 class="nhsuk-heading-l">History</h2>
+
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                
+                        <div class="nhsbsa-timeline">
+                
+                            <!-- Start auto-validation -->
+                            <div class="nhsbsa-timeline__item">
+                                <div class="nhsbsa-timeline__header">
+                                    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Auto validation complete
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by System</span>
+                                    </h2>
+                                    <p class="nhsuk-body ">28 December 2023 at 13:08pm</p>
+                                </div>
+                                <div class="nhsbsa-timeline__description">
+                
+                                </div>
+                
+                            </div>
+                            <!-- End auto-validation -->
+                
+                            <!-- Start invoices uploaded -->
+                            <div class="nhsbsa-timeline__item">
+                                <div class="nhsbsa-timeline__header">
+                                    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">File upload submitted
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by Isla
+                                            Fields</span>
+                                    </h2>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-1">28 December 2023 at 11:51am</p>
+                                </div>
+                                <div class="nhsbsa-timeline__description">
+                                    <details class="nhsuk-details">
+                                        <summary class="nhsuk-details__summary">
+                                            <span class="nhsuk-details__summary-text">
+                                                Files uploaded
+                                            </span>
+                                        </summary>
+                                        <div class="nhsuk-details__text">
+                                            <ul class="nhsuk-list nhsuk-list--bullet">
+                                                <li>invoice-file-1.xml</li>
+                                            </ul>
+                
+                                        </div>
+                                    </details>
+                
+                                </div>
+                            </div>
+                            <!-- End invoices uploaded -->
+                
+                            <!-- Start claim created -->
+                            <div class="nhsbsa-timeline__item">
+                                <div class="nhsbsa-timeline__header">
+                                    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Claim created
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by Isla
+                                            Fields</span>
+                                    </h2>
+                                    <p class="nhsuk-body">28 December 2023 at 11:42am</p>
+                                </div>
+                            </div>
+                            <!-- End claim created -->
+                
+                        </div>
+                
+                    </div>
+                </div>
+
+
+
+
+
+
             </div>
             <!-- *** End of history tab *** -->
 

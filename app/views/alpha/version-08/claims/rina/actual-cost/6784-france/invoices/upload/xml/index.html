@@ -1,24 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-08/claims/summary/not-started'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-08/claims/invoices/not-started',
-active: true
-},
-{
-name: 'Uploaded files',
-path: '/alpha/version-08/claims/file-uploads/not-started'
-},
-{
-name: 'History',
-path: '/alpha/version-08/claims/history/not-started'
-}
-]
-%}
+    {
+    name: 'Summary',
+    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/summary/not-started'
+    },
+    {
+    name: 'Invoices',
+    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/not-started',
+    active: true
+    },
+    {
+    name: 'Contestations',
+    path: ''
+    },
+    {
+    name: 'Notes',
+    path: ''
+    },
+    {
+    name: 'History',
+    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/history/not-started'
+    }
+    ]
+    %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -57,7 +61,7 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
 {% block content %}
 
 <!-- Start of back link -->
-<div class="nhsuk-grid-row" id="backLink">
+<div class="nhsuk-grid-row" id="backLink" {% if data['show-back'] === 'No' %}style="display:none"{% endif %}>
     <div class="nhsuk-grid-column-full">
         <div class="nhsuk-back-link">
             <a class="nhsuk-back-link__link" href="javascript:history.back()">
@@ -78,7 +82,7 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
 
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-                <form id="checkFile" action="additional-file" method="post">
+                <form id="checkFile" action="uploading-file-processing" method="post">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                         <h1 id="legend1" class="nhsuk-fieldset__heading">
                             <span class="nhsuk-caption-l">Add invoices</span>
@@ -139,7 +143,16 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
             tabindex="-1">
             <div class="nhsuk-loader">
                 <p>Checking file.<br />This may take a few minutes.<br />Do not leave this page or close your browser, or your file will not be saved.</p>
-                <span class="nhsuk-loader__spinner nhsuk-u-margin-bottom-9"></span>
+                <span class="nhsuk-loader__spinner nhsuk-u-margin-bottom-3"></span>
+
+                <ul class="nhsuk-list nhsuk-u-margin-bottom-7">
+                    <li>Checking file for errors - In progress</li>
+                    <li>Checking invoice data for errors - Not started</li>
+                  </ul>
+
+
+
+                
                 <p><a href="index">Cancel upload</a></p>
             </div>
 

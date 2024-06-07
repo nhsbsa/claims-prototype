@@ -41,9 +41,6 @@ router.post('/route-upload-method', function(req,res){
     if (method == "RINA" ) {
         res.redirect('/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/upload/xml/index')
         }
-    else if (method == "EDI"){
-            res.redirect('/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/upload/xml/index')
-            }
     else {
         res.redirect('/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/upload/index')
     }
@@ -61,11 +58,11 @@ router.post('/route-cancel-upload-invoices', function(req,res){
     var back = req.session.data['referer'] || "/";
 
     if (cancel == "yes" ) {
-        res.redirect('/alpha/version-08/claims/summary/not-started')
+        res.redirect('/alpha/version-08/claims/rina/actual-cost/6784-france/summary/not-started')
     } else if (cancel == "no"){
         return res.redirect(back)
     } else {
-        res.redirect('/alpha/version-08/claims/invoices/upload/cancel-confirmation')
+        res.redirect('/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/upload/cancel-confirmation')
     }
 
 })
@@ -80,11 +77,11 @@ router.post('/route-delete-invoice-file', function(req,res){
     var back = req.session.data['referer'] || "/";
 
     if (cancel == "yes" ) {
-        res.redirect('/alpha/version-08/claims/invoices/upload/xml/index')
+        res.redirect('/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/upload/xml/index?show-back=No')
     } else if (cancel == "no"){
-        return res.redirect(back)
+        res.redirect('/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/upload/xml/cya')
     } else {
-        res.redirect('/alpha/version-08/claims/invoices/upload/delete-confirmation')
+        res.redirect('/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/upload/xml/delete-confirmation')
     }
 
 })

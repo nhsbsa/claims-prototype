@@ -1,24 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-08/claims/summary/not-started'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-08/claims/invoices/not-started',
-active: true
-},
-{
-name: 'Uploaded files',
-path: '/alpha/version-08/claims/file-uploads/index'
-},
-{
-name: 'History',
-path: '#'
-}
-]
-%}
+    {
+    name: 'Summary',
+    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/summary/processing-progress-60'
+    },
+    {
+    name: 'Invoices',
+    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/processing-progress-60',
+    active: true
+    },
+    {
+    name: 'Contestations',
+    path: ''
+    },
+    {
+    name: 'Notes',
+    path: ''
+    },
+    {
+    name: 'History',
+    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/history/processing-progress-60'
+    }
+    ]
+    %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -61,17 +65,17 @@ File upload submitted - Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-column-two-thirds">
 
         <div class="confirmation-box">
-            <h1 class="heading-xlarge">File upload submitted for {% if data['country'] %}{{
+            <h1 class="nhsuk-heading-xl">File uploaded for {% if data['country'] %}{{
                 data['country'] }}{% else %}France{% endif %}
             </h1>
-            <h2>Processing invoices</h2>
+            <h2 class="nhsuk-heading-l">Invoices added to claim ID 6784</h2>
         </div>
 
-        <p>You have submitted invoices for claim ID 6784.</p>
+        <p>You have successfully uploaded a file of invoices to this claim.</p>
 
-        <h2 class="heading-medium">What happens next</h2>
-        <p>The system will check each invoice and try to match it against a valid entitlement. </p>
-        <p>Once the system has processed the invoices, you can check any that the system could not match.</p>
+        <h2 class="nhsuk-heading-l">What happens next</h2>
+        <p>The system will now try to match each invoice against a valid entitlement.</p>
+        <p>Once the system has finished, you can check any that it could not match.</p>
 
         <a href="../../../invoices/processing-progress-60">
             <button class="nhsuk-button" data-module="nhsuk-button" type="submit">

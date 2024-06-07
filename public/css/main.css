@@ -7836,6 +7836,56 @@ body.full-width .nhsuk-width-container {
   }
 }
 
+.nhsbsa-timeline {
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.nhsbsa-timeline:before {
+  background-color: #005eb8;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 5px;
+}
+
+.nhsbsa-timeline--full {
+  margin-bottom: 0;
+}
+
+.nhsbsa-timeline--full:before {
+  height: calc(100% - 75px);
+}
+
+.nhsbsa-timeline__item {
+  padding-bottom: 30px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.nhsbsa-timeline__item:before {
+  background-color: #1d70b8;
+  content: "";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 15px;
+}
+
+.nhsbsa-timeline__title {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25;
+  display: inline;
+}
+
 /* Custom */
 .autocomplete__input:focus {
   border: 2px solid #212b32;
