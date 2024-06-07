@@ -1,24 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-08/claims/summary/not-started'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-08/claims/invoices/no-invoices',
-active: true
-},
-{
-name: 'Uploaded files',
-path: '/alpha/version-08/claims/file-uploads/not-started'
-},
-{
-name: 'History',
-path: '/alpha/version-08/claims/history/not-started'
-}
-]
-%}
+    {
+    name: 'Summary',
+    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/summary/not-started'
+    },
+    {
+    name: 'Invoices',
+    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/invoices/not-started',
+    active: true
+    },
+    {
+    name: 'Contestations',
+    path: ''
+    },
+    {
+    name: 'Notes',
+    path: ''
+    },
+    {
+    name: 'History',
+    path: '/alpha/version-08/claims/rina/actual-cost/6784-france/history/not-started'
+    }
+    ]
+    %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -104,13 +108,6 @@ Contact method - Manage incoming international healthcare claims - NHSBSA
                                             type="radio" value="RINA">
                                         <label class="nhsuk-label nhsuk-radios__label" for="contact-method-rina">
                                             RINA
-                                        </label>
-                                    </div>
-                                    <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="contact-method-edi" name="contact-method"
-                                            type="radio" value="EDI">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="contact-method-edi">
-                                            EDI
                                         </label>
                                     </div>
                                     <div class="nhsuk-radios__item">
