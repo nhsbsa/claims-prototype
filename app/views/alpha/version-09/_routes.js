@@ -353,6 +353,12 @@ router.post('/personSearch', (req, res) => {
 const notes = [];
 
 router.post('/claims/createNote', function(req, res) {
+
+    const currentDate = new Date();
+    const formatDate = currentDate.toLocaleTimeString('en-GB', {day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute:'2-digit'});
+
+    res.locals.data.notes[0].date = formatDate;
+
     notes.push(res.locals.data.notes);
     req.session.data.notes = notes;
     res.redirect('rina/actual-cost/6752-lithuania/notes/index');
