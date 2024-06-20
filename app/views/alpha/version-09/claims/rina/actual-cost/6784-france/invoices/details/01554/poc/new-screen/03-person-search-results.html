@@ -1,0 +1,1942 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+
+
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '/alpha/version-09/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-09/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
+active: true
+},
+{
+name: 'Contestations',
+path: ''
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: ''
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-invoice-poc.html' %}
+<!-- 
+      In /views/layout.html you can:
+        - change the header and footer 
+        - add custom CSS and JavaScript
+    -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Invoice details - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../../../../../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../../../../../../index">Claims</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../../../summary/active-invoices-uploaded">Claim ID 6784</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../../../invoices/full-invoice-list">Invoices</a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of message block -->
+<!-- <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="border-color:#ffeb3b;">
+            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                Check invoice
+            </h2>
+            <div class="nhsuk-error-summary__body">
+                <p>
+                    The system has not been able to match this invoice to an OHS record.</p> 
+<p>You can search for a matching OHS person record using the invoice details. </p>
+<p>If you find a matching OHS person record, you can assign it  to the invoice.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- End of message block -->
+
+<!-- Start of back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="01-to-check">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" height="24" width="24">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back to invoice ID 01554</a>
+        </div>
+    </div>
+</div>
+<!-- End of back link -->
+
+<!-- Start of header block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">
+            Match OHS record
+        </h1>
+    </div>
+
+</div>
+<!-- End of header block -->
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-hint" id="example-with-hint-text-hint">
+            Search for a person to match to the invoice. You can use the invoice summary to help you find a match.
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Start person search -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+        <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
+            Search for a person
+        </h2>
+
+        <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                    Search criteria
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <div class="nhsuk-grid-row">
+                    <div class=" nhsuk-grid-column-full">
+
+                        <form action="02-person-search-results-full-width#search-results" method="post">
+
+                            <div class="nhsuk-hint" id="contact-hint">
+                                Search using a combination of person details fields.
+                            </div>
+                            <div class="nhsuk-grid-row">
+                                <div class="nhsuk-grid-column-one-third">
+                                    <div class="nhsuk-form-group">
+                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                            Last name
+                                        </label>
+                                        <input class="nhsuk-input " id="accepted" name="accepted" type="text" value="">
+                                    </div>
+                                </div>
+                                <div class="nhsuk-grid-column-one-third">
+                                    <div class="nhsuk-form-group">
+                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                            First name
+                                        </label>
+                                        <input class="nhsuk-input " id="accepted" name="accepted" type="text" value="">
+                                    </div>
+                                </div>
+
+                                <div class="nhsuk-grid-column-one-third">
+                                    <div class="nhsuk-form-group">
+                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                            Residential country
+                                        </label>
+                                        <input class="nhsuk-input " id="accepted" name="accepted" type="text">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="nhsuk-grid-row">
+                                <div class="nhsuk-grid-column-full">
+                                    <div class="nhsuk-form-group">
+                                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="dob">
+                                                Date of birth
+                                            </label>
+                                            <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="target-date-hint">
+                                                For example, 28 9 2023
+                                            </div>
+                                            <div class="nhsuk-date-input" id="example">
+                                                <div class="nhsuk-date-input__item">
+                                                    <div class="nhsuk-form-group">
+                                                        <label class="nhsuk-label nhsuk-date-input__label"
+                                                            for="example-day">
+                                                            Day
+                                                        </label>
+                                                        <input
+                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                            id="example-day" name="example-day" type="text"
+                                                            pattern="[0-9]*" inputmode="numeric" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="nhsuk-date-input__item">
+                                                    <div class="nhsuk-form-group">
+                                                        <label class="nhsuk-label nhsuk-date-input__label"
+                                                            for="example-month">
+                                                            Month
+                                                        </label>
+                                                        <input
+                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                            id="example-month" name="example-month" type="text"
+                                                            pattern="[0-9]*" inputmode="numeric" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="nhsuk-date-input__item">
+                                                    <div class="nhsuk-form-group">
+                                                        <label class="nhsuk-label nhsuk-date-input__label"
+                                                            for="example-year">
+                                                            Year
+                                                        </label>
+                                                        <input
+                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                            id="example-year" name="example-year" type="text"
+                                                            pattern="[0-9]*" inputmode="numeric" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr style="margin:10px 0px 10px 0px;">
+
+                            <div class="nhsuk-hint" id="contact-hint" style="padding-top:10px;">
+                                Or search using one unique identifier.
+                            </div>
+                            <div class="nhsuk-grid-row">
+                                <div class="nhsuk-grid-column-one-half">
+                                    <div class="nhsuk-form-group">
+                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                            Person unique ID
+                                        </label>
+                                        <div class="nhsuk-hint">
+                                            Reference, NINO or NHS number.
+                                        </div>
+                                        <input class="nhsuk-input " id="contested" name="contested" type="text">
+                                    </div>
+                                </div>
+                                <div class="nhsuk-grid-column-one-half">
+                                    <div class="nhsuk-form-group">
+                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                            Entitlement issue number
+                                        </label>
+                                        <div class="nhsuk-hint">
+                                            EHIC, GHIC or PRC issue number.
+                                        </div>
+                                        <input class="nhsuk-input" id="contested" name="contested" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr style="margin:10px 0px 10px 0px;">
+
+                            <button class="nhsuk-button nhsuk-button nhsuk-u-margin-bottom-3" data-module="nhsuk-button"
+                                type="submit" style="margin-top:20px;">
+                                Search
+                            </button>
+
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+
+                <!-- Start person search results -->
+                <div class="nhsuk-grid-row" id="search-results">
+                    <div class="nhsuk-grid-column-full">
+                        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
+                            Showing 10 results of 12</h3>
+                        <p class="nhsuk-u-margin-bottom-4">
+
+                            <strong class="nhsuk-tag nhsuk-tag--aqua-green">Pearce</strong>
+                            <strong class="nhsuk-tag nhsuk-tag--aqua-green">8 August
+                                1952</strong>
+                        </p>
+
+                        <!-- Start of filter and sort options -->
+                        <details class="nhsuk-details">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Filter and sort options
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <div class="nhsuk-grid-row">
+
+                                    <!-- Start filter by entitlement -->
+                                    <div class="nhsuk-grid-column-one-third">
+                                        <div class="nhsuk-form-group">
+                                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                    <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                                        Filter by entitlements
+                                                        held
+                                                    </h1>
+                                                </legend>
+                                                <div class="nhsuk-checkboxes">
+                                                    <div class="nhsuk-checkboxes__item">
+                                                        <input class="nhsuk-checkboxes__input"
+                                                            id="filter-entitlement-s1" name="filter-entitlement"
+                                                            type="checkbox" value="s1">
+                                                        <label class="nhsuk-label nhsuk-checkboxes__label"
+                                                            for="filter-entitlement-s1">
+                                                            S1
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-checkboxes__item">
+                                                        <input class="nhsuk-checkboxes__input"
+                                                            id="filter-entitlement-ehic" name="filter-entitlement"
+                                                            type="checkbox" value="ehic">
+                                                        <label class="nhsuk-label nhsuk-checkboxes__label"
+                                                            for="filter-entitlement-ehic">
+                                                            EHIC
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="nhsuk-checkboxes__item">
+                                                        <input class="nhsuk-checkboxes__input"
+                                                            id="filter-entitlement-prc" name="filter-entitlement"
+                                                            type="checkbox" value="prc">
+                                                        <label class="nhsuk-label nhsuk-checkboxes__label"
+                                                            for="filter-entitlement-prc">
+                                                            PRC
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-checkboxes__item">
+                                                        <input class="nhsuk-checkboxes__input"
+                                                            id="filter-entitlement-s2" name="filter-entitlement"
+                                                            type="checkbox" value="s2">
+                                                        <label class="nhsuk-label nhsuk-checkboxes__label"
+                                                            for="filter-entitlement-s2">
+                                                            S2
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-checkboxes__item">
+                                                        <input class="nhsuk-checkboxes__input"
+                                                            id="filter-entitlement-da1" name="filter-entitlement"
+                                                            type="checkbox" value="da1">
+                                                        <label class="nhsuk-label nhsuk-checkboxes__label"
+                                                            for="filter-entitlement-da1">
+                                                            DA1
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- End filter by entitlement -->
+
+                                    <!-- Start sort by  -->
+                                    <div class="nhsuk-grid-column-one-third">
+                                        <div class="nhsuk-form-group nhsuk-u-padding-bottom-5">
+                                            <fieldset class="nhsuk-fieldset">
+                                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                    <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                                        Sort by
+                                                    </h1>
+                                                </legend>
+                                                <div class="nhsuk-radios">
+
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="sort-by-last-name"
+                                                            name="sort-by" type="radio" value="last-name"
+                                                            checked="checked">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="sort-by-last-name">
+                                                            Last name
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="sort-by-first-name"
+                                                            name="sort-by" type="radio" value="first-name">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="sort-by-first-name">
+                                                            First name
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="sort-by-dob"
+                                                            name="sort-by" type="radio" value="dob">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="sort-by-first-name">
+                                                            Date of birth
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="sort-by-nino"
+                                                            name="sort-by" type="radio" value="nino">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="sort-by-nino">
+                                                            NINO
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="sort-by-id"
+                                                            name="sort-by" type="radio" value="id">
+                                                        <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
+                                                            Reference
+                                                        </label>
+                                                    </div>
+                                                    <!-- <div
+                                                                                    class="nhsuk-radios__item">
+                                                                                    <input
+                                                                                        class="nhsuk-radios__input"
+                                                                                        id="sort-by-nino"
+                                                                                        name="sort-by"
+                                                                                        type="radio"
+                                                                                        value="nino">
+                                                                                    <label
+                                                                                        class="nhsuk-label nhsuk-radios__label"
+                                                                                        for="sort-by-first-name">
+                                                                                        National Insurance number 
+                                                                                    </label>
+                                                                                </div> -->
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <!-- End sort by  -->
+
+                                    <!-- Start sort order -->
+                                    <div class="nhsuk-grid-column-one-third">
+                                        <div class="nhsuk-form-group">
+                                            <fieldset class="nhsuk-fieldset">
+                                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                    <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                                        Order results
+                                                    </h1>
+                                                </legend>
+                                                <div class="nhsuk-radios">
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="order-by-asc"
+                                                            name="order-by" type="radio" value="ascending">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="order-by-asc">
+                                                            Ascending
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="order-by-desc"
+                                                            name="order-by" type="radio" value="descending"
+                                                            checked="checked">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="order-by-desc">
+                                                            Descending
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <!-- End sort order -->
+                                    <div class="nhsuk-grid-column-full">
+                                        <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4"
+                                            data-module="nhsuk-button" type="submit" style="margin-top: 6px;">
+                                            Apply filters
+                                        </button><br />
+                                        <a href="">Reset all filters</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </details>
+                        <!-- End of filter and sort options -->
+
+
+
+                    </div>
+                </div>
+
+                <!-- Start of table data -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+
+
+                        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-6"
+                            style="margin-left:16px;">
+                            <!-- <caption class="nhsuk-table__caption">Showing results for: All treatments</caption>  -->
+                            <thead role="rowgroup" class="nhsuk-table__head">
+                                <tr role="row">
+                                    <th role="columnheader" class="" scope="col">
+                                        Last name
+                                    </th>
+                                    <th role="columnheader" class="" scope="col">
+                                        First name
+                                    </th>
+                                    <th role="columnheader" class="" scope="col">
+                                        Date of birth
+                                    </th>
+                                    <th role="columnheader" class="" scope="col">
+                                        NINO
+                                    </th>
+                                    <th role="columnheader" class="" scope="col">
+                                        Reference
+                                    </th>
+                                    <th role="columnheader" class="" scope="col">
+                                        View
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="nhsuk-table__body">
+
+
+
+                                <tr role="row" class="nhsuk-table__row">
+
+
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Last
+                                            name </span>Pearce
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">First
+                                            name</span>Bartholomew
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>8 August 1952
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">National Insurance number
+                                        </span>QQ 78 67 54 C
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Reference
+                                            number </span>25049384
+                                    </td>
+
+
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">View
+                                        </span>
+
+                                        {{ details({
+                                        "text": "View more",
+                                        "attributes": {
+                                        rowExpander: "rowExpander1"
+                                        }
+                                        }) }}
+                                    </td>
+                                </tr>
+
+                                <tr role="row"
+                                    class="nhsuk-table__row nhsuk-table__row-expander nhsuk-u-visually-hidden"
+                                    id="rowExpander1" style="background-color:#f0f4f5">
+                                    <td colspan="7">
+
+
+
+                                        <div class="nhsuk-grid-row">
+                                            <div class="nhsuk-grid-column-full">
+                                                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-6"
+                                                    style="padding-left:16px; padding-right:16px;">OHS person record
+                                                </h3>
+                                                <div class="nhsuk-grid-column-two-thirds ">
+
+                                                    <!-- Start person details -->
+                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                                                        Person details</h4>
+                                                    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-8">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Residential country
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                UK
+                                                            </dd>
+
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                NHS number
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+
+                                                            </dd>
+
+                                                        </div>
+
+
+
+                                                    </dl>
+                                                    <!-- End person details -->
+
+                                                    <!-- Start entitlement details-->
+                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                                                        Entitlement details</h4>
+
+                                                    <dl class="nhsuk-summary-list"
+                                                        style="border-bottom:4px solid #d8dde0;">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Type
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                GHIC
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Issue number
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                00874637746658873542
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Start date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                17 September 2020
+                                                            </dd>
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                End date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                16 September 2025
+                                                            </dd>
+                                                        </div>
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Main or dependant
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Main
+                                                            </dd>
+
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Status
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Issued
+                                                            </dd>
+
+                                                        </div>
+
+
+
+                                                    </dl>
+
+                                                    <!-- End entitlement details-->
+
+                                                </div>
+
+                                                <!-- Start buttons -->
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <a href="">
+                                                        <button class="nhsuk-button nhsuk-u-margin-bottom-3"
+                                                            style="display:inline; width:90%; float:right;"
+                                                            data-module="nhsuk-button" type="submit">
+                                                            Assign to invoice
+                                                        </button></a><br />
+                                                    <button
+                                                        class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3"
+                                                        style="display:inline; width:90%; float:right;"
+                                                        data-module="nhsuk-button" type="submit">
+                                                        View OHS record
+                                                    </button><br />
+                                                    <button class="nhsuk-button nhsuk-button--secondary"
+                                                        style="display:inline; width:90%; float:right;"
+                                                        data-module="nhsuk-button" type="submit">
+                                                        View claim history
+                                                    </button>
+                                                </div>
+                                                <!-- End buttons-->
+
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+
+                                <!-- start record -->
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Last
+                                            name </span>Pearce
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">First
+                                            name</span>Bernadette
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>8 August 1952
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">National Insurance number
+                                        </span>QQ 78 67 54 C
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Reference
+                                            number </span>25049384
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">View
+                                        </span>
+
+                                        {{ details({
+                                        "text": "View more",
+                                        "attributes": {
+                                        rowExpander: "rowExpanderx"
+                                        }
+                                        }) }}
+                                    </td>
+                                </tr>
+                                <!-- end record -->
+
+
+
+                                <tr role="row" class="nhsuk-table__row">
+
+
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Last
+                                            name </span>Pearce
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">First
+                                            name</span>Gabriella
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>8 August 1952
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">National Insurance number
+                                        </span>QQ 88 67 43 A
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Reference
+                                            number </span>25083943
+                                    </td>
+
+
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">View
+                                        </span>
+
+                                        {{ details({
+                                        "text": "View more",
+                                        "attributes": {
+                                        rowExpander: "rowExpander2"
+                                        }
+                                        }) }}
+                                    </td>
+                                </tr>
+
+                                <tr role="row"
+                                    class="nhsuk-table__row nhsuk-table__row-expander nhsuk-u-visually-hidden"
+                                    id="rowExpander2" style="background-color:#f0f4f5">
+                                    <td colspan="7">
+
+
+
+                                        <div class="nhsuk-grid-row">
+                                            <div class="nhsuk-grid-column-full">
+                                                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-6"
+                                                    style="padding-left:16px; padding-right:16px;">OHS person record
+                                                </h3>
+                                                <div class="nhsuk-grid-column-two-thirds ">
+
+                                                    <!-- Start person details -->
+                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                                                        Person details</h4>
+                                                    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-8">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Residential country
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                UK
+                                                            </dd>
+
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                NHS number
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+
+                                                            </dd>
+
+                                                        </div>
+
+
+
+                                                    </dl>
+                                                    <!-- End person details -->
+
+                                                    <!-- Start entitlement details-->
+                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                                                        Entitlement details</h4>
+
+
+                                                    <dl class="nhsuk-summary-list"
+                                                        style="border-bottom:4px solid #d8dde0;">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Type
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                S1
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Start date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                1 January 2023
+                                                            </dd>
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                End date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+
+                                                            </dd>
+                                                        </div>
+
+
+
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Main or dependant
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Main
+                                                            </dd>
+
+                                                        </div>
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Country
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                France
+                                                            </dd>
+
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Status
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Issued
+                                                            </dd>
+
+                                                        </div>
+
+
+
+                                                    </dl>
+
+
+
+                                                    <!-- End entitlement details-->
+
+                                                </div>
+
+                                                <!-- Start buttons -->
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <a href="03-accepted">
+                                                        <button class="nhsuk-button nhsuk-u-margin-bottom-3"
+                                                            style="display:inline; width:90%; float:right;"
+                                                            data-module="nhsuk-button" type="submit">
+                                                            Assign to invoice
+                                                        </button></a><br />
+                                                    <button
+                                                        class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3"
+                                                        style="display:inline; width:90%; float:right;"
+                                                        data-module="nhsuk-button" type="submit">
+                                                        View OHS record
+                                                    </button><br />
+                                                    <button class="nhsuk-button nhsuk-button--secondary"
+                                                        style="display:inline; width:90%; float:right;"
+                                                        data-module="nhsuk-button" type="submit">
+                                                        View claim history
+                                                    </button>
+                                                </div>
+                                                <!-- End buttons-->
+
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+
+                                <tr role="row" class="nhsuk-table__row">
+
+
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Last
+                                            name </span>Pearce
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">First
+                                            name</span>Jacqueline
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>8 August 1952
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">National Insurance number
+                                        </span>QQ 45 67 89 A
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Reference
+                                            number </span>25034758
+                                    </td>
+
+
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">View
+                                        </span>
+
+                                        {{ details({
+                                        "text": "View more",
+                                        "attributes": {
+                                        rowExpander: "rowExpander5"
+                                        }
+                                        }) }}
+                                    </td>
+                                </tr>
+
+                                <tr role="row"
+                                    class="nhsuk-table__row nhsuk-table__row-expander nhsuk-u-visually-hidden"
+                                    id="rowExpander5" style="background-color:#f0f4f5">
+                                    <td colspan="7">
+
+
+
+                                        <div class="nhsuk-grid-row">
+                                            <div class="nhsuk-grid-column-full">
+                                                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-6"
+                                                    style="padding-left:16px; padding-right:16px;">OHS person record
+                                                </h3>
+                                                <div class="nhsuk-grid-column-two-thirds ">
+
+                                                    <!-- Start person details -->
+                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                                                        Person details</h4>
+                                                    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-8">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Residential country
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                UK
+                                                            </dd>
+
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                NHS number
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+
+                                                            </dd>
+
+                                                        </div>
+
+
+
+                                                    </dl>
+                                                    <!-- End person details -->
+
+                                                    <!-- Start entitlement details-->
+                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                                                        Entitlement details</h4>
+
+
+                                                    <dl class="nhsuk-summary-list"
+                                                        style="border-bottom:4px solid #d8dde0;">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Type
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                GHIC
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Issue number
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                00974637746658873366
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Start date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                20 April 2024
+                                                            </dd>
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                End date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                19 April 2029
+                                                            </dd>
+                                                        </div>
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Main or dependant
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Main
+                                                            </dd>
+
+                                                        </div>
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Status
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Issued
+                                                            </dd>
+
+                                                        </div>
+
+
+
+                                                    </dl>
+
+                                                    <dl class="nhsuk-summary-list"
+                                                        style="border-bottom:4px solid #d8dde0;">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Type
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                GHIC
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Issue number
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                00674637746658879243
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Start date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                15 January 2019
+                                                            </dd>
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                End date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                14 January 2024
+                                                            </dd>
+                                                        </div>
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Main or dependant
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Main
+                                                            </dd>
+
+                                                        </div>
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Status
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Expired
+                                                            </dd>
+
+                                                        </div>
+
+
+
+                                                    </dl>
+
+
+
+                                                    <!-- End entitlement details-->
+
+                                                </div>
+
+                                                <!-- Start buttons -->
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <a href="03-accepted">
+                                                        <button class="nhsuk-button nhsuk-u-margin-bottom-3"
+                                                            style="display:inline; width:90%; float:right;"
+                                                            data-module="nhsuk-button" type="submit">
+                                                            Assign to invoice
+                                                        </button></a><br />
+                                                    <button
+                                                        class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3"
+                                                        style="display:inline; width:90%; float:right;"
+                                                        data-module="nhsuk-button" type="submit">
+                                                        View OHS record
+                                                    </button><br />
+                                                    <button class="nhsuk-button nhsuk-button--secondary"
+                                                        style="display:inline; width:90%; float:right;"
+                                                        data-module="nhsuk-button" type="submit">
+                                                        View claim history
+                                                    </button>
+                                                </div>
+                                                <!-- End buttons-->
+
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+
+                                                                <!-- start record -->
+                                                                <tr role="row" class="nhsuk-table__row">
+                                                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                                                        <span class="nhsuk-table-responsive__heading">Last
+                                                                            name </span>Pearce
+                                                                    </td>
+                                                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                                                        <span class="nhsuk-table-responsive__heading">First
+                                                                            name</span>Matthew
+                                                                    </td>
+                                                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                                                        <span class="nhsuk-table-responsive__heading">DOB</span>8 August 1952
+                                                                    </td>
+                                                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                                                        <span class="nhsuk-table-responsive__heading">National Insurance number
+                                                                        </span>QQ 78 67 54 C
+                                                                    </td>
+                                                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                                                        <span class="nhsuk-table-responsive__heading">Reference
+                                                                            number </span>25049384
+                                                                    </td>
+                                                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                                                        <span class="nhsuk-table-responsive__heading">View
+                                                                        </span>
+                                
+                                                                        {{ details({
+                                                                        "text": "View more",
+                                                                        "attributes": {
+                                                                        rowExpander: "rowExpanderx"
+                                                                        }
+                                                                        }) }}
+                                                                    </td>
+                                                                </tr>
+                                                                <!-- end record -->
+
+                                                                                                <!-- start record -->
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Last
+                                            name </span>Pearce
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">First
+                                            name</span>Montgomery
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>8 August 1952
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">National Insurance number
+                                        </span>QQ 78 67 54 C
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Reference
+                                            number </span>25049384
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">View
+                                        </span>
+
+                                        {{ details({
+                                        "text": "View more",
+                                        "attributes": {
+                                        rowExpander: "rowExpanderx"
+                                        }
+                                        }) }}
+                                    </td>
+                                </tr>
+                                <!-- end record -->
+
+                                                                <!-- start record -->
+                                                                <tr role="row" class="nhsuk-table__row">
+                                                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                                                        <span class="nhsuk-table-responsive__heading">Last
+                                                                            name </span>Pearce
+                                                                    </td>
+                                                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                                                        <span class="nhsuk-table-responsive__heading">First
+                                                                            name</span>Nathaniel
+                                                                    </td>
+                                                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                                                        <span class="nhsuk-table-responsive__heading">DOB</span>8 August 1952
+                                                                    </td>
+                                                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                                                        <span class="nhsuk-table-responsive__heading">National Insurance number
+                                                                        </span>QQ 78 67 54 C
+                                                                    </td>
+                                                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                                                        <span class="nhsuk-table-responsive__heading">Reference
+                                                                            number </span>25049384
+                                                                    </td>
+                                                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                                                        <span class="nhsuk-table-responsive__heading">View
+                                                                        </span>
+                                
+                                                                        {{ details({
+                                                                        "text": "View more",
+                                                                        "attributes": {
+                                                                        rowExpander: "rowExpanderx"
+                                                                        }
+                                                                        }) }}
+                                                                    </td>
+                                                                </tr>
+                                                                <!-- end record -->
+
+
+                                <!-- start of full search result -->
+                                <tr role="row" class="nhsuk-table__row">
+
+
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Last
+                                            name </span>Pearce
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">First
+                                            name</span>Shaun
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>8
+                                        August 1952
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">National Insurance number
+                                        </span>QQ 23 34 54 C
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Reference
+                                            number </span>25059883
+                                    </td>
+
+
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">View
+                                        </span>
+
+                                        {{ details({
+                                        "text": "View more",
+                                        "attributes": {
+                                        rowExpander: "rowExpander3"
+                                        }
+                                        }) }}
+                                    </td>
+                                </tr>
+                                <tr role="row"
+                                    class="nhsuk-table__row nhsuk-table__row-expander nhsuk-u-visually-hidden"
+                                    id="rowExpander3" style="background-color:#f0f4f5">
+                                    <td colspan="7">
+
+
+
+                                        <div class="nhsuk-grid-row">
+                                            <div class="nhsuk-grid-column-full">
+                                                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-6"
+                                                    style="padding-left:16px; padding-right:16px;">OHS person record
+                                                </h3>
+                                                <div class="nhsuk-grid-column-two-thirds ">
+
+                                                    <!-- Start person details -->
+                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                                                        Person details</h4>
+                                                    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-8">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Residential country
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                UK
+                                                            </dd>
+
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                NHS number
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+
+                                                            </dd>
+
+                                                        </div>
+
+
+
+                                                    </dl>
+                                                    <!-- End person details -->
+
+                                                    <!-- Start entitlement details-->
+                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                                                        Entitlement details</h4>
+
+
+
+                                                    <dl class="nhsuk-summary-list"
+                                                        style="border-bottom:4px solid #d8dde0;">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Type
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                EHIC
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Issue number
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                00874637746658873542<br />
+                                                                00649437746658873541
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Start date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                23 March 2021
+                                                            </dd>
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                End date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                23 March 2026
+                                                            </dd>
+                                                        </div>
+
+
+
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Main or dependant
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Main
+                                                            </dd>
+
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Status
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Issued
+                                                            </dd>
+
+                                                        </div>
+
+
+
+                                                    </dl>
+
+                                                    <dl class="nhsuk-summary-list"
+                                                        style="border-bottom:4px solid #d8dde0;">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Type
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                PRC
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Issue number
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                00467329746658899305
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Start date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                10 September 2022
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                End date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                14 September 2022
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Country
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Spain
+                                                            </dd>
+
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Status
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                Expired
+                                                            </dd>
+
+                                                        </div>
+
+
+
+                                                    </dl>
+
+
+
+                                                    <!-- End entitlement details-->
+
+                                                </div>
+
+                                                <!-- Start buttons -->
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <a href="04-person-assigned#matched-ohs-record">
+                                                        <button class="nhsuk-button nhsuk-u-margin-bottom-3"
+                                                            style="display:inline; width:90%; float:right;"
+                                                            data-module="nhsuk-button" type="submit">
+                                                            Assign to invoice
+                                                        </button></a><br />
+                                                    <button
+                                                        class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3"
+                                                        style="display:inline; width:90%; float:right;"
+                                                        data-module="nhsuk-button" type="submit">
+                                                        View OHS record
+                                                    </button><br />
+                                                    <button class="nhsuk-button nhsuk-button--secondary"
+                                                        style="display:inline; width:90%; float:right;"
+                                                        data-module="nhsuk-button" type="submit">
+                                                        View claim history
+                                                    </button>
+                                                </div>
+                                                <!-- End buttons-->
+
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+
+
+                                <!-- end of first search result -->
+
+                                <!-- Start of legacy EHIC result -->
+                                <tr role="row" class="nhsuk-table__row">
+
+
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Last
+                                            name </span>Pearce
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">First
+                                            name</span>Shaun
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>8
+                                        August 1952
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">National Insurance number </span>
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Reference
+                                            number </span>679783
+                                    </td>
+
+
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">View
+                                        </span>
+
+                                        {{ details({
+                                        "text": "View more",
+                                        "attributes": {
+                                        rowExpander: "rowExpander4"
+                                        }
+                                        }) }}
+                                    </td>
+                                </tr>
+                                <tr role="row"
+                                    class="nhsuk-table__row nhsuk-table__row-expander nhsuk-u-visually-hidden"
+                                    id="rowExpander4" style="background-color:#f0f4f5">
+                                    <td colspan="7">
+
+
+                                        <div class="nhsuk-grid-row">
+                                            <div class="nhsuk-grid-column-full">
+                                                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-6"
+                                                    style="padding-left:16px; padding-right:16px;">OHS person record
+                                                </h3>
+                                                <div class="nhsuk-grid-column-two-thirds ">
+
+                                                    <!-- Start person details -->
+                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                                                        Person details</h4>
+                                                    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-8">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Residential country
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                UK
+                                                            </dd>
+
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                ID number
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+
+                                                            </dd>
+
+                                                        </div>
+
+
+
+
+
+                                                    </dl>
+                                                    <!-- End person details -->
+
+                                                    <!-- Start entitlement details-->
+                                                    <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                                                        Entitlement details</h4>
+
+                                                    <dl class="nhsuk-summary-list"
+                                                        style="border-bottom:4px solid #d8dde0;">
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Type
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                EHIC (legacy)
+                                                            </dd>
+                                                        </div>
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Issue number
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                0467879387<br />
+                                                                0457849322
+                                                            </dd>
+                                                        </div>
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Start date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                1 February 1999
+                                                            </dd>
+                                                        </div>
+
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                End date
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                31 March 2020
+                                                            </dd>
+                                                        </div>
+
+                                                        <div class="nhsuk-summary-list__row">
+                                                            <dt class="nhsuk-summary-list__key">
+                                                                Address
+                                                            </dt>
+                                                            <dd class="nhsuk-summary-list__value">
+                                                                639 Church Road<br />
+                                                                Gloucester<br />
+                                                                GL91 5VW
+                                                            </dd>
+
+                                                        </div>
+
+
+                                                    </dl>
+
+                                                    <!-- End entitlement details-->
+
+                                                </div>
+
+                                                <!-- Start buttons -->
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <button class="nhsuk-button nhsuk-u-margin-bottom-3"
+                                                        style="display:inline; width:90%; float:right;"
+                                                        data-module="nhsuk-button" type="submit">
+                                                        Assign to invoice
+                                                    </button><br />
+                                                    <button class="nhsuk-button nhsuk-button--secondary"
+                                                        style="display:inline; width:90%; float:right;"
+                                                        data-module="nhsuk-button" type="submit">
+                                                        View claim history
+                                                    </button>
+                                                </div>
+                                                <!-- End buttons-->
+
+                                            </div>
+                                        </div>
+
+
+                                    </td>
+                                </tr>
+
+                                <!-- End of legacy EHIC result-->
+
+
+
+
+                                <!-- start filler rows -->
+
+
+
+
+
+
+
+
+
+                                <!-- start record -->
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Last
+                                            name </span>Pearce
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">First
+                                            name</span>Theodora
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>8 August 1952
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">National Insurance number
+                                        </span>QQ 78 67 54 C
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">Reference
+                                            number </span>25049384
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
+                                        <span class="nhsuk-table-responsive__heading">View
+                                        </span>
+
+                                        {{ details({
+                                        "text": "View more",
+                                        "attributes": {
+                                        rowExpander: "rowExpanderx"
+                                        }
+                                        }) }}
+                                    </td>
+                                </tr>
+                                <!-- end record -->
+
+
+                                <!-- end flller rows -->
+
+
+
+
+
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                </div>
+                <!-- End of table data -->
+
+             <!-- Start pagination -->
+
+             <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                  <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+  
+                    <div class="nhsuk-pagination__prev">
+                      <!-- <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="prev">
+                        <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--prev"
+                          xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false"
+                          viewBox="0 0 15 13">
+                          <path
+                            d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z">
+                          </path>
+                        </svg>
+                        <span class="nhsuk-pagination__link-title">Previous<span class="nhsuk-visually-hidden">
+                            page</span></span></a> -->
+                    </div>
+  
+  
+                    <ul class="nhsuk-pagination__list">
+                      <li class="nhsuk-pagination__item nhsuk-pagination__item--current">
+                        <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 1">
+                          1
+                        </a>
+                      </li>
+                      <li class="nhsuk-pagination__item">
+                        <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 2">
+                          2
+                        </a>
+                      </li>
+
+                    </ul>
+  
+                    <div class="nhsuk-pagination__next">
+                      <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="next"> <span class="nhsuk-pagination__link-title">Next<span class="nhsuk-visually-hidden">
+                            page</span></span>
+                        <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                          </path>
+                        </svg></a>
+                    </div>
+  
+                  </nav>
+                </div>
+              </div>
+
+             <!-- End pagination -->
+
+
+                <!-- End person search results -->
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="nhsuk-grid-column-one-quarter">
+
+        <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
+            Invoice summary
+        </h2>
+
+
+        <details class="nhsuk-details nhsuk-expander" open>
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                    Person details
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <h4 class="nhsuk-heading-xs">
+                    Last name
+                    <span class="nhsuk-caption-l nhsuk-caption--bottom"
+                        style="font-size: 1.2rem; color: #212b32;">Pearce</span>
+                </h4>
+                <h4 class="nhsuk-heading-xs">
+                    First name
+                    <span class="nhsuk-caption-l nhsuk-caption--bottom"
+                        style="font-size: 1.2rem; color: #212b32;">Sean</span>
+                </h4>
+
+                <h4 class="nhsuk-heading-xs">
+                    Date of birth
+                    <span class="nhsuk-caption-l nhsuk-caption--bottom" style="font-size: 1.2rem; color: #212b32;">8
+                        August 1952</span>
+                </h4>
+
+                <h4 class="nhsuk-heading-xs">
+                    Unique ID
+                    <span class="nhsuk-caption-l nhsuk-caption--bottom" style="font-size: 1.2rem; color: #212b32;">QQ 23
+                        34 54 C</span>
+                </h4>
+            </div>
+        </details>
+
+        <details class="nhsuk-details nhsuk-expander" open>
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                    Entitlement details
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <h4 class="nhsuk-heading-xs">
+                    Type
+                    <span class="nhsuk-caption-l nhsuk-caption--bottom"
+                        style="font-size: 1.2rem; color: #212b32;">EHIC</span>
+                </h4>
+
+                <h4 class="nhsuk-heading-xs">
+                    Issue number
+                    <span class="nhsuk-caption-l nhsuk-caption--bottom"
+                        style="font-size: 1.2rem; color: #212b32;">00874637746658873542</span>
+                </h4>
+
+                <h4 class="nhsuk-heading-xs">
+                    Start date
+                    <span class="nhsuk-caption-l nhsuk-caption--bottom" style="font-size: 1.2rem; color: #212b32;">23
+                        March 2021</span>
+                </h4>
+                <h4 class="nhsuk-heading-xs">
+                    End date
+                    <span class="nhsuk-caption-l nhsuk-caption--bottom" style="font-size: 1.2rem; color: #212b32;">22
+                        March 2026</span>
+                </h4>
+
+                <h4 class="nhsuk-heading-xs">
+                    Issue date
+                    <span class="nhsuk-caption-l nhsuk-caption--bottom" style="font-size: 1.2rem; color: #212b32;">23
+                        March 2021</span>
+                </h4>
+            </div>
+        </details>
+
+        <details class="nhsuk-details nhsuk-expander" open>
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                    Invoice details
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <h4 class="nhsuk-heading-xs">
+                    Start date
+                    <span class="nhsuk-caption-l nhsuk-caption--bottom" style="font-size: 1.2rem; color: #212b32;">1
+                        June 2023</span>
+                </h4>
+                <h4 class="nhsuk-heading-xs">
+                    End date
+                    <span class="nhsuk-caption-l nhsuk-caption--bottom" style="font-size: 1.2rem; color: #212b32;">2
+                        June 2023</span>
+                </h4>
+
+                <h4 class="nhsuk-heading-xs">
+                    Total amount
+                    <span class="nhsuk-caption-l nhsuk-caption--bottom"
+                        style="font-size: 1.2rem; color: #212b32;">2134.75</span>
+                </h4>
+            </div>
+        </details>
+
+
+
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+<!-- End person search -->
+
+{% endblock %}
+<!-- End of central content -->
