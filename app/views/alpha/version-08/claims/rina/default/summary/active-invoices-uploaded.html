@@ -45,6 +45,8 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
 </div>
 <!-- End of header-->
 
+{{ claim | dump }}
+
 <!-- Start of main summary box -->
 <div class="nhsuk-grid-row">
 <div class="nhsuk-grid-column-full">
@@ -253,52 +255,3 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
 
 {% endblock %}
 <!-- End of central content -->
-
-<script>
-    $(document).ready(function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const claimid = urlParams.get('claimid');
-
-        if (claimid) {
-            $.ajax({
-                url: `/api/claim?claimid=${claimid}`,
-                type: 'GET',
-                success: function(data) {
-                    $('#claimID').text(data.claimid);
-                    $('#claimReference').text(data.claimreference);
-                    $('#claimReferenceSub').text(data.claimreference);
-                    $('#country').text(data.country);
-                    $('#financialYear').text(data.financialyear);
-                    $('#claimType').text(data.claimtype);
-                    $('#articleType').text(data.articletype);
-                    $('#targetDate').text(data.targetdate);
-                    $('#deadline').text(data.deadline);
-                    $('#dateReceived').text(data.datereceived);
-                    $('#claimStatus').text(data.claimstatus);
-
-                    // Populate invoice numbers
-                    $('#totalInvoices').text(data.invoicesnumber.total);
-                    $('#toCheckInvoices').text(data.invoicesnumber.tocheck);
-                    $('#acceptedInvoices').text(data.invoicesnumber.accepted);
-                    $('#contestedInvoices').text(data.invoicesnumber.contested);
-                    $('#partialInvoices').text(data.invoicesnumber.partial);
-                    $('#withdrawnInvoices').text(data.invoicesnumber.withdrawn);
-
-                    // Populate claim amounts
-                    $('#totalClaimAmount').text(data.claimamount.total);
-                    $('#toCheckClaimAmount').text(data.claimamount.tocheck);
-                    $('#acceptedClaimAmount').text(data.claimamount.accepted);
-                    $('#contestedClaimAmount').text(data.claimamount.contested);
-                    $('#partialClaimAmount').text(data.claimamount.partial);
-                    $('#withdrawnClaimAmount').text(data.claimamount.withdrawn);
-
-                },
-                error: function(err) {
-                    console.error('Error fetching claim data:', err);
-                }
-            });
-        } else {
-            console.error('No claimid found in URL parameters');
-        }
-    });
-</script>
