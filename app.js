@@ -1,6 +1,7 @@
 // Core dependencies
 const path = require('path');
 const fs = require('fs');
+const dateFilter = require('nunjucks-date-filter');
 
 // External dependencies
 const bodyParser = require('body-parser');
@@ -12,6 +13,10 @@ const sessionInMemory = require('express-session');
 
 // Run before other code to make sure variables from .env are available
 dotenv.config();
+
+// Initialise applications
+const app = express();
+const documentationApp = express();
 
 // Local dependencies
 const packageInfo = require('./package.json');
@@ -27,10 +32,6 @@ const utils = require('./lib/utils');
 const port = process.env.PORT || 3001;
 const useDocumentation = process.env.SHOW_DOCS || config.useDocumentation;
 const onlyDocumentation = process.env.DOCS_ONLY;
-
-// Initialise applications
-const app = express();
-const documentationApp = express();
 
 // Set up configuration variables
 const useAutoStoreData = process.env.USE_AUTO_STORE_DATA || config.useAutoStoreData;
@@ -57,6 +58,9 @@ nunjucksConfig.express = app;
 
 let nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig);
 nunjucksAppEnv.addGlobal('version', packageInfo.version);
+
+// Add date filter to Nunjucks
+nunjucksAppEnv.addFilter('date', dateFilter);
 
 // Add Nunjucks filters
 utils.addNunjucksFilters(nunjucksAppEnv);
