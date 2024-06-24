@@ -7,7 +7,7 @@ dotenv.config();
 const { Pool } = require('pg');
 
 const isProduction = process.env.NODE_ENV === 'production';
-const connectionString = isProduction ? process.env.DATABASE_URL : 'postgres://postgres:CrystalClearQuartz9785@localhost:5432/my_new_database';
+const connectionString = isProduction ? process.env.DATABASE_URL : 'postgres://postgres:postgres@localhost:5432/heroku_claims';
 
 const pool = new Pool({
     connectionString: connectionString,
@@ -345,27 +345,19 @@ router.post('/claimSearch', async (req, res) => {
 
 // View Claim
 
+
 // API endpoint to fetch claim details by claimid
-router.get('/api/claim', async (req, res) => {
-    const { claimid } = req.query;
-    console.log(`Fetching claim with ID: ${claimid}`);
 
-    try {
-        const query = 'SELECT * FROM claims WHERE claimid = $1';
-        const result = await pool.query(query, [claimid]);
-        const claim = result.rows[0];
+router.get('/claims/claim/:claimId', function(req, res) {
 
-        if (!claim) {
-            console.log(`Claim not found for ID: ${claimid}`);
-            return res.status(404).send('Claim not found');
+    const id = parseInt(req.params.claimId)
+
+    pool.query('SELECT * FROM claims WHERE claimid = $1', [id], (error, results) => {
+        if (error) {
+          throw error
         }
-
-        console.log('Claim data:', claim);
-        res.json(claim);
-    } catch (err) {
-        console.error('Error fetching claim:', err);
-        res.status(500).send('Internal Server Error');
-    }
+        res.render('alpha/version-08/claims/rina/default/summary/active-invoices-uploaded', {claim: results.rows})
+    })
 });
 
 module.exports = router
