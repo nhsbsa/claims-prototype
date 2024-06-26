@@ -77,12 +77,12 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <!-- Start of form -->
-        <form action="../../route-contact-method" method="post">
+        <form action="../../route-create-claim" method="post">
             <fieldset class="nhsuk-fieldset">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                     <h1 class="nhsuk-fieldset__heading">
                         <span class="nhsuk-caption-l">Create a new claim</span>
-                        Contact method
+                        Article type
                     </h1>
                 </legend>
 
@@ -90,34 +90,48 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
 
-                        <!-- How did you receive the claim -->
+                        <!-- Article covering the claim -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset">
                                 <legend
                                     class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-3">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        How did you receive the claim?
+                                        What is the article covering the claim?
                                     </h1>
                                 </legend>
                                 <div class="nhsuk-radios">
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="received-rina" name="received"
-                                            type="radio" value="RINA">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="received-rina">
-                                            RINA
+                                        <input class="nhsuk-radios__input" id="article-actual" name="article"
+                                            type="radio" value="Article 62 - Actual cost">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-actual">
+                                            Article 62 - actual cost
                                         </label>
                                     </div>
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="received-paper" name="received"
-                                            type="radio" value="Paper">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="received-paper">
-                                            Paper
+                                        <input class="nhsuk-radios__input" id="article-average-2a" name="article"
+                                            type="radio" value="Article 63 (2a) - average cost">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-average-2a">
+                                            Article 63 (2a) - average cost
+                                        </label>
+                                    </div>
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-average-2b" name="article"
+                                            type="radio" value="Article 63 (2b) - average cost">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
+                                            Article 63 (2b) - average cost
+                                        </label>
+                                    </div>
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-da1" name="article" type="radio"
+                                            value="AW03 - DA1 claims">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-da1">
+                                            AW03 - DA1 claims
                                         </label>
                                     </div>
                                 </div>
                             </fieldset>
                         </div>
-                       
+
                         <!-- Start button -->
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top:12px;">
                             Continue
@@ -130,6 +144,7 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
             </fieldset>
         </form>
         <!-- End of form-->
+        <a href="cancel-confirmation" class="nhsuk-link">Cancel</a>
     </div>
 </div>
 <!-- End of create a claim -->
