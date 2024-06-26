@@ -6,30 +6,63 @@ const path = require('path');
 
 const axios = require('axios');
 
-//// CREATE CLAIM POC ////
-
-
-
 //// CREATE CLAIM ////
 
-//Are you sure you want to cancel
+//// How did you receive the claim?  ////
+router.post('/route-contact-method', function(req,res){
+    var received = req.session.data['received']
+    if (received == "RINA" ||  received == "Paper") {
+        res.redirect('/alpha/version-09/claims/create/article-type')
+        }
+    else {
+        res.redirect('/alpha/version-09/claims/create/index')
+    }
+})
+
+
+//// What is the article covering the claim?  ////
 router.post('/route-create-claim', function(req,res){
     var received = req.session.data['received']
     var article = req.session.data['article']
-    if (received == "RINA" && article == "Article 62 - Actual cost" || article == "AW03 - DA1 claims") {
-        res.redirect('/alpha/version-09/claims/create/poc/multi-screen/rina-actual-details')
+
+    if (received == 'RINA') {
+        if (article == 'Article 62 - Actual cost' || article == 'AW03 - DA1 claims') {
+            res.redirect('/alpha/version-09/claims/create/details-rina-actual')
+            }
+        else if (article == 'Article 63 (2a) - average cost' || article == 'Article 63 (2b) - average cost') {
+            res.redirect('/alpha/version-09/claims/create/details-rina-average')
+            }
+        
         }
-    else if (received == "RINA" && article == "Article 63 (2a) - average cost" || article == "Article 63 (2b) - average cost") {
-        res.redirect('/alpha/version-09/claims/create/poc/multi-screen/rina-average-details')
-        }
-    else if (received == "Paper" && article == "Article 62 - Actual cost" || article == "AW03 - DA1 claims") {
-        res.redirect('/alpha/version-09/claims/create/poc/multi-screen/paper-actual-details')
-        }
-     else if (received == "Paper" && article == "Article 63 (2a) - average cost" || article == "Article 63 (2b) - average cost") {
-        res.redirect('/alpha/version-09/claims/create/poc/multi-screen/paper-average-details')
+    else if (received == 'Paper') {
+        if (article == 'Article 62 - Actual cost' || article == 'AW03 - DA1 claims') {
+            res.redirect('/alpha/version-09/claims/create/details-paper-actual')
+            }
+         else if (article == 'Article 63 (2a) - average cost' || article == 'Article 63 (2b) - average cost') {
+            res.redirect('/alpha/version-09/claims/create/details-paper-average')
+            }
+        
         }
     else {
-        res.redirect('/alpha/version-09/claims/create/poc/multi-screen/index')
+            res.redirect('/alpha/version-09/claims/create/index')
+        }
+})
+
+//Are you sure you want to cancel
+router.get("/claims/create/cancel-confirmation", (req, res)=> {
+    res.render("alpha/version-09/claims/create/cancel-confirmation", {referer: req.headers.referer});
+});
+
+router.post('/route-cancel-create-claim', function(req,res){
+    var cancel = req.session.data['cancel']
+    var back = req.session.data['referer'] || "/";
+
+    if (cancel == "yes" ) {
+        res.redirect('/alpha/version-09/claims/index')
+    } else if (cancel == "no"){
+        return res.redirect(back)
+    } else {
+        res.redirect('/alpha/version-09/claims/create/cancel-confirmation')
     }
 
 })
