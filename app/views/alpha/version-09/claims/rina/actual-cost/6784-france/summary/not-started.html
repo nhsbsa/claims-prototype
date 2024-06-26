@@ -112,25 +112,6 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               <div class="nhsuk-grid-column-one-half">
                 <dl class="nhsuk-summary-list">
 
-                  <!-- Sub reference -->
-                  {% if data['type'] %}
-                  {% if data['type'] === 'Supplementary' %}
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Sub-reference
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      {% if data['subref'] %}
-                      {{ data['subref'] }}
-                      {% else %}
-                      -
-                      {% endif %}
-                    </dd>
-                    <dd class="nhsuk-summary-list__actions"></dd>
-                  </div>
-                  {% endif %}
-                  {% endif %}
-
                   <!-- Country -->
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">
@@ -162,6 +143,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   </div>
 
                   <!-- Claim type -->
+                  {% if data['article'] === 'Article 62 - Actual cost' or data['article'] === 'AW03 - DA1 claims' %}
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">
                       Claim type
@@ -175,6 +157,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                     </dd>
                     <dd class="nhsuk-summary-list__actions"></dd>
                   </div>
+                  {% endif %}
 
                   <!-- Article type -->
                   <div class="nhsuk-summary-list__row">
@@ -190,6 +173,25 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                     </dd>
                     <dd class="nhsuk-summary-list__actions"></dd>
                   </div>
+
+                  <!-- Age bracket -->
+                  {% if data['article'] === 'Article 63 (2a) - average cost' or data['article'] === 'Article 63 (2b) - average cost' %}
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Age bracket
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {% if data['age-bracket'] %}
+                      {{ data['age-bracket'] }}
+                      {% else %}
+                      0-19
+                      {% endif %}
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions"></dd>
+                  </div>
+                  {% endif %}
+
+
 
                 </dl>
               </div>
