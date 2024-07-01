@@ -113,6 +113,24 @@ Check claim details - Manage incoming international healthcare claims - NHSBSA
 
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
+                                Claim reference
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['ref'] %}
+                                {{ data['ref'] }}
+                                {% else %}
+                                0039795410
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> reference</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
                                 Date you received the claim
                             </dt>
                             <dd class="nhsuk-summary-list__value">
@@ -210,24 +228,6 @@ Check claim details - Manage incoming international healthcare claims - NHSBSA
 
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Claim reference
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                {% if data['ref'] %}
-                                {{ data['ref'] }}
-                                {% else %}
-                                0039795410
-                                {% endif %}
-                            </dd>
-                            <dd class="nhsuk-summary-list__actions">
-                                <a href="">
-                                    Change<span class="nhsuk-u-visually-hidden"> reference</span>
-                                </a>
-                            </dd>
-                        </div>
-
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
                                 Financial year of the claim
                             </dt>
                             <dd class="nhsuk-summary-list__value">
@@ -254,7 +254,7 @@ Check claim details - Manage incoming international healthcare claims - NHSBSA
                                 {% if data['age-bracket'] %}
                                 {{ data['age-bracket'] }}
                                 {% else %}
-                                0-19
+                                0 to 19 years
                                 {% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">

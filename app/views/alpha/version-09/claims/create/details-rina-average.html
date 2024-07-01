@@ -90,6 +90,16 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
 
+                        <!-- Claim reference -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                                Claim reference
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
+                                value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
                         <!-- Date you received the claim -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
@@ -241,16 +251,6 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-                        <!-- Claim reference -->
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
-                                Claim reference
-                            </label>
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
-                                value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
                         <!-- Financial year of claim -->
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="financial-year">
@@ -275,26 +275,26 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-radios">
 
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="age-1" name="age-bracket"
-                                            type="radio" value="0-19">
+                                        <input class="nhsuk-radios__input" id="age-1" name="age-bracket" type="radio"
+                                            value="0 to 19 years">
                                         <label class="nhsuk-label nhsuk-radios__label" for="age-1">
-                                            0-19
+                                            0 to 19 years
                                         </label>
                                     </div>
 
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="age-2" name="age-bracket"
-                                            type="radio" value="20-64">
+                                        <input class="nhsuk-radios__input" id="age-2" name="age-bracket" type="radio"
+                                            value="20 to 64 years">
                                         <label class="nhsuk-label nhsuk-radios__label" for="age-2">
-                                            20-64
+                                            20 to 64 years
                                         </label>
                                     </div>
 
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="age-3" name="age-bracket"
-                                            type="radio" value="65+">
+                                        <input class="nhsuk-radios__input" id="age-3" name="age-bracket" type="radio"
+                                            value="65 years and over">
                                         <label class="nhsuk-label nhsuk-radios__label" for="age-3">
-                                            65+
+                                            65 years and over
                                         </label>
                                     </div>
 
