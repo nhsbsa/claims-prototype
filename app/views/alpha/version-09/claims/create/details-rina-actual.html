@@ -90,6 +90,16 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
 
+                                                <!-- Claim reference -->
+                                                <div class="nhsuk-form-group">
+                                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                                                        Claim reference
+                                                    </label>
+                                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
+                                                        value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
+                                                </div>
+                                                <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
                         <!-- Date you received the claim -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
@@ -238,16 +248,6 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                                     <option value="Switzerland">Switzerland</option>
                                 </select>
                             </div>
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                        <!-- Claim reference -->
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
-                                Claim reference
-                            </label>
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
-                                value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
