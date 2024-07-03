@@ -77,28 +77,18 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <!-- Start of form -->
-        <form action="cya?showAge=Yes&showType=No" method="post">
+        <form action="cya?showAge=Yes&showCurrency=No&showType=No" method="post">
             <fieldset class="nhsuk-fieldset">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                     <h1 class="nhsuk-fieldset__heading">
                         <span class="nhsuk-caption-l">Create a new claim</span>
-                        Claim details
+                        Claim details - Proof of concept
                     </h1>
                 </legend>
 
                 <!-- Start of card -->
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
-
-                        <!-- Claim reference -->
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
-                                Claim reference
-                            </label>
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
-                                value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
                         <!-- Date you received the claim -->
                         <div class="nhsuk-form-group">
@@ -251,6 +241,36 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
+                        <!-- Creditor institution code -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="creditor-code">
+                                Creditor institution code
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="creditor-code" name="creditor-code"
+                                type="text" value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Creditor institution name -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="creditor-name">
+                                Creditor institution name
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="creditor-name" name="creditor-name"
+                                type="creditor-name" value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Claim reference -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                                Claim reference
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
+                                value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
                         <!-- Financial year of claim -->
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="financial-year">
@@ -262,46 +282,29 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-                        <!-- The age bracket of the claim -->
+                        <!-- Total number of invoices -->
                         <div class="nhsuk-form-group">
-                            <fieldset class="nhsuk-fieldset">
-                                <legend
-                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-2">
-                                    <h1 class="nhsuk-fieldset__heading">
-                                        Age bracket of the claim
-                                    </h1>
-                                </legend>
-
-                                <div class="nhsuk-radios">
-
-                                    <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="age-1" name="age-bracket" type="radio"
-                                            value="0 to 19 years">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="age-1">
-                                            0 to 19 years
-                                        </label>
-                                    </div>
-
-                                    <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="age-2" name="age-bracket" type="radio"
-                                            value="20 to 64 years">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="age-2">
-                                            20 to 64 years
-                                        </label>
-                                    </div>
-
-                                    <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="age-3" name="age-bracket" type="radio"
-                                            value="65 years and over">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="age-3">
-                                            65 years and over
-                                        </label>
-                                    </div>
-
-                                </div>
-                            </fieldset>
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-invoices">
+                                Total number of invoices 
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="total-invoices"
+                                name="total-invoices" type="text" value="">
                         </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
+                        <!-- Total claim amount -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-amount">
+                                Total claim amount (months)
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="total-amount" name="total-amount"
+                                type="text" value="">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        
+
+                        <!-- Start of button -->
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top:12px;">
                             Continue
                         </button>

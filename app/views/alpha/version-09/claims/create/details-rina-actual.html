@@ -77,7 +77,7 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <!-- Start of form -->
-        <form action="cya?showAge=No&showType=Yes" method="post">
+        <form action="cya?showAge=No&showPeriod=Yes&showType=No" method="post">
             <fieldset class="nhsuk-fieldset">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                     <h1 class="nhsuk-fieldset__heading">
@@ -90,119 +90,17 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
 
-                                                <!-- Claim reference -->
-                                                <div class="nhsuk-form-group">
-                                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
-                                                        Claim reference
-                                                    </label>
-                                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
-                                                        value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
-                                                </div>
-                                                <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                        <!-- Date you received the claim -->
+                        <!-- Claim reference -->
                         <div class="nhsuk-form-group">
-                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
-                                    <h1 class="nhsuk-fieldset__heading">
-                                        Date you received the claim
-                                    </h1>
-                                </legend>
-                                <div class="nhsuk-hint" id="target-date-hint">
-                                    For example, 28 9 2023
-                                </div>
-                                <div class="nhsuk-date-input" id="submission-date">
-                                    <div class="nhsuk-date-input__item">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label nhsuk-date-input__label"
-                                                for="submission-date-day">
-                                                Day
-                                            </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                id="submission-date-day" name="submission-date-day" type="text"
-                                                pattern="[0-9]*" inputmode="numeric"
-                                                value="{% if data['submission-date-day'] %}{{ data['submission-date-day'] }}{% endif %}">
-                                        </div>
-                                    </div>
-                                    <div class="nhsuk-date-input__item">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label nhsuk-date-input__label"
-                                                for="submission-date-month">
-                                                Month
-                                            </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                id="submission-date-month" name="submission-date-month" type="text"
-                                                pattern="[0-9]*" inputmode="numeric"
-                                                value="{% if data['submission-date-month'] %}{{ data['submission-date-month'] }}{% endif %}">
-                                        </div>
-                                    </div>
-                                    <div class="nhsuk-date-input__item">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label nhsuk-date-input__label"
-                                                for="submission-date-year">
-                                                Year
-                                            </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                                                id="submission-date-year" name="submission-date-year" type="text"
-                                                pattern="[0-9]*" inputmode="numeric"
-                                                value="{% if data['submission-date-year'] %}{{ data['submission-date-year'] }}{% endif %}">
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                                Claim reference
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
+                                value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-                        <!-- Target date to complete claim -->
-                        <div class="nhsuk-form-group">
-                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
-                                    <h1 class="nhsuk-fieldset__heading">
-                                        Target date to complete the claim
-                                    </h1>
-                                </legend>
-                                <div class="nhsuk-hint" id="target-date-hint">
-                                    Internal deadline to complete the claim.<br />
-                                    For example, 28 9 2023
-                                </div>
-                                <div class="nhsuk-date-input" id="target-date">
-                                    <div class="nhsuk-date-input__item">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-day">
-                                                Day
-                                            </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                id="target-date-day" name="target-date-day" type="text" pattern="[0-9]*"
-                                                inputmode="numeric"
-                                                value="{% if data['target-date-day'] %}{{ data['target-date-day'] }}{% endif %}">
-                                        </div>
-                                    </div>
-                                    <div class="nhsuk-date-input__item">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-month">
-                                                Month
-                                            </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                id="target-date-month" name="target-date-month" type="text"
-                                                pattern="[0-9]*" inputmode="numeric"
-                                                value="{% if data['target-date-month'] %}{{ data['target-date-month'] }}{% endif %}">
-                                        </div>
-                                    </div>
-                                    <div class="nhsuk-date-input__item">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-year">
-                                                Year
-                                            </label>
-                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                                                id="target-date-year" name="target-date-year" type="text"
-                                                pattern="[0-9]*" inputmode="numeric"
-                                                value="{% if data['target-date-year'] %}{{ data['target-date-year'] }}{% endif %}">
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
 
                         <!-- Country submitting the claim -->
                         <div class="nhsuk-form-group">
@@ -251,54 +149,168 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-                        <!-- Financial year of claim -->
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="financial-year">
-                                Financial year of the claim
-                            </label>
-                            <input class="nhsuk-input nhsuk-input--width-4" id="financial-year" name="financial-year"
-                                type="text"
-                                value="{% if data['financial-year'] %}{{ data['financial-year'] }}{% endif %}">
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                        <!-- Type of claim -->
+                        <!-- Period of claim -->
                         <div class="nhsuk-form-group">
 
-                            <fieldset class="nhsuk-fieldset" aria-describedby="type-hint">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="period-hint">
                                 <legend
                                     class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-2">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        Type of claim
+                                        Period of the claim
                                     </h1>
                                 </legend>
 
-                            
-                                <div class="nhsuk-radios nhsuk-radios--conditional">
+
+                                <div class="nhsuk-radios">
 
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="type-main" name="type" type="radio"
-                                            value="Main" {% if data['type']==='Main' %}checked{% endif %}>
-                                        <label class="nhsuk-label nhsuk-radios__label" for="type-main">
-                                            Main
+                                        <input class="nhsuk-radios__input" id="type-first-half" name="type" type="radio"
+                                            value="First half year" {% if data['type']==='First half year' %}checked{%
+                                            endif %}>
+                                        <label class="nhsuk-label nhsuk-radios__label" for="type-first-half">
+                                            First half year
                                         </label>
                                     </div>
 
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="type-Supplementary" name="type"
-                                            type="radio" value="Supplementary"
-                                             {% if
-                                            data['type']==='Supplementary' %}checked{% endif %}>
-                                        <label class="nhsuk-label nhsuk-radios__label" for="type-Supplementary">
-                                            Supplementary
+                                        <input class="nhsuk-radios__input" id="type-second-half" name="type"
+                                            type="radio" value="Second half year" {% if
+                                            data['type']==='Second half year' %}checked{% endif %}>
+                                        <label class="nhsuk-label nhsuk-radios__label" for="type-second-half">
+                                            Second half year
                                         </label>
                                     </div>
 
                                 </div>
+                                <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                                <!-- Financial year of claim -->
+                                <div class="nhsuk-form-group">
+                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="financial-year">
+                                        Financial year of the claim
+                                    </label>
+                                    <input class="nhsuk-input nhsuk-input--width-4" id="financial-year"
+                                        name="financial-year" type="text"
+                                        value="{% if data['financial-year'] %}{{ data['financial-year'] }}{% endif %}">
+                                </div>
+                                <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                                <!-- Date you received the claim -->
+                                <div class="nhsuk-form-group">
+                                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                        <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                            <h1 class="nhsuk-fieldset__heading">
+                                                Date you received the claim
+                                            </h1>
+                                        </legend>
+                                        <div class="nhsuk-hint" id="target-date-hint">
+                                            For example, 28 9 2023
+                                        </div>
+                                        <div class="nhsuk-date-input" id="submission-date">
+                                            <div class="nhsuk-date-input__item">
+                                                <div class="nhsuk-form-group">
+                                                    <label class="nhsuk-label nhsuk-date-input__label"
+                                                        for="submission-date-day">
+                                                        Day
+                                                    </label>
+                                                    <input
+                                                        class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                        id="submission-date-day" name="submission-date-day" type="text"
+                                                        pattern="[0-9]*" inputmode="numeric"
+                                                        value="{% if data['submission-date-day'] %}{{ data['submission-date-day'] }}{% endif %}">
+                                                </div>
+                                            </div>
+                                            <div class="nhsuk-date-input__item">
+                                                <div class="nhsuk-form-group">
+                                                    <label class="nhsuk-label nhsuk-date-input__label"
+                                                        for="submission-date-month">
+                                                        Month
+                                                    </label>
+                                                    <input
+                                                        class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                        id="submission-date-month" name="submission-date-month"
+                                                        type="text" pattern="[0-9]*" inputmode="numeric"
+                                                        value="{% if data['submission-date-month'] %}{{ data['submission-date-month'] }}{% endif %}">
+                                                </div>
+                                            </div>
+                                            <div class="nhsuk-date-input__item">
+                                                <div class="nhsuk-form-group">
+                                                    <label class="nhsuk-label nhsuk-date-input__label"
+                                                        for="submission-date-year">
+                                                        Year
+                                                    </label>
+                                                    <input
+                                                        class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                        id="submission-date-year" name="submission-date-year"
+                                                        type="text" pattern="[0-9]*" inputmode="numeric"
+                                                        value="{% if data['submission-date-year'] %}{{ data['submission-date-year'] }}{% endif %}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                                <!-- Target date to complete claim -->
+                                <div class="nhsuk-form-group">
+                                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                        <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                            <h1 class="nhsuk-fieldset__heading">
+                                                Target date to complete the claim
+                                            </h1>
+                                        </legend>
+                                        <div class="nhsuk-hint" id="target-date-hint">
+                                            Internal deadline to complete the claim.<br />
+                                            For example, 28 9 2023
+                                        </div>
+                                        <div class="nhsuk-date-input" id="target-date">
+                                            <div class="nhsuk-date-input__item">
+                                                <div class="nhsuk-form-group">
+                                                    <label class="nhsuk-label nhsuk-date-input__label"
+                                                        for="target-date-day">
+                                                        Day
+                                                    </label>
+                                                    <input
+                                                        class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                        id="target-date-day" name="target-date-day" type="text"
+                                                        pattern="[0-9]*" inputmode="numeric"
+                                                        value="{% if data['target-date-day'] %}{{ data['target-date-day'] }}{% endif %}">
+                                                </div>
+                                            </div>
+                                            <div class="nhsuk-date-input__item">
+                                                <div class="nhsuk-form-group">
+                                                    <label class="nhsuk-label nhsuk-date-input__label"
+                                                        for="target-date-month">
+                                                        Month
+                                                    </label>
+                                                    <input
+                                                        class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                        id="target-date-month" name="target-date-month" type="text"
+                                                        pattern="[0-9]*" inputmode="numeric"
+                                                        value="{% if data['target-date-month'] %}{{ data['target-date-month'] }}{% endif %}">
+                                                </div>
+                                            </div>
+                                            <div class="nhsuk-date-input__item">
+                                                <div class="nhsuk-form-group">
+                                                    <label class="nhsuk-label nhsuk-date-input__label"
+                                                        for="target-date-year">
+                                                        Year
+                                                    </label>
+                                                    <input
+                                                        class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                        id="target-date-year" name="target-date-year" type="text"
+                                                        pattern="[0-9]*" inputmode="numeric"
+                                                        value="{% if data['target-date-year'] %}{{ data['target-date-year'] }}{% endif %}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+
                             </fieldset>
 
                         </div>
-                      
+
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top:12px;">
                             Continue
                         </button>
