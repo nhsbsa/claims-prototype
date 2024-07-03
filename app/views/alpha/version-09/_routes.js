@@ -20,33 +20,47 @@ router.post('/route-contact-method', function(req,res){
 })
 
 
-//// What is the article covering the claim?  ////
+//// Which article covers this claim?  ////
 router.post('/route-create-claim', function(req,res){
     var received = req.session.data['received']
     var article = req.session.data['article']
+    var averageType = req.session.data['average-type']
 
     if (received == 'RINA') {
-        if (article == 'Article 62 - Actual cost' || article == 'AW03 - DA1 claims') {
+        if (article == "Article 62 - actual cost" || article == "AW05 - DA1") {
             res.redirect('/alpha/version-09/claims/create/details-rina-actual')
             }
-        else if (article == 'Article 63 (2a) - average cost' || article == 'Article 63 (2b) - average cost') {
-            res.redirect('/alpha/version-09/claims/create/details-rina-average')
+        else if (averageType == "Article 63 (2a)" || averageType == "Article 63 (2b)") {
+                res.redirect('/alpha/version-09/claims/create/details-rina-average-63')
+                }
+        else if (averageType == "Article 94" || averageType == "Article 95") {
+                res.redirect('/alpha/version-09/claims/create/details-rina-average-94-95')
+                }
+        else {
+                res.redirect('/alpha/version-09/claims/create/article-type')
             }
-        
-        }
+            }
+
     else if (received == 'Paper') {
-        if (article == 'Article 62 - Actual cost' || article == 'AW03 - DA1 claims') {
+        if (article == "Article 62 - actual cost" || article == "AW05 - DA1") {
             res.redirect('/alpha/version-09/claims/create/details-paper-actual')
             }
-         else if (article == 'Article 63 (2a) - average cost' || article == 'Article 63 (2b) - average cost') {
-            res.redirect('/alpha/version-09/claims/create/details-paper-average')
+        else if (averageType == "Article 63 (2a)" || averageType == "Article 63 (2b)") {
+            res.redirect('/alpha/version-09/claims/create/details-paper-average-63')
             }
-        
+        else if (averageType == "Article 94" || averageType == "Article 95") {
+            res.redirect('/alpha/version-09/claims/create/details-paper-average-94-95')
+            }
+        else {
+                res.redirect('/alpha/version-09/claims/create/article-type')
+            }
         }
+
     else {
-            res.redirect('/alpha/version-09/claims/create/index')
+            res.redirect('/alpha/version-09/claims/create/article-type')
         }
 })
+
 
 //Are you sure you want to cancel
 router.get("/claims/create/cancel-confirmation", (req, res)=> {
