@@ -90,6 +90,165 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
 
+                        <!-- Claim reference -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                                Claim reference
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
+                                value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Country submitting the claim -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="select-autocomplete">
+                                Country submitting the claim
+                            </label>
+                            <div class="nhsuk-u-width-two-thirds">
+                                <select name="country" id="select-autocomplete" value="">
+                                    {% if data['country'] %}
+                                    <option value="{{ data['country'] }}" selected>{{ data['country'] }}</option>
+                                    {% endif %}
+                                    <option value=""></option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Bulgaria">Bulgaria</option>
+                                    <option value="Croatia">Croatia</option>
+                                    <option value="Cyprus">Cyprus</option>
+                                    <option value="Czech Republic">Czech Republic</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Estonia">Estonia</option>
+                                    <option value="Finland">Finland</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Greece">Greece</option>
+                                    <option value="Hungary">Hungary</option>
+                                    <option value="Iceland">Iceland</option>
+                                    <option value="Ireland">Ireland</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Latvia">Latvia</option>
+                                    <option value="Liechtenstein">Liechtenstein</option>
+                                    <option value="Lithuania">Lithuania</option>
+                                    <option value="Luxemburg">Luxemburg</option>
+                                    <option value="Malta">Malta</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Norway">Norway</option>
+                                    <option value="Poland">Poland</option>
+                                    <option value="Portugal">Portugal</option>
+                                    <option value="Romania">Romania</option>
+                                    <option value="Slovakia">Slovakia</option>
+                                    <option value="Slovenia">Slovenia</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Sweden">Sweden</option>
+                                    <option value="Switzerland">Switzerland</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Creditor institution code -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="creditor-code">
+                                Creditor institution code
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="creditor-code" name="creditor-code"
+                                type="text" value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Creditor institution name -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="creditor-name">
+                                Creditor institution name
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="creditor-name" name="creditor-name"
+                                type="creditor-name" value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- The age bracket of the claim -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset">
+                                <legend
+                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-2">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Age bracket of the claim
+                                    </h1>
+                                </legend>
+
+                                <div class="nhsuk-radios">
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="age-1" name="age-bracket" type="radio"
+                                            value="0-19">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="age-1">
+                                            0-19
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="age-2" name="age-bracket" type="radio"
+                                            value="20-64">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="age-2">
+                                            20-64
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="age-3" name="age-bracket" type="radio"
+                                            value="65+">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="age-3">
+                                            65+
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__divider">or</div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="age-bracket-combination"
+                                            name="age-bracket" type="radio" value="combination">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="age-bracket">
+                                            Combination
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Financial year of claim -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="financial-year">
+                                Financial year of the claim
+                            </label>
+                            <input class="nhsuk-input nhsuk-input--width-4" id="financial-year" name="financial-year"
+                                type="text"
+                                value="{% if data['financial-year'] %}{{ data['financial-year'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Total number of invoices -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-invoices">
+                                Total number of invoices
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="total-invoices"
+                                name="total-invoices" type="text" value="">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Total claim amount -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-amount">
+                                Total claim amount (months)
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="total-amount" name="total-amount"
+                                type="text" value="">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
                         <!-- Date you received the claim -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
@@ -192,169 +351,6 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                                 </div>
                             </fieldset>
                         </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                        <!-- Country submitting the claim -->
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="select-autocomplete">
-                                Country submitting the claim
-                            </label>
-                            <div class="nhsuk-u-width-two-thirds">
-                                <select name="country" id="select-autocomplete" value="">
-                                    {% if data['country'] %}
-                                    <option value="{{ data['country'] }}" selected>{{ data['country'] }}</option>
-                                    {% endif %}
-                                    <option value=""></option>
-                                    <option value="Austria">Austria</option>
-                                    <option value="Belgium">Belgium</option>
-                                    <option value="Bulgaria">Bulgaria</option>
-                                    <option value="Croatia">Croatia</option>
-                                    <option value="Cyprus">Cyprus</option>
-                                    <option value="Czech Republic">Czech Republic</option>
-                                    <option value="Denmark">Denmark</option>
-                                    <option value="Estonia">Estonia</option>
-                                    <option value="Finland">Finland</option>
-                                    <option value="France">France</option>
-                                    <option value="Germany">Germany</option>
-                                    <option value="Greece">Greece</option>
-                                    <option value="Hungary">Hungary</option>
-                                    <option value="Iceland">Iceland</option>
-                                    <option value="Ireland">Ireland</option>
-                                    <option value="Italy">Italy</option>
-                                    <option value="Latvia">Latvia</option>
-                                    <option value="Liechtenstein">Liechtenstein</option>
-                                    <option value="Lithuania">Lithuania</option>
-                                    <option value="Luxemburg">Luxemburg</option>
-                                    <option value="Malta">Malta</option>
-                                    <option value="Netherlands">Netherlands</option>
-                                    <option value="Norway">Norway</option>
-                                    <option value="Poland">Poland</option>
-                                    <option value="Portugal">Portugal</option>
-                                    <option value="Romania">Romania</option>
-                                    <option value="Slovakia">Slovakia</option>
-                                    <option value="Slovenia">Slovenia</option>
-                                    <option value="Spain">Spain</option>
-                                    <option value="Sweden">Sweden</option>
-                                    <option value="Switzerland">Switzerland</option>
-                                </select>
-                            </div>
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                        <!-- Creditor institution code -->
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="creditor-code">
-                                Creditor institution code
-                            </label>
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="creditor-code" name="creditor-code"
-                                type="text" value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                        <!-- Creditor institution name -->
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="creditor-name">
-                                Creditor institution name
-                            </label>
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="creditor-name" name="creditor-name"
-                                type="creditor-name" value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                        <!-- Claim reference -->
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
-                                Claim reference
-                            </label>
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
-                                value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                        <!-- Financial year of claim -->
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="financial-year">
-                                Financial year of the claim
-                            </label>
-                            <input class="nhsuk-input nhsuk-input--width-4" id="financial-year" name="financial-year"
-                                type="text"
-                                value="{% if data['financial-year'] %}{{ data['financial-year'] }}{% endif %}">
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                        <!-- The age bracket of the claim -->
-                        <div class="nhsuk-form-group">
-                            <fieldset class="nhsuk-fieldset">
-                                <legend
-                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-2">
-                                    <h1 class="nhsuk-fieldset__heading">
-                                        Age bracket of the claim
-                                    </h1>
-                                </legend>
-
-                                <div class="nhsuk-radios">
-
-                                    <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="age-1" name="age-bracket" type="radio"
-                                            value="0-19">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="age-1">
-                                            0-19
-                                        </label>
-                                    </div>
-
-                                    <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="age-2" name="age-bracket" type="radio"
-                                            value="20-64">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="age-2">
-                                            20-64
-                                        </label>
-                                    </div>
-
-                                    <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="age-3" name="age-bracket" type="radio"
-                                            value="65+">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="age-3">
-                                            65+
-                                        </label>
-                                    </div>
-
-                                    <div class="nhsuk-radios__divider">or</div>
-
-                                    <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="age-bracket-combination"
-                                            name="age-bracket" type="radio" value="combination">
-                                        <label class="nhsuk-label nhsuk-radios__label"
-                                            for="age-bracket">
-                                            Combination
-                                        </label>
-                                    </div>
-
-                                </div>
-                            </fieldset>
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                        <!-- Total number of invoices -->
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-invoices">
-                                Total number of invoices 
-                            </label>
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="total-invoices"
-                                name="total-invoices" type="text" value="">
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                        <!-- Total claim amount -->
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-amount">
-                                Total claim amount (months)
-                            </label>
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="total-amount" name="total-amount"
-                                type="text" value="">
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-                        
 
                         <!-- Start of button -->
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top:12px;">
