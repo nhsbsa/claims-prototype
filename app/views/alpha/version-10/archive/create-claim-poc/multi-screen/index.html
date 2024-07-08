@@ -1,0 +1,140 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Home',
+path: '/alpha/version-10/home'
+},
+{
+name: 'Claims',
+path: '/alpha/version-10/claims/index',
+active: true
+},
+{
+name: 'Contested claims',
+path: '/alpha/version-10/contestations/index'
+},
+{
+name: 'Reports',
+path: '/alpha/version-10/reports/index'
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Claim details - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../index">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                claims </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" height="24" width="24">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back</a>
+        </div>
+    </div>
+</div>
+<!-- End of back link -->
+
+<!-- Start of create a claim -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Start of form -->
+        <form action="article-type" method="post">
+            <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                    <h1 class="nhsuk-fieldset__heading">
+                        <span class="nhsuk-caption-l">Create a new claim</span>
+                        Contact method
+                    </h1>
+                </legend>
+
+                <!-- Start of card -->
+                <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                    <div class="nhsuk-card__content">
+
+                        <!-- How you received the claim -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset">
+                                <legend
+                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-3">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        How did you receive the claim?
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-radios">
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="received-rina" name="received"
+                                            type="radio" value="RINA">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="received-rina">
+                                            RINA
+                                        </label>
+                                    </div>
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="received-paper" name="received"
+                                            type="radio" value="Paper">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="received-paper">
+                                            Paper
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                       
+                        <!-- Start button -->
+                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top:12px;">
+                            Continue
+                        </button>
+
+                    </div>
+                </div>
+                <!-- End of card -->
+
+            </fieldset>
+        </form>
+        <!-- End of form-->
+    </div>
+</div>
+<!-- End of create a claim -->
+
+
+{% endblock %}
+<!-- End of central content -->

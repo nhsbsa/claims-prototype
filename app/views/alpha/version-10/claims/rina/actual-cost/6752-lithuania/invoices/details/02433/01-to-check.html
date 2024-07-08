@@ -1,0 +1,541 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: ''
+},
+{
+name: 'Invoices',
+path: '',
+active: true
+},
+{
+name: 'Contestations',
+path: ''
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: ''
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+      In /views/layout.html you can:
+        - change the header and footer 
+        - add custom CSS and JavaScript
+    -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Invoice details - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+<!-- Start of claim details -->
+{% block ClaimId %}
+6752
+{% endblock %}
+{% block submittingCountry %}
+Lithuania
+{% endblock %}
+<!-- End of claim details-->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../../../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../../../../index">Claims</a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" height="24" width="24">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back to invoice search results</a>
+        </div>
+    </div>
+</div>
+<!-- End of back link -->
+
+<!-- Start of header block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-9">
+            Invoice details from Lithuania
+        </h1>
+    </div>
+    <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Manage invoice
+        </button>
+    </div>
+</div>
+<!-- End of header block -->
+
+<!-- Start of key information box-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Invoice ID
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            02433
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Invoice reference
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            265548873
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Current status
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <strong class="nhsuk-tag nhsuk-tag--red">
+                                Contested
+                            </strong>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of key information box -->
+
+<!-- Start of tabs-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+            <h2 class="nhsuk-tabs__title">
+                Contents
+            </h2>
+
+            <!-- Start of tab titles -->
+            <ul class="nhsuk-tabs__list">
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#summary">
+                        Summary
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#notes">
+                        Notes
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#history">
+                        History
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                    <a class="nhsuk-tabs__tab" href="#import">
+                        Imported invoice
+                    </a>
+                </li>
+            </ul>
+            <!-- End of tab titles -->
+
+            <!-- *** Start of summary tab content *** -->
+            <div class="nhsuk-tabs__panel" id="summary">
+
+                <!-- Start of header block -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">Summary</h2>
+                    </div>
+                </div>
+                <!-- End of header block -->
+
+
+
+            </div>
+            <!-- *** End of summary tab *** -->
+
+            <!-- *** Start of notes tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
+                <h2 class="nhsuk-heading-l">Notes</h2>
+            </div>
+            <!-- *** End of notes tab *** -->
+
+            <!-- *** Start of history tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="history">
+                <h2 class="nhsuk-heading-l">History</h2>
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+
+                        <div class="nhsbsa-timeline">
+
+                            <!-- Start complete -->
+                            <div class="nhsbsa-timeline__item">
+                                <div class="nhsbsa-timeline__header">
+                                    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Marked complete
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
+                                            Isla Fields</span>
+                                    </h2>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-1">23 July 2023 at 12:35pm</p>
+                                </div>
+                                <div class="nhsbsa-timeline__description">
+                                    <details class="nhsuk-details">
+                                        <summary class="nhsuk-details__summary">
+                                            <span class="nhsuk-details__summary-text">
+                                                View details
+                                            </span>
+                                        </summary>
+                                        <div class="nhsuk-details__text">
+                                            <dl class="nhsuk-summary-list">
+
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        Accepted amount
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        0
+                                                    </dd>
+                                                </div>
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        Contested amount
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        304.64
+                                                    </dd>
+                                                </div>
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        Withdrawn amount
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        0
+                                                    </dd>
+                                                </div>
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        Contestation reason
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        The entitlement document has not been registered.
+                                                    </dd>
+                                                </div>
+                                            </dl>
+
+
+                                        </div>
+                                    </details>
+
+                                </div>
+                            </div>
+                            <!-- End complete -->
+
+                            <!-- Start contestation reason changed -->
+                            <div class="nhsbsa-timeline__item">
+                                <div class="nhsbsa-timeline__header">
+                                    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Contestation reason changed
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
+                                            Isla Fields</span>
+                                    </h2>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-1">23 July 2023 at 12:33pm</p>
+                                </div>
+                                <div class="nhsbsa-timeline__description">
+                                    <details class="nhsuk-details">
+                                        <summary class="nhsuk-details__summary">
+                                            <span class="nhsuk-details__summary-text">
+                                                View details
+                                            </span>
+                                        </summary>
+                                        <div class="nhsuk-details__text">
+                                            <dl class="nhsuk-summary-list">
+
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        Contestation reason
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        The entitlement document has not been registered.
+                                                    </dd>
+                                                </div>
+                                            </dl>
+
+
+                                        </div>
+                                    </details>
+
+                                </div>
+                            </div>
+                            <!-- End auto-validation -->
+
+                            <!-- Start Note added -->
+                            <div class="nhsbsa-timeline__item">
+                                <div class="nhsbsa-timeline__header">
+                                    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Note added
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
+                                            Isla Fields</span>
+                                    </h2>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-1">23 July 2023 at 12:30pm</p>
+                                </div>
+                                <div class="nhsbsa-timeline__description">
+                                    <details class="nhsuk-details">
+                                        <summary class="nhsuk-details__summary">
+                                            <span class="nhsuk-details__summary-text">
+                                                View note
+                                            </span>
+                                        </summary>
+                                        <div class="nhsuk-details__text">
+                                            <dl class="nhsuk-summary-list">
+
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        Note
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        This is a useful note about something the user found and felt it
+                                                        would be worthwhile letting others know about.
+                                                    </dd>
+                                                </div>
+                                            </dl>
+
+
+                                        </div>
+                                    </details>
+
+                                </div>
+                            </div>
+                            <!-- End auto-validation -->
+
+                            <!-- Start auto-validation -->
+                            <div class="nhsbsa-timeline__item">
+                                <div class="nhsbsa-timeline__header">
+                                    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Auto-validation run
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
+                                            System</span>
+                                    </h2>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-1">23 July 2023 at 12:24pm</p>
+                                </div>
+                                <div class="nhsbsa-timeline__description">
+                                    <details class="nhsuk-details">
+                                        <summary class="nhsuk-details__summary">
+                                            <span class="nhsuk-details__summary-text">
+                                                View auto validation results
+                                            </span>
+                                        </summary>
+                                        <div class="nhsuk-details__text">
+                                            <dl class="nhsuk-summary-list">
+
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        Status
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        To check
+                                                    </dd>
+                                                </div>
+
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        Reason
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        Entitlement document is unknown or not found. Please provide a
+                                                        copy.
+                                                    </dd>
+                                                </div>
+
+                                            </dl>
+
+
+                                        </div>
+                                    </details>
+
+                                </div>
+                            </div>
+                            <!-- End auto-validation -->
+
+                            <!-- Start matched OHS record -->
+                            <div class="nhsbsa-timeline__item">
+                                <div class="nhsbsa-timeline__header">
+                                    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Matched OHS record added
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
+                                            Isla Fields</span>
+                                    </h2>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-1">23 July 2023 at 12:24pm</p>
+                                </div>
+                                <div class="nhsbsa-timeline__description">
+                                    <details class="nhsuk-details">
+                                        <summary class="nhsuk-details__summary">
+                                            <span class="nhsuk-details__summary-text">
+                                                View details
+                                            </span>
+                                        </summary>
+                                        <div class="nhsuk-details__text">
+                                            <dl class="nhsuk-summary-list">
+
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        Last name
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        MacFarlane
+                                                    </dd>
+                                                </div>
+
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        First name
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        Elizabeth
+                                                    </dd>
+                                                </div>
+
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        Date of birth
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        8 August 1978
+                                                    </dd>
+                                                </div>
+
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        OHS reference
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        02678473
+                                                    </dd>
+                                                </div>
+
+                                            </dl>
+
+
+                                        </div>
+                                    </details>
+
+                                </div>
+                            </div>
+                            <!-- End matched OHS record -->
+
+
+                            <!-- Start auto-validation -->
+                            <div class="nhsbsa-timeline__item">
+                                <div class="nhsbsa-timeline__header">
+                                    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Auto-validation run
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
+                                            System</span>
+                                    </h2>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-1">10 April 2023 at 11:51am</p>
+                                </div>
+                                <div class="nhsbsa-timeline__description">
+                                    <details class="nhsuk-details">
+                                        <summary class="nhsuk-details__summary">
+                                            <span class="nhsuk-details__summary-text">
+                                                View auto validation results
+                                            </span>
+                                        </summary>
+                                        <div class="nhsuk-details__text">
+                                            <dl class="nhsuk-summary-list">
+
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        Status
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        To check
+                                                    </dd>
+                                                </div>
+
+                                                <div class="nhsuk-summary-list__row">
+                                                    <dt class="nhsuk-summary-list__key">
+                                                        Reason
+                                                    </dt>
+                                                    <dd class="nhsuk-summary-list__value">
+                                                        Unable to identify the person from the information provided.
+                                                        Please check.
+                                                    </dd>
+                                                </div>
+
+                                            </dl>
+
+
+                                        </div>
+                                    </details>
+
+                                </div>
+                            </div>
+                            <!-- End auto-validation -->
+
+                            <!-- Start invoice added -->
+                            <div class="nhsbsa-timeline__item">
+                                <div class="nhsbsa-timeline__header">
+                                    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Invoice added to claim
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
+                                            System</span>
+                                    </h2>
+                                    <p class="nhsuk-body">10 April 2023 at 11:42am</p>
+                                </div>
+                            </div>
+                            <!-- End invoice added -->
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- *** End of history tab *** -->
+
+            <!-- *** Start of imported invoice tab *** -->
+            <div class="nhsuk-tabs__panel" id="import">
+                <h2 class="nhsuk-heading-l">Imported invoice</h2>
+
+            </div>
+            <!-- *** End of imported invoice tab *** -->
+
+        </div>
+    </div>
+</div>
+<!-- End of tabs-->
+
+</div>
+</div>
+
+{% endblock %}
+<!-- End of central content -->
