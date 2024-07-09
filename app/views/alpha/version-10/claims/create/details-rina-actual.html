@@ -77,7 +77,7 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <!-- Start of form -->
-        <form action="cya?showAge=No&showPeriod=Yes&showType=No" method="post">
+        <form action="cya?showAge=No&showPeriod=Yes&showType=No&showCurrency=No" method="post">
             <fieldset class="nhsuk-fieldset">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                     <h1 class="nhsuk-fieldset__heading">
@@ -164,7 +164,7 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-radios">
 
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="type-first-half" name="type" type="radio"
+                                        <input class="nhsuk-radios__input" id="period-first-half" name="period" type="radio"
                                             value="First half year" {% if data['type']==='First half year' %}checked{%
                                             endif %}>
                                         <label class="nhsuk-label nhsuk-radios__label" for="type-first-half">
@@ -173,7 +173,7 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
 
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="type-second-half" name="type"
+                                        <input class="nhsuk-radios__input" id="period-second-half" name="period"
                                             type="radio" value="Second half year" {% if
                                             data['type']==='Second half year' %}checked{% endif %}>
                                         <label class="nhsuk-label nhsuk-radios__label" for="type-second-half">
