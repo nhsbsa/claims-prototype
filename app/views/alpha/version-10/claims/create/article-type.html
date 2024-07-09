@@ -88,7 +88,7 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
 
                 <!-- Start of card - conditional radios -->
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
-                    <div class="nhsuk-card__content"> 
+                    <div class="nhsuk-card__content">
 
                         <!-- Article covering the claim -->
                         <div class="nhsuk-form-group">
@@ -99,45 +99,54 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                                         Which article covers this claim?
                                     </h1>
                                 </legend>
-                                <div class="nhsuk-radios nhsuk-radios--conditional">
+                                <div class="nhsuk-radios">
+
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="article-actual" name="article"
-                                            type="radio" value="Article 62 - actual cost">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="article-actual">
-                                            Article 62 - actual cost claim
+                                        <input class="nhsuk-radios__input" id="article-63-2a" name="article"
+                                            type="radio" value="Article 63 (2a)">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-63-2a">
+                                            Article 63 (2a)
                                         </label>
                                     </div>
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="article-da1" name="article" type="radio"
-                                            value="AW05 - DA1">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="article-da1">
-                                            AW05 - DA1 claim
+                                        <input class="nhsuk-radios__input" id="article-63-2b" name="article"
+                                            type="radio" value="Article 63 (2b)">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-63-2b">
+                                            Article 63 (2b)
                                         </label>
                                     </div>
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-94" name="article" 
+                                            type="radio" value="Article 94">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-94">
+                                            Article 94
+                                        </label>
+                                    </div>
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-95" name="article" 
+                                            type="radio" value="Article 95">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-95">
+                                            Article 95
+                                        </label>
+                                    </div>
+
                                     <div class="nhsuk-radios__divider">or</div>
+
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="article-average" name="article"
-                                            type="radio" value="Average cost" aria-controls="conditional-average"
-                                            aria-expanded="false">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="article-average">
-                                            It's an average cost claim
+                                        <input class="nhsuk-radios__input" id="article-62-sickness" name="article" 
+                                            type="radio" value="Article 62 - Sickness">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-62-sickness">
+                                            Article 62 - Sickness
                                         </label>
                                     </div>
-                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
-                                        id="conditional-average">
-                                        <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label" for="average-type">
-                                                Article type
-                                            </label>
-                                            <select class="nhsuk-select" id="average-type" name="average-type">
-                                                <option value="">Select</option>
-                                                <option value="Article 63 (2a)">Article 63 (2a)</option>
-                                                <option value="Article 63 (2b)">Article 63 (2b)</option>
-                                                <option value="Article 94">Article 94</option>
-                                                <option value="Article 95">Article 95</option>
-                                            </select>
-                                        </div>
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-62-work" name="article" 
+                                            type="radio" value="Article 62 - Accident at work">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-62-work">
+                                            Article 62 - Accident at work
+                                        </label>
                                     </div>
+
                                 </div>
                             </fieldset>
                         </div>

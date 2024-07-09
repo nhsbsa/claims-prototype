@@ -101,13 +101,9 @@ Check claim details - Manage incoming international healthcare claims - NHSBSA
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['article'] %}
-                                {% if data['average-type'] %}
-                                {{ data['average-type'] }} - average cost
-                                {% else %}
                                 {{ data['article'] }}
-                                {% endif %}
                                 {% else %}
-                                Article 62 - actual cost
+                                Article 62 - Sickness
                                 {% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
