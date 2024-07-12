@@ -183,7 +183,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
           <div class="nhsuk-grid-column-two-thirds">
 
             {% if data['invoice-id'] %}
-            {% if data['invoice-id'] === '01554' %}
+            {% if data['invoice-id'] === '20001554' %}
             <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 results of 1</h3>
             <p class="nhsuk-u-margin-bottom-2">
               <strong class="nhsuk-tag nhsuk-tag--aqua-green">
@@ -473,7 +473,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>01554
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>20001554
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039795410
@@ -489,22 +489,12 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>
-                    {% if data['20001554-status'] %}
-                    {{data['20001554-status'] }}
-                    {% else %}
                     To check
-                    {% endif %}
                   </td>
 
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">View </span>
-                    {% if data['20001554-status'] and data['20001554-status'] === 'Accepted' %}
-                    <a href="details/20001554/03-accepted?message=Hide">View invoice</a>
-                    {% elif data['20001554-status'] and data['20001554-status'] === 'Contested'  %}
-                    <a href="details/20001554/03-contested?message=Hide">View invoice</a>
-                    {% else %}
-                    <a href="details/20001554/01-to-check">View invoice</a>
-                    {% endif %}
+                    <a href="details/20001554/stakeholder-presentation/01-to-check">View invoice</a>
                   </td>
 
                 </tr>
