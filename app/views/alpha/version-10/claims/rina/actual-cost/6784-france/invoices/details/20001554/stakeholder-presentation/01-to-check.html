@@ -2,15 +2,19 @@
 {% set mainNavigation = [
     {
     name: 'Summary',
-    path: '/alpha/version-07/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
+    path: '/alpha/version-10/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
     },
     {
     name: 'Invoices',
-    path: '/alpha/version-07/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
+    path: '/alpha/version-10/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
     active: true
     },
     {
-    name: 'Uploaded files',
+    name: 'Contestations',
+    path: ''
+    },
+    {
+    name: 'Notes',
     path: ''
     },
     {
@@ -712,63 +716,28 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                                 Or search using either reference, National Insurance number, NHS number, PIN, or issue number.
                                                             </div>
                                                             <div class="nhsuk-grid-row">
-                                                                <div class="nhsuk-grid-column-one-third">
+                                                                <div class="nhsuk-grid-column-one-half">
                                                                     <div class="nhsuk-form-group">
-                                                                        <label
-                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                                            for="ohs-ref">
-                                                                            Reference
+                                                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                                                            Person unique ID
                                                                         </label>
-                                                                        <input class="nhsuk-input" id="ohs-ref"
-                                                                            name="ohs-ref" type="text">
+                                                                        <div class="nhsuk-hint">
+                                                                Reference, National Insurance number or NHS number.
+                                                            </div>
+                                                                        <input class="nhsuk-input " id="contested" name="contested" type="text">
                                                                     </div>
                                                                 </div>
-                                                                <div class="nhsuk-grid-column-one-third">
+                                                                <div class="nhsuk-grid-column-one-half">
                                                                     <div class="nhsuk-form-group">
-                                                                        <label
-                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                                            for="nino">
-                                                                            National Insurance number
+                                                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                                                            Entitlement issue number
                                                                         </label>
-                                                                        <input class="nhsuk-input" id="nino"
-                                                                            name="nino" type="text">
+                                                                        <div class="nhsuk-hint">
+                                                                            EHIC, GHIC or PRC issue number.
+                                                                        </div>
+                                                                        <input class="nhsuk-input" id="contested" name="contested" type="text">
                                                                     </div>
                                                                 </div>
-                                                                <div class="nhsuk-grid-column-one-third">
-                                                                    <div class="nhsuk-form-group">
-                                                                        <label
-                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                                            for="nhs">
-                                                                            NHS number
-                                                                        </label>
-                                                                        <input class="nhsuk-input" id="nhs"
-                                                                            name="nhs" type="text" value="">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="nhsuk-grid-column-one-third">
-                                                                    <div class="nhsuk-form-group">
-                                                                        <label
-                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                                            for="pin">
-                                                                            EHIC or GHIC PIN
-                                                                        </label>
-                                                                        <input class="nhsuk-input" id="pin"
-                                                                            name="pin" type="text">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="nhsuk-grid-column-one-third">
-                                                                    <div class="nhsuk-form-group">
-                                                                        <label
-                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
-                                                                            for="issue">
-                                                                            EHIC, GHIC or PRC issue number
-                                                                        </label>
-                                                                        <input class="nhsuk-input " id="issue"
-                                                                            name="issue" type="text">
-                                                                    </div>
-                                                                </div>
-
-
                                                             </div>
 
                                                             <button
