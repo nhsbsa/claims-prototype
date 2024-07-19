@@ -12,12 +12,71 @@ const axios = require('axios');
 router.post('/route-contact-method', function(req,res){
     var received = req.session.data['received']
     if (received == "RINA" ||  received == "Paper") {
-        res.redirect('/alpha/version-10/claims/create/article-type')
+        res.redirect('/alpha/version-10/claims/create/type')
         }
     else {
         res.redirect('/alpha/version-10/claims/create/index')
     }
 })
+
+//// Which type of claim is it?  ////
+router.post('/route-create-claim', function(req,res){
+    var received = req.session.data['received']
+    var claimType = req.session.data['claim-type']
+    var articleType = req.session.data['article-type']
+
+    if (received == 'RINA') {
+
+        if (claimType == "Actual cost - Sickness" || claimType == "Actual cost - Accident at work") {
+            res.redirect('/alpha/version-10/claims/create/details-rina-actual')
+            }
+
+        else if (claimType == "Average cost - Sickness") {
+            if (articleType == "Article 63 (2a)" || articleType == "Article 63 (2b)") {
+                res.redirect('/alpha/version-10/claims/create/details-rina-average-63')
+                }
+            else if (articleType == "Article 94" || articleType == "Article 95") {
+                res.redirect('/alpha/version-10/claims/create/details-rina-average-94-95')
+                }
+            else {
+                    res.redirect('/alpha/version-10/claims/create/type')
+                }
+        }
+
+        else {
+                res.redirect('/alpha/version-10/claims/create/type')
+            }
+            }
+
+    else if (received == 'Paper') {
+
+        if (claimType == "Actual cost - Sickness" || claimType == "Actual cost - Accident at work") {
+            res.redirect('/alpha/version-10/claims/create/details-paper-actual')
+            }
+
+        else if (claimType == "Average cost - Sickness") {
+            if (articleType == "Article 63 (2a)" || articleType == "Article 63 (2b)") {
+                res.redirect('/alpha/version-10/claims/create/details-paper-average-63')
+                }
+            else if (articleType == "Article 94" || articleType == "Article 95") {
+            res.redirect('/alpha/version-10/claims/create/details-paper-average-94-95')
+            }
+            else {
+                res.redirect('/alpha/version-10/claims/create/type')
+            }
+
+        }
+
+        else {
+                res.redirect('/alpha/version-10/claims/create/type')
+            }
+        }
+        
+    else {
+            res.redirect('/alpha/version-10/claims/create/type')
+        }
+})
+
 
 
 //// Which article covers this claim?  ////
