@@ -89,6 +89,18 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                 <!-- Start of card -->
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
+                        <!-- Type of claim -->
+                            <p class="nhsuk-label--s nhsuk-u-margin-bottom-1"  >
+                                Type of claim
+                            </p>
+                            <p class="nhsuk-u-margin-bottom-1">
+                                {% if data['claim-type'] %}
+                                {{ data['claim-type'] }}
+                                {% else %}
+                                Actual cost - Sickness 
+                                {% endif %}
+                                <span style="display:block; float: right; text-align: right;"><a href="" >Change</a></span></p>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
                         <!-- Claim reference -->
                         <div class="nhsuk-form-group">
@@ -99,8 +111,6 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                                 value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
                         </div>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-
 
                         <!-- Country submitting the claim -->
                         <div class="nhsuk-form-group">
