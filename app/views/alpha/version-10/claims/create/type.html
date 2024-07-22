@@ -101,63 +101,61 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                                 </legend>
 
                                 <div class="nhsuk-radios nhsuk-radios--conditional">
-                  
 
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="claim-type-actual-sickness"
+                                            name="claim-type" type="radio" value="Actual cost - Sickness">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="claim-type-actual-sickness">
+                                            Actual cost - Sickness
+                                        </label>
+                                        <div class="nhsuk-hint nhsuk-radios__hint" id="hint-claim-type-actual-sickness">
+                                            S BUC 19
+                                        </div>
+                                    </div>
+
+                                    <div class="nhsuk-radios nhsuk-radios--conditional">
                                         <div class="nhsuk-radios__item">
-                                            <input class="nhsuk-radios__input" id="claim-type-actual-sickness"
-                                                name="claim-type" type="radio" value="Actual cost - Sickness">
-                                            <label class="nhsuk-label nhsuk-radios__label" for="claim-type-actual-sickness">
-                                                Actual cost - Sickness
+                                            <input class="nhsuk-radios__input" id="claim-type-average-sickness"
+                                                name="claim-type" type="radio" value="Average cost - Sickness"
+                                                aria-controls="conditional-average-cost" aria-expanded="false">
+                                            <label class="nhsuk-label nhsuk-radios__label"
+                                                for="claim-type-average-sickness">
+                                                Average cost - Sickness
                                             </label>
-                                            <div class="nhsuk-hint nhsuk-radios__hint" id="hint-claim-type-actual-sickness">
-                                                S BUC 19
+                                            <div class="nhsuk-hint nhsuk-radios__hint"
+                                                id="hint-claim-type-average-sickness">
+                                                S BUC 21
                                             </div>
                                         </div>
-
-                                        <div class="nhsuk-radios nhsuk-radios--conditional">
-                                            <div class="nhsuk-radios__item">
-                                                <input class="nhsuk-radios__input" id="claim-type-average-sickness" name="claim-type"
-                                                    type="radio" value="Average cost - Sickness" aria-controls="conditional-average-cost"
-                                                    aria-expanded="false">
-                                                <label class="nhsuk-label nhsuk-radios__label" for="claim-type-average-sickness">
-                                                    Average cost - Sickness
+                                        <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+                                            id="conditional-average-cost">
+                                            <div class="nhsuk-form-group">
+                                                <label class="nhsuk-label" for="article-type">
+                                                    Article type
                                                 </label>
-                                                <div class="nhsuk-hint nhsuk-radios__hint"
-                                                    id="hint-claim-type-average-sickness">
-                                                    S BUC 21
-                                                </div>
-                                            </div>
-                                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
-                                                id="conditional-average-cost">
-                                                <div class="nhsuk-form-group">
-                                                    <label class="nhsuk-label" for="article-type">
-                                                        Article type
-                                                    </label>
-                                                    <select class="nhsuk-select" id="article-type" name="article-type">
-                                                        <option value="">Select</option>
-                                                        <option value="Article 63 (2a)">Article 63 (2a)</option>
-                                                        <option value="Article 63 (2b)">Article 63 (2b)</option>
-                                                        <option value="Article 94">Article 94</option>
-                                                        <option value="Article 95">Article 95</option>
-                                                    </select>
-                                                </div>
+                                                <select class="nhsuk-select" id="article-type" name="article-type">
+                                                    <option value="">Select</option>
+                                                    <option value="Article 63 (2a)">Article 63 (2a)</option>
+                                                    <option value="Article 63 (2b)">Article 63 (2b)</option>
+                                                    <option value="Article 94">Article 94</option>
+                                                    <option value="Article 95">Article 95</option>
+                                                </select>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="nhsuk-radios__item">
-                                            <input class="nhsuk-radios__input" id="claim-type-actual-awod"
-                                                name="claim-type" type="radio" value="Actual cost - Accident at work">
-                                            <label class="nhsuk-label nhsuk-radios__label" for="claim-type-actual-awod">
-                                                Actual cost - Accident at work
-                                            </label>
-                                            <div class="nhsuk-hint nhsuk-radios__hint" id="hint-claim-type-actual-awod">
-                                                AW BUC 05
-                                            </div>
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="claim-type-actual-awod" name="claim-type"
+                                            type="radio" value="Actual cost - Accident at work">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="claim-type-actual-awod">
+                                            Actual cost - Accident at work
+                                        </label>
+                                        <div class="nhsuk-hint nhsuk-radios__hint" id="hint-claim-type-actual-awod">
+                                            AW BUC 05
                                         </div>
+                                    </div>
 
-             
-</div>
-               
+                                </div>
 
                             </fieldset>
                         </div>
