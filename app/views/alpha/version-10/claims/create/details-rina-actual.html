@@ -89,18 +89,15 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                 <!-- Start of card -->
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
-                        <!-- Type of claim -->
-                            <p class="nhsuk-label--s nhsuk-u-margin-bottom-1"  >
-                                Type of claim
-                            </p>
-                            <p class="nhsuk-u-margin-bottom-1">
-                                {% if data['claim-type'] %}
-                                {{ data['claim-type'] }}
-                                {% else %}
-                                Actual cost - Sickness 
-                                {% endif %}
-                                <span style="display:block; float: right; text-align: right;"><a href="" >Change</a></span></p>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-1">
+                            {% if data['claim-type'] %}
+                            {{ data['claim-type'] }}
+                            {% else %}
+                            Actual cost - Sickness
+                            {% endif %}
+                        </h3>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible" style="margin-top:12px; margin-bottom: 20px;">
 
                         <!-- Claim reference -->
                         <div class="nhsuk-form-group">
@@ -174,9 +171,9 @@ Claim details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-radios">
 
                                     <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="period-first-half" name="period" type="radio"
-                                            value="First half year" {% if data['type']==='First half year' %}checked{%
-                                            endif %}>
+                                        <input class="nhsuk-radios__input" id="period-first-half" name="period"
+                                            type="radio" value="First half year" {% if data['type']==='First half year'
+                                            %}checked{% endif %}>
                                         <label class="nhsuk-label nhsuk-radios__label" for="type-first-half">
                                             First half year
                                         </label>
