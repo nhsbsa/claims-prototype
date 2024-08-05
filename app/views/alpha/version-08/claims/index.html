@@ -76,12 +76,11 @@ Claims - Manage incoming international healthcare claims - NHSBSA
     </div>
     <!-- End of header block -->
 
-
     <!-- Start of search -->
     <div class="nhsuk-card">
       <div class="nhsuk-card__content">
 
-        <form action="search-results#filter-results" method="post">
+        <form action="/alpha/version-08/claimSearch" method="post">
 
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
@@ -101,22 +100,22 @@ Claims - Manage incoming international healthcare claims - NHSBSA
           </div>
           </div>
 
-          <!-- Start of search inputs-->
-          <div class="nhsuk-grid-row">
+           <!-- Start of search inputs-->
+           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-one-quarter">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claim-id">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claimID">
                   Claim ID
                 </label>
-                <input class="nhsuk-input" id="claim-id" name="claim-id" type="text">
+                <input class="nhsuk-input" id="claimID" name="claimID" type="text">
               </div>
             </div>
             <div class="nhsuk-grid-column-one-quarter">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claim-ref">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claimReference">
                   Claim reference
                 </label>
-                <input class="nhsuk-input" id="claim-ref" name="claim-ref" type="text">
+                <input class="nhsuk-input" id="claimReference" name="claimReference" type="text">
               </div>
             </div>
             <div class="nhsuk-grid-column-one-quarter">
@@ -165,32 +164,23 @@ Claims - Manage incoming international healthcare claims - NHSBSA
             </div>
             <div class="nhsuk-grid-column-one-quarter">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="financial-year">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="financialYear">
                   Financial year
                 </label>
-                <input class="nhsuk-input" id="financial-year" name="financial-year" type="text">
+                <input class="nhsuk-input" id="financialYear" name="financialYear" type="text">
+                
               </div>
             </div>
           </div>
           <!-- End of search inputs -->
 
-
-
-          <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button"
-            type="submit">
+          <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
             Search
           </button>
-
         </form>
       </div>
     </div>
-    <!-- End of search -->
-
-
-
-
-
-
+    <!-- End of search fields -->
 
   </div>
   {% endblock %}

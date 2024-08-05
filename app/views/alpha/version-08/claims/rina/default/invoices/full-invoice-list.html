@@ -31,11 +31,11 @@
   {% endblock %}
 
   {% block ClaimId %}
-    {{ claimid }}
+  {{ claimid }}
   {% endblock %}
 
   {% block submittingCountry %}
-    {{ country }}
+  {{ country }}
   {% endblock %}
     
   {% block beforeContent %}
@@ -67,10 +67,8 @@
   <div class="nhsuk-card">
     <div class="nhsuk-card__content">
       <form action="/alpha/version-08/invoiceSearch" method="post">
-
-        <input type="hidden" name="claimId" value="{{ claimid }}">
+        <input type="hidden" name="claimid" value="{{ claimid }}">
         <input type="hidden" name="country" value="{{ country }}">
-
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-full">
             <h3 class="nhsuk-card__heading">
@@ -95,8 +93,7 @@
               <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-id">
                 Invoice ID
               </label>
-              <input class="nhsuk-input" id="invoice-id" name="invoiceID" type="text" {% if data['invoiceID']
-              %}value="{{ data['invoiceID'] }}" {% endif %}>
+              <input class="nhsuk-input" id="invoice-id" name="invoiceID" type="text">
             </div>
           </div>
           <div class="nhsuk-grid-column-one-quarter">
@@ -104,8 +101,7 @@
               <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-ref">
                 Invoice reference
               </label>
-              <input class="nhsuk-input" id="invoice-ref" name="invoiceReference" type="text" {% if data['invoiceReference']
-              %}value="{{ data['invoiceReference'] }}" {% endif %}>
+              <input class="nhsuk-input" id="invoice-ref" name="invoiceReference" type="text">
             </div>
           </div>
           <div class="nhsuk-grid-column-one-quarter">
@@ -113,8 +109,7 @@
               <label class="nhsuk-label nhsuk-u-font-weight-bold" for="last-name">
                 Last name
               </label>
-              <input class="nhsuk-input" id="last-name" name="lastName" type="text" {% if data['lastName']
-              %}value="{{ data['lastName'] }}" {% endif %}>
+              <input class="nhsuk-input" id="last-name" name="lastName" type="text">
             </div>
           </div>
           <div class="nhsuk-grid-column-one-quarter">
@@ -122,8 +117,7 @@
               <label class="nhsuk-label nhsuk-u-font-weight-bold" for="first-name">
                 First name
               </label>
-              <input class="nhsuk-input" id="first-name" name="firstName" type="text" {% if data['firstName']
-              %}value="{{ data['firstName'] }}" {% endif %}>
+              <input class="nhsuk-input" id="first-name" name="firstName" type="text">
             </div>
           </div>
         </div>
@@ -406,10 +400,9 @@
                         <span class="nhsuk-table-responsive__heading">Status </span>{{ result.status }}
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">View </span>
-                        <a href="/alpha/version-08/claims/invoice/{{ result.invoiceid }}">View invoice</a>
+                        <span class="nhsuk-table-responsive__heading">View </span><a href="/alpha/version-08/claims/invoice/{{ result.invoiceid }}">View invoice</a>
+                        
                       </td>
-                    
                     </tr>
                   {% endfor %}
                 </tbody>
@@ -461,5 +454,3 @@
     </div>
   </div>
   {% endblock %}
-
-  
