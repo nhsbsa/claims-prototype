@@ -433,62 +433,64 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                       </div>
                       <!-- End sort by -->
 
+                                            <!-- Start by and sort order -->
+                                            <div class="nhsuk-grid-column-one-quarter">
+
+                                              <div class="nhsuk-form-group nhsuk-u-padding-bottom-5">
+                                                <fieldset class="nhsuk-fieldset">
+                                                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                    <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                                      Sort by
+                                                    </h1>
+                                                  </legend>
+                                                  <div class="nhsuk-radios">
+                                                    <div class="nhsuk-radios__item">
+                                                      <input class="nhsuk-radios__input" id="sort-by-id" name="sort-by" type="radio"
+                                                        value="Claim ID" checked="checked">
+                                                      <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
+                                                        Claim ID
+                                                      </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                      <input class="nhsuk-radios__input" id="sort-by-ref" name="sort-by" type="radio"
+                                                        value="Claim reference">
+                                                      <label class="nhsuk-label nhsuk-radios__label" for="sort-by-ref">
+                                                        Claim reference
+                                                      </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                      <input class="nhsuk-radios__input" id="sort-by-country" name="sort-by" type="radio"
+                                                        value="Country">
+                                                      <label class="nhsuk-label nhsuk-radios__label" for="sort-by-country">
+                                                        Country
+                                                      </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                      <input class="nhsuk-radios__input" id="sort-by-year" name="sort-by" type="radio"
+                                                        value="Financial year">
+                                                      <label class="nhsuk-label nhsuk-radios__label" for="sort-by-year">
+                                                        Financial year
+                                                      </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                      <input class="nhsuk-radios__input" id="sort-by-article" name="sort-by" type="radio"
+                                                        value="Article type">
+                                                      <label class="nhsuk-label nhsuk-radios__label" for="sort-by-article">
+                                                        Article type
+                                                      </label>
+                                                    </div>
+
+                                                  </div>
+                                                </fieldset>
+                                              </div>
+                      
+  
+                                            </div>
+                                            <!-- End order -->
+
                       <!-- Start by and sort order -->
                       <div class="nhsuk-grid-column-one-quarter">
 
-                        <div class="nhsuk-form-group nhsuk-u-padding-bottom-5">
-                          <fieldset class="nhsuk-fieldset">
-                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                              <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
-                                Sort by
-                              </h1>
-                            </legend>
-                            <div class="nhsuk-radios">
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="sort-by-id" name="sort-by" type="radio"
-                                  value="Claim ID" checked="checked">
-                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
-                                  Claim ID
-                                </label>
-                              </div>
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="sort-by-ref" name="sort-by" type="radio"
-                                  value="Claim reference">
-                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-ref">
-                                  Claim reference
-                                </label>
-                              </div>
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="sort-by-country" name="sort-by" type="radio"
-                                  value="Country">
-                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-country">
-                                  Country
-                                </label>
-                              </div>
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="sort-by-year" name="sort-by" type="radio"
-                                  value="Financial year">
-                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-year">
-                                  Financial year
-                                </label>
-                              </div>
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="sort-by-article" name="sort-by" type="radio"
-                                  value="Article type">
-                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-article">
-                                  Article type
-                                </label>
-                              </div>
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="sort-by-type" name="sort-by" type="radio"
-                                  value="Claim type">
-                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-type">
-                                  Claim type
-                                </label>
-                              </div>
-                            </div>
-                          </fieldset>
-                        </div>
 
                         <div class="nhsuk-form-group">
                           <fieldset class="nhsuk-fieldset">
@@ -555,7 +557,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                         Article type
                       </th>
                       <th role="columnheader" class="" scope="col">
-                        Claim type
+                        Claim status
                       </th>
                       <th role="columnheader" class="" scope="col">
                         View
@@ -584,7 +586,8 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                         <span class="nhsuk-table-responsive__heading">Article type </span>Article 63 (2a)
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+
+                        <span class="nhsuk-table-responsive__heading">Claim status </span>Not started
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">View </span><a
@@ -612,11 +615,12 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                       <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+
+                      <span class="nhsuk-table-responsive__heading">Claim status </span>Not started
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       <span class="nhsuk-table-responsive__heading">View </span><a
-                        href="rina/actual-cost/6784-france/summary/active-invoices-uploaded">View claim</a>
+                        href="rina/actual-cost/6784-france/summary/not-started">View claim</a>
                     </td>
                   </tr>
                 </tbody>
@@ -633,7 +637,6 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                     <td role="cell" class="nhsuk-table__cell">
                       <span class="nhsuk-table-responsive__heading">Claim ID </span>6788
                     </td>
-                    <td role="cell" class="nhsuk-table__cell">
                       <span class="nhsuk-table-responsive__heading">Claim reference </span>2/2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
@@ -724,8 +727,6 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                   <tr role="row" class="nhsuk-table__row">
                     <td role="cell" class="nhsuk-table__cell">
                       <span class="nhsuk-table-responsive__heading">Claim ID </span>6784
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
                       <span class="nhsuk-table-responsive__heading">Claim reference </span>11322249AT2301E
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
@@ -854,7 +855,101 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                       <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                      <span class="nhsuk-table-responsive__heading">Claim type </span>Main
+
+                      <span class="nhsuk-table-responsive__heading">Claim status </span>Active
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6778
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>2/2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Portugal
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 63 (2a)
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim status </span>Active
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6777
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>25520224764
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Italy
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim status </span>Active
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6776
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>HU-UK/2023/1
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Hungary
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim status </span>Active
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim ID </span>6775
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim reference </span>UK1S08000000386
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Country </span>Germany
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Financial year </span>2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Article type </span>Article 62
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Claim status </span>Active
+
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                       <span class="nhsuk-table-responsive__heading">View </span><a href="">View claim</a>

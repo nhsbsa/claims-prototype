@@ -116,8 +116,9 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-id">
               Invoice ID
             </label>
-            <input class="nhsuk-input" id="invoice-id" name="invoice-id" type="text"
-            {% if data['invoice-id'] %}value="{{ data['invoice-id'] }}"{% else %}value="03678"{% endif %}>
+
+            <input class="nhsuk-input" id="invoice-id" name="invoiceID" type="text"
+            {% if data['invoiceID'] %}value="{{ data['invoiceID'] }}"{% endif %}>
           </div>
         </div>
         <div class="nhsuk-grid-column-one-quarter">
@@ -125,8 +126,9 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-ref">
               Invoice reference
             </label>
-            <input class="nhsuk-input" id="invoice-ref" name="invoice-ref" type="text" 
-            {% if data['invoice-ref'] %}value="{{ data['invoice-ref'] }}"{% endif %}>
+
+            <input class="nhsuk-input" id="invoice-ref" name="invoiceReference" type="text" 
+            {% if data['invoiceReference'] %}value="{{ data['invoiceReference'] }}"{% endif %}>
           </div>
         </div>
         <div class="nhsuk-grid-column-one-quarter">
@@ -134,8 +136,10 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <label class="nhsuk-label nhsuk-u-font-weight-bold" for="last-name">
               Last name
             </label>
-            <input class="nhsuk-input" id="last-name" name="last-name" type="text" 
-            {% if data['last-name'] %}value="{{ data['last-name'] }}"{% endif %}>
+
+            <input class="nhsuk-input" id="last-name" name="lastName" type="text" 
+            {% if data['lastName'] %}value="{{ data['lastName'] }}"{% endif %}>
+
           </div>
         </div>
         <div class="nhsuk-grid-column-one-quarter">
@@ -143,8 +147,10 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <label class="nhsuk-label nhsuk-u-font-weight-bold" for="first-name">
               First name
             </label>
-            <input class="nhsuk-input" id="first-name" name="first-name" type="text"
-            {% if data['first-name'] %}value="{{ data['first-name'] }}"{% endif %}>
+
+            <input class="nhsuk-input" id="first-name" name="firstName" type="text"
+            {% if data['firstName'] %}value="{{ data['firstName'] }}"{% endif %}>
+
           </div>
         </div>
       </div>
@@ -192,45 +198,35 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
         <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
           <div class="nhsuk-grid-column-two-thirds">
 
-            {% if data['invoice-id'] %}
-            {% if data['invoice-id'] === '03678' %}
-            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 results of 1</h3>
+            {% if searchResults.length > 0 %}
+            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing {{ searchResults.length }} result(s)</h3>
             <p class="nhsuk-u-margin-bottom-2">
+              {% if searchQuery.invoiceID %}
               <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                03678
+                {{ searchQuery.invoiceID }}
               </strong>
-              {% else %}
-            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 0 results of 0</h3>
-            <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-              {{ data['invoice-id'] }}
-            </strong>
-            {% endif %}
+              {% endif %}
+              {% if searchQuery.invoiceReference %}
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                {{ searchQuery.invoiceReference }}
+              </strong>
+              {% endif %}
+              {% if searchQuery.lastName %}
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                {{ searchQuery.lastName }}
+              </strong>
+              {% endif %}
+              {% if searchQuery.firstName %}
+              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                {{ searchQuery.firstName }}
+              </strong>
+              {% endif %}
             {% else %}
-            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 results of 1</h3>
-            <p class="nhsuk-u-margin-bottom-2">
-              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                03678
-              </strong>
-              {% endif %}
-
-              {% if data['invoice-ref'] %}
-              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                {{ data['invoice-ref'] }}
-              </strong>
-              {% endif %}
-              {% if data['last-name'] %}
-              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                {{ data['last-name'] }}
-              </strong>
-              {% endif %}
-              {% if data['first-name'] %}
-              <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                {{ data['first-name'] }}
-              </strong>
-              {% endif %}
-
+            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 0 results of 0</h3>
+            {% endif %}
             </p>
           </div>
+
           <div class="nhsuk-grid-column-one-third">
             <div class="nhsuk-form-group" style="float:right;">
               <label class="nhsuk-label" for="results">
@@ -473,72 +469,49 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                 </tr>
               </thead>
 
-              {% if data['invoice-id'] %}
-              {% if data['invoice-id'] === '03678' %}
+
+              {% for result in searchResults %}
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>03678
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>
+                    {{ result.invoiceID }}
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>0087651234
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>
+                    {{ result.invoiceReference }}
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Last name </span>MacFarlane
+                    <span class="nhsuk-table-responsive__heading">Last name </span>
+                    {{ result.person.lastName }}
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">First name</span>Elizabeth
+                    <span class="nhsuk-table-responsive__heading">First name</span>
+                    {{ result.person.firstName }}
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>
+                    {% if result.person.entitlements %}
+                      {{ result.person.entitlements | map('type') | join(', ') }}
+                    {% endif %}
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Status </span>To check
+                    <span class="nhsuk-table-responsive__heading">Status </span>
+                    {% if result.status %}
+                      {{ result.status }}
+                    {% endif %}
                   </td>
-
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">View </span><a href="details/03678/01-to-check">View
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="details/invoice">View
                       invoice</a>
                   </td>
                 </tr>
+                {% endfor %}
+                {% if searchResults.length == 0 %}
+                  <p class="nhsuk-body nhsuk-u-padding-bottom-3">No results found.</p>
+                {% endif %}
               </tbody>
             </table>
-            {% else %}
-          </table>
-          <p class="nhsuk-body nhsuk-u-padding-bottom-3">No results found.</p>
-          {% endif %}
-          {% else %}
-          <tbody class="nhsuk-table__body">
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Invoice reference </span>03678
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Invoice reference </span>0087651234
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Last name </span>MacFarlane
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">First name</span>Elizabeth
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Status </span>To check
-              </td>
-
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">View </span><a href="details/03678/01-to-check">View
-                  invoice</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-            {% endif %}
-
-
 
           </div>
         </div>

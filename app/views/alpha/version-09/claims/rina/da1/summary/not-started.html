@@ -1,0 +1,233 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '/alpha/version-09/claims/rina/actual-cost/6784-france/summary/not-started',
+active: true
+},
+{
+name: 'Invoices',
+path: '/alpha/version-09/claims/rina/actual-cost/6784-france/invoices/not-started'
+},
+{
+name: 'Contestations',
+path: ''
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: '/alpha/version-09/claims/rina/actual-cost/6784-france/history/not-started'
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Claim summary - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../index">Claims</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="../../../../index">
+        <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+        Claims
+      </a>
+    </p>
+  </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl ">
+          Claim summary
+        </h1>
+      </div>
+      <div class="nhsuk-grid-column-one-third">
+        <a href="../invoices/upload/xml/index">
+          <button style="float:right;" class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Add invoices
+          </button>
+        </a>
+      </div>
+    </div>
+
+
+    <!-- Start of main summary box -->
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
+            <!--Start of card header-->
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-two-thirds">
+                <h3 class="nhsuk-card__heading">
+                  Claim ID 6784 &ndash; Claim reference {% if data['ref'] %}{{ data['ref'] }}{% else %}11322249AT2301E{%
+                  endif
+                  %}
+                </h3>
+
+              </div>
+              <div class="nhsuk-grid-column-one-third">
+
+                <strong class="nhsuk-tag nhsuk-tag--grey" style="float:right">
+                  Not started
+                </strong>
+
+              </div>
+              <div class="nhsuk-grid-column-full">
+                <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
+                <br />
+              </div>
+            </div>
+
+            <!-- Start of card content-->
+            <div class="nhsuk-grid-row">
+
+              <div class="nhsuk-grid-column-one-half">
+                <dl class="nhsuk-summary-list">
+
+                  <!-- Country -->
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Country
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      France
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions"></dd>
+                  </div>
+
+                  <!-- Period of claim -->
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Period
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {% if data['period'] %}
+                      {{ data['period'] }}
+                      {% else %}
+                      First half year
+                      {% endif %}
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions"></dd>
+                  </div>
+
+                  <!-- Financial year -->
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Financial year
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {% if data['financial-year'] %}
+                      {{ data['financial-year'] }}
+                      {% else %}
+                      2023
+                      {% endif %}
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions"></dd>
+                  </div>
+
+                  <!-- Article type -->
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Article type
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      AW05 - DA1
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions"></dd>
+                  </div>
+                </dl>
+              </div>
+
+              <div class="nhsuk-grid-column-one-half">
+                <dl class="nhsuk-summary-list">
+
+                  <!-- Target date -->
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Target date
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {% if data['target-date-day'] %}{{ data['target-date-day'] }}/{% else %}1 {%
+                      endif %}{% if data['target-date-month'] %}{{ data['target-date-month'] }}/{%
+                      else %}March {% endif %}{% if data['target-date-year'] %}{{
+                      data['target-date-year'] }}{% else %}2024{% endif %}
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions"><a href="edit-target-date">
+                        Change<span class="nhsuk-u-visually-hidden"> target date</span>
+                      </a></dd>
+                  </div>
+
+                  <!-- Deadline -->
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Deadline
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      9 February 2025
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions"></dd>
+                  </div>
+
+                  <!-- Date received-->
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Date received
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {% if data['submission-date-day'] %}{{ data['submission-date-day'] }} {%
+                      else
+                      %}10 {% endif %}{% if data['submission-date-month'] %}{{ fullSubmissionMonth
+                      }} {% else %}August {% endif %}{% if
+                      data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
+                      %}2023{% endif %}
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions"></dd>
+                  </div>
+                </dl>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- End of main summary box -->
+
+
+
+
+  </div>
+</div>
+{% endblock %}
+<!-- End of central content -->

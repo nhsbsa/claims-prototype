@@ -8,6 +8,59 @@ const axios = require('axios');
 
 //// CREATE CLAIM ////
 
+//// How did you receive the claim?  ////
+router.post('/route-contact-method', function(req,res){
+    var received = req.session.data['received']
+    if (received == "RINA" ||  received == "Paper") {
+        res.redirect('/alpha/version-09/claims/create/article-type')
+        }
+    else {
+        res.redirect('/alpha/version-09/claims/create/index')
+    }
+})
+
+
+//// Which article covers this claim?  ////
+router.post('/route-create-claim', function(req,res){
+    var received = req.session.data['received']
+    var article = req.session.data['article']
+    var averageType = req.session.data['average-type']
+
+    if (received == 'RINA') {
+        if (article == "Article 62 - actual cost" || article == "AW05 - DA1") {
+            res.redirect('/alpha/version-09/claims/create/details-rina-actual')
+            }
+        else if (averageType == "Article 63 (2a)" || averageType == "Article 63 (2b)") {
+                res.redirect('/alpha/version-09/claims/create/details-rina-average-63')
+                }
+        else if (averageType == "Article 94" || averageType == "Article 95") {
+                res.redirect('/alpha/version-09/claims/create/details-rina-average-94-95')
+                }
+        else {
+                res.redirect('/alpha/version-09/claims/create/article-type')
+            }
+            }
+
+    else if (received == 'Paper') {
+        if (article == "Article 62 - actual cost" || article == "AW05 - DA1") {
+            res.redirect('/alpha/version-09/claims/create/details-paper-actual')
+            }
+        else if (averageType == "Article 63 (2a)" || averageType == "Article 63 (2b)") {
+            res.redirect('/alpha/version-09/claims/create/details-paper-average-63')
+            }
+        else if (averageType == "Article 94" || averageType == "Article 95") {
+            res.redirect('/alpha/version-09/claims/create/details-paper-average-94-95')
+            }
+        else {
+                res.redirect('/alpha/version-09/claims/create/article-type')
+            }
+        }
+
+    else {
+            res.redirect('/alpha/version-09/claims/create/article-type')
+        }
+})
+
 //Are you sure you want to cancel
 router.get("/claims/create/cancel-confirmation", (req, res)=> {
     res.render("alpha/version-09/claims/create/cancel-confirmation", {referer: req.headers.referer});
