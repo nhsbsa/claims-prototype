@@ -358,50 +358,7 @@ router.get('/claims/summary/not-started', function(req, res) {
     res.render('alpha/version-09/claims/summary/not-started', { targetDateEditFormatted: targetDateEditFormatted, targetDateFormatted: targetDateFormatted });
 })
 
-// DYNAMIC SEARCH
 
-router.post('/personSearch', (req, res) => {
-    const formData = req.body; // Contains all the form data
-    const jsonDataPath = path.join(__dirname, '/records/person_records.json');
-  
-    fs.readFile(jsonDataPath, (err, data) => {
-      if (err) {
-        console.error('Error reading person records file:', err);
-        return res.status(500).send('Internal Server Error');
-      }
-  
-      const persons = JSON.parse(data).persons;
-      const filteredResults = persons.filter(person => {
-        // Check each field for a match. For fields not submitted, assume a match.
-        const dobMatch = (!formData.dobDay || person.dob.day == formData.dobDay) &&
-                         (!formData.dobMonth || person.dob.month == formData.dobMonth) &&
-                         (!formData.dobYear || person.dob.year == formData.dobYear);
-        return (!formData.type || person.type.toLowerCase().includes(formData.type.toLowerCase())) &&
-               (!formData.lastName || person.lastName.toLowerCase().includes(formData.lastName.toLowerCase())) &&
-               (!formData.firstName || person.firstName.toLowerCase().includes(formData.firstName.toLowerCase())) &&
-               dobMatch &&
-               (!formData.residentialCountry || person.residentialCountry.toLowerCase().includes(formData.residentialCountry.toLowerCase())) &&
-               (!formData.nationalInsuranceNumber || person.nationalInsuranceNumber.toLowerCase().includes(formData.nationalInsuranceNumber.toLowerCase())) &&
-               (!formData.nhsNumber || person.nhsNumber.includes(formData.nhsNumber)) &&
-               (!formData.ehicGhicPin || person.ehicGhicPin.includes(formData.ehicGhicPin)) &&
-               (!formData.issueNumber || person.issueNumber.includes(formData.issueNumber)) &&
-               (!formData.reference || person.reference.includes(formData.reference));
-      });
-
-        // Assume 'filteredResults' is obtained after filtering the 'person_records.json'
-
-        const dobOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-        const dobFormatter = new Intl.DateTimeFormat('en-GB', dobOptions);
-
-        // Format DOB for each person in the results
-        filteredResults.forEach(person => {
-            const dob = new Date(person.dob.year, person.dob.month - 1, person.dob.day);
-            person.dobFormatted = dobFormatter.format(dob);
-        });
-      
-      res.render('version-09/claims/invoices/details/person-not-found/s1-default-search-results', { searchResults: filteredResults });
-    });
-  });
 
 
 module.exports = router
