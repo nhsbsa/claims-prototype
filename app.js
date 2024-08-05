@@ -14,6 +14,7 @@ const sessionInMemory = require('express-session');
 // Run before other code to make sure variables from .env are available
 dotenv.config();
 
+
 // Initialise applications
 const app = express();
 const documentationApp = express();

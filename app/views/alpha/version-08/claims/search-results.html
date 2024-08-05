@@ -125,9 +125,9 @@
                   </label>
                   <div>
                     <select name="country" id="select-autocomplete">
-                      {% if data['country'] %}<option value="{{ data['country'] }}" selected>{{ data['country'] }}
+                      {% if data['country'] %}<option value="{{ country }}" selected>{{ country }}</option>{{ data['country'] }}
                       </option>{% endif %}
-                      <option value=""></option>
+                      <option value="{{ country }}"></option>
                       <option value="Austria">Austria</option>
                       <option value="Belgium">Belgium</option>
                       <option value="Bulgaria">Bulgaria</option>
@@ -147,7 +147,7 @@
                       <option value="Latvia">Latvia</option>
                       <option value="Liechtenstein">Liechtenstein</option>
                       <option value="Lithuania">Lithuania</option>
-                      <option value="Luxemburg">Luxemburg</option>
+                      <option value="Luxembourg">Luxembourg</option>
                       <option value="Malta">Malta</option>
                       <option value="Netherlands">Netherlands</option>
                       <option value="Norway">Norway</option>
@@ -543,48 +543,48 @@
                     </thead>
   
                     <tbody class="nhsuk-table__body">
-                    {% if searchResults.length > 0 %}
-                      {% for result in searchResults %}
-                      <tr role="row" class="nhsuk-table__row">
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim ID </span>
-                          {{ result.claimid }}
+                      {% if searchResults.length > 0 %}
+                        {% for result in searchResults %}
+                        <tr role="row" class="nhsuk-table__row">
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Claim ID </span>
+                            {{ result.claimid }}
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Claim reference </span>
+                            {{ result.claimreference }}
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Country </span>
+                            {{ result.country }}
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Financial year </span>
+                            {{ result.financialyear }}
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Article type </span>
+                            {{ result.articletype }}
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Claim type </span>
+                            {{ result.claimtype }}
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">View </span>
+                            <a href="claims/claim/{{ result.claimid }}">View claim</a>
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      {% else %}
+                      <tr>
+                        <td colspan="7" class="nhsuk-table__cell">
+                          No results found.
                         </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim reference </span>
-                          {{ result.claimreference }}
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Country </span>
-                          {{ result.country }}
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Financial year </span>
-                          {{ result.financialyear }}
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Article type </span>
-                          {{ result.articletype }}
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim type </span>
-                          {{ result.claimtype }}
-                        </td>
-                        <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">View </span>
-                          <a href="claims/claim/{{ result.claimid }}">View claim</a>
-                        </td>
-
                       </tr>
-                      {% endfor %}
-                    {% else %}
-  
-                          <tr>
-                              <p class="nhsuk-body nhsuk-u-padding-bottom-3">No results found.</p>
-                          </tr>
-                    {% endif %}
-  
+                      {% endif %}
                     </tbody>
+  
                   </table>
                   
                   {% if searchResults.length < 10 and searchResults.length > 0 %}
