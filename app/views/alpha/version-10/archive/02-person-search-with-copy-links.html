@@ -279,12 +279,11 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
     </div>
 
 
-    <!-- Start of invoice details from submitting country -->
+    <!-- Start of invoice details from submitting country - with copy links -->
     <div class="nhsuk-grid-column-one-quarter">
 
         <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">
             Invoice details from France
-            <span class="nhsuk-caption-m nhsuk-caption--bottom">Invoice reference: 0039795410</span>
         </h2>
         <hr style="margin:0px 0px 30px 0px;">
 
@@ -301,7 +300,12 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Last name
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            Stephenson
+                            Pearce
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a class="app-link--copy" href="javascript:void(0);" aria-live="assertive"
+                                onclick="copyValue(this)">Copy<span class="nhsuk-u-visually-hidden"> last
+                                    name</span></a>
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -309,7 +313,12 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             First name
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            Kayleigh
+                            Sean
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a class="app-link--copy" href="javascript:void(0);" aria-live="assertive"
+                                onclick="copyValue(this)">Copy<span class="nhsuk-u-visually-hidden"> first
+                                    name</span></a>
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -317,7 +326,9 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Date of birth
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            10 January 1981
+                            8 August 1952
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -325,7 +336,12 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Unique ID
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            JM 23 66 19 A
+                            QQ 23 34 54 C
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a class="app-link--copy" href="javascript:void(0);" aria-live="assertive"
+                                onclick="copyValue(this)">Copy<span class="nhsuk-u-visually-hidden"> unique
+                                    ID</span></a>
                         </dd>
                     </div>
                 </dl>
@@ -350,6 +366,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         <dd class="nhsuk-summary-list__value">
                             EHIC
                         </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                        </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
@@ -357,6 +375,11 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             00874637746658873542
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a class="app-link--copy" href="javascript:void(0);" aria-live="assertive"
+                                onclick="copyValue(this)">Copy<span class="nhsuk-u-visually-hidden"> issue
+                                    number</span></a>
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -366,6 +389,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         <dd class="nhsuk-summary-list__value">
                             23 March 2021
                         </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                        </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
@@ -374,6 +399,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         <dd class="nhsuk-summary-list__value">
                             22 March 2026
                         </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                        </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
@@ -381,6 +408,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             23 March 2021
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
                         </dd>
                     </div>
                 </dl>
@@ -403,6 +432,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         <dd class="nhsuk-summary-list__value">
                             1 June 2023
                         </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                        </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
@@ -411,6 +442,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         <dd class="nhsuk-summary-list__value">
                             2 June 2023
                         </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                        </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
@@ -418,6 +451,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             2134.75
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
                         </dd>
                     </div>
                 </dl>
@@ -430,6 +465,36 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
     <!-- End of invoice details from submitting country -->
 
 </div>
+
+
+
+
+
+<script>
+    var lastClickedButton = null;
+
+    function copyValue(element) {
+        var valueElement = element.closest('.nhsuk-summary-list__row').querySelector('.nhsuk-summary-list__value');
+        var valueToCopy = valueElement.textContent.trim();
+
+        // Create a temporary textarea to copy the value to the clipboard
+        var tempTextarea = document.createElement('textarea');
+        tempTextarea.value = valueToCopy;
+        document.body.appendChild(tempTextarea);
+        tempTextarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextarea);
+
+        // Reset the text of the previously clicked button
+        if (lastClickedButton) {
+            lastClickedButton.textContent = 'Copy';
+        }
+
+        element.textContent = 'Copied';
+        element.focus();
+        lastClickedButton = element;
+    }
+</script>
 
 {% endblock %}
 <!-- End of central content -->
