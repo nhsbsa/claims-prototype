@@ -1,0 +1,442 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Home',
+path: '/alpha/version-10/home'
+},
+{
+name: 'Claims',
+path: '/alpha/version-10/claims/index',
+active: true
+},
+{
+name: 'Contested claims',
+path: '/alpha/version-10/contestations/index'
+},
+{
+name: 'Reports',
+path: '/alpha/version-10/reports/index'
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Create a new claim - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../index">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                claims </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of error summary-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="nhsuk-error-summary__body">
+                <p>
+                    All fields are mandatory
+                </p>
+                <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+
+                    {% if data['submission-date-day'] === '' and data['submission-date-month'] === '' and data['submission-date-year'] === '' %}
+                    <li>
+                        <a href="#submission-date-day">Enter the date you received the claim</a>
+                    </li>
+                    {% endif %}
+
+                    {% if data['country'] === '' %}
+                    <li>
+                        <a href="#country">Enter the country submitting the claim</a>
+                    </li>
+                    {% endif %}
+
+                    {% if data['ref'] === '' %}
+                    <li>
+                        <a href="#ref">Enter the claim reference</a>
+                    </li>
+                    {% endif %}
+
+                    {% if data['financial-year'] === '' %}
+                    <li>
+                        <a href="#financial-year">Enter the financial year of claim</a>
+                    </li>
+                    {% endif %}
+
+                    {% if data['article'] === '' %}
+                    <li>
+                        <a href="#">Select the article covering the claim</a>
+                    </li>
+                    {% endif %}
+
+                    {% if data['type'] === '' %}
+                    <li>
+                        <a href="#">Select the type of claim</a>
+                    </li>
+                    {% endif %}
+
+                    {% if data['target-date-day'] === '' and data['target-date-month'] === '' and data['target-date-year'] === '' %}
+                    <li>
+                        <a href="#target-date-day">Enter the target date to complete the claim</a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of error summary -->
+
+<!-- Start of back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" height="24" width="24">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back</a>
+        </div>
+    </div>
+</div>
+<!-- End of back link -->
+
+<!-- Start of create a claim -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Start of form -->
+        <form action="../../create-claim-validation" method="post">
+            <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                    <h1 class="nhsuk-fieldset__heading">
+                        <span class="nhsuk-caption-l">Create a new claim</span>
+                        Claim details
+                    </h1>
+                </legend>
+
+                <!-- Start of card -->
+                <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                    <div class="nhsuk-card__content">
+
+                        <!-- Date you received the claim -->
+                        <div class="nhsuk-form-group {% if data['submission-date-day'] === '' and data['submission-date-month'] === '' and data['submission-date-year'] === '' %}nhsuk-form-group--error{% endif %}">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Date you received the claim
+                                    </h1>
+                                </legend>
+                                {% if data['submission-date-day'] === '' and data['submission-date-month'] === '' and data['submission-date-year'] === '' %}
+                                <span class="nhsuk-error-message" id="dob-day-error-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter the date you received the claim
+                                  </span>
+                                  {% endif %}
+
+                                <div class="nhsuk-date-input" id="submission-date">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label"
+                                                for="submission-date-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 {% if data['submission-date-day'] === '' and data['submission-date-month'] === '' and data['submission-date-year'] === '' %}nhsuk-input--error{% endif %}"
+                                                id="submission-date-day" name="submission-date-day" type="text"
+                                                pattern="[0-9]*" inputmode="numeric"
+                                                value="{% if data['submission-date-day'] %}{{ data['submission-date-day'] }}{% endif %}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label"
+                                                for="submission-date-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 {% if data['submission-date-day'] === '' and data['submission-date-month'] === '' and data['submission-date-year'] === '' %}nhsuk-input--error{% endif %}"
+                                                id="submission-date-month" name="submission-date-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric"
+                                                value="{% if data['submission-date-month'] %}{{ data['submission-date-month'] }}{% endif %}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label"
+                                                for="submission-date-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 {% if data['submission-date-day'] === '' and data['submission-date-month'] === '' and data['submission-date-year'] === '' %}nhsuk-input--error{% endif %}"
+                                                id="submission-date-year" name="submission-date-year" type="text"
+                                                pattern="[0-9]*" inputmode="numeric"
+                                                value="{% if data['submission-date-year'] %}{{ data['submission-date-year'] }}{% endif %}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Country submitting the claim -->
+                        <div class="nhsuk-form-group {% if data['country'] === '' %}nhsuk-form-group--error{% endif %}">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="country">
+                                Country submitting the claim
+                            </label>
+                            {% if data['country'] === '' %}
+                            <span class="nhsuk-error-message" id="country-error">
+                                <span class="nhsuk-u-visually-hidden">Error:</span> Enter the country submitting the
+                                claim
+                            </span>
+                            {% endif %}
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds {% if data['country'] === '' %}nhsuk-input--error{% endif %}" id="country" name="country" type="text"
+                                value="{% if data['country'] %}{{ data['country'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Claim reference -->
+                        <div class="nhsuk-form-group {% if data['ref'] === '' %}nhsuk-form-group--error{% endif %}">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                                Claim reference
+                            </label>
+                            {% if data['ref'] === '' %}
+                            <span class="nhsuk-error-message" id="ref-error">
+                                <span class="nhsuk-u-visually-hidden">Error:</span> Enter the claim reference
+                            </span>
+                            {% endif %}
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds {% if data['ref'] === '' %}nhsuk-input--error{% endif %}" id="ref" name="ref" type="text"
+                                value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Financial year of claim -->
+                        <div class="nhsuk-form-group {% if data['financial-year'] === '' %}nhsuk-form-group--error{% endif %}">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="financial-year">
+                                Financial year of claim
+                            </label>
+                            {% if data['financial-year'] === '' %}
+                            <span class="nhsuk-error-message" id="financial-year-error">
+                                <span class="nhsuk-u-visually-hidden">Error:</span> Enter the financial year of the claim
+                            </span>
+                            {% endif %}
+                            <input class="nhsuk-input nhsuk-input--width-4 {% if data['financial-year'] === '' %}nhsuk-input--error{% endif %}" id="financial-year" name="financial-year"
+                                type="text"
+                                value="{% if data['financial-year'] %}{{ data['financial-year'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Article covering the claim -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset">
+                                <legend
+                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Article covering the claim
+                                    </h1>
+                                </legend>
+
+                                <div class="nhsuk-hint" id="article-hint">
+                                    Select one option.
+                                </div>
+                                <div class="nhsuk-radios">
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-actual" name="article"
+                                            type="radio" value="Actual cost" {% if data['article']==='Actual cost'
+                                            %}checked{% endif %}>
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-actual">
+                                            Actual cost
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-average-2a" name="article"
+                                            type="radio" value="Article 63 (2a) - average cost" {% if
+                                            data['article']==='Article 63 (2a) - average cost' %}checked{% endif %}>
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-average-2a">
+                                            Article 63 (2a) - average cost
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-average-2b" name="article"
+                                            type="radio" value="Article 63 (2b) - average cost" {% if
+                                            data['article']==='Article 63 (2b) - average cost' %}checked{% endif %}>
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
+                                            Article 63 (2b) - average cost
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-average-2b" name="article"
+                                            type="radio" value="AW03 - DA1 claims" {% if
+                                            data['article']==='AW03 - DA1 claims' %}checked{% endif %}>
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
+                                            AW03 - DA1 claims
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Type of claim -->
+                        <div class="nhsuk-form-group">
+
+                            <fieldset class="nhsuk-fieldset" aria-describedby="type-hint">
+                                <legend
+                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Type of claim
+                                    </h1>
+                                </legend>
+
+                                <div class="nhsuk-hint" id="type-hint">
+                                    Select one option.
+                                </div>
+
+                                <div class="nhsuk-radios nhsuk-radios--conditional">
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="type-main" name="type" type="radio"
+                                            value="Main" {% if data['type']==='Main' %}checked{% endif %}>
+                                        <label class="nhsuk-label nhsuk-radios__label" for="type-main">
+                                            Main
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="type-Supplementary" name="type"
+                                            type="radio" value="Supplementary"
+                                            aria-controls="conditional-type-Supplementary" aria-expanded="false" {% if
+                                            data['type']==='Supplementary' %}checked{% endif %}>
+                                        <label class="nhsuk-label nhsuk-radios__label" for="type-Supplementary">
+                                            Supplementary
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+                                        id="conditional-type-Supplementary">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label" for="subref">
+                                                Claim sub-reference (optional)
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="subref"
+                                                name="subref" type="text"
+                                                value="{% if data['subref'] %}{{ data['subref'] }}{% endif %}">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Target date to complete claim -->
+                        <div class="nhsuk-form-group {% if data['target-date-day'] === '' and data['target-date-month'] === '' and data['target-date-year'] === '' %}nhsuk-form-group--error{% endif %}">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Target date to complete claim
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="target-date-hint">
+                                    Usually 6 months after the claim was submitted by the member state.
+                                </div>
+                                {% if data['target-date-day'] === '' and data['target-date-month'] === '' and data['target-date-year'] === '' %}
+                                <span class="nhsuk-error-message" id="dob-day-error-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter the target date to complete the claim
+                                  </span>
+                                  {% endif %}
+                                <div class="nhsuk-date-input" id="target-date">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 {% if data['target-date-day'] === '' and data['target-date-month'] === '' and data['target-date-year'] === '' %}nhsuk-input--error{% endif %}"
+                                                id="target-date-day" name="target-date-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="{% if data['target-date-day'] %}{{ data['target-date-day'] }}{% endif %}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 {% if data['target-date-day'] === '' and data['target-date-month'] === '' and data['target-date-year'] === '' %}nhsuk-input--error{% endif %}"
+                                                id="target-date-month" name="target-date-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric"
+                                                value="{% if data['target-date-month'] %}{{ data['target-date-month'] }}{% endif %}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 {% if data['target-date-day'] === '' and data['target-date-month'] === '' and data['target-date-year'] === '' %}nhsuk-input--error{% endif %}"
+                                                id="target-date-year" name="target-date-year" type="text"
+                                                pattern="[0-9]*" inputmode="numeric"
+                                                value="{% if data['target-date-year'] %}{{ data['target-date-year'] }}{% endif %}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                            Continue
+                        </button>
+
+                    </div>
+                </div>
+                <!-- End of card -->
+
+            </fieldset>
+        </form>
+        <!-- End of form-->
+
+        <a href="../index" class="nhsuk-link">Cancel</a>
+    </div>
+</div>
+<!-- End of create a claim -->
+
+
+{% endblock %}
+<!-- End of central content -->
