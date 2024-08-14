@@ -1,0 +1,1001 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    {
+    name: 'Summary',
+    path: '/alpha/version-10/claims/claim/{{ claim.claimid }}/active-invoices-uploaded'
+    },
+    {
+    name: 'Invoices',
+    path: '/alpha/version-10/claims/invoices/{{ claim.claimid }}/full-invoice-list',
+    active: true
+    },
+    {
+        name: 'Contestations',
+        path: ''
+        },
+        {
+        name: 'Notes',
+        path: ''
+        },
+    {
+    name: 'History',
+    path: ''
+    }
+    ]
+    %}
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+      In /views/layout.html you can:
+        - change the header and footer 
+        - add custom CSS and JavaScript
+    -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Invoice details - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block ClaimId %}
+{{ claimid }}
+{% endblock %}
+
+{% block submittingCountry %}
+{{ country }}
+{% endblock %}
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../index">Claims</a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of message block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="border-color:#ffeb3b;">
+            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                Check invoice
+            </h2>
+            <div class="nhsuk-error-summary__body">
+                <p>
+                    The system has not been able to match this invoice to an OHS record.</p> 
+<p>You can search for a matching OHS person record using the invoice details. </p>
+<p>If you find a matching OHS person record, you can assign it  to the invoice.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of message block -->
+
+<!-- Start of back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="../../full-invoice-list-search-results">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" height="24" width="24">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back to invoice search results</a>
+        </div>
+    </div>
+</div>
+<!-- End of back link -->
+
+<!-- Start of header block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-9">
+            Invoice details from {{ invoice.country }}
+        </h1>
+    </div>
+    <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Mark complete
+        </button>
+    </div>
+</div>
+<!-- End of header block -->
+
+<!-- Start of key information box-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Invoice ID
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            {{ invoice.invoiceid }}
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Invoice reference
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            {{ invoice.invoicereference }}
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Current status
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <strong class="nhsuk-tag nhsuk-tag--yellow">
+                                {{ invoice.status }}
+                            </strong>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of key information box -->
+
+<!-- Start of tabs-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+            <h2 class="nhsuk-tabs__title">
+                Contents
+            </h2>
+
+            <!-- Start of tab titles -->
+            <ul class="nhsuk-tabs__list">
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#summary">
+                        Summary
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#notes">
+                        Notes
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#history">
+                        History
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                    <a class="nhsuk-tabs__tab" href="#import">
+                        Imported invoice
+                    </a>
+                </li>
+            </ul>
+            <!-- End of tab titles -->
+
+            <!-- *** Start of summary tab content *** -->
+            <div class="nhsuk-tabs__panel" id="summary">
+
+                <!-- Start of header block -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">Summary</h2>
+                    </div>
+                </div>
+                <!-- End of header block -->
+
+                <!-- Start of status -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <div class="nhsuk-card" id="status">
+                            <div class="nhsuk-card__content nhsuk-u-padding-bottom-0">
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
+                                            Status breakdown
+                                        </h3>
+                                    </div>
+                                </div>
+                                <hr style="margin:0px 0px 20px 0px;">
+
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-one-third">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                                Accepted amount
+                                            </label>
+                                            <input class="nhsuk-input " id="accepted" name="accepted" type="text"
+                                                value="{{ invoice.amounts.accepted }}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-grid-column-one-third">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                                Contested amount
+                                            </label>
+                                            <input class="nhsuk-input " id="contested" name="contested" type="text"
+                                                value="{{ invoice.amounts.contested }}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-grid-column-one-third">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="withdrawn">
+                                                Withdrawn amount
+                                            </label>
+                                            <input class="nhsuk-input " id="withdrawn" name="withdrawn" type="text"
+                                                value="{{ invoice.amounts.withdrawn }}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                for="contestation-reason">
+                                                Contestation reason
+                                            </label>
+                                            <div class="nhsuk-hint" id="contact-hint">
+                                            Select a reason or select <strong>None - invoice accepted</strong>.
+                                            </div>
+                                            <select class="nhsuk-select nhsuk-u-width-full" id="contestation-reason"
+                                                name="contestation-reason">
+                                                {% for reason in contestationReasons %}
+                                                <option value="{{ reason }}" {% if invoice.contestationreason == reason %}selected{% endif %}>{{ reason }}</option>
+                                                {% endfor %}
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                </fieldset>
+                                </form>
+                                <br />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of status -->
+
+                <!-- Start of treatment and entitlement details -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <ul class="nhsuk-grid-row nhsuk-card-group">
+                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+                                <div class="nhsuk-card">
+                                    <div class="nhsuk-card__content nhsuk-card__content">
+                                        <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-2">
+                                            Invoice period and amount
+                                        </h3>
+                                        <hr style="margin:0px 0px 20px 0px;">
+                                        <dl class="nhsuk-summary-list">
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Start date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {{ invoice.startdate }}
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    End date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {{ invoice.enddate }}
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Total amount
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {{ invoice.amount }}
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+                                <div class="nhsuk-card ">
+                                    <div class="nhsuk-card__content nhsuk-card__content">
+                                        <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-2">
+                                            Entitlement details
+                                        </h3>
+                                        <hr style="margin:0px 0px 20px 0px;">
+                                        <dl class="nhsuk-summary-list">
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Type of entitlement
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {{ invoice.entitlement }}
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Start date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {{ invoice.person.entitlements[0].start.formatted }}
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    End date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {{ invoice.person.entitlements[0].end.formatted }}
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Issue date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {{ invoice.person.entitlements[0].issued.formatted }}
+
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- End of claim and entitlement details -->
+
+                <!-- Start person details sent by country -->
+                <div class="nhsuk-grid-row" id="person-details">
+                    <div class="nhsuk-grid-column-full">
+                        <!-- Start card -->
+                        <div class="nhsuk-card">
+                            <div class="nhsuk-card__content">
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
+                                            Person details
+                                        </h3>
+                                        <hr style="margin:0px 0px 20px 0px;">
+                                    </div>
+                                </div>
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-one-half">
+                                        <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Last name
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {{ invoice.person.lastname }}
+
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    First name
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {{ invoice.person.firstname }}
+                                                </dd>
+                                            </div>
+
+                                        </dl>
+                                    </div>
+                                    <div class="nhsuk-grid-column-one-half">
+                                        <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Date of birth
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {{ invoice.person.dob.formatted }}
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Unique ID
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    {{ invoice.person.uniqueid.nino }}
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End person details -->
+
+                <!-- Start person details held by us -->
+                <div class="nhsuk-grid-row" id="person-details">
+                    <div class="nhsuk-grid-column-full">
+
+                        <!-- Start card -->
+                        <div class="nhsuk-card">
+                            <div class="nhsuk-card__content nhsuk-u-padding-bottom-2">
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
+                                           Matched OHS record
+                                            <!-- <span class="nhsuk-caption-m nhsuk-caption--bottom">Held by us</span> -->
+                                        </h3>
+                                        <hr style="margin:0px 0px 20px 0px;">
+                                    </div>
+                                </div>
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <p>No match found.</p>
+                                    </div>
+                                </div>
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <details class="nhsuk-details">
+                                            <summary class="nhsuk-details__summary">
+                                                <span class="nhsuk-details__summary-text">
+                                                    Search for a person
+                                                </span>
+                                            </summary>
+                                            <div class="nhsuk-details__text">
+
+                                                <!-- Start person search -->
+                                                <div class="nhsuk-grid-row">
+                                                    <div class=" nhsuk-grid-column-full">
+                                                        <div class="nhsuk-grid-row">
+                                                            <div class="nhsuk-grid-column-full">
+                                                                <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-2">
+                                                                    Person search
+                                                                </h3>
+                                                            </div>
+                                                        </div>
+                                                        <hr style="margin:0px 0px 12px 0px;" />
+                                                        <form action="/alpha/version-10/personSearch"
+                                                            method="post">
+
+                                                            <div class="nhsuk-hint" id="contact-hint">
+                                                                Search using a combination of personal details.
+                                                            </div>
+                                                            <div class="nhsuk-grid-row">
+                                                                <div class="nhsuk-grid-column-one-third">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                            for="last-name">
+                                                                            Last name
+                                                                        </label>
+                                                                        <input class="nhsuk-input" id="last-name"
+                                                                            name="lastName" type="text">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-grid-column-one-third">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                            for="first-name">
+                                                                            First name
+                                                                        </label>
+                                                                        <input class="nhsuk-input" id="first-name"
+                                                                            name="firstName" type="text">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="nhsuk-grid-column-one-third">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                            for="country">
+                                                                            Residential country
+                                                                        </label>
+                                                                        <input class="nhsuk-input" id="country"
+                                                                            name="residenceCountry" type="text">
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="nhsuk-grid-row">
+                                                                <div class="nhsuk-grid-column-full">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <fieldset class="nhsuk-fieldset"
+                                                                            aria-describedby="example-hint"
+                                                                            role="group">
+                                                                            <label
+                                                                                class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                                for="dob">
+                                                                                Date of birth
+                                                                            </label>
+                                                                            <div class="nhsuk-hint nhsuk-u-margin-bottom-1"
+                                                                                id="target-date-hint">
+                                                                                For example, 28 9 2023
+                                                                            </div>
+                                                                            <div class="nhsuk-date-input" id="dob">
+                                                                                <div class="nhsuk-date-input__item">
+                                                                                    <div class="nhsuk-form-group">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                                            for="dob-day">
+                                                                                            Day
+                                                                                        </label>
+                                                                                        <input
+                                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                                            id="dob-day"
+                                                                                            name="day"
+                                                                                            type="text" pattern="[0-9]*"
+                                                                                            inputmode="numeric"
+                                                                                            value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="nhsuk-date-input__item">
+                                                                                    <div class="nhsuk-form-group">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                                            for="dob-month">
+                                                                                            Month
+                                                                                        </label>
+                                                                                        <input
+                                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                                            id="dob-month"
+                                                                                            name="month"
+                                                                                            type="text" pattern="[0-9]*"
+                                                                                            inputmode="numeric"
+                                                                                            value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="nhsuk-date-input__item">
+                                                                                    <div class="nhsuk-form-group">
+                                                                                        <label
+                                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                                            for="dob-year">
+                                                                                            Year
+                                                                                        </label>
+                                                                                        <input
+                                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                                                            id="dob-year"
+                                                                                            name="year"
+                                                                                            type="text" pattern="[0-9]*"
+                                                                                            inputmode="numeric"
+                                                                                            value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="nhsuk-hint" id="contact-hint"
+                                                                style="padding-top:30px;">
+                                                                Or search using either reference, National Insurance number, NHS number, PIN, or issue number.
+                                                            </div>
+                                                            <div class="nhsuk-grid-row">
+                                                                <div class="nhsuk-grid-column-one-third">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                            for="ohs-ref">
+                                                                            Reference
+                                                                        </label>
+                                                                        <input class="nhsuk-input" id="ohs-ref"
+                                                                            name="ohs" type="text">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-grid-column-one-third">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                            for="nino">
+                                                                            National Insurance number
+                                                                        </label>
+                                                                        <input class="nhsuk-input" id="nino"
+                                                                            name="nino" type="text">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-grid-column-one-third">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                            for="nhs">
+                                                                            NHS number
+                                                                        </label>
+                                                                        <input class="nhsuk-input" id="nhs"
+                                                                            name="nhs" type="text" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-grid-column-one-third">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                            for="pin">
+                                                                            EHIC or GHIC PIN
+                                                                        </label>
+                                                                        <input class="nhsuk-input" id="pin"
+                                                                            name="pin" type="text">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-grid-column-one-third">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                            for="issue">
+                                                                            EHIC, GHIC or PRC issue number
+                                                                        </label>
+                                                                        <input class="nhsuk-input " id="issue"
+                                                                            name="issueNumber" type="text">
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+
+                                                            <button
+                                                                class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0"
+                                                                data-module="nhsuk-button" type="submit"
+                                                                style="margin-top:20px;">
+                                                                Search
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- End person search -->
+                                            </div>
+                                        </details>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End person details -->
+
+            </div>
+            <!-- *** End of summary tab *** -->
+
+            <!-- *** Start of notes tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
+                <h2 class="nhsuk-heading-l">Notes</h2>
+            </div>
+            <!-- *** End of notes tab *** -->
+
+            <!-- *** Start of history tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="history">
+                <h2 class="nhsuk-heading-l">History</h2>
+            </div>
+            <!-- *** End of history tab *** -->
+
+            <!-- *** Start of imported invoice tab *** -->
+            <div class="nhsuk-tabs__panel" id="import">
+                <h2 class="nhsuk-heading-l">Imported invoice</h2>
+                <!-- start invoice summary expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Invoice summary
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Claim reference
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ claim.claimreference }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Date claim was recorded
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ claim.datereceived }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Invoice reference
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.invoicereference }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Foreign institution name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.foreigninstitutionname }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Foreign institution ID
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.foreigninstitutionid }}
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end invoice summary expander -->
+
+                <!-- start person details expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Person details
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Last name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.lastname }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            First name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.firstname }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Date of birth
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.dob.formatted }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Unique ID
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.uniqueid.nino }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Sex
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end person details expander -->
+
+                <!-- start entitlement details expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Entitlement details
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Type of entitlement
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.entitlement }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Start date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.entitlements[0].start.formatted }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            End date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.entitlements[0].end.formatted }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Issue date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.entitlements[0].issued.formatted }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            UK institution name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.entitlements[0].debtorname }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            UK institution ID
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.entitlements[0].debtorid }}
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end entitlement details expander -->
+
+                <!-- start treatment details expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Treatment details
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Total treatment cost
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.treatments.details.totalcost }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Currency code
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.treatments.details.currencycode }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Benefits provided
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.treatments.details.benefits }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Start date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.treatments.details.start.formatted }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            End date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.treatments.details.end.formatted }}
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end treatment details expander -->
+
+                <!-- start treatment breakdown expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Treatment breakdown
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Medical care costs
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.treatments.details.medicalcarecosts }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Medicine costs
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.treatments.details.medicinecosts }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Hospitalisation costs
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.treatments.hospitalisation.cost }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Hospitalisation start date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.treatments.hospitalisation.start.formatted }}
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Hospitalisation end date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            {{ invoice.person.treatments.hospitalisation.end.formatted }}
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end treatment breakdown expander -->
+            </div>
+            <!-- *** End of imported invoice tab *** -->
+
+        </div>
+    </div>
+</div>
+<!-- End of tabs-->
+
+</div>
+</div>
+
+{% endblock %}
+<!-- End of central content -->
