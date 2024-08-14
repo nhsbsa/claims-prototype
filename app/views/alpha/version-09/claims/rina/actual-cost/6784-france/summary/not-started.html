@@ -69,7 +69,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
         </h1>
       </div>
       <div class="nhsuk-grid-column-one-third">
-        <a href="../invoices/upload/index">
+        <a href="../invoices/upload/xml/index">
           <button style="float:right;" class="nhsuk-button" data-module="nhsuk-button" type="submit">
             Add invoices
           </button>
@@ -112,35 +112,27 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               <div class="nhsuk-grid-column-one-half">
                 <dl class="nhsuk-summary-list">
 
-                  <!-- Sub reference -->
-                  {% if data['type'] %}
-                  {% if data['type'] === 'Supplementary' %}
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Sub-reference
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      {% if data['subref'] %}
-                      {{ data['subref'] }}
-                      {% else %}
-                      -
-                      {% endif %}
-                    </dd>
-                    <dd class="nhsuk-summary-list__actions"></dd>
-                  </div>
-                  {% endif %}
-                  {% endif %}
-
                   <!-- Country -->
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">
                       Country
                     </dt>
                     <dd class="nhsuk-summary-list__value">
-                      {% if data['country'] %}
-                      {{ data['country'] }}
-                      {% else %}
                       France
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions"></dd>
+                  </div>
+
+                  <!-- Period of claim -->
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Period
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {% if data['period'] %}
+                      {{ data['period'] }}
+                      {% else %}
+                      First half year
                       {% endif %}
                     </dd>
                     <dd class="nhsuk-summary-list__actions"></dd>
@@ -156,21 +148,6 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                       {{ data['financial-year'] }}
                       {% else %}
                       2023
-                      {% endif %}
-                    </dd>
-                    <dd class="nhsuk-summary-list__actions"></dd>
-                  </div>
-
-                  <!-- Claim type -->
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Claim type
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      {% if data['type'] %}
-                      {{ data['type'] }}
-                      {% else %}
-                      Main
                       {% endif %}
                     </dd>
                     <dd class="nhsuk-summary-list__actions"></dd>

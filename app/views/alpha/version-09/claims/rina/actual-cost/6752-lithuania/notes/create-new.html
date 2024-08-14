@@ -72,7 +72,7 @@ Contestations - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-        <form action="index" method="post">
+        <form action="../../../../createNote" method="post">
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                 <h1 class="nhsuk-fieldset__heading">
                     <span class="nhsuk-caption-l">Notes</span>
@@ -84,14 +84,14 @@ Contestations - Manage incoming international healthcare claims - NHSBSA
                 <label class="nhsuk-label" for="title">
                     Title
                 </label>
-                <input class="nhsuk-input" id="title" name="title" type="text">
+                <input class="nhsuk-input" id="title" name="notes[][title]" type="text">
             </div>
 
             <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="note">
                     Note
                 </label>
-                <textarea class="nhsuk-textarea" id="note" name="note" rows="5" aria-describedby="note-hint"></textarea>
+                <textarea class="nhsuk-textarea" id="message" name="notes[][message]" rows="5" aria-describedby="note-hint"></textarea>
             </div>
 
             <button class="nhsuk-button" data-module="nhsuk-button" type="submit">

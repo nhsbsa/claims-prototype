@@ -116,7 +116,6 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-id">
               Invoice ID
             </label>
-
             <input class="nhsuk-input" id="invoice-id" name="invoiceID" type="text"
             {% if data['invoiceID'] %}value="{{ data['invoiceID'] }}"{% endif %}>
           </div>
@@ -126,7 +125,6 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-ref">
               Invoice reference
             </label>
-
             <input class="nhsuk-input" id="invoice-ref" name="invoiceReference" type="text" 
             {% if data['invoiceReference'] %}value="{{ data['invoiceReference'] }}"{% endif %}>
           </div>
@@ -136,10 +134,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <label class="nhsuk-label nhsuk-u-font-weight-bold" for="last-name">
               Last name
             </label>
-
             <input class="nhsuk-input" id="last-name" name="lastName" type="text" 
             {% if data['lastName'] %}value="{{ data['lastName'] }}"{% endif %}>
-
           </div>
         </div>
         <div class="nhsuk-grid-column-one-quarter">
@@ -147,10 +143,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <label class="nhsuk-label nhsuk-u-font-weight-bold" for="first-name">
               First name
             </label>
-
             <input class="nhsuk-input" id="first-name" name="firstName" type="text"
             {% if data['firstName'] %}value="{{ data['firstName'] }}"{% endif %}>
-
           </div>
         </div>
       </div>
@@ -469,7 +463,6 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                 </tr>
               </thead>
 
-
               {% for result in searchResults %}
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
@@ -512,7 +505,6 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                 {% endif %}
               </tbody>
             </table>
-
           </div>
         </div>
         <!-- End of table data -->

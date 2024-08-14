@@ -52,19 +52,10 @@
                     </button>
                 </p>
                 <h3 class="nhsuk-heading-s" style="padding-top:26px; padding-left:32px; padding-right:32px; padding-bottom: 0; margin-bottom:0">
-                    Claim ID: 
-                    {% if claim.claimid %}
-                    {{ claim.claimid }}
-                    {% else %}
-                    {{ claimid }}
-                    {% endif %}
+                    Claim ID: {% block ClaimId %}6784{% endblock %}
                 </h3>
                 <p style="padding-top:0; padding-left:32px; padding-right:32px; padding-bottom: 0;">
-                    {% if claim.country %}
-                    {{ claim.country }}
-                    {% else %}
-                    {{ country }}
-                    {% endif %}
+                    {% block submittingCountry %}France{% endblock %}
                 </p>
 
                 <ul class="nhsuk-header__navigation-list">

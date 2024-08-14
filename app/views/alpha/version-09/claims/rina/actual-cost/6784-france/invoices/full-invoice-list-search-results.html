@@ -109,9 +109,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
               Invoice ID
             </label>
             <input class="nhsuk-input" id="invoice-id" name="invoice-id" type="text" {% if data['invoice-id']
-
-              %}value="{{ data['invoice-id'] }}" {% else %}value="01554" {% endif %}>
-
+              %}value="{{ data['invoice-id'] }}" {% else %}value="20001554" {% endif %}>
           </div>
         </div>
         <div class="nhsuk-grid-column-one-quarter">
@@ -189,9 +187,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 results of 1</h3>
             <p class="nhsuk-u-margin-bottom-2">
               <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-
-                01554
-
+                20001554
               </strong>
               {% else %}
             <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 0 results of 0</h3>
@@ -203,9 +199,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 results of 1</h3>
             <p class="nhsuk-u-margin-bottom-2">
               <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-
-                01554
-
+                20001554
               </strong>
               {% endif %}
 
@@ -255,9 +249,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-grid-row">
 
                   <!-- Start filter by entitlement -->
-
-                  <div class="nhsuk-grid-column-one-third">
-
+                  <div class="nhsuk-grid-column-one-quarter">
                     <div class="nhsuk-form-group">
                       <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
@@ -308,9 +300,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                   <!-- End filter by entitlement -->
 
                   <!-- Start filter by status-->
-
-                  <div class="nhsuk-grid-column-one-third">
-
+                  <div class="nhsuk-grid-column-one-quarter">
                     <div class="nhsuk-form-group">
                       <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
@@ -360,10 +350,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                   </div>
                   <!-- End filter by status -->
 
-
-                  <!-- Start sort by and sort order -->
-                  <div class="nhsuk-grid-column-one-third">
-
+                  <!-- Start sort by -->
+                  <div class="nhsuk-grid-column-one-quarter">
                     <div class="nhsuk-form-group nhsuk-u-padding-bottom-5">
                       <fieldset class="nhsuk-fieldset">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
@@ -403,7 +391,11 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                         </div>
                       </fieldset>
                     </div>
+                  </div>
+                  <!-- End sort by -->
 
+                  <!-- Start sort order -->
+                  <div class="nhsuk-grid-column-one-quarter">
                     <div class="nhsuk-form-group">
                       <fieldset class="nhsuk-fieldset">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
@@ -430,8 +422,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                       </fieldset>
                     </div>
                   </div>
-                  <!-- End sort by and sort order -->
-
+                  <!-- End sort order -->
                   <div class="nhsuk-grid-column-full">
                     <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
                       Apply filters
@@ -478,9 +469,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
               </thead>
 
               {% if data['invoice-id'] %}
-
-              {% if data['invoice-id'] === '01554' %}
-
+              {% if data['invoice-id'] === '20001554' %}
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
@@ -500,9 +489,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>
-                    {% if data['01554-status'] %}
-                    {{data['01554-status'] }}
-
+                    {% if data['20001554-status'] %}
+                    {{data['20001554-status'] }}
                     {% else %}
                     To check
                     {% endif %}
@@ -510,13 +498,12 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
 
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">View </span>
-                    {% if data['01554-status'] and data['01554-status'] === 'Accepted' %}
-                    <a href="details/01554/03-accepted?message=Hide">View invoice</a>
-                    {% elif data['01554-status'] and data['01554-status'] === 'Contested'  %}
-                    <a href="details/01554/03-contested?message=Hide">View invoice</a>
+                    {% if data['20001554-status'] and data['20001554-status'] === 'Accepted' %}
+                    <a href="details/20001554/03-accepted?message=Hide">View invoice</a>
+                    {% elif data['20001554-status'] and data['20001554-status'] === 'Contested'  %}
+                    <a href="details/20001554/03-contested?message=Hide">View invoice</a>
                     {% else %}
-                    <a href="details/01554/01-to-check">View invoice</a>
-
+                    <a href="details/20001554/01-to-check">View invoice</a>
                     {% endif %}
                   </td>
 
@@ -531,9 +518,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <tbody class="nhsuk-table__body">
               <tr role="row" class="nhsuk-table__row">
                 <td role="cell" class="nhsuk-table__cell">
-
-                  <span class="nhsuk-table-responsive__heading">Invoice reference </span>01554
-
+                  <span class="nhsuk-table-responsive__heading">Invoice reference </span>20001554
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading">Invoice reference </span>0039795410
@@ -549,8 +534,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading">Status </span>
-                  {% if data['01554-status'] %}
-                  {{data['01554-status'] }}
+                  {% if data['20001554-status'] %}
+                  {{data['20001554-status'] }}
                   {% else %}
                   To check
                   {% endif %}
@@ -558,13 +543,12 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
 
                 <td role="cell" class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading">View </span>
-      {% if data['01554-status'] and data['01554-status'] === 'Accepted' %}
-                  <a href="details/01554/03-accepted?message=Hide">View invoice</a>
-                  {% elif data['01554-status'] and data['01554-status'] === 'Contested'  %}
-                  <a href="details/01554/03-contested?message=Hide">View invoice</a>
+                  {% if data['20001554-status'] and data['20001554-status'] === 'Accepted' %}
+                  <a href="details/20001554/03-accepted?message=Hide">View invoice</a>
+                  {% elif data['20001554-status'] and data['01554-status'] === 'Contested'  %}
+                  <a href="details/20001554/03-contested?message=Hide">View invoice</a>
                   {% else %}
-                  <a href="details/01554/01-to-check">View invoice</a>
-
+                  <a href="details/20001554/01-to-check">View invoice</a>
                   {% endif %}
                 </td>
               </tr>
