@@ -74,26 +74,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 {% block content %}
 
 <style>
-    .app-link--copy,
-    .app-link--copy:link,
-    .app-link--copy:active,
-    .app-link--copy:visited,
-    .app-link--copy:hover {
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        border-bottom-color: #007f3b;
-        box-shadow: 0 2px 0 #007f3b;
-        margin-bottom: 16px;
-        text-transform: none;
-        background-color: #fff;
-        border: 1px solid #007f3b;
-        color: #007f3b;
-        font-size: 16px;
-        font-weight: 400;
-        padding: 4px 10px;
-        text-align: center;
-        text-decoration: none;
-    }
+
 
     .nhsuk-card--secondary {
         background: rgba(0, 0, 0, 0);
@@ -110,25 +91,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
     }
 </style>
 
-<!-- Start of message block -->
-<!-- <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="border-color:#ffeb3b;">
-            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                Check invoice
-            </h2>
-            <div class="nhsuk-error-summary__body">
-                <p>
-                    The system has not been able to match this invoice to an OHS record.</p> 
-<p>You can search for a matching OHS person record using the invoice details. </p>
-<p>If you find a matching OHS person record, you can assign it  to the invoice.
-                </p>
 
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- End of message block -->
 
 <!-- Start of back link -->
 <div class="nhsuk-grid-row">
@@ -158,30 +121,15 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 </div>
 <!-- End of header block -->
 
-
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-hint" id="example-with-hint-text-hint">
-            Search for a person to match to the invoice. You can use the invoice details to help you find a match.
-        </div>
-    </div>
-</div>
-
-
-
-
 <!-- Start person search -->
 <div class="nhsuk-grid-row" id="search-criteria">
     <div class="nhsuk-grid-column-three-quarters">
 
-
-
-        <!-- Start search criteria expander -->
+        <!-- Start search for a person expander -->
         <details class="nhsuk-details nhsuk-expander">
             <summary class="nhsuk-details__summary">
                 <span class="nhsuk-details__summary-text">
-                    Search criteria
+                    Search for a person
                 </span>
             </summary>
             <div class="nhsuk-details__text">
@@ -189,9 +137,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     <div class=" nhsuk-grid-column-full">
 
                         <form action="03-person-search-results#search-heading" method="post">
-
+                            <div class="nhsuk-hint nhsuk-u-margin-bottom-6" id="search-hint-text">
+                                Search for a OHS person record to match to the invoice. You can use the invoice details
+                                to help you find a
+                                match. You should search using as much criteria as possible to get the most accurate
+                                search results.
+                            </div>
                             <div class="nhsuk-hint" id="contact-hint">
-                                Search using a combination of person details fields.
+                                Search using a combination of personal detail fields.
                             </div>
 
                             <div class="nhsuk-form-group">
@@ -269,10 +222,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                             <div class="nhsuk-form-group">
                                 <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
-                                    Person unique ID
+                                    PIN
                                 </label>
                                 <div class="nhsuk-hint">
-                                    Reference, National insurance number or NHS number.
+                                    Reference, National Insurance number or NHS number.
                                 </div>
                                 <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contested" name="contested"
                                     type="text">
@@ -288,18 +241,18 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contested" name="contested"
                                     type="text">
                             </div>
-                            
+
                             <button class="nhsuk-button nhsuk-button nhsuk-u-margin-bottom-3" data-module="nhsuk-button"
                                 type="submit" style="margin-top:20px;">
                                 Search
-                        </button>
+                            </button>
 
                         </form>
                     </div>
                 </div>
             </div>
         </details>
-        <!-- End search criteria expander-->
+        <!-- End search for a person expander-->
 
 
 
@@ -312,7 +265,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     <div class="nhsuk-grid-column-two-thirds">
                       <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 10 results of 12</h3>
                       <strong class="nhsuk-tag nhsuk-tag--aqua-green">Stephenson</strong>
-                            <strong class="nhsuk-tag nhsuk-tag--aqua-green">10 January 1981</strong>
+                            <strong class="nhsuk-tag nhsuk-tag--aqua-green">10 Jan 1981</strong>
                     </div>
                     <div class="nhsuk-grid-column-one-third">
                       <div class="nhsuk-form-group" style="float:right;">
@@ -383,7 +336,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                             name="sort-by" type="radio" value="nino">
                                                         <label class="nhsuk-label nhsuk-radios__label"
                                                             for="sort-by-nino">
-                                                            NINO
+                                                            NI number
                                                         </label>
                                                     </div>
                                                     <div class="nhsuk-radios__item">
@@ -484,7 +437,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         Date of birth
                                     </th>
                                     <th role="columnheader" class="" scope="col">
-                                        NINO
+                                        NI number
                                     </th>
                                     <th role="columnheader" class="" scope="col">
                                         Reference
@@ -510,7 +463,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             name</span>Bartholomew
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 January 1981
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 Jan 1981
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
                                         <span class="nhsuk-table-responsive__heading">National Insurance number
@@ -542,7 +495,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             name</span>Bernadette
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 January 1981
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 Jan 1981
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
                                         <span class="nhsuk-table-responsive__heading">National Insurance number
@@ -575,7 +528,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             name</span>Gabriella
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 January 1981
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 Jan 1981
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
                                         <span class="nhsuk-table-responsive__heading">National Insurance number
@@ -609,7 +562,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             name</span>Jacqueline
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 January 1981
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 Jan 1981
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
                                         <span class="nhsuk-table-responsive__heading">National Insurance number
@@ -641,7 +594,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             name</span>Matthew
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 January 1981
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 Jan 1981
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
                                         <span class="nhsuk-table-responsive__heading">National Insurance number
@@ -671,7 +624,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             name</span>Montgomery
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 January 1981
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 Jan 1981
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
                                         <span class="nhsuk-table-responsive__heading">National Insurance number
@@ -700,7 +653,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             name</span>Nathaniel
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 January 1981
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 Jan 1981
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
                                         <span class="nhsuk-table-responsive__heading">National Insurance number
@@ -732,7 +685,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             name</span>Kaleigh
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 January 1981
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 Jan 1981
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
                                         <span class="nhsuk-table-responsive__heading">National Insurance number
@@ -767,7 +720,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             name</span>Kaleigh
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 August 1981
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 Jan 1981
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
                                         <span class="nhsuk-table-responsive__heading">National Insurance number </span>
@@ -812,7 +765,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             name</span>Theodora
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
-                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 January 1981
+                                        <span class="nhsuk-table-responsive__heading">DOB</span>10 Jan 1981
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell" style="vertical-align: middle;">
                                         <span class="nhsuk-table-responsive__heading">National Insurance number
@@ -912,13 +865,12 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
 
     <!-- Start of invoice details from submitting country -->
-    <!-- Start of invoice details from submitting country -->
     <div class="nhsuk-grid-column-one-quarter">
 
-        <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">
+        <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-0">
             Invoice details from France
-            <span class="nhsuk-caption-m nhsuk-caption--bottom">Invoice reference: 0039795410</span>
         </h2>
+        <span class="nhsuk-caption-m nhsuk-u-margin-bottom-1">Invoice reference: 0039795410</span>
         <hr style="margin:0px 0px 30px 0px;">
 
         <!-- Start person details-->
@@ -950,12 +902,12 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Date of birth
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            10 January 1981
+                            10 Jan 1981
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Unique ID
+                            PIN in UK
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             JM 23 66 19 A
@@ -997,7 +949,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Start date
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            23 March 2021
+                            23 Mar 2021
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -1005,7 +957,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             End date
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            22 March 2026
+                            22 Mar 2026
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -1013,7 +965,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Issue date
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            23 March 2021
+                            23 Mar 2021
                         </dd>
                     </div>
                 </dl>
@@ -1034,7 +986,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Start date
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            1 June 2023
+                            01 Jun 2023
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -1042,7 +994,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             End date
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            2 June 2023
+                            02 Jun 2023
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -1054,13 +1006,11 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </dd>
                     </div>
                 </dl>
-
             </div>
         </div>
         <!-- End invoice period and amount-->
 
     </div>
-    <!-- End of invoice details from submitting country -->
     <!-- End of invoice details from submitting country -->
 
 

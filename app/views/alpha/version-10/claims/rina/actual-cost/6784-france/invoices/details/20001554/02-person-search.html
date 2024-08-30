@@ -1,7 +1,5 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
-
-
 {% set mainNavigation = [
 {
 name: 'Summary',
@@ -68,33 +66,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <!-- End of breadcrumb -->
 {% endblock %}
 
-
-
 <!-- Start of central content -->
 {% block content %}
 
 <style>
-    .app-link--copy,
-    .app-link--copy:link,
-    .app-link--copy:active,
-    .app-link--copy:visited,
-    .app-link--copy:hover {
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        border-bottom-color: #007f3b;
-        box-shadow: 0 2px 0 #007f3b;
-        margin-bottom: 16px;
-        text-transform: none;
-        background-color: #fff;
-        border: 1px solid #007f3b;
-        color: #007f3b;
-        font-size: 16px;
-        font-weight: 400;
-        padding: 4px 10px;
-        text-align: center;
-        text-decoration: none;
-    }
-
     .nhsuk-card--secondary {
         background: rgba(0, 0, 0, 0);
         border-bottom: 4px solid #d8dde0;
@@ -135,29 +110,17 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
         </h1>
     </div>
 </div>
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-hint" id="example-with-hint-text-hint">
-            Search for a person to match to the invoice. You can use the invoice details to help you find a match.
-        </div>
-    </div>
-</div>
 <!-- End of header block -->
 
 <!-- Start person search -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-        <!-- <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-            Search for a person
-        </h2> -->
-
-        <!-- Start search criteria expander -->
+        <!-- Start search for a person expander -->
         <details class="nhsuk-details nhsuk-expander" open>
             <summary class="nhsuk-details__summary">
                 <span class="nhsuk-details__summary-text">
-                    Search criteria
+                    Search for a person
                 </span>
             </summary>
             <div class="nhsuk-details__text">
@@ -165,9 +128,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     <div class=" nhsuk-grid-column-full">
 
                         <form action="03-person-search-results#search-heading" method="post">
-
+                            <div class="nhsuk-hint nhsuk-u-margin-bottom-6" id="search-hint-text">
+                                Search for a OHS person record to match to the invoice. You can use the invoice details
+                                to help you find a
+                                match. You should search using as much criteria as possible to get the most accurate
+                                search results.
+                            </div>
                             <div class="nhsuk-hint" id="contact-hint">
-                                Search using a combination of person details fields.
+                                Search using a combination of personal detail fields.
                             </div>
 
                             <div class="nhsuk-form-group">
@@ -245,10 +213,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                             <div class="nhsuk-form-group">
                                 <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
-                                    Person unique ID
+                                    PIN in UK
                                 </label>
                                 <div class="nhsuk-hint">
-                                    Reference, National insurance number or NHS number.
+                                    Reference, National Insurance number or NHS number.
                                 </div>
                                 <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contested" name="contested"
                                     type="text">
@@ -264,28 +232,27 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contested" name="contested"
                                     type="text">
                             </div>
-                            
+
                             <button class="nhsuk-button nhsuk-button nhsuk-u-margin-bottom-3" data-module="nhsuk-button"
                                 type="submit" style="margin-top:20px;">
                                 Search
-                        </button>
+                            </button>
 
                         </form>
                     </div>
                 </div>
             </div>
         </details>
-        <!-- End search criteria expander-->
+        <!-- End search for a person expander-->
     </div>
-
 
     <!-- Start of invoice details from submitting country -->
     <div class="nhsuk-grid-column-one-quarter">
 
-        <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">
+        <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-0">
             Invoice details from France
-            <span class="nhsuk-caption-m nhsuk-caption--bottom">Invoice reference: 0039795410</span>
         </h2>
+        <span class="nhsuk-caption-m nhsuk-u-margin-bottom-1">Invoice reference: 0039795410</span>
         <hr style="margin:0px 0px 30px 0px;">
 
         <!-- Start person details-->
@@ -317,12 +284,12 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Date of birth
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            10 January 1981
+                            10 Jan 1981
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Unique ID
+                            PIN in UK
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             JM 23 66 19 A
@@ -364,7 +331,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Start date
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            23 March 2021
+                            23 Mar 2021
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -372,7 +339,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             End date
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            22 March 2026
+                            22 Mar 2026
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -380,7 +347,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Issue date
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            23 March 2021
+                            23 Mar 2021
                         </dd>
                     </div>
                 </dl>
@@ -401,7 +368,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Start date
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            1 June 2023
+                            01 Jun 2023
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -409,7 +376,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             End date
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            2 June 2023
+                            02 Jun 2023
                         </dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
@@ -421,7 +388,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </dd>
                     </div>
                 </dl>
-
             </div>
         </div>
         <!-- End invoice period and amount-->
