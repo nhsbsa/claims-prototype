@@ -72,10 +72,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
         <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert"
             style="border-color:#007f3b;">
             <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                Invoice accepted
+                Invoice contested
             </h2>
             <div class="nhsuk-error-summary__body">
-                <p class="nhsuk-u-margin-bottom-2">Your changes have been saved and the invoice has been accepted.</p>
+                <p class="nhsuk-u-margin-bottom-2">Your changes have been saved and the invoice has been contested.</p>
             </div>
         </div>
     </div>
@@ -139,8 +139,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Current status
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            <strong class="nhsuk-tag nhsuk-tag--green">
-                                Accepted
+                            <strong class="nhsuk-tag nhsuk-tag--red">
+                                Contested
                             </strong>
                         </dd>
                     </div>
@@ -211,7 +211,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                                 <div class="nhsuk-card nhsuk-u-margin-bottom-0">
                                                     <div class="nhsuk-card__content">
-                                                        <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">2134.75 <span
+                                                        <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">0 <span
                                                                 class="nhsuk-u-visually-hidden">Accepted amount</span>
                                                         </p>Accepted amount
 
@@ -224,7 +224,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                                 <div class="nhsuk-card nhsuk-u-margin-bottom-0">
                                                     <div class="nhsuk-card__content">
-                                                        <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">0 <span
+                                                        <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">2134.75 <span
                                                                 class="nhsuk-u-visually-hidden">Contested amount</span>
                                                         </p>Contested amount
 
@@ -247,6 +247,12 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             </li>
 
                                         </ul>
+                                    </div>
+                                    <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <p class="nhsuk-body nhsuk-u-margin-bottom-1" style="padding:18px 16px 0px 16px;"><span class="nhsuk-u-font-weight-bold">Contestation reason:</span> Unable to
+                                            identify the person from the information provided. Please check.</p>
+                                    </div>
                                     </div>
                                 </div>
 
@@ -423,79 +429,11 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Matched OHS person record
                         </h3>
 
-                        <div class="nhsuk-card nhsuk-u-margin-bottom-2">
+                        <div class="nhsuk-card ">
                             <div class="nhsuk-card__content nhsuk-card__content" style="padding:16px;">
-
-
-                                <div class="nhsuk-grid-row">
-                                    <div class="nhsuk-grid-column-two-thirds">
-
-                                        <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-5">
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Last name
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    Stephenson
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    First name
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    Kaleigh
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Date of birth
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    10 January 1981
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    OHS reference
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    25059883
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    National Insurance number
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    JM 23 66 19 A
-                                                </dd>
-                                            </div>
-                                        </dl>
-                                        <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3"
-                                             data-module="nhsuk-button"
-                                            type="submit">
-                                            View person record
-                                        </button>
-
-                                    </div>
-                                    <div class="nhsuk-grid-column-one-half">
-
-
-
-                                        <!-- <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3"
-                                            style="display:inline; width:80%; float:right;" data-module="nhsuk-button"
-                                            type="submit">
-                                            View person record
-                                        </button> -->
-
-                                    </div>
-                                </div>
-
-
+                                <p>No match found.</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <!-- End of matched OHS record -->
@@ -530,36 +468,21 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     <div class="nhsuk-grid-column-two-thirds">
                         <div class="nhsbsa-timeline">
 
-                            <!-- Start auto-validation -->
+                            <!-- Start invoice contested -->
                             <div class="nhsbsa-timeline__item nhsuk-u-margin-bottom-6">
                                 <div class="nhsbsa-timeline__header">
-                                    <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Automatic validation complete
-                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
-                                            System</span>
-                                    </h3>
-                                    <p class="nhsuk-body nhsuk-u-margin-bottom-3">12 August 2024 at 9.47am</p>
-                                </div>
-                                <div class="nhsbsa-timeline__description">
-                                    <p class="nhsuk-body nhsuk-u-margin-bottom-2"><span
-                                            class="nhsuk-u-font-weight-bold">Status:</span> Accepted</p>
-                                </div>
-                            </div>
-                            <!-- End auto-validation -->
-
-                            <!-- Start person assigned -->
-                            <div class="nhsbsa-timeline__item nhsuk-u-margin-bottom-6">
-                                <div class="nhsbsa-timeline__header">
-                                    <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Person assigned to invoice
+                                    <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Invoice contested
                                         <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
                                             Isla Fields</span>
                                     </h3>
-                                    <p class="nhsuk-body nhsuk-u-margin-bottom-3">12 August 2024 at 9.47am</p>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-3">12 August 2024 at 11.04am</p>
                                 </div>
                                 <div class="nhsbsa-timeline__description">
                                     <p class="nhsuk-body nhsuk-u-margin-bottom-2"><span
-                                            class="nhsuk-u-font-weight-bold">First name:</span> Kaleigh</p>
-                                    <p class="nhsuk-body nhsuk-u-margin-bottom-1"><span
-                                            class="nhsuk-u-font-weight-bold">Last name:</span> Stephenson</p>
+                                        class="nhsuk-u-font-weight-bold">Status:</span> Contested</p>
+                                <p class="nhsuk-body nhsuk-u-margin-bottom-1"><span
+                                        class="nhsuk-u-font-weight-bold">Contestation reason:</span> Unable to
+                                    identify the person from the information provided. Please check.</p>
                                 </div>
                             </div>
                             <!-- End auto-person assigned -->
