@@ -32,7 +32,7 @@ def drop_tables(db_params):
         print(f"Error dropping tables: {e}")
 
 # Drop tables in local database
-# drop_tables(local_db_params)
+drop_tables(local_db_params)
 
 # Drop tables in Heroku database
 heroku_db_params = {

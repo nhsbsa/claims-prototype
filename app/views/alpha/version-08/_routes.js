@@ -334,7 +334,7 @@ router.post('/claimSearch', async (req, res) => {
             claimType ? `%${claimType}%` : null
         ];
         const result = await pool.query(query, params);
-        res.render('claims/search-results', { searchResults: result.rows, searchQuery: req.body });
+        res.render('alpha/version-08/claims/search-results', { searchResults: result.rows, searchQuery: req.body });
     } catch (err) {
         console.error('Error executing search query:', err);
         res.status(500).send('Internal Server Error');

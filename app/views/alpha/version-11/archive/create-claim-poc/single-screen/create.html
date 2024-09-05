@@ -1,0 +1,552 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Home',
+path: '/alpha/version-10/home'
+},
+{
+name: 'Claims',
+path: '/alpha/version-10/claims/index',
+active: true
+},
+{
+name: 'Contested claims',
+path: '/alpha/version-10/contestations/index'
+},
+{
+name: 'Reports',
+path: '/alpha/version-10/reports/index'
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Claim details - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../index">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                claims </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" height="24" width="24">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back</a>
+        </div>
+    </div>
+</div>
+<!-- End of back link -->
+
+<!-- Start of create a claim -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Start of form -->
+        <!-- <form action="../../create-claim-validation" method="post"> -->
+        <form action="cya" method="post">
+            <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                    <h1 class="nhsuk-fieldset__heading">
+                        <span class="nhsuk-caption-l">Create a new claim</span>
+                        Claim details
+                    </h1>
+                </legend>
+
+                <!-- Start of card -->
+                <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                    <div class="nhsuk-card__content">
+
+                        <!-- How you received the claim -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset">
+                                <legend
+                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-2">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        How you received the claim
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-radios">
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="received-rina" name="received"
+                                            type="radio" value="RINA">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="received-rina">
+                                            RINA
+                                        </label>
+                                    </div>
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="received-paper" name="received"
+                                            type="radio" value="Paper">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="received-paper">
+                                            Paper
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Date you received the claim -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Date you received the claim
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="target-date-hint">
+                                    For example, 28 9 2023
+                                </div>
+                                <div class="nhsuk-date-input" id="submission-date">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label"
+                                                for="submission-date-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="submission-date-day" name="submission-date-day" type="text"
+                                                pattern="[0-9]*" inputmode="numeric"
+                                                value="{% if data['submission-date-day'] %}{{ data['submission-date-day'] }}{% endif %}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label"
+                                                for="submission-date-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="submission-date-month" name="submission-date-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric"
+                                                value="{% if data['submission-date-month'] %}{{ data['submission-date-month'] }}{% endif %}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label"
+                                                for="submission-date-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                id="submission-date-year" name="submission-date-year" type="text"
+                                                pattern="[0-9]*" inputmode="numeric"
+                                                value="{% if data['submission-date-year'] %}{{ data['submission-date-year'] }}{% endif %}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Target date to complete claim -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Target date to complete the claim
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="target-date-hint">
+                                    Internal deadline to complete the claim.<br />
+                                    For example, 28 9 2023
+                                </div>
+                                <div class="nhsuk-date-input" id="target-date">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="target-date-day" name="target-date-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                value="{% if data['target-date-day'] %}{{ data['target-date-day'] }}{% endif %}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="target-date-month" name="target-date-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric"
+                                                value="{% if data['target-date-month'] %}{{ data['target-date-month'] }}{% endif %}">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                id="target-date-year" name="target-date-year" type="text"
+                                                pattern="[0-9]*" inputmode="numeric"
+                                                value="{% if data['target-date-year'] %}{{ data['target-date-year'] }}{% endif %}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Country submitting the claim -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="select-autocomplete">
+                                Country submitting the claim
+                            </label>
+                            <div class="nhsuk-u-width-two-thirds">
+                                <select name="country" id="select-autocomplete" value="">
+                                    {% if data['country'] %}
+                                    <option value="{{ data['country'] }}" selected>{{ data['country'] }}</option>
+                                    {% endif %}
+                                    <option value=""></option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Bulgaria">Bulgaria</option>
+                                    <option value="Croatia">Croatia</option>
+                                    <option value="Cyprus">Cyprus</option>
+                                    <option value="Czech Republic">Czech Republic</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Estonia">Estonia</option>
+                                    <option value="Finland">Finland</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Greece">Greece</option>
+                                    <option value="Hungary">Hungary</option>
+                                    <option value="Iceland">Iceland</option>
+                                    <option value="Ireland">Ireland</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Latvia">Latvia</option>
+                                    <option value="Liechtenstein">Liechtenstein</option>
+                                    <option value="Lithuania">Lithuania</option>
+                                    <option value="Luxemburg">Luxemburg</option>
+                                    <option value="Malta">Malta</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Norway">Norway</option>
+                                    <option value="Poland">Poland</option>
+                                    <option value="Portugal">Portugal</option>
+                                    <option value="Romania">Romania</option>
+                                    <option value="Slovakia">Slovakia</option>
+                                    <option value="Slovenia">Slovenia</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Sweden">Sweden</option>
+                                    <option value="Switzerland">Switzerland</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Claim reference -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                                Claim reference
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
+                                value="{% if data['ref'] %}{{ data['ref'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                        <!-- Financial year of claim -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="financial-year">
+                                Financial year of the claim
+                            </label>
+                            <input class="nhsuk-input nhsuk-input--width-4" id="financial-year" name="financial-year"
+                                type="text"
+                                value="{% if data['financial-year'] %}{{ data['financial-year'] }}{% endif %}">
+                        </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+
+
+                        <!-- Article covering the claim - conditional -->
+                        <div class="nhsuk-form-group">
+
+                            <fieldset class="nhsuk-fieldset" aria-describedby="article">
+                                <legend
+                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-2">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Article covering the claim
+                                    </h1>
+                                </legend>
+
+                                <div class="nhsuk-radios nhsuk-radios--conditional">
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-actual" name="article"
+                                            type="radio" value="Actual cost">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-actual">
+                                            Article 62 - actual cost
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-average-2a" name="article" type="radio"
+                                            value="Average cost (2a)" aria-controls="conditional-average-2a" aria-expanded="false">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-average-2a">
+                                            Article 63 (2a) - average cost
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+                                        id="conditional-average-2a">
+
+                                        <div class="nhsuk-form-group">
+
+                                            <fieldset class="nhsuk-fieldset">
+                                                <label class="nhsuk-label" for="age-bracket-2a">
+                                                    Age bracket of the claim
+                                                </label>
+
+                                                <div class="nhsuk-radios">
+
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="example-divider-1"
+                                                            name="example-divider" type="radio" value="0-19">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="example-divider-1">
+                                                            0 - 19
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="example-divider-2"
+                                                            name="example-divider" type="radio"
+                                                            value="20-64">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="example-divider-2">
+                                                            20 - 64
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="example-divider-2"
+                                                            name="example-divider" type="radio"
+                                                            value="65+">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="example-divider-2">
+                                                            65 +
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="nhsuk-radios__divider">or</div>
+
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="example-divider-4"
+                                                            name="example-divider" type="radio" value="combination">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="example-divider-4">
+                                                            Combination
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </fieldset>
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-average-2b" name="article" type="radio"
+                                            value="Average cost (2b)" aria-controls="conditional-average-2b" aria-expanded="false">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
+                                            Article 63 (2b) - average cost
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+                                        id="conditional-average-2b">
+
+                                        <div class="nhsuk-form-group">
+
+                                            <fieldset class="nhsuk-fieldset">
+
+
+                                                <label class="nhsuk-label" for="phone">
+                                                    Age bracket of the claim
+                                                </label>
+
+                                                <div class="nhsuk-radios">
+
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="example-divider-1"
+                                                            name="example-divider" type="radio" value="nhsuk-login">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="example-divider-1">
+                                                            0 - 19
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="example-divider-2"
+                                                            name="example-divider" type="radio"
+                                                            value="government-verify">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="example-divider-2">
+                                                            20 - 64
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="example-divider-2"
+                                                            name="example-divider" type="radio"
+                                                            value="government-verify">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="example-divider-2">
+                                                            65 +
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="nhsuk-radios__divider">or</div>
+
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="example-divider-4"
+                                                            name="example-divider" type="radio" value="create-account">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="example-divider-4">
+                                                            Combination of age brackets
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </fieldset>
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="article-average-2b" name="article"
+                                            type="radio" value="AW03 - DA1 claims">
+                                        <label class="nhsuk-label nhsuk-radios__label" for="article-average-2b">
+                                            AW03 - DA1 claims
+                                        </label>
+                                    </div>
+
+
+
+                                </div>
+                            </fieldset>
+
+                        </div>
+
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+
+
+
+                        <!-- Type of claim -->
+                        <div class="nhsuk-form-group">
+
+                            <fieldset class="nhsuk-fieldset" aria-describedby="type-hint">
+                                <legend
+                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-2">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Type of claim
+                                    </h1>
+                                </legend>
+
+
+
+                                <div class="nhsuk-radios nhsuk-radios--conditional">
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="type-main" name="type" type="radio"
+                                            value="Main" {% if data['type']==='Main' %}checked{% endif %}>
+                                        <label class="nhsuk-label nhsuk-radios__label" for="type-main">
+                                            Main
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__item">
+                                        <input class="nhsuk-radios__input" id="type-Supplementary" name="type"
+                                            type="radio" value="Supplementary"
+                                            aria-controls="conditional-type-Supplementary" aria-expanded="false" {% if
+                                            data['type']==='Supplementary' %}checked{% endif %}>
+                                        <label class="nhsuk-label nhsuk-radios__label" for="type-Supplementary">
+                                            Supplementary
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+                                        id="conditional-type-Supplementary">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label" for="subref">
+                                                Claim sub-reference (optional)
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="subref"
+                                                name="subref" type="text"
+                                                value="{% if data['subref'] %}{{ data['subref'] }}{% endif %}">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+
+                        </div>
+
+
+
+
+                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top:12px;">
+                            Continue
+                        </button>
+
+                    </div>
+                </div>
+                <!-- End of card -->
+
+            </fieldset>
+        </form>
+        <!-- End of form-->
+    </div>
+</div>
+<!-- End of create a claim -->
+
+
+{% endblock %}
+<!-- End of central content -->
