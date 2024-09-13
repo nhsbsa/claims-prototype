@@ -322,7 +322,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                                 <option value="Double invoice [invoice number]">
                                                     Double
-                                                    invoice &ndash; enter duplicate invoice number.
+                                                    invoice &ndash; enter duplicate invoice reference.
                                                 </option>
 
                                                 <option
@@ -382,7 +382,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         <!-- Start conditional fields based on contestation reason-->
 
                                         <!-- The costs are to be settled by lump-sum as from-->
-                                        <div id="The costs are to be settled by lump-sum as from" class="inv">
+                                        <div id="The costs are to be settled by lump-sum as from [date]." class="inv">
                                             <div class="nhsuk-grid-row">
                                                 <div class="nhsuk-grid-column-one-third">
                                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
@@ -447,7 +447,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         </div>
 
                                         <!-- The costs are to be settled by lump-sum until-->
-                                        <div id="The costs are to be settled by lump-sum until" class="inv">
+                                        <div id="The costs are to be settled by lump-sum until [date]." class="inv">
                                             <div class="nhsuk-grid-row">
                                                 <div class="nhsuk-grid-column-one-third">
                                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
@@ -512,7 +512,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         </div>
 
                                         <!-- The entitlement in the state of residence started on-->
-                                        <div id="The entitlement in the state of residence started on" class="inv">
+                                        <div id="The entitlement in the state of residence started on [date]." class="inv">
                                             <div class="nhsuk-grid-row">
                                                 <div class="nhsuk-grid-column-one-third">
                                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
@@ -578,14 +578,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         </div>
 
                                         <!-- Double invoice -->
-                                        <div id="Double invoice" class="inv">
+                                        <div id="Double invoice [invoice number]" class="inv">
                                             <div class="nhsuk-grid-row">
                                                 <div class="nhsuk-grid-column-one-third">
                                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
                                                         style="margin-top:24px;">
                                                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
                                                             for="duplicate-invoice">
-                                                            Duplicate invoice number
+                                                            Duplicate invoice reference
                                                         </label>
                                                         <input class="nhsuk-input" id="duplicate-invoice"
                                                             name="duplicate-invoice" type="text">
@@ -595,7 +595,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         </div>
 
                                         <!-- The benefits seem to concern an accident at work that happened on-->
-                                        <div id="The benefits seem to concern an accident at work that happened on"
+                                        <div id="The benefits seem to concern an accident at work that happened on [date]."
                                             class="inv">
                                             <div class="nhsuk-grid-row">
                                                 <div class="nhsuk-grid-column-one-third">
@@ -661,7 +661,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         </div>
 
                                         <!-- The person died on-->
-                                        <div id="The person died on" class="inv">
+                                        <div id="The person died on [date]" class="inv">
                                             <div class="nhsuk-grid-row">
                                                 <div class="nhsuk-grid-column-one-third">
                                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
@@ -726,7 +726,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         </div>
 
                                         <!-- Claim introduced after deadline-->
-                                        <div id="Claim introduced after deadline" class="inv">
+                                        <div id="Claim introduced after deadline [date]." class="inv">
                                             <div class="nhsuk-grid-row">
                                                 <div class="nhsuk-grid-column-one-third">
                                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
@@ -791,7 +791,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         </div>
 
                                         <!-- Contestation reply received after deadline-->
-                                        <div id="Contestation reply received after deadline" class="inv">
+                                        <div id="Contestation reply received after deadline [date]." class="inv">
                                             <div class="nhsuk-grid-row">
                                                 <div class="nhsuk-grid-column-one-third">
                                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
@@ -856,7 +856,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         </div>
 
                                         <!-- Other -->
-                                        <div id="Other" class="inv">
+                                        <div id="Other [details]." class="inv">
                                             <div class="nhsuk-grid-row">
                                                 <div class="nhsuk-grid-column-full">
                                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
