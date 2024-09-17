@@ -648,36 +648,6 @@ function formatDate(date) {
     return moment(date).format('DD MMMM YYYY');
 }
 
-async function fetchInvoiceDetails(invoiceid) {
-    const invoiceQuery = `
-        SELECT
-            invoiceid,
-            claimid,
-            country,
-            invoicereference,
-            amount,
-            startdate,
-            enddate,
-            status,
-            person,
-            contestationreason,
-            amounts,
-            recorded,
-            foreigninstitutionname,
-            foreigninstitutionid,
-            CASE
-                WHEN person->'entitlements'->0->>'type' ~* '(S1|S2|DA1|GHIC|EHIC|PRC)' THEN
-                    regexp_replace(person->'entitlements'->0->>'type', '.*(S1|S2|DA1|GHIC|EHIC|PRC).*', '\\1')
-                ELSE
-                    'Unknown'
-            END AS entitlement
-        FROM invoices
-        WHERE invoiceid = $1
-    `;
-    const result = await pool.query(invoiceQuery, [invoiceid]);
-    return result.rows[0];
-}
-
 
 // Invoice Short Search
 router.post('/invoiceShortSearch', async (req, res) => {
@@ -1029,6 +999,7 @@ const getContestationReasons = () => {
 //     next();
 // });
 
+
 // Function to fetch invoice data from the database
 async function fetchInvoiceData(invoiceid) {
     const invoiceQuery = `
@@ -1046,33 +1017,103 @@ async function fetchInvoiceData(invoiceid) {
             amounts,
             recorded,
             foreigninstitutionname,
-            foreigninstitutionid,
-            CASE
-                WHEN person->'entitlements'->0->>'type' ~* '(S1|S2|DA1|GHIC|EHIC|PRC)' THEN
-                    regexp_replace(person->'entitlements'->0->>'type', '.*(S1|S2|DA1|GHIC|EHIC|PRC).*', '\\1')
-                ELSE
-                    'Unknown'
-            END AS entitlement
+            foreigninstitutionid
         FROM invoices
         WHERE invoiceid = $1
     `;
-    const result = await pool.query(invoiceQuery, [invoiceid]);
-    if (result.rows.length === 0) {
-        return null; // Invoice not found
+
+    try {
+        const result = await pool.query(invoiceQuery, [invoiceid]);
+
+        if (result.rows.length === 0) {
+            return null; // Invoice not found
+        }
+
+        const invoice = result.rows[0];
+
+        // Ensure "person" and "amounts" fields exist, or set defaults
+        invoice.amounts = invoice.amounts || { accepted: 0, contested: 0, withdrawn: 0 };
+        invoice.person = invoice.person || { entitlements: [], dob: {}, address: {}, uniqueid: {} };
+
+        // Filter entitlements to only include specific types
+        const allowedTypes = ['GHIC', 'EHIC', 'S1', 'S2', 'DA1'];
+        invoice.person.entitlements = invoice.person.entitlements.filter(entitlement => allowedTypes.includes(entitlement.type));
+
+        // Safely format the invoice dates
+        invoice.startdate = invoice.startdate ? moment(invoice.startdate).format('DD MMMM YYYY') : 'N/A';
+        invoice.enddate = invoice.enddate ? moment(invoice.enddate).format('DD MMMM YYYY') : 'N/A';
+        invoice.recorded = invoice.recorded ? moment(invoice.recorded).format('DD MMMM YYYY') : 'N/A';
+
+        // Process and format the person's entitlements
+        if (Array.isArray(invoice.person.entitlements)) {
+            invoice.person.entitlements = invoice.person.entitlements.map(entitlement => {
+                entitlement.start = entitlement.start ? formatDate(entitlement.start.day, entitlement.start.month, entitlement.start.year) : 'N/A';
+                entitlement.end = entitlement.end ? formatDate(entitlement.end.day, entitlement.end.month, entitlement.end.year) : 'N/A';
+                entitlement.issued = entitlement.issued ? formatDate(entitlement.issued.day, entitlement.issued.month, entitlement.issued.year) : 'N/A';
+                return entitlement;
+            });
+        }
+
+        // Safely format the monetary amounts
+        invoice.amounts.accepted = parseFloat(invoice.amounts.accepted || 0).toFixed(2);
+        invoice.amounts.contested = parseFloat(invoice.amounts.contested || 0).toFixed(2);
+        invoice.amounts.withdrawn = parseFloat(invoice.amounts.withdrawn || 0).toFixed(2);
+        invoice.amount = parseFloat(invoice.amount || 0).toFixed(2);
+
+        return invoice;
+
+    } catch (error) {
+        console.error('Error fetching invoice data:', error.stack);
+        throw new Error('Failed to fetch invoice data');
     }
-    const invoice = result.rows[0];
-
-    // Format the dates and amounts
-    invoice.startdate = moment(invoice.startdate).format('DD MMMM YYYY');
-    invoice.enddate = moment(invoice.enddate).format('DD MMMM YYYY');
-    invoice.recorded = moment(invoice.recorded).format('DD MMMM YYYY');
-    invoice.amounts.accepted = parseFloat(invoice.amounts.accepted).toFixed(2);
-    invoice.amounts.contested = parseFloat(invoice.amounts.contested).toFixed(2);
-    invoice.amounts.withdrawn = parseFloat(invoice.amounts.withdrawn).toFixed(2);
-    invoice.amount = parseFloat(invoice.amount).toFixed(2);
-
-    return invoice;
 }
+
+// Helper function to format dates from day, month, year
+function formatDate(day, month, year) {
+    if (!day || !month || !year) return 'Invalid Date';
+    return new Date(year, month - 1, day).toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
+}
+
+
+
+// // Helper function to format dates from day, month, year
+// function formatDate(day, month, year) {
+//     if (!day || !month || !year) return 'Invalid Date';
+//     return new Date(year, month - 1, day).toLocaleDateString('en-GB', {
+//         day: 'numeric',
+//         month: 'long',
+//         year: 'numeric'
+//     });
+// }
+
+// // Function to process person data and format dates
+// async function processPersonData(person) {
+//     if (person.dob) {
+//         // Format the date of birth
+//         person.dob.formatted = formatDate(person.dob.day, person.dob.month, person.dob.year);
+//     }
+
+//     // Format entitlements dates
+//     if (person.entitlements && Array.isArray(person.entitlements)) {
+//         person.entitlements = person.entitlements.map(entitlement => {
+//             if (entitlement.start && entitlement.end) {
+//                 entitlement.start.formatted = formatDate(entitlement.start.day, entitlement.start.month, entitlement.start.year);
+//                 entitlement.end.formatted = formatDate(entitlement.end.day, entitlement.end.month, entitlement.end.year);
+//                 if (entitlement.issued) {
+//                     entitlement.issued.formatted = formatDate(entitlement.issued.day, entitlement.issued.month, entitlement.issued.year);
+//                 }
+//             }
+//             return entitlement;
+//         });
+//     }
+
+//     return person;
+// }
+
 
 // Route to render the person search page
 router.get('/claims/invoice/person-search/:invoiceid', async (req, res) => {
@@ -1086,8 +1127,8 @@ router.get('/claims/invoice/person-search/:invoiceid', async (req, res) => {
     } 
 
     try {
-        // Fetch the invoice details from the session or database
-        const invoiceData = req.session.invoice || await fetchInvoiceData(invoiceid);
+        // Use fetchInvoiceData to get detailed invoice information
+        const invoiceData = await fetchInvoiceData(invoiceid);
         
         if (!invoiceData) {
             console.error('Invoice not found for ID:', invoiceid);
@@ -1098,220 +1139,378 @@ router.get('/claims/invoice/person-search/:invoiceid', async (req, res) => {
             invoice: invoiceData
         });
     } catch (err) {
-        console.error('Error rendering person search page:', err);
+        console.error('Error rendering person search page:', err.stack);  // Log stack trace
         res.status(500).send('Internal Server Error');
     }
 });
 
 
-// Function to fetch invoice details
-async function getInvoiceDetails(invoiceid) {
-    const query = 'SELECT * FROM invoices WHERE invoiceid = $1';
-    const result = await pool.query(query, [invoiceid]);
-    if (result.rows.length === 0) {
-        throw new Error('Invoice not found');
-    }
-    return result.rows[0];
-}
-
-// Route to handle the initial person search
-// Route to handle the initial person search
+// Route to handle the initial person search (POST)
 router.post('/personSearch', async (req, res) => {
     const {
-        lastName, firstName, day, month, year,
-        residenceCountry, ohs, nino, nhs, pin, issueNumber
+        lastName, firstName, dobDay, dobMonth, dobYear,
+        uniqueID, issueNumber, residenceCountry, invoiceid, claimid
     } = req.body;
 
-    // Ensure at least one search parameter is provided
-    if (!lastName && !firstName && !day && !month && !year && !residenceCountry && !ohs && !nino && !nhs && !pin && !issueNumber) {
-        console.error('At least one search parameter is required.');
-        return res.status(400).send('Please provide at least one search criteria.');
-    }
-
-    // Construct the query parameters for redirection
-    const searchParams = new URLSearchParams({
-        lastName: lastName?.trim() || '',
-        firstName: firstName?.trim() || '',
-        day: day || '',
-        month: month || '',
-        year: year || '',
-        residenceCountry: residenceCountry?.trim() || '',
-        ohs: ohs || '',
-        nino: nino || '',
-        nhs: nhs || '',
-        pin: pin || '',
-        issueNumber: issueNumber || '',
-        page: 1,
-        limit: 10
-    });
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const offset = (page - 1) * limit;
 
     try {
-        res.redirect(`/alpha/version-11/claims/rina/invoices/details/_02-person-search-results?${searchParams.toString()}&invoiceid=${req.body.invoiceid}`);
+        // Step 1: Fetch invoice data
+        let invoiceData = null;
+        if (invoiceid) {
+            invoiceData = await fetchInvoiceData(invoiceid);  // Fetch invoice data
+            if (!invoiceData) {
+                console.error(`Invoice with ID ${invoiceid} not found.`);
+                return res.status(404).send('Invoice not found');
+            }
+        }
+
+        // Step 2: Execute person search query
+        const query = `
+            SELECT invoices.invoiceid, 
+                   invoices.claimid,
+                   invoices.invoicereference,
+                   invoices.person->>'lastname' AS lastname,
+                   invoices.person->>'firstname' AS firstname,
+                   invoices.person->'dob'->>'day' AS dob_day,
+                   invoices.person->'dob'->>'month' AS dob_month,
+                   invoices.person->'dob'->>'year' AS dob_year,
+                   invoices.person->'uniqueid'->>'nino' AS nino,
+                   invoices.person->'uniqueid'->>'ohs' AS ohs,
+                   invoices.person->'uniqueid'->>'nhs' AS nhs,
+                   invoices.person->'address'->>'residencecountry' AS residencecountry,
+                   (SELECT ent->>'issuenumber'
+                    FROM jsonb_array_elements(invoices.person->'entitlements') AS ent
+                    WHERE ent->>'type' IN ('PRC', 'GHIC', 'EHIC')
+                    LIMIT 1) AS issuenumber
+            FROM invoices
+            WHERE invoices.invoiceid = $1
+            AND ($2::text IS NULL OR invoices.person->>'lastname' ILIKE $2)
+            AND ($3::text IS NULL OR invoices.person->>'firstname' ILIKE $3)
+            AND ($4::int IS NULL OR (invoices.person->'dob'->>'day')::int = $4)
+            AND ($5::int IS NULL OR (invoices.person->'dob'->>'month')::int = $5)
+            AND ($6::int IS NULL OR (invoices.person->'dob'->>'year')::int = $6)
+            AND ($7::text IS NULL OR invoices.person->'address'->>'residencecountry' ILIKE $7)
+            AND ($8::text IS NULL OR EXISTS (
+                SELECT 1
+                FROM jsonb_array_elements(invoices.person->'entitlements') AS ent
+                WHERE ent->>'issuenumber' = $8))
+            AND ($9::text IS NULL OR invoices.person->'uniqueid'->>'nhs' = $9 
+                                    OR invoices.person->'uniqueid'->>'ohs' = $9 
+                                    OR invoices.person->'uniqueid'->>'nino' = $9)
+            AND ($12::int IS NULL OR invoices.claimid = $12)
+            LIMIT $10 OFFSET $11;
+        `;
+
+        const params = [
+            invoiceid ? parseInt(invoiceid) : null,  // Invoice ID
+            lastName ? `%${lastName}%` : null,       // Last Name
+            firstName ? `%${firstName}%` : null,     // First Name
+            dobDay ? parseInt(dobDay) : null,        // Day of Birth
+            dobMonth ? parseInt(dobMonth) : null,    // Month of Birth
+            dobYear ? parseInt(dobYear) : null,      // Year of Birth
+            residenceCountry ? `%${residenceCountry}%` : null,  // Residence Country
+            issueNumber || null,                     // Entitlement Issue Number
+            uniqueID || null,                        // Unique ID (NHS, OHS, NINO)
+            limit,                                   // Pagination Limit
+            offset,                                  // Pagination Offset
+            claimid ? parseInt(claimid) : null       // Claim ID
+        ];
+
+        const result = await pool.query(query, params);
+        let searchResults = result.rows;
+
+        // Format date of birth for each result
+        searchResults = searchResults.map(person => {
+            const { dob_day, dob_month, dob_year } = person;
+            person.dob_formatted = dob_day && dob_month && dob_year
+                ? new Date(dob_year, dob_month - 1, dob_day).toLocaleDateString('en-GB', {
+                    day: 'numeric', month: 'long', year: 'numeric'
+                })
+                : 'N/A';
+            return person;
+        });
+
+        // Step 3: Count total matching persons (for pagination)
+        const totalCountQuery = `SELECT COUNT(*) AS total FROM invoices WHERE invoiceid = $1;`;
+        const totalCountResult = await pool.query(totalCountQuery, [invoiceid]);
+        const totalPersons = parseInt(totalCountResult.rows[0].total, 10);
+        const totalPages = Math.ceil(totalPersons / limit);
+
+        // Render the results with pagination
+        res.render('alpha/version-11/claims/rina/invoices/details/_02-person-search-results', {
+            searchResults,
+            invoice: invoiceData,  // Pass invoiceData as `invoice` to template
+            totalPersons,
+            page,
+            limit,
+            totalPages,
+            queryParams: req.body  // Preserve search filters
+        });
     } catch (err) {
-        console.error('Error processing person search:', err);
+        console.error('Error executing search query:', err.message, err.stack);
         res.status(500).send('Internal Server Error');
     }
 });
 
-// Route to handle the initial person search
-// Route to handle the initial person search
-router.post('/personSearch', async (req, res) => {
-    const {
-        lastName, firstName, day, month, year,
-        residenceCountry, ohs, nino, nhs, pin, issueNumber
-    } = req.body;
 
-    // Ensure at least one search parameter is provided
-    if (!lastName && !firstName && !day && !month && !year && !residenceCountry && !ohs && !nino && !nhs && !pin && !issueNumber) {
-        console.error('At least one search parameter is required.');
-        return res.status(400).send('Please provide at least one search criteria.');
-    }
-
-    // Construct the query parameters for redirection
-    const searchParams = new URLSearchParams({
-        lastName: lastName?.trim() || '',
-        firstName: firstName?.trim() || '',
-        day: day || '',
-        month: month || '',
-        year: year || '',
-        residenceCountry: residenceCountry?.trim() || '',
-        ohs: ohs || '',
-        nino: nino || '',
-        nhs: nhs || '',
-        pin: pin || '',
-        issueNumber: issueNumber || '',
-        page: 1,
-        limit: 10
-    });
-
-    try {
-        console.log('Redirecting to person search results with params:', searchParams.toString());
-        res.redirect(`/alpha/version-11/claims/rina/invoices/details/_02-person-search-results?${searchParams.toString()}&invoiceid=${req.body.invoiceid}`);
-    } catch (err) {
-        console.error('Error processing person search:', err);
-        res.status(500).send('Internal Server Error');
-    }
-});
-
-// Route to render the person search results with optional filtering
+// Route to handle GET requests for person search with pagination
 router.get('/personSearch', async (req, res) => {
     const {
-        lastName, firstName, day, month, year, 
-        residenceCountry, ohs, nino, nhs, pin, issueNumber,
-        page = 1, limit = 10, invoiceid
+        lastName, firstName, dobDay, dobMonth, dobYear,
+        uniqueID, issueNumber, residenceCountry, invoiceid, claimid,
+        page = 1, limit = 10
     } = req.query;
 
     const offset = (page - 1) * limit;
-    const normalizedNino = nino ? nino.replace(/\s+/g, '') : null;  // Ensure nino is defined before processing
 
     try {
-        console.log('Fetching details for invoice ID:', invoiceid);
-        const invoice = await getInvoiceDetails(invoiceid);  // Fetch the invoice details
-        console.log('Fetched Invoice Details:', invoice);
+        // Step 1: Fetch invoice data
+        const invoiceData = await fetchInvoiceData(invoiceid);  // Fetch invoice data
+        if (!invoiceData) {
+            return res.status(404).send('Invoice not found');
+        }
 
-        // Construct the query and params for person search
-        let personQuery = `
-            SELECT 
-                personid, 
-                lastname, 
-                firstname, 
-                dob->>'day' AS dob_day, 
-                dob->>'month' AS dob_month, 
-                dob->>'year' AS dob_year,
-                uniqueid->>'ohs' AS ohs, 
-                uniqueid->>'nino' AS nino, 
-                uniqueid->>'nhs' AS nhs,
-                address->>'residencecountry' AS residencecountry,
-                entitlements
-            FROM persons
-            WHERE 1=1
+        // Step 2: Execute person search query (same as in POST route)
+        const query = `
+            SELECT invoices.invoiceid, 
+                   invoices.claimid, 
+                   invoices.invoicereference, 
+                   invoices.person->>'lastname' AS lastname,
+                   invoices.person->>'firstname' AS firstname,
+                   invoices.person->'dob'->>'day' AS dob_day,
+                   invoices.person->'dob'->>'month' AS dob_month,
+                   invoices.person->'dob'->>'year' AS dob_year,
+                   invoices.person->'uniqueid'->>'nino' AS nino,
+                   invoices.person->'uniqueid'->>'ohs' AS ohs,
+                   invoices.person->'uniqueid'->>'nhs' AS nhs,
+                   invoices.person->'address'->>'residencecountry' AS residencecountry,
+                   (SELECT ent->>'issuenumber'
+                    FROM jsonb_array_elements(invoices.person->'entitlements') AS ent
+                    WHERE ent->>'type' IN ('PRC', 'GHIC', 'EHIC')
+                    LIMIT 1) AS issuenumber
+            FROM invoices
+            WHERE invoices.invoiceid = $1
+            AND ($2::text IS NULL OR invoices.person->>'lastname' ILIKE $2)
+            AND ($3::text IS NULL OR invoices.person->>'firstname' ILIKE $3)
+            AND ($4::int IS NULL OR (invoices.person->'dob'->>'day')::int = $4)
+            AND ($5::int IS NULL OR (invoices.person->'dob'->>'month')::int = $5)
+            AND ($6::int IS NULL OR (invoices.person->'dob'->>'year')::int = $6)
+            AND ($7::text IS NULL OR invoices.person->'address'->>'residencecountry' ILIKE $7)
+            AND ($8::text IS NULL OR EXISTS (
+                SELECT 1
+                FROM jsonb_array_elements(invoices.person->'entitlements') AS ent
+                WHERE ent->>'issuenumber' = $8))
+            AND ($9::text IS NULL OR invoices.person->'uniqueid'->>'nhs' = $9 
+                                 OR invoices.person->'uniqueid'->>'ohs' = $9 
+                                 OR invoices.person->'uniqueid'->>'nino' = $9)
+            AND ($12::int IS NULL OR invoices.claimid = $12)
+            LIMIT $10 OFFSET $11;
         `;
 
-        let personParams = [];
-        let paramIndex = 1;
+        const params = [
+            invoiceid ? parseInt(invoiceid) : null,  // Invoice ID
+            lastName ? `%${lastName}%` : null,       // Last Name
+            firstName ? `%${firstName}%` : null,     // First Name
+            dobDay ? parseInt(dobDay) : null,        // Day of Birth
+            dobMonth ? parseInt(dobMonth) : null,    // Month of Birth
+            dobYear ? parseInt(dobYear) : null,      // Year of Birth
+            residenceCountry ? `%${residenceCountry}%` : null,  // Residence Country
+            issueNumber || null,                     // Entitlement Issue Number
+            uniqueID || null,                        // Unique ID (NHS, OHS, NINO)
+            limit,                                   // Pagination Limit
+            offset,                                  // Pagination Offset
+            claimid ? parseInt(claimid) : null       // Claim ID if provided
+        ];
 
-        // Add dynamic conditions to query based on provided input
-        if (lastName) {
-            personQuery += ` AND lastname ILIKE '%' || $${paramIndex++} || '%'`;
-            personParams.push(lastName);
-        }
-        if (firstName) {
-            personQuery += ` AND firstname ILIKE '%' || $${paramIndex++} || '%'`;
-            personParams.push(firstName);
-        }
-        if (day) {
-            personQuery += ` AND dob->>'day' = $${paramIndex++}`;
-            personParams.push(day);
-        }
-        if (month) {
-            personQuery += ` AND dob->>'month' = $${paramIndex++}`;
-            personParams.push(month);
-        }
-        if (year) {
-            personQuery += ` AND dob->>'year' = $${paramIndex++}`;
-            personParams.push(year);
-        }
-        if (residenceCountry) {
-            personQuery += ` AND address->>'residencecountry' ILIKE '%' || $${paramIndex++} || '%'`;
-            personParams.push(residenceCountry);
-        }
-        if (ohs) {
-            personQuery += ` AND uniqueid->>'ohs' = $${paramIndex++}`;
-            personParams.push(ohs);
-        }
-        if (nino) {
-            personQuery += ` AND REPLACE(uniqueid->>'nino', ' ', '') ILIKE '%' || $${paramIndex++} || '%'`;
-            personParams.push(normalizedNino);
-        }
-        if (nhs) {
-            personQuery += ` AND uniqueid->>'nhs' = $${paramIndex++}`;
-            personParams.push(nhs);
-        }
-        if (issueNumber) {
-            personQuery += ` AND entitlements->>0->>'issuenumber' ILIKE '%' || $${paramIndex++} || '%'`;
-            personParams.push(issueNumber);
-        }
+        const result = await pool.query(query, params);
+        let searchResults = result.rows;
 
-        // Add LIMIT and OFFSET for pagination
-        personQuery += ` LIMIT $${paramIndex++} OFFSET $${paramIndex}`;
-        personParams.push(limit, offset);
+        // Format date of birth for each result
+        searchResults = searchResults.map(person => {
+            const { dob_day, dob_month, dob_year } = person;
+            person.dob_formatted = dob_day && dob_month && dob_year
+                ? new Date(dob_year, dob_month - 1, dob_day).toLocaleDateString('en-GB', {
+                    day: 'numeric', month: 'long', year: 'numeric'
+                })
+                : 'N/A';
+            return person;
+        });
 
-        console.log('Query Parameters:', personParams);
-        console.log('Executing SQL:', personQuery);
-
-        const personResult = await pool.query(personQuery, personParams);
-        console.log('Search results:', personResult.rows);
-
-        // Count total persons (for pagination)
-        const totalCountQuery = `
-            SELECT COUNT(*)
-            FROM persons
-            WHERE 1=1
-        `;
-        const totalCountResult = await pool.query(totalCountQuery, personParams);
-        const totalPersons = parseInt(totalCountResult.rows[0].count, 10);
+        // Step 3: Count total matching persons
+        const totalCountQuery = `SELECT COUNT(*) AS total FROM invoices WHERE invoiceid = $1;`;
+        const totalCountResult = await pool.query(totalCountQuery, [invoiceid]);
+        const totalPersons = parseInt(totalCountResult.rows[0].total, 10);
         const totalPages = Math.ceil(totalPersons / limit);
 
-        console.log('Total persons found:', totalPersons);
-        console.log('Total pages:', totalPages);
-
+        // Step 4: Render the results
         res.render('alpha/version-11/claims/rina/invoices/details/_02-person-search-results', {
-            searchResults: personResult.rows,
-            invoice,
+            searchResults,
+            invoice: invoiceData,  // Pass `invoiceData` as `invoice`
             totalPersons,
-            page: parseInt(page, 10),
-            limit: parseInt(limit, 10),
+            page,
+            limit,
             totalPages,
-            queryParams: {
-                lastName, firstName, day, month, year,
-                residenceCountry, ohs, nino, nhs, pin, issueNumber
-            }
+            queryParams: req.query  // Preserve search filters
         });
     } catch (err) {
-        console.error('Error executing person filter search or fetching invoice:', err);
+        console.error('Error executing search query:', err.message, err.stack);
         res.status(500).send('Internal Server Error');
     }
 });
+
+// Fetch person details by matching fields from the invoices table
+// Fetch person details by matching fields from the invoices table
+const getPersonDetails = async (firstname, lastname, dob_day, dob_month, dob_year, nino) => {
+    const query = `
+        SELECT person 
+        FROM invoices 
+        WHERE invoices.person->>'firstname' = $1 
+        AND invoices.person->>'lastname' = $2 
+        AND invoices.person->'dob'->>'day' = $3 
+        AND invoices.person->'dob'->>'month' = $4 
+        AND invoices.person->'dob'->>'year' = $5 
+        AND invoices.person->'uniqueid'->>'nino' = $6;
+    `;
+
+    const params = [firstname, lastname, dob_day, dob_month, dob_year, nino];
+    const result = await pool.query(query, params);
+
+    if (result.rows.length > 0) {
+        const person = result.rows[0].person;
+
+        // The 'dob' field has no need to be formatted again if it's already present
+        if (person.dob && !person.dob.formatted) {
+            person.dob.formatted = `${person.dob.day} ${new Date(person.dob.year, person.dob.month - 1).toLocaleString('default', { month: 'long' })} ${person.dob.year}`;
+        }
+
+        // Handle entitlements without additional formatting if formatted fields are already present
+        if (Array.isArray(person.entitlements)) {
+            person.entitlements = person.entitlements.map(entitlement => {
+                entitlement.start = entitlement.start?.formatted || 'N/A';
+                entitlement.end = entitlement.end?.formatted || 'N/A';
+                entitlement.issued = entitlement.issued?.formatted || 'N/A';
+
+                // Safeguard: Ensure country exists
+                entitlement.country = entitlement.country || 'N/A';
+
+                return entitlement;
+            });
+        }
+
+        return person;
+    }
+
+    return null;
+};
+
+// Fetch related invoices by matching person details
+const getInvoicesByPersonDetails = async (firstname, lastname, dob_day, dob_month, dob_year, nino, limit, offset) => {
+    const query = `
+        SELECT invoiceid, invoicereference, amount, startdate, enddate, status, claimid
+        FROM invoices
+        WHERE invoices.person->>'firstname' = $1
+        AND invoices.person->>'lastname' = $2
+        AND invoices.person->'dob'->>'day' = $3
+        AND invoices.person->'dob'->>'month' = $4
+        AND invoices.person->'dob'->>'year' = $5
+        AND invoices.person->'uniqueid'->>'nino' = $6
+        LIMIT $7 OFFSET $8;
+    `;
+
+    const params = [firstname, lastname, dob_day, dob_month, dob_year, nino, limit, offset];
+    
+    try {
+        const result = await pool.query(query, params);
+        
+        // Ensure startdate and enddate are formatted
+        const invoices = result.rows.map(invoice => {
+            invoice.startdate = invoice.startdate ? new Date(invoice.startdate).toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            }) : 'N/A';
+
+            invoice.enddate = invoice.enddate ? new Date(invoice.enddate).toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            }) : 'N/A';
+
+            return invoice;
+        });
+
+        return invoices;  // Return all matching invoices for the person
+    } catch (error) {
+        console.error('Error fetching invoices:', error);
+        throw new Error('Failed to fetch invoices');
+    }
+};
+
+
+
+// Route to handle fetching person details and associated invoices/entitlements
+router.get('/claims/rina/invoices/details/_03-person-details', async (req, res) => {
+    const { firstname, lastname, dob_day, dob_month, dob_year, nino, page = 1, limit = 10 } = req.query;
+
+    // Ensure required parameters are present
+    if (!firstname || !lastname || !dob_day || !dob_month || !dob_year || !nino) {
+        console.error('Missing required query parameters:', req.query);
+        return res.status(400).send('Missing required query parameters');
+    }
+
+    const decodedNino = decodeURIComponent(nino);
+    const offset = (page - 1) * limit;
+
+    try {
+        // Fetch person details
+        const person = await getPersonDetails(firstname, lastname, dob_day, dob_month, dob_year, decodedNino);
+        if (!person) {
+            console.error('Person not found with the provided details:', req.query);
+            return res.status(404).send('Person not found');
+        }
+
+        // Fetch invoices related to the person with pagination
+        const invoices = await getInvoicesByPersonDetails(firstname, lastname, dob_day, dob_month, dob_year, decodedNino, limit, offset);
+        
+        // Fetch the total number of invoices for pagination purposes
+        const totalCountQuery = `
+            SELECT COUNT(*) AS total 
+            FROM invoices 
+            WHERE person->>'firstname' = $1 
+            AND person->>'lastname' = $2 
+            AND person->'dob'->>'day' = $3 
+            AND person->'dob'->>'month' = $4 
+            AND person->'dob'->>'year' = $5 
+            AND person->'uniqueid'->>'nino' = $6
+        `;
+        const totalCountResult = await pool.query(totalCountQuery, [firstname, lastname, dob_day, dob_month, dob_year, decodedNino]);
+        const totalInvoices = parseInt(totalCountResult.rows[0].total, 10);
+        const totalPages = Math.ceil(totalInvoices / limit);
+
+        // Fetch the first invoice for the side card if available
+        const invoiceid = invoices.length > 0 ? invoices[0].invoiceid : null;
+        const invoice = invoiceid ? await fetchInvoiceData(invoiceid) : null;
+
+        // Render the page with person details and invoices
+        res.render('alpha/version-11/claims/rina/invoices/details/_03-person-details', {
+            person,
+            invoices,  // Invoices for the current page
+            invoice,   // Specific invoice for the side card
+            totalInvoices,
+            page: parseInt(page),
+            limit: parseInt(limit),
+            totalPages,
+            queryParams: { firstname, lastname, dob_day, dob_month, dob_year, nino } // Pass query params
+        });
+    } catch (err) {
+        console.error('Error fetching person or invoice data:', err.stack);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 
 
 

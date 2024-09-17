@@ -49,7 +49,7 @@
                 <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
                         href="../../../../../../index">Claims</a></li>
                 <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                        href="../../../summary/active-invoices-uploaded">Claim ID {{ claim.claimid }}</a></li>
+                        href="../../../summary/active-invoices-uploaded">Claim ID {{ invoice.claimid }}</a></li>
                 <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
                         href="../../../invoices/full-invoice-list">Invoices</a></li>
             </ol>
@@ -831,60 +831,65 @@
                                         </div>
                                     </div>
                                 </li>
-    
-                                <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-                                    <div class="nhsuk-card ">
-                                        <div class="nhsuk-card__content nhsuk-card__content" style="padding:16px;">
-                                            <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
-                                                Entitlement details
-                                            </h3>
-                                            <hr style="margin:0px 0px 10px 0px;">
-                                            <dl class="nhsuk-summary-list">
-                                                <div class="nhsuk-summary-list__row">
-                                                    <dt class="nhsuk-summary-list__key">
-                                                        Type
-                                                    </dt>
-                                                    <dd class="nhsuk-summary-list__value">
-                                                        {{ invoice.entitlement }}
-                                                    </dd>
-                                                </div>
-    
-                                                {% if invoice.entitlement and (invoice.entitlement.includes("EHIC") or invoice.entitlement.includes("PRC")) %}
-                                                <div class="nhsuk-summary-list__row">
-                                                    <dt class="nhsuk-summary-list__key">Issue number</dt>
-                                                    <dd class="nhsuk-summary-list__value">{{ invoice.entitlements[0].issuenumber }}</dd>
-                                                </div>
-                                                {% endif %}
-    
-                                          
-                                                <div class="nhsuk-summary-list__row">
-                                                    <dt class="nhsuk-summary-list__key">
-                                                        Start date
-                                                    </dt>
-                                                    <dd class="nhsuk-summary-list__value">
-                                                        {{ invoice.person.entitlements[0].start.formatted }}
-                                                    </dd>
-                                                </div>
-                                                <div class="nhsuk-summary-list__row">
-                                                    <dt class="nhsuk-summary-list__key">
-                                                        End date
-                                                    </dt>
-                                                    <dd class="nhsuk-summary-list__value">
-                                                        {{ invoice.person.entitlements[0].end.formatted }}
-                                                    </dd>
-                                                </div>
-                                                <div class="nhsuk-summary-list__row">
-                                                    <dt class="nhsuk-summary-list__key">
-                                                        Issue date
-                                                    </dt>
-                                                    <dd class="nhsuk-summary-list__value">
-                                                        {{ invoice.person.entitlements[0].issued.formatted }}
-                                                    </dd>
-                                                </div>
-                                            </dl>
+                                
+                                {% if invoice.person.entitlements and invoice.person.entitlements.length > 0 %}
+                                {% set entitlement = invoice.person.entitlements[0] %}
+                                    <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                                        <div class="nhsuk-card ">
+                                            <div class="nhsuk-card__content nhsuk-card__content" style="padding:16px;">
+                                                <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                                    Entitlement details
+                                                </h3>
+                                                <hr style="margin:0px 0px 10px 0px;">
+                                                <dl class="nhsuk-summary-list">
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Type
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            {{ entitlement.type or '&#8212' }}
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Start date
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            {{ entitlement.start.formatted or '&#8212' }}
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            End date
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            {{ entitlement.end.formatted or '&#8212' }}
+                                                        </dd>
+                                                    </div>
+                                                    {% if entitlement.issued %}
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Issue date
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            {{ entitlement.issued.formatted or '&#8212' }}
+                                                        </dd>
+                                                    </div>
+                                                    {% endif %}
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Issue number
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            {{ entitlement.issuenumber or '&#8212' }}
+                                                        </dd>
+                                                    </div>
+                                                </dl>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
+
+                                {% endif %}
     
                                 <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
                                     <div class="nhsuk-card">
@@ -1186,7 +1191,7 @@
                                                 Sex
                                             </dt>
                                             <dd class="nhsuk-summary-list__value">
-    
+                                                &#8212
                                             </dd>
                                         </div>
                                     </dl>
@@ -1236,7 +1241,7 @@
                                                 Issue date
                                             </dt>
                                             <dd class="nhsuk-summary-list__value">
-                                                {{ invoice.person.entitlements[0].issued.formatted }}
+                                                {{ invoice.person.entitlements[0].issued.formatted or '—' }}
                                             </dd>
                                         </div>
                                         <div class="nhsuk-summary-list__row">
@@ -1294,7 +1299,7 @@
                                                 Benefits provided
                                             </dt>
                                             <dd class="nhsuk-summary-list__value">
-                                               {{ invoice.person.treatments.details.benefits }}
+                                               {{ invoice.person.treatments.details.benefits or '—' }}
                                             </dd>
                                         </div>
                                         <div class="nhsuk-summary-list__row">

@@ -4,11 +4,11 @@
 {% set mainNavigation = [
     {
     name: 'Summary',
-    path: '/alpha/version-11/claims/claim/{{ claim.claimid }}/summary/active-invoices-uploaded'
+    path: '/alpha/version-11/claims/claim/{{ invoice.claimid }}/summary/active-invoices-uploaded'
     },
     {
     name: 'Invoices',
-    path: '/alpha/version-11/claims/claim/{{ claim.claimid }}/invoices/full-invoice-list',
+    path: '/alpha/version-11/claims/claim/{{ invoice.invoiceid }}/invoices/full-invoice-list',
     active: true
     },
     {
@@ -50,14 +50,15 @@
                 <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
                         href="../../../../../../index">Claims</a></li>
                 <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                        href="../../../summary/active-invoices-uploaded">Claim ID {{ claim.claimid }}</a></li>
+                        href="../../../summary/active-invoices-uploaded">Claim ID {{ invoice.claimid }}</a></li>
                 <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
                         href="../../../invoices/full-invoice-list">Invoices</a></li>
-                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                        href="../../../invoices/details/20001554/01-to-check">Invoice ID {{ invoice.invoiceid }}</a></li>
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" 
+                        href="/alpha/version-11/claims/rina/invoices/details/{{ invoice.invoiceid }}">Invoice ID {{ invoice.invoiceid }}</a>
+
             </ol>
             <p class="nhsuk-breadcrumb__back">
-                <a class="nhsuk-breadcrumb__backlink" href="../../../../../../index">
+                <a class="nhsuk-breadcrumb__backlink" href="/alpha/version-11/claims/rina/invoices/details/_02-person-search-results">
                     <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
                     Claims
                 </a>
@@ -115,7 +116,7 @@
     <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-full">
             <div class="nhsuk-back-link">
-                <a class="nhsuk-back-link__link" href="03-person-search-results">
+                <a class="nhsuk-back-link__link" href="_02-person-search-results">
                     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                         aria-hidden="true" height="24" width="24">
                         <path
@@ -138,8 +139,6 @@
             </h1>
         </div>
     </div>
-    
-    
     
     <!-- End of header block -->
     
@@ -180,7 +179,7 @@
                                                 Date of birth
                                             </dt>
                                             <dd class="nhsuk-summary-list__value">
-                                                {{ person.dob_formatted }}
+                                                {{ person.dob.formatted }}
                                             </dd>
                                         </div>
                                         <div class="nhsuk-summary-list__row">
@@ -188,7 +187,7 @@
                                                 OHS reference
                                             </dt>
                                             <dd class="nhsuk-summary-list__value">
-                                                {{ person.ohs }}
+                                                {{ person.uniqueid.ohs }}
                                             </dd>
                                         </div>
                                         <div class="nhsuk-summary-list__row">
@@ -196,7 +195,7 @@
                                                 NINO
                                             </dt>
                                             <dd class="nhsuk-summary-list__value">
-                                               {{ person.nino }}
+                                               {{ person.uniqueid.nino }}
                                             </dd>
                                         </div>
                                         <div class="nhsuk-summary-list__row">
@@ -204,7 +203,7 @@
                                                 Residential country
                                             </dt>
                                             <dd class="nhsuk-summary-list__value">
-                                                {{ person.residencecountry }}
+                                                {{ person.address.residencecountry }}
                                             </dd>
                                         </div>
                                         <div class="nhsuk-summary-list__row">
@@ -212,7 +211,7 @@
                                                 NHS number
                                             </dt>
                                             <dd class="nhsuk-summary-list__value">
-                                               {{ person.nhs }}
+                                               {{ person.uniqueid.nhs }}
                                             </dd>
                                         </div>
                                         <div class="nhsuk-summary-list__row">
@@ -221,14 +220,16 @@
                                             </dt>
                                             <dd class="nhsuk-summary-list__value">
                                              {% if person.deceased %}
-                                                  {{ person.deceased }}
+                                                {{ person.deceased }}
+                                             {% else %}
+                                                &#8212
                                              {% endif %}
                                             </dd>
                                         </div>
                                     </dl>
                                 </div>
                                 <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-                                    <a href="/alpha/version-11/04-check-invoice?invoiceid={{ invoice.invoiceid }}&lastname={{ person.lastname }}&firstname={{ person.firstname }}&dob={{ person.dob_formatted }}">
+                                    <a href="/alpha/version-11/04-check-invoice?invoiceid={{ invoice.invoiceid }}&lastname={{ person.lastname }}&firstname={{ person.firstname }}&dob={{ person.dob.formatted }}">
                                         <button class="nhsuk-button nhsuk-u-margin-bottom-3"
                                             style="display:inline; width:90%; float:right;" data-module="nhsuk-button"
                                             type="submit">
@@ -304,27 +305,26 @@
                                                     </legend>
                                                     <div class="nhsuk-checkboxes">
                                                          {% set entitlements = data['filter-entitlement'] | default([]) %}
-                                                                                        <div class="nhsuk-checkboxes__item">
-                                                                                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-s1" name="filter-entitlement" type="checkbox" value="S1" {% if 'S1' in entitlements %}checked{% endif %}>
-                                                                                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s1">S1</label>
-                                                                                        </div>
-                                                                                        <div class="nhsuk-checkboxes__item">
-                                                                                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-ehic" name="filter-entitlement" type="checkbox" value="EHIC" {% if 'EHIC' in entitlements %}checked{% endif %}>
-                                                                                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-ehic">EHIC</label>
-                                                                                        </div>
-                                                                                        <div class="nhsuk-checkboxes__item">
-                                                                                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-prc" name="filter-entitlement" type="checkbox" value="PRC" {% if 'PRC' in entitlements %}checked{% endif %}>
-                                                                                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-prc">PRC</label>
-                                                                                        </div>
-                                                                                        <div class="nhsuk-checkboxes__item">
-                                                                                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-s2" name="filter-entitlement" type="checkbox" value="S2" {% if 'S2' in entitlements %}checked{% endif %}>
-                                                                                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s2">S2</label>
-                                                                                        </div>
-                                                                                        <div class="nhsuk-checkboxes__item">
-                                                                                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-da1" name="filter-entitlement" type="checkbox" value="DA1" {% if 'DA1' in entitlements %}checked{% endif %}>
-                                                                                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-da1">DA1</label>
-                                                                                        </div>
-    
+                                                        <div class="nhsuk-checkboxes__item">
+                                                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-s1" name="filter-entitlement" type="checkbox" value="S1" {% if 'S1' in entitlements %}checked{% endif %}>
+                                                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s1">S1</label>
+                                                        </div>
+                                                        <div class="nhsuk-checkboxes__item">
+                                                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-ehic" name="filter-entitlement" type="checkbox" value="EHIC" {% if 'EHIC' in entitlements %}checked{% endif %}>
+                                                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-ehic">EHIC</label>
+                                                        </div>
+                                                        <div class="nhsuk-checkboxes__item">
+                                                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-prc" name="filter-entitlement" type="checkbox" value="PRC" {% if 'PRC' in entitlements %}checked{% endif %}>
+                                                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-prc">PRC</label>
+                                                        </div>
+                                                        <div class="nhsuk-checkboxes__item">
+                                                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-s2" name="filter-entitlement" type="checkbox" value="S2" {% if 'S2' in entitlements %}checked{% endif %}>
+                                                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s2">S2</label>
+                                                        </div>
+                                                        <div class="nhsuk-checkboxes__item">
+                                                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-da1" name="filter-entitlement" type="checkbox" value="DA1" {% if 'DA1' in entitlements %}checked{% endif %}>
+                                                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-da1">DA1</label>
+                                                        </div>
                                                     </div>
                                                 </fieldset>
                                             </div>
@@ -423,11 +423,11 @@
                                                     <div class="nhsuk-radios">
                                                         <div class="nhsuk-radios__item">
                                                             <input class="nhsuk-radios__input" id="order-by-asc" name="order-by" type="radio" value="asc" {% if data['order-by'] == 'asc' %}checked{% endif %}>
-                                                                                            <label class="nhsuk-label nhsuk-radios__label" for="order-by-asc">Ascending</label>
+                                                            <label class="nhsuk-label nhsuk-radios__label" for="order-by-asc">Ascending</label>
                                                         </div>
                                                         <div class="nhsuk-radios__item">
                                                             <input class="nhsuk-radios__input" id="order-by-desc" name="order-by" type="radio" value="desc" {% if data['order-by'] == 'desc' %}checked{% endif %}>
-                                                                                            <label class="nhsuk-label nhsuk-radios__label" for="order-by-desc">Descending</label>
+                                                            <label class="nhsuk-label nhsuk-radios__label" for="order-by-desc">Descending</label>
     
                                                         </div>
                                                     </div>
@@ -478,29 +478,31 @@
                                 </thead>
                                 <tbody class="nhsuk-table__body">
     
-                                {% for entitlement in person.entitlements %}
+                                {% for entitlement in invoice.person.entitlements %}
                                     <tr role="row" class="nhsuk-table__row">
                                         <td role="cell" class="nhsuk-table__cell">
                                             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
                                             </span>{{ entitlement.type }}
                                         </td>
-                                        {% if entitlement.type and (entitlement.type.includes("EHIC") or entitlement.type.includes("PRC")) %}
+
+                                        {% if entitlement.issued %}
                                         <td role="cell" class="nhsuk-table__cell">
                                             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Issue
-                                                number </span>{{ entitlement.issuenumber }}
+                                                number </span>{{ entitlement.issuenumber | default('—') }}
                                         </td>
                                         {% endif %}
+
                                         <td role="cell" class="nhsuk-table__cell">
                                             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Start
-                                                date </span>{{ entitlement.start.formatted }}
+                                                date </span>{{ entitlement.start }}
                                         </td>
                                         <td role="cell" class="nhsuk-table__cell">
                                             <span class="nhsuk-table-responsive__heading" aria-hidden="true">End
-                                                date </span>{{ entitlement.end.formatted }}
+                                                date </span>{{ entitlement.end }}
                                         </td>
                                         <td role="cell" class="nhsuk-table__cell">
                                             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Main or
-                                                dependant </span>{{ entitlement.mainor | 'Main' }}
+                                                dependant </span>{{ entitlement.mainor | default('Main') }}
                                         </td>
                                         <td role="cell" class="nhsuk-table__cell">
                                             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Country
@@ -551,7 +553,7 @@
                                 </thead>
                                 <tbody class="nhsuk-table__body">
     
-                                     {% for invoice in person.invoices %}
+                                    {% for invoice in invoices %}
                                     <tr role="row" class="nhsuk-table__row">
                                         <td role="cell" class="nhsuk-table__cell">
                                             <span class="nhsuk-table-responsive__heading" aria-hidden="true">Claim ID
@@ -586,8 +588,44 @@
                                     </tr>
                                     {% endfor %}
     
-                                                                </tbody>
+                                </tbody>
                             </table>
+
+                            <!-- Pagination for invoices tab -->
+<!-- Pagination for invoices tab -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+            <div class="nhsuk-pagination__prev">
+                {% if page > 1 %}
+                    <a class="nhsuk-link nhsuk-pagination__link" 
+                       href="?page={{ page - 1 }}&limit={{ limit }}&firstname={{ person.firstname }}&lastname={{ person.lastname }}&dob_day={{ person.dob.day }}&dob_month={{ person.dob.month }}&dob_year={{ person.dob.year }}&nino={{ person.uniqueid.nino }}#invoices">
+                        <span class="nhsuk-pagination__link-title">Previous</span>
+                    </a>
+                {% endif %}
+            </div>
+            <ul class="nhsuk-pagination__list">
+                {% for i in range(1, totalPages + 1) %}
+                    <li class="nhsuk-pagination__item {% if i == page %}nhsuk-pagination__item--current{% endif %}">
+                        <a class="nhsuk-link nhsuk-pagination__link" 
+                           href="?page={{ i }}&limit={{ limit }}&firstname={{ person.firstname }}&lastname={{ person.lastname }}&dob_day={{ person.dob.day }}&dob_month={{ person.dob.month }}&dob_year={{ person.dob.year }}&nino={{ person.uniqueid.nino }}#invoices">
+                            {{ i }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="nhsuk-pagination__next">
+                {% if page < totalPages %}
+                    <a class="nhsuk-link nhsuk-pagination__link" 
+                       href="?page={{ page + 1 }}&limit={{ limit }}&firstname={{ person.firstname }}&lastname={{ person.lastname }}&dob_day={{ person.dob.day }}&dob_month={{ person.dob.month }}&dob_year={{ person.dob.year }}&nino={{ person.uniqueid.nino }}#invoices">
+                        <span class="nhsuk-pagination__link-title">Next</span>
+                    </a>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+</div>
+
                         </div>
                         <!-- *** End of invoices tab *** -->
     
@@ -605,158 +643,165 @@
         </div>
         <!-- End of details held on OHS-->
     
-        <!-- Start of invoice details from submitting country -->
-        <div class="nhsuk-grid-column-one-quarter">
+
+    <!-- Start of invoice details from submitting country -->
+    <div class="nhsuk-grid-column-one-quarter">
+
+        <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">
+            Invoice details from {{ invoice.country }}
+            <span class="nhsuk-caption-m nhsuk-caption--bottom">Invoice reference: {{ invoice.invoicereference }}</span>
+        </h2>
+        <hr style="margin:0px 0px 30px 0px;">
     
-            <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">
-                Invoice details from France
-                <span class="nhsuk-caption-m nhsuk-caption--bottom">Invoice reference: {{ invoice.invoicereference }}</span>
-            </h2>
-            <hr style="margin:0px 0px 30px 0px;">
+        <!-- Start person details-->
+        <div class="nhsuk-card nhsuk-card--secondary">
+            <div class="nhsuk-card__content nhsuk-card__content--secondary">
+                <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                    Person details
+                </h3>
+                <hr style="margin:0px 0px 10px 0px;">
+                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Last name
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            {{ invoice.person.lastname }}
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            First name
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            {{ invoice.person.firstname }}
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Date of birth
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            {{ invoice.person.dob.formatted }}
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Unique ID
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            {{ invoice.person.uniqueid.nino }}
+                        </dd>
+                    </div>
+                </dl>
     
-            <!-- Start person details-->
-            <div class="nhsuk-card nhsuk-card--secondary">
-                <div class="nhsuk-card__content nhsuk-card__content--secondary">
-                    <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
-                        Person details
-                    </h3>
-                    <hr style="margin:0px 0px 10px 0px;">
-                    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Last name
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                {{ invoice.person.lastname }}
-                            </dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                First name
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                {{ invoice.person.firstname }}
-                            </dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Date of birth
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                {{ invoice.person.dob.formatted }}
-                            </dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Unique ID
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                               {{ invoice.person.uniqueid.nino }}
-                            </dd>
-                        </div>
-                    </dl>
-    
-                </div>
             </div>
-            <!-- End person details-->
-    
-            <!-- Start entitlement details -->
-            <div class="nhsuk-card nhsuk-card--secondary">
-                <div class="nhsuk-card__content nhsuk-card__content--secondary">
-    
-                    <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
-                        Entitlement details
-                    </h3>
-                    <hr style="margin:0px 0px 10px 0px;">
-                    <dl class="nhsuk-summary-list">
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Type
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                {{ invoice.entitlement }}
-                            </dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Issue number
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                00874637746658873542
-                            </dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Start date
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                {{ invoice.person.entitlements[0].start.formatted }}
-                            </dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                End date
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                {{ invoice.person.entitlements[0].end.formatted }}
-                            </dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Issue date
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                {{ invoice.person.entitlements[0].issued.formatted }}
-                            </dd>
-                        </div>
-                    </dl>
-                </div>
-            </div>
-            <!-- End entitlement details-->
-    
-            <!-- Start invoice period and amount-->
-            <div class="nhsuk-card nhsuk-card--secondary">
-                <div class="nhsuk-card__content nhsuk-card__content--secondary">
-                    <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
-                        Invoice period and amount
-                    </h3>
-                    <hr style="margin:0px 0px 10px 0px;">
-                    <dl class="nhsuk-summary-list">
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Start date
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                {{ invoice.startdate }}
-                            </dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                End date
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                {{ invoice.enddate }}
-                            </dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Total amount
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                {{ invoice.amount }}
-                            </dd>
-                        </div>
-                    </dl>
-    
-                </div>
-            </div>
-            <!-- End invoice period and amount-->
-    
         </div>
-        <!-- End of invoice details from submitting country -->
+        <!-- End person details-->
+    
+        <!-- Start entitlement details -->
+        {% if invoice.person.entitlements and invoice.person.entitlements.length > 0 %}
+        {% set entitlement = invoice.person.entitlements[0] %}
+        <div class="nhsuk-card nhsuk-card--secondary">
+            <div class="nhsuk-card__content nhsuk-card__content--secondary">
+                <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                    Entitlement Details
+                </h3>
+                <hr style="margin:0px 0px 10px 0px;">
+        
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Type
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        {{ entitlement.type | default('—') }}
+                    </dd>
+                </div>
+                
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Start date
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        {{ entitlement.start | default('—') }}
+                    </dd>
+                </div>
+                
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        End date
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        {{ entitlement.end | default('—') }}
+                    </dd>
+                </div>
+                
+                {% if entitlement.issued %}
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Issue date</dt>
+                    <dd class="nhsuk-summary-list__value">{{ entitlement.issued | default('—') }}</dd>
+                </div>
+                {% endif %}
+
+                
+                {% if entitlement.issuenumber %}
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Issue number
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        {{ entitlement.issuenumber | default('—') }}
+                    </dd>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    
+    
+        <!-- End entitlement details-->
+    
+        <!-- Start invoice period and amount-->
+        <div class="nhsuk-card nhsuk-card--secondary">
+            <div class="nhsuk-card__content nhsuk-card__content--secondary">
+                <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                    Invoice period and amount
+                </h3>
+                <hr style="margin:0px 0px 10px 0px;">
+                <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Start date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            {{ invoice.startdate }}
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            End date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            {{ invoice.enddate }}
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Total amount
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            {{ invoice.amount }}
+                        </dd>
+                    </div>
+                </dl>
+    
+            </div>
+        </div>
+        <!-- End invoice period and amount-->
+    
     </div>
+    <!-- End of invoice details from submitting country -->
     
-    <!-- End person search -->
-    
+    </div>
     {% endblock %}
     <!-- End of central content -->
