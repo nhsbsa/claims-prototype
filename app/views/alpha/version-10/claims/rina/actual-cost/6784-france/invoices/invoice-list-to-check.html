@@ -76,78 +76,68 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
 </div>
 <!-- End of title block -->
 
-<!-- Start of search fields -->
-<div class="nhsuk-card">
-  <div class="nhsuk-card__content">
-
-    <form action="full-invoice-list-search-results#search-results" method="post">
-
-                <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
-          <h3 class="nhsuk-card__heading">
-            Search for an invoice
-          </h3>
-        </div>
-      </div>
-
-      <hr style="margin:0px 0px 24px 0px;" />
-
+<!-- Start of search inputs -->
 <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-full">
-            <div class="nhsuk-hint" id="contact-hint">
-              Search using one or more fields.
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          Search for an invoice
+        </h2>
+        <hr style="margin:0px 0px 24px 0px;" />
+        <form action="full-invoice-list-search-results#search-results" method="post">
+          <div class="nhsuk-hint" id="contact-hint">
+            Search using either invoice ID or invoice reference.
+          </div>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-id">
+                  Invoice ID
+                </label>
+                <input class="nhsuk-input" id="invoice-id" name="invoice-id" type="text">
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-ref">
+                  Invoice reference
+                </label>
+                <input class="nhsuk-input" id="invoice-ref" name="invoice-ref" type="text">
+              </div>
             </div>
           </div>
+          <hr class="nhsuk-u-width-two-thirds" style="margin:10px 0px 10px 0px;">
+          <div class="nhsuk-hint" id="contact-hint" style="padding-top:10px;">
+            Or search using either last name or first name, or both.
           </div>
-
-      <!-- Start of search inputs-->
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-one-quarter">
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-id">
-              Invoice ID
-            </label>
-            <input class="nhsuk-input" id="invoice-id" name="invoice-id" type="text">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="last-name">
+                  Last name
+                </label>
+                <input class="nhsuk-input" id="last-name" name="last-name" type="text">
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="first-name">
+                  First name
+                </label>
+                <input class="nhsuk-input" id="first-name" name="first-name" type="text">
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="nhsuk-grid-column-one-quarter">
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-ref">
-              Invoice reference
-            </label>
-            <input class="nhsuk-input" id="invoice-ref" name="invoice-ref" type="text">
-          </div>
-        </div>
-        <div class="nhsuk-grid-column-one-quarter">
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-u-font-weight-bold" for="last-name">
-              Last name
-            </label>
-            <input class="nhsuk-input" id="last-name" name="last-name" type="text">
-          </div>
-        </div>
-        <div class="nhsuk-grid-column-one-quarter">
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-u-font-weight-bold" for="first-name">
-              First name
-            </label>
-            <input class="nhsuk-input" id="first-name" name="first-name" type="text">
-          </div>
-        </div>
+          <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+            Search
+          </button>
+        </form>
       </div>
-      <!-- End of search fields -->
-
-
-
-      <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button"
-        type="submit">
-        Search
-      </button>
-
-    </form>
+    </div>
   </div>
 </div>
-<!-- End of filter results -->
+<!-- End of search inputs -->
 
 <!-- Start download-->
 <div class="nhsuk-grid-row" id="download-results">
