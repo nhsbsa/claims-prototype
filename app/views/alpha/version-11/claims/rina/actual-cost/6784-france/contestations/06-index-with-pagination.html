@@ -1,0 +1,468 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: ''
+},
+{
+name: 'Invoices',
+path: ''
+},
+{
+name: 'Credit notes',
+path: ''
+},
+{
+name: 'Contestations',
+path: '',
+active: true
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: ''
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Contestations - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../home">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../index">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+{% block content %}
+<!-- Start of header block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl ">
+            Contestations
+        </h1>
+    </div>
+    <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+        <a href="create/index">
+            <button class="nhsuk-button nhsuk-button  nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                Create a new contestation
+            </button>
+        </a>
+    </div>
+</div>
+<!-- End of header block -->
+
+<!-- Start main content -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <!-- Start header block-->
+                <div class="nhsuk-grid-row nhsuk-u-padding-bottom-2">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 10 of 12</h3>
+                    </div>
+                    <div class="nhsuk-grid-column-one-third">
+                        <div class="nhsuk-form-group" style="float:right;">
+                            <label class="nhsuk-label" for="results">
+                                Results per page
+                            </label>
+                            <select class="nhsuk-select" id="results" name="results" style="float:right;">
+                                <option value="10" selected="">10</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of header block -->
+
+                <!-- Start of table data -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <table role="table" class="nhsuk-table-responsive">
+                            <!-- <caption class="nhsuk-table__caption">Contestations</caption> -->
+                            <thead role="rowgroup" class="nhsuk-table__head">
+                                <tr role="row">
+                                    <th role="columnheader" class="" scope="col">
+                                        Contestation ID
+                                    </th>
+                                    <th role="columnheader" class="" scope="col">
+                                        Contestation reference
+                                    </th>
+                                    <th role="columnheader" class="" scope="col">
+                                        Total number
+                                    </th>
+                                    <th role="columnheader" class="" scope="col">
+                                        Total amount
+                                    </th>
+                                    <th role="columnheader" class="" scope="col">
+                                        Status
+                                    </th>
+                                    <th role="columnheader" class="" scope="col">
+                                        View
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="nhsuk-table__body">
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation ID
+                                        </span>7766
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation
+                                            reference
+                                        </span>123456789
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total number
+                                        </span>12
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total amount
+                                        </span>5,700
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                        </span>Complete
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                        </span><a href="">View contestation</a>
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation ID
+                                        </span>7766
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation
+                                            reference
+                                        </span>123456789
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total number
+                                        </span>12
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total amount
+                                        </span>5,700
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                        </span>Complete
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                        </span><a href="">View contestation</a>
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation ID
+                                        </span>7766
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation
+                                            reference
+                                        </span>123456789
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total number
+                                        </span>12
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total amount
+                                        </span>5,700
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                        </span>Complete
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                        </span><a href="">View contestation</a>
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation ID
+                                        </span>7766
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation
+                                            reference
+                                        </span>123456789
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total number
+                                        </span>12
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total amount
+                                        </span>5,700
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                        </span>Complete
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                        </span><a href="">View contestation</a>
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation ID
+                                        </span>7766
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation
+                                            reference
+                                        </span>123456789
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total number
+                                        </span>12
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total amount
+                                        </span>5,700
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                        </span>Complete
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                        </span><a href="">View contestation</a>
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation ID
+                                        </span>7766
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation
+                                            reference
+                                        </span>123456789
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total number
+                                        </span>12
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total amount
+                                        </span>5,700
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                        </span>Complete
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                        </span><a href="">View contestation</a>
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation ID
+                                        </span>7766
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation
+                                            reference
+                                        </span>123456789
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total number
+                                        </span>12
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total amount
+                                        </span>5,700
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                        </span>Complete
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                        </span><a href="">View contestation</a>
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation ID
+                                        </span>7766
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation
+                                            reference
+                                        </span>123456789
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total number
+                                        </span>12
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total amount
+                                        </span>5,700
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                        </span>Complete
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                        </span><a href="">View contestation</a>
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation ID
+                                        </span>7766
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation
+                                            reference
+                                        </span>123456789
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total number
+                                        </span>12
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total amount
+                                        </span>5,700
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                        </span>Complete
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                        </span><a href="">View contestation</a>
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation ID
+                                        </span>7766
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Contestation
+                                            reference
+                                        </span>123456789
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total number
+                                        </span>12
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Total amount
+                                        </span>5,700
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                        </span>Complete
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                        </span><a href="">View contestation</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <!-- End of table data -->
+
+                <!-- Start pagination -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                      <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+      
+                        <div class="nhsuk-pagination__prev">
+                          <!-- <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="prev">
+                            <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--prev"
+                              xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false"
+                              viewBox="0 0 15 13">
+                              <path
+                                d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z">
+                              </path>
+                            </svg>
+                            <span class="nhsuk-pagination__link-title">Previous<span class="nhsuk-visually-hidden">
+                                page</span></span></a> -->
+                        </div>
+      
+      
+                        <ul class="nhsuk-pagination__list">
+                          <li class="nhsuk-pagination__item nhsuk-pagination__item--current">
+                            <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 1">
+                              1
+                            </a>
+                          </li>
+                          <li class="nhsuk-pagination__item">
+                            <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 2">
+                              2
+                            </a>
+                          </li>
+                        </ul>
+      
+                        <div class="nhsuk-pagination__next">
+                          <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="next"> <span class="nhsuk-pagination__link-title">Next<span class="nhsuk-visually-hidden">
+                                page</span></span>
+                            <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                              </path>
+                            </svg></a>
+                        </div>
+      
+                      </nav>
+                    </div>
+                  </div>
+
+                <!-- End pagination -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End main content -->
+
+{% endblock %}

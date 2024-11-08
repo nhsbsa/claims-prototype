@@ -1,28 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
-    name: 'Summary',
-    path: '/alpha/version-10/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
-    },
-    {
-    name: 'Invoices',
-    path: '/alpha/version-10/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
-    active: true
-    },
-    {
-        name: 'Contestations',
-        path: ''
-        },
-        {
-        name: 'Notes',
-        path: ''
-        },
-    {
-    name: 'History',
-    path: ''
-    }
-    ]
-    %}
+{
+name: 'Summary',
+path: '/alpha/version-11/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-11/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
+active: true
+},
+{
+name: 'Contestations',
+path: ''
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: ''
+}
+]
+%}
 
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-invoice-poc.html' %}
@@ -43,10 +43,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../../home">Home</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../index">Claims</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../summary/active-invoices-uploaded">Claim ID 6784</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../invoices/full-invoice-list">Invoices</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../../../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../../../../index">Claims</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../summary/active-invoices-uploaded">Claim ID 6784</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../invoices/full-invoice-list">Invoices</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
             <a class="nhsuk-breadcrumb__backlink" href="../../../../../../index">
@@ -59,30 +63,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <!-- End of breadcrumb -->
 {% endblock %}
 
-
-
 <!-- Start of central content -->
 {% block content %}
-
-<!-- Start of message block -->
-<!-- <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="border-color:#ffeb3b;">
-            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                Check invoice
-            </h2>
-            <div class="nhsuk-error-summary__body">
-                <p>
-                    The system has not been able to match this invoice to an OHS record.</p> 
-<p>You can search for a matching OHS person record using the invoice details. </p>
-<p>If you find a matching OHS person record, you can assign it  to the invoice.
-                </p>
-
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- End of message block -->
 
 <!-- Start of back link -->
 <div class="nhsuk-grid-row">
@@ -95,7 +77,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
                     </path>
                 </svg>
-                Go back to invoice search results</a>
+                Go back</a>
         </div>
     </div>
 </div>
@@ -109,9 +91,17 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
         </h1>
     </div>
     <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-            Mark complete
+        <a href="06b-contested">
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Mark complete
+            </button>
+        </a>
+        <a href="../../full-invoice-list">
+        <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+            Close invoice
         </button>
+        </a>
+
     </div>
 </div>
 <!-- End of header block -->
@@ -122,6 +112,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
         <div class="nhsuk-card">
             <div class="nhsuk-card__content">
                 <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Claim ID
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            6784
+                        </dd>
+                    </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
                             Invoice ID
@@ -199,17 +197,15 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </div>
                 <!-- End of header block -->
 
-                <!-- Start of status -->
+                <!-- Start of status breakdown -->
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
-         <h1 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-            Status breakdown
-        </h1>
+                        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
+                            Status breakdown
+                        </h3>
                         <div class="nhsuk-card" id="status">
-                            <div class="nhsuk-card__content nhsuk-u-padding-bottom-0" style="padding:18px 16px 16px 16px;">
-
-                                
-
+                            <div class="nhsuk-card__content nhsuk-u-padding-bottom-0"
+                                style="padding:18px 16px 16px 16px;">
 
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-one-third">
@@ -217,7 +213,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
                                                 Accepted amount
                                             </label>
-                                            <input class="nhsuk-input " id="accepted" name="accepted" type="text"
+                                            <input class="nhsuk-input" id="accepted" name="accepted" type="text"
                                                 value="0">
                                         </div>
                                     </div>
@@ -241,45 +237,43 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                 </div>
 
+                                <!-- Start of contestation reasons -->
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-full">
+
                                         <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
                                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
                                                 for="contestation-reason">
                                                 Contestation reason
                                             </label>
-    <div class="nhsuk-hint" id="contact-hint">
-      Select a reason or select <strong>None - invoice accepted</strong>.
-    </div>
+                                            <div class="nhsuk-hint nhsuk-u-margin-bottom-2" id="contact-hint">
+                                                Select a reason or select <strong>None - invoice accepted</strong>.
+                                            </div>
                                             <select class="nhsuk-select nhsuk-u-width-full" id="contestation-reason"
                                                 name="contestation-reason">
                                                 <option value="">Select contestation reason</option>
-<option value="None">None - invoice accepted</option>
-                                                <option value="This document does not concern us">This document does not
-                                                    concern us</option>
-
+                                                <option value="None">None - invoice accepted.</option>
+                                                <option value="This document does not concern us.">This document does
+                                                    not
+                                                    concern us.</option>
                                                 <option
                                                     value="Institution code is incorrect. Please provide correct institution code.">
                                                     Institution
                                                     code is incorrect. Please provide correct institution code.</option>
-
                                                 <option
                                                     value="Unable to identify the person from the information provided. Please check."
                                                     selected>
                                                     Unable to
                                                     identify the person from the information provided. Please check.
                                                 </option>
-
                                                 <option
                                                     value="Entitlement document is unknown or not found. Please provide copy.">
                                                     Entitlement
                                                     document is unknown or not found. Please provide copy.</option>
-
                                                 <option value="Scheduled treatment may be suspected. Please check.">
                                                     Scheduled treatment may
                                                     be
                                                     suspected. Please check.</option>
-
                                                 <option
                                                     value="There is an overlapping in hospitalisation periods. Please adjust the claim.">
                                                     There
@@ -294,10 +288,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 </option>
 
                                                 <option
-                                                    value="The period of benefits in kind is not covered by the entitlement period">
+                                                    value="The period of benefits in kind is not covered by the entitlement period.">
                                                     The
                                                     period
-                                                    of benefits in kind is not covered by the entitlement period
+                                                    of benefits in kind is not covered by the entitlement period.
                                                 </option>
 
                                                 <option
@@ -307,94 +301,582 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     adjust the
                                                     claim.</option>
 
-                                                <option
-                                                    value="The costs are to be settled by lump-sum as from [date should be filled in].">
-                                                    The
-                                                    costs are to be settled by lump-sum as from [date should be filled
-                                                    in].</option>
+                                                <option value="The costs are to be settled by lump-sum as from [date].">
+                                                    The costs are to be settled by lump sum as from &ndash; enter date.
+                                                </option>
 
-                                                <option
-                                                    value="The costs are to be settled by lump-sum until [date should be filled in].">
-                                                    The costs
-                                                    are to be settled by lump-sum until [date should be filled in].
+                                                <option value="The costs are to be settled by lump-sum until [date].">
+                                                    The costs are to be settled by lump sum until &ndash; enter date.
                                                 </option>
 
                                                 <option
-                                                    value="The person is not registered on the entitlement document">The
+                                                    value="The person is not registered on the entitlement document.">
+                                                    The
                                                     person is not
-                                                    registered on the entitlement document</option>
+                                                    registered on the entitlement document.</option>
 
                                                 <option value="The entitlement document has not been registered.">The
                                                     entitlement document
                                                     has not
                                                     been registered.</option>
 
-                                                <option
-                                                    value="Double invoice [duplicated invoice number should be filled in]">
+                                                <option value="Double invoice [invoice number]">
                                                     Double
-                                                    invoice
-                                                    [duplicated invoice number should be filled in]</option>
-
-                                                <option
-                                                    value="The entitlement in the state of residence started on [date should be filled in].">
-                                                    The
-                                                    entitlement in the state of residence started on [date should be
-                                                    filled in].</option>
-
-                                                <option
-                                                    value="The benefits seem to concern an accident at work that happened on [date should be filled in].">
-                                                    The benefits seem to concern an accident at work that happened on
-                                                    [date should be filled
-                                                    in].
+                                                    invoice &ndash; enter duplicate invoice reference.
                                                 </option>
 
-                                                <option value="The person died on [date should be filled in]">The person
-                                                    died on [date
-                                                    should be
-                                                    filled in]</option>
+                                                <option
+                                                    value="The entitlement in the state of residence started on [date].">
+                                                    The
+                                                    entitlement in the state of residence started on &ndash; enter date.
+                                                </option>
 
                                                 <option
-                                                    value="Lack of information about the other benefits provided. Please specify">
+                                                    value="The benefits seem to concern an accident at work that happened on [date].">
+                                                    The benefits seem to concern an accident at work that happened on
+                                                    &ndash; enter date.
+                                                </option>
+
+                                                <option value="The person died on [date]">The person
+                                                    died on &ndash; enter date.</option>
+
+                                                <option
+                                                    value="Lack of information about the other benefits provided. Please specify.">
                                                     Lack
                                                     of
-                                                    information about the other benefits provided. Please specify
+                                                    information about the other benefits provided. Please specify.
                                                 </option>
 
                                                 <option
-                                                    value="Total amount of claim different to the sum of individual claims">
+                                                    value="Total amount of claim different to the sum of individual claims.">
                                                     Total amount
                                                     of
-                                                    claim different to the sum of individual claims</option>
+                                                    claim different to the sum of individual claims.</option>
 
                                                 <option
-                                                    value="Total amount of individual claim different to the sum of benefits">
+                                                    value="Total amount of individual claim different to the sum of benefits.">
                                                     Total
                                                     amount of
-                                                    individual claim different to the sum of benefits</option>
+                                                    individual claim different to the sum of benefits.</option>
 
                                                 <option
-                                                    value="Cost of benefits have been refunded in full or partially to the insured person">
+                                                    value="Cost of benefits have been refunded in full or partially to the insured person.">
                                                     Cost
                                                     of benefits have been refunded in full or partially to the insured
-                                                    person</option>
+                                                    person.</option>
 
-                                                <option
-                                                    value="Claim introduced after deadline [date should be filled in]">
+                                                <option value="Claim introduced after deadline [date].">
                                                     Claim introduced
                                                     after
-                                                    deadline [date should be filled in]</option>
+                                                    deadline &ndash; enter date.</option>
 
-                                                <option
-                                                    value="Contestation reply received after deadline [date should be filled in].">
+                                                <option value="Contestation reply received after deadline [date].">
                                                     Contestation
-                                                    reply received after deadline [date should be filled in].</option>
+                                                    reply received after deadline &ndash; enter date.</option>
 
-                                                <option value="Other">Other</option>
+                                                <option value="Other [details].">Other &ndash; enter details.</option>
 
                                             </select>
                                         </div>
+
+                                        <!-- Start conditional fields based on contestation reason-->
+
+                                        <!-- The costs are to be settled by lump-sum as from-->
+                                        <div id="The costs are to be settled by lump-sum as from [date]." class="inv">
+                                            <div class="nhsuk-grid-row">
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
+                                                        style="margin-top:24px;">
+                                                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
+                                                            role="group">
+                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                for="duplicate-invoice">
+                                                                Date the costs are to be settled from
+                                                            </label>
+                                                            <div class="nhsuk-hint nhsuk-u-margin-bottom-2"
+                                                                id="example-hint">
+                                                                For example, 28 9 2023
+                                                            </div>
+
+                                                            <div class="nhsuk-date-input" id="example">
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-day">
+                                                                            Day
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-day" name="example-day"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-month">
+                                                                            Month
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-month" name="example-month"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-year">
+                                                                            Year
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                                            id="example-year" name="example-year"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- The costs are to be settled by lump-sum until-->
+                                        <div id="The costs are to be settled by lump-sum until [date]." class="inv">
+                                            <div class="nhsuk-grid-row">
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
+                                                        style="margin-top:24px;">
+                                                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
+                                                            role="group">
+                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                for="duplicate-invoice">
+                                                                Date the costs are to be settled until
+                                                            </label>
+                                                            <div class="nhsuk-hint nhsuk-u-margin-bottom-2"
+                                                                id="example-hint">
+                                                                For example, 28 9 2023
+                                                            </div>
+
+                                                            <div class="nhsuk-date-input" id="example">
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-day">
+                                                                            Day
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-day" name="example-day"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-month">
+                                                                            Month
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-month" name="example-month"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-year">
+                                                                            Year
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                                            id="example-year" name="example-year"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- The entitlement in the state of residence started on-->
+                                        <div id="The entitlement in the state of residence started on [date]." class="inv">
+                                            <div class="nhsuk-grid-row">
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
+                                                        style="margin-top:24px;">
+                                                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
+                                                            role="group">
+                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                for="duplicate-invoice">
+                                                                Date the entitlement in the state of residence
+                                                                started on
+                                                            </label>
+                                                            <div class="nhsuk-hint nhsuk-u-margin-bottom-2"
+                                                                id="example-hint">
+                                                                For example, 28 9 2023
+                                                            </div>
+
+                                                            <div class="nhsuk-date-input" id="example">
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-day">
+                                                                            Day
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-day" name="example-day"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-month">
+                                                                            Month
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-month" name="example-month"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-year">
+                                                                            Year
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                                            id="example-year" name="example-year"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Double invoice -->
+                                        <div id="Double invoice [invoice number]" class="inv">
+                                            <div class="nhsuk-grid-row">
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
+                                                        style="margin-top:24px;">
+                                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                            for="duplicate-invoice">
+                                                            Duplicate invoice reference
+                                                        </label>
+                                                        <input class="nhsuk-input" id="duplicate-invoice"
+                                                            name="duplicate-invoice" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- The benefits seem to concern an accident at work that happened on-->
+                                        <div id="The benefits seem to concern an accident at work that happened on [date]."
+                                            class="inv">
+                                            <div class="nhsuk-grid-row">
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
+                                                        style="margin-top:24px;">
+                                                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
+                                                            role="group">
+                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                for="duplicate-invoice">
+                                                                Date of accident at work
+                                                            </label>
+                                                            <div class="nhsuk-hint nhsuk-u-margin-bottom-2"
+                                                                id="example-hint">
+                                                                For example, 28 9 2023
+                                                            </div>
+
+                                                            <div class="nhsuk-date-input" id="example">
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-day">
+                                                                            Day
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-day" name="example-day"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-month">
+                                                                            Month
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-month" name="example-month"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-year">
+                                                                            Year
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                                            id="example-year" name="example-year"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- The person died on-->
+                                        <div id="The person died on [date]" class="inv">
+                                            <div class="nhsuk-grid-row">
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
+                                                        style="margin-top:24px;">
+                                                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
+                                                            role="group">
+                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                for="duplicate-invoice">
+                                                                Date of death
+                                                            </label>
+                                                            <div class="nhsuk-hint nhsuk-u-margin-bottom-2"
+                                                                id="example-hint">
+                                                                For example, 28 9 2023
+                                                            </div>
+
+                                                            <div class="nhsuk-date-input" id="example">
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-day">
+                                                                            Day
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-day" name="example-day"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-month">
+                                                                            Month
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-month" name="example-month"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-year">
+                                                                            Year
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                                            id="example-year" name="example-year"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Claim introduced after deadline-->
+                                        <div id="Claim introduced after deadline [date]." class="inv">
+                                            <div class="nhsuk-grid-row">
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
+                                                        style="margin-top:24px;">
+                                                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
+                                                            role="group">
+                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                for="duplicate-invoice">
+                                                                Date of claim deadline
+                                                            </label>
+                                                            <div class="nhsuk-hint nhsuk-u-margin-bottom-2"
+                                                                id="example-hint">
+                                                                For example, 28 9 2023
+                                                            </div>
+
+                                                            <div class="nhsuk-date-input" id="example">
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-day">
+                                                                            Day
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-day" name="example-day"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-month">
+                                                                            Month
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-month" name="example-month"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-year">
+                                                                            Year
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                                            id="example-year" name="example-year"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Contestation reply received after deadline-->
+                                        <div id="Contestation reply received after deadline [date]." class="inv">
+                                            <div class="nhsuk-grid-row">
+                                                <div class="nhsuk-grid-column-one-third">
+                                                    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
+                                                        style="margin-top:24px;">
+                                                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
+                                                            role="group">
+                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                for="duplicate-invoice">
+                                                                Date of contestation deadline
+                                                            </label>
+                                                            <div class="nhsuk-hint nhsuk-u-margin-bottom-2"
+                                                                id="example-hint">
+                                                                For example, 28 9 2023
+                                                            </div>
+
+                                                            <div class="nhsuk-date-input" id="example">
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-day">
+                                                                            Day
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-day" name="example-day"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-month">
+                                                                            Month
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                            id="example-month" name="example-month"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nhsuk-date-input__item">
+                                                                    <div class="nhsuk-form-group">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-date-input__label"
+                                                                            for="example-year">
+                                                                            Year
+                                                                        </label>
+                                                                        <input
+                                                                            class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                                            id="example-year" name="example-year"
+                                                                            type="text" inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Other -->
+                                        <div id="Other [details]." class="inv">
+                                            <div class="nhsuk-grid-row">
+                                                <div class="nhsuk-grid-column-full">
+                                                    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
+                                                        style="margin-top:24px;">
+                                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                            for="duplicate-invoice">
+                                                            Details
+                                                        </label>
+                                                        <textarea class="nhsuk-textarea" id="example" name="example"
+                                                            rows="5" aria-describedby="example-hint"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- End conditional fields based on contestation reason -->
+
                                     </div>
                                 </div>
+                                <!-- End of contestation reasons -->
                                 </fieldset>
                                 </form>
                                 <br />
@@ -405,20 +887,21 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </div>
                 <!-- End of status -->
 
-                        <h1 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-            Invoice details from France
-        </h1>
-
-                <!-- Start of treatment and entitlement details -->
+                <!-- Start of invoice details from submitting country -->
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
+                        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
+                            Invoice details from France
+                        </h3>
                         <ul class="nhsuk-grid-row nhsuk-card-group">
+
+                            <!-- Start person details -->
                             <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
                                 <div class="nhsuk-card ">
                                     <div class="nhsuk-card__content nhsuk-card__content" style="padding:16px;">
-                                        <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                        <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
                                             Person details
-                                        </h3>
+                                        </h4>
                                         <hr style="margin:0px 0px 10px 0px;">
                                         <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
                                             <div class="nhsuk-summary-list__row">
@@ -426,7 +909,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     Last name
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    Pearce
+                                                    Stephenson
                                                 </dd>
                                             </div>
                                             <div class="nhsuk-summary-list__row">
@@ -434,7 +917,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     First name
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    Sean
+                                                    Kayleigh
                                                 </dd>
                                             </div>
                                             <div class="nhsuk-summary-list__row">
@@ -442,15 +925,15 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     Date of birth
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    8 August 1952
+                                                    10 January 1981
                                                 </dd>
                                             </div>
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Unique ID
+                                                    PIN in UK
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    QQ 23 34 54 C
+                                                    JM 23 66 19 A
                                                 </dd>
                                             </div>
 
@@ -458,49 +941,15 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                 </div>
                             </li>
+                            <!-- End person details -->
 
-                            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-                                <div class="nhsuk-card">
-                                    <div class="nhsuk-card__content nhsuk-card__content" style="padding:16px;">
-                                        <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
-                                            Invoice period and amount
-                                        </h3>
-                                        <hr style="margin:0px 0px 10px 0px;">
-                                        <dl class="nhsuk-summary-list">
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Start date
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    1 June 2023
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    End date
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    2 June 2023
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Total amount
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    2134.75
-                                                </dd>
-                                            </div>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </li>
+                            <!-- Start entitlement details -->
                             <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
                                 <div class="nhsuk-card ">
                                     <div class="nhsuk-card__content nhsuk-card__content" style="padding:16px;">
-                                        <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                        <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
                                             Entitlement details
-                                        </h3>
+                                        </h4>
                                         <hr style="margin:0px 0px 10px 0px;">
                                         <dl class="nhsuk-summary-list">
                                             <div class="nhsuk-summary-list__row">
@@ -516,7 +965,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     Issue number
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    00874637746658873542
+                                                    80826000010168456876
                                                 </dd>
                                             </div>
                                             <div class="nhsuk-summary-list__row">
@@ -547,90 +996,143 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                 </div>
                             </li>
+                            <!-- End entitlement details-->
 
+                            <!-- Start invoice period and amount-->
+                            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                                <div class="nhsuk-card">
+                                    <div class="nhsuk-card__content nhsuk-card__content" style="padding:16px;">
+                                        <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                            Invoice period and amount
+                                        </h4>
+                                        <hr style="margin:0px 0px 10px 0px;">
+                                        <dl class="nhsuk-summary-list">
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Start date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    1 June 2023
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    End date
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    2 June 2023
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Total amount
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    2134.75
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- End invoice period and amount -->
 
                         </ul>
                     </div>
                 </div>
-                <!-- End of claim and entitlement details -->
+                <!-- End of invoice details from submitting country -->
 
+                <!-- Start of matched OHS record -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
+                            Matched OHS person record
+                        </h3>
 
-        <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
-                                                    <h1 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-            Matched OHS record
-        </h1>
-
-                                <div class="nhsuk-card ">
-                                    <div class="nhsuk-card__content nhsuk-card__content" style="padding:16px;">
-
-                                        <p>No match found.</p>
-                                        <a href="02-person-search">
-                                            <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-1" data-module="nhsuk-button" type="submit">
-                                                Search for a person
-                                              </button></a>
-
-                                        <!-- <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Last name
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    Pearce
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    First name
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    Sean
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Date of birth
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    8 August 1952
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Unique ID
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    QQ 23 34 54 C
-                                                </dd>
-                                            </div>
-
-                                        </dl> -->
-                                    </div>
-                                </div>
-
-        </div>
-        </div>
-
-
-
-
-
-
-
-
+                        <div class="nhsuk-card ">
+                            <div class="nhsuk-card__content nhsuk-card__content" style="padding:16px;">
+                                <p>No match found.</p>
+                                <a href="02-person-search">
+                                    <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-1"
+                                        data-module="nhsuk-button" type="submit">
+                                        Search for a person
+                                    </button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of matched OHS record -->
 
             </div>
             <!-- *** End of summary tab *** -->
 
             <!-- *** Start of notes tab *** -->
             <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
-                <h2 class="nhsuk-heading-l">Notes</h2>
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <h2 class="nhsuk-heading-l">Notes</h2>
+                    </div>
+
+                    <div class="nhsuk-grid-column-one-third">
+                        <button style="float:right;" class="nhsuk-button nhsuk-button--secondary"
+                            data-module="nhsuk-button" type="submit">
+                            Add a new note
+                        </button>
+                    </div>
+                </div>
+
+                <p class="nhsuk-body">There are currently no notes.</p>
             </div>
             <!-- *** End of notes tab *** -->
 
             <!-- *** Start of history tab *** -->
             <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="history">
                 <h2 class="nhsuk-heading-l">History</h2>
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <div class="nhsbsa-timeline">
+
+                            <!-- Start auto-validation -->
+                            <div class="nhsbsa-timeline__item nhsuk-u-margin-bottom-6">
+                                <div class="nhsbsa-timeline__header">
+                                    <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Automated validation complete
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
+                                            System</span>
+                                    </h3>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-3">19 July 2024 at 11:58am</p>
+                                </div>
+                                <div class="nhsbsa-timeline__description">
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-2"><span
+                                            class="nhsuk-u-font-weight-bold">Status:</span> To check</p>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-1"><span
+                                            class="nhsuk-u-font-weight-bold">Contestation reason:</span> Unable to
+                                        identify the person from the information provided. Please check.</p>
+                                </div>
+                            </div>
+                            <!-- End auto-validation -->
+
+                            <!-- Start invoice added -->
+                            <div class="nhsbsa-timeline__item">
+                                <div class="nhsbsa-timeline__header">
+                                    <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Invoice added to claim
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
+                                            George Harrison</span>
+                                    </h3>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-3">19 July 2024 at 11:51am</p>
+                                </div>
+                                <div class="nhsbsa-timeline__description">
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-2"><span
+                                            class="nhsuk-u-font-weight-bold">Claim ID:</span> 6784</p>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-1"><span
+                                            class="nhsuk-u-font-weight-bold">Claim amount (cost):</span> 2134.75</p>
+                                </div>
+                            </div>
+                            <!-- End invoice added -->
+
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- *** End of history tab *** -->
 
@@ -711,7 +1213,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             Last name
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            Pearce
+                                            Stephenson
                                         </dd>
                                     </div>
                                     <div class="nhsuk-summary-list__row">
@@ -719,7 +1221,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             First name
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            Sean
+                                            Kayleigh
                                         </dd>
                                     </div>
                                     <div class="nhsuk-summary-list__row">
@@ -727,7 +1229,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             Date of birth
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            8 August 1952
+                                            10 January 1981
                                         </dd>
                                     </div>
                                     <div class="nhsuk-summary-list__row">
@@ -735,7 +1237,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             Unique ID
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            QQ 23 34 54 C
+                                            JM 23 66 19 A
                                         </dd>
                                     </div>
                                     <div class="nhsuk-summary-list__row">
@@ -944,6 +1446,22 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
 </div>
 </div>
+
+<script>
+    document
+        .getElementById('contestation-reason')
+        .addEventListener('change', function () {
+            'use strict';
+            var vis = document.querySelector('.vis'),
+                target = document.getElementById(this.value);
+            if (vis !== null) {
+                vis.className = 'inv';
+            }
+            if (target !== null) {
+                target.className = 'vis';
+            }
+        });
+</script>
 
 {% endblock %}
 <!-- End of central content -->
