@@ -69,7 +69,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-error-summary__body">
       <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
         <li>
-          <a href="#invoice-id">You can only search using either invoice ID or invoice reference, or search using either last name, first name, or both</a>
+          <a href="#invoice-id">Invoice ID must only include numbers</a>
         </li>
       </ul>
     </div>
@@ -99,7 +99,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
         </h2>
         <hr style="margin:0px 0px 24px 0px;" />
         <span class="nhsuk-error-message" id="dob-day-error-error">
-          <span class="nhsuk-u-visually-hidden">Error:</span> You can only search using either invoice ID or invoice reference, or search using either last name, first name, or both
+          <span class="nhsuk-u-visually-hidden">Error:</span> Invoice ID must only include numbers
         </span>
         <form action="" method="post">
           <div class="nhsuk-hint" id="contact-hint">
@@ -111,7 +111,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                 <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-id">
                   Invoice ID
                 </label>
-                <input class="nhsuk-input nhsuk-input--error" id="invoice-id" name="invoice-id" type="text" value="20001554">
+                <input class="nhsuk-input nhsuk-input--error" id="invoice-id" name="invoice-id" type="text" value="20001554-abc">
               </div>
             </div>
             <div class="nhsuk-grid-column-one-third">
@@ -133,7 +133,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                 <label class="nhsuk-label nhsuk-u-font-weight-bold" for="last-name">
                   Last name
                 </label>
-                <input class="nhsuk-input nhsuk-input--error" id="last-name" name="last-name" type="text" value="Stephenson">
+                <input class="nhsuk-input" id="last-name" name="last-name" type="text">
               </div>
             </div>
             <div class="nhsuk-grid-column-one-third">
