@@ -81,7 +81,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
               Search for a claim
             </h2>
             <hr style="margin:0px 0px 24px 0px;" />
-            <form action="search-results#results" method="post">
+            <form action="search/individual-claim" method="post">
               <div class="nhsuk-hint" id="contact-hint">
                 Search using either claim ID or claim reference.
               </div>
@@ -160,9 +160,14 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                   </div>
                 </div>
               </div>
-              <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
-                Search
-              </button>
+              <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full">
+                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                  Search
+                </button>
+                <p class="nhsuk-u-margin-bottom-0"><a href="#">Clear search</a></p>
+              </div>
+              </div>
             </form>
           </div>
         </div>

@@ -6,6 +6,20 @@ const path = require('path');
 
 const axios = require('axios');
 
+//////CLAIM SEARCH///////
+
+router.post('/route-claim-search', function(req,res){
+    var claimId = req.session.data['claim-id']
+    if (claimId == "6784" || claimId == "7399") {
+        res.redirect('/alpha/version-11/claims/search/individual-claim')
+        }
+    else {
+        res.redirect('/alpha/version-11/claims/search/no-results')
+    }
+})
+
+
+
 //// CREATE CLAIM ////
 
 //// How did you receive the claim?  ////
