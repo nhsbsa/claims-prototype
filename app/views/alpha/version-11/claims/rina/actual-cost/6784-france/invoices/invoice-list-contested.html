@@ -1,28 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-  {
-  name: 'Summary',
-  path: '/alpha/version-11/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
-  },
-  {
-  name: 'Invoices',
-  path: '/alpha/version-11/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
-  active: true
-  },
-  {
-    name: 'Contestations',
-    path: ''
-    },
-    {
-    name: 'Notes',
-    path: ''
-    },
-  {
-  name: 'History',
-  path: ''
-  }
-  ]
-  %}
+{
+name: 'Summary',
+path: '/alpha/version-11/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-11/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
+active: true
+},
+{
+name: 'Contestations',
+path: ''
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: ''
+}
+]
+%}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -68,7 +68,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
   </div>
   <div class="nhsuk-grid-column-one-third" style="text-align:right;">
     <a href="upload/options">
-      <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+      <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" data-module="nhsuk-button"
+        type="submit">
         Add invoices
       </button>
     </a>
@@ -136,7 +137,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
               </button>
               <p class="nhsuk-u-margin-bottom-0"><a href="#">Clear search</a></p>
             </div>
-            </div>
+          </div>
         </form>
       </div>
     </div>
@@ -289,13 +290,6 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="filter-status-partial" name="filter-status"
-                              type="checkbox" value="partial">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-partial">
-                              Partial
-                            </label>
-                          </div>
-                          <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="filter-status-withdrawn" name="filter-status"
                               type="checkbox" value="withdrawn">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-withdrawn">
@@ -387,7 +381,8 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                         Apply filters
                       </button>
                     </a>
-                    <p class="nhsuk-u-margin-bottom-0"><a href="full-invoice-list-sort-filter-open#download-results">Reset all filters</a></p>
+                    <p class="nhsuk-u-margin-bottom-0"><a
+                        href="full-invoice-list-sort-filter-open#download-results">Reset all filters</a></p>
                   </div>
                 </div>
               </div>
@@ -396,10 +391,10 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
         </div>
         <!-- End of filter and sort options -->
 
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
-          <p class="nhsuk-body">No results found.</p>
-        </div>
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <p class="nhsuk-body" style="padding-top:16px">No results found.</p>
+          </div>
         </div>
 
       </div>

@@ -167,23 +167,227 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
         <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
           <div class="nhsuk-grid-column-two-thirds">
             <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 0 results of 0</h3>
-            <p class="nhsuk-u-margin-bottom-2">
-                <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                    20009573
-                </strong>
-              </p>
+            <p class="nhsuk-u-margin-bottom-2"><strong class="nhsuk-tag nhsuk-tag--aqua-green">
+              20009573
+              </strong></p>
           </div>
-
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group" style="float:right;">
+              <label class="nhsuk-label" for="results">
+                Results per page
+              </label>
+              <select class="nhsuk-select" id="results" name="results" style="float:right;">
+                <option value="10" selected>10</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+              </select>
+            </div>
+          </div>
         </div>
         <!-- End header block -->
 
+        <!-- Start of filter and sort options -->
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <details class="nhsuk-details nhsuk-u-margin-bottom-2">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Filter and sort options
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <div class="nhsuk-grid-row">
 
+                  <!-- Start filter by entitlement -->
+                  <div class="nhsuk-grid-column-one-quarter">
+                    <div class="nhsuk-form-group">
+                      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                          <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                            Filter by entitlement
+                          </h1>
+                        </legend>
+                        <div class="nhsuk-checkboxes">
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-s1" name="filter-entitlement"
+                              type="checkbox" value="s1">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s1">
+                              S1
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-ehic"
+                              name="filter-entitlement" type="checkbox" value="ehic">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-ehic">
+                              EHIC
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-prc" name="filter-entitlement"
+                              type="checkbox" value="prc">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-prc">
+                              PRC
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-s2" name="filter-entitlement"
+                              type="checkbox" value="s2">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s2">
+                              S2
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-da1" name="filter-entitlement"
+                              type="checkbox" value="da1">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-da1">
+                              DA1
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <!-- End filter by entitlement -->
+
+                  <!-- Start filter by status-->
+                  <div class="nhsuk-grid-column-one-quarter">
+                    <div class="nhsuk-form-group">
+                      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                          <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                            Filter by status
+                          </h1>
+                        </legend>
+                        <div class="nhsuk-checkboxes">
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-tobechecked" name="filter-status"
+                              type="checkbox" value="check">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-tobechecked">
+                              To check
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-accepted" name="filter-status"
+                              type="checkbox" value="accepted">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-accepted">
+                              Accepted
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-contested" name="filter-status"
+                              type="checkbox" value="contested" checked>
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-contested">
+                              Contested
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-withdrawn" name="filter-status"
+                              type="checkbox" value="withdrawn">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-withdrawn">
+                              Withdrawn
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <!-- End filter by status -->
+
+                  <!-- Start sort by -->
+                  <div class="nhsuk-grid-column-one-quarter">
+                    <div class="nhsuk-form-group nhsuk-u-padding-bottom-5">
+                      <fieldset class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                          <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                            Sort by
+                          </h1>
+                        </legend>
+                        <div class="nhsuk-radios">
+                          <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="sort-by-id" name="sort-by" type="radio" value="id"
+                              checked="checked">
+                            <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
+                              Invoice ID
+                            </label>
+                          </div>
+                          <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="sort-by-ref" name="sort-by" type="radio" value="ref">
+                            <label class="nhsuk-label nhsuk-radios__label" for="sort-by-ref">
+                              Invoice reference
+                            </label>
+                          </div>
+                          <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="sort-by-last-name" name="sort-by" type="radio"
+                              value="last-name">
+                            <label class="nhsuk-label nhsuk-radios__label" for="sort-by-last-name">
+                              Last name
+                            </label>
+                          </div>
+                          <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="sort-by-first-name" name="sort-by" type="radio"
+                              value="first-name">
+                            <label class="nhsuk-label nhsuk-radios__label" for="sort-by-first-name">
+                              First name
+                            </label>
+                          </div>
+
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <!-- End sort by -->
+
+                  <!-- Start sort order -->
+                  <div class="nhsuk-grid-column-one-quarter">
+                    <div class="nhsuk-form-group">
+                      <fieldset class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                          <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                            Order results
+                          </h1>
+                        </legend>
+                        <div class="nhsuk-radios">
+                          <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="order-by-asc" name="order-by" type="radio"
+                              value="ascending">
+                            <label class="nhsuk-label nhsuk-radios__label" for="order-by-asc">
+                              Ascending
+                            </label>
+                          </div>
+                          <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="order-by-desc" name="order-by" type="radio"
+                              value="descending" checked="checked">
+                            <label class="nhsuk-label nhsuk-radios__label" for="order-by-desc">
+                              Descending
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <!-- End sort order -->
+                  <div class="nhsuk-grid-column-full">
+                    <a href="#">
+                      <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                        Apply filters
+                      </button>
+                    </a>
+                    <p class="nhsuk-u-margin-bottom-0"><a
+                        href="#">Reset all filters</a></p>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+        <!-- End of filter and sort options -->
 
         <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
-          <p class="nhsuk-body">No results found.</p>
+          <div class="nhsuk-grid-column-full">
+            <p class="nhsuk-body" style="padding-top:16px">No results found.</p>
+          </div>
         </div>
-        </div>
+
 
 
       </div>

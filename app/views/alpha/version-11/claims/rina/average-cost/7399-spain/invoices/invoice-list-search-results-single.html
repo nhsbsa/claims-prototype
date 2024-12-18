@@ -1,28 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-  {
-  name: 'Summary',
-  path: '/alpha/version-11/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
-  },
-  {
-  name: 'Invoices',
-  path: '/alpha/version-11/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
-  active: true
-  },
-  {
-    name: 'Contestations',
+    {
+    name: 'Summary',
+    path: '/alpha/version-11/claims/rina/average-cost/7399-spain/summary/active-in-progress'
+    },
+    {
+    name: 'Invoices',
+    path: '/alpha/version-11/claims/rina/average-cost/7399-spain/invoices/invoice-list-full',
+    active: true
+    },
+    {
+    name: 'Submissions',
     path: ''
     },
     {
     name: 'Notes',
     path: ''
     },
-  {
-  name: 'History',
-  path: ''
-  }
-  ]
-  %}
+    {
+    name: 'History',
+    path: ''
+    }
+    ]
+    %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -30,6 +30,13 @@
     - change the header and footer 
     - add custom CSS and JavaScript
 -->
+
+{% block ClaimId %}
+7399
+{% endblock %}
+{% block submittingCountry %}
+Spain
+{% endblock %}
 
 <!-- Start of page title -->
 {% block pageTitle %}
@@ -61,44 +68,14 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of title block -->
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds">
+  <div class="nhsuk-grid-column-full">
     <h1 class="nhsuk-heading-xl ">
       Invoices
     </h1>
   </div>
-  <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-    <a href="upload/options">
-      <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
-        Add invoices
-      </button>
-    </a>
-  </div>
 </div>
 <!-- End of title block -->
 
-<!-- Start of search fields -->
-<div class="nhsuk-card">
-  <div class="nhsuk-card__content">
-
-    <form action="full-invoice-list-search-results#search-results" method="post">
-
-                <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
-          <h3 class="nhsuk-card__heading">
-            Search for an invoice
-          </h3>
-        </div>
-      </div>
-
-      <hr style="margin:0px 0px 24px 0px;" />
-
-<div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-full">
-            <div class="nhsuk-hint" id="contact-hint">
-              Search using one or more fields.
-            </div>
-          </div>
-          </div>
 
 <!-- Start of search inputs -->
 <div class="nhsuk-grid-row">
@@ -119,7 +96,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                 <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-id">
                   Invoice ID
                 </label>
-                <input class="nhsuk-input" id="invoice-id" name="invoice-id" type="text">
+                <input class="nhsuk-input" id="invoice-id" name="invoice-id" type="text" value="20004963">
               </div>
             </div>
             <div class="nhsuk-grid-column-one-third">
@@ -154,24 +131,19 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             </div>
           </div>
           <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-full">
-              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                Search
-              </button>
-              <p class="nhsuk-u-margin-bottom-0"><a href="#">Clear search</a></p>
-            </div>
-            </div>
+          <div class="nhsuk-grid-column-full">
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+              Search
+            </button>
+            <p class="nhsuk-u-margin-bottom-0"><a href="invoice-list-full">Clear search</a></p>
+          </div>
+          </div>
         </form>
       </div>
     </div>
   </div>
 </div>
 <!-- End of search inputs -->
-
-    </form>
-  </div>
-</div>
-<!-- End of filter results -->
 
 <!-- Start download-->
 <div class="nhsuk-grid-row" id="download-results">
@@ -202,12 +174,14 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
 
         <!-- Start header block-->
         <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
-          <div class="nhsuk-grid-column-two-thirds">
-            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 0 results of 0</h3>
-            <p class="nhsuk-u-margin-bottom-2"><strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                Partial
-              </strong></p>
-          </div>
+            <div class="nhsuk-grid-column-two-thirds">
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 results of 1</h3>
+                <p class="nhsuk-u-margin-bottom-2">
+                  <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                    20004963
+                  </strong>
+                </p>
+              </div>
           <div class="nhsuk-grid-column-one-third">
             <div class="nhsuk-form-group" style="float:right;">
               <label class="nhsuk-label" for="results">
@@ -234,57 +208,6 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
               </summary>
               <div class="nhsuk-details__text">
                 <div class="nhsuk-grid-row">
-
-                  <!-- Start filter by entitlement -->
-                  <div class="nhsuk-grid-column-one-quarter">
-                    <div class="nhsuk-form-group">
-                      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                          <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
-                            Filter by entitlement
-                          </h1>
-                        </legend>
-                        <div class="nhsuk-checkboxes">
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-s1" name="filter-entitlement"
-                              type="checkbox" value="s1">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s1">
-                              S1
-                            </label>
-                          </div>
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-ehic"
-                              name="filter-entitlement" type="checkbox" value="ehic">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-ehic">
-                              EHIC
-                            </label>
-                          </div>
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-prc" name="filter-entitlement"
-                              type="checkbox" value="prc">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-prc">
-                              PRC
-                            </label>
-                          </div>
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-s2" name="filter-entitlement"
-                              type="checkbox" value="s2">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-s2">
-                              S2
-                            </label>
-                          </div>
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="filter-entitlement-da1" name="filter-entitlement"
-                              type="checkbox" value="da1">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-entitlement-da1">
-                              DA1
-                            </label>
-                          </div>
-                        </div>
-                      </fieldset>
-                    </div>
-                  </div>
-                  <!-- End filter by entitlement -->
 
                   <!-- Start filter by status-->
                   <div class="nhsuk-grid-column-one-quarter">
@@ -416,7 +339,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                         Apply filters
                       </button>
                     </a>
-                    <p class="nhsuk-u-margin-bottom-0"><a href="index">Reset all filters</a></p>
+                    <p class="nhsuk-u-margin-bottom-0"><a href="">Reset all filters</a></p>
                   </div>
                 </div>
               </div>
@@ -429,7 +352,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-full">
 
-            <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+            <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-6">
               <!-- <caption class="nhsuk-table__caption">Showing results for: All treatments</caption>  -->
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
@@ -456,11 +379,33 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                   </th>
                 </tr>
               </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice ID </span>20004963
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>GB 1102606
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Last name </span>Featherstone
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">First name</span>William
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>To check
+                  </td>
 
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="details/20004963/01-to-check">View invoice</a>
+                  </td>
+                </tr>
+              </tbody>
             </table>
-<p class="nhsuk-body">No results found.</p>
-
-
           </div>
         </div>
         <!-- End of table data -->
