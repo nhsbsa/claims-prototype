@@ -1,20 +1,20 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Home',
-path: ''
-},
-{
-name: 'Claims',
-path: '',
-active: true
-},
-{
-name: 'Reports',
-path: ''
-}
-]
-%}
+    {
+    name: 'Home',
+    path: '/alpha/version-11/home'
+    },
+    {
+    name: 'Claims',
+    path: '/alpha/version-11/claims/index',
+    active: true
+    },
+    {
+    name: 'Reports',
+    path: ''
+    }
+    ]
+    %}
 
 <!-- Extends the layout from /views/layout-full-width.html -->
 {% extends 'layout-full-width.html' %}
@@ -35,10 +35,10 @@ Claims - Manage incoming international healthcare claims - NHSBSA
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="../home">
+            <a class="nhsuk-breadcrumb__backlink" href="../../home">
                 <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
                 Home
             </a>
@@ -62,7 +62,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                 </h1>
             </div>
             <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-                <a href="create/index">
+                <a href="../create/index">
                     <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0"
                         data-module="nhsuk-button" type="submit">
                         Create a new claim
@@ -163,12 +163,12 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                             </div>
                             <div class="nhsuk-grid-row">
                                 <div class="nhsuk-grid-column-full">
-                                  <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                                    Search
-                                  </button>
-                                  <p class="nhsuk-u-margin-bottom-0"><a href="../index">Clear search</a></p>
+                                    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                                        Search
+                                    </button>
+                                    <p class="nhsuk-u-margin-bottom-0"><a href="../index">Clear search</a></p>
                                 </div>
-                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -204,199 +204,184 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <!-- End of header block -->
 
-                        <!-- Start filter and sort options -->
-
-                        <div class="nhsuk-grid-row">
-                        <div class="nhsuk-grid-column-full">
-                            <details class="nhsuk-details">
-                                <summary class="nhsuk-details__summary">
-                                  <span class="nhsuk-details__summary-text">
-                                    Filter and sort options
-                                  </span>
-                                </summary>
-                                <div class="nhsuk-details__text">
-                                    <div class="nhsuk-grid-row">
-                                        <div class="nhsuk-grid-column-one-third">
-                                                   <!-- By type of claim -->
-                                                   <div class="nhsuk-form-group">
-                                                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-                                                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                                                            <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
-                                                                Filter by type of claim
-                                                            </h1>
-                                                        </legend>
-                                                        <div class="nhsuk-checkboxes">
-                                                            <div class="nhsuk-checkboxes__item">
-                                                                <input class="nhsuk-checkboxes__input" id="article-filter-20"
-                                                                    name="article-filter" type="checkbox" value="Article 20(2) - S2">
-                                                                <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                    for="article-filter-20">
-                                                                    Actual cost - Sickness
-                                                                </label>
-                                                            </div>
-                                                            <div class="nhsuk-checkboxes__item">
-                                                                <input class="nhsuk-checkboxes__input" id="article-filter-22"
-                                                                    name="article-filter" type="checkbox"
-                                                                    value="Article 22(i)(c) - E112">
-                                                                <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                    for="article-filter-22">
-                                                                    Average cost - Sickness - Article 63 (2a)
-                                                                </label>
-                                                            </div>
-                                                            <div class="nhsuk-checkboxes__item">
-                                                                <input class="nhsuk-checkboxes__input" id="article-filter-55"
-                                                                    name="article-filter" type="checkbox"
-                                                                    value="Article 55(i)(a) - E123">
-                                                                <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                    for="article-filter-55">
-                                                                    Average cost - Sickness - Article 63 (2b)
-                                                                </label>
-                                                            </div>
-                                                            <div class="nhsuk-checkboxes__item">
-                                                                <input class="nhsuk-checkboxes__input" id="article-filter-62"
-                                                                    name="article-filter" type="checkbox"
-                                                                    value="Average cost - Sickness">
-                                                                <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                    for="article-filter-62">
-                                                                    Average cost - Sickness - Article 94
-                                                                </label>
-                                                            </div>
-                                                            <div class="nhsuk-checkboxes__item">
-                                                                <input class="nhsuk-checkboxes__input" id="article-filter-63-2a"
-                                                                    name="article-filter" type="checkbox" value="Article 63 (2a)">
-                                                                <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                    for="article-filter-63-2a">
-                                                                    Average cost - Sickness - Article 95
-                                                                </label>
-                                                            </div>
-                                                            <div class="nhsuk-checkboxes__item">
-                                                                <input class="nhsuk-checkboxes__input" id="article-filter-63-2b"
-                                                                    name="article-filter" type="checkbox" value="Article 63 (2b)">
-                                                                <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                    for="article-filter-63-2b">
-                                                                    Actual cost - Accident at work
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                        </div>
-                                        <div class="nhsuk-grid-column-one-third">
-                                               <!-- By claim status -->
-                                               <div class="nhsuk-form-group">
-                                                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-                                                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                                                        <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
-                                                            Filter by claim status
-                                                        </h1>
-                                                    </legend>
-                                                    <div class="nhsuk-checkboxes">
-                                                        <div class="nhsuk-checkboxes__item">
-                                                            <input class="nhsuk-checkboxes__input" id="status-filter-not-started"
-                                                                name="status-filter" type="checkbox" value="Not started">
-                                                            <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                for="status-filter-not-started">
-                                                                Not started
-                                                            </label>
-                                                        </div>
-                                                        <div class="nhsuk-checkboxes__item">
-                                                            <input class="nhsuk-checkboxes__input" id="status-filter-active"
-                                                                name="status-filter" type="checkbox" value="Active">
-                                                            <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                for="status-filter-active">
-                                                                Active
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </fieldset>
-                                            </div>
-                                        </div>
-                                        <div class="nhsuk-grid-column-one-third">
-                                                <!-- Sort by -->
-                                                <div class="nhsuk-form-group">
-                                                    <fieldset class="nhsuk-fieldset">
-                                                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                                                            <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
-                                                                Sort by
-                                                            </h1>
-                                                        </legend>
-                                                        <div class="nhsuk-radios">
-                                                            <div class="nhsuk-radios__item">
-                                                                <input class="nhsuk-radios__input" id="sort-by-id" name="sort-by"
-                                                                    type="radio" value="Claim ID" checked="checked">
-                                                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
-                                                                    Claim ID
-                                                                </label>
-                                                            </div>
-                                                            <div class="nhsuk-radios__item">
-                                                                <input class="nhsuk-radios__input" id="sort-by-ref" name="sort-by"
-                                                                    type="radio" value="Claim reference">
-                                                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-ref">
-                                                                    Claim reference
-                                                                </label>
-                                                            </div>
-                                                            <div class="nhsuk-radios__item">
-                                                                <input class="nhsuk-radios__input" id="sort-by-country" name="sort-by"
-                                                                    type="radio" value="Country">
-                                                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-country">
-                                                                    Country
-                                                                </label>
-                                                            </div>
-                                                            <div class="nhsuk-radios__item">
-                                                                <input class="nhsuk-radios__input" id="sort-by-year" name="sort-by"
-                                                                    type="radio" value="Financial year">
-                                                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-year">
-                                                                    Financial year
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                
-                                                <!-- Order by -->
-                                                <div class="nhsuk-form-group">
-                                                    <fieldset class="nhsuk-fieldset">
-                                                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
-                                                            <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
-                                                                Order results
-                                                            </h1>
-                                                        </legend>
-                                                        <div class="nhsuk-radios">
-                                                            <div class="nhsuk-radios__item">
-                                                                <input class="nhsuk-radios__input" id="order-by-asc" name="order-by"
-                                                                    type="radio" value="ascending">
-                                                                <label class="nhsuk-label nhsuk-radios__label" for="order-by-asc">
-                                                                    Ascending
-                                                                </label>
-                                                            </div>
-                                                            <div class="nhsuk-radios__item">
-                                                                <input class="nhsuk-radios__input" id="order-by-desc" name="order-by"
-                                                                    type="radio" value="descending" checked="checked">
-                                                                <label class="nhsuk-label nhsuk-radios__label" for="order-by-desc">
-                                                                    Descending
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                        </div>
-                                        </div>
-                              
+            <!-- Start of filter and sort options -->
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                  <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary">
+                      <span class="nhsuk-details__summary-text">
+                        Filter and sort options
+                      </span>
+                    </summary>
+                    <div class="nhsuk-details__text">
+                      <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-one-third">
+                          <!-- By type of claim -->
+                          <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                  Filter by type of claim
+                                </h1>
+                              </legend>
+                              <div class="nhsuk-checkboxes">
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="article-filter-20" name="article-filter"
+                                    type="checkbox" value="Article 20(2) - S2">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-20">
+                                    Actual cost - Sickness
+                                  </label>
                                 </div>
-                              </details>
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="article-filter-22" name="article-filter"
+                                    type="checkbox" value="Article 22(i)(c) - E112">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-22">
+                                    Average cost - Sickness - Article 63 (2a)
+                                  </label>
+                                </div>
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="article-filter-55" name="article-filter"
+                                    type="checkbox" value="Article 55(i)(a) - E123">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-55">
+                                    Average cost - Sickness - Article 63 (2b)
+                                  </label>
+                                </div>
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="article-filter-62" name="article-filter"
+                                    type="checkbox" value="Average cost - Sickness">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-62">
+                                    Average cost - Sickness - Article 94
+                                  </label>
+                                </div>
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="article-filter-63-2a" name="article-filter"
+                                    type="checkbox" value="Article 63 (2a)">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-63-2a">
+                                    Average cost - Sickness - Article 95
+                                  </label>
+                                </div>
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="article-filter-63-2b" name="article-filter"
+                                    type="checkbox" value="Article 63 (2b)">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="article-filter-63-2b">
+                                    Actual cost - Accident at work
+                                  </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                          </div>
                         </div>
+                        <div class="nhsuk-grid-column-one-third">
+                          <!-- By claim status -->
+                          <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                  Filter by claim status
+                                </h1>
+                              </legend>
+                              <div class="nhsuk-checkboxes">
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="status-filter-not-started"
+                                    name="status-filter" type="checkbox" value="Not started">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="status-filter-not-started">
+                                    Not started
+                                  </label>
+                                </div>
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="status-filter-active" name="status-filter"
+                                    type="checkbox" value="Active">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="status-filter-active">
+                                    Active
+                                  </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                          </div>
                         </div>
-
-                
-
-
-
-
-
-
-                   
-
-                        <!-- End filter and sort options -->
+                        <div class="nhsuk-grid-column-one-third">
+                          <!-- Sort by -->
+                          <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset">
+                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                  Sort by
+                                </h1>
+                              </legend>
+                              <div class="nhsuk-radios">
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="sort-by-id" name="sort-by" type="radio"
+                                    value="Claim ID" checked="checked">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
+                                    Claim ID
+                                  </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="sort-by-ref" name="sort-by" type="radio"
+                                    value="Claim reference">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="sort-by-ref">
+                                    Claim reference
+                                  </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="sort-by-country" name="sort-by" type="radio"
+                                    value="Country">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="sort-by-country">
+                                    Country
+                                  </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="sort-by-year" name="sort-by" type="radio"
+                                    value="Financial year">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="sort-by-year">
+                                    Financial year
+                                  </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                          </div>
+                          <!-- Order by -->
+                          <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset">
+                              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                  Order results
+                                </h1>
+                              </legend>
+                              <div class="nhsuk-radios">
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="order-by-asc" name="order-by" type="radio"
+                                    value="ascending">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="order-by-asc">
+                                    Ascending
+                                  </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                  <input class="nhsuk-radios__input" id="order-by-desc" name="order-by" type="radio"
+                                    value="descending" checked="checked">
+                                  <label class="nhsuk-label nhsuk-radios__label" for="order-by-desc">
+                                    Descending
+                                  </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+                        <!-- CTA's -->
+                        <div class="nhsuk-grid-column-full">
+                          <a href="#">
+                            <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                              Apply filters
+                            </button>
+                          </a>
+                          <p class="nhsuk-u-margin-bottom-0"><a href="#">Reset all filters</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </details>
+                </div>
+              </div>
+              <!-- End of filter and sort options -->
 
 
 
