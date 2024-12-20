@@ -1,28 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
-    name: 'Summary',
-    path: '/alpha/version-11/claims/rina/average-cost/7399-spain/summary/active-in-progress'
-    },
-    {
-    name: 'Invoices',
-    path: '/alpha/version-11/claims/rina/average-cost/7399-spain/invoices/invoice-list-full',
-    active: true
-    },
-    {
-    name: 'Submissions',
-    path: ''
-    },
-    {
-    name: 'Notes',
-    path: ''
-    },
-    {
-    name: 'History',
-    path: ''
-    }
-    ]
-    %}
+  {
+  name: 'Summary',
+  path: '/alpha/version-11/claims/rina/average-cost/spain/7399/summary/active-in-progress'
+  },
+  {
+  name: 'Invoices',
+  path: '/alpha/version-11/claims/rina/average-cost/spain/7399/invoices/invoice-list-full',
+  active: true
+  },
+  {
+  name: 'Submissions',
+  path: ''
+  },
+  {
+  name: 'Notes',
+  path: ''
+  },
+  {
+  name: 'History',
+  path: ''
+  }
+  ]
+  %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -49,11 +49,11 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container-fluid">
     <ol class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../home">Home</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../index">Claims</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../index">Claims</a></li>
     </ol>
     <p class="nhsuk-breadcrumb__back">
-      <a class="nhsuk-breadcrumb__backlink" href="../../../../index">
+      <a class="nhsuk-breadcrumb__backlink" href="../../../../../index">
         <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
         Claims
       </a>
@@ -86,7 +86,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
           Search for an invoice
         </h2>
         <hr style="margin:0px 0px 24px 0px;" />
-        <form action="full-invoice-list-search-results#search-results" method="post">
+        <form action="invoice-list-search-results-single#download-results" method="post">
           <div class="nhsuk-hint" id="contact-hint">
             Search using either invoice ID or invoice reference.
           </div>
@@ -96,7 +96,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                 <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-id">
                   Invoice ID
                 </label>
-                <input class="nhsuk-input" id="invoice-id" name="invoice-id" type="text" value="20004963">
+                <input class="nhsuk-input" id="invoice-id" name="invoice-id" type="text">
               </div>
             </div>
             <div class="nhsuk-grid-column-one-third">
@@ -135,7 +135,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
             <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
               Search
             </button>
-            <p class="nhsuk-u-margin-bottom-0"><a href="invoice-list-full">Clear search</a></p>
+            <p class="nhsuk-u-margin-bottom-0"><a href="#">Clear search</a></p>
           </div>
           </div>
         </form>
@@ -174,14 +174,12 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
 
         <!-- Start header block-->
         <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
-            <div class="nhsuk-grid-column-two-thirds">
-                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 results of 1</h3>
-                <p class="nhsuk-u-margin-bottom-2">
-                  <strong class="nhsuk-tag nhsuk-tag--aqua-green">
-                    20004963
-                  </strong>
-                </p>
-              </div>
+          <div class="nhsuk-grid-column-two-thirds">
+            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 10 results of 27</h3>
+            <p class="nhsuk-u-margin-bottom-2"><strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                To check
+                </strong></p>
+          </div>
           <div class="nhsuk-grid-column-one-third">
             <div class="nhsuk-form-group" style="float:right;">
               <label class="nhsuk-label" for="results">
@@ -221,7 +219,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                         <div class="nhsuk-checkboxes">
                           <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="filter-status-tobechecked" name="filter-status"
-                              type="checkbox" value="check">
+                              type="checkbox" value="check" checked>
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-tobechecked">
                               To check
                             </label>
@@ -352,7 +350,7 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-full">
 
-            <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-6">
+            <table role="table" class="nhsuk-table-responsive">
               <!-- <caption class="nhsuk-table__caption">Showing results for: All treatments</caption>  -->
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
@@ -382,6 +380,99 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice ID </span>20001621
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>GB 1102638
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Last name </span>Jones
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">First name</span>Elizabeth
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>To check
+                  </td>
+
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="#">View invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice ID </span>20001599
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>GB 1102625
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Last name </span>Holmes
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">First name</span>Sebastian
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>To check
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="#">View invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice ID </span>20001584
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>GB 1102622
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Last name </span>Bevan
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">First name</span>Emma
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>To check
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="#">View invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice ID </span>20001574
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>GB 1102611
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Last name </span>Jones
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">First name</span>Elizabeth
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>To check
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="#">View invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Invoice ID </span>20004963
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
@@ -399,13 +490,184 @@ Invoices - Manage incoming international healthcare claims - NHSBSA
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>To check
                   </td>
-
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">View </span><a href="details/20004963/01-to-check">View invoice</a>
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="20004693/01-to-check">View invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice ID </span>20001558
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>GB 1102601
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Last name </span>Fowler
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">First name</span>James
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>To check
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="#">View invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice ID </span>20001532
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>GB 1102593
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Last name </span>Cartwright
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">First name</span>Jonathan
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>To check
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="#">View invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice ID </span>20001518
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>GB 1102563
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Last name </span>Haynes
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">First name</span>Phoebe
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>To check
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="#">View invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice ID </span>20001509
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>GB 1102535
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Last name </span>MacFarlane
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">First name</span>Tyler
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>To check
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="#">View invoice</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice ID </span>20001492
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>GB 1102532
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Last name </span>Graham
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">First name</span>Caitlin
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>To check
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="#">View invoice</a>
                   </td>
                 </tr>
               </tbody>
             </table>
+
+            <!-- Start pagination -->
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full">
+                <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+
+                  <div class="nhsuk-pagination__prev">
+                    <!-- <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="prev">
+                      <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--prev"
+                        xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false"
+                        viewBox="0 0 15 13">
+                        <path
+                          d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z">
+                        </path>
+                      </svg>
+                      <span class="nhsuk-pagination__link-title">Previous<span class="nhsuk-visually-hidden">
+                          page</span></span></a> -->
+                  </div>
+
+
+                  <ul class="nhsuk-pagination__list">
+                    <li class="nhsuk-pagination__item nhsuk-pagination__item--current">
+                      <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 1">
+                        1
+                      </a>
+                    </li>
+                    <li class="nhsuk-pagination__item">
+                      <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 2">
+                        2
+                      </a>
+                    </li>
+                    <li class="nhsuk-pagination__item ">
+                      <a class="nhsuk-link nhsuk-pagination__link" href="#" aria-label="Page 3" aria-current="page">
+                        3
+                      </a>
+                    </li>
+
+                  </ul>
+
+                  <div class="nhsuk-pagination__next">
+                    <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="next"> <span
+                        class="nhsuk-pagination__link-title">Next<span class="nhsuk-visually-hidden">
+                          page</span></span>
+                      <svg class="nhsuk-pagination__icon nhsuk-pagination__icon--next"
+                        xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false"
+                        viewBox="0 0 15 13">
+                        <path
+                          d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                        </path>
+                      </svg></a>
+                  </div>
+
+                </nav>
+              </div>
+            </div>
+            <!-- End pagination -->
+
           </div>
         </div>
         <!-- End of table data -->
