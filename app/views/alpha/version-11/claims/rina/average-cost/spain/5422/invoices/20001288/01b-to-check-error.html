@@ -66,6 +66,19 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 {% block content %}
 <form action="../../../../../../../route-20001288-mark-complete" method="post">
 
+<div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+    <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="nhsuk-error-summary__body">
+      <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+        <li>
+          <a href="#change-age-bracket">Select an age bracket to change it from 'Unknown'</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 <!-- Start of back link -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
@@ -91,12 +104,12 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
         </h1>
     </div>
     <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-        <a href="../../../../../../../../../../route-20001288-mark-complete">
+
             <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                 Mark complete
             </button>
-        </a>
-        <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+
+        <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button">
             Close invoice
         </button>
     </div>
@@ -147,7 +160,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Unknown
                             {% endif %}
                         </dd>
-                        <dd class="nhsuk-summary-list__actions">
+                        <dd class="nhsuk-summary-list__actions" id="change-age-bracket">
                             <a href="change-age-bracket">
                                 Change<span class="nhsuk-u-visually-hidden"> age bracket</span>
                             </a>
@@ -1616,7 +1629,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
 </div>
 </div>
-
 </form>
 
 <script>

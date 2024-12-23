@@ -6,6 +6,27 @@ const path = require('path');
 
 const axios = require('axios');
 
+//////MANUAL PROCESSING OF INVOICES//////
+// Mark invoice 20001288 as complete - age bracket check
+router.post('/route-20001288-mark-complete', function(req,res){
+    var ageBracket = req.session.data['age-bracket']
+    var accepted = req.session.data['accepted']
+    if (ageBracket == "0 to 19 years" || ageBracket == "20 to 64 years" || ageBracket == "65 years and over") {
+        res.redirect('/alpha//version-11/claims/rina/average-cost/spain/5422/invoices/20001288/02-complete')
+        }
+    else {
+
+
+        if (accepted == "0") {
+            res.redirect('/alpha//version-11/claims/rina/average-cost/spain/5422/invoices/20001288/02-complete')
+            }
+        else {
+            res.redirect('/alpha//version-11/claims/rina/average-cost/spain/5422/invoices/20001288/01b-to-check-error')
+        }
+    }
+
+})
+
 //////CLAIM SEARCH///////
 
 router.post('/route-claim-search', function(req,res){
@@ -225,12 +246,6 @@ router.post('/route-delete-invoice-additional-file', function(req,res){
     }
 
 })
-
-
-
-
-
-
 
 router.get('/claims/create/cya', function(req, res) {
 
@@ -489,6 +504,8 @@ router.post('/claims/createNote', function(req, res) {
     req.session.data.notes = notes;
     res.redirect('rina/actual-cost/6752-lithuania/notes/index');
 });
+
+
 
 
 module.exports = router
