@@ -1,7 +1,4 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
-
-
 {% set mainNavigation = [
 {
 name: 'Summary',
@@ -74,27 +71,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 {% block content %}
 
 <style>
-    .app-link--copy,
-    .app-link--copy:link,
-    .app-link--copy:active,
-    .app-link--copy:visited,
-    .app-link--copy:hover {
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        border-bottom-color: #007f3b;
-        box-shadow: 0 2px 0 #007f3b;
-        margin-bottom: 16px;
-        text-transform: none;
-        background-color: #fff;
-        border: 1px solid #007f3b;
-        color: #007f3b;
-        font-size: 16px;
-        font-weight: 400;
-        padding: 4px 10px;
-        text-align: center;
-        text-decoration: none;
-    }
-
     .nhsuk-card--secondary {
         background: rgba(0, 0, 0, 0);
         border-bottom: 4px solid #d8dde0;
@@ -130,8 +106,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <!-- End of back link -->
 
 <!-- Start of header block -->
-
-
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">
@@ -139,9 +113,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
         </h1>
     </div>
 </div>
-
-
-
 <!-- End of header block -->
 
 
@@ -467,7 +438,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         End date
                                     </th>
                                     <th role="columnheader" class="" scope="col">
-                                        Main or<br/>dependant
+                                        Main or<br />dependant
                                     </th>
                                     <th role="columnheader" class="" scope="col">
                                         Country
@@ -615,8 +586,167 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell">
                                         <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
-                                        </span><a href="">View invoice</a>
+                                        </span>
+                                        {{ details({
+                                        "text": "View more",
+                                        "attributes": {
+                                        rowExpander: "rowExpander1102606"
+                                        }
+                                        }) }}
                                     </td>
+                                </tr>
+                                <tr role="row"
+                                    class="nhsuk-table__row nhsuk-table__row-expander nhsuk-u-visually-hidden"
+                                    id="rowExpander1102606" style="background-color:#f0f4f5">
+                                    <td colspan="8" style="padding:20px;">
+
+                                        <div class="nhsuk-grid-row">
+                                            <div class="nhsuk-grid-column-three-quarters">
+                                                <!-- Entitlement details -->
+                                                <h4 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                                                    Entitlement details
+                                                </h4>
+                                                <dl class="nhsuk-summary-list">
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Type
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            EHIC
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Start date
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            23 Mar 2021
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            End date
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            22 Mar 2026
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Issue date
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            23 Mar 2021
+                                                        </dd>
+                                                    </div>
+                                                </dl>
+                                                <!-- Hospitalisation-->
+                                                <h4 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                                                    Hospitalisation
+                                                </h4>
+                                                <dl class="nhsuk-summary-list">
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Period 1 start date
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            No data
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Period 1 end date
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            No data
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Amount 1
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            No data
+                                                        </dd>
+                                                    </div>
+                                                </dl>
+
+                                                <!-- Other care-->
+                                                <h4 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                                                    Other care
+                                                </h4>
+                                                <dl class="nhsuk-summary-list">
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Medical care amount
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            70
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Medicine care amount
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            23.46
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Dental care amount
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            No data
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Long term care amount
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            No data
+                                                        </dd>
+                                                    </div>
+                                                </dl>
+
+                                                <!-- Other benefits-->
+                                                <h4 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                                                    Other benefits
+                                                </h4>
+                                                <dl class="nhsuk-summary-list">
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Description 1
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            No data
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Amount 1
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            No data
+                                                        </dd>
+                                                    </div>
+                                                </dl>
+                                            </div>
+                                        </div>
+
+                                        <div class="nhsuk-grid-row">
+                                            <div class="nhsuk-grid-column-full">
+                                                <button
+                                                    class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3"
+                                                    data-module="nhsuk-button" type="submit">
+                                                    View full invoice
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
                                 </tr>
                             </tbody>
                         </table>
