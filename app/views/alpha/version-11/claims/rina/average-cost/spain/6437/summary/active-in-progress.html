@@ -2,12 +2,12 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '/alpha/version-11/claims/rina/average-cost/spain/7399/summary/active-in-progress',
+path: '',
 active: true
 },
 {
 name: 'Invoices',
-path: '/alpha/version-11/claims/rina/average-cost/spain/7399/invoices/invoice-list-full'
+path: ''
 },
 {
 name: 'Submissions',
@@ -32,7 +32,7 @@ path: ''
 -->
 
 {% block ClaimId %}
-7399
+6437
 {% endblock %}
 {% block submittingCountry %}
 Spain
@@ -49,11 +49,11 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container-fluid">
     <ol class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../home">Home</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../index">Claims</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claims</a></li>
     </ol>
     <p class="nhsuk-breadcrumb__back">
-      <a class="nhsuk-breadcrumb__backlink" href="../../../../../index">
+      <a class="nhsuk-breadcrumb__backlink" href="">
         <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
         Claims
       </a>
@@ -85,7 +85,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
             <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
-              Claim ID 7399 &ndash; Claim reference 20231GB942023
+              Claim ID 6437 &ndash; Claim reference 20232GB632023
             </h2>
           </div>
           <div class="nhsuk-grid-column-one-third">
@@ -118,7 +118,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   Age bracket
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  Mixed
+                  20 to 64 years
                 </dd>
                 <dd class="nhsuk-summary-list__actions"></dd>
               </div>
@@ -138,7 +138,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   Type
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  Average cost - Sickness - Article 94
+                  Average cost - Sickness - Article 63 (2a)
                 </dd>
                 <dd class="nhsuk-summary-list__actions"></dd>
               </div>
@@ -213,7 +213,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   10,572
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
-                  <a href="../invoices/invoice-list-full#download-results">
+                  <a href="#">
                     View<span class="nhsuk-u-visually-hidden"> all invoices</span>
                   </a>
                 </dd>
@@ -227,7 +227,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   27
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
-                  <a href="../invoices/invoice-list-to-check#download-results">
+                  <a href="#">
                     View<span class="nhsuk-u-visually-hidden"> to check invoices</span>
                   </a>
                 </dd>
@@ -352,79 +352,6 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
             </dl>
           </div>
         </div>
-
-      </li>
-      <li class="nhsuk-grid-column-full nhsuk-card-group__item">
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
-            <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
-              Age bracket breakdown 
-            </h3>
-            <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible" style="margin:0px 0px 16px 0px;">
-
-            <table class="nhsuk-table">
-              <!-- <caption class="nhsuk-table__caption">Prescription prepayment certificate (PPC) charges</caption> -->
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                    Age bracket
-                  </th>
-                  <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
-                    Total invoices
-                  </th>
-                  <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
-                    Total months
-                  </th>
-                  <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
-                    Accepted months
-                  </th>
-                  <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
-                    Contested months
-                  </th>
-                  <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
-                    Withdrawn months
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row">0 to 19 years</th>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">914</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3,716</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3,713</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row">20 to 64 years</th>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1,521</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">7,473</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">7,435</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">38</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row">65 years and over</th>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">8,136</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">24,753</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">24,691</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">62</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="row">Unknown</th>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>
-                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                </tr>
-              </tbody>
-            </table>
-
-          </div>
-        </div>
-
       </li>
     </ul>
   </div>
