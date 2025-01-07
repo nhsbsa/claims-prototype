@@ -1135,6 +1135,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
             <!-- *** Start of imported invoice tab *** -->
             <div class="nhsuk-tabs__panel" id="import">
                 <h2 class="nhsuk-heading-l">Imported invoice</h2>
+
                 <!-- start invoice summary expander -->
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
@@ -1156,14 +1157,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Date claim was recorded
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            2 June 2023
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
                                             Invoice reference
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
@@ -1172,7 +1165,42 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Foreign institution name
+                                            Date creditor recorded claim
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            2 June 2023
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Provided benefits
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            01 - Sickness
+                                        </dd>
+                                    </div>
+
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end invoice summary expander -->
+
+                <!-- start creditor details expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Creditor details
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Creditor institution name
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             Caisse Primaire D'Assurance Maladie
@@ -1180,7 +1208,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Foreign institution ID
+                                            Creditor institution ID
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             0146100000
@@ -1191,7 +1219,41 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </details>
                     </div>
                 </div>
-                <!-- end invoice summary expander -->
+                <!-- end creditor details expander -->
+
+                <!-- start debtor details expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Debtor details
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Debtor institution name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Department of Health and Social Care
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Debtor institution ID
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            UK033
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end debtor details expander -->
 
                 <!-- start person details expander -->
                 <div class="nhsuk-grid-row">
@@ -1222,6 +1284,22 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
+                                            Last name at birth
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            No data
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            First name at birth
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            No data
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
                                             Date of birth
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
@@ -1230,7 +1308,15 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Unique ID
+                                            Sex
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            No data
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            PIN in UK
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             JM 23 66 19 A
@@ -1238,12 +1324,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Sex
+                                            PIN in member state
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-
+                                            JM 23 66 19 A
                                         </dd>
                                     </div>
+
                                 </dl>
                             </div>
                         </details>
@@ -1264,7 +1351,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 <dl class="nhsuk-summary-list">
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Type of entitlement
+                                            Entitlement document
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             EHIC
@@ -1272,7 +1359,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Start date
+                                            Entitlement start date
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             23 March 2021
@@ -1280,7 +1367,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            End date
+                                            Entitlement end date
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             22 March 2026
@@ -1288,7 +1375,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Issue date
+                                            Entitlement issue date
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             23 March 2021
@@ -1296,18 +1383,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            UK institution name
+                                            Issue number
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            Department of Health and Social Care
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            UK institution ID
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            UK033
+                                            8955774493
                                         </dd>
                                     </div>
                                 </dl>
@@ -1317,44 +1396,20 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </div>
                 <!-- end entitlement details expander -->
 
-                <!-- start treatment details expander -->
+                <!-- start invoice period and amount expander -->
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <details class="nhsuk-details nhsuk-expander">
                             <summary class="nhsuk-details__summary">
                                 <span class="nhsuk-details__summary-text">
-                                    Treatment details
+                                    Invoice period and amount
                                 </span>
                             </summary>
                             <div class="nhsuk-details__text">
                                 <dl class="nhsuk-summary-list">
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Total treatment cost
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            2134.75
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Currency code
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            EUR
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Benefits provided
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            01 - Sickness
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Start date
+                                            Invoice period start date
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             1 June 2023
@@ -1362,10 +1417,26 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            End date
+                                            Invoice period end date
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             2 June 2023
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Total amount
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            2134.75
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Currency
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            EUR
                                         </dd>
                                     </div>
                                 </dl>
@@ -1373,57 +1444,41 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </details>
                     </div>
                 </div>
-                <!-- end treatment details expander -->
+                <!-- end invoice period and amount expander -->
 
-                <!-- start treatment breakdown expander -->
+                <!-- start hospitalisation expander -->
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <details class="nhsuk-details nhsuk-expander">
                             <summary class="nhsuk-details__summary">
                                 <span class="nhsuk-details__summary-text">
-                                    Treatment breakdown
+                                    Hospitalisation
                                 </span>
                             </summary>
                             <div class="nhsuk-details__text">
                                 <dl class="nhsuk-summary-list">
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Medical care costs
+                                            Hospitalisation period 1 start date
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            2000
+                                            1 June 2023
                                         </dd>
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Medicine costs
+                                            Hospitalisation period 1 end date
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            134.75
+                                            2 June 2023
                                         </dd>
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Hospitalisation costs
+                                            Hospitalisation amount 1
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Hospitalisation start date
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Hospitalisation end date
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-
+                                            1000
                                         </dd>
                                     </div>
                                 </dl>
@@ -1431,7 +1486,94 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </details>
                     </div>
                 </div>
-                <!-- end treatment breakdown expander -->
+                <!-- end hospitalisation details expander -->
+
+                <!-- start other care expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Other care
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Medical care amount
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            600.25
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Medicine amount
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            105.50
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Dental care amount
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            No data
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Long term care amount
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            No data
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end other care details expander -->
+
+                <!-- start other benefits expander -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Other benefits
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Other benefits description 1
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Xray
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Other benefits amount 1
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            429
+                                        </dd>
+                                    </div>
+
+
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- end other care details expander -->
+
             </div>
             <!-- *** End of imported invoice tab *** -->
 
