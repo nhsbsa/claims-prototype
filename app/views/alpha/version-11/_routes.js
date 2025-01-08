@@ -12,13 +12,13 @@ router.post('/route-20001288-mark-complete', function(req,res){
     var ageBracket = req.session.data['age-bracket']
     var accepted = req.session.data['accepted']
     if (ageBracket == "0 to 19 years" || ageBracket == "20 to 64 years" || ageBracket == "65 years and over") {
-        res.redirect('/alpha//version-11/claims/rina/average-cost/spain/5422/invoices/20001288/02-complete')
+        res.redirect('/alpha//version-11/claims/rina/average-cost/spain/5422/invoices/20001288/02-confirmation')
         }
     else {
 
 
         if (accepted == "0") {
-            res.redirect('/alpha//version-11/claims/rina/average-cost/spain/5422/invoices/20001288/02-complete')
+            res.redirect('/alpha//version-11/claims/rina/average-cost/spain/5422/invoices/20001288/02-confirmation')
             }
         else {
             res.redirect('/alpha//version-11/claims/rina/average-cost/spain/5422/invoices/20001288/01b-to-check-error')
