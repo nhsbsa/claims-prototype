@@ -73,7 +73,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-error-summary__body">
       <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
         <li>
-          <a href="#change-age-bracket">Select an age bracket to change it from 'Unknown'</a>
+          <a href="#change-age-bracket">To accept some or all of the invoice, select an age bracket</a>
         </li>
       </ul>
     </div>
@@ -150,8 +150,11 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         <dd class="nhsuk-summary-list__actions"></dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
+                        <dt class="nhsuk-summary-list__key nhsuk-form-group--error">
                             Age bracket
+                            <span class="nhsuk-error-message" id="dob-day-error-error">
+                                <span class="nhsuk-u-visually-hidden">Error:</span> To accept some or all of the invoice, select an age bracket
+                              </span>
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             {% if data['age-bracket'] %}
@@ -160,8 +163,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Unknown
                             {% endif %}
                         </dd>
-                        <dd class="nhsuk-summary-list__actions" id="change-age-bracket">
-                            <a href="change-age-bracket">
+                        <dd class="nhsuk-summary-list__actions">
+                            <a href="change-age-bracket" id="change-age-bracket">
                                 Change<span class="nhsuk-u-visually-hidden"> age bracket</span>
                             </a>
                         </dd>
@@ -1015,7 +1018,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                             Details
                                                         </label>
                                                         <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="255">
-                                                            <textarea class="nhsuk-textarea form-control nhsuk-js-character-count" id="other-details" rows="5"></textarea>
+                                                            <textarea class="nhsuk-textarea form-control nhsuk-js-character-count" id="other-details" rows="5">{{ data['other-details'] }}</textarea>
                                                             <div class="nhsuk-hint nhsuk-character-count__message" id="other-details-info">
                                                                 You can enter up to 255 characters
                                                             </div>
