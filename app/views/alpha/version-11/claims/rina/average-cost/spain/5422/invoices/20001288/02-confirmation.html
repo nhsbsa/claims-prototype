@@ -104,7 +104,12 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-3">
                     Decision
                 </h2>
+                {% if data['contested'] === '0' %}
+                <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-7">
+                {% else %}
                 <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-0">
+                {% endif %}
+                
                     <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
                         <div class="nhsuk-card nhsuk-u-margin-bottom-0">
                             <div class="nhsuk-card__content">
@@ -157,6 +162,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
         <!-- End of decision boxes -->
 
         <!-- Start of contestation reason-->
+        {% if data['contested'] !== '0' %}
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
                 <div class="nhsuk-inset-text nhsuk-u-margin-bottom-7" style="max-width:none; margin-top:16px;">
@@ -177,6 +183,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </div>
             </div>
         </div>
+        {% endif %}
         <!-- End of contestation reason -->
     </div>
 </div>
