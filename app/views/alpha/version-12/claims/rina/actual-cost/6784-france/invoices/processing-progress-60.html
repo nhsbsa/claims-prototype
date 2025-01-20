@@ -1,0 +1,105 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+  {
+  name: 'Summary',
+  path: '/alpha/version-12/claims/rina/actual-cost/6784-france/summary/processing-progress-60'
+  },
+  {
+  name: 'Invoices',
+  path: '/alpha/version-12/claims/rina/actual-cost/6784-france/invoices/processing-progress-60',
+  active: true
+  },
+  {
+  name: 'Contestations',
+  path: ''
+  },
+  {
+  name: 'Notes',
+  path: ''
+  },
+  {
+  name: 'History',
+  path: '/alpha/version-12/claims/rina/actual-cost/6784-france/history/processing-progress-60'
+  }
+  ]
+  %}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Invoices - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../index">Claims</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="../index">
+        <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+        Claims
+      </a>
+    </p>
+  </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of warning block -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-warning-callout" style="margin-top:0;">
+      <h3 class="nhsuk-warning-callout__label">
+        <span role="text">
+          <span class="nhsuk-u-visually-hidden">Important: </span>
+          System is matching invoices
+        </span>
+      </h3>
+      <label class="nhsuk-label" for="upload">60% checked.</label>
+      <progress class="nhsuk-u-width-one-third" id="upload" value="60" max="100"> 60% </progress>
+      <p><a href="full-invoice-list">Refresh</a></p>
+    </div>
+  </div>
+</div>
+<!-- End of warning block -->
+
+
+
+
+
+    <!-- Start of title block -->
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <h1 class="nhsuk-heading-xl ">
+          Invoices
+        </h1>
+      </div>
+    </div>
+    <!-- End of title block -->
+
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+          <p>The system is currently trying to match all invoices to a valid entitlement.</p>
+          <p>Once this is complete, you'll be able to view and search for invoices here.</p>
+      </div>
+  </div>
+
+
+
+    {% endblock %}
+    <!-- End of central content -->

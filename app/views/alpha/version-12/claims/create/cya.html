@@ -1,0 +1,405 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Home',
+path: '/alpha/version-12/home'
+},
+{
+name: 'Claims',
+path: '/alpha/version-12/claims/index',
+active: true
+},
+{
+name: 'Contested claims',
+path: '#'
+},
+{
+name: 'Reports',
+path: '#'
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Check claim details - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../index">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of cya -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <!-- Start of form -->
+        <form action="confirmation" method="post">
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                <h1 class="nhsuk-fieldset__heading">
+                    <span class="nhsuk-caption-l">Create a new claim</span>
+                    Check claim details
+                </h1>
+            </legend>
+
+            <!-- Start of card -->
+            <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                <div class="nhsuk-card__content">
+                    <dl class="nhsuk-summary-list">
+
+                        <!-- Contact method -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Contact method
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['received'] %}
+                                {{ data['received'] }}
+                                {% else %}
+                                RINA
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> contact method</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Type of claim -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Type of claim
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['claim-type'] %}
+                                {{ data['claim-type'] }} {% if data['claim-type'] === 'Average cost - Sickness' %}- {{ data['article-type'] }}{% endif %}
+                                {% else %}
+                                Actual cost - Sickness
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> article type</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Claim reference -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Claim reference
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['ref'] %}
+                                {{ data['ref'] }}
+                                {% else %}
+                                0039795410
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> reference</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Country -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Country submitting the claim
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['country'] %}
+                                {{ data['country'] }}
+                                {% else %}
+                                {% if data['received'] === 'Paper' %}
+                                Cyprus
+                                {% else %}
+                                France
+                                {% endif %}
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> country</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Period of claim -->
+                        {% if data['showPeriod'] === 'Yes' %}
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Period of the claim
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['period'] %}
+                                {{ data['period'] }}
+                                {% else %}
+                                First half year
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> period of claim</span>
+                                </a>
+                            </dd>
+                        </div>
+                        {% endif %}
+
+                        <!-- Main or supplementary -->
+                        {% if data['showType'] === 'Yes' %}
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Main or supplementary
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['type'] %}
+                                {{ data['type'] }}
+                                {% else %}
+                                Main
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> claim type</span>
+                                </a>
+                            </dd>
+                        </div>
+                        {% endif %}
+
+                        <!-- Age bracket -->
+                        {% if data['showAge'] === 'Yes' %}
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Age bracket of the claim
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['age-bracket'] %}
+                                {{ data['age-bracket'] }}
+                                {% else %}
+                                0 to 19 years
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> age bracket</span>
+                                </a>
+                            </dd>
+                        </div>
+                        {% endif %}
+
+                        <!-- Financial year -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Financial year of the claim
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['financial-year'] %}
+                                {{ data['financial-year'] }}
+                                {% else %}
+                                2023
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> financial
+                                        year</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Date received -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Date you received the claim
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['submission-date-day'] %}{{ data['submission-date-day'] }} {%
+                                else
+                                %}21 {% endif %}{% if data['submission-date-month'] %}{{ fullSubmissionMonth }} {% else
+                                %}June {% endif %}{% if
+                                data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
+                                %}2024{% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> submission
+                                        date</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Target date -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Target date to complete the claim
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['target-date-day'] %}{{ data['target-date-day'] }} {% else
+                                %}20 {%
+                                endif %} {% if data['target-date-month'] %}{{ fullTargetMonth }}{% else %}December {%
+                                endif %} {% if data['target-date-year'] %}{{
+                                data['target-date-year']
+                                }}{% else %}2024{% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> target date to complete claim</span>
+                                </a>
+                            </dd>
+                        </div>
+
+
+
+
+
+                        {% if data['received'] === 'Paper' %}
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Creditor institution code
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['creditor-code'] %}
+                                {{ data['creditor-code'] }}
+                                {% else %}
+                                2740
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> creditor institution code</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Creditor institution name
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['creditor-name'] %}
+                                {{ data['creditor-name'] }}
+                                {% else %}
+                                Cyprus institution
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> creditor institution name</span>
+                                </a>
+                            </dd>
+                        </div>
+                        {% endif %}
+
+
+
+
+
+                        {% if data['received'] === 'Paper' %}
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Total number of invoices
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['total-invoices'] %}
+                                {{ data['total-invoices'] }}
+                                {% else %}
+                                92,412
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> total invoices</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Total claim amount
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['total-amount'] %}
+                                {{ data['total-amount'] }}
+                                {% else %}
+                                33,000,000
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> total amount</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        {% if data['showCurrency'] === 'Yes' %}
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Currency
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['currency'] %}
+                                {{ data['currency'] }}
+                                {% else %}
+                                Euro
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> currency</span>
+                                </a>
+                            </dd>
+                        </div>
+                        {% endif %}
+                        {% endif %}
+
+
+
+                    </dl>
+                    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                        Submit
+                    </button>
+                </div>
+            </div>
+            <!-- End of card -->
+
+        </form>
+        <!-- End of form -->
+
+        <a href="#" class="nhsuk-link">Cancel</a>
+    </div>
+</div>
+<!-- End of cya -->
+
+{% endblock %}
+<!-- End of central content -->

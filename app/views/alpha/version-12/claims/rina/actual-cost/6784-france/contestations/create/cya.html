@@ -1,0 +1,224 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '/alpha/version-12/claims/rina/actual-cost/6784-france/summary/letters-sent'
+},
+{
+name: 'Invoices',
+path: ''
+},
+{
+name: 'Credit notes',
+path: ''
+},
+{
+name: 'Contestations',
+path: '/alpha/version-12/claims/rina/actual-cost/6784-france/contestations/01-index-not-started',
+active: true
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: ''
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Check contestation details - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../home">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../index">Claims</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Start of cya -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <!-- Start of form -->
+        <form action="confirmation" method="post">
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                <h1 class="nhsuk-fieldset__heading">
+                    <span class="nhsuk-caption-l">Create a new contestation</span>
+                    Check contestation details
+                </h1>
+            </legend>
+
+            <!-- Start of card -->
+            <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                <div class="nhsuk-card__content">
+                    <dl class="nhsuk-summary-list">
+
+                        <!-- Contestation reference -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                FA reference
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['ref'] %}
+                                {{ data['ref'] }}
+                                {% else %}
+                                123456789
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="index#ref">
+                                    Change<span class="nhsuk-u-visually-hidden"> contestation reference</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Total number of contestation replies -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Total number of contestation replies
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['total-replies'] %}
+                                {{ data['total-replies'] }}
+                                {% else %}
+                                12
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="index#total-replies">
+                                    Change<span class="nhsuk-u-visually-hidden"> total number of contestation
+                                        replies</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Total amount of accepted contestations -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Total amount of accepted contestations
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['total-accepted'] %}
+                                {{ data['total-accepted'] }}
+                                {% else %}
+                                5,700
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="index#total-accepted">
+                                    Change<span class="nhsuk-u-visually-hidden"> total amount of accepted
+                                        contestations</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Currency -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Currency
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['currency'] %}
+                                {{ data['currency'] }}
+                                {% else %}
+                                Euro
+                                {% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="index#currency">
+                                    Change<span class="nhsuk-u-visually-hidden"> currency</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Date received -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Date you received the contestation
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['date-received-day'] %}{{ data['date-received-day'] }} {%
+                                else
+                                %}26 {% endif %}{% if data['date-received-month'] %}{{ fullSubmissionMonth }} {% else
+                                %}September {% endif %}{% if
+                                data['date-received-year'] %}{{ data['date-received-year'] }}{% else
+                                %}2024{% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="index#date-received-day">
+                                    Change<span class="nhsuk-u-visually-hidden"> date you reveived the
+                                        contestation</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Target date -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Target date to complete the contestation
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                {% if data['target-date-day'] %}{{ data['target-date-day'] }} {%
+                                else
+                                %}31 {% endif %}{% if data['target-date-month'] %}{{ fullSubmissionMonth }} {% else
+                                %}March {% endif %}{% if
+                                data['target-date-year'] %}{{ data['target-date-year'] }}{% else
+                                %}2026{% endif %}
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="index#target-date-day">
+                                    Change<span class="nhsuk-u-visually-hidden"> date you reveived the
+                                        contestation</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                    </dl>
+                    <a href="confirmation">
+                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                            Submit
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <!-- End of card -->
+
+        </form>
+        <!-- End of form -->
+
+        <a href="#" class="nhsuk-link">Cancel</a>
+    </div>
+</div>
+<!-- End of cya -->
+
+{% endblock %}
