@@ -1,28 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-    {
-    name: 'Summary',
-    path: '/alpha/version-11/claims/rina/actual-cost/6784-france/summary/not-started'
-    },
-    {
-    name: 'Invoices',
-    path: '/alpha/version-11/claims/rina/actual-cost/6784-france/invoices/not-started',
-    active: true
-    },
-    {
-    name: 'Contestations',
-    path: ''
-    },
-    {
-    name: 'Notes',
-    path: ''
-    },
-    {
-    name: 'History',
-    path: '/alpha/version-11/claims/rina/actual-cost/6784-france/history/not-started'
-    }
-    ]
-    %}
+{
+name: 'Summary',
+path: '/alpha/version-11/claims/rina/actual-cost/6784-france/summary/not-started'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-11/claims/rina/actual-cost/6784-france/invoices/not-started',
+active: true
+},
+{
+name: 'Contestations',
+path: ''
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: '/alpha/version-11/claims/rina/actual-cost/6784-france/history/not-started'
+}
+]
+%}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -61,7 +61,7 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
 {% block content %}
 
 <!-- Start of back link -->
-<div class="nhsuk-grid-row" id="backLink" {% if data['show-back'] === 'No' %}style="display:none"{% endif %}>
+<div class="nhsuk-grid-row" id="backLink" {% if data['show-back']==='No' %}style="display:none" {% endif %}>
     <div class="nhsuk-grid-column-full">
         <div class="nhsuk-back-link">
             <a class="nhsuk-back-link__link" href="javascript:history.back()">
@@ -82,7 +82,9 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
 
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-                <form id="checkFile" action="/alpha/version-11/claims/rina/actual-cost/6784-france/invoices/upload/xml/uploading-file-processing" method="post">
+                <form id="checkFile"
+                    action="/alpha/version-11/claims/rina/actual-cost/6784-france/invoices/upload/xml/cya"
+                    method="post">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                         <h1 id="legend1" class="nhsuk-fieldset__heading">
                             <span class="nhsuk-caption-l">Add invoices</span>
@@ -90,7 +92,7 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
                         </h1>
                         <h1 id="legend2" style="display: none;" class="nhsuk-fieldset__heading">
                             <span class="nhsuk-caption-l">Add invoices</span>
-                            Uploading invoices
+                            Upload invoices
                         </h1>
                     </legend>
             </div>
@@ -111,29 +113,20 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
                                     This must be an XML file, or a ZIP file containing one XML file.
                                 </div>
 
-                                <div class="nhsuk-form-group nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-6"
+                                <div class="nhsuk-form-group nhsuk-u-margin-bottom-6"
                                     style="border:2px dashed #0b0c0c; padding:24px;">
-                                    <!-- <label class="nhsuk-label" for="file-upload">
-                                      Upload a file
-                                    </label> -->
-                                    <input class="nhsuk-file-upload" style="font-size:18px;" id="file-upload"
-                                        name="file-upload" type="file">
-                                </div>
-
+                                    <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                                        Choose file
+                                      </button>
+                                      <p class="nhsuk-body" style="display: inline; line-height:3.6rem;">No file chosen</p>
+                                    </div>
                             </fieldset>
-
                         </div>
-
-                        
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                             Continue
                         </button>
-
                     </div>
                 </div>
-
-
-               
                 </form>
             </div>
         </div>
@@ -142,20 +135,11 @@ Upload invoices - Manage incoming international healthcare claims - NHSBSA
         <div id="upload-progress" style="display: none;" class="nhsuk-grid-column-full" aria-hidden="true"
             tabindex="-1">
             <div class="nhsuk-loader">
-                <p>Checking file.<br />This may take a few minutes.<br />Do not leave this page or close your browser, or your file will not be saved.</p>
+                <p>Checking file.<br />This may take a few minutes.<br />Do not leave this page or close your browser,
+                    or your file will not be saved.</p>
                 <span class="nhsuk-loader__spinner nhsuk-u-margin-bottom-3"></span>
-
-                <ul class="nhsuk-list nhsuk-u-margin-bottom-7">
-                    <li>Checking file for errors - In progress</li>
-                    <li>Checking invoice data for errors - Not started</li>
-                  </ul>
-
-
-
-                
                 <p><a href="index">Cancel upload</a></p>
             </div>
-
         </div>
 
 
