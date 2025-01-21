@@ -9,11 +9,7 @@ name: 'Invoices',
 path: ''
 },
 {
-name: 'Credit notes',
-path: ''
-},
-{
-name: 'Contestations',
+name: 'Submissions',
 path: '',
 active: true
 },
@@ -37,7 +33,7 @@ path: ''
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Contestations - Manage incoming international healthcare claims - NHSBSA
+Submissions - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -67,20 +63,36 @@ Contestations - Manage incoming international healthcare claims - NHSBSA
 {% block content %}
 <!-- Start of header block -->
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <h1 class="nhsuk-heading-xl ">
-            Contestations
-        </h1>
-    </div>
+  <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-xl ">
+          Submissions
+      </h1>
+  </div>
+
+  <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+      <a href="">
+          <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+              Add invoices
+          </button>
+      </a>
+  </div>
 </div>
 <!-- End of header block -->
 
 <!-- Start main content -->
+
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-        <p class="nhsuk-body">Contested invoices and replies from France will show here once the initial claim has been completed and the S082 has
-            been sent.</p>
+        <p class="nhsuk-body">No submissions have been added to claim ID 6784.</p>
+        <p>You can use the <strong>Add invoices</strong> button to add invoices manually or to upload them as XML files.</p>
     </div>
 </div>
+
+
+
+
+
+
+
 <!-- End main content -->
 {% endblock %}

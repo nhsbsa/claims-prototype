@@ -2,7 +2,7 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '',
+path: '/alpha/version-12/claims/rina/actual-cost/6784-france/summary/letters-sent',
 active: true
 },
 {
@@ -10,12 +10,8 @@ name: 'Invoices',
 path: ''
 },
 {
-name: 'Credit notes',
-path: ''
-},
-{
-name: 'Contestations',
-path: ''
+name: 'Submissions',
+path: '/alpha/version-12/claims/rina/actual-cost/6784-france/submissions/03-letters-sent'
 },
 {
 name: 'Notes',
@@ -65,18 +61,13 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of header -->
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds">
+
+  <div class="nhsuk-grid-column-full">
     <h1 class="nhsuk-heading-xl ">
       Claim summary
     </h1>
   </div>
-  <div class="nhsuk-grid-column-one-third">
-    <a href="../contestations/create/index">
-      <button style="float:right;" class="nhsuk-button" data-module="nhsuk-button" type="submit">
-        Create a new contestation
-      </button>
-    </a>
-  </div>
+
 </div>
 <!-- End of header-->
 
@@ -85,12 +76,13 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
   <div class="nhsuk-grid-column-full">
     <div class="nhsuk-card">
       <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
-
-        <!-- Start of card header -->
+        <!--Start of card header-->
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
-              Claim ID 6784 &ndash; Claim reference 11322249AT2301E
+              Claim ID 6784 &ndash; Claim reference {% if data['ref'] %}{{ data['ref'] }}{% else %}11322249AT2301E{%
+              endif
+              %}
             </h2>
           </div>
           <div class="nhsuk-grid-column-one-third">
@@ -103,7 +95,6 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
             <br />
           </div>
         </div>
-        <!-- End of card header -->
 
         <!-- Start of card content-->
         <div class="nhsuk-grid-row">
@@ -125,7 +116,11 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   Period
                 </dt>
                 <dd class="nhsuk-summary-list__value">
+                  {% if data['period'] %}
+                  {{ data['period'] }}
+                  {% else %}
                   First half year
+                  {% endif %}
                 </dd>
                 <dd class="nhsuk-summary-list__actions"></dd>
               </div>
@@ -135,7 +130,11 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   Financial year
                 </dt>
                 <dd class="nhsuk-summary-list__value">
+                  {% if data['financial-year'] %}
+                  {{ data['financial-year'] }}
+                  {% else %}
                   2023
+                  {% endif %}
                 </dd>
                 <dd class="nhsuk-summary-list__actions"></dd>
               </div>
@@ -145,7 +144,12 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   Type
                 </dt>
                 <dd class="nhsuk-summary-list__value">
+                  {% if data['claim-type'] %}
+                  {{ data['claim-type'] }} {% if data['claim-type'] === 'Average cost - Sickness' %}- {{
+                  data['article-type'] }}{% endif %}
+                  {% else %}
                   Actual cost - Sickness
+                  {% endif %}
                 </dd>
                 <dd class="nhsuk-summary-list__actions"></dd>
               </div>
@@ -160,9 +164,14 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   Target date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  19 January 2025
+                  {% if data['target-date-day'] %}{{ data['target-date-day'] }}/{% else %}19 {%
+                  endif %}{% if data['target-date-month'] %}{{ data['target-date-month'] }}/{%
+                  else %}January {% endif %}{% if data['target-date-year'] %}{{
+                  data['target-date-year'] }}{% else %}2025{% endif %}
                 </dd>
-                <dd class="nhsuk-summary-list__actions"></dd>
+                <dd class="nhsuk-summary-list__actions"><a href="edit-target-date">
+                    Change<span class="nhsuk-u-visually-hidden"> target date</span>
+                  </a></dd>
               </div>
               <!-- Deadline -->
               <div class="nhsuk-summary-list__row">
@@ -180,7 +189,12 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   Date received
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  19 July 2024
+                  {% if data['submission-date-day'] %}{{ data['submission-date-day'] }} {%
+                  else
+                  %}19 {% endif %}{% if data['submission-date-month'] %}{{ fullSubmissionMonth
+                  }} {% else %}July {% endif %}{% if
+                  data['submission-date-year'] %}{{ data['submission-date-year'] }}{% else
+                  %}2024{% endif %}
                 </dd>
                 <dd class="nhsuk-summary-list__actions"></dd>
               </div>
@@ -219,7 +233,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               92,412
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a href="">
+              <a href="../invoices/full-invoice-list#download-results">
                 View<span class="nhsuk-u-visually-hidden"> all invoices</span>
               </a>
             </dd>
@@ -233,7 +247,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               0
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a href="">
+              <a href="../invoices/invoice-list-to-check#download-results">
                 View<span class="nhsuk-u-visually-hidden"> to check invoices</span>
               </a>
             </dd>
@@ -247,7 +261,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               92,309
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a href="">
+              <a href="../invoices/invoice-list-accepted#download-results">
                 View<span class="nhsuk-u-visually-hidden"> accepted invoices</span>
               </a>
             </dd>
@@ -261,7 +275,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               103
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a href="">
+              <a href="../invoices/invoice-list-contested#download-results">
                 View<span class="nhsuk-u-visually-hidden"> contested invoices</span>
               </a>
             </dd>
@@ -275,7 +289,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               <p>0</p>
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a href="">
+              <a href="../invoices/invoice-list-withdrawn#download-results">
                 View<span class="nhsuk-u-visually-hidden"> withdrawn invoices</span>
               </a>
             </dd>
@@ -336,7 +350,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               Contested
             </dt>
             <dd class="nhsuk-summary-list__value">
-              12,000.38
+                12,000.38
             </dd>
           </div>
 
