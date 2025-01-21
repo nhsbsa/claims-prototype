@@ -1,28 +1,28 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% set mainNavigation = [
-{
-name: 'Summary',
-path: ''
-},
-{
-name: 'Invoices',
-path: ''
-},
-{
-name: 'Submissions',
-path: '',
-active: true
-},
-{
-name: 'Notes',
-path: ''
-},
-{
-name: 'History',
-path: ''
-}
-]
-%}
+    {
+    name: 'Summary',
+    path: '/alpha/version-12/claims/rina/actual-cost/6784-france/summary/letters-sent',
+    active: true
+    },
+    {
+    name: 'Invoices',
+    path: ''
+    },
+    {
+    name: 'Submissions',
+    path: '/alpha/version-12/claims/rina/actual-cost/6784-france/submissions/03-letters-sent'
+    },
+    {
+    name: 'Notes',
+    path: ''
+    },
+    {
+    name: 'History',
+    path: ''
+    }
+    ]
+    %}
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -46,7 +46,7 @@ Submissions - Manage incoming international healthcare claims - NHSBSA
             </li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../index">Claims</a>
             </li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../summary/letters-sent">Claim ID 6784</a>
             </li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
