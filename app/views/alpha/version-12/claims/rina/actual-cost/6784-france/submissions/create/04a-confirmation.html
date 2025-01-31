@@ -71,21 +71,26 @@ Create a new contestation - Manage incoming international healthcare claims - NH
                 <div class="confirmation-box">
                     <h1 class="heading-xlarge"><span id="done-tick"></span>Contestation reply created for claim ID 6784
                     </h1>
-                    <h2 class="heading-large"><span class="heading-secondary" style="color:white;">Contestation ID
+                    <h2 class="heading-large"><span class="heading-secondary" style="color:white;">Reply to contestation ID
                             number<br />
                             7766
                         </span>
 
                     </h2>
                 </div>
-                <p>You have created a new contestation reply for France for the financial year 2024.</p>
+                <p>You have created a new contestation reply for France for the financial year 2024 with a target date of {% if data['target-date-day'] %}{{ data['target-date-day'] }} {%
+                    else
+                    %}31 {% endif %}{% if data['target-date-month'] %}{{ fullSubmissionMonth }} {% else
+                    %}March {% endif %}{% if
+                    data['target-date-year'] %}{{ data['target-date-year'] }}{% else
+                    %}2026{% endif %}.</p>
 
                 <h2 class="heading-medium">What happens next</h2>
                 <p>You can now add invoices to this contestation reply.</p>
 
                 <a href="">
                     <button style="margin-right:12px;" class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                        Manage contestation
+                        Manage reply to contestation
                     </button>
                 </a>
             </div>
