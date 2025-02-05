@@ -65,12 +65,12 @@ Check contestation details - Manage incoming international healthcare claims - N
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <!-- Start of form -->
-        <form action="04a-confirmation" method="post">
+        <form action="04b-confirmation-credit-note-actual" method="post">
 
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                 <h1 class="nhsuk-fieldset__heading">
                     <span class="nhsuk-caption-l">Add a new submission</span>
-                    Check contestation reply details
+                    Check credit note details
                 </h1>
             </legend>
 
@@ -79,60 +79,47 @@ Check contestation details - Manage incoming international healthcare claims - N
                 <div class="nhsuk-card__content">
                     <dl class="nhsuk-summary-list">
 
-                        <!-- Contestation reference -->
+                        <!-- Credit note reference -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Contestation reference
+                                Credit note reference
                             </dt>
                             <dd class="nhsuk-summary-list__value">
-                                {% if data['ref'] %}
-                                {{ data['ref'] }}
-                                {% else %}
                                 123456789
-                                {% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
-                                <a href="index#ref">
-                                    Change<span class="nhsuk-u-visually-hidden"> contestation reference</span>
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> credit note reference</span>
                                 </a>
                             </dd>
                         </div>
 
-                        <!-- Total number of contestation replies -->
+                        <!-- Total number of credit notes -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Total number of reply contestations
+                                Total number of credit notes
                             </dt>
                             <dd class="nhsuk-summary-list__value">
-                                {% if data['total-replies'] %}
-                                {{ data['total-replies'] }}
-                                {% else %}
-                                12
-                                {% endif %}
+                                1
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
-                                <a href="index#total-replies">
-                                    Change<span class="nhsuk-u-visually-hidden"> total number of reply contestations</span>
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> total number of credit notes</span>
                                 </a>
                             </dd>
                         </div>
 
-                        <!-- Total amount of accepted contestations -->
+                        <!-- Total amount of credit notes -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Total amount of accepted contestations
+                                Total amount of credit notes
                             </dt>
                             <dd class="nhsuk-summary-list__value">
-                                {% if data['total-accepted'] %}
-                                {{ data['total-accepted'] }}
-                                {% else %}
-                                5,700
-                                {% endif %}
+                                1,438.44
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
-                                <a href="index#total-accepted">
-                                    Change<span class="nhsuk-u-visually-hidden"> total amount of accepted
-                                        contestations</span>
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> total amount of credit notes</span>
                                 </a>
                             </dd>
                         </div>
@@ -143,14 +130,10 @@ Check contestation details - Manage incoming international healthcare claims - N
                                 Currency
                             </dt>
                             <dd class="nhsuk-summary-list__value">
-                                {% if data['currency'] %}
-                                {{ data['currency'] }}
-                                {% else %}
                                 Euro
-                                {% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
-                                <a href="index#currency">
+                                <a href="">
                                     Change<span class="nhsuk-u-visually-hidden"> currency</span>
                                 </a>
                             </dd>
@@ -159,20 +142,15 @@ Check contestation details - Manage incoming international healthcare claims - N
                         <!-- Date received -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Date you received the contestation
+                                Date you received the credit note
                             </dt>
                             <dd class="nhsuk-summary-list__value">
-                                {% if data['date-received-day'] %}{{ data['date-received-day'] }} {%
-                                else
-                                %}26 {% endif %}{% if data['date-received-month'] %}{{ fullSubmissionMonth }} {% else
-                                %}September {% endif %}{% if
-                                data['date-received-year'] %}{{ data['date-received-year'] }}{% else
-                                %}2024{% endif %}
+                                27 January 2025 
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
-                                <a href="index#date-received-day">
+                                <a href="">
                                     Change<span class="nhsuk-u-visually-hidden"> date you reveived the
-                                        contestation</span>
+                                        credit note</span>
                                 </a>
                             </dd>
                         </div>
@@ -180,30 +158,25 @@ Check contestation details - Manage incoming international healthcare claims - N
                         <!-- Target date -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Target date to complete the contestation
+                                Target date to complete the credit note
                             </dt>
                             <dd class="nhsuk-summary-list__value">
-                                {% if data['target-date-day'] %}{{ data['target-date-day'] }} {%
-                                else
-                                %}31 {% endif %}{% if data['target-date-month'] %}{{ fullSubmissionMonth }} {% else
-                                %}March {% endif %}{% if
-                                data['target-date-year'] %}{{ data['target-date-year'] }}{% else
-                                %}2026{% endif %}
+                                27 July 2026
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
-                                <a href="index#target-date-day">
+                                <a href="">
                                     Change<span class="nhsuk-u-visually-hidden"> date you reveived the
-                                        contestation</span>
+                                        credit note</span>
                                 </a>
                             </dd>
                         </div>
 
                     </dl>
-                    <a href="confirmation">
+        
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                             Submit
                         </button>
-                    </a>
+          
                 </div>
             </div>
             <!-- End of card -->

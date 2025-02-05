@@ -6,6 +6,23 @@ const path = require('path');
 
 const axios = require('axios');
 
+//////CREATE A NEW SUBMISSION//////
+//// What type of submission would you like to add?  ////
+router.post('/route_create_new_submission_6784', function(req,res){
+    var submissionType = req.session.data['type']
+    if (submissionType == "Contestation") {
+        res.redirect('/alpha/version-12/claims/rina/actual-cost/6784-france/submissions/create/02a-contestation-actual')
+        }
+        else if (submissionType == "Credit note") {
+            res.redirect('/alpha/version-12/claims/rina/actual-cost/6784-france/submissions/create/02b-credit-note')
+            }
+    else {
+        res.redirect('/alpha/version-12/claims/rina/actual-cost/6784-france/submissions/create/01-submission-type')
+    }
+})
+
+
+
 //////MANUAL PROCESSING OF INVOICES//////
 // Mark invoice 20001288 as complete - age bracket check
 router.post('/route-20001288-mark-complete', function(req,res){
