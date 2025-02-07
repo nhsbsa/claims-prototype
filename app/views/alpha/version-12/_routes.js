@@ -14,7 +14,7 @@ router.post('/route_create_new_submission_6784', function(req,res){
         res.redirect('/alpha/version-12/claims/rina/actual-cost/6784-france/submissions/create/02a-contestation-actual')
         }
         else if (submissionType == "Credit note") {
-            res.redirect('/alpha/version-12/claims/rina/actual-cost/6784-france/submissions/create/02b-credit-note')
+            res.redirect('/alpha/version-12/claims/rina/actual-cost/6784-france/submissions/create/02b-credit-note-actual')
             }
     else {
         res.redirect('/alpha/version-12/claims/rina/actual-cost/6784-france/submissions/create/01-submission-type')

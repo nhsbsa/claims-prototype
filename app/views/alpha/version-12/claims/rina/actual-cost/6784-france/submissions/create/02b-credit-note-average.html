@@ -33,7 +33,7 @@ path: ''
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Add a new contestation - Manage incoming international healthcare claims - NHSBSA
+Create a new contestation - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -81,70 +81,59 @@ Add a new contestation - Manage incoming international healthcare claims - NHSBS
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-        <form action="03a-cya-contestation-actual" method="post">
+        <form action="03b-cya-credit-note-average" method="post">
             <fieldset class="nhsuk-fieldset">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                     <h1 class="nhsuk-fieldset__heading">
                         <span class="nhsuk-caption-l">Add a new submission</span>
-                        Contestation reply details
+                        Credit note details
                     </h1>
                 </legend>
 
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
 
-                        <!-- Start contestation reference -->
+                        <!-- Start credit note reference -->
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
-                                Contestation reference
+                                Credit note reference
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-one-half" id="ref" name="ref" type="text">
                         </div>
 
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End contestation reference-->
+                        <!-- End credit note reference-->
 
-                        <!-- Start number of replies -->
+                        <!-- Start number of credit notes -->
                         <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-replies">
-                                Total number of reply contestations
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-notes">
+                                Total number of credit notes
                             </label>
-                            <input class="nhsuk-input nhsuk-u-width-one-half" id="total-replies" name="total-replies"
+                            <input class="nhsuk-input nhsuk-u-width-one-half" id="total-notes" name="total-notes"
                                 type="text">
                         </div>
 
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End number of replies -->
+                        <!-- End number of credit notes -->
 
                         <!-- Start total amount -->
                         <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-accepted">
-                                Total amount of accepted contestations
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-amount">
+                                Total number of months to be withdrawn
                             </label>
-                            <input class="nhsuk-input nhsuk-u-width-one-half" id="total-accepted" name="total-accepted"
+                            <input class="nhsuk-input nhsuk-u-width-one-half" id="total-amount" name="total-amount"
                                 type="text">
                         </div>
 
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
                         <!-- End total amount -->
 
-                        <!-- Start currency -->
-                        <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="currency">
-                                Currency
-                            </label>
-                            <input class="nhsuk-input nhsuk-u-width-one-half" id="currency" name="currency" type="text">
-                        </div>
-
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End currency-->
-
-                        <!-- Start date you received the contestation -->
+                        <!-- Start date you received the credit note -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="date-received" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        Date you received the contestation
+                                        Date you received the credit note
                                     </h1>
                                 </legend>
                                 <div class="nhsuk-hint" id="date-received-hint">
@@ -187,14 +176,14 @@ Add a new contestation - Manage incoming international healthcare claims - NHSBS
                         </div>
 
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End date you received the contestation -->
+                        <!-- End date you received the credit note -->
 
                         <!-- Start target date -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="target-date" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        Target date to complete the contestation
+                                        Target date to complete the credit note
                                     </h1>
                                 </legend>
                                 <div class="nhsuk-hint" id="target-date-hint">

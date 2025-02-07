@@ -69,28 +69,35 @@ Create a new contestation - Manage incoming international healthcare claims - NH
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
                 <div class="confirmation-box">
-                    <h1 class="heading-xlarge"><span id="done-tick"></span>Credit note added for claim ID 6784
+                    <h1 class="heading-xlarge"><span id="done-tick"></span>Contestation reply created for claim ID 6784
                     </h1>
-                    <h2 class="heading-large"><span class="heading-secondary" style="color:white;">Credit note ID
+                    <h2 class="heading-large"><span class="heading-secondary" style="color:white;">Reply to contestation ID
                             number<br />
-                            9435
+                            7766
                         </span>
 
                     </h2>
                 </div>
-                <p>You have added a new credit note for France for the financial year 2024 with a target date of 27 July 2025.</p>
+                <p>You have created a new contestation reply for France for the financial year 2025 with a target date of {% if data['target-date-day'] %}{{ data['target-date-day'] }} {%
+                    else
+                    %}7 {% endif %}{% if data['target-date-month'] %}{{ fullSubmissionMonth }} {% else
+                    %}February {% endif %}{% if
+                    data['target-date-year'] %}{{ data['target-date-year'] }}{% else
+                    %}2026{% endif %}.</p>
 
                 <h2 class="heading-medium">What happens next</h2>
-                <p>You can now....</p>
+                <p>You can now add invoices to this contestation reply.</p>
 
-                <a href="">
+                <a href="../contestations/7766/01-not-started">
                     <button style="margin-right:12px;" class="nhsuk-button" data-module="nhsuk-button" type="button">
-                        Manage credit note
+                        Manage reply to contestation
                     </button>
                 </a>
+<a href="01-submission-type">
                 <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="button">
                     Add another submission
                   </button>
+                </a>
             </div>
         </div>
         <!-- End of cya -->
