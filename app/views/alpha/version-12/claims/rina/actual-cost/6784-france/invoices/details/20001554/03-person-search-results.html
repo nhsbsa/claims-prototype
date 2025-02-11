@@ -137,32 +137,38 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     <div class=" nhsuk-grid-column-full">
 
                         <form action="03-person-search-results#search-heading" method="post">
-                            <div class="nhsuk-hint nhsuk-u-margin-bottom-6" id="search-hint-text">
-                                Search for a OHS person record to match to the invoice. You can use the invoice details
+                            <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="search-hint-text">
+                                Search for an OHS person record to match to the invoice. You can use the invoice details
                                 to help you find a
                                 match.
                             </div>
-                            <div class="nhsuk-hint" id="contact-hint">
-                                Search using a combination of personal detail fields.
+                            <div class="nhsuk-hint nhsuk-u-margin-bottom-6" id="contact-hint">
+                                Search using one or more personal detail fields.
                             </div>
 
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group nhsuk-u-margin-bottom-6">
                                 <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
                                     Last name
                                 </label>
+                                <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="target-date-hint">
+                                    Search using an initial, beginning of name or full name. For example, S, Smi or Smith.
+                                </div>
                                 <input class="nhsuk-input nhsuk-u-width-two-thirds" id="accepted" name="accepted"
                                     type="text" value="Stephenson">
                             </div>
 
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group nhsuk-u-margin-bottom-6">
                                 <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
                                     First name
                                 </label>
+                                <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="target-date-hint">
+                                    Search using an initial, beginning of name or full name. For example J, Joh or John.
+                                </div>
                                 <input class="nhsuk-input nhsuk-u-width-two-thirds" id="accepted" name="accepted"
                                     type="text" value="">
                             </div>
 
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group nhsuk-u-margin-bottom-6">
                                 <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
                                     Residential country
                                 </label>
@@ -176,6 +182,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         Date of birth
                                     </label>
                                     <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="target-date-hint">
+                                        Always include the year if searching by date of birth &ndash; day and month are optional.<br />
                                         For example, 28 9 2023
                                     </div>
                                     <div class="nhsuk-date-input" id="example">
@@ -219,7 +226,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 Or search using one unique identifier.
                             </div>
 
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group nhsuk-u-margin-bottom-6">
                                 <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
                                     PIN
                                 </label>
