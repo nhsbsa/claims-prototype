@@ -114,40 +114,74 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
 
                             <fieldset class="nhsuk-fieldset">
                                 <legend
-                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m nhsuk-u-margin-bottom-4">
-                                    Search using one or more personal details
+                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m nhsuk-u-margin-bottom-4">  
+                                        Search using one or more personal details
                                 </legend>
 
                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">
                                         Last name
                                     </label>
-                                    <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="target-date-hint">
+                                    <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="last-name-hint">
                                         Search using an initial, beginning of name or full name. For example, S, Smi or
                                         Smith.
                                     </div>
-                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="accepted" name="accepted"
+                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name" name="last-name"
                                         type="text" value="Stephenson">
                                 </div>
 
                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="first-name">
                                         First name
                                     </label>
-                                    <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="target-date-hint">
+                                    <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="first-name-hint">
                                         Search using an initial, beginning of name or full name. For example J, Joh or
                                         John.
                                     </div>
-                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="accepted" name="accepted"
+                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="first-name" name="first-name"
                                         type="text" value="">
                                 </div>
 
                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="select-autocomplete">
                                         Residential country
                                     </label>
-                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="accepted" name="accepted"
-                                        type="text">
+                                    <div class="nhsuk-u-width-two-thirds">
+                                        <select name="country" id="select-autocomplete" value="">
+                                            <option value=""></option>
+                                            <option value="Austria">Austria</option>
+                                            <option value="Belgium">Belgium</option>
+                                            <option value="Bulgaria">Bulgaria</option>
+                                            <option value="Croatia">Croatia</option>
+                                            <option value="Cyprus">Cyprus</option>
+                                            <option value="Czech Republic">Czech Republic</option>
+                                            <option value="Denmark">Denmark</option>
+                                            <option value="Estonia">Estonia</option>
+                                            <option value="Finland">Finland</option>
+                                            <option value="France">France</option>
+                                            <option value="Germany">Germany</option>
+                                            <option value="Greece">Greece</option>
+                                            <option value="Hungary">Hungary</option>
+                                            <option value="Iceland">Iceland</option>
+                                            <option value="Ireland">Ireland</option>
+                                            <option value="Italy">Italy</option>
+                                            <option value="Latvia">Latvia</option>
+                                            <option value="Liechtenstein">Liechtenstein</option>
+                                            <option value="Lithuania">Lithuania</option>
+                                            <option value="Luxemburg">Luxemburg</option>
+                                            <option value="Malta">Malta</option>
+                                            <option value="Netherlands">Netherlands</option>
+                                            <option value="Norway">Norway</option>
+                                            <option value="Poland">Poland</option>
+                                            <option value="Portugal">Portugal</option>
+                                            <option value="Romania">Romania</option>
+                                            <option value="Slovakia">Slovakia</option>
+                                            <option value="Slovenia">Slovenia</option>
+                                            <option value="Spain">Spain</option>
+                                            <option value="Sweden">Sweden</option>
+                                            <option value="Switzerland">Switzerland</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="nhsuk-form-group">
@@ -155,7 +189,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="dob">
                                             Date of birth
                                         </label>
-                                        <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="target-date-hint">
+                                        <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="dob-hint">
                                             Always include the year if searching by date of birth &ndash; day and month
                                             are optional.<br />
                                             For example, 28 9 2023
@@ -164,36 +198,36 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                             <div class="nhsuk-date-input__item">
                                                 <div class="nhsuk-form-group">
                                                     <label class="nhsuk-label nhsuk-date-input__label"
-                                                        for="example-day">
+                                                        for="dob-day">
                                                         Day
                                                     </label>
                                                     <input
                                                         class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                        id="example-day" name="example-day" type="text" pattern="[0-9]*"
+                                                        id="dob-day" name="dob-day" type="text" pattern="[0-9]*"
                                                         inputmode="numeric" value="10">
                                                 </div>
                                             </div>
                                             <div class="nhsuk-date-input__item">
                                                 <div class="nhsuk-form-group">
                                                     <label class="nhsuk-label nhsuk-date-input__label"
-                                                        for="example-month">
+                                                        for="dob-month">
                                                         Month
                                                     </label>
                                                     <input
                                                         class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                                        id="example-month" name="example-month" type="text"
+                                                        id="dob-month" name="dob-month" type="text"
                                                         pattern="[0-9]*" inputmode="numeric" value="1">
                                                 </div>
                                             </div>
                                             <div class="nhsuk-date-input__item">
                                                 <div class="nhsuk-form-group">
                                                     <label class="nhsuk-label nhsuk-date-input__label"
-                                                        for="example-year">
+                                                        for="dob-year">
                                                         Year
                                                     </label>
                                                     <input
                                                         class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                                                        id="example-year" name="example-year" type="text"
+                                                        id="dob-year" name="dob-year" type="text"
                                                         pattern="[0-9]*" inputmode="numeric" value="1981">
                                                 </div>
                                             </div>
@@ -208,28 +242,28 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                             <fieldset class="nhsuk-fieldset">
                                 <legend
                                     class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m nhsuk-u-margin-bottom-4">
-                                    Or search using only one unique identifier
+                                        Or search using only one unique identifier
                                 </legend>
 
                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="pin">
                                         PIN in UK
                                     </label>
                                     <div class="nhsuk-hint">
                                         Reference, National Insurance number or NHS number.
                                     </div>
-                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contested" name="contested"
+                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="pin" name="pin"
                                         type="text">
                                 </div>
 
                                 <div class="nhsuk-form-group">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="entitlement">
                                         Entitlement issue number
                                     </label>
                                     <div class="nhsuk-hint">
                                         EHIC, GHIC or PRC issue number.
                                     </div>
-                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contested" name="contested"
+                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="entitlement" name="entitlement"
                                         type="text">
                                 </div>
 
