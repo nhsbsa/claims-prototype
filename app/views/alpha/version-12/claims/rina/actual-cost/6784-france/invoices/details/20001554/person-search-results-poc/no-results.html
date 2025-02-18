@@ -1,30 +1,5 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
-{% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-12/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-12/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
-active: true
-},
-{
-name: 'Submissions',
-path: ''
-},
-{
-name: 'Notes',
-path: ''
-},
-{
-name: 'History',
-path: ''
-}
-]
-%}
-
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-invoice-poc.html' %}
 <!-- 
@@ -45,18 +20,18 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../../../../../home">Home</a></li>
+                    href="">Home</a></li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../../../../index">Claims</a></li>
+                    href="">Claims</a></li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../summary/active-invoices-uploaded">Claim ID 6784</a></li>
+                    href="">Claim ID 6784</a></li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../invoices/full-invoice-list">Invoices</a></li>
+                    href="">Invoices</a></li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../invoices/details/20001554/01-to-check">Invoice ID 20001554</a></li>
+                    href="">Invoice ID 20001554</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="../../../../../../index">
+            <a class="nhsuk-breadcrumb__backlink" href="">
                 <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
                 Claims
             </a>
@@ -65,6 +40,8 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %}
+
+
 
 <!-- Start of central content -->
 {% block content %}
@@ -84,6 +61,8 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
         padding-top: 0
     }
 </style>
+
+
 
 <!-- Start of back link -->
 <div class="nhsuk-grid-row">
@@ -112,13 +91,14 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
             to help you find a
             match.</p>
     </div>
+
 </div>
 <!-- End of header block -->
 
 <!-- Start person search -->
-<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-row" id="search-criteria">
+    <!-- Start left column-->
     <div class="nhsuk-grid-column-three-quarters">
-
         <!-- Start search for a person expander -->
         <details class="nhsuk-details nhsuk-expander" open>
             <summary class="nhsuk-details__summary">
@@ -130,7 +110,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-grid-row">
                     <div class=" nhsuk-grid-column-full">
 
-                        <form action="03-person-search-results#search-heading" method="post">
+                        <form action="" method="post">
 
                             <fieldset class="nhsuk-fieldset">
                                 <legend
@@ -147,7 +127,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                         Smith.
                                     </div>
                                     <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name" name="last-name"
-                                        type="text" value="">
+                                        type="text" value="Stephenson">
                                 </div>
 
                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
@@ -204,14 +184,6 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                 </div>
 
-                                <!-- <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="country">
-                                        Residential country
-                                    </label>
-                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="country" name="country"
-                                        type="text">
-                                </div> -->
-
                                 <div class="nhsuk-form-group">
                                     <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="dob">
@@ -232,7 +204,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                                     <input
                                                         class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                         id="dob-day" name="dob-day" type="text" pattern="[0-9]*"
-                                                        inputmode="numeric" value="">
+                                                        inputmode="numeric" value="10">
                                                 </div>
                                             </div>
                                             <div class="nhsuk-date-input__item">
@@ -244,7 +216,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                                     <input
                                                         class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
                                                         id="dob-month" name="dob-month" type="text"
-                                                        pattern="[0-9]*" inputmode="numeric" value="">
+                                                        pattern="[0-9]*" inputmode="numeric" value="1">
                                                 </div>
                                             </div>
                                             <div class="nhsuk-date-input__item">
@@ -256,7 +228,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                                     <input
                                                         class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
                                                         id="dob-year" name="dob-year" type="text"
-                                                        pattern="[0-9]*" inputmode="numeric" value="">
+                                                        pattern="[0-9]*" inputmode="numeric" value="1982">
                                                 </div>
                                             </div>
                                         </div>
@@ -308,11 +280,163 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
             </div>
         </details>
         <!-- End search for a person expander-->
+
+        <!-- Start results-->
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
+
+                <!-- Start of header block -->
+                <div class="nhsuk-grid-row nhsuk-u-padding-bottom-2">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">No results found</h3>
+                        <p class="nhsuk-u-margin-bottom-0 nhsuk-body-s">Searched by: <strong
+                                class="nhsuk-tag nhsuk-tag--aqua-green">Stephenson</strong>
+                            <strong class="nhsuk-tag nhsuk-tag--aqua-green">10 Jan 1982</strong>
+                        </p>
+                    </div>
+                    <div class="nhsuk-grid-column-one-third">
+                        <div class="nhsuk-form-group" style="float:right;">
+                          <label class="nhsuk-label" for="results">
+                            Results per page
+                          </label>
+                          <select class="nhsuk-select" id="results" name="results" style="float:right;">
+                            <option value="10" selected>10</option>
+                            <option value="100">100</option>
+                            <option value="200">200</option>
+                          </select>
+                        </div>
+                      </div>
+                </div>
+                <!-- End header block -->
+
+
+                <div class="nhsuk-grid-row" id="search-results">
+                    <div class="nhsuk-grid-column-full">
+
+                        <!-- Start of filter and sort options -->
+                        <details class="nhsuk-details nhsuk-u-margin-bottom-6">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Sort options
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <div class="nhsuk-grid-row">
+
+                                    <!-- Start sort by  -->
+                                    <div class="nhsuk-grid-column-one-third">
+                                        <div class="nhsuk-form-group nhsuk-u-padding-bottom-0">
+                                            <fieldset class="nhsuk-fieldset">
+                                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                    <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                                        Sort by
+                                                    </h1>
+                                                </legend>
+                                                <div class="nhsuk-radios">
+
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="sort-by-last-name"
+                                                            name="sort-by" type="radio" value="last-name"
+                                                            checked="checked">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="sort-by-last-name">
+                                                            Last name
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="sort-by-first-name"
+                                                            name="sort-by" type="radio" value="first-name">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="sort-by-first-name">
+                                                            First name
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="sort-by-dob"
+                                                            name="sort-by" type="radio" value="dob">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="sort-by-first-name">
+                                                            Date of birth
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="sort-by-nino"
+                                                            name="sort-by" type="radio" value="nino">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="sort-by-nino">
+                                                            NI number
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="sort-by-id"
+                                                            name="sort-by" type="radio" value="id">
+                                                        <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
+                                                            OHS reference
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <!-- End sort by  -->
+
+                                    <!-- Start sort order -->
+                                    <div class="nhsuk-grid-column-one-third">
+                                        <div class="nhsuk-form-group">
+                                            <fieldset class="nhsuk-fieldset">
+                                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                    <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                                        Order results
+                                                    </h1>
+                                                </legend>
+                                                <div class="nhsuk-radios">
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="order-by-asc"
+                                                            name="order-by" type="radio" value="ascending">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="order-by-asc">
+                                                            Ascending
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="order-by-desc"
+                                                            name="order-by" type="radio" value="descending"
+                                                            checked="checked">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="order-by-desc">
+                                                            Descending
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <!-- End sort order -->
+                                    <div class="nhsuk-grid-column-full">
+                                        <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4"
+                                            data-module="nhsuk-button" type="submit" style="margin-top: 6px;">
+                                            Apply
+                                        </button><br />
+                                        <a href="">Reset all</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </details>
+                        <!-- End of filter and sort options -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- End results-->
     </div>
+    <!-- End left column-->
+
 
     <!-- Start of invoice details from submitting country -->
     <div class="nhsuk-grid-column-one-quarter">
-
         <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-0">
             Invoice details from France
         </h2>
@@ -368,7 +492,6 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
         <!-- Start entitlement details -->
         <div class="nhsuk-card nhsuk-card--secondary">
             <div class="nhsuk-card__content nhsuk-card__content--secondary">
-
                 <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
                     Entitlement details
                 </h3>
@@ -460,6 +583,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
     <!-- End of invoice details from submitting country -->
 
 </div>
+<!-- End person search -->
 
 {% endblock %}
 <!-- End of central content -->
