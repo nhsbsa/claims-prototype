@@ -10,7 +10,7 @@ path: ''
 },
 {
 name: 'Submissions',
-path: '',
+path: '/alpha/version-12/claims/rina/actual-cost/6784-france/submissions/03-letters-sent',
 active: true
 },
 {
@@ -33,7 +33,7 @@ path: ''
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Check contestation details - Manage incoming international healthcare claims - NHSBSA
+Check contestation reply details - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -45,6 +45,10 @@ Check contestation details - Manage incoming international healthcare claims - N
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../home">Home</a>
             </li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../index">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../03-letters-sent">Submissions</a>
             </li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
@@ -164,10 +168,10 @@ Check contestation details - Manage incoming international healthcare claims - N
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['date-received-day'] %}{{ data['date-received-day'] }} {%
                                 else
-                                %}26 {% endif %}{% if data['date-received-month'] %}{{ fullSubmissionMonth }} {% else
-                                %}September {% endif %}{% if
+                                %}21 {% endif %}{% if data['date-received-month'] %}{{ date-received-month }} {% else
+                                %}February {% endif %}{% if
                                 data['date-received-year'] %}{{ data['date-received-year'] }}{% else
-                                %}2024{% endif %}
+                                %}2025{% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
                                 <a href="index#date-received-day">
@@ -185,10 +189,10 @@ Check contestation details - Manage incoming international healthcare claims - N
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['target-date-day'] %}{{ data['target-date-day'] }} {%
                                 else
-                                %}31 {% endif %}{% if data['target-date-month'] %}{{ fullSubmissionMonth }} {% else
-                                %}March {% endif %}{% if
+                                %}1 {% endif %}{% if data['target-date-month'] %}{{ target-date-month }} {% else
+                                %}September {% endif %}{% if
                                 data['target-date-year'] %}{{ data['target-date-year'] }}{% else
-                                %}2026{% endif %}
+                                %}2025{% endif %}
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
                                 <a href="index#target-date-day">

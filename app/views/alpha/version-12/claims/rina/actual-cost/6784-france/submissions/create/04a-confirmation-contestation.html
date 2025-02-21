@@ -10,7 +10,7 @@ path: ''
 },
 {
 name: 'Submissions',
-path: '',
+path: '/alpha/version-12/claims/rina/actual-cost/6784-france/submissions/03-letters-sent',
 active: true
 },
 {
@@ -33,7 +33,7 @@ path: ''
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Create a new contestation - Manage incoming international healthcare claims - NHSBSA
+Contestation reply created - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -45,6 +45,10 @@ Create a new contestation - Manage incoming international healthcare claims - NH
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../home">Home</a>
             </li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../index">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../03-letters-sent">Submissions</a>
             </li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
@@ -78,15 +82,15 @@ Create a new contestation - Manage incoming international healthcare claims - NH
 
                     </h2>
                 </div>
-                <p>You have created a new contestation reply for France for the financial year 2025 with a target date of {% if data['target-date-day'] %}{{ data['target-date-day'] }} {%
+                <p>You have created a new contestation reply for France for the financial year 2024 with a target date of {% if data['target-date-day'] %}{{ data['target-date-day'] }} {%
                     else
-                    %}7 {% endif %}{% if data['target-date-month'] %}{{ fullSubmissionMonth }} {% else
-                    %}February {% endif %}{% if
+                    %}1 {% endif %}{% if data['target-date-month'] %}{{ fullSubmissionMonth }} {% else
+                    %}September {% endif %}{% if
                     data['target-date-year'] %}{{ data['target-date-year'] }}{% else
-                    %}2026{% endif %}.</p>
+                    %}2025{% endif %}.</p>
 
                 <h2 class="heading-medium">What happens next</h2>
-                <p>You can now add invoices to this contestation reply.</p>
+                <p>You can now add invoices to this reply to contestation.</p>
 
                 <a href="../contestations/7766/01-not-started">
                     <button style="margin-right:12px;" class="nhsuk-button" data-module="nhsuk-button" type="button">
