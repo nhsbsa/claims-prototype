@@ -10,7 +10,7 @@
   
   <!-- Start of page title -->
   {% block pageTitle %}
-Submission - Upload - Manage incoming international healthcare claims - NHSBSA
+File upload confirmation - Manage incoming international healthcare claims - NHSBSA
   {% endblock %}
   <!-- End of page title -->
   
@@ -19,9 +19,9 @@ Submission - Upload - Manage incoming international healthcare claims - NHSBSA
   <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
       <div class="nhsuk-width-container-fluid">
           <ol class="nhsuk-breadcrumb__list">
-              <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Home</a>
+              <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../../home">Home</a>
               </li>
-              <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claims</a>
+              <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../index">Claims</a>
               </li>
               <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
               </li>
@@ -45,22 +45,6 @@ Submission - Upload - Manage incoming international healthcare claims - NHSBSA
   
   {% block content %}
   
-  <!-- Start of back link -->
-  <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full">
-          <div class="nhsuk-back-link">
-              <a class="nhsuk-back-link__link" href="javascript:history.back()">
-                  <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                      aria-hidden="true" height="24" width="24">
-                      <path
-                          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-                      </path>
-                  </svg>
-                  Go back</a>
-          </div>
-      </div>
-  </div>
-  <!-- End of back link -->
   
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
@@ -74,12 +58,17 @@ Submission - Upload - Manage incoming international healthcare claims - NHSBSA
         <p>You have successfully uploaded a file of invoices to this reply to contestation.</p>
 
         <h2 class="nhsuk-heading-l">What happens next</h2>
-        <p>The system will now .....</p>
-        <p>Once the system has finished, you can check any that it could not match.</p>
+        <p>The reply to contestation is now on hold and you will need to open it before the invoices are reflected.</p>
 
         <a href="../7766/02-on-hold">
-            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                Manage invoices
+            <button class="nhsuk-button" data-module="nhsuk-button" type="button">
+                View contestation reply details
+            </button>
+        </a>
+
+        <a href="">
+            <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="button">
+                Return to claim summary
             </button>
         </a>
 
