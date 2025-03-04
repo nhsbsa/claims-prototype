@@ -33,7 +33,7 @@ path: ''
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Add a new contestation - Manage incoming international healthcare claims - NHSBSA
+Reply to contestation details - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -90,7 +90,7 @@ Add a new contestation - Manage incoming international healthcare claims - NHSBS
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                     <h1 class="nhsuk-fieldset__heading">
                         <span class="nhsuk-caption-l">Add a new submission</span>
-                        Contestation reply details
+                        Reply to contestation details
                     </h1>
                 </legend>
 
@@ -105,7 +105,7 @@ Add a new contestation - Manage incoming international healthcare claims - NHSBS
                         <!-- Start contestation reference -->
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
-                                Contestation reference
+                                Reply to contestation reference
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-one-half" id="ref" name="ref" type="text">
                         </div>
@@ -116,7 +116,7 @@ Add a new contestation - Manage incoming international healthcare claims - NHSBS
                         <!-- Start number of replies -->
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-replies">
-                                Total number of reply contestations
+                                Total number of replies
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-one-half" id="total-replies" name="total-replies"
                                 type="text">
@@ -130,6 +130,9 @@ Add a new contestation - Manage incoming international healthcare claims - NHSBS
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-accepted">
                                 Total number of accepted months contested
                             </label>
+                            <div class="nhsuk-hint" id="months-contested-hint">
+                                The number of months withdrawn by France.
+                              </div>
                             <input class="nhsuk-input nhsuk-u-width-one-half" id="total-accepted" name="total-accepted"
                                 type="text">
                         </div>
@@ -142,7 +145,7 @@ Add a new contestation - Manage incoming international healthcare claims - NHSBS
                             <fieldset class="nhsuk-fieldset" aria-describedby="date-received" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        Date you received the contestation
+                                        Date you received this submission
                                     </h1>
                                 </legend>
                                 <div class="nhsuk-hint" id="date-received-hint">
@@ -192,7 +195,7 @@ Add a new contestation - Manage incoming international healthcare claims - NHSBS
                             <fieldset class="nhsuk-fieldset" aria-describedby="target-date" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        Target date to complete the contestation
+                                        Target date to complete this submission
                                     </h1>
                                 </legend>
                                 <div class="nhsuk-hint" id="target-date-hint">

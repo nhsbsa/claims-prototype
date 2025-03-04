@@ -33,7 +33,7 @@ path: ''
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Check contestation reply details - Manage incoming international healthcare claims - NHSBSA
+Check reply to contestation details - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -74,7 +74,7 @@ Check contestation reply details - Manage incoming international healthcare clai
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                 <h1 class="nhsuk-fieldset__heading">
                     <span class="nhsuk-caption-l">Add a new submission</span>
-                    Check contestation reply details
+                    Check reply to contestation details
                 </h1>
             </legend>
 
@@ -86,7 +86,7 @@ Check contestation reply details - Manage incoming international healthcare clai
                         <!-- Contestation reference -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Contestation reference
+                                Reply to contestation reference
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['ref'] %}
@@ -97,7 +97,7 @@ Check contestation reply details - Manage incoming international healthcare clai
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
                                 <a href="index#ref">
-                                    Change<span class="nhsuk-u-visually-hidden"> contestation reference</span>
+                                    Change<span class="nhsuk-u-visually-hidden"> reply to contestation reference</span>
                                 </a>
                             </dd>
                         </div>
@@ -105,7 +105,7 @@ Check contestation reply details - Manage incoming international healthcare clai
                         <!-- Total number of contestation replies -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Total number of reply contestations
+                                Total number of repies
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['total-replies'] %}
@@ -116,7 +116,7 @@ Check contestation reply details - Manage incoming international healthcare clai
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
                                 <a href="index#total-replies">
-                                    Change<span class="nhsuk-u-visually-hidden"> total number of reply contestations</span>
+                                    Change<span class="nhsuk-u-visually-hidden"> total number of replies</span>
                                 </a>
                             </dd>
                         </div>
@@ -163,7 +163,7 @@ Check contestation reply details - Manage incoming international healthcare clai
                         <!-- Date received -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Date you received the contestation
+                                Date you received this submission
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['date-received-day'] %}{{ data['date-received-day'] }} {%
@@ -184,7 +184,7 @@ Check contestation reply details - Manage incoming international healthcare clai
                         <!-- Target date -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Target date to complete the contestation
+                                Target date to complete this submission
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['target-date-day'] %}{{ data['target-date-day'] }} {%
