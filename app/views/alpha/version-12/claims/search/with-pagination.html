@@ -216,7 +216,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                     </summary>
                                     <div class="nhsuk-details__text">
                                         <div class="nhsuk-grid-row">
-                                            <div class="nhsuk-grid-column-one-third">
+                                            <div class="nhsuk-grid-column-one-quarter">
                                                 <!-- By type of claim -->
                                                 <div class="nhsuk-form-group">
                                                     <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
@@ -230,63 +230,28 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                                         <div class="nhsuk-checkboxes">
                                                             <div class="nhsuk-checkboxes__item">
                                                                 <input class="nhsuk-checkboxes__input"
-                                                                    id="article-filter-20" name="article-filter"
-                                                                    type="checkbox" value="Article 20(2) - S2">
+                                                                    id="type-filter-actual" name="type-filter"
+                                                                    type="checkbox" value="Actual cost">
                                                                 <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                    for="article-filter-20">
-                                                                    Actual cost - Sickness
+                                                                    for="type-filter">
+                                                                    Actual cost
                                                                 </label>
                                                             </div>
-                                                            <div class="nhsuk-checkboxes__item">
-                                                                <input class="nhsuk-checkboxes__input"
-                                                                    id="article-filter-22" name="article-filter"
-                                                                    type="checkbox" value="Article 22(i)(c) - E112">
-                                                                <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                    for="article-filter-22">
-                                                                    Average cost - Sickness - Article 63 (2a)
-                                                                </label>
+                                                            <div class="nhsuk-checkboxes">
+                                                                <div class="nhsuk-checkboxes__item">
+                                                                    <input class="nhsuk-checkboxes__input"
+                                                                        id="type-filter-average" name="type-filter"
+                                                                        type="checkbox" value="Average cost">
+                                                                    <label class="nhsuk-label nhsuk-checkboxes__label"
+                                                                        for="type-filter">
+                                                                        Average cost
+                                                                    </label>
+                                                                </div>
                                                             </div>
-                                                            <div class="nhsuk-checkboxes__item">
-                                                                <input class="nhsuk-checkboxes__input"
-                                                                    id="article-filter-55" name="article-filter"
-                                                                    type="checkbox" value="Article 55(i)(a) - E123">
-                                                                <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                    for="article-filter-55">
-                                                                    Average cost - Sickness - Article 63 (2b)
-                                                                </label>
-                                                            </div>
-                                                            <div class="nhsuk-checkboxes__item">
-                                                                <input class="nhsuk-checkboxes__input"
-                                                                    id="article-filter-62" name="article-filter"
-                                                                    type="checkbox" value="Average cost - Sickness">
-                                                                <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                    for="article-filter-62">
-                                                                    Average cost - Sickness - Article 94
-                                                                </label>
-                                                            </div>
-                                                            <div class="nhsuk-checkboxes__item">
-                                                                <input class="nhsuk-checkboxes__input"
-                                                                    id="article-filter-63-2a" name="article-filter"
-                                                                    type="checkbox" value="Article 63 (2a)">
-                                                                <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                    for="article-filter-63-2a">
-                                                                    Average cost - Sickness - Article 95
-                                                                </label>
-                                                            </div>
-                                                            <div class="nhsuk-checkboxes__item">
-                                                                <input class="nhsuk-checkboxes__input"
-                                                                    id="article-filter-63-2b" name="article-filter"
-                                                                    type="checkbox" value="Article 63 (2b)">
-                                                                <label class="nhsuk-label nhsuk-checkboxes__label"
-                                                                    for="article-filter-63-2b">
-                                                                    Actual cost - Accident at work
-                                                                </label>
-                                                            </div>
-                                                        </div>
                                                     </fieldset>
                                                 </div>
                                             </div>
-                                            <div class="nhsuk-grid-column-one-third">
+                                            <div class="nhsuk-grid-column-one-quarter">
                                                 <!-- By claim status -->
                                                 <div class="nhsuk-form-group">
                                                     <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
@@ -320,7 +285,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                                     </fieldset>
                                                 </div>
                                             </div>
-                                            <div class="nhsuk-grid-column-one-third">
+                                            <div class="nhsuk-grid-column-one-quarter">
                                                 <!-- Sort by -->
                                                 <div class="nhsuk-form-group">
                                                     <fieldset class="nhsuk-fieldset">
@@ -368,6 +333,8 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                                         </div>
                                                     </fieldset>
                                                 </div>
+                                            </div>
+                                            <div class="nhsuk-grid-column-one-quarter">
                                                 <!-- Order by -->
                                                 <div class="nhsuk-form-group">
                                                     <fieldset class="nhsuk-fieldset">
@@ -417,9 +384,6 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <!-- End of filter and sort options -->
 
-
-
-
                         <!-- Start of table data -->
                         <div class="nhsuk-grid-row">
                             <div class="nhsuk-grid-column-full">
@@ -467,7 +431,6 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Type of claim
                                                 </span>Average cost
-                                                - Sickness - Article 63 (2a)
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Claim status </span>Not
@@ -495,8 +458,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Type of claim
-                                                </span>Actual cost -
-                                                Sickness
+                                                </span>Actual cost
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Claim status </span>Active
@@ -523,8 +485,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Type of claim
-                                                </span>Actual cost -
-                                                Sickness
+                                                </span>Actual cost
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Claim status </span>Active
@@ -552,7 +513,6 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Type of claim
                                                 </span>Average cost
-                                                - Sickness - Article 63 (2b)
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Claim status </span>Active
@@ -579,8 +539,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Type of claim
-                                                </span>Actual cost -
-                                                Sickness
+                                                </span>Actual cost
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Claim status </span>Active
@@ -608,8 +567,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Type of claim
-                                                </span>Actual cost -
-                                                Sickness
+                                                </span>Actual cost
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Claim status </span>Active
@@ -636,8 +594,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Type of claim
-                                                </span>Actual cost -
-                                                Accident at work
+                                                </span>Actual cost
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Claim status </span>Active
@@ -664,8 +621,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Type of claim
-                                                </span>Actual cost -
-                                                Sickness
+                                                </span>Actual cost
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Claim status </span>Active
@@ -693,7 +649,6 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Type of claim
                                                 </span>Average cost
-                                                - Sickness - Article 63 (2a)
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Claim status </span>Active
@@ -720,8 +675,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Type of claim
-                                                </span>Actual cost -
-                                                Sickness
+                                                </span>Actual cost
                                             </td>
                                             <td role="cell" class="nhsuk-table__cell">
                                                 <span class="nhsuk-table-responsive__heading">Claim status </span>Active
@@ -741,7 +695,8 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                         <!-- Start pagination -->
                         <div class="nhsuk-grid-row">
                             <div class="nhsuk-grid-column-full">
-                                <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination" style="justify-content: center;">
+                                <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination"
+                                    style="justify-content: center;">
 
                                     <div class="nhsuk-pagination__prev">
                                     </div>
