@@ -2,12 +2,12 @@
 {% set mainNavigation = [
 {
 name: 'Summary',
-path: '/alpha/version-12/claims/rina/actual-cost/6784-france/summary/letters-sent',
+path: '/alpha/version-12/claims/rina/actual-cost/6784-france/summary/reply-sent',
 active: true
 },
 {
 name: 'Invoices',
-path: ''
+path: '/alpha/version-12/claims/rina/actual-cost/6784-france/invoices/reply-sent/full-invoice-list'
 },
 {
 name: 'Submissions',
@@ -87,7 +87,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
           </div>
           <div class="nhsuk-grid-column-one-third">
             <strong class="nhsuk-tag nhsuk-tag--orange" style="float:right">
-              Letters sent
+              Reply sent
             </strong>
           </div>
           <div class="nhsuk-grid-column-full">
@@ -169,9 +169,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
                   else %}January {% endif %}{% if data['target-date-year'] %}{{
                   data['target-date-year'] }}{% else %}2025{% endif %}
                 </dd>
-                <dd class="nhsuk-summary-list__actions"><a href="edit-target-date">
-                    Change<span class="nhsuk-u-visually-hidden"> target date</span>
-                  </a></dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
               </div>
               <!-- Deadline -->
               <div class="nhsuk-summary-list__row">
@@ -233,7 +231,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               92,412
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a href="../invoices/full-invoice-list#download-results">
+              <a href="">
                 View<span class="nhsuk-u-visually-hidden"> all invoices</span>
               </a>
             </dd>
@@ -247,7 +245,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               0
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a href="../invoices/invoice-list-to-check#download-results">
+              <a href="">
                 View<span class="nhsuk-u-visually-hidden"> to check invoices</span>
               </a>
             </dd>
@@ -261,7 +259,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               92,309
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a href="../invoices/invoice-list-accepted#download-results">
+              <a href="">
                 View<span class="nhsuk-u-visually-hidden"> accepted invoices</span>
               </a>
             </dd>
@@ -275,7 +273,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               103
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a href="../invoices/invoice-list-contested#download-results">
+              <a href="">
                 View<span class="nhsuk-u-visually-hidden"> contested invoices</span>
               </a>
             </dd>
@@ -289,7 +287,7 @@ Claim summary - Manage incoming international healthcare claims - NHSBSA
               <p>0</p>
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a href="../invoices/invoice-list-withdrawn#download-results">
+              <a href="">
                 View<span class="nhsuk-u-visually-hidden"> withdrawn invoices</span>
               </a>
             </dd>
