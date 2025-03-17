@@ -34,7 +34,7 @@ path: ''
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Invoice details - Manage incoming international healthcare claims - NHSBSA
+Person record - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -606,7 +606,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                                     <div class="nhsuk-radios__item">
                                                         <input class="nhsuk-radios__input" id="sort-by-claim-id"
-                                                            name="sort-by" type="radio" value="Claim ID" checked="checked">
+                                                            name="sort-by" type="radio" value="Claim ID"
+                                                            checked="checked">
                                                         <label class="nhsuk-label nhsuk-radios__label"
                                                             for="sort-by-claim-id">
                                                             Claim ID
@@ -630,8 +631,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     </div>
                                                     <div class="nhsuk-radios__item">
                                                         <input class="nhsuk-radios__input" id="sort-by-end-date"
-                                                            name="sort-by" type="radio" value="End date"
-                                                            >
+                                                            name="sort-by" type="radio" value="End date">
                                                         <label class="nhsuk-label nhsuk-radios__label"
                                                             for="sort-by-end-date">
                                                             End date
@@ -770,7 +770,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 <dl class="nhsuk-summary-list">
                                                     <div class="nhsuk-summary-list__row">
                                                         <dt class="nhsuk-summary-list__key">
-                                                            Type
+                                                            Document
                                                         </dt>
                                                         <dd class="nhsuk-summary-list__value">
                                                             EHIC
@@ -798,6 +798,14 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                         </dt>
                                                         <dd class="nhsuk-summary-list__value">
                                                             23 Mar 2021
+                                                        </dd>
+                                                    </div>
+                                                    <div class="nhsuk-summary-list__row">
+                                                        <dt class="nhsuk-summary-list__key">
+                                                            Issue number
+                                                        </dt>
+                                                        <dd class="nhsuk-summary-list__value">
+                                                            80826000010168456876
                                                         </dd>
                                                     </div>
                                                 </dl>
@@ -847,7 +855,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     </div>
                                                     <div class="nhsuk-summary-list__row">
                                                         <dt class="nhsuk-summary-list__key">
-                                                            Medicine care amount
+                                                            Medicine amount
                                                         </dt>
                                                         <dd class="nhsuk-summary-list__value">
                                                             23.46
@@ -894,17 +902,16 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     </div>
                                                 </dl>
                                             </div>
-                                        </div>
-
-                                        <div class="nhsuk-grid-row">
-                                            <div class="nhsuk-grid-column-full">
+                                            <div class="nhsuk-grid-column-one-quarter">
                                                 <button
-                                                    class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3"
+                                                    class="nhsuk-button nhsuk-button--secondary" style="float:right;"
                                                     data-module="nhsuk-button" type="submit">
                                                     View full invoice
                                                 </button>
                                             </div>
                                         </div>
+
+
 
                                     </td>
                                 </tr>
