@@ -1,0 +1,182 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '/alpha/version-13/claims/rina/average-cost/spain/7399/summary/active-in-progress'
+},
+{
+name: 'Invoices',
+path: '/alpha/version-13/claims/rina/average-cost/spain/7399/invoices/invoice-list-full',
+active: true
+},
+{
+name: 'Submissions',
+path: ''
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: ''
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block ClaimId %}
+7399
+{% endblock %}
+{% block submittingCountry %}
+Spain
+{% endblock %}
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Claim created - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../../../../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../../../../../index">Claims</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                    href="../../summary/active-in-progress">Claim ID 7399</a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+
+{% endblock %}
+
+<!-- Start of central content  -->
+{% block content %}
+
+<!-- Start of confirmation box -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="confirmation-box">
+            <h1 class="heading-xlarge"><span id="done-tick"></span>Invoice contested for Spain
+            </h1>
+            <h2 class="heading-large"><span class="heading-secondary" style="color:white;">Invoice ID
+                    number<br />
+                    20004963
+                </span>
+            </h2>
+        </div>
+    </div>
+</div>
+<!-- End of confirmation box-->
+
+<!-- Start of decision -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <p class="nhsuk-body nhsuk-u-margin-bottom-7">The changes to this invoice have been saved.</p>
+
+        <div class="nhsuk-grid-row ">
+            <div class="nhsuk-grid-column-full">
+                <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-3">
+                    Decision
+                </h2>
+                <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-0">
+                    <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                            <div class="nhsuk-card__content">
+                                <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">0 <span
+                                        class="nhsuk-u-visually-hidden">Accepted months</span>
+                                </p>Accepted months
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                            <div class="nhsuk-card__content">
+                                <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">2 <span
+                                        class="nhsuk-u-visually-hidden">Contested months</span>
+                                </p>Contested months
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                            <div class="nhsuk-card__content">
+                                <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">0 <span
+                                        class="nhsuk-u-visually-hidden">Withdrawn months</span>
+                                </p>Withdrawn months
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- Start of contestation reason-->
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                    <div class="nhsuk-inset-text nhsuk-u-margin-bottom-7" style="max-width:none; margin-top:16px;">
+                        <span class="nhsuk-u-visually-hidden">Information:</span>
+                        <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-3">Contestation reason
+                        </h4>
+                        <p>Entitlement document is unknown or not found. Please provide a copy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End of contestation reason -->
+        </div>
+    </div>
+<!-- End of decision -->
+
+<!-- Start of what happens next-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-3">What happens next</h2>
+        <p class="nhsuk-body">The status of this invoice is now contested.</p>
+        <p class="nhsuk-body">You can edit this invoice at any time before the outcome has been sent to the claiming
+            country.</p>
+        <p class="nhsuk-body">Once an outcome has been sent, you will not be able to make any
+            more changes.</p>
+    </div>
+</div>
+<!-- End of what happens next -->
+
+<!-- Start of buttons-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <a href="../invoice-list-search-results-single-contested#download-results">
+            <button style="margin-right:12px;" class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Return to search
+            </button>
+        </a>
+        <a href="04-view">
+            <button style="margin-right:12px;" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button"
+                type="submit">
+                View invoice
+            </button>
+        </a>
+    </div>
+</div>
+<!-- End of what buttons -->
+
+{% endblock %}
+<!-- End of central content -->

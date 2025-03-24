@@ -1,0 +1,366 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+  <!-- Extends the layout from /views/layout-full-width-claim.html -->
+  {% extends 'layout-full-width-invoice-poc.html' %}
+  <!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+  
+  <!-- Start of page title -->
+  {% block pageTitle %}
+Contestation reply details - Manage incoming international healthcare claims - NHSBSA
+  {% endblock %}
+  <!-- End of page title -->
+  
+  {% block beforeContent %}
+  <!-- Start of breadcrumb -->
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+      <div class="nhsuk-width-container-fluid">
+          <ol class="nhsuk-breadcrumb__list">
+              <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Home</a>
+              </li>
+              <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claims</a>
+              </li>
+              <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+              </li>
+              <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                      href="">Submissions</a>
+              </li>
+          </ol>
+          <p class="nhsuk-breadcrumb__back">
+              <a class="nhsuk-breadcrumb__backlink" href="">
+                  <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                  Claims
+              </a>
+          </p>
+      </div>
+  </nav>
+  <!-- End of breadcrumb -->
+  {% endblock %}
+  
+  {% block content %}
+  
+  <!-- Start of back link -->
+  <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-back-link">
+              <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      aria-hidden="true" height="24" width="24">
+                      <path
+                          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                      </path>
+                  </svg>
+                  Go back</a>
+          </div>
+      </div>
+  </div>
+  <!-- End of back link -->
+  
+  <!-- Start of header block -->
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl ">
+          Credit note details
+        </h1>
+    </div>
+
+    <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+        <a href="../upload/01-choose-file">
+            <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="button">
+                Add individual credit notes
+            </button>
+        </a>
+    </div>
+</div>
+
+  <!-- End of header block -->
+  
+  <!-- Start main content -->
+  
+  <!-- Start key information box -->
+  <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+                  <dl class="nhsuk-summary-list">
+                      <div class="nhsuk-summary-list__row">
+                          <dt class="nhsuk-summary-list__key">
+                              Claim ID
+                          </dt>
+                          <dd class="nhsuk-summary-list__value">
+                              6784
+                          </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                          <dt class="nhsuk-summary-list__key">
+                              Credit note ID
+                          </dt>
+                          <dd class="nhsuk-summary-list__value">
+                              9435
+                          </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                          <dt class="nhsuk-summary-list__key">
+                              Credit note reference
+                          </dt>
+                          <dd class="nhsuk-summary-list__value">
+                            11661234KK1905
+                          </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Contact method
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            RINA
+                        </dd>
+                    </div>
+                      <div class="nhsuk-summary-list__row">
+                          <dt class="nhsuk-summary-list__key">
+                              Current status
+                          </dt>
+                          <dd class="nhsuk-summary-list__value">
+                              <strong class="nhsuk-tag nhsuk-tag--grey">
+                                  Not started
+                              </strong>
+                          </dd>
+                      </div>
+                  </dl>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- End key information box -->
+  
+  <!-- Start of tabs-->
+  <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+              <h2 class="nhsuk-tabs__title">
+                  Contents
+              </h2>
+  
+              <!-- Start of tab titles -->
+              <ul class="nhsuk-tabs__list">
+                  <li class="nhsuk-tabs__list-item">
+                      <a class="nhsuk-tabs__tab" href="#summary">
+                          Summary
+                      </a>
+                  </li>
+                  <li class="nhsuk-tabs__list-item">
+                      <a class="nhsuk-tabs__tab" href="#invoices">
+                          Invoices
+                      </a>
+                  </li>
+                  <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#snapshot">
+                        Snapshot
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#history">
+                        History
+                    </a>
+                </li>
+              </ul>
+              <!-- End of tab titles -->
+  
+              <!-- *** Start of summary tab content *** -->
+              <div class="nhsuk-tabs__panel" id="summary">
+  
+                  <!-- Start of header block -->
+                  <div class="nhsuk-grid-row">
+                      <div class="nhsuk-grid-column-full">
+                          <h2 class="nhsuk-heading-l">Summary</h2>
+  
+                      </div>
+                  </div>
+  
+                  <div class="nhsuk-grid-row">
+                      <div class="nhsuk-grid-column-full">
+                          <div class="nhsuk-card">
+                              <div class="nhsuk-card__content nhsuk-u-padding-bottom-1" style="padding:16px;">
+                                  <!--Start of card header-->
+                                  <div class="nhsuk-grid-row">
+                                      <div class="nhsuk-grid-column-full">
+                                          <h2 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                              Credit note details from France
+                                          </h2>
+                                      </div>
+  
+                                      <div class="nhsuk-grid-column-full">
+                                          <hr
+                                              class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
+                                          <br>
+                                      </div>
+                                  </div>
+  
+                                  <!-- Start of card content-->
+                                  <div class="nhsuk-grid-row">
+                                      <div class="nhsuk-grid-column-one-half">
+                                          <dl class="nhsuk-summary-list">
+
+  
+                                              <!-- Total number -->
+                                              <div class="nhsuk-summary-list__row">
+                                                  <dt class="nhsuk-summary-list__key">
+                                                      Total notes
+                                                  </dt>
+                                                  <dd class="nhsuk-summary-list__value">
+                                                      1
+                                                  </dd>
+                                                  <dd class="nhsuk-summary-list__actions"></dd>
+                                              </div>
+  
+                                              <!-- Total amount -->
+                                              <div class="nhsuk-summary-list__row">
+                                                  <dt class="nhsuk-summary-list__key">
+                                                      Total amount
+                                                  </dt>
+                                                  <dd class="nhsuk-summary-list__value">
+                                                      1,438.44
+                                                  </dd>
+                                                  <dd class="nhsuk-summary-list__actions"></dd>
+                                              </div>
+  
+                                              <!-- Currency -->
+                                              <div class="nhsuk-summary-list__row">
+                                                  <dt class="nhsuk-summary-list__key">
+                                                      Currency
+                                                  </dt>
+                                                  <dd class="nhsuk-summary-list__value">
+                                                      Euro
+                                                  </dd>
+                                                  <dd class="nhsuk-summary-list__actions"></dd>
+                                              </div>
+                                          </dl>
+                                      </div>
+  
+                                      <div class="nhsuk-grid-column-one-half">
+                                          <dl class="nhsuk-summary-list">
+                                              <!-- Target date -->
+                                              <div class="nhsuk-summary-list__row">
+                                                  <dt class="nhsuk-summary-list__key">
+                                                      Target date
+                                                  </dt>
+                                                  <dd class="nhsuk-summary-list__value">
+                                                      1 September 2025
+                                                  </dd>
+  
+                                              </div>
+  
+                                              <!-- Deadline -->
+                                              <div class="nhsuk-summary-list__row">
+                                                  <dt class="nhsuk-summary-list__key">
+                                                      Deadline
+                                                  </dt>
+                                                  <dd class="nhsuk-summary-list__value">
+                                                      1 April 2026
+                                                  </dd>
+  
+                                              </div>
+  
+                                              <!-- Date received-->
+                                              <div class="nhsuk-summary-list__row">
+                                                  <dt class="nhsuk-summary-list__key">
+                                                      Date received
+                                                  </dt>
+                                                  <dd class="nhsuk-summary-list__value">
+                                                      6 March 2025
+                                                  </dd>
+  
+                                              </div>
+                                          </dl>
+                                      </div>
+  
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <!-- End of header block -->
+              </div>
+              <!-- *** End of summary tab *** -->
+  
+              <!-- *** Start of invoices tab *** -->
+              <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="invoices">
+                  <div class="nhsuk-grid-row">
+                      <div class="nhsuk-grid-column-full">
+                          <h2 class="nhsuk-heading-l">Invoices</h2>
+                      </div>
+                  </div>
+
+                  <div class="nhsuk-grid-row">
+                  <div class="nhsuk-grid-column-full">
+                    <p>No invoices have been added to credit note ID 9435 because no individual credit notes have been added yet.</p>
+                    <p>You can use the <strong>Add individual credit notes</strong> button to add them manually or to upload them as XML files.</p>
+                  </div>
+                  </div>
+
+              </div>
+              <!-- *** End of invoices tab *** -->
+
+            <!-- *** Start of snapshot tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="snapshot">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">Snapshot</h2>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- *** End of snapshot tab *** -->
+
+            <!-- *** Start of history tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="history">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">History</h2>
+                    </div>
+                </div>
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <div class="nhsbsa-timeline">
+
+
+                            <div class="nhsbsa-timeline__item nhsuk-u-margin-bottom-6">
+                                <div class="nhsbsa-timeline__header">
+                                    <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Credit note added to
+                                        claim
+                                        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
+                                            Isla Fields</span>
+                                    </h3>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-3">21 February 2025 at 10:37am</p>
+                                </div>
+                                <div class="nhsbsa-timeline__description">
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-2"><span
+                                            class="nhsuk-u-font-weight-bold">Total number of individual credit notes:</span> 1</p>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-1"><span
+                                            class="nhsuk-u-font-weight-bold">Total amount of individual credit notes:</span> 1,438.44
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- *** End of history tab *** -->
+
+          </div>
+      </div>
+  </div>
+  <!-- End of tabs-->
+  
+  
+  
+  <!-- End main content -->
+  
+  {% endblock %}

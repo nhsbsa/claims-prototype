@@ -1,0 +1,438 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '/alpha/version-13/claims/rina/average-cost/spain/7399/summary/active-in-progress',
+active: true
+},
+{
+name: 'Invoices',
+path: '/alpha/version-13/claims/rina/average-cost/spain/7399/invoices/invoice-list-full'
+},
+{
+name: 'Submissions',
+path: ''
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: ''
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block ClaimId %}
+7399
+{% endblock %}
+{% block submittingCountry %}
+Spain
+{% endblock %}
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Claim summary - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../index">Claims</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="../../../../../index">
+        <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+        Claims
+      </a>
+    </p>
+  </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of header -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-heading-xl ">
+      Claim summary
+    </h1>
+  </div>
+</div>
+<!-- End of header-->
+
+<!-- Start of main summary box -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
+        <!--Start of card header-->
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-two-thirds">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
+              Claim ID 7399 &ndash; Claim reference 20231GB942023
+            </h2>
+          </div>
+          <div class="nhsuk-grid-column-one-third">
+            <strong class="nhsuk-tag nhsuk-tag--purple" style="float:right">
+              Active
+            </strong>
+          </div>
+          <div class="nhsuk-grid-column-full">
+            <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible" style="margin:0px 0px 16px 0px;">
+          </div>
+        </div>
+
+        <!-- Start of card content-->
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list">
+              <!-- Country -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Country
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Spain
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+              <!-- Age bracket -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Age bracket
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Mixed
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+              <!-- Financial year -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Financial year
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  2023
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+              <!-- Article type -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Type
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Average cost - Sickness - Article 94
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list">
+              <!-- Target date -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Target date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  12 August 2024
+                </dd>
+                <dd class="nhsuk-summary-list__actions"><a href="#">
+                    Change<span class="nhsuk-u-visually-hidden"> target date</span>
+                  </a></dd>
+              </div>
+              <!-- Deadline -->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Deadline
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  1 August 2025
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+              <!-- Date received-->
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Date received
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  12 February 2024
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of main summary box -->
+
+
+
+<!-- Start of amount stats -->
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
+              Number of invoices
+            </h3>
+            <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible" style="margin:0px 0px 16px 0px;">
+            <dl class="nhsuk-summary-list">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Total
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  10,572
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="../invoices/invoice-list-full#download-results">
+                    View<span class="nhsuk-u-visually-hidden"> all invoices</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  To check
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  27
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="../invoices/invoice-list-to-check#download-results">
+                    View<span class="nhsuk-u-visually-hidden"> to check invoices</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Accepted
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  9,461
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="#">
+                    View<span class="nhsuk-u-visually-hidden"> accepted invoices</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Contested
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  1,072
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="#">
+                    View<span class="nhsuk-u-visually-hidden"> contested invoices</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Partial
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  12
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="#">
+                    View<span class="nhsuk-u-visually-hidden"> contested invoices</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Withdrawn
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>0</p>
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="#">
+                    View<span class="nhsuk-u-visually-hidden"> withdrawn invoices</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+          </div>
+        </div>
+
+      </li>
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
+              Claim amount (months)
+            </h3>
+            <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible" style="margin:0px 0px 16px 0px;">
+
+            <dl class="nhsuk-summary-list">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Total
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  35,945
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  To check
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  67
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Accepted
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  35,839
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Contested
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  39
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Withdrawn
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>0</p>
+                </dd>
+              </div>
+
+            </dl>
+          </div>
+        </div>
+
+      </li>
+      <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
+              Age bracket breakdown 
+            </h3>
+            <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible" style="margin:0px 0px 16px 0px;">
+
+            <table class="nhsuk-table">
+              <!-- <caption class="nhsuk-table__caption">Prescription prepayment certificate (PPC) charges</caption> -->
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Age bracket
+                  </th>
+                  <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                    Total invoices
+                  </th>
+                  <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                    Total months
+                  </th>
+                  <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                    Accepted months
+                  </th>
+                  <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                    Contested months
+                  </th>
+                  <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                    Withdrawn months
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <th class="nhsuk-table__header" scope="row">0 to 19 years</th>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">914</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3,716</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3,713</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <th class="nhsuk-table__header" scope="row">20 to 64 years</th>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1,521</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">7,473</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">7,435</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">38</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <th class="nhsuk-table__header" scope="row">65 years and over</th>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">8,136</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">24,753</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">24,691</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">62</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <th class="nhsuk-table__header" scope="row">Unknown</th>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>
+                  <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- End of amount stats -->
+
+
+{% endblock %}
+<!-- End of central content -->

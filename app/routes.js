@@ -22,6 +22,7 @@ router.use('/alpha/version-09', require('./views/alpha/version-09/_routes'));
 router.use('/alpha/version-10', require('./views/alpha/version-10/_routes'));
 router.use('/alpha/version-11', require('./views/alpha/version-11/_routes'));
 router.use('/alpha/version-12', require('./views/alpha/version-12/_routes'));
+router.use('/alpha/version-13', require('./views/alpha/version-13/_routes'));
 
 // clear session data - link in footer
 router.post('/clear-session-data/', (req, res) => {
