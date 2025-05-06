@@ -1,29 +1,6 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
-{% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-13/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-13/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
-active: true
-},
-{
-name: 'Submissions',
-path: ''
-},
-{
-name: 'Notes',
-path: ''
-},
-{
-name: 'History',
-path: ''
-}
-]
-%}
+
 
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-invoice-poc.html' %}
@@ -44,19 +21,14 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../../../../../home">Home</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../../../../index">Claims</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../summary/active-invoices-uploaded">Claim ID 6784</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../invoices/full-invoice-list">Invoices</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../invoices/details/20001554/01-to-check">Invoice ID 20001554</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claims</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Invoices</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Invoice ID 20001554</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="../../../../../../index">
+            <a class="nhsuk-breadcrumb__backlink" href="">
                 <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
                 Claims
             </a>
@@ -89,7 +61,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <div class="nhsuk-back-link">
-            <a class="nhsuk-back-link__link" href="01-to-check">
+            <a class="nhsuk-back-link__link" href="">
                 <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                     aria-hidden="true" height="24" width="24">
                     <path
@@ -130,7 +102,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-grid-row">
                     <div class=" nhsuk-grid-column-full">
 
-                        <form action="03-person-search-results#search-heading" method="post">
+                        <form action="" method="post">
 
                             <fieldset class="nhsuk-fieldset">
                                 <legend
@@ -143,8 +115,8 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                         Last name
                                     </label>
                                     <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="last-name-hint">
-                                        Search using an initial, beginning of name or full name.<br />
-                                        For example, S, Smi or Smith.
+                                        Search using an initial, beginning of name or full name. For example, S, Smi or
+                                        Smith.
                                     </div>
                                     <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name" name="last-name"
                                         type="text" value="">
@@ -155,8 +127,8 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                         First name
                                     </label>
                                     <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="first-name-hint">
-                                        Search using an initial, beginning of name or full name.<br />
-                                        For example J, Joh or John.
+                                        Search using an initial, beginning of name or full name. For example J, Joh or
+                                        John.
                                     </div>
                                     <input class="nhsuk-input nhsuk-u-width-two-thirds" id="first-name"
                                         name="first-name" type="text" value="">
@@ -204,8 +176,16 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                 </div>
 
+                                <!-- <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
+                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="country">
+                                        Residential country
+                                    </label>
+                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="country" name="country"
+                                        type="text">
+                                </div> -->
+
                                 <div class="nhsuk-form-group">
-                                    <fieldset class="nhsuk-fieldset" aria-describedby="dob" role="group">
+                                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="dob">
                                             Date of birth
                                         </label>
@@ -263,33 +243,15 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                 </legend>
 
                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ni">
-                                        National Insurance number
+                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="pin">
+                                        PIN in UK
                                     </label>
                                     <div class="nhsuk-hint">
-                                        For example, QQ 12 34 56 C or QQ 12 34 56
+                                        Reference, National Insurance number or NHS number.<br />
+                                         For example, 25012345, QQ 12 34 56 C or 485 777 3456
                                     </div>
-                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ni" name="ni" type="text">
-                                </div>
 
-                                <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ohs">
-                                        OHS reference
-                                    </label>
-                                    <div class="nhsuk-hint">
-                                        For example, 250123456, CRA250123456 or UK250123456
-                                    </div>
-                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ohs" name="ohs" type="text">
-                                </div>
-
-                                <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="nhs">
-                                        NHS number
-                                    </label>
-                                    <div class="nhsuk-hint">
-                                        For example, 485 777 3456
-                                    </div>
-                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="nhs" name="nhs" type="text">
+                                    <input class="nhsuk-input nhsuk-u-width-two-thirds " id="pin" name="pin" type="text">
                                 </div>
 
                                 <div class="nhsuk-form-group">
@@ -297,12 +259,14 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                         Entitlement issue number
                                     </label>
                                     <div class="nhsuk-hint">
-                                        EHIC, GHIC or PRC issue number<br />
+                                        EHIC, GHIC or PRC issue number.<br />
                                         For example, 12345678912345678900
                                     </div>
-                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="entitlement"
-                                        name="entitlement" type="text">
+                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="entitlement" name="entitlement"
+                                        type="text">
                                 </div>
+
+
 
                             </fieldset>
 

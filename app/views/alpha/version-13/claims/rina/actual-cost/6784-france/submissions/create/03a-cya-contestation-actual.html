@@ -166,7 +166,13 @@ Check reply to contestation details - Manage incoming international healthcare c
                                 Date you received this submission
                             </dt>
                             <dd class="nhsuk-summary-list__value">
-                                6 March 2025
+                                <!-- 6 March 2025 -->
+                                {{ (data['date-received-year'] ~ '-' ~ data['date-received-month'] ~ '-' ~ data['date-received-day']) }} <br />
+                                {{ (data['date-received-year'] ~ '-' ~ data['date-received-month'] ~ '-' ~ data['date-received-day']) | govukDate }}<br />
+
+                                Play 2: {{data['date-received-day']}} {{ (data['date-received-month']) | monthName }} {{data['date-received-year']}}
+                 
+                                
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
                                 <a href="02a-contestation-actual#date-received-day">
@@ -182,7 +188,7 @@ Check reply to contestation details - Manage incoming international healthcare c
                                 Target date to complete this submission
                             </dt>
                             <dd class="nhsuk-summary-list__value">
-                                1 September 2025
+                                 1 September 2025
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
                                 <a href="02a-contestation-actual#target-date-day">

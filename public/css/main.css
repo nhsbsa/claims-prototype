@@ -7900,6 +7900,112 @@ body.full-width .nhsuk-width-container {
   padding-top: 0;
 }
 
+.nhsuk-task-list {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 24px;
+  padding: 0;
+  list-style-type: none;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-task-list {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.47368;
+  }
+}
+@media print {
+  .nhsuk-task-list {
+    font-size: 13pt;
+    line-height: 1.25;
+  }
+}
+@media (min-width: 40.0625em) {
+  .nhsuk-task-list {
+    margin-bottom: 32px;
+  }
+}
+.nhsuk-task-list__item {
+  display: table;
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #d8dde0;
+}
+
+.nhsuk-task-list__item:first-child {
+  border-top: 1px solid #d8dde0;
+}
+
+.nhsuk-task-list__item--with-link:hover {
+  background: #dee7e9;
+}
+
+.nhsuk-task-list__name-and-hint {
+  display: table-cell;
+  vertical-align: top;
+  color: #212b32;
+}
+
+.nhsuk-task-list__status {
+  display: table-cell;
+  padding-left: 8px;
+  text-align: right;
+  vertical-align: top;
+  color: #212b32;
+}
+
+.nhsuk-task-list__status--completed,
+.nhsuk-task-list__status--cannot-start-yet {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-top: 6px;
+  text-decoration: none;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-task-list__status--completed,
+  .nhsuk-task-list__status--cannot-start-yet {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1;
+  }
+}
+@media print {
+  .nhsuk-task-list__status--completed,
+  .nhsuk-task-list__status--cannot-start-yet {
+    font-size: 12pt;
+    line-height: 1;
+  }
+}
+.nhsuk-task-list__status--cannot-start-yet {
+  color: #4c6272;
+}
+
+.nhsuk-task-list__link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.nhsuk-task-list__hint {
+  margin-top: 4px;
+  color: #4c6272;
+}
+
 /* Custom */
 .autocomplete__input:focus {
   border: 2px solid #212b32;
