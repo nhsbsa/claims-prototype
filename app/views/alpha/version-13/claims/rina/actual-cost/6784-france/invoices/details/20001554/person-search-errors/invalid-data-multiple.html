@@ -68,7 +68,9 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
     </h2>
     <div class="nhsuk-error-summary__body">
       <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
-        <li> <a href="#error-message">You can only enter either one or more personal details, or enter a single unique identifier</a>
+        <li> <a href="#last-name">Last name must only include letters a to z, and hyphens, spaces and apostrophes</a>
+        </li>
+        <li> <a href="#first-name">First name must only include letters a to z, and hyphens, spaces and apostrophes</a>
         </li>
       </ul>
     </div>
@@ -122,18 +124,13 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
 
                         <form action="03-person-search-results#search-heading" method="post">
 
-                            <div class="nhsuk-form-group--error" id="error-message">
-                                <span class="nhsuk-error-message" id="dob-day-error-error">
-                                    <span class="nhsuk-u-visually-hidden">Error:</span> You can only enter either one or more personal details, or enter a single unique identifier
-                                  </span>
-
                             <fieldset class="nhsuk-fieldset">
                                 <legend
                                     class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m nhsuk-u-margin-bottom-4">
                                     Search using one or more personal details
                                 </legend>
 
-                                <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
+                                <div class="nhsuk-form-group nhsuk-u-margin-bottom-5 nhsuk-form-group--error">
                                     <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">
                                         Last name
                                     </label>
@@ -141,11 +138,14 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                         Search using an initial, beginning of name or full name.<br />
                                         For example, S, Smi or Smith.
                                     </div>
+                                    <span class="nhsuk-error-message" id="dob-day-error-error">
+                                        <span class="nhsuk-u-visually-hidden">Error:</span> Last name must only include letters a to z, and hyphens, spaces and apostrophes
+                                      </span>
                                     <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="last-name" name="last-name"
-                                        type="text" value="Stephenson">
+                                        type="text" value="Stephenson!">
                                 </div>
 
-                                <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
+                                <div class="nhsuk-form-group nhsuk-u-margin-bottom-5 nhsuk-form-group--error">
                                     <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="first-name">
                                         First name
                                     </label>
@@ -153,8 +153,11 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                         Search using an initial, beginning of name or full name.<br />
                                         For example J, Joh or John.
                                     </div>
+                                    <span class="nhsuk-error-message" id="dob-day-error-error">
+                                        <span class="nhsuk-u-visually-hidden">Error:</span> First name must only include letters a to z, and hyphens, spaces and apostrophes
+                                      </span>
                                     <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="first-name"
-                                        name="first-name" type="text" value="K">
+                                        name="first-name" type="text" value="K234">
                                 </div>
 
                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
@@ -264,7 +267,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-hint">
                                         For example, QQ 12 34 56 C or QQ 12 34 56
                                     </div>
-                                    <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="ni" name="ni" type="text" value="JM 23 66 19 A">
+                                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ni" name="ni" type="text" value="">
                                 </div>
 
                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
@@ -300,8 +303,6 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                 </div>
 
                             </fieldset>
-
-                        </div>
 
                             <button class="nhsuk-button nhsuk-button nhsuk-u-margin-bottom-3" data-module="nhsuk-button"
                                 type="submit" style="margin-top:20px;">
