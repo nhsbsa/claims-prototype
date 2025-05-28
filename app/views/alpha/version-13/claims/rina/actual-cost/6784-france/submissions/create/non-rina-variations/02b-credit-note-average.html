@@ -10,7 +10,7 @@ path: ''
 },
 {
 name: 'Submissions',
-path: '/alpha/version-13/claims/rina/actual-cost/6784-france/submissions/03-letters-sent',
+path: '',
 active: true
 },
 {
@@ -31,9 +31,16 @@ path: ''
     - add custom CSS and JavaScript
 -->
 
+{% block ClaimId %}
+7399
+{% endblock %}
+{% block submittingCountry %}
+Spain
+{% endblock %}
+
 <!-- Start of page title -->
 {% block pageTitle %}
-Reply to contestation details - Manage incoming international healthcare claims - NHSBSA
+Credit note details - Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -42,17 +49,17 @@ Reply to contestation details - Manage incoming international healthcare claims 
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../home">Home</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Home</a>
             </li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../index">Claims</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claims</a>
             </li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 7399</a>
             </li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../03-letters-sent">Submissions</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Submissions</a>
             </li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="../../../../../index">
+            <a class="nhsuk-breadcrumb__backlink" href="">
                 <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
                 Claims
             </a>
@@ -85,96 +92,65 @@ Reply to contestation details - Manage incoming international healthcare claims 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-        <form action="03a-cya-contestation-actual" method="post">
+        <form action="03b-cya-credit-note-average" method="post">
             <fieldset class="nhsuk-fieldset">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                     <h1 class="nhsuk-fieldset__heading">
                         <span class="nhsuk-caption-l">Add a new submission</span>
-                        Reply to contestation details
+                        Credit note details
                     </h1>
                 </legend>
 
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
+
                         <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-1">
-                            Actual cost - Sickness
+                            Average cost - Sickness - Article 63 (2b)
                         </h3>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible" style="margin-top:12px; margin-bottom: 20px;">
 
-                        <!-- Start contestation reference -->
+
+                        <!-- Start credit note reference -->
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
-                                Reply to contestation reference
+                                Credit note reference
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-one-half" id="ref" name="ref" type="text">
                         </div>
 
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End contestation reference-->
+                        <!-- End credit note reference-->
 
-                        <!-- Start number of replies -->
+                        <!-- Start number of credit notes -->
                         <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-replies">
-                                Total number of replies
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-notes">
+                                Total number of individual credit notes (optional)
                             </label>
-                            <input class="nhsuk-input nhsuk-u-width-one-half" id="total-replies" name="total-replies"
+                            <input class="nhsuk-input nhsuk-u-width-one-half" id="total-notes" name="total-notes"
                                 type="text">
                         </div>
 
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End number of replies -->
+                        <!-- End number of credit notes -->
 
                         <!-- Start total amount -->
                         <div class="nhsuk-form-group">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-accepted">
-                                Total amount of accepted contestations
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-amount">
+                                Total number of months to be withdrawn (optional)
                             </label>
-                            <div class="nhsuk-hint" id="total-amount-hint">
-                                The amount withdrawn by France.
-                              </div>
-                            <input class="nhsuk-input nhsuk-u-width-one-half" id="total-accepted" name="total-accepted"
+                            <input class="nhsuk-input nhsuk-u-width-one-half" id="total-amount" name="total-amount"
                                 type="text">
                         </div>
 
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
                         <!-- End total amount -->
 
-                        <!-- Start currency -->
-                        <div class="nhsuk-form-group nhsuk-u-width-one-half">
-                            <label class="nhsuk-label nhsuk-u-font-weight-bold" for="select-autocomplete">
-                              Currency
-                            </label>
-                            <div>
-                              <select name="currency" id="select-autocomplete">
-                                <option value=""></option>
-                                <option value="British Pound">British Pound</option>
-                                <option value="Bulgarian Lev">Bulgarian Lev</option>
-                                <option value="Croatian Kuna">Croatian Kuna</option>
-                                <option value="Czech Koruna">Czech Koruna</option>
-                                <option value="Danish Krone">Danish Krone</option>
-                                <option value="Euro">Euro</option>
-                                <option value="Hungarian Forint">Hungarian Forint</option>
-                                <option value="Icelandic Krona">Icelandic Krona</option>
-                                <option value="Latvian Lats">Latvian Lats</option>
-                                <option value="Lithuanian Litas">Lithuanian Litas</option>
-                                <option value="Norwegian Krone">Norwegian Krone</option>
-                                <option value="Polizh Złoty">Polizh Złoty</option>
-                                <option value="Romanian Leu">Romanian Leu</option>
-                                <option value="Swedish Krona">Swedish Krona</option>
-                                <option value="Swiss Franc">Swiss Franc</option>
-                                <option value="Turkish Lira">Turkish Lira</option>
-                              </select>
-                            </div>
-                          </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End currency-->
-
-                        <!-- Start date you received the contestation -->
+                        <!-- Start date you received the credit note -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="date-received" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        Date you received this submission
+                                        Date you received the credit note
                                     </h1>
                                 </legend>
                                 <div class="nhsuk-hint" id="date-received-hint">
@@ -217,14 +193,14 @@ Reply to contestation details - Manage incoming international healthcare claims 
                         </div>
 
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End date you received the contestation -->
+                        <!-- End date you received the credit note -->
 
                         <!-- Start target date -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="target-date" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
                                     <h1 class="nhsuk-fieldset__heading">
-                                        Target date to complete this submission
+                                        Target date to complete the credit note
                                     </h1>
                                 </legend>
                                 <div class="nhsuk-hint" id="target-date-hint">

@@ -10,7 +10,7 @@ path: ''
 },
 {
 name: 'Submissions',
-path: '/alpha/version-13/claims/rina/actual-cost/6784-france/submissions/03-letters-sent',
+path: '',
 active: true
 },
 {
@@ -42,17 +42,17 @@ Check reply to contestation details - Manage incoming international healthcare c
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../home">Home</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Home</a>
             </li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../index">Claims</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href=".">Claims</a>
             </li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
             </li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../03-letters-sent">Submissions</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Submissions</a>
             </li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="../../../../../index">
+            <a class="nhsuk-breadcrumb__backlink" href="">
                 <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
                 Claims
             </a>
@@ -69,7 +69,7 @@ Check reply to contestation details - Manage incoming international healthcare c
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <!-- Start of form -->
-        <form action="04a-confirmation-contestation" method="post">
+        <form action="" method="post">
 
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                 <h1 class="nhsuk-fieldset__heading">
@@ -105,7 +105,7 @@ Check reply to contestation details - Manage incoming international healthcare c
                         <!-- Total number of contestation replies -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Total number of repies
+                                Total number of repies (optional)
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['total-replies'] %}
@@ -124,7 +124,7 @@ Check reply to contestation details - Manage incoming international healthcare c
                         <!-- Total amount of accepted contestations -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Total amount of accepted contestations
+                                Total amount of accepted contestations (optional)
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['total-accepted'] %}

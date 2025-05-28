@@ -10,7 +10,7 @@ path: ''
 },
 {
 name: 'Submissions',
-path: '/alpha/version-13/claims/rina/actual-cost/6784-france/submissions/03-letters-sent',
+path: '',
 active: true
 },
 {
@@ -30,7 +30,12 @@ path: ''
     - change the header and footer 
     - add custom CSS and JavaScript
 -->
-
+{% block ClaimId %}
+7399
+{% endblock %}
+{% block submittingCountry %}
+Spain
+{% endblock %}
 <!-- Start of page title -->
 {% block pageTitle %}
 Reply to contestation details - Manage incoming international healthcare claims - NHSBSA
@@ -42,18 +47,17 @@ Reply to contestation details - Manage incoming international healthcare claims 
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../home">Home</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Home</a>
             </li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../index">Claims</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claims</a>
             </li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 7399</a>
             </li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../03-letters-sent">Submissions</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Submissions</a>
             </li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="../../../../../index">
-                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+            <a class="nhsuk-breadcrumb__backlink" href="">
                 Claims
             </a>
         </p>
@@ -115,7 +119,7 @@ Reply to contestation details - Manage incoming international healthcare claims 
                         <!-- Start number of replies -->
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-replies">
-                                Total number of replies
+                                Total number of replies (optional)
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-one-half" id="total-replies" name="total-replies"
                                 type="text">
@@ -127,10 +131,10 @@ Reply to contestation details - Manage incoming international healthcare claims 
                         <!-- Start total amount -->
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-accepted">
-                                Total amount of accepted contestations
+                                Total amount of accepted contestations (optional)
                             </label>
                             <div class="nhsuk-hint" id="total-amount-hint">
-                                The amount withdrawn by France.
+                                The amount withdrawn by Spain.
                               </div>
                             <input class="nhsuk-input nhsuk-u-width-one-half" id="total-accepted" name="total-accepted"
                                 type="text">
