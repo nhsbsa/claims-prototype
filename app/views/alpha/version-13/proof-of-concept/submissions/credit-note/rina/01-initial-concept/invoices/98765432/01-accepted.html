@@ -1,28 +1,5 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-{% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-13/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-13/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
-active: true
-},
-{
-name: 'Submissions',
-path: ''
-},
-{
-name: 'Notes',
-path: ''
-},
-{
-name: 'History',
-path: ''
-}
-]
-%}
+
 
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-invoice-poc.html' %}
@@ -91,11 +68,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
         </h1>
     </div>
     <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-        <a href="">
-            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                Manage invoice
-            </button>
-        </a>
         <a href="">
             <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
                 Exit invoice
