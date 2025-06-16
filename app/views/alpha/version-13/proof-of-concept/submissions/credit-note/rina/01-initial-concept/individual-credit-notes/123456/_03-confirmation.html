@@ -1,0 +1,139 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-invoice-poc.html' %}
+<!-- 
+      In /views/layout.html you can:
+        - change the header and footer 
+        - add custom CSS and JavaScript
+    -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Credit note details - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Credit note 9453</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of confirmation box -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="confirmation-box">
+            <h1 class="heading-xlarge"><span id="done-tick"></span>Individual credit note accepted for France
+            </h1>
+            <h2 class="heading-large"><span class="heading-secondary" style="color:white;">Individual credit note ID
+                    <br />
+                    123456
+                </span>
+            </h2>
+        </div>
+    </div>
+</div>
+<!-- End of confirmation box-->
+
+<!-- Start of decision -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <p class="nhsuk-body nhsuk-u-margin-bottom-7">The changes have been reflected on invoice reference 98765432.</p>
+
+        <!-- Start of decision boxes -->
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+                <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-3">
+                    Decision
+                </h2>
+                <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-7">
+                    <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                            <div class="nhsuk-card__content">
+                                <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">
+                                    0
+                                    <span class="nhsuk-u-visually-hidden">Credit withdrawn from accepted</span>
+                                </p>Credit withdrawn from accepted
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                            <div class="nhsuk-card__content">
+                                <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">
+                                    100.00
+                                    <span class="nhsuk-u-visually-hidden">Credit withdrawn from contested</span>
+                                </p>Credit withdrawn from contested
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- End of decision boxes -->
+
+        <!-- Start of what happens next-->
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+                <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-3">What happens next</h2>
+                <p class="nhsuk-body">The status of this individual credit note is now accepted.</p>
+                <p class="nhsuk-body">You can edit this individual credit note at any time before the outcome has been sent to the
+                    claiming
+                    country.</p>
+                <p class="nhsuk-body nhsuk-u-margin-bottom-7">Once an outcome has been sent, you will not be able to
+                    make any
+                    more changes.</p>
+            </div>
+        </div>
+        <!-- End of what happens next -->
+
+        <!-- Start of buttons-->
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+<a href="../../03b-active#invoices">
+                <button style="margin-right:12px;" class="nhsuk-button" data-module="nhsuk-button" type="button">
+                    Return to credit note
+                </button>
+
+            </a>
+
+
+
+            </div>
+        </div>
+        <!-- End of buttons -->
+
+{% endblock %}
+<!-- End of central content -->

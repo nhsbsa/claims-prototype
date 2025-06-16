@@ -1,0 +1,162 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+    <!-- Extends the layout from /views/layout-full-width-claim.html -->
+    {% extends 'layout-full-width-invoice-poc.html' %}
+    <!-- 
+      In /views/layout.html you can:
+        - change the header and footer 
+        - add custom CSS and JavaScript
+    -->
+    
+    <!-- Start of page title -->
+    {% block pageTitle %}
+    Upload invoices - Manage incoming international healthcare claims - NHSBSA
+    {% endblock %}
+    <!-- End of page title -->
+    
+    {% block beforeContent %}
+    <!-- Start of breadcrumb -->
+    <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+        <div class="nhsuk-width-container-fluid">
+            <ol class="nhsuk-breadcrumb__list">
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Home</a>
+                </li>
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claims</a>
+                </li>
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+                </li>
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+                </li>
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Credit note ID 9435</a>
+                </li>
+            </ol>
+            <p class="nhsuk-breadcrumb__back">
+                <a class="nhsuk-breadcrumb__backlink" href="">
+                    <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                    Claims
+                </a>
+            </p>
+        </div>
+    </nav>
+    <!-- End of breadcrumb -->
+    {% endblock %}
+    
+    <!-- Start of central content -->
+    {% block content %}
+    
+    <!-- Start of back link -->
+    <div class="nhsuk-grid-row" id="backLink" {% if data['show-back']==='No' %}style="display:none" {% endif %}>
+        <div class="nhsuk-grid-column-full">
+            <div class="nhsuk-back-link">
+                <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        aria-hidden="true" height="24" width="24">
+                        <path
+                            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                        </path>
+                    </svg>
+                    Go back</a>
+            </div>
+        </div>
+    </div>
+    <!-- End of back link -->
+    
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                    <form id="checkFile"
+                        action="/alpha/version-13/proof-of-concept/submissions/credit-note/rina/01-initial-concept/upload/02-cya"
+                        method="post">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                            <h1 id="legend1" class="nhsuk-fieldset__heading">
+                                <span class="nhsuk-caption-l">Add individual credit notes</span>
+                                Upload individual credit notes
+                            </h1>
+                            <h1 id="legend2" style="display: none;" class="nhsuk-fieldset__heading">
+                                <span class="nhsuk-caption-l">Add individual credit notes</span>
+                                Upload individual credit notes
+                            </h1>
+                        </legend>
+                </div>
+                <div id="uploadFile" class="nhsuk-grid-column-two-thirds">
+                    <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                        <div class="nhsuk-card__content">
+    
+                            <!-- Upload -->
+                            <div class="form-group">
+                                <fieldset class="nhsuk-fieldset">
+                                    <legend
+                                        class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-1">
+                                        <h1 class="nhsuk-fieldset__heading">
+                                            Upload a file
+                                        </h1>
+                                    </legend>
+                                    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="article-hint">
+                                        This must be an XML file, or a ZIP file containing one XML file.
+                                    </div>
+    
+                                    <div class="nhsuk-form-group nhsuk-u-margin-bottom-6"
+                                        style="border:2px dashed #0b0c0c; padding:24px;">
+                                        <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="button">
+                                            Choose file
+                                          </button>
+                                          <p class="nhsuk-body" style="display: inline; line-height:3.6rem;">No file chosen</p>
+                                        </div>
+                                </fieldset>
+                            </div>
+                            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+    
+    
+            <div id="upload-progress" style="display: none;" class="nhsuk-grid-column-full" aria-hidden="true"
+                tabindex="-1">
+                <div class="nhsuk-loader">
+                    <p>Checking file.<br />This may take a few minutes.<br />Do not leave this page or close your browser,
+                        or your file will not be saved.</p>
+                    <span class="nhsuk-loader__spinner nhsuk-u-margin-bottom-3"></span>
+                    <p><a href="">Cancel upload</a></p>
+                </div>
+            </div>
+    
+    
+            <script>
+                // Upload in progress visual indicator
+                var submitForm = document.getElementById("checkFile");
+                var uploadFile = document.getElementById("uploadFile");
+                var uploadProgress = document.getElementById("upload-progress");
+    
+                submitForm.addEventListener("submit", function (e) {
+                    e.preventDefault();
+    
+    
+                    backLink.style.display = "none";
+                    legend1.style.display = "none";
+                    legend2.style.display = "block";
+                    uploadFile.style.display = "none";
+                    uploadProgress.style.display = "block";
+                    uploadProgress.setAttribute("role", "alert");
+                    uploadProgress.setAttribute("aria-hidden", "false");
+                    uploadProgress.focus();
+    
+                    setTimeout(function () {
+                        submitForm.submit();
+                    }, 1000);
+                });
+            </script>
+    
+    
+    
+    
+    
+    
+        </div>
+    </div>
+    {% endblock %}
+    <!-- End of central content -->
