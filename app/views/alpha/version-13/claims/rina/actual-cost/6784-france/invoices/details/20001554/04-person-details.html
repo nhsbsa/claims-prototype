@@ -1,28 +1,4 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-{% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-13/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-13/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
-active: true
-},
-{
-name: 'Submissions',
-path: ''
-},
-{
-name: 'Notes',
-path: ''
-},
-{
-name: 'History',
-path: ''
-}
-]
-%}
 
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-invoice-poc.html' %}
@@ -569,6 +545,15 @@ Person record - Manage incoming international healthcare claims - NHSBSA
                                                         <label class="nhsuk-label nhsuk-checkboxes__label"
                                                             for="filter-status-contested">
                                                             Contested
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-checkboxes__item">
+                                                        <input class="nhsuk-checkboxes__input"
+                                                            id="filter-status-partial" name="filter-status"
+                                                            type="checkbox" value="Partial">
+                                                        <label class="nhsuk-label nhsuk-checkboxes__label"
+                                                            for="filter-status-partial">
+                                                            Partial
                                                         </label>
                                                     </div>
                                                     <div class="nhsuk-checkboxes__item">
