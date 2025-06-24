@@ -1,28 +1,5 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-{% set mainNavigation = [
-{
-name: 'Summary',
-path: '/alpha/version-13/claims/rina/actual-cost/6784-france/summary/active-invoices-uploaded'
-},
-{
-name: 'Invoices',
-path: '/alpha/version-13/claims/rina/actual-cost/6784-france/invoices/full-invoice-list',
-active: true
-},
-{
-name: 'Submissions',
-path: ''
-},
-{
-name: 'Notes',
-path: ''
-},
-{
-name: 'History',
-path: ''
-}
-]
-%}
+
 
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-invoice-poc.html' %}
@@ -44,16 +21,16 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../../../../../home">Home</a></li>
+                    href="">Home</a></li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../../../../index">Claims</a></li>
+                    href="">Claims</a></li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../summary/active-invoices-uploaded">Claim ID 6784</a></li>
+                    href="">Claim ID 6784</a></li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
-                    href="../../../invoices/full-invoice-list">Invoices</a></li>
+                    href="">Invoices</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="../../../../../../index">
+            <a class="nhsuk-breadcrumb__backlink" href="">
                 <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
                 Claims
             </a>
@@ -70,7 +47,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <div class="nhsuk-back-link">
-            <a class="nhsuk-back-link__link" href="../../full-invoice-list-search-results">
+            <a class="nhsuk-back-link__link" href="">
                 <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                     aria-hidden="true" height="24" width="24">
                     <path
@@ -91,12 +68,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
         </h1>
     </div>
     <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-        <a href="06b-confirmation-contested">
-            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                Mark complete
-            </button>
-        </a>
-        <a href="../../full-invoice-list">
+        <a href="">
             <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
                 Exit invoice
             </button>
@@ -106,52 +78,87 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 </div>
 <!-- End of header block -->
 
-<!-- Start of key information box-->
+
+
+<!-- Start header block -->
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <div class="nhsuk-card">
-            <div class="nhsuk-card__content">
-                <dl class="nhsuk-summary-list">
-                    <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                            Claim ID
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                            6784
-                        </dd>
+    <div class="nhsuk-grid-column-full">
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+            <li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <dl class="nhsuk-summary-list">
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Claim ID
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    6784
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Invoice ID
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    20001555
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Invoice reference
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    0039795420
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Current status
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    <strong class="nhsuk-tag nhsuk-tag--yellow">
+                                        To check
+                                    </strong>
+                                </dd>
+                            </div>
+                        </dl>
                     </div>
-                    <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                            Invoice ID
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                            20001554
-                        </dd>
+                </div>
+            </li>
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                            Task list
+                        </h2>
+                        <ul class="nhsuk-task-list">
+                            <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+                                <div class="nhsuk-task-list__name-and-hint"><a class="nhsuk-link nhsuk-task-list__link"
+                                        href="#credit" aria-describedby="your-health-3-hint your-health-3-status">Process credit notes</a>
+                                </div>
+                                <div class="nhsuk-task-list__status" id="your-health-3-status"><strong
+                                        class="nhsuk-tag nhsuk-tag--blue">
+                                        To do
+                                    </strong></div>
+                            </li>
+                            <li class="nhsuk-task-list__item">
+                                <div class="nhsuk-task-list__name-and-hint">
+                                  <div>Mark complete</div>
+                                </div>
+                                <div class="nhsuk-task-list__status nhsuk-task-list__status--cannot-start-yet" id="your-health-5-status">Cannot start yet</div>
+                              </li>
+                        </ul>
                     </div>
-                    <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                            Invoice reference
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                            0039795410
-                        </dd>
-                    </div>
-                    <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                            Current status
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                            <strong class="nhsuk-tag nhsuk-tag--yellow">
-                                To check
-                            </strong>
-                        </dd>
-                    </div>
-                </dl>
-            </div>
-        </div>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>
-<!-- End of key information box -->
+<!-- End header block -->
+
+
+
 
 <!-- Start of tabs-->
 <div class="nhsuk-grid-row">
@@ -163,7 +170,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
             <!-- Start of tab titles -->
             <ul class="nhsuk-tabs__list">
-                <li class="nhsuk-tabs__list-item">
+                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
                     <a class="nhsuk-tabs__tab" href="#summary">
                         Summary
                     </a>
@@ -178,11 +185,17 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         History
                     </a>
                 </li>
-                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                <li class="nhsuk-tabs__list-item">
                     <a class="nhsuk-tabs__tab" href="#import">
                         Imported invoice
                     </a>
                 </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#credit">
+                        Credit notes
+                    </a>
+                </li>
+                
             </ul>
             <!-- End of tab titles -->
 
@@ -214,7 +227,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 Accepted amount
                                             </label>
                                             <input class="nhsuk-input" id="accepted" name="accepted" type="text"
-                                                value="0">
+                                                value="2000.75">
                                         </div>
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
@@ -223,7 +236,16 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 Contested amount
                                             </label>
                                             <input class="nhsuk-input " id="contested" name="contested" type="text"
-                                                value="2134.75">
+                                                value="0">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-grid-column-one-third">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="withdrawn">
+                                                Withdrawn amount
+                                            </label>
+                                            <input class="nhsuk-input " id="withdrawn" name="withdrawn" type="text"
+                                                value="0">
                                         </div>
                                     </div>
                                 </div>
@@ -243,7 +265,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             <select class="nhsuk-select nhsuk-u-width-full" id="contestation-reason"
                                                 name="contestation-reason">
                                                 <option value="">Select contestation reason</option>
-                                                <option value="None">None - invoice accepted.</option>
+                                                <option value="None" selected>None - invoice accepted.</option>
                                                 <option value="This document does not concern us.">This document does
                                                     not
                                                     concern us.</option>
@@ -253,7 +275,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     code is incorrect. Please provide correct institution code.</option>
                                                 <option
                                                     value="Unable to identify the person from the information provided. Please check."
-                                                    selected>
+                                                    >
                                                     Unable to
                                                     identify the person from the information provided. Please check.
                                                 </option>
@@ -1033,7 +1055,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     Total amount
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    2134.75
+                                                    2000.75
                                                 </dd>
                                             </div>
                                         </dl>
@@ -1054,16 +1076,86 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Matched OHS person record
                         </h3>
 
-                        <div class="nhsuk-card ">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-2">
                             <div class="nhsuk-card__content nhsuk-card__content" style="padding:16px;">
-                                <p>No match found.</p>
-                                <a href="02-person-search">
-                                    <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-1"
-                                        data-module="nhsuk-button" type="submit">
-                                        Search for a person
-                                    </button></a>
+
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-one-third">
+
+                                        <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-5">
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Last name
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    Stephenson
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    First name
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    Kaleigh
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Date of birth
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    10 January 1981
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    OHS reference
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    25059883
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    NI number
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    JM 23 66 19 A
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Residential country
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    UK
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+
+                                    <div class="nhsuk-grid-column-one-third">
+                                        <button
+                                            class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3 nhsuk-u-width-three-quarters"
+                                            data-module="nhsuk-button" type="submit">
+                                            View person record
+                                        </button>
+                                        <button
+                                            class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3 nhsuk-u-width-three-quarters"
+                                            data-module="nhsuk-button" type="submit">
+                                            Search for another person
+                                        </button>
+                                        <button
+                                            class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3 nhsuk-u-width-three-quarters"
+                                            data-module="nhsuk-button" type="submit">
+                                            Unlink person from invoice
+                                        </button>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
+                        <!-- <a href=""">Search for a different person</a> -->
                     </div>
                 </div>
                 <!-- End of matched OHS record -->
@@ -1105,14 +1197,11 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
                                             System</span>
                                     </h3>
-                                    <p class="nhsuk-body nhsuk-u-margin-bottom-3">19 July 2024 at 11:58am</p>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-3">19 January 2025 at 11:58am</p>
                                 </div>
                                 <div class="nhsbsa-timeline__description">
                                     <p class="nhsuk-body nhsuk-u-margin-bottom-2"><span
-                                            class="nhsuk-u-font-weight-bold">Status:</span> To check</p>
-                                    <p class="nhsuk-body nhsuk-u-margin-bottom-1"><span
-                                            class="nhsuk-u-font-weight-bold">Contestation reason:</span> Unable to
-                                        identify the person from the information provided. Please check.</p>
+                                            class="nhsuk-u-font-weight-bold">Status:</span> Accepted</p>
                                 </div>
                             </div>
                             <!-- End auto-validation -->
@@ -1124,13 +1213,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         <span class="nhsuk-caption-m nhsuk-caption--bottom" style="display:inline;">by
                                             George Harrison</span>
                                     </h3>
-                                    <p class="nhsuk-body nhsuk-u-margin-bottom-3">19 July 2024 at 11:51am</p>
+                                    <p class="nhsuk-body nhsuk-u-margin-bottom-3">19 January 2025 at 10:51am</p>
                                 </div>
                                 <div class="nhsbsa-timeline__description">
                                     <p class="nhsuk-body nhsuk-u-margin-bottom-2"><span
                                             class="nhsuk-u-font-weight-bold">Claim ID:</span> 6784</p>
                                     <p class="nhsuk-body nhsuk-u-margin-bottom-1"><span
-                                            class="nhsuk-u-font-weight-bold">Claim amount (cost):</span> 2134.75</p>
+                                            class="nhsuk-u-font-weight-bold">Claim amount (cost):</span> 2000.75</p>
                                 </div>
                             </div>
                             <!-- End invoice added -->
@@ -1437,7 +1526,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             Total amount
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            2134.75
+                                            2000.75
                                         </dd>
                                     </div>
                                     <div class="nhsuk-summary-list__row">
@@ -1585,6 +1674,55 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
             </div>
             <!-- *** End of imported invoice tab *** -->
+
+                        <!-- *** Start of credit notes tab *** -->
+                        <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="credit">
+                            <div class="nhsuk-grid-row">
+                                <div class="nhsuk-grid-column-two-thirds">
+                                    <h2 class="nhsuk-heading-l">Credit notes</h2>
+                                </div>
+                            </div>
+
+                            <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-full">
+                                <details class="nhsuk-details nhsuk-expander">
+                                    <summary class="nhsuk-details__summary">
+                                      <span class="nhsuk-details__summary-text">
+                                        Credit note reference: 123456789 | Status: To check
+                                      </span>
+                                    </summary>
+                                    <div class="nhsuk-details__text">
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-one-half">
+    <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Amount
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            3000.00
+          </dd>
+        </div>
+
+      </dl>
+</div>
+<div class="nhsuk-grid-column-one-half">
+</div>
+</div>
+
+
+                             
+                                
+                                    </div>
+                                  </details>
+                            </div>
+                            </div>
+            
+                       
+                        </div>
+                        <!-- *** End of notes tab *** -->
 
         </div>
     </div>
