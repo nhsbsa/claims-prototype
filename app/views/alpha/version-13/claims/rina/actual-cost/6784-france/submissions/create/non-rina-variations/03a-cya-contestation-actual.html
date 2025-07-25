@@ -86,7 +86,7 @@ Check reply to contestation details - Manage incoming international healthcare c
                         <!-- Contestation reference -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Reply to contestation reference (optional)
+                                Reply to contestation reference (if provided)
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['ref'] %}
@@ -105,7 +105,7 @@ Check reply to contestation details - Manage incoming international healthcare c
                         <!-- Total number of contestation replies -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Total number of repies (optional)
+                                Total number of repies (if provided)
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['total-replies'] %}
@@ -124,7 +124,7 @@ Check reply to contestation details - Manage incoming international healthcare c
                         <!-- Total amount of accepted contestations -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Total amount of accepted contestations (optional)
+                                Total amount withdrawn by Spain (if provided)
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['total-accepted'] %}
@@ -135,7 +135,7 @@ Check reply to contestation details - Manage incoming international healthcare c
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
                                 <a href="02a-contestation-actual#total-accepted">
-                                    Change<span class="nhsuk-u-visually-hidden"> total amount of accepted
+                                    Change<span class="nhsuk-u-visually-hidden"> total amount withdrawn by Spain
                                         contestations</span>
                                 </a>
                             </dd>
@@ -144,7 +144,7 @@ Check reply to contestation details - Manage incoming international healthcare c
                         <!-- Currency -->
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Currency (optional)
+                                Currency (if provided)
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 {% if data['currency'] %}
@@ -193,7 +193,7 @@ Check reply to contestation details - Manage incoming international healthcare c
 
                     </dl>
                     <a href="confirmation">
-                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                        <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
                             Submit
                         </button>
                     </a>
