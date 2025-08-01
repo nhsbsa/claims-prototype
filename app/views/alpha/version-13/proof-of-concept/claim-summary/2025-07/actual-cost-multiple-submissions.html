@@ -1,0 +1,624 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: '',
+active: true
+},
+{
+name: 'Invoices',
+path: ''
+},
+{
+name: 'Submissions',
+path: ''
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: ''
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Claim summary - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claims</a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+
+<!-- Start of header -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <h1 class="nhsuk-heading-xl ">
+            Claim summary
+        </h1>
+    </div>
+</div>
+<!-- End of header-->
+
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Claim ID
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            6784
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Country
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            France
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Type
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Actual cost - Sickness
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Date received
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            19 July 2024
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Current status
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <strong class="nhsuk-tag nhsuk-tag--purple">
+                                Open
+                            </strong>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Start of main summary box -->
+<!-- <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                            Claim ID 6784
+                        </h2>
+                    </div>
+                    <div class="nhsuk-grid-column-one-third">
+                        <strong class="nhsuk-tag nhsuk-tag--purple" style="float:right">
+                            Open
+                        </strong>
+                    </div>
+                    <div class="nhsuk-grid-column-full">
+                        <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
+                        <br />
+                    </div>
+                </div>
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-half">
+                        <dl class="nhsuk-summary-list">
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Country
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    France
+                                </dd>
+                            </div>
+                  
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Type
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    Actual cost - Sickness
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="nhsuk-grid-column-one-half">
+                        <dl class="nhsuk-summary-list">
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Date received
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    19 July 2024
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- End of main summary box -->
+
+
+<!-- <hr /> -->
+
+<!-- <h2 class="nhsuk-card__heading nhsuk-heading-l">
+    Current active submission
+</h2> -->
+
+<div class="nhsuk-card">
+    <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+                <h2 class="nhsuk-card__heading nhsuk-heading-l">
+                    Current active submission
+                </h2>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+                <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4" data-module="nhsuk-button"
+                    type="button" style="float:right;">
+                    View active submission
+                </button>
+            </div>
+        </div>
+
+
+        <!-- <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+            <hr
+                class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
+            <br />
+        </div>
+        </div> -->
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-full">
+                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-1">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Type
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Reply to contestation
+                                        </dd>
+
+                                    </div>
+
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Submission ID
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            9687
+                                        </dd>
+
+                                    </div>
+
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Submission reference
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            93554239AT2301E
+                                        </dd>
+
+                                    </div>
+
+
+
+
+                                    <!-- <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Total invoices
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            19
+                        </dd>
+                        
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Total amount
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            7,385.88
+                        </dd>
+                       
+                    </div> -->
+
+
+                                    <!-- <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Target date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            1 September 2025
+                        </dd>
+        
+                    </div> -->
+
+                                    <!-- <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Deadline
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            20 February 2026
+                        </dd>
+                
+                    </div> -->
+
+                                    <!-- <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Date received
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            19 March 2025
+                        </dd>
+                 
+                    </div> -->
+
+
+
+                                </dl>
+                            </div>
+
+                            <!-- <div class="nhsuk-grid-column-one-third">
+                <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4" data-module="nhsuk-button" type="button"
+                    style="float:right;">
+                    View submission details
+                </button>
+            </div> -->
+
+                            <!-- <div class="nhsuk-grid-column-one-third">
+                <ul class="nhsuk-grid-row nhsuk-card-group">
+                    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+                  
+                      <div class="nhsuk-card">
+                        <div class="nhsuk-card__content">
+                          <p class="nhsuk-heading-xl nhsuk-u-font-size-54 nhsuk-u-margin-bottom-1">19 <span class="nhsuk-u-visually-hidden">Total invoices</span></p>Total invoices
+                        </div>
+                      </div>
+                  
+                    </li>
+                    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+                  
+                      <div class="nhsuk-card">
+                        <div class="nhsuk-card__content">
+                            <p class="nhsuk-heading-xl nhsuk-u-font-size-54 nhsuk-u-margin-bottom-1">7,385.88 <span class="nhsuk-u-visually-hidden">Total amount</span></p>Total amount
+                        </div>
+                      </div>
+                  
+                    </li>
+
+                  </ul>
+
+                </div> -->
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <ul class="nhsuk-grid-row nhsuk-card-group">
+                            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+
+                                <div class="nhsuk-card">
+                                    <div class="nhsuk-card__content">
+                                        <p class="nhsuk-heading-l  nhsuk-u-margin-bottom-1">19 <span
+                                                class="nhsuk-u-visually-hidden">Total invoices</span></p>Total invoices
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+
+                                <div class="nhsuk-card">
+                                    <div class="nhsuk-card__content">
+                                        <p class="nhsuk-heading-l  nhsuk-u-margin-bottom-1">7,385.88 <span
+                                                class="nhsuk-u-visually-hidden">Total amount</span></p>Total amount
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+
+                                <div class="nhsuk-card">
+                                    <div class="nhsuk-card__content">
+                                        <p class="nhsuk-heading-l  nhsuk-u-margin-bottom-1">20 Feb 2026 <span
+                                                class="nhsuk-u-visually-hidden">Deadline</span></p>Deadline
+                                    </div>
+                                </div>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+        <!-- <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+
+
+                <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-2">
+                    Submission ID 7794<br />Submission reference 11661234PP7739
+                </h2>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+                <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4" data-module="nhsuk-button" type="button"
+                    style="float:right;">
+                    View submission details
+                </button>
+            </div>
+        </div> -->
+
+        <!-- <div class="nhsuk-grid-row">
+
+            <div class="nhsuk-grid-column-full">
+                <hr
+                    class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible">
+                <br />
+            </div>
+        </div> -->
+
+
+
+
+
+        <!-- Start of card content-->
+
+
+
+
+
+
+    </div>
+</div>
+
+<!-- Start latest submissions -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <h2 class="nhsuk-card__heading nhsuk-heading-l">
+                            Latest submissions
+                        </h2>
+                    </div>
+                    <div class="nhsuk-grid-column-one-third">
+                        <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4"
+                            data-module="nhsuk-button" type="button" style="float:right">
+                            Add a new submission
+                        </button>
+                    </div>
+                </div>
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <div class="nhsuk-card">
+                            <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
+                                <table role="table" class="nhsuk-table-responsive nhsuk-u-padding-bottom-4">
+                                    <!-- <caption class="nhsuk-table__caption">Contestations</caption> -->
+                                    <thead role="rowgroup" class="nhsuk-table__head">
+                                        <tr role="row">
+                                            <th role="columnheader" class="" scope="col">
+                                                ID
+                                            </th>
+                                            <th role="columnheader" class="" scope="col">
+                                                Reference
+                                            </th>
+                                            <th role="columnheader" class="" scope="col">
+                                                Type
+                                            </th>
+                                            <th role="columnheader" class="" scope="col">
+                                                Deadline
+                                            </th>
+                                            <th role="columnheader" class="" scope="col">
+                                                Status
+                                            </th>
+                                            <th role="columnheader" class="" scope="col">
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="nhsuk-table__body">
+                                        <tr role="row" class="nhsuk-table__row">
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Submission ID
+                                                </span>9693
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Submission
+                                                    reference
+                                                </span>67354439AT2301E
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+                                                </span>Reply to contestation
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Deadline
+                                                </span>20 Feb 2026
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                                </span>Not started
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                                </span><a href="">View submission</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="nhsuk-table__row">
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Submission ID
+                                                </span>9687
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Submission
+                                                    reference
+                                                </span>93554239AT2301E
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+                                                </span>Reply to contestation
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Deadline
+                                                </span>20 Feb 2026
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                                </span>Active
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                                </span><a href="">View submission</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="nhsuk-table__row">
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Submission ID
+                                                </span>9473
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Submission
+                                                    reference
+                                                </span>88449939AT2301E
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+                                                </span>Credit note
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Deadline
+                                                </span>1 Apr 2025
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                                </span>Paid
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                                </span><a href="">View submission</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="nhsuk-table__row">
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Submission ID
+                                                </span>8855
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Submission
+                                                    reference
+                                                </span>11322249AT2301E
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+                                                </span>Initial
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Deadline
+                                                </span>1 Dec 2024
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                                </span>Reply sent
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                                </span><a href="">View submission</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p class="nhsuk-body"><a href="">View all submissions</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End latest submissions -->
+
+{% endblock %}
