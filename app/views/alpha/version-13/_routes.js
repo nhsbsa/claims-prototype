@@ -7,6 +7,21 @@ const path = require('path');
 const axios = require('axios');
 
 //////CREATE A NEW SUBMISSION//////
+
+//// What type of submission would you like to add?  ////
+router.post('/route_create_new_submission_6799', function(req,res){
+    var submissionType = req.session.data['type']
+    if (submissionType == "Contestation") {
+        res.redirect('/alpha/version-13/claims/non-rina/actual-cost/france/6799/submissions/create/reply-to-contestation/01-details')
+        }
+        else if (submissionType == "Credit note") {
+            res.redirect('/alpha/version-13/claims/non-rina/actual-cost/france/6799/submissions/create/credit-notes/01-details')
+            }
+    else {
+        res.redirect('/alpha/version-13/claims/non-rina/actual-cost/france/6799/submissions/create/index')
+    }
+})
+
 //// What type of submission would you like to add?  ////
 router.post('/route_create_new_submission_6784', function(req,res){
     var submissionType = req.session.data['type']
