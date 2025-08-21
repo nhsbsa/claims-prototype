@@ -1,0 +1,104 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+    {
+    name: 'Home',
+    path: '/alpha/version-14/home'
+    },
+    {
+    name: 'Claims',
+    path: '/alpha/version-14/claims/index',
+    active: true
+    },
+    {
+    name: 'Contested claims',
+    path: '#'
+    },
+    {
+    name: 'Reports',
+    path: '#'
+    }
+    ]
+    %}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Claim created - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../index">Claims
+                </a></li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content  -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Start of cya -->
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+
+
+                <div class="confirmation-box">
+                    <h1 class="heading-xlarge"><span id="done-tick"></span>Claim created for {% if data['country'] %}{{
+                        data['country'] }}{% else %}France{% endif %}
+                    </h1>
+                    <h2 class="heading-large"><span class="heading-secondary" style="color:white;">OHS claim ID
+                            number<br />
+                            6784
+                        </span>
+
+                    </h2>
+                </div>
+                <p>You have created a new claim for {% if data['country'] %}{{data['country'] }}{% else %}France{% endif %}
+                    for the financial year {% if data['financial-year'] %}{{ data['financial-year'] }}{% else
+                    %}2023{% endif %}.</p>
+                    <p>The claim reference number is {% if data['ref'] %}{{ data['ref'] }}{% else
+                        %}0039795410{% endif %}.</p>
+                <h2 class="heading-medium">What happens next</h2>
+                <p>You can now add invoices to this claim.</p>
+                
+                <a href="../rina/actual-cost/6784-france/summary/not-started">
+                    <button style="margin-right:12px;" class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                        Manage claim
+                    </button>
+                </a>
+
+                <a href="index">
+                    <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                        Create new claim
+                    </button>
+                </a>
+            </div>
+        </div>
+        <!-- End of cya -->
+
+    </div>
+</div>
+{% endblock %}
+<!-- End of central content -->

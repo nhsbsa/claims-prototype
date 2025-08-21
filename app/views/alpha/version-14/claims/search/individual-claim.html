@@ -1,0 +1,363 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Home',
+path: '/alpha/version-14/home'
+},
+{
+name: 'Claims',
+path: '/alpha/version-14/claims/index',
+active: true
+},
+{
+name: 'Reports',
+path: ''
+}
+]
+%}
+
+<!-- Extends the layout from /views/layout-full-width.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Claims - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="../../home">
+        <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+        Home
+      </a>
+    </p>
+  </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content and left navigation -->
+{% block content %}
+    <!-- Start of header block -->
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl ">
+          Claims
+        </h1>
+      </div>
+      <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+        <a href="../create/index">
+          <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" data-module="nhsuk-button"
+            type="submit">
+            Create a new claim
+          </button>
+        </a>
+      </div>
+    </div>
+    <!-- End of header block -->
+
+    <!-- Start of search inputs-->
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <form action="search/individual-claim#results" method="post">
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                  <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                    Search for a claim
+                  </h2>
+                  <hr style="margin:0px 0px 24px 0px;" />
+                </div>
+              </div>
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                  <div class="nhsuk-hint" id="contact-hint">
+                    Search using either claim ID, claim reference, or country.
+                  </div>
+                </div>
+                <div class="nhsuk-grid-column-one-third">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claim-id">
+                      Claim ID
+                    </label>
+                    <input class="nhsuk-input" id="claim-id" name="claim-id" type="text" value="6784">
+                  </div>
+                </div>
+                <div class="nhsuk-grid-column-one-third">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-u-font-weight-bold" for="claim-ref">
+                      Claim reference
+                    </label>
+                    <input class="nhsuk-input " id="claim-ref" name="claim-ref" type="text">
+                  </div>
+                </div>
+                <div class="nhsuk-grid-column-one-third">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-u-font-weight-bold" for="select-autocomplete">
+                      Country
+                    </label>
+                    <div>
+                      <select name="country" id="select-autocomplete">
+                        <option value=""></option>
+                        <option value="Austria">Austria</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Croatia">Croatia</option>
+                        <option value="Cyprus">Cyprus</option>
+                        <option value="Czech Republic">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Estonia">Estonia</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Iceland">Iceland</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Latvia">Latvia</option>
+                        <option value="Liechtenstein">Liechtenstein</option>
+                        <option value="Lithuania">Lithuania</option>
+                        <option value="Luxemburg">Luxemburg</option>
+                        <option value="Malta">Malta</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Slovakia">Slovakia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="nhsuk-grid-column-full">
+                  <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                    Search
+                  </button>
+                  <p class="nhsuk-u-margin-bottom-0"><a href="#">Clear search</a></p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of search inputs-->
+
+    <!-- Start search results -->
+    <div class="nhsuk-grid-row" id="results">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
+
+            <!-- Start header block-->
+            <div class="nhsuk-grid-row nhsuk-u-padding-bottom-2">
+              <div class="nhsuk-grid-column-two-thirds">
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 to 1 of 1 results</h3>
+                <p class="nhsuk-u-margin-bottom-2 nhsuk-body-s">Searched by: <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                  6784
+                </strong></p>
+              </div>
+              <div class="nhsuk-grid-column-one-third">
+                <div class="nhsuk-form-group" style="float:right;">
+                  <label class="nhsuk-label" for="results">
+                    Results per page
+                  </label>
+                  <select class="nhsuk-select" id="results" name="results" style="float:right;">
+                    <option value="10" selected>10</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- End of header block -->
+
+            <!-- Start of filter and sort options -->
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full">
+                <details class="nhsuk-details nhsuk-u-margin-bottom-3">
+                  <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                      Filter and sort options
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+                    <div class="nhsuk-grid-row">
+                      <div class="nhsuk-grid-column-one-third">
+                        <div class="nhsuk-form-group">
+                          <fieldset class="nhsuk-fieldset">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                              <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                Filter by type of claim
+                              </h1>
+                            </legend>
+                            <div class="nhsuk-checkboxes">
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="type-filter-actual" name="type-filter"
+                                  type="checkbox" value="Actual cost">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-filter">
+                                  Actual cost
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes">
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="type-filter-average" name="type-filter"
+                                    type="checkbox" value="Average cost">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="type-filter">
+                                    Average cost
+                                  </label>
+                                </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <div class="nhsuk-grid-column-one-third">
+                        <div class="nhsuk-form-group">
+                          <fieldset class="nhsuk-fieldset">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                              <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                Sort by
+                              </h1>
+                            </legend>
+                            <div class="nhsuk-radios">
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="sort-by-id" name="sort-by" type="radio"
+                                  value="Claim ID" checked="checked">
+                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
+                                  Claim ID
+                                </label>
+                              </div>
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="sort-by-ref" name="sort-by" type="radio"
+                                  value="Claim reference">
+                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-ref">
+                                  Claim reference
+                                </label>
+                              </div>
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="sort-by-country" name="sort-by" type="radio"
+                                  value="Country">
+                                <label class="nhsuk-label nhsuk-radios__label" for="sort-by-country">
+                                  Country
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <div class="nhsuk-grid-column-one-third">
+                        <div class="nhsuk-form-group">
+                          <fieldset class="nhsuk-fieldset">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                              <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                Order results
+                              </h1>
+                            </legend>
+                            <div class="nhsuk-radios">
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="order-by-asc" name="order-by" type="radio"
+                                  value="ascending">
+                                <label class="nhsuk-label nhsuk-radios__label" for="order-by-asc">
+                                  Ascending
+                                </label>
+                              </div>
+                              <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="order-by-desc" name="order-by" type="radio"
+                                  value="descending" checked="checked">
+                                <label class="nhsuk-label nhsuk-radios__label" for="order-by-desc">
+                                  Descending
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <div class="nhsuk-grid-column-full">
+                        <a href="#">
+                          <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                            Apply filters
+                          </button>
+                        </a>
+                        <p class="nhsuk-u-margin-bottom-0"><a href="#">Reset all filters</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+            <!-- End of filter and sort options -->
+
+            <!-- Start of table data -->
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full">
+                <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-6">
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                        Claim ID
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                        Claim reference
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                        Country
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                        Type of claim
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                        View
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim ID </span>6784
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim reference </span>11322249AT2301E
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Country </span>France
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Article type </span>Actual cost
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">View </span><a
+                          href="../rina/actual-cost/6784-france/summary/reply-sent">View claim</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- End of table data -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of search results -->
+
+  {% endblock %}
+  <!-- End of page content and left navigation -->
