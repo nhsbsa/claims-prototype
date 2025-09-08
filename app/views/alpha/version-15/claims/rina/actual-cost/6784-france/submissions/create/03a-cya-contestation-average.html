@@ -1,0 +1,186 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: ''
+},
+{
+name: 'Invoices',
+path: ''
+},
+{
+name: 'Submissions',
+path: '',
+active: true
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: ''
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block ClaimId %}
+7399
+{% endblock %}
+{% block submittingCountry %}
+Spain
+{% endblock %}
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Check reply to contestation details - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../home">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../index">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 7399</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Start of cya -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <!-- Start of form -->
+        <form action="04a-confirmation-contestation" method="post">
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                <h1 class="nhsuk-fieldset__heading">
+                    <span class="nhsuk-caption-l">Add a new submission</span>
+                    Check reply to contestation details
+                </h1>
+            </legend>
+
+            <!-- Start of card -->
+            <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                <div class="nhsuk-card__content">
+                    <dl class="nhsuk-summary-list">
+
+                        <!-- Contestation reference -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Reply to contestation reference
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                123456789
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> reply to contestation reference</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Total number of contestation replies -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Total number of replies
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                3
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> total number of replies</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Total amount of accepted contestations -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Total number of months withdrawn by France
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                8
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> total number of months withdrawn by France</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Date received -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Date you received this submission
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                21 February 2025
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> date you reveived this submission</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- Target date -->
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Target date to complete this submission
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                1 September 2025
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> target date to complete this submission</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                    </dl>
+                    <a href="">
+                        <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                            Submit
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <!-- End of card -->
+
+        </form>
+        <!-- End of form -->
+
+        <a href="#" class="nhsuk-link">Cancel</a>
+    </div>
+</div>
+<!-- End of cya -->
+
+{% endblock %}
