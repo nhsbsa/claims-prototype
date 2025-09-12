@@ -1,0 +1,133 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Credit note - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9435</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<!-- Start back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
+    </div>
+</div>
+<!-- End back link -->
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+                <form action="" method="post">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                        <h1 class="nhsuk-fieldset__heading">
+                            <span class="nhsuk-caption-l">Edit credit note</span>
+                            Change target date
+                        </h1>
+                    </legend>
+            </div>
+            <div class="nhsuk-grid-column-two-thirds">
+                <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                    <div class="nhsuk-card__content">
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Target date to complete the credit note
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="target-date-hint">
+                                    Internal deadline to complete the credit note.<br />
+                                    For example, 28 9 2023
+                                </div>
+                                <div class="nhsuk-date-input" id="target-date">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="edit-target-date-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+
+                                                id="target-date-day" name="edit-target-date-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric" value="14">
+
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="edit-target-date-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                   
+                                                id="target-date-month" name="edit-target-date-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric" value="7">
+
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="edit-target-date-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                   
+                                                id="target-date-year" name="edit-target-date-year" type="text"
+                                                pattern="[0-9]*" inputmode="numeric" value="2026">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                            Save changes
+                        </button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+<!-- Extends the layout from /docs/views/template.html -->
+{% extends "template.html" %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/prism.css" rel="stylesheet">
+<link href="/css/docs.css" rel="stylesheet">
+<link href="/css/accessible-autocomplete.min.css" rel="stylesheet">
+{% endblock %}
+
+{% set bodyClasses = bodyClasses | default('full-width') %}
+
+{% block pageTitle %}
+{{ pageTitle({}) }}
+{% endblock %}
+
+{% block header %}
+{% include "partials/header-full-width-logged-in.njk" %}
+{% endblock %}
+
+{% block main %}
+<div class="nhsuk-width-container-fluid">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+        {% block content %}{% endblock %}
+    </main>
+</div>
+{% endblock %}
+
+{% block footer %}
+{{ footer({
+"links": [
+{
+"URL": "#",
+"label": "Accessibility statement"
+},
+{
+"URL": "#",
+"label": "Contact us"
+},
+{
+"URL": "#",
+"label": "Cookies"
+},
+{
+"URL": "#",
+"label": "Privacy policy"
+},
+{
+"URL": "#",
+"label": "Terms and conditions"
+},
+{
+"URL": "#",
+"label": "Index"
+},
+{
+"URL": "/passing-data/clear-data",
+"label": "Clear data"
+}
+]
+}) }}
+{% endblock %}
+
+{% block bodyEnd %}
+{% block scripts %}
+{% include "includes/scripts.html" %}
+{% block pageScripts %}{% endblock %}
+{% endblock %}
+{% endblock %}
