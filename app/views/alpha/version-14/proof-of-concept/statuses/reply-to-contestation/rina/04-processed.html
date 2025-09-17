@@ -1,7 +1,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
-{% extends 'layout-full-width-invoice-poc.html' %}
+{% extends 'layout-full-width-logged-in.html' %}
 <!-- 
     In /views/layout.html you can:
       - change the header and footer 
@@ -46,16 +46,7 @@ Reply to contestation details - Manage incoming international healthcare claims 
 <!-- Start back link -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-back-link">
-            <a class="nhsuk-back-link__link" href="javascript:history.back()">
-                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                    aria-hidden="true" height="24" width="24">
-                    <path
-                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-                    </path>
-                </svg>
-                Go back</a>
-        </div>
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
     </div>
 </div>
 <!-- End back link -->
@@ -65,12 +56,12 @@ Reply to contestation details - Manage incoming international healthcare claims 
     <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-xl">
             <span class="nhsuk-caption-l">Claim ID 6784 &ndash; France</span>
-            Reply to contestation details
+            Reply to contestation ID 7766
         </h1>
     </div>
     <div class="nhsuk-grid-column-one-third" style="text-align: right">
         <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="button">
-            Exit reply to contestation
+            Exit submission
         </button>
     </div>
 </div>
@@ -84,13 +75,10 @@ Reply to contestation details - Manage incoming international healthcare claims 
                 <div class="nhsuk-card">
                     <div class="nhsuk-card__content">
                         <div class="nhsuk-grid-row">
-                            <div class="nhsuk-grid-column-one-half">
+                            <div class="nhsuk-grid-column-full">
                                 <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
-                                    Reply to contestation ID 7766
+                                    Reply to contestation details
                                 </h2>
-                            </div>
-                            <div class="nhsuk-grid-column-one-half">
-                                <strong class="nhsuk-tag nhsuk-tag--yellow" style="float:right;">Processed</strong>
                             </div>
                         </div>
                         <hr
@@ -127,13 +115,14 @@ Reply to contestation details - Manage incoming international healthcare claims 
                             </div>
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">Reported total amount withdrawn</dt>
-                                <dd class="nhsuk-summary-list__value">1401.39</dd>
+                                <dd class="nhsuk-summary-list__value">1401.39 (Euro)</dd>
                                 <dd class="nhsuk-summary-list__actions">
                                 </dd>
                             </div>
                             <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">Currency</dt>
-                                <dd class="nhsuk-summary-list__value">Euro</dd>
+                                <dt class="nhsuk-summary-list__key">Current status</dt>
+                                <dd class="nhsuk-summary-list__value"><strong
+                                        class="nhsuk-tag nhsuk-tag--yellow">Processed</strong></dd>
                                 <dd class="nhsuk-summary-list__actions">
                                 </dd>
                             </div>
