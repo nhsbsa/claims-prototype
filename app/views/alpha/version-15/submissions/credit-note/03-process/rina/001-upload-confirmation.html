@@ -1,0 +1,89 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Credit note - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9435</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<!-- Start of panel -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-panel" style="background-color: #005EB8; text-align: center;">
+            <h1 class="nhsuk-panel__title">
+                File uploaded for France
+            </h1>
+            <h2 class="nhsuk-heading-l">Individual credit notes added to credit note ID 9435</h2>
+        </div>
+    </div>
+</div>
+<!-- End of panel -->
+
+<!-- Start confirmation text -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <p class="nhsuk-body">You've successfully uploaded a file of individual credit notes.</p>
+    </div>
+</div>
+<!-- End confirmation text -->
+
+<!-- Start what happens next -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h3 class="nhsuk-heading-l">What happens next</h3>
+        <p class="nhsuk-body">The system will automatically try to match each individual credit note to the correct invoice.</p>
+        <p class="nhsuk-body">Currently, credit note ID 9435 is pending. You'll need to open it to begin working on it.</p>
+    </div>
+</div>
+<!-- End what happens next -->
+
+<!-- Start call to actions -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <a href="01a-pending-actual-processing" class="nhsuk-button" role="button" data-module="nhsuk-button">View credit note</a>
+    </div>
+</div>
+<!-- End call to actions -->
+
+
+{% endblock %}
