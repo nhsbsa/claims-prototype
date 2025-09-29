@@ -23,7 +23,6 @@ path: ''
 }
 ]
 %}
-
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-claim.html' %}
 <!-- 
@@ -31,15 +30,17 @@ path: ''
     - change the header and footer 
     - add custom CSS and JavaScript
 -->
+
 {% block ClaimId %}
 7399
 {% endblock %}
 {% block submittingCountry %}
 Spain
 {% endblock %}
+
 <!-- Start of page title -->
 {% block pageTitle %}
-Reply to contestation details - Manage incoming international healthcare claims - NHSBSA
+Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -59,6 +60,7 @@ Reply to contestation details - Manage incoming international healthcare claims 
         </ol>
         <p class="nhsuk-breadcrumb__back">
             <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
                 Claims
             </a>
         </p>
@@ -81,7 +83,7 @@ Reply to contestation details - Manage incoming international healthcare claims 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-        <form action="02a-cya-actual" method="post">
+        <form action="03-cya" method="post">
             <fieldset class="nhsuk-fieldset">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                     <h1 class="nhsuk-fieldset__heading">
@@ -89,27 +91,22 @@ Reply to contestation details - Manage incoming international healthcare claims 
                         Reply to contestation details
                     </h1>
                 </legend>
-
                 <div class="nhsuk-card nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-card__content">
                         <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-1">
-                            Actual cost - Sickness
+                            Average cost - Sickness - Article 63 (2b)
                         </h3>
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"
                             style="margin-top:12px; margin-bottom: 20px;">
 
-                        <!-- Start contestation reference -->
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
                                 Reply to contestation reference (if provided)
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-one-half" id="ref" name="ref" type="text">
                         </div>
-
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End contestation reference-->
 
-                        <!-- Start number of replies -->
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-replies">
                                 Total number of replies (if provided)
@@ -117,63 +114,27 @@ Reply to contestation details - Manage incoming international healthcare claims 
                             <input class="nhsuk-input nhsuk-u-width-one-half" id="total-replies" name="total-replies"
                                 type="text">
                         </div>
-
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End number of replies -->
 
-                        <!-- Start total amount -->
+
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-accepted">
-                                Total amount withdrawn by Spain (if provided)
+                                Total number of months withdrawn by Spain (if provided)
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-one-half" id="total-accepted" name="total-accepted"
                                 type="text">
                         </div>
-
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End total amount -->
 
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-contested">
-                                Total amount still requested by Spain (if provided)
+                                Total number of months still requested by Spain (if provided)
                             </label>
                             <input class="nhsuk-input nhsuk-u-width-one-half" id="total-contested"
                                 name="total-contested" type="text">
                         </div>
-
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-                        <!-- Start currency -->
-                        <div class="nhsuk-form-group nhsuk-u-width-one-half">
-                            <label class="nhsuk-label nhsuk-u-font-weight-bold" for="select-autocomplete">
-                                Currency (if provided)
-                            </label>
-                            <div>
-                                <select name="currency" id="select-autocomplete">
-                                    <option value=""></option>
-                                    <option value="British Pound">British Pound</option>
-                                    <option value="Bulgarian Lev">Bulgarian Lev</option>
-                                    <option value="Croatian Kuna">Croatian Kuna</option>
-                                    <option value="Czech Koruna">Czech Koruna</option>
-                                    <option value="Danish Krone">Danish Krone</option>
-                                    <option value="Euro">Euro</option>
-                                    <option value="Hungarian Forint">Hungarian Forint</option>
-                                    <option value="Icelandic Krona">Icelandic Krona</option>
-                                    <option value="Latvian Lats">Latvian Lats</option>
-                                    <option value="Lithuanian Litas">Lithuanian Litas</option>
-                                    <option value="Norwegian Krone">Norwegian Krone</option>
-                                    <option value="Polizh Złoty">Polizh Złoty</option>
-                                    <option value="Romanian Leu">Romanian Leu</option>
-                                    <option value="Swedish Krona">Swedish Krona</option>
-                                    <option value="Swiss Franc">Swiss Franc</option>
-                                    <option value="Turkish Lira">Turkish Lira</option>
-                                </select>
-                            </div>
-                        </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End currency-->
-
-                        <!-- Start date you received the contestation -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="date-received" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
@@ -219,11 +180,8 @@ Reply to contestation details - Manage incoming international healthcare claims 
                                 </div>
                             </fieldset>
                         </div>
-
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End date you received the contestation -->
 
-                        <!-- Start target date -->
                         <div class="nhsuk-form-group">
                             <fieldset class="nhsuk-fieldset" aria-describedby="target-date" role="group">
                                 <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
@@ -268,21 +226,15 @@ Reply to contestation details - Manage incoming international healthcare claims 
                                 </div>
                             </fieldset>
                         </div>
-
                         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                        <!-- End target date -->
 
                         <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top:12px;">
                             Continue
                         </button>
-
                     </div>
                 </div>
-
-
             </fieldset>
         </form>
-
     </div>
 </div>
 <!-- End of data collection -->

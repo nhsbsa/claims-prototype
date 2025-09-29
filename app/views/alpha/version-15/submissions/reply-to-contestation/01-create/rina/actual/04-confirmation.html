@@ -42,7 +42,7 @@ Manage incoming international healthcare claims - NHSBSA
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Home</a>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="e">Home</a>
             </li>
             <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claims</a>
             </li>
@@ -62,29 +62,35 @@ Manage incoming international healthcare claims - NHSBSA
 <!-- End of breadcrumb -->
 {% endblock %}
 
+
 {% block content %}
+
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
-                <div class="confirmation-box">
-                    <h1 class="heading-xlarge"><span id="done-tick"></span>Reply to contestation created for claim ID
-                        6784
-                    </h1>
-                    <h2 class="heading-large"><span class="heading-secondary" style="color:white;">Reply to contestation
-                            ID 7766
-                        </span>
-                    </h2>
+                <div class="nhsuk-panel" style="background-color: #005EB8; text-align: center;">
+                    <h1 class="nhsuk-panel__title">Reply to contestation created for claim ID 6784</h1>
+                    <h2 class="nhsuk-heading-l">Reply to contestation ID 7766</h2>
                 </div>
-                <p>You've created a new reply to contestation for Spain. The target date to complete this submission is
-                    1 September 2025.</p>
-                <h2 class="heading-medium">What happens next</h2>
-                <p>You can now add invoices to this submission.</p>
-                <button style="margin-right:12px;" class="nhsuk-button" data-module="nhsuk-button" type="button">
-                    Manage reply to contestation
-                </button>
             </div>
         </div>
     </div>
 </div>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <p class="nhsuk-body">You've created a new reply to contestation for France. The target date to complete this
+            submission is 1 September 2025.</p>
+    </div>
+</div>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h2 class="heading-medium">What happens next</h2>
+        <p class="nhsuk-body">You can now add invoices to this submission.</p>
+        <a href="#" class="nhsuk-button" role="button" data-module="nhsuk-button">Manage reply to contestation</a>
+    </div>
+</div>
+
 {% endblock %}
