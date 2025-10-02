@@ -1,5 +1,4 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
 <!-- Extends the layout from /views/layout-full-width-claim.html -->
 {% extends 'layout-full-width-logged-in.html' %}
 <!-- 
@@ -48,6 +47,15 @@ Credit note details - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of central content -->
 {% block content %}
+
+<style>
+    .highlight {
+        background-color: #fff9c4;
+        border-bottom: 3px solid #ffeb3b;
+        display: inline-block;
+        text-decoration: none;
+    }
+</style>
 
 <!-- Start back link -->
 <div class="nhsuk-grid-row">
@@ -355,7 +363,7 @@ Credit note details - Manage incoming international healthcare claims - NHSBSA
                                                     End date
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    16 January 2023
+                                                    <span class="highlight">16 January 2023</span>
                                                 </dd>
                                             </div>
                                         </dl>
@@ -480,7 +488,7 @@ Credit note details - Manage incoming international healthcare claims - NHSBSA
                                                     End date
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    17 January 2023
+                                                    <span class="highlight">17 January 2023</span>
                                                 </dd>
                                             </div>
                                         </dl>
