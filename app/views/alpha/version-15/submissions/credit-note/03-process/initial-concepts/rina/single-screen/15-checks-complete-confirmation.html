@@ -1,0 +1,86 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Credit note - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9435</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <form action="16-processed-actual" method="post">
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                        <h1 class="nhsuk-fieldset__heading">
+                            <span class="nhsuk-caption-l">Claim ID 6784 &ndash; France</span>
+                            Are you sure you have completed all checks for credit note ID 9435?
+                        </h1>
+                    </legend>
+                    <div class="nhsuk-hint" id="contact-hint">
+                        If you select yes, you will no longer be able to make changes to the individual credit notes.
+                    </div>
+                    <div class="nhsuk-radios">
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
