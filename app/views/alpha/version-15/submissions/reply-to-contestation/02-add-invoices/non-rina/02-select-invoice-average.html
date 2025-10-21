@@ -66,7 +66,7 @@ Manage incoming international healthcare claims - NHSBSA
 <!-- End of title block -->
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-       <p class="nhsuk-body">Search for one or more invoices to add to Reply to contestation ID 7766 for France.</p>
+    <p class="nhsuk-body">Search for one or more invoices to add to Reply to contestation ID 7766 for France.</p>
   </div>
 </div>
 <!-- Start search inputs and selected invoices tally -->
@@ -255,7 +255,7 @@ Manage incoming international healthcare claims - NHSBSA
               <div class="nhsuk-details__text">
                 <div class="nhsuk-grid-row">
                   <!-- Start sort by -->
-                   <div class="nhsuk-grid-column-one-quarter">
+                  <div class="nhsuk-grid-column-one-quarter">
                     <div class="nhsuk-form-group">
                       <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
@@ -265,15 +265,38 @@ Manage incoming international healthcare claims - NHSBSA
                         </legend>
                         <div class="nhsuk-checkboxes">
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="filter-status-contested" name="filter-status" type="checkbox" value="contested">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-tobechecked" name="filter-status"
+                              type="checkbox" value="check">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-tobechecked">
+                              To check
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-accepted" name="filter-status"
+                              type="checkbox" value="accepted">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-accepted">
+                              Accepted
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-contested" name="filter-status"
+                              type="checkbox" value="contested">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-contested">
                               Contested
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="filter-status-partial" name="filter-status" type="checkbox" value="partial">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-partial" name="filter-status"
+                              type="checkbox" value="partial">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-partial">
                               Partial
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-withdrawn" name="filter-status"
+                              type="checkbox" value="withdrawn">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-withdrawn">
+                              Withdrawn
                             </label>
                           </div>
                         </div>
@@ -281,7 +304,7 @@ Manage incoming international healthcare claims - NHSBSA
                     </div>
                   </div>
                   <div class="nhsuk-grid-column-one-quarter">
-                    <div class="nhsuk-form-group nhsuk-u-padding-bottom-5">
+                    <div class="nhsuk-form-group nhsuk-u-padding-bottom-3">
                       <fieldset class="nhsuk-fieldset">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
                           <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
@@ -395,7 +418,7 @@ Manage incoming international healthcare claims - NHSBSA
                     Date of birth
                   </th>
                   <th role="columnheader" class="" scope="col">
-                    Amount
+                    Total months
                   </th>
                   <th role="columnheader" class="" scope="col">
                     Status
@@ -423,7 +446,7 @@ Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Date of birth</span>19 Aug 1972
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Amount</span>3
+                    <span class="nhsuk-table-responsive__heading">Total months</span>3
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>Contested
@@ -449,7 +472,7 @@ Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Date of birth</span>1 Apr 1969
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Amount</span>9
+                    <span class="nhsuk-table-responsive__heading">Total months</span>9
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>Contested
@@ -475,7 +498,7 @@ Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Date of birth</span>28 Nov 1980
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Amount</span>2
+                    <span class="nhsuk-table-responsive__heading">Total months</span>2
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>Contested
@@ -501,7 +524,7 @@ Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Date of birth</span>19 Aug 1972
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Amount</span>5
+                    <span class="nhsuk-table-responsive__heading">Total months</span>5
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>Contested
@@ -527,7 +550,7 @@ Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Date of birth</span>4 Dec 1966
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Amount</span>6
+                    <span class="nhsuk-table-responsive__heading">Total months</span>6
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>Contested
@@ -553,7 +576,7 @@ Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Date of birth</span>19 Jan 1977
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Amount</span>9
+                    <span class="nhsuk-table-responsive__heading">Total months</span>9
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>Partial
@@ -579,7 +602,7 @@ Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Date of birth</span>3 Sep 1983
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Amount</span>4
+                    <span class="nhsuk-table-responsive__heading">Total months</span>4
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>Contested
@@ -605,7 +628,7 @@ Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Date of birth</span>12 Dec 1982
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Amount</span>7
+                    <span class="nhsuk-table-responsive__heading">Total months</span>7
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>Contested
@@ -631,7 +654,7 @@ Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Date of birth</span>20 Aug 1963
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Amount</span>3
+                    <span class="nhsuk-table-responsive__heading">Total months</span>3
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>Partial
@@ -657,7 +680,7 @@ Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Date of birth</span>2 Feb 1967
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Amount</span>3
+                    <span class="nhsuk-table-responsive__heading">Total months</span>3
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>Contested
@@ -724,11 +747,4 @@ Manage incoming international healthcare claims - NHSBSA
   </div>
 </div>
 <!-- End search results -->
-
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
-    <p class="nhsuk-body"><a href="#" class="nhsuk-link">Cancel</a></p>
-  </div>
-</div>
-
 {% endblock %}

@@ -254,14 +254,55 @@ Manage incoming international healthcare claims - NHSBSA
             <details class="nhsuk-details nhsuk-u-margin-bottom-2">
               <summary class="nhsuk-details__summary">
                 <span class="nhsuk-details__summary-text">
-                  Sort options
+                  Filter and sort options
                 </span>
               </summary>
               <div class="nhsuk-details__text">
                 <div class="nhsuk-grid-row">
                   <!-- Start sort by -->
                   <div class="nhsuk-grid-column-one-quarter">
-                    <div class="nhsuk-form-group nhsuk-u-padding-bottom-5">
+                    <div class="nhsuk-form-group">
+                      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                          <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                            Filter by status
+                          </h1>
+                        </legend>
+                        <div class="nhsuk-checkboxes">
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-tobechecked" name="filter-status"
+                              type="checkbox" value="check">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-tobechecked">
+                              To check
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-accepted" name="filter-status"
+                              type="checkbox" value="accepted">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-accepted">
+                              Accepted
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-contested" name="filter-status"
+                              type="checkbox" value="contested">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-contested">
+                              Contested
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-withdrawn" name="filter-status"
+                              type="checkbox" value="withdrawn">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-withdrawn">
+                              Withdrawn
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="nhsuk-grid-column-one-quarter">
+                    <div class="nhsuk-form-group nhsuk-u-margin-bottom-3">
                       <fieldset class="nhsuk-fieldset">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
                           <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
@@ -375,7 +416,7 @@ Manage incoming international healthcare claims - NHSBSA
                     Date of birth
                   </th>
                   <th role="columnheader" class="" scope="col">
-                    Amount
+                    Total amount
                   </th>
                   <th role="columnheader" class="" scope="col">
                     Status
@@ -403,7 +444,7 @@ Manage incoming international healthcare claims - NHSBSA
                     <span class="nhsuk-table-responsive__heading">Date of birth</span>12 Dec 1982
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Amount</span>50.78
+                    <span class="nhsuk-table-responsive__heading">Total amount</span>50.78
                   </td>
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Status </span>Contested
