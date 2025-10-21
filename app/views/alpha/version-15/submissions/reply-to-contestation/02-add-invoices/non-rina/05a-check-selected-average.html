@@ -194,8 +194,16 @@ Manage incoming international healthcare claims - NHSBSA
                                                 </legend>
                                                 <div class="nhsuk-radios">
                                                     <div class="nhsuk-radios__item">
-                                                        <input class="nhsuk-radios__input" id="sort-by-id"
+                                                        <input class="nhsuk-radios__input" id="sort-by-added"
                                                             name="sort-by" type="radio" value="id" checked="checked">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="sort-by-added">
+                                                            As added
+                                                        </label>
+                                                    </div>
+                                                    <div class="nhsuk-radios__item">
+                                                        <input class="nhsuk-radios__input" id="sort-by-id"
+                                                            name="sort-by" type="radio" value="id">
                                                         <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
                                                             Invoice ID
                                                         </label>
@@ -250,7 +258,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                 <div class="nhsuk-radios">
                                                     <div class="nhsuk-radios__item">
                                                         <input class="nhsuk-radios__input" id="order-by-asc"
-                                                            name="order-by" type="radio" value="ascending">
+                                                            name="order-by" type="radio" value="ascending" checked="checked">
                                                         <label class="nhsuk-label nhsuk-radios__label"
                                                             for="order-by-asc">
                                                             Ascending
@@ -259,7 +267,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     <div class="nhsuk-radios__item">
                                                         <input class="nhsuk-radios__input" id="order-by-desc"
                                                             name="order-by" type="radio" value="descending"
-                                                            checked="checked">
+                                                            >
                                                         <label class="nhsuk-label nhsuk-radios__label"
                                                             for="order-by-desc">
                                                             Descending
@@ -374,8 +382,7 @@ Manage incoming international healthcare claims - NHSBSA
                                         <span class="nhsuk-table-responsive__heading">Status </span>Contested
                                     </td>
                                     <td role="cell" class="nhsuk-table__cell">
-                                        <span class="nhsuk-table-responsive__heading">View </span><a
-                                            href="#">Remove
+                                        <span class="nhsuk-table-responsive__heading">View </span><a href="#">Remove
                                             invoice</a><a>
                                         </a>
                                     </td>
