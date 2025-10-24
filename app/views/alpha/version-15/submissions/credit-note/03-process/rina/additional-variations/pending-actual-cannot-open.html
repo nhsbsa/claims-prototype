@@ -10,7 +10,7 @@
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Credit note - Manage incoming international healthcare claims - NHSBSA
+Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -76,8 +76,8 @@ Credit note - Manage incoming international healthcare claims - NHSBSA
                     Submission pending
                 </span>
             </h3>
-            <p>You cannot open this submission because another submission is currently open. You'll need to close <a
-                    href="">submission ID 9431</a> before you can open this one.</p>
+            <p class="nhsuk-body">This credit note cannot be opened while another submission is active. Close <a
+                    href="">submission ID 9431</a> to continue.</p>
         </div>
     </div>
 </div>
@@ -133,7 +133,13 @@ Credit note - Manage incoming international healthcare claims - NHSBSA
                             </div>
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">Reported total amount</dt>
-                                <dd class="nhsuk-summary-list__value">250.50 (Euro)</dd>
+                                <dd class="nhsuk-summary-list__value">250.50</dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">Currency</dt>
+                                <dd class="nhsuk-summary-list__value">Euro</dd>
                                 <dd class="nhsuk-summary-list__actions">
                                 </dd>
                             </div>
@@ -156,7 +162,7 @@ Credit note - Manage incoming international healthcare claims - NHSBSA
                         </h2>
                         <ul class="nhsuk-task-list">
                             <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
-                                <div class="nhsuk-task-list__name-and-hint">Manage individual credit notes
+                                <div class="nhsuk-task-list__name-and-hint">Add individual credit notes
                                 </div>
                                 <div class="nhsuk-task-list__status nhsuk-task-list__status--completed">
                                     Completed</div>
@@ -213,50 +219,13 @@ Credit note - Manage incoming international healthcare claims - NHSBSA
                 </div>
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
-                        <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-0">
-                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-                                <div class="nhsuk-card">
-                                    <div class="nhsuk-card__content">
-                                        <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
-                                            Number of individual credit notes
-                                        </h3>
-                                        <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible"
-                                            style="margin:0px 0px 16px 0px;">
-                                        <dl class="nhsuk-summary-list">
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Total
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    3
-                                                </dd>
-                                            </div>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-                                <div class="nhsuk-card">
-                                    <div class="nhsuk-card__content">
-                                        <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
-                                            Individual credit note amount (cost)
-                                        </h3>
-                                        <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible"
-                                            style="margin:0px 0px 16px 0px;">
-                                        <dl class="nhsuk-summary-list">
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Total
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    250.50
-                                                </dd>
-                                            </div>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        <p class="nhsuk-body">3 individual credit notes have been added to this credit note.</p>
+                        <p class="nhsuk-body">The total amount of these credit notes is 250.50.</p>
+                        <p class="nhsuk-body">The system still needs to review each individual credit note against the
+                            invoice
+                            it's been matched to.</p>
+                        <p class="nhsuk-body">Once it has, a summary of the individual credit note details and the
+                            invoices they've been matched to will appear here.</p>
                     </div>
                 </div>
             </div>
@@ -309,9 +278,6 @@ Credit note - Manage incoming international healthcare claims - NHSBSA
                                                         Individual credit<br>note reference
                                                     </th>
                                                     <th role="columnheader" class="" scope="col">
-                                                        Invoice ID
-                                                    </th>
-                                                    <th role="columnheader" class="" scope="col">
                                                         Invoice reference
                                                     </th>
                                                     <th role="columnheader" class="" scope="col">
@@ -321,7 +287,7 @@ Credit note - Manage incoming international healthcare claims - NHSBSA
                                                         First name
                                                     </th>
                                                     <th role="columnheader" class="" scope="col">
-                                                        Credit amount
+                                                        Credited amount
                                                     </th>
                                                     <th role="columnheader" class="" scope="col">
                                                         Status
@@ -338,10 +304,6 @@ Credit note - Manage incoming international healthcare claims - NHSBSA
                                                             note reference </span>11661234KK0001
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Invoice ID
-                                                        </span>20001563
-                                                    </td>
-                                                    <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Invoice reference
                                                         </span>26583249
                                                     </td>
@@ -354,7 +316,8 @@ Credit note - Manage incoming international healthcare claims - NHSBSA
                                                             name</span>Rebecca
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Amount</span>90.00
+                                                        <span class="nhsuk-table-responsive__heading">Credited
+                                                            amount</span>90.00
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
@@ -372,10 +335,6 @@ Credit note - Manage incoming international healthcare claims - NHSBSA
                                                             note reference </span>11661234KK0002
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Invoice ID
-                                                        </span>20001542
-                                                    </td>
-                                                    <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Invoice reference
                                                         </span>26585591
                                                     </td>
@@ -388,8 +347,8 @@ Credit note - Manage incoming international healthcare claims - NHSBSA
                                                             name</span>Hector
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span
-                                                            class="nhsuk-table-responsive__heading">Amount</span>100.50
+                                                        <span class="nhsuk-table-responsive__heading">Credited
+                                                            amount</span>100.50
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
@@ -407,10 +366,6 @@ Credit note - Manage incoming international healthcare claims - NHSBSA
                                                             note reference </span>11661234KK0003
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Invoice ID
-                                                        </span>20001619
-                                                    </td>
-                                                    <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Invoice reference
                                                         </span>26587392
                                                     </td>
@@ -423,7 +378,8 @@ Credit note - Manage incoming international healthcare claims - NHSBSA
                                                             name</span>Spencer
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Amount</span>60.00
+                                                        <span class="nhsuk-table-responsive__heading">Credited
+                                                            amount</span>60.00
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
