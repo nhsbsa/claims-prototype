@@ -46,24 +46,18 @@ Manage incoming international healthcare claims - NHSBSA
 <!-- End of breadcrumb -->
 {% endblock %} {% block content %}
 
-<!-- Start confirmation block -->
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <div style="background: #005eb8; color: #fff;">
-            <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0 nhsuk-u-padding-left-4 nhsuk-u-padding-top-1">
-                Invoice removed
-            </h2>
-        </div>
-        <div class="nhsuk-error-summary" style="border-color:#005eb8;" aria-labelledby="error-summary-title"
-            role="alert">
-            <div class="nhsuk-error-summary__body">
-                <p class="nhsuk-u-margin-bottom-0">You've removed invoice reference 26596541 for Quentin Hodgkinson from your
-                    selected invoices.</p>
-            </div>
-        </div>
+<!-- Start notificatin banner -->
+<div class="nhsuk-notification-banner nhsuk-notification-banner--success" role="alert"
+    aria-labelledby="nhsuk-notification-banner-title" data-module="nhsuk-notification-banner">
+    <div class="nhsuk-notification-banner__header">
+        <h2 class="nhsuk-notification-banner__title" id="nhsuk-notification-banner-title">Success</h2>
+    </div>
+    <div class="nhsuk-notification-banner__content">
+        <h3 class="nhsuk-notification-banner__heading">Invoice removed</h3>
+        <p>You've removed invoice reference 26596541 for Quentin Hodgkinson from your selected invoices.</p>
     </div>
 </div>
-<!-- End confirmation block -->
+<!-- End notification banner -->
 
 <!-- Start of title block -->
 <div class="nhsuk-grid-row">
@@ -205,7 +199,8 @@ Manage incoming international healthcare claims - NHSBSA
                                                     <div class="nhsuk-radios__item">
                                                         <input class="nhsuk-radios__input" id="sort-by-entry"
                                                             name="sort-by" type="radio" value="id" checked="checked">
-                                                        <label class="nhsuk-label nhsuk-radios__label" for="sort-by-entry">
+                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                            for="sort-by-entry">
                                                             Entry order
                                                         </label>
                                                     </div>
@@ -266,7 +261,8 @@ Manage incoming international healthcare claims - NHSBSA
                                                 <div class="nhsuk-radios">
                                                     <div class="nhsuk-radios__item">
                                                         <input class="nhsuk-radios__input" id="order-by-asc"
-                                                            name="order-by" type="radio" value="ascending" checked="checked">
+                                                            name="order-by" type="radio" value="ascending"
+                                                            checked="checked">
                                                         <label class="nhsuk-label nhsuk-radios__label"
                                                             for="order-by-asc">
                                                             Ascending
@@ -274,8 +270,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </div>
                                                     <div class="nhsuk-radios__item">
                                                         <input class="nhsuk-radios__input" id="order-by-desc"
-                                                            name="order-by" type="radio" value="descending"
-                                                            >
+                                                            name="order-by" type="radio" value="descending">
                                                         <label class="nhsuk-label nhsuk-radios__label"
                                                             for="order-by-desc">
                                                             Descending
@@ -338,7 +333,7 @@ Manage incoming international healthcare claims - NHSBSA
                                 </tr>
                             </thead>
                             <tbody class="nhsuk-table__body">
-                                                                <tr role="row" class="nhsuk-table__row">
+                                <tr role="row" class="nhsuk-table__row">
                                     <td role="cell" class="nhsuk-table__cell">
                                         <span class="nhsuk-table-responsive__heading">Invoice ID </span>20001570
                                     </td>

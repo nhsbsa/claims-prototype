@@ -46,24 +46,18 @@ Manage incoming international healthcare claims - NHSBSA
 <!-- End of breadcrumb -->
 {% endblock %} {% block content %}
 
-<!-- Start confirmation block -->
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <div style="background: #005eb8; color: #fff;">
-            <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0 nhsuk-u-padding-left-4 nhsuk-u-padding-top-1">
-                Invoice selected
-            </h2>
-        </div>
-        <div class="nhsuk-error-summary" style="border-color:#005eb8;" aria-labelledby="error-summary-title"
-            role="alert">
-            <div class="nhsuk-error-summary__body">
-                <p class="nhsuk-u-margin-bottom-0">You've added invoice reference 26585618 for Phoebe Haynes to your
-                    selected invoices.</p>
-            </div>
-        </div>
+<!-- Start notification banner -->
+<div class="nhsuk-notification-banner nhsuk-notification-banner--success" role="alert"
+    aria-labelledby="nhsuk-notification-banner-title" data-module="nhsuk-notification-banner">
+    <div class="nhsuk-notification-banner__header">
+        <h2 class="nhsuk-notification-banner__title" id="nhsuk-notification-banner-title">Success</h2>
+    </div>
+    <div class="nhsuk-notification-banner__content">
+        <h3 class="nhsuk-notification-banner__heading">Invoice selected</h3>
+        <p>You've added invoice reference 26585618 for Phoebe Haynes to your selected invoices.</p>
     </div>
 </div>
-<!-- End confirmation block -->
+<!-- End notification banner -->
 
 <!-- Start back link -->
 <div class="nhsuk-grid-row">
