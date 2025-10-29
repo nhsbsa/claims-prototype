@@ -1,0 +1,83 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+      In /views/layout.html you can:
+        - change the header and footer 
+        - add custom CSS and JavaScript
+    -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6789</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9441</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">
+            Checking invoice
+        </h1>
+    </div>
+</div>
+
+<!-- Start spinning wheel-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div id="upload-progress" class="nhsuk-grid-column-full" aria-hidden="true" tabindex="-1">
+            <div class="nhsuk-loader">
+                <p>Automated validation in progress.<br />
+                    Do not leave this page or close your browser.</p>
+                <span class="nhsuk-loader__spinner nhsuk-u-margin-bottom-3"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of spinning wheel -->
+
+
+
+<script>
+    setTimeout(function () {
+        window.location.href = "./07-invoice-details-updated";
+    }, 5000);
+</script>
+
+{% endblock %}
+<!-- End of central content -->
