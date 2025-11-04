@@ -84,7 +84,7 @@ Manage incoming international healthcare claims - NHSBSA
                             class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible nhsuk-u-margin-bottom-3">
                         <dl class="nhsuk-summary-list">
                             <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key" style="width: 55%">Credit note reference</dt>
+                                <dt class="nhsuk-summary-list__key" style="width:55%">Credit note reference</dt>
                                 <dd class="nhsuk-summary-list__value">No data</dd>
                                 <dd class="nhsuk-summary-list__actions">
                                 </dd>
@@ -123,7 +123,7 @@ Manage incoming international healthcare claims - NHSBSA
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">Current status</dt>
                                 <dd class="nhsuk-summary-list__value"><strong
-                                        class="nhsuk-tag nhsuk-tag--aqua-green">Active</strong></dd>
+                                        class="nhsuk-tag nhsuk-tag--orange">Pending</strong></dd>
                                 <dd class="nhsuk-summary-list__actions">
                                 </dd>
                             </div>
@@ -138,17 +138,23 @@ Manage incoming international healthcare claims - NHSBSA
                             Task list
                         </h2>
                         <ul class="nhsuk-task-list">
-                            <li class="nhsuk-task-list__item">
-                                <div class="nhsuk-task-list__name-and-hint">Check individual credit notes
+                            <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+                                <div class="nhsuk-task-list__name-and-hint">Add individual credit notes
+                                </div>
+                                <div class="nhsuk-task-list__status nhsuk-task-list__status--completed">
+                                    Completed</div>
+                            </li>
+                            <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+                                <div class="nhsuk-task-list__name-and-hint">Confirm adding complete
                                 </div>
                                 <div class="nhsuk-task-list__status nhsuk-task-list__status--completed">
                                     Completed</div>
                             </li>
                             <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
                                 <div class="nhsuk-task-list__name-and-hint"><a class="nhsuk-link nhsuk-task-list__link"
-                                        href="14-checks-complete-confirmation">Confirm checks complete</a>
+                                        href="02-open-confirmation">Open credit note</a>
                                 </div>
-                                <div class="nhsuk-task-list__status"><strong class="nhsuk-tag nhsuk-tag--blue">
+                                <div class="nhsuk-task-list__status" id=""><strong class="nhsuk-tag nhsuk-tag--blue">
                                         Not yet started
                                     </strong></div>
                             </li>
@@ -197,115 +203,14 @@ Manage incoming international healthcare claims - NHSBSA
                 </div>
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
-                        <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-0">
-                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-                                <div class="nhsuk-card nhsuk-u-margin-bottom-0">
-                                    <div class="nhsuk-card__content">
-                                        <table class="nhsuk-table">
-                                            <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-3"
-                                                style="border-bottom: 1px solid #d8dde0">Individual credit notes
-                                            </caption>
-                                            <thead class="nhsuk-table__head">
-                                                <tr>
-                                                    <th scope="col" class="nhsuk-table__header">Status</th>
-                                                    <th scope="col"
-                                                        class="nhsuk-table__header nhsuk-table__header--numeric">
-                                                        Number
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="nhsuk-table__header nhsuk-table__header--numeric">
-                                                        Amount (months)
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="nhsuk-table__body">
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">To check</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                                                </tr>
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">Accepted</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">4</td>
-                                                </tr>
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">Contested</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                                                </tr>
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">Partial</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>
-                                                </tr>
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">Total</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">2</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">7</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-                                <div class="nhsuk-card nhsuk-u-margin-bottom-0">
-                                    <div class="nhsuk-card__content">
-                                        <table class="nhsuk-table">
-                                            <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-3"
-                                                style="border-bottom: 1px solid #d8dde0">Invoices
-                                            </caption>
-                                            <thead class="nhsuk-table__head">
-                                                <tr>
-                                                    <th scope="col" class="nhsuk-table__header">Status</th>
-                                                    <th scope="col"
-                                                        class="nhsuk-table__header nhsuk-table__header--numeric">
-                                                        Number
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="nhsuk-table__header nhsuk-table__header--numeric">
-                                                        Amount (months)
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="nhsuk-table__body">
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">To check</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                                                </tr>
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">Accepted</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">7</td>
-                                                </tr>
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">Contested</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                                                </tr>
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">Partial</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric"></td>
-                                                </tr>
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">Withdrawn</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">2</td>
-                                                </tr>
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">Total</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">2</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">9</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        <p class="nhsuk-body">2 individual credit notes have been added to this credit note.</p>
+                        <p class="nhsuk-body">The total credited months of these credit notes is 7.</p>
+                        <p class="nhsuk-body">The system still needs to review each individual credit note against the
+                            invoice
+                            it's been matched to.</p>
+                        <p class="nhsuk-body nhsuk-u-margin-bottom-0">Once it has, a summary of the individual credit
+                            note details and the
+                            invoices they've been matched to will appear here.</p>
                     </div>
                 </div>
             </div>
@@ -396,15 +301,17 @@ Manage incoming international healthcare claims - NHSBSA
                                                             name</span>Thomas
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Credit months</span>4
+                                                        <span class="nhsuk-table-responsive__heading">Credit
+                                                            months</span>4
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
-                                                            class="nhsuk-table-responsive__heading">Status</span>Accepted
+                                                            class="nhsuk-table-responsive__heading">Status</span>Pending
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">View </span><a
-                                                            href="individual-credit-notes/26584633-accepted">View individual credit
+                                                            href="individual-credit-notes/26584633-pending-locked">View
+                                                            individual credit
                                                             note</a>
                                                     </td>
                                                 </tr>
@@ -426,15 +333,17 @@ Manage incoming international healthcare claims - NHSBSA
                                                             name</span>Sophia
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Credit months</span>3
+                                                        <span class="nhsuk-table-responsive__heading">Credit
+                                                            months</span>3
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
-                                                            class="nhsuk-table-responsive__heading">Status</span>Partial
+                                                            class="nhsuk-table-responsive__heading">Status</span>Pending
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">View </span><a
-                                                            href="individual-credit-notes/26585127-partial">View individual credit
+                                                            href="individual-credit-notes/26585127-pending-locked">View
+                                                            individual credit
                                                             note</a>
                                                     </td>
                                                 </tr>
