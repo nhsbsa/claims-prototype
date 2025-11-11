@@ -67,8 +67,8 @@ Manage incoming international healthcare claims - NHSBSA
     </div>
     <div class="nhsuk-grid-column-one-half" style="text-align:right;">
         <a href="#" class="nhsuk-button" role="button" data-module="nhsuk-button">Edit individual credit note</a>
-        <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button"
-            data-module="nhsuk-button">Exit individual
+        <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
+            individual
             credit note</a>
     </div>
 </div>
@@ -90,7 +90,7 @@ Manage incoming international healthcare claims - NHSBSA
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Individual credit note status
+                            Current status
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             <strong class="nhsuk-tag nhsuk-tag--red">
@@ -121,6 +121,11 @@ Manage incoming international healthcare claims - NHSBSA
                     </a>
                 </li>
                 <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#import">
+                        Imported individual credit note
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
                     <a class="nhsuk-tabs__tab" href="#notes">
                         Notes
                     </a>
@@ -128,11 +133,6 @@ Manage incoming international healthcare claims - NHSBSA
                 <li class="nhsuk-tabs__list-item">
                     <a class="nhsuk-tabs__tab" href="#history">
                         History
-                    </a>
-                </li>
-                <li class="nhsuk-tabs__list-item">
-                    <a class="nhsuk-tabs__tab" href="#import">
-                        Imported individual credit note
                     </a>
                 </li>
             </ul>
@@ -164,8 +164,8 @@ Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-card nhsuk-u-margin-bottom-0">
                                     <div class="nhsuk-card__content nhsuk-u-margin-bottom-0">
                                         <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">0 <span
-                                                class="nhsuk-u-visually-hidden">credit withdrawn from accepted</span>
-                                        </p>Credit withdrawn from accepted
+                                                class="nhsuk-u-visually-hidden">credit withdrawn from accepted amount</span>
+                                        </p>Credit withdrawn from accepted amount
                                     </div>
                                 </div>
                             </li>
@@ -173,8 +173,8 @@ Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-card nhsuk-u-margin-bottom-0">
                                     <div class="nhsuk-card__content">
                                         <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">0 <span
-                                                class="nhsuk-u-visually-hidden">credit withdrawn from contested</span>
-                                        </p>Credit withdrawn from contested
+                                                class="nhsuk-u-visually-hidden">credit withdrawn from contested amount</span>
+                                        </p>Credit withdrawn from contested amount
                                     </div>
                                 </div>
                             </li>
@@ -306,6 +306,12 @@ Manage incoming international healthcare claims - NHSBSA
             </div>
             <!-- *** End of summary tab *** -->
 
+            <!-- *** Start of imported individual credit note tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="import">
+                <h2 class="nhsuk-heading-l">Imported individual credit note</h2>
+            </div>
+            <!-- *** End of imported individual credit note tab *** -->
+
             <!-- *** Start of notes tab *** -->
             <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
                 <div class="nhsuk-grid-row">
@@ -332,13 +338,6 @@ Manage incoming international healthcare claims - NHSBSA
             </div>
             <!-- *** End of history tab *** -->
 
-            <!-- *** Start of history tab *** -->
-            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="import">
-                <h2 class="nhsuk-heading-l">Imported individual credit note</h2>
-
-            </div>
-            <!-- *** End of history tab *** -->
-
         </div>
     </div>
 </div>
@@ -346,22 +345,6 @@ Manage incoming international healthcare claims - NHSBSA
 
 </div>
 </div>
-
-<script>
-    document
-        .getElementById('contestation-reason')
-        .addEventListener('change', function () {
-            'use strict';
-            var vis = document.querySelector('.vis'),
-                target = document.getElementById(this.value);
-            if (vis !== null) {
-                vis.className = 'inv';
-            }
-            if (target !== null) {
-                target.className = 'vis';
-            }
-        });
-</script>
 
 {% endblock %}
 <!-- End of central content -->

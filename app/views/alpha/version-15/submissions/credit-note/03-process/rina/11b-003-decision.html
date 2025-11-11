@@ -60,13 +60,29 @@ Manage incoming international healthcare claims - NHSBSA
 <!-- Start of header block -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">
-            <span class="nhsuk-caption-l">Process individual credit note ID 10003844</span>
-            Decision
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2">
+            <span class="nhsuk-caption-l">Process individual credit note</span>
+            Individual credit note decision
         </h1>
     </div>
 </div>
 <!-- End of header block -->
+
+<!-- Start warning callout -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label"> <span role="text">
+                    <span class="nhsuk-u-visually-hidden">Important: </span>
+                    Information does not match
+                </span> </h3>
+            <p class="nhsuk-body">The individual credit note and invoice end dates do not match.</p>
+            <p class="nhsuk-body">If you decide to match this individual credit note to the invoice, the invoice will be
+                updated with the new details.</p>
+        </div>
+    </div>
+</div>
+<!-- End warning callout -->
 
 <div class="nhsuk-grid-row">
 
@@ -77,7 +93,7 @@ Manage incoming international healthcare claims - NHSBSA
                 <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-5">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-3">
                         <h2 class="nhsuk-fieldset__heading">
-                            What is your decision?
+                            What do you want to do?
                         </h2>
                     </legend>
                     <div class="nhsuk-radios" data-module="nhsuk-radios">
@@ -95,7 +111,6 @@ Manage incoming international healthcare claims - NHSBSA
                                 Partially accept
                             </label>
                         </div>
-                        <div class="nhsuk-radios__divider">or</div>
                         <div class="nhsuk-radios__item">
                             <input class="nhsuk-radios__input" id="decision-no" name="decision" type="radio" value="no">
                             <label class="nhsuk-label nhsuk-radios__label" for="decision-no">

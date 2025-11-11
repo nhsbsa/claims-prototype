@@ -125,16 +125,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Summary
                         </a>
                     </li>
-                    <li class="nhsuk-tabs__list-item">
-                        <a class="nhsuk-tabs__tab" href="#notes">
-                            Notes
-                        </a>
-                    </li>
-                    <li class="nhsuk-tabs__list-item">
-                        <a class="nhsuk-tabs__tab" href="#history">
-                            History
-                        </a>
-                    </li>
                     <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
                         <a class="nhsuk-tabs__tab" href="#import">
                             Imported invoice
@@ -143,6 +133,16 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
                         <a class="nhsuk-tabs__tab" href="#credit">
                             Individual credit notes
+                        </a>
+                    </li>
+                    <li class="nhsuk-tabs__list-item">
+                        <a class="nhsuk-tabs__tab" href="#notes">
+                            Notes
+                        </a>
+                    </li>
+                    <li class="nhsuk-tabs__list-item">
+                        <a class="nhsuk-tabs__tab" href="#history">
+                            History
                         </a>
                     </li>
                 </ul>
@@ -434,6 +434,72 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </div>
                 <!-- *** End of summary tab *** -->
 
+                <!-- *** Start of imported invoice tab *** -->
+                <div class="nhsuk-tabs__panel" id="import" role="tabpanel" aria-labelledby="tab_import">
+                    <h2 class="nhsuk-heading-l">Imported invoice</h2>
+                </div>
+                <!-- *** End of imported invoice tab *** -->
+
+                <!-- *** Start of credit notes tab *** -->
+                <div class="nhsuk-tabs__panel" id="credit" role="tabpanel" aria-labelledby="tab_credit">
+                    <h2 class="nhsuk-heading-l">Individual credit notes</h2>
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            <details class="nhsuk-details nhsuk-expander" open="">
+                                <summary class="nhsuk-details__summary">
+                                    <span class="nhsuk-details__summary-text">
+                                        Individual credit note ID &ndash; 10003842
+                                    </span>
+                                </summary>
+                                <div class="nhsuk-details__text">
+                                    <dl class="nhsuk-summary-list">
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Individual credit note reference
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                11661234KK001
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Individual credit note status
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                <strong class="nhsuk-tag nhsuk-tag--blue">
+                                                    To check
+                                                </strong>
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Credit amount
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                90.00
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Credit note ID
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                9435
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                    <a href="../04-001-to-check">
+                                        <button class="nhsuk-button" data-module="nhsuk-button" type="button">
+                                            View individual credit note
+                                        </button>
+                                    </a>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+                <!-- *** End of credit notes tab *** -->
+
                 <!-- *** Start of notes tab *** -->
                 <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
                     <div class="nhsuk-grid-row">
@@ -460,64 +526,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </div>
                 <!-- *** End of history tab *** -->
 
-                <!-- *** Start of imported invoice tab *** -->
-                <div class="nhsuk-tabs__panel" id="import" role="tabpanel" aria-labelledby="tab_import">
-                    <h2 class="nhsuk-heading-l">Imported invoice</h2>
-                </div>
-                <!-- *** End of imported invoice tab *** -->
 
-                <!-- *** Start of credit notes tab *** -->
-                <div class="nhsuk-tabs__panel" id="credit" role="tabpanel" aria-labelledby="tab_credit">
-                    <h2 class="nhsuk-heading-l">Individual credit notes</h2>
-                    <div class="nhsuk-grid-row">
-                        <div class="nhsuk-grid-column-full">
-                            <details class="nhsuk-details nhsuk-expander" open="">
-                                <summary class="nhsuk-details__summary">
-                                    <span class="nhsuk-details__summary-text">
-                                        Individual credit note reference &ndash; 11661234KK001
-                                    </span>
-                                </summary>
-                                <div class="nhsuk-details__text">
-                                    <dl class="nhsuk-summary-list">
-                                        <div class="nhsuk-summary-list__row">
-                                            <dt class="nhsuk-summary-list__key">
-                                                Credit note ID
-                                            </dt>
-                                            <dd class="nhsuk-summary-list__value">
-                                                9435
-                                            </dd>
-                                        </div>
-                                        <div class="nhsuk-summary-list__row">
-                                            <dt class="nhsuk-summary-list__key">
-                                                Credited amount
-                                            </dt>
-                                            <dd class="nhsuk-summary-list__value">
-                                                90.00
-                                            </dd>
-                                        </div>
-                                        <div class="nhsuk-summary-list__row">
-                                            <dt class="nhsuk-summary-list__key">
-                                                Individual credit note status
-                                            </dt>
-                                            <dd class="nhsuk-summary-list__value">
-                                                <strong class="nhsuk-tag nhsuk-tag--blue">
-                                                    To check
-                                                </strong>
-                                            </dd>
-                                        </div>
-
-                                    </dl>
-                                    <a href="../04-001-to-check">
-                                        <button class="nhsuk-button" data-module="nhsuk-button" type="button">
-                                            View individual credit note
-                                        </button>
-                                    </a>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-                <!-- *** End of credit notes tab *** -->
 
             </div>
         </div>
