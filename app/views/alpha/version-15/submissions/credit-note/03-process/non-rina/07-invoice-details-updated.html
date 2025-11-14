@@ -10,7 +10,7 @@
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Invoice details - Manage incoming international healthcare claims - NHSBSA
+Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -34,6 +34,9 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
             <li class="nhsuk-breadcrumb__item">
                 <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9441</a>
             </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Individual credit note ID 10003911</a>
+            </li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
             <a class="nhsuk-breadcrumb__backlink" href="">
@@ -56,9 +59,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
     </div>
 </div>
 <!-- End back link -->
-
-
-
 
 <!-- Start of header block -->
 <div class="nhsuk-grid-row">
@@ -125,6 +125,11 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         Summary
                     </a>
                 </li>
+                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                    <a class="nhsuk-tabs__tab" href="#credit">
+                        Individual credit notes
+                    </a>
+                </li>
                 <li class="nhsuk-tabs__list-item">
                     <a class="nhsuk-tabs__tab" href="#notes">
                         Notes
@@ -133,16 +138,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 <li class="nhsuk-tabs__list-item">
                     <a class="nhsuk-tabs__tab" href="#history">
                         History
-                    </a>
-                </li>
-                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
-                    <a class="nhsuk-tabs__tab" href="#import">
-                        Imported invoice
-                    </a>
-                </li>
-                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
-                    <a class="nhsuk-tabs__tab" href="#credit">
-                        Credit notes
                     </a>
                 </li>
             </ul>
@@ -976,6 +971,9 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                                 <br />
 
+                                <a href="#" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4"
+                                    role="button" data-module="nhsuk-button">Re-validate decision</a>
+
                             </div>
                         </div>
                     </div>
@@ -1227,41 +1225,9 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
             </div>
             <!-- *** End of summary tab *** -->
 
-            <!-- *** Start of notes tab *** -->
-            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-two-thirds">
-                        <h2 class="nhsuk-heading-l">Notes</h2>
-                    </div>
-
-                    <div class="nhsuk-grid-column-one-third">
-                        <button style="float:right;" class="nhsuk-button nhsuk-button--secondary"
-                            data-module="nhsuk-button" type="submit">
-                            Add a new note
-                        </button>
-                    </div>
-                </div>
-
-                <p class="nhsuk-body">There are currently no notes.</p>
-            </div>
-            <!-- *** End of notes tab *** -->
-
-            <!-- *** Start of history tab *** -->
-            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="history">
-                <h2 class="nhsuk-heading-l">History</h2>
-
-            </div>
-            <!-- *** End of history tab *** -->
-
-            <!-- *** Start of imported invoice tab *** -->
-            <div class="nhsuk-tabs__panel" id="import" role="tabpanel" aria-labelledby="tab_import">
-                <h2 class="nhsuk-heading-l">Imported invoice</h2>
-            </div>
-            <!-- *** End of imported invoice tab *** -->
-
             <!-- *** Start of credit notes tab *** -->
             <div class="nhsuk-tabs__panel" id="credit" role="tabpanel" aria-labelledby="tab_credit">
-                <h2 class="nhsuk-heading-l">Credit notes</h2>
+                <h2 class="nhsuk-heading-l">Individual credit notes</h2>
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <details class="nhsuk-details nhsuk-expander" open="">
@@ -1311,6 +1277,32 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 </div>
             </div>
             <!-- *** End of credit notes tab *** -->
+
+            <!-- *** Start of notes tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <h2 class="nhsuk-heading-l">Notes</h2>
+                    </div>
+
+                    <div class="nhsuk-grid-column-one-third">
+                        <button style="float:right;" class="nhsuk-button nhsuk-button--secondary"
+                            data-module="nhsuk-button" type="submit">
+                            Add a new note
+                        </button>
+                    </div>
+                </div>
+
+                <p class="nhsuk-body">There are currently no notes.</p>
+            </div>
+            <!-- *** End of notes tab *** -->
+
+            <!-- *** Start of history tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="history">
+                <h2 class="nhsuk-heading-l">History</h2>
+
+            </div>
+            <!-- *** End of history tab *** -->
 
         </div>
     </div>
