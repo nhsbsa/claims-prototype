@@ -67,7 +67,7 @@ Manage incoming international healthcare claims - NHSBSA
     </div>
     <div class="nhsuk-grid-column-one-half" style="text-align:right;">
         <a href="#" class="nhsuk-button" role="button" data-module="nhsuk-button">Edit individual credit note</a>
-        <a href="../01-pending-average" class="nhsuk-button nhsuk-button--secondary" role="button"
+        <a href="../13-active-average" class="nhsuk-button nhsuk-button--secondary" role="button"
             data-module="nhsuk-button">Exit individual
             credit note</a>
     </div>
@@ -90,7 +90,7 @@ Manage incoming international healthcare claims - NHSBSA
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Individual credit note status
+                            Current status
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             <strong class="nhsuk-tag nhsuk-tag--pink">
@@ -130,11 +130,6 @@ Manage incoming international healthcare claims - NHSBSA
                         History
                     </a>
                 </li>
-                <li class="nhsuk-tabs__list-item">
-                    <a class="nhsuk-tabs__tab" href="#import">
-                        Imported individual credit note
-                    </a>
-                </li>
             </ul>
             <!-- End of tab titles -->
 
@@ -164,8 +159,8 @@ Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-card nhsuk-u-margin-bottom-0">
                                     <div class="nhsuk-card__content nhsuk-u-margin-bottom-0">
                                         <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">2 <span
-                                                class="nhsuk-u-visually-hidden">months withdrawn from accepted</span>
-                                        </p>Months withdrawn from accepted
+                                                class="nhsuk-u-visually-hidden">months withdrawn from accepted months</span>
+                                        </p>Months withdrawn from accepted months
                                     </div>
                                 </div>
                             </li>
@@ -411,12 +406,6 @@ Manage incoming international healthcare claims - NHSBSA
             </div>
             <!-- *** End of history tab *** -->
 
-            <!-- *** Start of history tab *** -->
-            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="import">
-                <h2 class="nhsuk-heading-l">Imported individual credit note</h2>
-            </div>
-            <!-- *** End of history tab *** -->
-
         </div>
     </div>
 </div>
@@ -424,22 +413,6 @@ Manage incoming international healthcare claims - NHSBSA
 
 </div>
 </div>
-
-<script>
-    document
-        .getElementById('contestation-reason')
-        .addEventListener('change', function () {
-            'use strict';
-            var vis = document.querySelector('.vis'),
-                target = document.getElementById(this.value);
-            if (vis !== null) {
-                vis.className = 'inv';
-            }
-            if (target !== null) {
-                target.className = 'vis';
-            }
-        });
-</script>
 
 {% endblock %}
 <!-- End of central content -->

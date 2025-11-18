@@ -88,7 +88,7 @@ Manage incoming international healthcare claims - NHSBSA
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Individual credit note status
+                            Current status
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             <strong class="nhsuk-tag nhsuk-tag--orange">
@@ -126,11 +126,6 @@ Manage incoming international healthcare claims - NHSBSA
                 <li class="nhsuk-tabs__list-item">
                     <a class="nhsuk-tabs__tab" href="#history">
                         History
-                    </a>
-                </li>
-                <li class="nhsuk-tabs__list-item">
-                    <a class="nhsuk-tabs__tab" href="#import">
-                        Imported individual credit note
                     </a>
                 </li>
             </ul>
@@ -357,12 +352,6 @@ Manage incoming international healthcare claims - NHSBSA
             </div>
             <!-- *** End of history tab *** -->
 
-            <!-- *** Start of history tab *** -->
-            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="import">
-                <h2 class="nhsuk-heading-l">Imported individual credit note</h2>
-            </div>
-            <!-- *** End of history tab *** -->
-
         </div>
     </div>
 </div>
@@ -370,22 +359,6 @@ Manage incoming international healthcare claims - NHSBSA
 
 </div>
 </div>
-
-<script>
-    document
-        .getElementById('contestation-reason')
-        .addEventListener('change', function () {
-            'use strict';
-            var vis = document.querySelector('.vis'),
-                target = document.getElementById(this.value);
-            if (vis !== null) {
-                vis.className = 'inv';
-            }
-            if (target !== null) {
-                target.className = 'vis';
-            }
-        });
-</script>
 
 {% endblock %}
 <!-- End of central content -->
