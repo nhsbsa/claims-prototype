@@ -379,7 +379,7 @@ Manage incoming international healthcare claims - NHSBSA
                                 <dl class="nhsuk-summary-list">
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Accepted
+                                            Accepted amount
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             0
@@ -387,7 +387,7 @@ Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Contested
+                                            Contested amount
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             640.30
@@ -395,7 +395,7 @@ Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Withdrawn
+                                            Withdrawn amount
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             0
@@ -457,23 +457,6 @@ Manage incoming international healthcare claims - NHSBSA
     </div>
 </div>
 <!-- End of tabs-->
-
-
-<script>
-    document
-        .getElementById('contestation-reason')
-        .addEventListener('change', function () {
-            'use strict';
-            var vis = document.querySelector('.vis'),
-                target = document.getElementById(this.value);
-            if (vis !== null) {
-                vis.className = 'inv';
-            }
-            if (target !== null) {
-                target.className = 'vis';
-            }
-        });
-</script>
 
 {% endblock %}
 <!-- End of central content -->
