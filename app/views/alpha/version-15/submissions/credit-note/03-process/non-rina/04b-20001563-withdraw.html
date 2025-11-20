@@ -86,33 +86,38 @@ Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-card">
             <div class="nhsuk-card__content">
-
-                <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-5">
-                    <div class="nhsuk-radios" data-module="nhsuk-radios">
-                        <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="withdraw-accepted" name="withdraw" type="radio"
-                                value="Accepted months">
-                            <label class="nhsuk-label nhsuk-radios__label" for="withdraw-accepted">
-                                Accepted months
-                            </label>
-                        </div>
-                        <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="withdraw-contested" name="withdraw" type="radio"
-                                value="Contested months">
-                            <label class="nhsuk-label nhsuk-radios__label" for="withdraw-contested">
-                                Contested months
-                            </label>
-                        </div>
-                        <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="withdraw-both" name="withdraw" type="radio"
-                                value="Both">
-                            <label class="nhsuk-label nhsuk-radios__label" for="withdraw-both">
-                                Both
-                            </label>
-                        </div>
+                <form action="../../../../route_credit_amount_1003911" method="post">
+                    <div class="nhsuk-form-group">
+                        <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-5">
+                            <div class="nhsuk-radios" data-module="nhsuk-radios">
+                                <div class="nhsuk-radios__item">
+                                    <input class="nhsuk-radios__input" id="withdraw-accepted" name="withdraw"
+                                        type="radio" value="accepted">
+                                    <label class="nhsuk-label nhsuk-radios__label" for="withdraw-accepted">
+                                        Accepted months
+                                    </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                    <input class="nhsuk-radios__input" id="withdraw-contested" name="withdraw"
+                                        type="radio" value="contested">
+                                    <label class="nhsuk-label nhsuk-radios__label" for="withdraw-contested">
+                                        Contested months
+                                    </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                    <input class="nhsuk-radios__input" id="withdraw-both" name="withdraw" type="radio"
+                                        value="both">
+                                    <label class="nhsuk-label nhsuk-radios__label" for="withdraw-both">
+                                        Both
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
                     </div>
-                </fieldset>
-                <a href="04c-20001563-months" class="nhsuk-button" role="button" data-module="nhsuk-button">Continue</a>
+                    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                        Continue
+                    </button>
+                </form>
             </div>
         </div>
     </div>

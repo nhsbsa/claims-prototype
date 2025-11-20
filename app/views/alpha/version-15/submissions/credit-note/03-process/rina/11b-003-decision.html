@@ -92,31 +92,38 @@ Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-card">
             <div class="nhsuk-card__content">
-                <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-5">
-                    <div class="nhsuk-radios" data-module="nhsuk-radios">
-                        <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="decision-yes" name="decision" type="radio"
-                                value="yes">
-                            <label class="nhsuk-label nhsuk-radios__label" for="decision-yes">
-                                Fully accept
-                            </label>
-                        </div>
-                        <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="decision-partial" name="decision" type="radio"
-                                value="yes">
-                            <label class="nhsuk-label nhsuk-radios__label" for="decision-partial">
-                                Partially accept
-                            </label>
-                        </div>
-                        <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="decision-no" name="decision" type="radio" value="no">
-                            <label class="nhsuk-label nhsuk-radios__label" for="decision-no">
-                                Contest
-                            </label>
-                        </div>
+                <form action="../../../../route_decision_1003844" method="post">
+                    <div class="nhsuk-form-group">
+                        <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-5">
+                            <div class="nhsuk-radios" data-module="nhsuk-radios">
+                                <div class="nhsuk-radios__item">
+                                    <input class="nhsuk-radios__input" id="decision-accept" name="decision" type="radio"
+                                        value="accept">
+                                    <label class="nhsuk-label nhsuk-radios__label" for="decision-accept">
+                                        Fully accept
+                                    </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                    <input class="nhsuk-radios__input" id="decision-partial" name="decision"
+                                        type="radio" value="partial">
+                                    <label class="nhsuk-label nhsuk-radios__label" for="decision-partial">
+                                        Partially accept
+                                    </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                    <input class="nhsuk-radios__input" id="decision-contest" name="decision" type="radio"
+                                        value="contest">
+                                    <label class="nhsuk-label nhsuk-radios__label" for="decision-contest">
+                                        Contest
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
                     </div>
-                </fieldset>
-                <a href="11c-003-cya" class="nhsuk-button" role="button" data-module="nhsuk-button">Continue</a>
+                    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                        Continue
+                    </button>
+                </form>
             </div>
         </div>
     </div>

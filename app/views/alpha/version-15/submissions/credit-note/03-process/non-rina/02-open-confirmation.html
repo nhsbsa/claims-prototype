@@ -47,9 +47,8 @@ Manage incoming international healthcare claims - NHSBSA
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <form action="03-active-average" method="post">
+        <form action="../../../../route_non_rina_open" method="post">
             <div class="nhsuk-form-group">
-
                 <fieldset class="nhsuk-fieldset">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                         <h1 class="nhsuk-fieldset__heading">
@@ -57,26 +56,25 @@ Manage incoming international healthcare claims - NHSBSA
                             Are you sure you want to open credit note ID 9441?
                         </h1>
                     </legend>
-                    <div class="nhsuk-hint" id="contact-hint">
+                    <div class="nhsuk-hint" id="hint">
                         If you select yes, you cannot work on any other submissions until this one is closed.
                     </div>
                     <div class="nhsuk-radios">
                         <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-                            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                            <input class="nhsuk-radios__input" id="open-yes" name="open" type="radio" value="yes">
+                            <label class="nhsuk-label nhsuk-radios__label" for="open-yes">
                                 Yes
                             </label>
                         </div>
                         <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-                            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                            <input class="nhsuk-radios__input" id="open-no" name="open" type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="open-no">
                                 No
                             </label>
                         </div>
                     </div>
                 </fieldset>
             </div>
-
             <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                 Submit
             </button>

@@ -6,6 +6,107 @@ const path = require('path');
 
 const axios = require('axios');
 
+//////CREDIT NOTE PROCESSING//////
+
+//// Decision - 1003912 - Non-RINA  ////
+router.post('/route_decision_1003912', function(req,res){
+    var decision1003912 = req.session.data['decision']
+    if (decision1003912 == "partial") {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/non-rina/10c-20001542-months')
+        }
+    else {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/non-rina/10b-20001542-decision')
+    }
+})
+
+
+//// Where do you want to withdrawn the credit amount from - 1003911 - Non-RINA  ////
+router.post('/route_credit_amount_1003911', function(req,res){
+    var withdraw1003911 = req.session.data['withdraw']
+    if (withdraw1003911 == "both") {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/non-rina/04c-20001563-months')
+        }
+    else {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/non-rina/04b-20001563-withdraw')
+    }
+})
+
+//// Decision - 1003911 - Non-RINA  ////
+router.post('/route_decision_1003911', function(req,res){
+    var decision1003911 = req.session.data['decision']
+    if (decision1003911 == "accept") {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/non-rina/04b-20001563-withdraw')
+        }
+    else {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/non-rina/04b-20001563-decision')
+    }
+})
+
+//// Are you sure you want to open the credit note - Non-RINA  ////
+router.post('/route_non_rina_open', function(req,res){
+    var open = req.session.data['open']
+    if (open == "yes") {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/non-rina/03-active-average')
+        }
+    else if (open == "no") {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/non-rina/01c-pending-average')
+        }
+    else {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/non-rina/02-open-confirmation')
+    }
+})
+
+//// Are you sure you have finished adding individual credit notes - Non-RINA  ////
+router.post('/route_adding_complete', function(req,res){
+    var complete = req.session.data['adding']
+    if (complete == "yes") {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/non-rina/01c-pending-average')
+        }
+    else if (complete == "no") {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/non-rina/01-pending-average')
+        }
+    else {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/non-rina/01b-adding-confirmation')
+    }
+})
+
+//// Decision - 1003844 - RINA  ////
+router.post('/route_decision_1003844', function(req,res){
+    var decision1003842 = req.session.data['decision']
+    if (decision1003842 == "accept") {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/rina/11c-003-cya')
+        }
+    else {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/rina/11b-003-decision')
+    }
+})
+
+//// Decision - 1003842 - RINA  ////
+router.post('/route_decision_1003842', function(req,res){
+    var decision1003842 = req.session.data['decision']
+    if (decision1003842 == "accept") {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/rina/04c-001-cya')
+        }
+    else {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/rina/04b-001-decision')
+    }
+})
+
+//// Are you sure you want to open the credit note - RINA  ////
+router.post('/route_rina_open', function(req,res){
+    var open = req.session.data['open']
+    if (open == "yes") {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/rina/03a-active-actual-processing')
+        }
+    else if (open == "no") {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/rina/01b-pending-actual')
+        }
+    else {
+        res.redirect('/alpha/version-15/submissions/credit-note/03-process/rina/02-open-confirmation')
+    }
+})
+
+
 //////CREATE A NEW SUBMISSION//////
 
 //// What type of submission would you like to add?  ////
