@@ -1,0 +1,95 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <form action="04-confirmation" method="post">
+            <div class="nhsuk-form-group">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                    <h1 class="nhsuk-fieldset__heading">
+                        <span class="nhsuk-caption-l">Add invoices to initial claim</span>
+                        Check details for file upload
+                    </h1>
+                </legend>
+                <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                    <div class="nhsuk-card__content">
+                        <dl class="nhsuk-summary-list">
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    File uploaded
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    initial-claim-file.xml
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                    <a href="03b-delete-confirmation">
+                                        Delete<span class="nhsuk-u-visually-hidden"> initial-claim-file.xml</span>
+                                    </a>
+                                </dd>
+                            </div>
+                        </dl>
+                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <a href="../cancel-are-you-sure" class="nhsuk-link">Cancel</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
