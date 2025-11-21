@@ -1,0 +1,218 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+      In /views/layout.html you can:
+        - change the header and footer 
+        - add custom CSS and JavaScript
+    -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9435</a>
+            </li>
+                        <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Individual credit note ID 10003912</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of header block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">
+            <span class="nhsuk-caption-l">Process individual credit note</span>
+            Check your individual credit note decision
+        </h1>
+    </div>
+</div>
+<!-- End of header block -->
+
+<div class="nhsuk-grid-row">
+
+    <!-- Start question -->
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+            <div class="nhsuk-card__content">
+                <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Decision
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Partially accept
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a href="">
+                                Change<span class="nhsuk-u-visually-hidden"> decision</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Months to withdraw from accepted months
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            2
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a href="">
+                                Change<span class="nhsuk-u-visually-hidden"> months to withdraw from accepted
+                                    months</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Months to contest
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            1
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a href="">
+                                Change<span class="nhsuk-u-visually-hidden"> months to contest</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Contestation reason
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Number of months of credit note exceeds IMO number of months
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a href="">
+                                Change<span class="nhsuk-u-visually-hidden"> contestation reason</span>
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+                <a href="11-invoice-details" class="nhsuk-button" role="button" data-module="nhsuk-button">Save and apply decision</a>
+            </div>
+        </div>
+        <p class="nhsuk-body"><a href="#">Cancel</a></p>
+    </div>
+    <!-- End question -->
+
+    <!-- Start details column -->
+    <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-card nhsuk-card--secondary">
+            <div class="nhsuk-card__content nhsuk-card__content--secondary">
+                <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                    Individual credit note details from France
+                </h3>
+                <hr style="margin:0px 0px 8px 0px;">
+                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Credit months
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            3
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+        <div class="nhsuk-card nhsuk-card--secondary">
+            <div class="nhsuk-card__content nhsuk-card__content--secondary">
+                <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                    Matched invoice details
+                </h3>
+                <hr style="margin:0px 0px 8px 0px;">
+                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Total months
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            2
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Accepted months
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            2
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Contested months
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            0
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Withdrawn months
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            0
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Invoice start date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            1 Aug 2023
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Invoice end date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            30 Sep 2023
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!-- End details column -->
+
+</div>
+
+{% endblock %}
+<!-- End of central content -->

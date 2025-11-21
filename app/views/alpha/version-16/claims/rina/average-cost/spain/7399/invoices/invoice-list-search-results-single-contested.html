@@ -1,0 +1,420 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+  {
+  name: 'Summary',
+  path: '/alpha/version-16/claims/rina/average-cost/spain/7399/summary/active-in-progress'
+  },
+  {
+  name: 'Invoices',
+  path: '/alpha/version-16/claims/rina/average-cost/spain/7399/invoices/invoice-list-full',
+  active: true
+  },
+  {
+  name: 'Submissions',
+  path: ''
+  },
+  {
+  name: 'Notes',
+  path: ''
+  },
+  {
+  name: 'History',
+  path: ''
+  }
+  ]
+  %}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+{% block ClaimId %}
+7399
+{% endblock %}
+{% block submittingCountry %}
+Spain
+{% endblock %}
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Invoices - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../index">Claims</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../summary/active-in-progress">Claim ID 7399</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="../../../../../index">
+        <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+        Claims
+      </a>
+    </p>
+  </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of title block -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-heading-xl ">
+      Invoices
+    </h1>
+  </div>
+</div>
+<!-- End of title block -->
+
+
+<!-- Start of search inputs -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          Search for an invoice
+        </h2>
+        <hr style="margin:0px 0px 24px 0px;" />
+        <form action="#download-results" method="post">
+          <div class="nhsuk-hint" id="contact-hint">
+            Search using either invoice ID or invoice reference.
+          </div>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-id">
+                  Invoice ID
+                </label>
+                <input class="nhsuk-input" id="invoice-id" name="invoice-id" type="text" value="20004963">
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="invoice-ref">
+                  Invoice reference
+                </label>
+                <input class="nhsuk-input" id="invoice-ref" name="invoice-ref" type="text">
+              </div>
+            </div>
+          </div>
+          <hr class="nhsuk-u-width-two-thirds" style="margin:10px 0px 10px 0px;">
+          <div class="nhsuk-hint" id="contact-hint" style="padding-top:10px;">
+            Or search using either last name or first name, or both.
+          </div>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="last-name">
+                  Last name
+                </label>
+                <input class="nhsuk-input" id="last-name" name="last-name" type="text">
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-u-font-weight-bold" for="first-name">
+                  First name
+                </label>
+                <input class="nhsuk-input" id="first-name" name="first-name" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+              Search
+            </button>
+            <p class="nhsuk-u-margin-bottom-0"><a href="invoice-list-full">Clear search</a></p>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of search inputs -->
+
+<!-- Start download-->
+<div class="nhsuk-grid-row" id="download-results">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-action-link nhsuk-u-margin-bottom-4">
+      <a class="nhsuk-action-link__link" href="#" target="_blank">
+        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" width="36" height="36">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+          </path>
+        </svg>
+        <span class="nhsuk-action-link__text">Download search results</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+<!-- End download -->
+
+<!-- Start invoice listings -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content nhsuk-u-padding-bottom-1">
+
+        <!-- Start header block-->
+        <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
+            <div class="nhsuk-grid-column-two-thirds">
+                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 to 1 of 1 results</h3>
+                <p class="nhsuk-u-margin-bottom-2 nhsuk-body-s">Searched by: 
+                  <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                    20004963
+                  </strong>
+                </p>
+              </div>
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group" style="float:right;">
+              <label class="nhsuk-label" for="results">
+                Results per page
+              </label>
+              <select class="nhsuk-select" id="results" name="results" style="float:right;">
+                <option value="10" selected>10</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- End header block -->
+
+        <!-- Start of filter and sort options -->
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <details class="nhsuk-details nhsuk-u-margin-bottom-2">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Filter and sort options
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <div class="nhsuk-grid-row">
+
+                  <!-- Start filter by status-->
+                  <div class="nhsuk-grid-column-one-quarter">
+                    <div class="nhsuk-form-group">
+                      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                          <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                            Filter by status
+                          </h1>
+                        </legend>
+                        <div class="nhsuk-checkboxes">
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-tobechecked" name="filter-status"
+                              type="checkbox" value="check">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-tobechecked">
+                              To check
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-accepted" name="filter-status"
+                              type="checkbox" value="accepted">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-accepted">
+                              Accepted
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-contested" name="filter-status"
+                              type="checkbox" value="contested">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-contested">
+                              Contested
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-partial" name="filter-status"
+                              type="checkbox" value="partial">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-partial">
+                              Partial
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="filter-status-withdrawn" name="filter-status"
+                              type="checkbox" value="withdrawn">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="filter-status-withdrawn">
+                              Withdrawn
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <!-- End filter by status -->
+
+                  <!-- Start sort by -->
+                  <div class="nhsuk-grid-column-one-quarter">
+                    <div class="nhsuk-form-group nhsuk-u-padding-bottom-5">
+                      <fieldset class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                          <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                            Sort by
+                          </h1>
+                        </legend>
+                        <div class="nhsuk-radios">
+                          <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="sort-by-id" name="sort-by" type="radio" value="id"
+                              checked="checked">
+                            <label class="nhsuk-label nhsuk-radios__label" for="sort-by-id">
+                              Invoice ID
+                            </label>
+                          </div>
+                          <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="sort-by-ref" name="sort-by" type="radio" value="ref">
+                            <label class="nhsuk-label nhsuk-radios__label" for="sort-by-ref">
+                              Invoice reference
+                            </label>
+                          </div>
+                          <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="sort-by-last-name" name="sort-by" type="radio"
+                              value="last-name">
+                            <label class="nhsuk-label nhsuk-radios__label" for="sort-by-last-name">
+                              Last name
+                            </label>
+                          </div>
+                          <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="sort-by-first-name" name="sort-by" type="radio"
+                              value="first-name">
+                            <label class="nhsuk-label nhsuk-radios__label" for="sort-by-first-name">
+                              First name
+                            </label>
+                          </div>
+
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <!-- End sort by -->
+
+                  <!-- Start sort order -->
+                  <div class="nhsuk-grid-column-one-quarter">
+                    <div class="nhsuk-form-group">
+                      <fieldset class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                          <h1 class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                            Order results
+                          </h1>
+                        </legend>
+                        <div class="nhsuk-radios">
+                          <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="order-by-asc" name="order-by" type="radio"
+                              value="ascending">
+                            <label class="nhsuk-label nhsuk-radios__label" for="order-by-asc">
+                              Ascending
+                            </label>
+                          </div>
+                          <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="order-by-desc" name="order-by" type="radio"
+                              value="descending" checked="checked">
+                            <label class="nhsuk-label nhsuk-radios__label" for="order-by-desc">
+                              Descending
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <!-- End sort order -->
+                  <div class="nhsuk-grid-column-full">
+                    <a href="invoice-list-to-check#download-results">
+                      <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                        Apply filters
+                      </button>
+                    </a>
+                    <p class="nhsuk-u-margin-bottom-0"><a href="">Reset all filters</a></p>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+        <!-- End of filter and sort options -->
+
+        <!-- Start of table data -->
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+
+            <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-6">
+              <!-- <caption class="nhsuk-table__caption">Showing results for: All treatments</caption>  -->
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Invoice ID
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Invoice reference
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Last name
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    First name
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Entitlement
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Status
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    View
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice ID </span>20004963
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Invoice reference </span>GB 1102606
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Last name </span>Featherstone
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">First name</span>William
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>Contested
+                  </td>
+
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">View </span><a href="20004963/04-view">View invoice</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- End of table data -->
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of invoice listings -->
+{% endblock %}
+<!-- End of central content -->

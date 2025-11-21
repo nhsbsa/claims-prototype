@@ -1,0 +1,494 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+      In /views/layout.html you can:
+        - change the header and footer 
+        - add custom CSS and JavaScript
+    -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9435</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<style>
+    .highlight {
+        background-color: #fff9c4;
+        border-bottom: 3px solid #ffeb3b;
+        display: inline-block;
+        text-decoration: none;
+        font-weight:700;
+    }
+</style>
+
+<!-- Start back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
+    </div>
+</div>
+<!-- End back link -->
+
+<!-- Start of header block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-half">
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">
+            <span class="nhsuk-caption-l">Credit note ID 9435 - France</span>
+            Individual credit note
+        </h1>
+    </div>
+    <div class="nhsuk-grid-column-one-half" style="text-align:right;">
+        <a href="003-02-decision" class="nhsuk-button" role="button" data-module="nhsuk-button">Process individual
+            credit note</a>
+        <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
+            individual
+            credit note</a>
+    </div>
+</div>
+<!-- End of header block -->
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label"> <span role="text">
+                    <span class="nhsuk-u-visually-hidden">Important: </span>
+                    Information does not match
+                </span> </h3>
+            <p>The details in this individual credit note are different from the invoice sent by France.
+                This could be the person's name or the invoice period.</p>
+            <p>If you accept this individiaucl credit note, the invoice will be
+                overwritten with the individual credit note details. </p>
+        </div>
+    </div>
+</div>
+
+<!-- Start of key information box-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Individual credit note reference
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            11661234KK0001
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Individual credit note status
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <strong class="nhsuk-tag nhsuk-tag--blue">
+                                To check
+                            </strong>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of key information box -->
+
+<!-- Start of tabs-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+            <h2 class="nhsuk-tabs__title">
+                Contents
+            </h2>
+
+            <!-- Start of tab titles -->
+            <ul class="nhsuk-tabs__list">
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#summary">
+                        Summary
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#notes">
+                        Notes
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#history">
+                        History
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#import">
+                        Imported individual credit note
+                    </a>
+                </li>
+            </ul>
+            <!-- End of tab titles -->
+
+            <!-- *** Start of summary tab content *** -->
+            <div class="nhsuk-tabs__panel" id="summary">
+
+                <!-- Start of header block -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-half">
+                        <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-5">Summary</h2>
+                    </div>
+                </div>
+                <!-- End of header block -->
+
+                <!-- Start data comparison -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-half">
+                        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
+                            Individual credit note details from France
+                        </h3>
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-5">
+                            <div class="nhsuk-card__content" style="padding:16px;">
+
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Credited amount
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            60.00
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Invoice reference
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            26583249
+                                        </dd>
+                                    </div>
+                                </dl>
+
+                                <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                    Person details
+                                </h4>
+                                <hr style="margin:0px 0px 10px 0px;">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Last name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Wentworth
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            First name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Rebecca
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Date of birth
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            3 August 1972
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            PIN in UK
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            JM 76 32 87 C
+                                        </dd>
+                                    </div>
+                                </dl>
+
+                                <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                    Invoice period
+                                </h4>
+                                <hr style="margin:0px 0px 10px 0px;">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Start date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            10 January 2023
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            End date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            <span class="highlight">16 January 2023</span>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nhsuk-grid-column-one-half">
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-two-thirds">
+                                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
+                                    Matched invoice
+                                </h3>
+                            </div>
+                            <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+                                <a href="#" class="nhsuk-link">View invoice</a>
+                            </div>
+                        </div>
+
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                            <div class="nhsuk-card__content" style="padding:16px;">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Total amount
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            640.30
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Invoice reference
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            26583249
+                                        </dd>
+                                    </div>
+                                </dl>
+
+                                <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                    Person details
+                                </h4>
+                                <hr style="margin:0px 0px 10px 0px;">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Last name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Wentworth
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            First name
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Rebecca
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Date of birth
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            3 August 1972
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            PIN in UK
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            JM 76 32 87 C
+                                        </dd>
+                                    </div>
+                                </dl>
+
+                                <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                    Invoice period
+                                </h4>
+                                <hr style="margin:0px 0px 10px 0px;">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Start date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            10 January 2023
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            End date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            <span class="highlight">17 January 2023</span>
+                                        </dd>
+                                    </div>
+                                </dl>
+
+                                <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                    Status details
+                                </h4>
+                                <hr style="margin:0px 0px 10px 0px;">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Invoice status
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            <strong class="nhsuk-tag nhsuk-tag--red">
+                                                Contested
+                                            </strong>
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Contestation reason
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            
+                                                The period of benefits in kind is partially covered by the entitlement period. Please adjust the claim.
+                                       
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Initial claim status
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            <strong class="nhsuk-tag nhsuk-tag--yellow">
+                                                Processed
+                                            </strong>
+                                        </dd>
+                                    </div>
+                                </dl>
+
+                                <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                    Invoice decision
+                                </h4>
+                                <hr style="margin:0px 0px 10px 0px;">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Accepted
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            0
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Contested
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            640.30
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Withdrawn
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            0
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End data comparison -->
+            </div>
+            <!-- *** End of summary tab *** -->
+
+            <!-- *** Start of notes tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <h2 class="nhsuk-heading-l">Notes</h2>
+                    </div>
+                    <div class="nhsuk-grid-column-one-third">
+                        <button style="float:right;" class="nhsuk-button nhsuk-button--secondary"
+                            data-module="nhsuk-button" type="submit">
+                            Add a new note
+                        </button>
+                    </div>
+                </div>
+                <p class="nhsuk-body">There are currently no notes.</p>
+            </div>
+            <!-- *** End of notes tab *** -->
+
+            <!-- *** Start of history tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="history">
+                <h2 class="nhsuk-heading-l">History</h2>
+            </div>
+            <!-- *** End of history tab *** -->
+
+            <!-- *** Start of history tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="import">
+                <h2 class="nhsuk-heading-l">Imported individual credit note</h2>
+            </div>
+            <!-- *** End of history tab *** -->
+
+        </div>
+    </div>
+</div>
+<!-- End of tabs-->
+
+</div>
+</div>
+
+<script>
+    document
+        .getElementById('contestation-reason')
+        .addEventListener('change', function () {
+            'use strict';
+            var vis = document.querySelector('.vis'),
+                target = document.getElementById(this.value);
+            if (vis !== null) {
+                vis.className = 'inv';
+            }
+            if (target !== null) {
+                target.className = 'vis';
+            }
+        });
+</script>
+
+{% endblock %}
+<!-- End of central content -->

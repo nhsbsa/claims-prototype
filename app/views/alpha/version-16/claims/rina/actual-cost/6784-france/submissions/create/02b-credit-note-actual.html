@@ -1,0 +1,285 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% set mainNavigation = [
+{
+name: 'Summary',
+path: ''
+},
+{
+name: 'Invoices',
+path: ''
+},
+{
+name: 'Submissions',
+path: '/alpha/version-16/claims/rina/actual-cost/6784-france/submissions/02-active',
+active: true
+},
+{
+name: 'Notes',
+path: ''
+},
+{
+name: 'History',
+path: ''
+}
+]
+%}
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-claim.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Credit note details - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../../home">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../../../../index">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../02-active">Submissions</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="../../../../../index">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+
+{% block content %}
+<!-- Start of back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" height="24" width="24">
+                    <path
+                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                    </path>
+                </svg>
+                Go back</a>
+        </div>
+    </div>
+</div>
+<!-- End of back link -->
+
+<!-- Start of data collection -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="03b-cya-credit-note-actual" method="post">
+            <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                    <h1 class="nhsuk-fieldset__heading">
+                        <span class="nhsuk-caption-l">Add a new submission</span>
+                        Credit note details
+                    </h1>
+                </legend>
+
+                <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+                    <div class="nhsuk-card__content">
+                        <h3 class="nhsuk-card__heading nhsuk-u-margin-bottom-1">
+                            Actual cost - Sickness
+                        </h3>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible" style="margin-top:12px; margin-bottom: 20px;">
+
+
+                        <!-- Start credit note reference -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                                Credit note reference
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-one-half" id="ref" name="ref" type="text">
+                        </div>
+
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                        <!-- End credit note reference-->
+
+                        <!-- Start number of credit notes -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-notes">
+                                Total number of individual credit notes
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-one-half" id="total-notes" name="total-notes"
+                                type="text">
+                        </div>
+
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                        <!-- End number of credit notes -->
+
+                        <!-- Start total amount -->
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="total-amount">
+                                Total amount of individual credit notes
+                            </label>
+                            <input class="nhsuk-input nhsuk-u-width-one-half" id="total-amount" name="total-amount"
+                                type="text">
+                        </div>
+
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                        <!-- End total amount -->
+
+                        <!-- Start currency -->
+                        <div class="nhsuk-form-group nhsuk-u-width-one-half">
+                            <label class="nhsuk-label nhsuk-u-font-weight-bold" for="select-autocomplete">
+                              Currency
+                            </label>
+                            <div>
+                              <select name="currency" id="select-autocomplete">
+                                <option value=""></option>
+                                <option value="British Pound">British Pound</option>
+                                <option value="Bulgarian Lev">Bulgarian Lev</option>
+                                <option value="Croatian Kuna">Croatian Kuna</option>
+                                <option value="Czech Koruna">Czech Koruna</option>
+                                <option value="Danish Krone">Danish Krone</option>
+                                <option value="Euro">Euro</option>
+                                <option value="Hungarian Forint">Hungarian Forint</option>
+                                <option value="Icelandic Krona">Icelandic Krona</option>
+                                <option value="Latvian Lats">Latvian Lats</option>
+                                <option value="Lithuanian Litas">Lithuanian Litas</option>
+                                <option value="Norwegian Krone">Norwegian Krone</option>
+                                <option value="Polizh Złoty">Polizh Złoty</option>
+                                <option value="Romanian Leu">Romanian Leu</option>
+                                <option value="Swedish Krona">Swedish Krona</option>
+                                <option value="Swiss Franc">Swiss Franc</option>
+                                <option value="Turkish Lira">Turkish Lira</option>
+                              </select>
+                            </div>
+                          </div>
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                        <!-- End currency-->
+
+                        <!-- Start date you received the credit note -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="date-received" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Date you received the credit note
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="date-received-hint">
+                                    For example, 28 9 2023
+                                </div>
+                                <div class="nhsuk-date-input" id="date-received">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-received-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="date-received-day" name="date-received-day" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label"
+                                                for="date-received-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="date-received-month" name="date-received-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="date-received-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                id="date-received-year" name="date-received-year" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                        <!-- End date you received the credit note -->
+
+                        <!-- Start target date -->
+                        <div class="nhsuk-form-group">
+                            <fieldset class="nhsuk-fieldset" aria-describedby="target-date" role="group">
+                                <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                                    <h1 class="nhsuk-fieldset__heading">
+                                        Target date to complete the credit note
+                                    </h1>
+                                </legend>
+                                <div class="nhsuk-hint" id="target-date-hint">
+                                    For example, 28 9 2023
+                                </div>
+                                <div class="nhsuk-date-input" id="target-date">
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-day">
+                                                Day
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="target-date-day" name="target-date-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-month">
+                                                Month
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                id="target-date-month" name="target-date-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-date-input__item">
+                                        <div class="nhsuk-form-group">
+                                            <label class="nhsuk-label nhsuk-date-input__label" for="target-date-year">
+                                                Year
+                                            </label>
+                                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                id="target-date-year" name="target-date-year" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                        <!-- End target date -->
+
+                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top:12px;">
+                            Continue
+                        </button>
+
+                    </div>
+                </div>
+
+
+            </fieldset>
+        </form>
+
+    </div>
+</div>
+<!-- End of data collection -->
+
+
+{% endblock %}

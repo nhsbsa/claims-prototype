@@ -1,0 +1,154 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+      In /views/layout.html you can:
+        - change the header and footer 
+        - add custom CSS and JavaScript
+    -->
+
+
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Invoice details - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9435</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Individual credit note ID 10003842</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start of panel -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-panel" style="background-color: #005EB8; text-align: center;">
+            <h1 class="nhsuk-panel__title">
+                Invoice updated for France
+            </h1>
+            <h2 class="nhsuk-heading-l">Invoice ID
+                number<br />
+                20006392</h2>
+        </div>
+    </div>
+</div>
+<!-- End of panel -->
+
+<!-- Start of decision -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <p class="nhsuk-body nhsuk-u-margin-bottom-8">The changes to this invoice have been saved.</p>
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+                <h2 class="nhsuk-heading-l">
+                    Decision
+                </h2>
+                <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-4">
+                    <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                            <div class="nhsuk-card__content">
+                                <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">
+                                    215.22
+                                    <span class="nhsuk-u-visually-hidden">Accepted amount</span>
+                                </p>Accepted amount
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                            <div class="nhsuk-card__content">
+                                <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">
+                                    0.00
+                                    <span class="nhsuk-u-visually-hidden">Contested
+                                        amount</span>
+                                </p>Contested amount
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                            <div class="nhsuk-card__content">
+                                <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">
+                                    90.00
+                                    <span class="nhsuk-u-visually-hidden">Withdrawn
+                                        amount</span>
+                                </p>Withdrawn amount
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <h3 class="nhsuk-heading-m">Credit applied</h3>
+        <p class="nhsuk-body nhsuk-u-margin-bottom-8">You've withdrawn a credit amount of 90.00 from this invoice.</p>
+    </div>
+</div>
+<!-- End of decision -->
+
+<!-- Start of what happens next-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h2 class="nhsuk-heading-l">What happens next</h2>
+        <p class="nhsuk-body">The status of this invoice is accepted.</p>
+        <p class="nhsuk-body">You can continue checking any other individual credit notes for this submission.</p>
+        <p class="nhsuk-body nhsuk-u-margin-bottom-7">Once you've finished, you can send the relevant outcome.</p>
+    </div>
+</div>
+<!-- End of what happens next -->
+
+<!-- Start of buttons-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <a href="07-active-actual" class="nhsuk-button" style="margin-right:8px;" role="button" data-module="nhsuk-button">Return to
+            submission</a>
+        <a href="#/" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">View
+            invoice</a>
+    </div>
+</div>
+<!-- End of buttons -->
+
+{% endblock %}
+<!-- End of central content -->
