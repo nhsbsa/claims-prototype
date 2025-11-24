@@ -1,0 +1,412 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+      In /views/layout.html you can:
+        - change the header and footer 
+        - add custom CSS and JavaScript
+    -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
+    </div>
+</div>
+<!-- End back link -->
+
+<form action="" method="post">
+
+    <!-- Start of header block -->
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+            <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">
+                <span class="nhsuk-caption-l">Reply to contestation ID 7834</span>
+                Imported invoice
+            </h1>
+        </div>
+    </div>
+    <!-- End of header block -->
+
+    <!-- Start of key information box-->
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+            <div class="nhsuk-card">
+                <div class="nhsuk-card__content">
+                    <!-- start invoice summary expander -->
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            <details class="nhsuk-details nhsuk-expander" open>
+                                <summary class="nhsuk-details__summary">
+                                    <span class="nhsuk-details__summary-text">
+                                        Invoice summary
+                                    </span>
+                                </summary>
+                                <div class="nhsuk-details__text">
+                                    <dl class="nhsuk-summary-list">
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Claim reference
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                11322249AT2301E
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Date claim was recorded
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                12 January 2023
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Invoice reference
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                26583249
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Foreign institution name
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                Caisse Primaire D'Assurance Maladie
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Foreign institution ID
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                0146100000
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- end invoice summary expander -->
+
+                    <!-- start reply expander -->
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            <details class="nhsuk-details nhsuk-expander" open>
+                                <summary class="nhsuk-details__summary">
+                                    <span class="nhsuk-details__summary-text">
+                                        Reply details
+                                    </span>
+                                </summary>
+                                <div class="nhsuk-details__text">
+                                    <dl class="nhsuk-summary-list">
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Reply reason code
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                02
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Reply reason
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                Reason shows here
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- end reply expander -->
+
+                    <!-- start person details expander -->
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            <details class="nhsuk-details nhsuk-expander" open>
+                                <summary class="nhsuk-details__summary">
+                                    <span class="nhsuk-details__summary-text">
+                                        Person details
+                                    </span>
+                                </summary>
+                                <div class="nhsuk-details__text">
+                                    <dl class="nhsuk-summary-list">
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Last name
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                Wentworth
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                First name
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                Rebecca
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Date of birth
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                3 August 1972
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Unique ID
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                JM 76 32 87 C
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Sex
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                No data
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- end person details expander -->
+
+                    <!-- start entitlement details expander -->
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            <details class="nhsuk-details nhsuk-expander" open>
+                                <summary class="nhsuk-details__summary">
+                                    <span class="nhsuk-details__summary-text">
+                                        Entitlement details
+                                    </span>
+                                </summary>
+                                <div class="nhsuk-details__text">
+                                    <dl class="nhsuk-summary-list">
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Type of entitlement
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                EHIC
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Start date
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                23 March 2021
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                End date
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                22 March 2026
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Issue date
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                23 March 2021
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                UK institution name
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                Department of Health and Social Care
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                UK institution ID
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                UK033
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- end entitlement details expander -->
+
+                    <!-- start treatment details expander -->
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            <details class="nhsuk-details nhsuk-expander" open>
+                                <summary class="nhsuk-details__summary">
+                                    <span class="nhsuk-details__summary-text">
+                                        Treatment details
+                                    </span>
+                                </summary>
+                                <div class="nhsuk-details__text">
+                                    <dl class="nhsuk-summary-list">
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Total treatment cost
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                305.22
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Currency code
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                EUR
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Benefits provided
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                01 - Sickness
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Start date
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                1 June 2023
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                End date
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                2 June 2023
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- end treatment details expander -->
+
+                    <!-- start treatment breakdown expander -->
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0" open>
+                                <summary class="nhsuk-details__summary">
+                                    <span class="nhsuk-details__summary-text">
+                                        Treatment breakdown
+                                    </span>
+                                </summary>
+                                <div class="nhsuk-details__text">
+                                    <dl class="nhsuk-summary-list">
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Medical care costs
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                200.00
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Medicine costs
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                15.22
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Hospitalisation costs
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Hospitalisation start date
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Hospitalisation end date
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- end treatment breakdown expander -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of key information box -->
+
+
+
+    {% endblock %}
+    <!-- End of central content -->
