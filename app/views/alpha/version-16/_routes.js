@@ -6,6 +6,46 @@ const path = require('path');
 
 const axios = require('axios');
 
+///////CREATE A NEW CLAIM ITERATIONS NOVEMBER 2025///////
+
+//// How did you receive the claim?  ////
+router.post('/route-create-contact', function(req,res){
+    var received = req.session.data['received']
+    if (received == "RINA" ||  received == "Paper") {
+        res.redirect('/alpha/version-16/submissions/initial-claim/01-create/rina/01-type')
+        }
+    else {
+        res.redirect('/alpha/version-16/submissions/initial-claim/01-create/index')
+    }
+})
+
+//// Which type of claim is it?  ////
+router.post('/route-create-type', function(req,res){
+    var received = req.session.data['received']
+    var claimType = req.session.data['claim-type']
+    var articleType = req.session.data['article-type']
+        if (claimType == "Actual cost - Sickness" || claimType == "Actual cost - Accident at work") {
+            res.redirect('/alpha/version-16/submissions/initial-claim/01-create/rina/02a-actual')
+            }
+
+        else if (claimType == "Average cost - Sickness") {
+            if (articleType == "Article 63 (2a)" || articleType == "Article 63 (2b)") {
+                res.redirect('/alpha/version-16/submissions/initial-claim/01-create/rina/02b-average-63')
+                }
+            else if (articleType == "Article 94" || articleType == "Article 95") {
+                res.redirect('/alpha/version-16/submissions/initial-claim/01-create/rina/02c-average-94-95')
+                }
+            else {
+                    res.redirect('/alpha/version-16/submissions/initial-claim/01-create/rina/01-type')
+                }
+        }
+
+        else {
+                res.redirect('/alpha/version-16/submissions/initial-claim/01-create/rina/01-type')
+            }
+})
+
+
 //////CREDIT NOTE PROCESSING//////
 
 //// Decision - 1003912 - Non-RINA  ////
