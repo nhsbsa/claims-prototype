@@ -1,27 +1,8 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-{% set mainNavigation = [
-{
-name: 'Home',
-path: '/alpha/version-16/home'
-},
-{
-name: 'Claims',
-path: '/alpha/version-16/claims/index',
-active: true
-},
-{
-name: 'Contested claims',
-path: '#'
-},
-{
-name: 'Reports',
-path: '#'
-}
-]
-%}
 
-<!-- Extends the layout from /views/layout-full-width.html -->
-{% extends 'layout-full-width.html' %}
+<!-- Extends the layout from /views/layout-full-width-logged-in.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -30,7 +11,7 @@ path: '#'
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Check claim details - Manage incoming international healthcare claims - NHSBSA
+Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -155,27 +136,6 @@ Check claim details - Manage incoming international healthcare claims - NHSBSA
                             </dd>
                         </div>
 
-                        <!-- Period of claim -->
-                        {% if data['showPeriod'] === 'Yes' %}
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Period of the claim
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                {% if data['period'] %}
-                                {{ data['period'] }}
-                                {% else %}
-                                First half year
-                                {% endif %}
-                            </dd>
-                            <dd class="nhsuk-summary-list__actions">
-                                <a href="">
-                                    Change<span class="nhsuk-u-visually-hidden"> period of claim</span>
-                                </a>
-                            </dd>
-                        </div>
-                        {% endif %}
-
                         <!-- Main or supplementary -->
                         {% if data['showType'] === 'Yes' %}
                         <div class="nhsuk-summary-list__row">
@@ -219,6 +179,7 @@ Check claim details - Manage incoming international healthcare claims - NHSBSA
                         {% endif %}
 
                         <!-- Financial year -->
+                         {% if data['showFinancial'] === 'Yes' %}
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
                                 Financial year of the claim
@@ -237,6 +198,7 @@ Check claim details - Manage incoming international healthcare claims - NHSBSA
                                 </a>
                             </dd>
                         </div>
+                        {% endif %}
 
                         <!-- Date received -->
                         <div class="nhsuk-summary-list__row">

@@ -1,27 +1,11 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-{% set mainNavigation = [
-{
-name: 'Home',
-path: '/alpha/version-16/home',
-active: true
-},
-{
-name: 'Claims',
-path: '/alpha/version-16/claims/index'
-},
-{
-name: 'Reports',
-path: '#'
-}
-]
-%}
 
-<!-- Extends the layout from /views/layout-full-width.html -->
-{% extends 'layout-full-width.html' %}
+<!-- Extends the layout from /views/layout-full-width-logged-in.html -->
+{% extends 'layout-full-width-logged-in.html' %}
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Home - Manage incoming international healthcare claims - NHSBSA
+Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -47,6 +31,7 @@ Home - Manage incoming international healthcare claims - NHSBSA
   </div>
 </div>
 <!-- End of title block-->
+ 
 
 <!-- Start of 2 column layout -->
 <div class="nhsuk-grid-row">

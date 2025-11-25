@@ -25,7 +25,7 @@ router.use('/alpha/version-12', require('./views/alpha/version-12/_routes'));
 router.use('/alpha/version-13', require('./views/alpha/version-13/_routes'));
 router.use('/alpha/version-14', require('./views/alpha/version-14/_routes'));
 router.use('/alpha/version-15', require('./views/alpha/version-15/_routes'));
-router.use('/alpha/version-15', require('./views/alpha/version-16/_routes'));
+router.use('/alpha/version-16', require('./views/alpha/version-16/_routes'));
 router.use('/alpha/accessibility-testing/may-2025', require('./views/alpha/accessibility-testing/may-2025/_routes'));
 
 // clear session data - link in footer
