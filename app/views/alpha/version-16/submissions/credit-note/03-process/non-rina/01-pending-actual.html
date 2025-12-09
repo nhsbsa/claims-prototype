@@ -26,7 +26,7 @@ Manage incoming international healthcare claims - NHSBSA
                 <a class="nhsuk-breadcrumb__link" href="">Claims</a>
             </li>
             <li class="nhsuk-breadcrumb__item">
-                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6789</a>
             </li>
             <li class="nhsuk-breadcrumb__item">
                 <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
@@ -55,8 +55,8 @@ Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-xl">
-            <span class="nhsuk-caption-l">Claim ID 6784 &ndash; France</span>
-            Credit note ID 9435
+            <span class="nhsuk-caption-l">Claim ID 6789 &ndash; France</span>
+            Credit note ID 9441
         </h1>
     </div>
     <div class="nhsuk-grid-column-one-third" style="text-align: right">
@@ -70,7 +70,7 @@ Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <ul class="nhsuk-grid-row nhsuk-card-group">
-            <li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+<li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
                 <div class="nhsuk-card">
                     <div class="nhsuk-card__content">
                         <div class="nhsuk-grid-row">
@@ -80,12 +80,11 @@ Manage incoming international healthcare claims - NHSBSA
                                 </h2>
                             </div>
                         </div>
-                        <hr
-                            class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible nhsuk-u-margin-bottom-3">
+                        <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible nhsuk-u-margin-bottom-3">
                         <dl class="nhsuk-summary-list">
                             <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key" style="width:55%;">Credit note reference</dt>
-                                <dd class="nhsuk-summary-list__value">11661234KK1905</dd>
+                                <dt class="nhsuk-summary-list__key" style="width:55%">Credit note reference</dt>
+                                <dd class="nhsuk-summary-list__value">No data</dd>
                                 <dd class="nhsuk-summary-list__actions">
                                 </dd>
                             </div>
@@ -95,7 +94,7 @@ Manage incoming international healthcare claims - NHSBSA
                                     14 July 2026
                                 </dd>
                                 <dd class="nhsuk-summary-list__actions">
-                                    <a href="#">
+                                    <a href="#/">
                                         Change<span class="nhsuk-u-visually-hidden"> Target date</span>
                                     </a>
                                 </dd>
@@ -128,8 +127,7 @@ Manage incoming international healthcare claims - NHSBSA
                             </div>
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">Current status</dt>
-                                <dd class="nhsuk-summary-list__value"><strong
-                                        class="nhsuk-tag nhsuk-tag--orange">Pending</strong></dd>
+                                <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--orange">Pending</strong></dd>
                                 <dd class="nhsuk-summary-list__actions">
                                 </dd>
                             </div>
@@ -145,19 +143,26 @@ Manage incoming international healthcare claims - NHSBSA
                         </h2>
                         <ul class="nhsuk-task-list">
                             <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
-                                <div class="nhsuk-task-list__name-and-hint">Add individual credit notes
+                                <div class="nhsuk-task-list__name-and-hint"><a class="nhsuk-link nhsuk-task-list__link"
+                                        href="#creditNotes">Add individual credit notes</a>
                                 </div>
-                                <div class="nhsuk-task-list__status nhsuk-task-list__status--completed">
-                                    Completed</div>
+                                <div class="nhsuk-task-list__status" id=""><strong class="nhsuk-tag nhsuk-tag--white">
+                                        In progress
+                                    </strong></div>
                             </li>
                             <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
                                 <div class="nhsuk-task-list__name-and-hint"><a class="nhsuk-link nhsuk-task-list__link"
-                                        href="02-open-confirmation">Open credit note</a>
+                                        href="">Confirm all individual credit notes are added</a>
                                 </div>
-                                <div class="nhsuk-task-list__status" id="your-health-3-status"><strong
-                                        class="nhsuk-tag nhsuk-tag--blue">
+                                <div class="nhsuk-task-list__status" id=""><strong class="nhsuk-tag nhsuk-tag--blue">
                                         Not yet started
                                     </strong></div>
+                            </li>
+                            <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+                                <div class="nhsuk-task-list__name-and-hint">Open credit note
+                                </div>
+                                <div class="nhsuk-task-list__status nhsuk-task-list__status--completed">
+                                    Cannot start yet</div>
                             </li>
                         </ul>
                     </div>
@@ -235,11 +240,16 @@ Manage incoming international healthcare claims - NHSBSA
             </div>
             <!-- *** End of summary tab *** -->
 
-            <!-- *** Start of individual credit notes tab *** -->
+            <!-- *** Start of individual credit tab *** -->
             <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="creditNotes">
                 <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-full">
+                    <div class="nhsuk-grid-column-one-half">
                         <h2 class="nhsuk-heading-l">Individual credit notes</h2>
+                    </div>
+                    <div class="nhsuk-grid-column-one-half">
+                        <a href="#creditNotes" class="nhsuk-button nhsuk-u-margin-bottom-3" role="button"
+                            data-module="nhsuk-button" style="float:right;">Add individual credit
+                            notes</a>
                     </div>
                 </div>
                 <div class="nhsuk-grid-row">
@@ -250,7 +260,7 @@ Manage incoming international healthcare claims - NHSBSA
                                 <!-- Start header block-->
                                 <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
                                     <div class="nhsuk-grid-column-two-thirds">
-                                        <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Showing 1 to 3 of 3 results
+                                        <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Showing 1 to 2 of 2 results
                                         </h3>
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
@@ -301,7 +311,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="nhsuk-table__body">
+<tbody class="nhsuk-table__body">
                                                 <tr role="row" class="nhsuk-table__row">
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Individual credit
@@ -323,12 +333,10 @@ Manage incoming international healthcare claims - NHSBSA
                                                         <span class="nhsuk-table-responsive__heading">Amount</span>90.00
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span
-                                                            class="nhsuk-table-responsive__heading">Status</span>Pending
+                                                        <span class="nhsuk-table-responsive__heading">Status</span>Pending
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">View </span><a
-                                                            href="individual-credit-notes/001-pending">View individual
+                                                        <span class="nhsuk-table-responsive__heading">View </span><a href="">View individual
                                                             credit
                                                             note</a>
                                                     </td>
@@ -351,16 +359,13 @@ Manage incoming international healthcare claims - NHSBSA
                                                             name</span>Hector
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span
-                                                            class="nhsuk-table-responsive__heading">Amount</span>100.50
+                                                        <span class="nhsuk-table-responsive__heading">Amount</span>100.50
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span
-                                                            class="nhsuk-table-responsive__heading">Status</span>Pending
+                                                        <span class="nhsuk-table-responsive__heading">Status</span>Pending
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">View </span><a
-                                                            href="individual-credit-notes/002-pending">View individual
+                                                        <span class="nhsuk-table-responsive__heading">View </span><a href="">View individual
                                                             credit
                                                             note</a>
                                                     </td>
@@ -386,12 +391,10 @@ Manage incoming international healthcare claims - NHSBSA
                                                         <span class="nhsuk-table-responsive__heading">Amount</span>60.00
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span
-                                                            class="nhsuk-table-responsive__heading">Status</span>Pending
+                                                        <span class="nhsuk-table-responsive__heading">Status</span>Pending
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">View </span><a
-                                                            href="individual-credit-notes/003-pending">View individual
+                                                        <span class="nhsuk-table-responsive__heading">View </span><a href="">View individual
                                                             credit
                                                             note</a>
                                                     </td>
