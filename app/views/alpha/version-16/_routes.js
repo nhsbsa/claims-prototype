@@ -11,7 +11,7 @@ const axios = require('axios');
 //// How did you receive the claim?  ////
 router.post('/route-create-contact', function(req,res){
     var received = req.session.data['received']
-    if (received == "RINA" ||  received == "Paper") {
+    if (received == "RINA") {
         res.redirect('/alpha/version-16/submissions/initial-claim/01-create/rina/01-type')
         }
     else {

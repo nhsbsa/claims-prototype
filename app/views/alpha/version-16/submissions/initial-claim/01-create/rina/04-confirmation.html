@@ -43,9 +43,7 @@ Claim created - Manage incoming international healthcare claims - NHSBSA
         <div class="nhsuk-panel" style="background-color: #005EB8; text-align: center;">
             <h1 class="nhsuk-panel__title">Claim created for {% if data['country'] %}{{
                 data['country'] }}{% else %}France{% endif %}</h1>
-            <h2 class="nhsuk-heading-l">OHS claim ID
-                number<br />
-                6784</h2>
+            <h2 class="nhsuk-heading-l">Claim ID 6784</h2>
         </div>
     </div>
 </div>
@@ -55,14 +53,10 @@ Claim created - Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-column-full">
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
-                <p>You have created a new claim for {% if data['country'] %}{{data['country'] }}{% else %}France{% endif
-                    %}
-                    for the financial year {% if data['financial-year'] %}{{ data['financial-year'] }}{% else
-                    %}2023{% endif %}.</p>
-                <p>The claim reference number is {% if data['ref'] %}{{ data['ref'] }}{% else
+                <p class="nhsuk-body">The claim reference is {% if data['ref'] %}{{ data['ref'] }}{% else
                     %}0039795410{% endif %}.</p>
                 <h2 class="heading-medium">What happens next</h2>
-                <p>You can now add invoices to this claim.</p>
+                <p class="nhsuk-body">You can now add invoices to this claim.</p>
                 <a href="#/" class="nhsuk-button" role="button" style="margin-right:8px;" data-module="nhsuk-button">Manage claim</a>
                 <a href="index" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Create a new claim</a>
             </div>
