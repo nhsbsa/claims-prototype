@@ -1,0 +1,400 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-logged-in.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
+    </div>
+</div>
+<!-- End back link -->
+
+<h1 class="nhsuk-heading-l">Statuses</h1>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-u-margin-bottom-5"> Submission level</h2>
+
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <h3 class="nhsuk-card__heading"> Initial claim</h3>
+                        <hr style="margin:0px 0px 8px 0px;">
+                        <dl class="nhsuk-summary-list ">
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--grey">
+                                        Not started
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    An initial claim has been created<br />
+                                    No invoices have been added
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                                        Active
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    All invoices have been added<br />
+                                    1 or more invoices has a status of 'To check'
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--yellow">
+                                        Processed
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    0 invoices have a status of 'To check'
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--purple">
+                                        Reply sent
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    A contestation has been sent and date logged<br />
+                                    Note: This status will be skipped for RINA claims if all invoices are accepted
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--green">
+                                        Completed
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    All items in the task list are completed
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <h3 class="nhsuk-card__heading"> Credit note</h3>
+                        <hr style="margin:0px 0px 8px 0px;">
+                        <dl class="nhsuk-summary-list">
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--grey">
+                                        Not started
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    A credit note has been created<br />
+                                    No individual credit notes have been added
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--orange">
+                                        Pending
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    1 or more individual credit notes have been added<br />
+                                    The credit note has not been opened
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                                        Active
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The credit note has been opened<br />
+                                    1 or more individual credit notes has a status of 'To check' or 'Active'
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--yellow">
+                                        Processed
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    0 individual credit notes have a status of 'To check' or 'Active'
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--purple">
+                                        Reply sent
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    A contestation has been sent and sent date logged<br />
+                                    1 or more individual credit notes need to be included in the Information on payment<br />
+                                    Note: This status will be skipped if all individual credit notes are accepted or if all individual credit notes are contested
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--green">
+                                        Completed
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    All items in the task list are completed
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <h3 class="nhsuk-card__heading"> Reply to contestation</h3>
+                        <hr style="margin:0px 0px 8px 0px;">
+                        <dl class="nhsuk-summary-list">
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--grey">
+                                        Not started
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    A reply to contestation has been created<br />
+                                    No invoices have been added
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--orange">
+                                        Pending
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    1 or more invoices have been added<br />
+                                    The reply contestation has not been opened
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                                        Active
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The reply to contestation has been opened<br />
+                                    1 or more invoices have a status of 'To check'
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--yellow">
+                                        Processed
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    0 invoices have a status of 'To check'
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--purple">
+                                        Reply sent
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    A contestation has been sent and date logged
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--green">
+                                        Completed
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    All items in the task list are completed
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-u-margin-bottom-5"> Details level</h2>
+
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <h3 class="nhsuk-card__heading"> Invoice</h3>
+                        <hr style="margin:0px 0px 8px 0px;">
+                        <dl class="nhsuk-summary-list ">
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--blue">
+                                        To check
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The invoice requires manual checking
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                                        Accepted
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The invoice has been accepted
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--red">
+                                        Contested
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The invoice has been contested
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--pink">
+                                        Partial
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The invoice has been partially accepted
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--purple">
+                                        Withdrawn
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The invoice has been withdrawn
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <h3 class="nhsuk-card__heading"> Individual credit note</h3>
+                        <hr style="margin:0px 0px 8px 0px;">
+                        <dl class="nhsuk-summary-list ">
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--orange">
+                                        Pending
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The credit note has not been opened
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--blue">
+                                        To check
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The individual credit note requires manual checking
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                                        Active
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The individual credit note decision has been made<br />
+                                    The matched invoice has not been marked as complete
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                                        Accepted
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The individual credit note has been accepted<br />
+                                    The matched invoice has been marked as complete
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--red">
+                                        Contested
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The individual credit note has been contested<br />
+                                    The matched invoice has been marked as complete
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    <strong class="nhsuk-tag nhsuk-tag--pink">
+                                        Partial
+                                    </strong>
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    The individual credit note has been partially accepted<br />
+                                    The matched invoice has been marked as complete
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+<!-- End of central content -->
