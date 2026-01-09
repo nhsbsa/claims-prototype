@@ -1,0 +1,250 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<!-- Start back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
+    </div>
+</div>
+<!-- End back link -->
+
+<!-- Start of title block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-half">
+        <h1 class="nhsuk-heading-xl">
+            <span class="nhsuk-caption-l">Claim ID 6784 &ndash; France</span>
+            Contestation ID 123
+        </h1>
+    </div>
+    <div class="nhsuk-grid-column-one-half" style="text-align:right;">
+        <!-- <a href="#" class="nhsuk-button" role="button" style="margin-right:8px;" data-module="nhsuk-button">Download
+            contestation</a> -->
+        <a href="#" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" role="button"
+            data-module="nhsuk-button">Exit
+            contestation</a>
+
+    </div>
+</div>
+<!-- End of title block -->
+
+<!-- Start header block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+            <li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-full">
+                                <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                                    Contestation details
+                                </h2>
+                            </div>
+                        </div>
+                        <hr
+                            class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible nhsuk-u-margin-bottom-3">
+                        <dl class="nhsuk-summary-list">
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key" style="width:55%">
+                                    Global COC ref
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    123ABC567POF6
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key">
+                                    Current status
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    <strong class="nhsuk-tag nhsuk-tag--aqua-green">
+                                        Active
+                                    </strong>
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                            Task list
+                        </h2>
+                        <ul class="nhsuk-task-list">
+                            <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+                                <div class="nhsuk-task-list__name-and-hint"><a class="nhsuk-link nhsuk-task-list__link"
+                                        href="" aria-describedby="">Add invoices</a>
+                                </div>
+                                <div class="nhsuk-task-list__status" id="select-invoices"><strong
+                                        class="nhsuk-tag nhsuk-tag--blue">
+                                        Not yet started
+                                    </strong></div>
+                            </li>
+                            <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+                                <div class="nhsuk-task-list__name-and-hint"><a class="nhsuk-link nhsuk-task-list__link"
+                                        href="" aria-describedby="">Confirm all invoices added</a>
+                                </div>
+                                <div class="nhsuk-task-list__status" id="select-invoices"><strong
+                                        class="nhsuk-tag nhsuk-tag--blue">
+                                        Not yet started
+                                    </strong></div>
+                            </li>
+                            <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+                                <div class="nhsuk-task-list__name-and-hint">Add submission date
+                                </div>
+                                <div class="nhsuk-task-list__status nhsuk-task-list__status--completed">
+                                    Cannot start yet</div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- End header block -->
+
+<!-- Start of tabs-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+            <h2 class="nhsuk-tabs__title">Contents</h2>
+
+            <!-- Start of tab titles -->
+            <ul class="nhsuk-tabs__list">
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#summary"> Summary </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#invoices"> Invoices </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#amount"> Amount chain </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#history"> History </a>
+                </li>
+            </ul>
+            <!-- End of tab titles -->
+
+            <!-- *** Start of summary tab *** -->
+            <div class="nhsuk-tabs__panel" id="summary">
+                <!-- Start of header block -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">Summary</h2>
+                    </div>
+                </div>
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <p class="nhsuk-body nhsuk-u-margin-bottom-0">No invoices have been added to contestation ID
+                            123.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- *** End of summary tab *** -->
+
+            <!-- *** Start of invoices tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="invoices">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <h2 class="nhsuk-heading-l">Invoices</h2>
+                    </div>
+                    <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+                        <a href="select-invoices/01-select" class="nhsuk-button nhsuk-u-margin-bottom-0" role="button"
+                            data-module="nhsuk-button">Select invoices</a>
+                    </div>
+                </div>
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <p class="nhsuk-body">No invoices have been selected for contestation ID 123.</p>
+                        <p class="nhsuk-body nhsuk-u-margin-bottom-0">
+                            You can use the <strong>Select invoices</strong> button to search for and select the
+                            invoices you would like
+                            to add.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- *** End of invoices tab *** -->
+
+            <!-- *** Start of amount chain tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="amount">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">Amount chain</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- *** End of amount chain tab *** -->
+
+            <!-- *** Start of history tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="history">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">History</h2>
+                    </div>
+                </div>
+
+            </div>
+            <!-- *** End of history tab *** -->
+        </div>
+    </div>
+</div>
+<!-- End of tabs-->
+
+{% endblock %}

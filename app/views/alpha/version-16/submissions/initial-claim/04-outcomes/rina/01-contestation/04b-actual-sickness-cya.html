@@ -1,0 +1,128 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container-fluid">
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
+            </li>
+        </ol>
+        <p class="nhsuk-breadcrumb__back">
+            <a class="nhsuk-breadcrumb__backlink" href="">
+                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                Claims
+            </a>
+        </p>
+    </div>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<!-- Start back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
+    </div>
+</div>
+<!-- End back link -->
+
+<!-- Start of title block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+            <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-3">
+                <span class="nhsuk-caption-l">Create contestation - S082</span>
+                Check your answers
+            </h1>
+        </legend>
+    </div>
+</div>
+<!-- End of title block -->
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <form action="05b-actual-sickness-confirmation" method="post">
+                                       <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                    Contestation details
+                </h2>
+                <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible nhsuk-u-margin-bottom-3">
+                    <dl class="nhsuk-summary-list">
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Global COC ref
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                123ABC567POF6
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> glocal COC ref</span>
+                                </a>
+                            </dd>
+                        </div>
+                    </dl>
+                   <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                    Invoice details
+                </h2>
+                <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible nhsuk-u-margin-bottom-3">
+                    <dl class="nhsuk-summary-list">
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                How would you like to add the invoices?
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                Manually select individual invoices
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> decision</span>
+                                </a>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock %}
