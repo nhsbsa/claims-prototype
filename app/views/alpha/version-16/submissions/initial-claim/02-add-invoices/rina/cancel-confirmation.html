@@ -46,41 +46,43 @@ Manage incoming international healthcare claims - NHSBSA
 <!-- End of breadcrumb -->
 {% endblock %} {% block content %}
 
+<!-- Start of are you sure -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <form action="04-confirmation" method="post">
+        <form action="#" method="post">
             <div class="nhsuk-form-group">
-                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-                    <h1 class="nhsuk-fieldset__heading">
-                        <span class="nhsuk-caption-l">Add invoices to initial claim</span>
-                        Check details for file upload
-                    </h1>
-                </legend>
-                <div class="nhsuk-card nhsuk-u-margin-bottom-3">
-                    <div class="nhsuk-card__content">
-                        <dl class="nhsuk-summary-list">
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                    File uploaded
-                                </dt>
-                                <dd class="nhsuk-summary-list__value">
-                                    initial-claim-file.xml
-                                </dd>
-                                <dd class="nhsuk-summary-list__actions">
-                                    <a href="delete-confirmation">
-                                        Delete<span class="nhsuk-u-visually-hidden"> initial-claim-file.xml</span>
-                                    </a>
-                                </dd>
-                            </div>
-                        </dl>
-                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                            Submit
-                        </button>
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                        <h1 class="nhsuk-fieldset__heading">
+                            <span class="nhsuk-caption-l">Add invoices to initial claim</span>
+                            Are you sure you want to cancel?
+                        </h1>
+                    </legend>
+
+                    <div class="nhsuk-hint">
+                        If you select yes, any changes you've made will not be saved.
                     </div>
-                </div>
+                    <div class="nhsuk-radios">
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="cancel-yes" name="cancel" type="radio" value="yes">
+                            <label class="nhsuk-label nhsuk-radios__label" for="cancel-yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="cancel-no" name="cancel" type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="cancel">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
             </div>
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Submit
+            </button>
         </form>
-        <a href="cancel-confirmation" class="nhsuk-link">Cancel</a>
     </div>
 </div>
+<!-- End of are you sure -->
 {% endblock %}
