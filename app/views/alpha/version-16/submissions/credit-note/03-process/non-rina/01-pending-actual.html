@@ -70,7 +70,7 @@ Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <ul class="nhsuk-grid-row nhsuk-card-group">
-<li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+            <li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
                 <div class="nhsuk-card">
                     <div class="nhsuk-card__content">
                         <div class="nhsuk-grid-row">
@@ -80,7 +80,8 @@ Manage incoming international healthcare claims - NHSBSA
                                 </h2>
                             </div>
                         </div>
-                        <hr class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible nhsuk-u-margin-bottom-3">
+                        <hr
+                            class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible nhsuk-u-margin-bottom-3">
                         <dl class="nhsuk-summary-list">
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key" style="width:55%">Credit note reference</dt>
@@ -127,7 +128,8 @@ Manage incoming international healthcare claims - NHSBSA
                             </div>
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">Current status</dt>
-                                <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--orange">Pending</strong></dd>
+                                <dd class="nhsuk-summary-list__value"><strong
+                                        class="nhsuk-tag nhsuk-tag--orange">Pending</strong></dd>
                                 <dd class="nhsuk-summary-list__actions">
                                 </dd>
                             </div>
@@ -264,7 +266,7 @@ Manage incoming international healthcare claims - NHSBSA
                                         </h3>
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
-                                        <div class="nhsuk-form-group" style="float:right;">
+                                        <div class="nhsuk-form-group nhsuk-u-margin-bottom-0" style="float:right;">
                                             <label class="nhsuk-label" for="results">
                                                 Results per page
                                             </label>
@@ -279,7 +281,133 @@ Manage incoming international healthcare claims - NHSBSA
                                 </div>
                                 <!-- End header block -->
 
+                                <!-- Start of filter and sort -->
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <details class="nhsuk-details">
+                                            <summary class="nhsuk-details__summary">
+                                                <span class="nhsuk-details__summary-text">
+                                                    Sort options
+                                                </span>
+                                            </summary>
+                                            <div class="nhsuk-details__text">
+                                                <div class="nhsuk-grid-row">
 
+                                                    <!-- Start sort by -->
+                                                    <div class="nhsuk-grid-column-one-third">
+                                                        <div class="nhsuk-form-group">
+                                                            <fieldset class="nhsuk-fieldset">
+                                                                <legend
+                                                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                                    <h1
+                                                                        class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                                                        Sort by
+                                                                    </h1>
+                                                                </legend>
+                                                                <div class="nhsuk-radios">
+                                                                    <div class="nhsuk-radios__item">
+                                                                        <input class="nhsuk-radios__input"
+                                                                            id="sort-by-entry" name="sort-by"
+                                                                            type="radio" value="entry"
+                                                                            checked="checked">
+                                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                                            for="sort-by-entry">
+                                                                            Entry order
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="nhsuk-radios__item">
+                                                                        <input class="nhsuk-radios__input"
+                                                                            id="sort-by-id" name="sort-by" type="radio"
+                                                                            value="id">
+                                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                                            for="sort-by-id">
+                                                                            Individual credit note reference
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="nhsuk-radios__item">
+                                                                        <input class="nhsuk-radios__input"
+                                                                            id="sort-by-ref" name="sort-by" type="radio"
+                                                                            value="ref">
+                                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                                            for="sort-by-ref">
+                                                                            Invoice reference
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="nhsuk-radios__item">
+                                                                        <input class="nhsuk-radios__input"
+                                                                            id="sort-by-last-name" name="sort-by"
+                                                                            type="radio" value="last-name">
+                                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                                            for="sort-by-last-name">
+                                                                            Last name
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="nhsuk-radios__item">
+                                                                        <input class="nhsuk-radios__input"
+                                                                            id="sort-by-first-name" name="sort-by"
+                                                                            type="radio" value="first-name">
+                                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                                            for="sort-by-first-name">
+                                                                            First name
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End sort by -->
+
+                                                    <!-- Start sort order -->
+                                                    <div class="nhsuk-grid-column-one-third">
+                                                        <div class="nhsuk-form-group">
+                                                            <fieldset class="nhsuk-fieldset">
+                                                                <legend
+                                                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                                    <h1
+                                                                        class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                                                        Order results
+                                                                    </h1>
+                                                                </legend>
+                                                                <div class="nhsuk-radios">
+                                                                    <div class="nhsuk-radios__item">
+                                                                        <input class="nhsuk-radios__input"
+                                                                            id="order-by-asc" name="order-by"
+                                                                            type="radio" value="ascending" checked="checked">
+                                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                                            for="order-by-asc">
+                                                                            Ascending
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="nhsuk-radios__item">
+                                                                        <input class="nhsuk-radios__input"
+                                                                            id="order-by-desc" name="order-by"
+                                                                            type="radio" value="descending"
+                                                                            >
+                                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                                            for="order-by-desc">
+                                                                            Descending
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End sort order -->
+                                                    <div class="nhsuk-grid-column-full">
+                                                        <a href="#">
+                                                            <button class="nhsuk-button nhsuk-button--secondary"
+                                                                data-module="nhsuk-button" type="submit">
+                                                                Apply
+                                                            </button>
+                                                        </a>
+                                                        <p class="nhsuk-u-margin-bottom-0"><a href="">Reset</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </div>
+                                <!-- End of filter and sort -->
 
                                 <!-- Start of table data -->
                                 <div class="nhsuk-grid-row">
@@ -311,7 +439,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </th>
                                                 </tr>
                                             </thead>
-<tbody class="nhsuk-table__body">
+                                            <tbody class="nhsuk-table__body">
                                                 <tr role="row" class="nhsuk-table__row">
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Individual credit
@@ -333,10 +461,12 @@ Manage incoming international healthcare claims - NHSBSA
                                                         <span class="nhsuk-table-responsive__heading">Amount</span>90.00
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Status</span>Pending
+                                                        <span
+                                                            class="nhsuk-table-responsive__heading">Status</span>Pending
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">View </span><a href="">View individual
+                                                        <span class="nhsuk-table-responsive__heading">View </span><a
+                                                            href="">View individual
                                                             credit
                                                             note</a>
                                                     </td>
@@ -359,13 +489,16 @@ Manage incoming international healthcare claims - NHSBSA
                                                             name</span>Hector
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Amount</span>100.50
+                                                        <span
+                                                            class="nhsuk-table-responsive__heading">Amount</span>100.50
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Status</span>Pending
+                                                        <span
+                                                            class="nhsuk-table-responsive__heading">Status</span>Pending
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">View </span><a href="">View individual
+                                                        <span class="nhsuk-table-responsive__heading">View </span><a
+                                                            href="">View individual
                                                             credit
                                                             note</a>
                                                     </td>
@@ -391,10 +524,12 @@ Manage incoming international healthcare claims - NHSBSA
                                                         <span class="nhsuk-table-responsive__heading">Amount</span>60.00
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Status</span>Pending
+                                                        <span
+                                                            class="nhsuk-table-responsive__heading">Status</span>Pending
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">View </span><a href="">View individual
+                                                        <span class="nhsuk-table-responsive__heading">View </span><a
+                                                            href="">View individual
                                                             credit
                                                             note</a>
                                                     </td>
