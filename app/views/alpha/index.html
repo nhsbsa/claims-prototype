@@ -25,6 +25,7 @@ Managing Member State claims
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
+
 <div class="nhsuk-width-container">
 
   <!-- Start header -->
@@ -57,80 +58,704 @@ Managing Member State claims
           </span>
         </summary>
         <div class="nhsuk-details__text">
-          <h3 class="nhsuk-heading-s">Main focus</h3>
-          <p class="nhsuk-body nhsuk-u-margin-bottom-1">Alignment of the following flows/screens with the latest
-            designs:</p>
 
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-heading-s">Main focus</h3>
+              <p class="nhsuk-body nhsuk-u-margin-bottom-1">Alignment of the following flows/screens with the latest
+                designs and CDM 4.4 updates:</p>
+
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="#create-a-new-claim">Create a new claim</a></li>
+                <li><a href="#claim-summary">Claim summary</a></li>
+                <li><a href="#initial-claim-details">Initial claim details</a></li>
+                <li><a href="#initial-claim-upload">Initial claim invoice upload - RINA</a></li>
+                <li><a href="#initial-claim-process">Initial claim invoice processing - RINA</a></li>
+              </ul>
+              <p class="nhsuk-body">This work aims to deliver a consistent, intuitive, and user-centered experience that
+                supports efficiency and reduces cognitive load for users.</p>
+              <hr />
+
+              <h3 class="nhsuk-heading-s">Additional activites</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Initial designs for S082 outcome</li>
+                <li><a href="#linked-submissions">Investigate adding 'Linked submissions' tab to the 'Invoice details'
+                    screen</a></li>
+                <li><a href="#submission-status">Submission status iterations</a></li>
+                <li><a href="#credit-note-ur">Credit note processing - UR feedback iterations</a></li>
+                <li><a href="#credit-note-processing">Credit note processing - content iterations and screen
+                    variations</a></li>
+              </ul>
+              <hr />
+
+              <h3 class="nhsuk-heading-s">Supporting documentation</h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="https://miro.com/app/board/uXjVJybazPM=/?share_link_id=872084522234" target="_blank">Miro -
+                    MIIHC - UI - Version 16</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="create-a-new-claim" class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading"> Create a new claim</h3>
+              <p class="nhsuk-body">The purpose of this work is to ensure alignment with the latest designs and bring
+                the
+                screens inline with the CDM 4.4 changes.</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/initial-claim/01-create/index">Start journey</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="claim-summary" class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading"> Claim summary</h3>
+              <p class="nhsuk-body">The purpose of this work is to ensure alignment with the latest designs and bring
+                the
+                screens inline with the CDM 4.4 changes.</p>
+
+              <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Scenario 1 - A claim has been created, no invoices
+                have
+                been added
+              </h5>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/submissions/initial-claim/01-create/rina/claim-summary/01-actual-cost-not-started-pre-4-4">
+                    Actual cost sickness - Pre CDM 4.4</a></li>
+                <li><a
+                    href="version-16/submissions/initial-claim/01-create/rina/claim-summary/01-actual-cost-not-started-post-4-4">
+                    Actual cost sickness - Post CDM 4.4</a></li>
+                <li><a
+                    href="version-16/submissions/initial-claim/01-create/rina/claim-summary/01-average-cost-article-63-not-started">Average
+                    cost - Article 63
+                    (2a)</a></li>
+                <li><a
+                    href="version-16/submissions/initial-claim/01-create/rina/claim-summary/01-average-cost-article-94-not-started">Average
+                    cost - Article 94
+                  </a></li>
+              </ul>
+
+              <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Scenario 2 - A claim has been created, invoices have
+                been
+                added and
+                are being processed
+              </h5>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/submissions/initial-claim/01-create/rina/claim-summary/02-actual-cost-active-pre-4-4">
+                    Actual cost sickness - Pre CDM 4.4</a></li>
+                <li><a
+                    href="version-16/submissions/initial-claim/01-create/rina/claim-summary/02-actual-cost-active-post-4-4">
+                    Actual cost sickness - Post CDM 4.4</a></li>
+                <li><a
+                    href="version-16/submissions/initial-claim/01-create/rina/claim-summary/02-average-cost-article-63-active">Average
+                    cost - Article 63
+                    (2a)</a></li>
+                <li><a
+                    href="version-16/submissions/initial-claim/01-create/rina/claim-summary/02-average-cost-article-94-active">Average
+                    cost - Article 94
+                  </a></li>
+              </ul>
+
+              <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Scenario 3 - A claim has been created and has
+                multiple
+                submissions
+              </h5>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/submissions/initial-claim/01-create/rina/claim-summary/03-actual-cost-multiple-submissions-pre-4-4">
+                    Actual cost sickness - Pre CDM 4.4</a></li>
+                <li><a
+                    href="version-16/submissions/initial-claim/01-create/rina/claim-summary/03-actual-cost-multiple-submissions-post-4-4">
+                    Actual cost sickness - Post CDM 4.4</a></li>
+                <li><a
+                    href="version-16/submissions/initial-claim/01-create/rina/claim-summary/03-average-cost-article-63-multiple-submissions">Average
+                    cost - Article 63
+                    (2a)</a></li>
+                <li><a
+                    href="version-16/submissions/initial-claim/01-create/rina/claim-summary/03-average-cost-article-94-multiple-submissions">Average
+                    cost - Article 94
+                  </a></li>
+              </ul>
+
+              <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Snapshot tab - proof of concept
+              </h5>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/proof-of-concept/claim-summary/rina/03-actual-cost-multiple-submissions#snapshot">Actual
+                    cost sickness</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div id="initial-claim-details" class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading"> Initial claim details</h3>
+              <p class="nhsuk-body">The purpose of this work is to design the initial claim screen to ensure alignment
+                with
+                the latest designs used across the other types of submissions.
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/initial-claim/02-add-invoices/rina/01-not-started-actual">Actual
+                    cost -
+                    Not started</a>
+                </li>
+                <li><a href="version-16/submissions/initial-claim/03-process/rina/01-active-actual">Actual cost -
+                    Active</a>
+                </li>
+                <li><a href="version-16/submissions/initial-claim/03-process/rina/01-active-average-63">Average cost 63
+                    (2a/2b) -
+                    Active</a>
+                </li>
+                <li><a href="version-16/submissions/initial-claim/03-process/rina/01-active-average-94-95">Average cost
+                    94/95 -
+                    Active</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div id="initial-claim-upload" class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading"> Initial claim invoice upload - RINA</h3>
+              <p class="nhsuk-body">The purpose of this work is to iterate the invoice upload journey within the create
+                a
+                new claim process, ensuring alignment with the latest designs used across the other submission types.
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/initial-claim/02-add-invoices/rina/01-not-started-actual">Start
+                    journey</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="initial-claim-process" class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading"> Initial claim invoice processing - RINA</h3>
+              <p class="nhsuk-body">The purpose of this work is to iterate the manually processing of invoices journey
+                within an initial submission, ensuring alignment with the latest designs used across the other
+                submission
+                types. </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/initial-claim/03-process/rina/01-active-actual">Start journey</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="linked-submissions" class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading"> Invoice details - linked submissions tab - proof of
+                concept</h3>
+              <p class="nhsuk-body">It has been identified that there is a user need to be able to
+                quickly access historical invoice details as they were recorded for each specific submission. To achieve
+                this we are initially investigating adding a new tab to the existing invoice
+                details screen, which will list all the submissions that are associated with that invoice.</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/proof-of-concept/invoice-details/21112025-submissions-tab/01-invoice-details">Invoice
+                    details - RINA
+                    -
+                    Actual cost</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="submission-status" class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading"> Submission status iterations</h3>
+              <p class="nhsuk-card__description">User research showed that 'Payment updated' was the least understood
+                status. It seemed to lack clarity about actor, trigger, and finality. Users took it as the end of the
+                claim but with uncertainty. Based on this feedback we have iterated the terminology used.
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/statuses/index">Submission status style guide</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="credit-note-ur" class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading"> Credit note processing - UR feedback iterations</h3>
+              <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Filter and sort
+              </h4>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/credit-note/03-process/rina/01b-pending-actual#creditNotes">RINA - prior to individual credit note processing starting</a></li>
+                <li><a href="version-16/submissions/credit-note/03-process/non-rina/01-pending-average#creditNotes">Non-RINA - prior to individual credit note processing starting</a></li>
+                <li><a href="version-16/submissions/credit-note/03-process/rina/07-active-actual#creditNotes">RINA - once individual credit note processing has started</a></li>
+                <li><a href="version-16/submissions/credit-note/03-process/non-rina/03-active-average#creditNotes">Non-RINA - once individual credit note processing has started</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="credit-note-processing" class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h3 class="nhsuk-card__heading"> Credit note processing - Additional screen variations for BA</h3>
+
+              <hr />
+
+              <h4 class="nhsuk-heading-s">Credit note details screen - Pending
+              </h4>
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 1</strong><br />One or more individual
+                credit
+                notes have been added, before
+                user has confirmed all individual credit notes have been added</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>RINA - Actual cost - N/A</li>
+                <li>RINA - Average cost - N/A</li>
+                <li><a href="version-16/submissions/credit-note/03-process/non-rina/01-pending-actual">Non-RINA - Actual
+                    cost</a></li>
+                <li><a href="version-16/submissions/credit-note/03-process/non-rina/01-pending-average">Non-RINA -
+                    Average
+                    cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 2</strong><br />While the system is still
+                completing the XML file upload</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/credit-note/03-process/rina/01a-pending-actual-processing">RINA -
+                    Actual
+                    cost</a></li>
+                <li><a href="version-16/submissions/credit-note/03-process/rina/01a-pending-average-processing">RINA -
+                    Average cost</a></li>
+                <li>Non-RINA - Actual cost - N/A</li>
+                <li>Non-RINA - Average cost - N/A</li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 3</strong><br />While another submission is
+                open</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/pending-actual-cannot-open">RINA
+                    - Actual
+                    cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/pending-average-cannot-open">RINA
+                    - Average cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/01c-pending-actual-cannot-open">Non-RINA
+                    - Actual
+                    cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/01c-pending-average-cannot-open">Non-RINA
+                    -
+                    Average cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 4</strong><br />Without another submission
+                open
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/credit-note/03-process/rina/01b-pending-actual">RINA - Actual
+                    cost</a></li>
+                <li><a href="version-16/submissions/credit-note/03-process/rina/01b-pending-average">RINA - Average
+                    cost</a>
+                </li>
+                <li><a href="version-16/submissions/credit-note/03-process/non-rina/01c-pending-actual">Non-RINA -
+                    Actual
+                    cost</a></li>
+                <li><a href="version-16/submissions/credit-note/03-process/non-rina/01c-pending-average">Non-RINA -
+                    Average
+                    cost</a></li>
+              </ul>
+
+              <hr />
+              <h4 class="nhsuk-heading-s">Credit note details screen - Active
+              </h4>
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 1</strong><br />While the system is
+                comparing
+                the individual credit note details with the matched invoice details
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/03a-active-actual-processing">RINA/Non-RINA
+                    -
+                    Actual
+                    cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/03a-active-average-processing">RINA/Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 2</strong><br />Check individual credit
+                notes:
+                Not yet started
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/credit-note/03-process/rina/03b-active-actual">RINA/Non-RINA -
+                    Actual
+                    cost</a>
+                </li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/03b-active-average">RINA/Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 3</strong><br />Check individual credit
+                notes:
+                In progress
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/credit-note/03-process/rina/07-active-actual">RINA/Non-RINA - Actual
+                    cost</a>
+                </li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/07-active-average">RINA/Non-RINA
+                    -
+                    Average cost</a></li>
+              </ul>
+
+              <hr />
+
+              <h4 class="nhsuk-heading-s">Individual credit note details screen - Pending
+              </h4>
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 1</strong><br />While credit note status is
+                pending and before user confirms all individual credit notes are added - Non-RINA only
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/individual-credit-notes/26584633-pending-actual">Non-RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/individual-credit-notes/26584633-pending">Non-RINA
+                    - Average cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/delete-individual-credit-note-confirmation">Delete
+                    individual credit note confirmation</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 2</strong><br />While credit note status is
+                pending
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/individual-credit-notes/001-pending">RINA -
+                    Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/individual-credit-notes/001-pending-average">RINA
+                    - Average cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/individual-credit-notes/26584633-pending-locked-actual">Non-RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/individual-credit-notes/26584633-pending-locked">Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+              <hr />
+
+              <h4 class="nhsuk-heading-s">Individual credit note details screen - To check</h4>
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 1</strong><br />Matched invoice found, no
+                differences between the individual credit note and the matched invoice
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/credit-note/03-process/rina/04-001-to-check">RINA - Actual cost</a>
+                </li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/04-001-to-check-average">RINA
+                    - Average cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/04-20001563-to-check-actual">Non-RINA
+                    - Actual cost</a></li>
+                <li><a href="version-16/submissions/credit-note/03-process/non-rina/04-20001563-to-check">Non-RINA -
+                    Average
+                    cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 2</strong><br />Matched invoice found, with
+                differences between the individual credit note and the matche dinvoice
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/credit-note/03-process/rina/11-003-to-check">RINA - Actual cost</a>
+                </li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/11-003-to-check-average">RINA
+                    - Average cost</a></li>
+                <li>Non-RINA - Actual cost - N/A</li>
+                <li>Non-RINA - Average cost - N/A</li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 3</strong><br />No matched invoice found
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/credit-note/03-process/rina/08-002-to-check">RINA - Actual cost</a>
+                </li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/08-002-to-check-average">RINA
+                    - Average cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/no-match-found-actual">Non-RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/no-match-found-average">Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+              <hr />
+
+              <h4 class="nhsuk-heading-s">Individual credit note details screen - Accepted/Contested/Partial - Credit
+                note
+                status: Processed</h4>
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 1</strong><br />Individual credit note
+                status:
+                Accepted
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/individual-credit-notes/001-accepted">RINA
+                    -
+                    Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/individual-credit-notes/001-accepted-average">RINA
+                    - Average cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/individual-credit-notes/26584633-accepted-actual">Non-RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/individual-credit-notes/26584633-accepted">Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 2</strong><br />Individual credit note
+                status:
+                Contested
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/individual-credit-notes/002-contested">RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/individual-credit-notes/002-contested-average">RINA
+                    - Average cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/individual-credit-notes/002-contested-actual">Non-RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/individual-credit-notes/002-contested-average">Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Scenario 3</strong><br />Individual credit note
+                status:
+                Partial
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/individual-credit-notes/26585127-partial-actual">RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/individual-credit-notes/26585127-partial-average">RINA
+                    - Average cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/individual-credit-notes/26585127-partial-actual">Non-RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/individual-credit-notes/26585127-partial">Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+              <hr />
+
+              <h4 class="nhsuk-heading-s">Processing the individual credit note</h4>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>What do you want to do with this
+                  individiual credit note?</strong>
+              </p>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-1">Scenario 1 - The individual credit note amount is less than
+                the
+                matched invoice
+                amount</p>
+
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/credit-note/03-process/rina/04b-001-decision">RINA - Actual cost</a>
+                </li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/10b-20001542-decision-actual-fully">Non-RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/10b-20001542-decision-average-fully">RINA/Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-1">Scenario 2 - The individual credit note amount is greater
+                than
+                the matched
+                invoice amount</p>
+
+              <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-9">
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/04b-001-decision-actual-no-fully">RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/10b-20001542-decision-actual">Non-RINA
+                    - Actual cost</a></li>
+                <li><a href="version-16/submissions/credit-note/03-process/non-rina/10b-20001542-decision">RINA/Non-RINA
+                    -
+                    Average cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Where do you want to withdraw the credit amount
+                  from?</strong>
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-9">
+                <li><a href="version-16/submissions/credit-note/03-process/non-rina/04b-20001563-withdraw">RINA/Non-RINA
+                    -
+                    Average cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>How much do you want to withdraw from the
+                  invoice?</strong>
+              </p>
+              <p class="nhsuk-body nhsuk-u-margin-bottom-1">Scenario 1 - Decision: Fully accpet | Invoice status:
+                Partial |
+                Withdrawn from: Both</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>RINA/Non-RINA - Actual cost - N/A</li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/04c-20001563-months">RINA/Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-1">Scenario 2 - Decision: Partially accpet | Invoice status:
+                Partial |
+                Withdrawn from: Both</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>RINA/Non-RINA - Actual cost - N/A</li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/04c-20001563-months-partial">RINA/Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-1">Scenario 3 - Decision: Partially accpet | Invoice status:
+                Partial |
+                Withdrawn from: Accepted OR Decision: Partially accept | Invoice status: Accepted</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/04c-20001563-amount-partial-accepted">RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/04c-20001563-amount-partial-accepted">Non-RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/04c-20001563-months-partial-accepted">RINA/Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-1">Scenario 4 - Decision: partially accpet, Invoice status:
+                partial,
+                Withdrawn from: contested OR Decision: partially accept, Invoice status: contested</p>
+              <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-9">
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/04c-20001563-amount-partial-contested">RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/04c-20001563-amount-partial-contested">Non-RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/04c-20001563-months-partial-contested">RINA/Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Why are you contesting this individual credit
+                  note?</strong>
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-9">
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/08b-002-contestation-reason-actual-matched">RINA
+                    - Actual cost - with matched invoice</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/08b-002-contestation-reason-average-matched">RINA
+                    - Average cost - with matched invoice</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/08b-002-contestation-reason-actual-no-match">Non-RINA
+                    - Actual cost - no matched invoice</a></li>
+              </ul>
+
+
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Check your individual credit note decision</strong>
+              </p>
+              <p class="nhsuk-body nhsuk-u-margin-bottom-1">Scenario 1 - Individual credit note decision: Contested</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/credit-note/03-process/rina/08d-002-cya">RINA - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/08d-002-cya">Non-RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/08d-002-cya-average">RINA/Non-RINA
+                    - Average cost</a></li>
+              </ul>
+
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-1">Scenario 2 - Individual credit note decision: Fully accepted
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/credit-note/03-process/rina/04c-001-cya">RINA - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/04c-001-cya">Non-RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/04c-001-cya-average">RINA
+                    - Average cost</a></li>
+                <li><a href="version-16/submissions/credit-note/03-process/non-rina/04d-20001563-cya">Non-RINA - Average
+                    cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-1">Scenario 3 - Individual credit note decision: Partially
+                accepted
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-9">
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/10d-20001542-cya-actual">RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/non-rina/additional-screens/10d-20001542-cya-actual">Non-RINA
+                    - Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/10d-20001542-cya-average">RINA
+                    - Average cost</a></li>
+                <li><a href="version-16/submissions/credit-note/03-process/non-rina/10d-20001542-cya">Non-RINA - Average
+                    cost</a></li>
+              </ul>
+
+              <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>Confirmation - Individual credit note
+                  contested</strong>
+              </p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="version-16/submissions/credit-note/03-process/rina/09-confirmation">Actual cost</a></li>
+                <li><a
+                    href="version-16/submissions/credit-note/03-process/rina/additional-variations/09-confirmation-average">Average
+                    cost</a></li>
+              </ul>
+
+
+            </div>
+          </div>
+
+          <!-- <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Initial claim - Outcomes - Contestation</h5>
           <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>Create a new claim</li>
-            <li>Claim summary</li>
-            <li>Initial claim invoice upload - RINA</li>
-            <li>Initial claim invoice processing - RINA</li>
-          </ul>
-          <p class="nhsuk-body">This work aims to deliver a consistent, intuitive, and user-centered experience that
-            supports efficiency and reduces cognitive load for users.</p>
-          <hr />
-
-          <h3 class="nhsuk-heading-s">Additional activites</h3>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>Investigate adding 'Linked submissions' tab to the 'Invoice details' screen</li>
-            <li>Update the create a claim flow to be inline with the CDM 4.4 updates</li>
-          </ul>
-          <hr />
-
-          <h3 class="nhsuk-heading-s">Supporting documentation</h3>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li><a href="https://miro.com/app/board/uXjVJybazPM=/?share_link_id=872084522234" target="_blank">Miro -
-                MIIHC - UI - Version 16</a>
-            </li>
+            <li><a
+                href="version-16/submissions/initial-claim/04-outcomes/rina/01-contestation/01-actual-sickness">Actual
+                cost - Sickness</a></li>
           </ul>
 
-          <hr />
+          <hr /> -->
 
-          <h4 class="nhsuk-heading-s">Create a new claim</h4>
-          <p class="nhsuk-body">The purpose of this work is to ensure alignment with the latest designs and bring the
-            screens inline with the CDM 4.4 changes.</p>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li><a href="version-16/submissions/initial-claim/01-create/index">Start journey</a></li>
-          </ul>
 
-          <hr />
 
-          <!-- <h4 class="nhsuk-heading-s">Claim summary</h4>
-          <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">RINA</h4>
-            <ul>
-              <li><a href="version-16/proof-of-concept/claim-summary/rina/01a-actual-cost">Actual cost - Pre CDM 4.4 -
-                  Initial claim not started</a></li>
-              <li><a href="version-16/proof-of-concept/claim-summary/rina/02a-actual-cost">Actual cost - Pre CDM 4.4 -
-                  Multiple submissions</a></li>
-              <li><a href="version-16/proof-of-concept/claim-summary/rina/01b-actual-cost">Actual cost - Post CDM 4.4 -
-                  Initial claim not started</a></li>
-              <li><a href="version-16/proof-of-concept/claim-summary/rina/01-average-cost-63">Average cost - Article 63
-                  (2a) - Initial claim not started</a></li>
-              <li><a href="version-16/proof-of-concept/claim-summary/rina/01-average-cost-94">Average cost - Article 94
-                  - Initial claim not started</a></li>
-            </ul>
 
-            <hr />
 
-            <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Initial claim</h5>
-            <ul class="nhsuk-list nhsuk-list--bullet">
-              <li><a href="version-16/submissions/initial-claim/02-add-invoices/rina/01-not-started">Add invoices</a>
-              </li>
-              <li><a href="version-16/submissions/initial-claim/03-process/rina/01-active">Process invoices</a></li>
-            </ul> -->
 
-            <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Invoice details - linked submissions tab - proof of
-              concept</h4>
-            <p class="nhsuk-body">It has been identified that there is a user need to be able to
-              quickly access historical invoice details as they were recorded for each specific submission. To achieve
-              this we are initially investigating adding a new tab to the existing invoice
-              details screen, which will list all the submissions that are associated with that invoice.</p>
-            <ul class="nhsuk-list nhsuk-list--bullet">
-              <li><a href="version-16/proof-of-concept/invoice-details/21112025-submissions-tab/01-invoice-details">RINA
-                  -
-                  Actual cost</a></li>
-            </ul>
+
 
 
 
@@ -143,8 +768,8 @@ Managing Member State claims
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text" style="width: 95%;">
             Version 15 - Processing credit notes - November 2025
-            <strong class="nhsuk-tag nhsuk-tag--orange" style="float:right;">
-              Ready for UR
+            <strong class="nhsuk-tag nhsuk-tag--green" style="float:right;">
+              UR complete
             </strong>
           </span>
         </summary>
