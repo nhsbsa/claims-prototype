@@ -65,8 +65,8 @@ Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-column-two-thirds">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
             <h1 class="nhsuk-fieldset__heading">
-                <span class="nhsuk-caption-l">Process individual credit note</span>
-                How much do you want to withdraw from the invoice?
+                <span class="nhsuk-caption-l">Process an individual credit note</span>
+                Apply the credit to the invoice
             </h1>
         </legend>
     </div>
@@ -83,16 +83,23 @@ Manage incoming international healthcare claims - NHSBSA
 
                     <div class="nhsuk-form-group">
                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
-                            Months to withdraw from accepted months
+                            Credit to apply to accepted months
                         </label>
+                        <div class="nhsuk-hint" id="accpeted-hint">
+                            Enter how many months of credit you want to apply to the accepted invoice amount. For
+                            example, 7
+                        </div>
                         <input class="nhsuk-input nhsuk-u-width-one-third" id="accepted" name="accepted" type="text">
                     </div>
                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
                     <div class="nhsuk-form-group">
                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contest">
-                            Months to contest
+                            Credit to contest
                         </label>
+                        <div class="nhsuk-hint" id="contest-hint">
+                            Enter how many months of credit you do not want to apply to the invoice. For example, 2
+                        </div>
                         <input class="nhsuk-input nhsuk-u-width-one-third" id="contest" name="contest" type="text">
                     </div>
                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
@@ -101,13 +108,18 @@ Manage incoming international healthcare claims - NHSBSA
                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contestation-reason">
                             Contestation reason
                         </label>
+                        <div class="nhsuk-hint" id="contestation-reason-hint">
+                            Select the reason you want to contest part of the individual credit note
+                        </div>
                         <select class="nhsuk-select" id="contestation-reason" name="contestation-reason">
                             <option value="None">Select a reason</option>
                             <option value="Corresponding IMO not available.">Corresponding IMO not available.</option>
-                            <option value="Number of months of credit note exceeds IMO number of months.">Number of months of credit note exceeds IMO number of months.</option>
-                            <option value="Correction of number of months of credit note.">Correction of number of months of credit note.</option>
+                            <option value="Number of months of credit note exceeds IMO number of months.">Number of
+                                months of credit note exceeds IMO number of months.</option>
+                            <option value="Correction of number of months of credit note.">Correction of number of
+                                months of credit note.</option>
                             <option value="IMO has been contested.">IMO has been contested.</option>
-                            <option value="Other">Other - enter details.</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">

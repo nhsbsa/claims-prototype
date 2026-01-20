@@ -65,8 +65,8 @@ Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-column-two-thirds">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
             <h1 class="nhsuk-fieldset__heading">
-                <span class="nhsuk-caption-l">Process individual credit note</span>
-                How much do you want to withdraw from the invoice?
+                <span class="nhsuk-caption-l">Process an individual credit note</span>
+                Apply the credit to the invoice
             </h1>
         </legend>
     </div>
@@ -83,16 +83,23 @@ Manage incoming international healthcare claims - NHSBSA
 
                     <div class="nhsuk-form-group">
                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
-                            Credit to withdraw from contested amount
+                            Credit to apply to contested amount
                         </label>
+                        <div class="nhsuk-hint" id="hint-contested">
+                            Enter the amount of credit you want to apply to the contested invoice amount. For example,
+                            100.50
+                        </div>
                         <input class="nhsuk-input nhsuk-u-width-one-third" id="contested" name="contested" type="text">
                     </div>
                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
                     <div class="nhsuk-form-group">
                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contest">
-                            Amount to contest
+                            Credit to contest
                         </label>
+                        <div class="nhsuk-hint" id="hint">
+                            Enter the amount of credit you do not want to apply to the invoice. For example, 100.50
+                        </div>
                         <input class="nhsuk-input nhsuk-u-width-one-third" id="contest" name="contest" type="text">
                     </div>
                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
@@ -101,6 +108,9 @@ Manage incoming international healthcare claims - NHSBSA
                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contestation-reason">
                             Contestation reason
                         </label>
+                        <div class="nhsuk-hint" id="hint">
+                            Select the reason you want to contest part of the individual credit note
+                        </div>
                         <select class="nhsuk-select" id="contestation-reason" name="contestation-reason">
                             <option value="None">Select a reason</option>
                             <option value="Corresponding claim not found">Corresponding claim not
@@ -109,7 +119,7 @@ Manage incoming international healthcare claims - NHSBSA
                                 amount exceeds claim amount.</option>
                             <option value="The claim has been contested">The claim has been
                                 contested.</option>
-                            <option value="Other">Other - enter details.</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
