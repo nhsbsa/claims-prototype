@@ -52,6 +52,37 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <!-- Start of central content -->
 {% block content %}
 
+<style>
+    .nhsuk-button--small {
+        margin-bottom: 20px;
+        min-height: 2.25rem;
+        padding: .375rem .75rem
+    }
+
+    @media (min-width: 40.0625em) {
+        .nhsuk-button--small {
+            font-size: .875rem;
+            font-weight: 600;
+            line-height: 1.3571428571;
+            margin-bottom: 28px
+        }
+    }
+
+    @media (min-width: 40.0625em) and(min-width: 40.0625em) {
+        .nhsuk-button--small {
+            font-size: 1rem;
+            line-height: 1.1875
+        }
+    }
+
+    @media print and (min-width: 40.0625em) {
+        .nhsuk-button--small {
+            font-size: 12pt;
+            line-height: 19px
+        }
+    }
+</style>
+
 <!-- Start back link -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
@@ -969,12 +1000,8 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                 </div>
                                 <!-- End of contestation reasons -->
-
-
-
                                 <a href="#/" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-2"
                                     role="button" data-module="nhsuk-button">Check decision</a>
-
                             </div>
                         </div>
                     </div>
