@@ -60,29 +60,20 @@ Manage incoming international healthcare claims - NHSBSA
 </div>
 <!-- End back link -->
 
-<!-- Start of header block -->
+<!-- Start of heading -->
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-            <h1 class="nhsuk-fieldset__heading">
+            <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-4">
                 <span class="nhsuk-caption-l">Process an individual credit note</span>
-                Where do you want to apply this credit?
+                Where should the credit months be withdrawn from?
             </h1>
         </legend>
     </div>
 </div>
-<!-- End of header block -->
+<!-- End of heading -->
 
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <p class="nhsuk-body">You can apply the credit to the accepted invoice months, contested invoice months, or
-            split it across both.
-        </p>
-    </div>
-</div>
-
-<div class="nhsuk-grid-row">
-
     <!-- Start question -->
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-card">
@@ -95,21 +86,15 @@ Manage incoming international healthcare claims - NHSBSA
                                     <input class="nhsuk-radios__input" id="withdraw-accepted" name="withdraw"
                                         type="radio" value="accepted">
                                     <label class="nhsuk-label nhsuk-radios__label" for="withdraw-accepted">
-                                        Accepted months
+                                        Accepted invoice months
                                     </label>
-                                    <div id="withdraw-accepted-hint" class="nhsuk-hint nhsuk-radios__hint">
-                                        Apply the credit only to the months that have been accepted.
-                                    </div>
                                 </div>
                                 <div class="nhsuk-radios__item">
                                     <input class="nhsuk-radios__input" id="withdraw-contested" name="withdraw"
                                         type="radio" value="contested">
                                     <label class="nhsuk-label nhsuk-radios__label" for="withdraw-contested">
-                                        Contested months
+                                        Contested invoice months
                                     </label>
-                                    <div id="withdraw-contested-hint" class="nhsuk-hint nhsuk-radios__hint">
-                                        Apply the credit only to the months that are still being reviewed.
-                                    </div>
                                 </div>
                                 <div class="nhsuk-radios__item">
                                     <input class="nhsuk-radios__input" id="withdraw-both" name="withdraw" type="radio"
@@ -117,17 +102,26 @@ Manage incoming international healthcare claims - NHSBSA
                                     <label class="nhsuk-label nhsuk-radios__label" for="withdraw-both">
                                         Both
                                     </label>
-                                    <div id="withdraw-both-hint" class="nhsuk-hint nhsuk-radios__hint">
-                                        Split the credit across the accepted and contested months.
-                                    </div>
                                 </div>
                             </div>
                         </fieldset>
                     </div>
-                    <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
                         Continue
                     </button>
                 </form>
+
+                <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary">
+                        <span class="nhsuk-details__summary-text">
+                            How withdrawing credit reduces the invoice
+                        </span>
+                    </summary>
+                    <div class="nhsuk-details__text">
+                        <p>Withdrawing credit from the invoice reduces the invoice months, so the UK pays less.</p>
+                    </div>
+                </details>
+
             </div>
         </div>
     </div>

@@ -62,11 +62,12 @@ Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of header block -->
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-            <h1 class="nhsuk-fieldset__heading">
+            <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-4">
                 <span class="nhsuk-caption-l">Process an individual credit note</span>
-                Apply the credit to the invoice
+                <!-- Apply the credit to the invoice -->
+                Withdraw the credit months from the invoice
             </h1>
         </legend>
     </div>
@@ -83,11 +84,11 @@ Manage incoming international healthcare claims - NHSBSA
 
                     <div class="nhsuk-form-group">
                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
-                            Credit to apply to contested months
+                            <!-- Credit to apply to contested months -->
+                            Credit to withdraw from contested months
                         </label>
                         <div class="nhsuk-hint" id="hint">
-                            Enter how many months of credit you want to apply to the contested invoice amount. For
-                            example, 3
+                            For example, 12
                         </div>
                         <input class="nhsuk-input nhsuk-u-width-one-third" id="contested" name="contested" type="text">
                     </div>
@@ -95,10 +96,11 @@ Manage incoming international healthcare claims - NHSBSA
 
                     <div class="nhsuk-form-group">
                         <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contest">
-                            Credit to contest
+                            <!-- Credit to contest -->
+                            Credit you want to contest
                         </label>
                         <div class="nhsuk-hint" id="hint">
-                            Enter how many months of credit you do not want to apply to the invoice. For example, 2
+                            For example, 12
                         </div>
                         <input class="nhsuk-input nhsuk-u-width-one-third" id="contest" name="contest" type="text">
                     </div>
@@ -109,7 +111,7 @@ Manage incoming international healthcare claims - NHSBSA
                             Contestation reason
                         </label>
                         <div class="nhsuk-hint" id="hint">
-                            Select the reason you want to contest part of the individual credit note
+                            The reason you want to contest part of the individual credit note
                         </div>
                         <select class="nhsuk-select" id="contestation-reason" name="contestation-reason">
                             <option value="None">Select a reason</option>
@@ -125,6 +127,18 @@ Manage incoming international healthcare claims - NHSBSA
                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
                 </fieldset>
                 <a href="" class="nhsuk-button" role="button" data-module="nhsuk-button">Continue</a>
+
+                <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary">
+                        <span class="nhsuk-details__summary-text">
+                            How withdrawing credit reduces the invoice
+                        </span>
+                    </summary>
+                    <div class="nhsuk-details__text">
+                        <p>Withdrawing credit from the invoice reduces the invoice months, so the UK pays less.</p>
+                    </div>
+                </details>
+
             </div>
         </div>
         <p class="nhsuk-body"><a href="#">Cancel</a></p>
