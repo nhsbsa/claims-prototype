@@ -44,17 +44,16 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link"
                     href="../../../../../../../home">Home</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link"
                     href="../../../../../../index">Claims</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link"
                     href="../../../summary/active-invoices-uploaded">Claim ID 6784</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link"
                     href="../../../invoices/full-invoice-list">Invoices</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link"
                     href="../../../invoices/details/20001554/01-to-check">Invoice ID 20001554</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
@@ -63,7 +62,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 Claims
             </a>
         </p>
-    </div>
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %}
@@ -147,7 +145,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             </div>
 
                             <div class="nhsuk-form-group">
-                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="accepted">
                                     Last name
                                 </label>
                                 <input class="nhsuk-input nhsuk-u-width-two-thirds" id="accepted" name="accepted"
@@ -155,7 +153,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             </div>
 
                             <div class="nhsuk-form-group">
-                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="accepted">
                                     First name
                                 </label>
                                 <input class="nhsuk-input nhsuk-u-width-two-thirds" id="accepted" name="accepted"
@@ -163,7 +161,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             </div>
 
                             <div class="nhsuk-form-group">
-                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="accepted">
                                     Residential country
                                 </label>
                                 <input class="nhsuk-input nhsuk-u-width-two-thirds" id="accepted" name="accepted"
@@ -172,7 +170,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                             <div class="nhsuk-form-group">
                                 <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="dob">
+                                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="dob">
                                         Date of birth
                                     </label>
                                     <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="target-date-hint">
@@ -220,7 +218,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             </div>
 
                             <div class="nhsuk-form-group">
-                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="contested">
                                     PIN
                                 </label>
                                 <div class="nhsuk-hint">
@@ -231,7 +229,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             </div>
 
                             <div class="nhsuk-form-group">
-                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="contested">
                                     Entitlement issue number
                                 </label>
                                 <div class="nhsuk-hint">
@@ -803,7 +801,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
-                        <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+                        <nav class="nhsuk-pagination nhsuk-pagination--numbered" role="navigation" aria-label="Pagination">
 
                             <div class="nhsuk-pagination__prev">
                                 <!-- <a class="nhsuk-link nhsuk-pagination__link" href="#" rel="prev">
