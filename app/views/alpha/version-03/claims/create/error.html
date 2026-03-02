@@ -37,10 +37,9 @@ Create a new claim - Manage member state claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../index">Claims
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="../index">Claims
                 </a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
@@ -48,7 +47,6 @@ Create a new claim - Manage member state claims - NHSBSA
                 <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
                 claims </a>
         </p>
-    </div>
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %}
@@ -211,7 +209,7 @@ Create a new claim - Manage member state claims - NHSBSA
 
                         <!-- Country submitting the claim -->
                         <div class="nhsuk-form-group {% if data['country'] === '' %}nhsuk-form-group--error{% endif %}">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="country">
+                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="country">
                                 Country submitting the claim
                             </label>
                             {% if data['country'] === '' %}
@@ -227,7 +225,7 @@ Create a new claim - Manage member state claims - NHSBSA
 
                         <!-- Claim reference -->
                         <div class="nhsuk-form-group {% if data['ref'] === '' %}nhsuk-form-group--error{% endif %}">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="ref">
                                 Claim reference
                             </label>
                             {% if data['ref'] === '' %}
@@ -242,7 +240,7 @@ Create a new claim - Manage member state claims - NHSBSA
 
                         <!-- Financial year of claim -->
                         <div class="nhsuk-form-group {% if data['financial-year'] === '' %}nhsuk-form-group--error{% endif %}">
-                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="financial-year">
+                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="financial-year">
                                 Financial year of claim
                             </label>
                             {% if data['financial-year'] === '' %}
