@@ -37,9 +37,8 @@ Search results - Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="../home">Home</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
             <a class="nhsuk-breadcrumb__backlink" href="../home">
@@ -47,7 +46,6 @@ Search results - Manage incoming international healthcare claims - NHSBSA
                 Home
             </a>
         </p>
-    </div>
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %}
@@ -90,7 +88,7 @@ Search results - Manage incoming international healthcare claims - NHSBSA
                                         <!-- Claim ID -->
                                         <div class="nhsuk-grid-column-one-third">
                                             <div class="nhsuk-form-group">
-                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="claim-id">
+                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="claim-id">
                                                     Claim ID
                                                 </label>
                                                 <input class="nhsuk-input " id="claim-id" name="claim-id" type="text">
@@ -100,7 +98,7 @@ Search results - Manage incoming international healthcare claims - NHSBSA
                                         <!-- Country submitting the claim -->
                                         <div class="nhsuk-grid-column-two-thirds">
                                             <div class="nhsuk-form-group">
-                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="country">
+                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="country">
                                                     Country submitting the claim
                                                 </label>
                                                 <input class="nhsuk-input " id="country" name="country" type="text"
@@ -117,7 +115,7 @@ Search results - Manage incoming international healthcare claims - NHSBSA
 
                                             <!-- Claim reference -->
                                             <div class="nhsuk-form-group">
-                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ref">
+                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="ref">
                                                     Claim reference
                                                 </label>
                                                 <input class="nhsuk-input" id="ref" name="ref" type="text"
@@ -137,7 +135,7 @@ Search results - Manage incoming international healthcare claims - NHSBSA
 
                                             <!-- Financial year of claim -->
                                             <div class="nhsuk-form-group">
-                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                     for="financial-year">
                                                     Financial year of the claim
                                                 </label>
@@ -435,7 +433,7 @@ Search results - Manage incoming international healthcare claims - NHSBSA
                     </tbody>
                 </table>
 
-                <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+                <nav class="nhsuk-pagination nhsuk-pagination--numbered" role="navigation" aria-label="Pagination">
                     <ul class="nhsuk-list nhsuk-pagination__list">
 
                         <li class="nhsuk-pagination-item--next">
