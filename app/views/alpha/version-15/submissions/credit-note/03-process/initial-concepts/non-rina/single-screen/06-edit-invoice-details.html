@@ -17,31 +17,26 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Home</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Claims</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Claim ID 6789</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9441</a>
             </li>
         </ol>
-        <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="">
-                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
-                Claims
-            </a>
-        </p>
-    </div>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %}
@@ -86,7 +81,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </legend>
                                     <hr style="margin:0px 0px 24px 0px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="last-name">
                                             Last name
                                         </label>
                                         <input class="nhsuk-input" id="last-name" name="last-name" type="text"
@@ -95,7 +90,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"
                                         style="margin-top:12px; margin-bottom: 20px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="first-name">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="first-name">
                                             First name
                                         </label>
                                         <input class="nhsuk-input" id="first-name" name="first-name" type="text"
@@ -104,7 +99,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"
                                         style="margin-top:12px; margin-bottom: 20px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="dob">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="dob">
                                             Date of birth
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="dob-hint">
@@ -146,7 +141,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"
                                         style="margin-top:12px; margin-bottom: 20px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="uk-pin">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="uk-pin">
                                             PIN in UK
                                         </label> <input class="nhsuk-input" id="uk-pin" name="uk-pin" type="text"
                                             value="JM 76 32 32 A">
@@ -168,7 +163,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </legend>
                                     <hr style="margin:0px 0px 24px 0px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="document">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="document">
                                             Document
                                         </label> <select class="nhsuk-select nhsuk-u-width-two-thirds" id="document"
                                             name="document">
@@ -182,7 +177,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"
                                         style="margin-top:12px; margin-bottom: 20px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="document-start">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="document-start">
                                             Start date
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="document-start-hint">
@@ -228,7 +223,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         style="margin-top:12px; margin-bottom: 20px;">
 
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="document-end">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="document-end">
                                             End date
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="document-end-hint">
@@ -286,7 +281,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </legend>
                                     <hr style="margin:0px 0px 24px 0px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="first-name">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="first-name">
                                             Start date
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="example-hint">
@@ -331,7 +326,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"
                                         style="margin-top:12px; margin-bottom: 20px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="first-name">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="first-name">
                                             End date
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="example-hint">
@@ -404,7 +399,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </legend>
                                     <hr style="margin:0px 0px 24px 0px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="last-name">
                                             Last name
                                         </label>
                                         <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name" name="last-name" type="text"
@@ -413,7 +408,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"
                                         style="margin-top:12px; margin-bottom: 20px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="first-name">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="first-name">
                                             First name
                                         </label>
                                         <input class="nhsuk-input nhsuk-u-width-two-thirds" id="first-name" name="first-name" type="text"
@@ -422,7 +417,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"
                                         style="margin-top:12px; margin-bottom: 20px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="dob">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="dob">
                                             Date of birth
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="dob-hint">
@@ -464,7 +459,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"
                                         style="margin-top:12px; margin-bottom: 20px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="uk-pin">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="uk-pin">
                                             PIN in UK
                                         </label> <input class="nhsuk-input nhsuk-u-width-two-thirds" id="uk-pin" name="uk-pin" type="text"
                                             value="JM 76 32 32 A">
@@ -486,7 +481,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </legend>
                                     <hr style="margin:0px 0px 24px 0px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="document">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="document">
                                             Document
                                         </label> <select class="nhsuk-select nhsuk-u-width-two-thirds" id="document"
                                             name="document">
@@ -500,7 +495,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"
                                         style="margin-top:12px; margin-bottom: 20px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="document-start">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="document-start">
                                             Start date
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="document-start-hint">
@@ -546,7 +541,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         style="margin-top:12px; margin-bottom: 20px;">
 
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="document-end">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="document-end">
                                             End date
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="document-end-hint">
@@ -604,7 +599,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </legend>
                                     <hr style="margin:0px 0px 24px 0px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="first-name">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="first-name">
                                             Start date
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="example-hint">
@@ -649,7 +644,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"
                                         style="margin-top:12px; margin-bottom: 20px;">
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="first-name">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="first-name">
                                             End date
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="example-hint">

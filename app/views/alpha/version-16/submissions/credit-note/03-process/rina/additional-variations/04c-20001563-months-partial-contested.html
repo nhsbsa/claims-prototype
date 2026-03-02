@@ -17,34 +17,29 @@ Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Home</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Claims</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Claim ID 6789</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9441</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Individual credit note ID 10003911</a>
             </li>
         </ol>
-        <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="">
-                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
-                Claims
-            </a>
-        </p>
-    </div>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %}
@@ -83,7 +78,7 @@ Manage incoming international healthcare claims - NHSBSA
                 <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-0">
 
                     <div class="nhsuk-form-group">
-                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="contested">
                             <!-- Credit to apply to contested months -->
                             Credit to withdraw from contested months
                         </label>
@@ -95,7 +90,7 @@ Manage incoming international healthcare claims - NHSBSA
                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
                     <div class="nhsuk-form-group">
-                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contest">
+                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="contest">
                             <!-- Credit to contest -->
                             Credit you want to contest
                         </label>
@@ -107,13 +102,13 @@ Manage incoming international healthcare claims - NHSBSA
                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
-                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contestation-reason">
+                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="contestation-reason">
                             Contestation reason
                         </label>
                         <div class="nhsuk-hint" id="hint">
                             The reason you want to contest part of the individual credit note
                         </div>
-                        <select class="nhsuk-select" id="contestation-reason" name="contestation-reason">
+                        <select class="nhsuk-select" style="min-width:0px;" id="contestation-reason" name="contestation-reason">
                             <option value="None">Select a reason</option>
                             <option value="Corresponding IMO not available.">Corresponding IMO not available.</option>
                             <option value="Number of months of credit note exceeds IMO number of months.">Number of

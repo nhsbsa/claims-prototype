@@ -17,28 +17,23 @@ Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Home</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Claims</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
             </li>
         </ol>
-        <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="">
-                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
-                Claims
-            </a>
-        </p>
-    </div>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %} {% block content %}
@@ -472,7 +467,7 @@ Manage incoming international healthcare claims - NHSBSA
                                         <div class="nhsuk-grid-row">
                                             <div class="nhsuk-grid-column-two-thirds">
                                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                         for="invoice-id">
                                                         Invoice ID
                                                     </label>
@@ -480,7 +475,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                         name="invoice-id" type="text" value="20001544">
                                                 </div>
                                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                         for="invoice-ref">
                                                         Invoice reference
                                                     </label>
@@ -500,7 +495,7 @@ Manage incoming international healthcare claims - NHSBSA
                                         <div class="nhsuk-grid-row">
                                             <div class="nhsuk-grid-column-two-thirds">
                                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                         for="last-name">
                                                         Last name
                                                     </label>
@@ -512,7 +507,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                         name="last-name" type="text">
                                                 </div>
                                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                         for="first-name">
                                                         First name
                                                     </label>
@@ -529,7 +524,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
                                                     <fieldset class="nhsuk-fieldset" aria-describedby="dob"
                                                         role="group">
-                                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="dob">
+                                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="dob">
                                                             Date of birth
                                                         </label>
                                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="dob-hint">
@@ -616,7 +611,7 @@ Manage incoming international healthcare claims - NHSBSA
                                             <label class="nhsuk-label" for="results">
                                                 Results per page
                                             </label>
-                                            <select class="nhsuk-select" id="results" name="results"
+                                            <select class="nhsuk-select" style="min-width:0px; float:right;" id="results" name="results"
                                                 style="float:right;">
                                                 <option value="10" selected="">10</option>
                                                 <option value="100">100</option>

@@ -1475,4 +1475,4 @@ CharacterCount.prototype.defaults = {
 const characterCounts = document.querySelectorAll('[data-module="nhsuk-character-count"]');
 characterCounts.forEach(el => {
   new CharacterCount(el).init();
-});
+});//# sourceMappingURL=main.js.map

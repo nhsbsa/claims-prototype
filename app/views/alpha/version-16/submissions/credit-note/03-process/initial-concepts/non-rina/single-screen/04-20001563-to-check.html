@@ -17,31 +17,26 @@ Credit note details - Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Home</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Claims</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Claim ID 6789</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9441</a>
             </li>
         </ol>
-        <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="">
-                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
-                Claims
-            </a>
-        </p>
-    </div>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %}
@@ -166,7 +161,7 @@ Credit note details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="accepted">
                                                 Months withdrawn from accepted
                                             </label>
                                             <input class="nhsuk-input" id="accepted" name="accepted" type="text"
@@ -175,7 +170,7 @@ Credit note details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="contested">
                                                 Months withdrawn from contested
                                             </label>
                                             <input class="nhsuk-input" id="contested" name="contested" type="text"
@@ -187,7 +182,7 @@ Credit note details - Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-full">
                                         <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                 for="contestation-reason">
                                                 Contestation reason
                                             </label>
@@ -221,7 +216,7 @@ Credit note details - Manage incoming international healthcare claims - NHSBSA
                                                 <div class="nhsuk-grid-column-full">
                                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
                                                         style="margin-top:24px;">
-                                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                             for="duplicate-invoice">
                                                             Details
                                                         </label>

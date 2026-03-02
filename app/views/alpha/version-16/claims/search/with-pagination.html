@@ -33,9 +33,8 @@ Claims - Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="../../home">Home</a></li>
         </ol>
         <p class="nhsuk-breadcrumb__back">
             <a class="nhsuk-breadcrumb__backlink" href="../../home">
@@ -43,7 +42,6 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                 Home
             </a>
         </p>
-    </div>
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %}
@@ -184,7 +182,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                                     <label class="nhsuk-label" for="results">
                                         Results per page
                                     </label>
-                                    <select class="nhsuk-select" id="results" name="results" style="float:right;">
+                                    <select class="nhsuk-select" style="min-width:0px; float:right;" id="results" name="results" style="float:right;">
                                         <option value="10" selected>10</option>
                                         <option value="100">100</option>
                                         <option value="200">200</option>
@@ -553,7 +551,7 @@ Claims - Manage incoming international healthcare claims - NHSBSA
                         <!-- Start pagination -->
                         <div class="nhsuk-grid-row">
                             <div class="nhsuk-grid-column-full">
-                                <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination"
+                                <nav class="nhsuk-pagination nhsuk-pagination--numbered" role="navigation" aria-label="Pagination"
                                     style="justify-content: center;">
 
                                     <div class="nhsuk-pagination__prev">

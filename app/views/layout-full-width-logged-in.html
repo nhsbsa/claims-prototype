@@ -1,11 +1,12 @@
 <!-- Extends the layout from /docs/views/template.html -->
-{% extends "template.html" %}
+{% extends "prototype-kit-template.njk" %}
 
-{% block headCSS %}
+{% block head %}
 <link href="/css/main.css" rel="stylesheet">
 <link href="/css/prism.css" rel="stylesheet">
 <link href="/css/docs.css" rel="stylesheet">
 <link href="/css/accessible-autocomplete.min.css" rel="stylesheet">
+<!-- <script src="/nhsuk-frontend/nhsuk.min.js" defer></script> -->
 {% endblock %}
 
 {% set bodyClasses = bodyClasses | default('full-width') %}
@@ -19,6 +20,7 @@
 {% endblock %}
 
 {% block main %}
+{% block beforeContent %}{% endblock %}
 <div class="nhsuk-width-container-fluid">
     <main class="nhsuk-main-wrapper " id="maincontent" role="main">
         {% block content %}{% endblock %}
@@ -27,43 +29,50 @@
 {% endblock %}
 
 {% block footer %}
+{% from "footer/macro.njk" import footer %}
+
 {{ footer({
-"links": [
-{
-"URL": "#",
-"label": "Accessibility statement"
-},
-{
-"URL": "#",
-"label": "Contact us"
-},
-{
-"URL": "#",
-"label": "Cookies"
-},
-{
-"URL": "#",
-"label": "Privacy policy"
-},
-{
-"URL": "#",
-"label": "Terms and conditions"
-},
-{
-"URL": "#",
-"label": "Index"
-},
-{
-"URL": "/passing-data/clear-data",
-"label": "Clear data"
-}
-]
+  meta: {
+    items: [
+      {
+        href: "#",
+        text: "Accessibility statement"
+      },
+      {
+        href: "#",
+        text: "Contact us"
+      },
+      {
+        href: "#",
+        text: "Cookies"
+      },
+      {
+        href: "#",
+        text: "Privacy policy"
+      },
+      {
+        href: "#",
+        text: "Terms and conditions"
+      },
+      {
+        href: "/prototype-admin/reset?returnPage=" + (currentPage | urlencode),
+      text: "Reset data"
+      }
+    ]
+  }
 }) }}
 {% endblock %}
 
 {% block bodyEnd %}
-{% block scripts %}
-{% include "includes/scripts.html" %}
-{% block pageScripts %}{% endblock %}
-{% endblock %}
+  <script src="/nhsuk-frontend/nhsuk-frontend.min.js" type="module"></script>
+  <script type="module">
+    import { initAll } from '/nhsuk-frontend/nhsuk-frontend.min.js'
+    initAll()
+  </script>
+  {% block scripts %}
+    <!-- Custom JavaScript files can be added to this file -->
+    {% include "includes/scripts.html" %}
+    <!-- For adding page specific JavaScript -->
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
 {% endblock %}

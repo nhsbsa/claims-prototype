@@ -19,19 +19,19 @@ Manage incoming international healthcare claims - NHSBSA
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container-fluid">
     <ol class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item">
+      <li class="nhsuk-breadcrumb__list-item">
         <a class="nhsuk-breadcrumb__link" href="">Home</a>
       </li>
-      <li class="nhsuk-breadcrumb__item">
+      <li class="nhsuk-breadcrumb__list-item">
         <a class="nhsuk-breadcrumb__link" href="">Claims</a>
       </li>
-      <li class="nhsuk-breadcrumb__item">
+      <li class="nhsuk-breadcrumb__list-item">
         <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
       </li>
-      <li class="nhsuk-breadcrumb__item">
+      <li class="nhsuk-breadcrumb__list-item">
         <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
       </li>
-      <li class="nhsuk-breadcrumb__item">
+      <li class="nhsuk-breadcrumb__list-item">
         <a class="nhsuk-breadcrumb__link" href="">Reply to contestation ID 7766</a>
       </li>
     </ol>
@@ -84,13 +84,13 @@ Manage incoming international healthcare claims - NHSBSA
             <div class="nhsuk-grid-row">
               <div class="nhsuk-grid-column-two-thirds">
                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                  <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="invoice-id">
+                  <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="invoice-id">
                     Invoice ID
                   </label>
                   <input class="nhsuk-input nhsuk-u-width-two-thirds" id="invoice-id" name="invoice-id" type="text">
                 </div>
                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                  <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="invoice-ref">
+                  <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="invoice-ref">
                     Invoice reference
                   </label>
                   <input class="nhsuk-input nhsuk-u-width-two-thirds" id="invoice-ref" name="invoice-ref" type="text">
@@ -108,7 +108,7 @@ Manage incoming international healthcare claims - NHSBSA
             <div class="nhsuk-grid-row">
               <div class="nhsuk-grid-column-two-thirds">
                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                  <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">
+                  <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="last-name">
                     Last name
                   </label>
                   <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="last-name-hint">
@@ -118,7 +118,7 @@ Manage incoming international healthcare claims - NHSBSA
                   <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name" name="last-name" type="text">
                 </div>
                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                  <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="first-name">
+                  <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="first-name">
                     First name
                   </label>
                   <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="first-name-hint">
@@ -131,7 +131,7 @@ Manage incoming international healthcare claims - NHSBSA
               <div class="nhsuk-grid-column-full">
                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
                   <fieldset class="nhsuk-fieldset" aria-describedby="dob" role="group">
-                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="dob">
+                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="dob">
                       Date of birth
                     </label>
                     <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="dob-hint">
@@ -232,7 +232,7 @@ Manage incoming international healthcare claims - NHSBSA
               <label class="nhsuk-label" for="results">
                 Results per page
               </label>
-              <select class="nhsuk-select" id="results" name="results" style="float:right;">
+              <select class="nhsuk-select" style="min-width:0px; float:right;" id="results" name="results" style="float:right;">
                 <option value="10" selected="">10</option>
                 <option value="100">100</option>
                 <option value="200">200</option>
@@ -697,7 +697,7 @@ Manage incoming international healthcare claims - NHSBSA
         <!-- Start pagination -->
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-full">
-            <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination" style="justify-content: center;">
+            <nav class="nhsuk-pagination nhsuk-pagination--numbered" role="navigation" aria-label="Pagination" style="justify-content: center;">
               <div class="nhsuk-pagination__prev">
               </div>
               <ul class="nhsuk-pagination__list">

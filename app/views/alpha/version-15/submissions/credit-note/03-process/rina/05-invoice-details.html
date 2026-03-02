@@ -17,34 +17,29 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Home</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Claims</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9435</a>
             </li>
-            <li class="nhsuk-breadcrumb__item">
+            <li class="nhsuk-breadcrumb__list-item">
                 <a class="nhsuk-breadcrumb__link" href="">Individual credit note ID 10003842</a>
             </li>
         </ol>
-        <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="">
-                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
-                Claims
-            </a>
-        </p>
-    </div>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %}
@@ -175,7 +170,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-grid-row">
                                         <div class="nhsuk-grid-column-one-third">
                                             <div class="nhsuk-form-group">
-                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="accepted">
                                                     Accepted amount
                                                 </label>
                                                 <input class="nhsuk-input" id="accepted" name="accepted" type="text"
@@ -184,7 +179,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         </div>
                                         <div class="nhsuk-grid-column-one-third">
                                             <div class="nhsuk-form-group">
-                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="contested">
                                                     Contested amount
                                                 </label>
                                                 <input class="nhsuk-input " id="contested" name="contested" type="text"
@@ -193,7 +188,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         </div>
                                         <div class="nhsuk-grid-column-one-third">
                                             <div class="nhsuk-form-group">
-                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="withdrawn">
+                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="withdrawn">
                                                     Withdrawn amount
                                                 </label>
                                                 <input class="nhsuk-input " id="withdrawn" name="withdrawn" type="text"
@@ -207,7 +202,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         <div class="nhsuk-grid-column-full">
 
                                             <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
-                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                     for="contestation-reason">
                                                     Contestation reason
                                                 </label>
@@ -336,7 +331,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                             style="margin-top:24px;">
                                                             <fieldset class="nhsuk-fieldset"
                                                                 aria-describedby="example-hint" role="group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                     for="duplicate-invoice">
                                                                     Date the costs are to be settled from
                                                                 </label>
@@ -401,7 +396,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                             style="margin-top:24px;">
                                                             <fieldset class="nhsuk-fieldset"
                                                                 aria-describedby="example-hint" role="group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                     for="duplicate-invoice">
                                                                     Date the costs are to be settled until
                                                                 </label>
@@ -464,7 +459,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     <div class="nhsuk-grid-column-one-third">
                                                         <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
                                                             style="margin-top:24px;">
-                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                 for="duplicate-claim">
                                                                 Duplicate claim reference
                                                             </label>
@@ -473,7 +468,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                         </div>
                                                         <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
                                                             style="margin-top:24px;">
-                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                 for="duplicate-invoice">
                                                                 Duplicate invoice reference
                                                             </label>
@@ -492,7 +487,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                             style="margin-top:24px;">
                                                             <fieldset class="nhsuk-fieldset"
                                                                 aria-describedby="example-hint" role="group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                     for="duplicate-invoice">
                                                                     Date the entitlement in the state of residence
                                                                     started on
@@ -559,7 +554,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                             style="margin-top:24px;">
                                                             <fieldset class="nhsuk-fieldset"
                                                                 aria-describedby="example-hint" role="group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                     for="duplicate-invoice">
                                                                     Date the family member concerned is entitled to
                                                                     benefits
@@ -627,7 +622,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                             style="margin-top:24px;">
                                                             <fieldset class="nhsuk-fieldset"
                                                                 aria-describedby="example-hint" role="group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                     for="duplicate-invoice">
                                                                     Date the person receives a pension in his/her state
                                                                     of
@@ -694,7 +689,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                             style="margin-top:24px;">
                                                             <fieldset class="nhsuk-fieldset"
                                                                 aria-describedby="example-hint" role="group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                     for="duplicate-invoice">
                                                                     Date of death
                                                                 </label>
@@ -759,7 +754,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                             style="margin-top:24px;">
                                                             <fieldset class="nhsuk-fieldset"
                                                                 aria-describedby="example-hint" role="group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                     for="duplicate-invoice">
                                                                     Date of claim deadline
                                                                 </label>
@@ -824,7 +819,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                             style="margin-top:24px;">
                                                             <fieldset class="nhsuk-fieldset"
                                                                 aria-describedby="example-hint" role="group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                     for="duplicate-invoice">
                                                                     Date of contestation reply deadline
                                                                 </label>
@@ -889,7 +884,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                             style="margin-top:24px;">
                                                             <fieldset class="nhsuk-fieldset"
                                                                 aria-describedby="example-hint" role="group">
-                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                     for="duplicate-invoice">
                                                                     Date of move
                                                                 </label>
@@ -952,7 +947,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     <div class="nhsuk-grid-column-full">
                                                         <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
                                                             style="margin-top:24px;">
-                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                 for="other-details">
                                                                 Details
                                                             </label>

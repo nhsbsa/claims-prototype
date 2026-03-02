@@ -290,7 +290,7 @@ class Tabs {
  * Tabs({responsive: false});
  * Tabs({namespace: 'my-custom-namespace'});  // Alters classes allowing alternative css
  */
-export default (({
+export default ({
   namespace = 'nhsuk-tabs',
   responsive = true,
   historyEnabled = true
@@ -299,4 +299,4 @@ export default (({
   tabs.forEach(el => {
     new Tabs(el, namespace, responsive, historyEnabled).init();
   });
-});
+};//# sourceMappingURL=tabs.js.map
