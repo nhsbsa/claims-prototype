@@ -43,9 +43,9 @@
     <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
         <div class="nhsuk-width-container-fluid">
             <ol class="nhsuk-breadcrumb__list">
-                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link"
                         href="../../../../../../../home">Home</a></li>
-                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link"
                         href="../../../../../../index">Claims</a></li>
             </ol>
             <p class="nhsuk-breadcrumb__back">
@@ -214,7 +214,7 @@
                                     <div class="nhsuk-grid-row">
                                         <div class="nhsuk-grid-column-one-third">
                                             <div class="nhsuk-form-group">
-                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="accepted">
                                                     Accepted amount
                                                 </label>
                                                 <input class="nhsuk-input " id="accepted" name="accepted" type="text"
@@ -223,7 +223,7 @@
                                         </div>
                                         <div class="nhsuk-grid-column-one-third">
                                             <div class="nhsuk-form-group">
-                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="contested">
                                                     Contested amount
                                                 </label>
                                                 <input class="nhsuk-input " id="contested" name="contested" type="text"
@@ -232,7 +232,7 @@
                                         </div>
                                         <div class="nhsuk-grid-column-one-third">
                                             <div class="nhsuk-form-group">
-                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="withdrawn">
+                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="withdrawn">
                                                     Withdrawn amount
                                                 </label>
                                                 <input class="nhsuk-input " id="withdrawn" name="withdrawn" type="text"
@@ -244,7 +244,7 @@
                                     <div class="nhsuk-grid-row">
                                         <div class="nhsuk-grid-column-full">
                                             <div class="nhsuk-form-group">
-                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                     for="contestation-reason">
                                                     Contestation reason
                                                 </label>
@@ -473,19 +473,19 @@
                                                                 <div class="nhsuk-grid-row">
                                                                     <div class="nhsuk-grid-column-one-third">
                                                                         <div class="nhsuk-form-group">
-                                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">Last name</label>
+                                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="last-name">Last name</label>
                                                                             <input class="nhsuk-input" id="last-name" name="lastName" type="text" {% if data['lastName'] %}value="{{ data['lastName'] }}" {% endif %}>
                                                                         </div>
                                                                     </div>
                                                                     <div class="nhsuk-grid-column-one-third">
                                                                         <div class="nhsuk-form-group">
-                                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="first-name">First name</label>
+                                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="first-name">First name</label>
                                                                             <input class="nhsuk-input" id="first-name" name="firstName" type="text" {% if data['firstName'] %}value="{{ data['firstName'] }}" {% endif %}>
                                                                         </div>
                                                                     </div>
                                                                     <div class="nhsuk-grid-column-one-third">
                                                                         <div class="nhsuk-form-group">
-                                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="country">Residential country</label>
+                                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="country">Residential country</label>
                                                                             <input class="nhsuk-input" id="country" name="residenceCountry" type="text" {% if data['residenceCountry'] %}value="{{ data['residenceCountry'] }}" {% endif %}>
                                                                         </div>
                                                                     </div>
@@ -494,7 +494,7 @@
                                                                     <div class="nhsuk-grid-column-full">
                                                                         <div class="nhsuk-form-group">
                                                                             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                                                                                <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="dob">Date of birth</label>
+                                                                                <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="dob">Date of birth</label>
                                                                                 <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="target-date-hint">For example, 28 9 2023</div>
                                                                                 <div class="nhsuk-date-input" id="dob">
                                                                                     <div class="nhsuk-date-input__item">
@@ -524,31 +524,31 @@
                                                                 <div class="nhsuk-grid-row">
                                                                     <div class="nhsuk-grid-column-one-third">
                                                                         <div class="nhsuk-form-group">
-                                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="ohs-ref">Reference</label>
+                                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="ohs-ref">Reference</label>
                                                                             <input class="nhsuk-input" id="ohs-ref" name="ohs" type="text" {% if data['ohs'] %}value="{{ data['ohs'] }}" {% endif %}>
                                                                         </div>
                                                                     </div>
                                                                     <div class="nhsuk-grid-column-one-third">
                                                                         <div class="nhsuk-form-group">
-                                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="nino">National Insurance number</label>
+                                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="nino">National Insurance number</label>
                                                                             <input class="nhsuk-input" id="nino" name="nino" type="text" {% if data['nino'] %}value="{{ data['nino'] }}" {% endif %}>
                                                                         </div>
                                                                     </div>
                                                                     <div class="nhsuk-grid-column-one-third">
                                                                         <div class="nhsuk-form-group">
-                                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="nhs">NHS number</label>
+                                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="nhs">NHS number</label>
                                                                             <input class="nhsuk-input" id="nhs" name="nhs" type="text" {% if data['nhs'] %}value="{{ data['nhs'] }}" {% endif %}>
                                                                         </div>
                                                                     </div>
                                                                     <div class="nhsuk-grid-column-one-third">
                                                                         <div class="nhsuk-form-group">
-                                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="pin">EHIC or GHIC PIN</label>
+                                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="pin">EHIC or GHIC PIN</label>
                                                                             <input class="nhsuk-input" id="pin" name="pin" type="text" {% if data['pin'] %}value="{{ data['pin'] }}" {% endif %}>
                                                                         </div>
                                                                     </div>
                                                                     <div class="nhsuk-grid-column-one-third">
                                                                         <div class="nhsuk-form-group">
-                                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="issue">EHIC, GHIC or PRC issue number</label>
+                                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="issue">EHIC, GHIC or PRC issue number</label>
                                                                             <input class="nhsuk-input" id="issue" name="issueNumber" type="text" {% if data['issueNumber'] %}value="{{ data['issueNumber'] }}" {% endif %}>
                                                                         </div>
                                                                     </div>
@@ -774,7 +774,7 @@
                                                                         </tbody>
                                                                     </table>
                                                                     <!-- Start pagination -->
-                                                                    <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+                                                                    <nav class="nhsuk-pagination nhsuk-pagination--numbered" role="navigation" aria-label="Pagination">
                                                                         <div class="nhsuk-pagination__prev">
                                                                             {% if page > 1 %}
                                                                             <a class="nhsuk-link nhsuk-pagination__link" href="?page={{ page - 1 }}&limit={{ limit }}&lastName={{ queryParams.lastName }}&firstName={{ queryParams.firstName }}&residenceCountry={{ queryParams.residenceCountry }}&day={{ queryParams.day }}&month={{ queryParams.month }}&year={{ queryParams.year }}&ohs={{ queryParams.ohs }}&nino={{ queryParams.nino }}&nhs={{ queryParams.nhs }}&pin={{ queryParams.pin }}&issueNumber={{ queryParams.issueNumber }}" rel="prev">
