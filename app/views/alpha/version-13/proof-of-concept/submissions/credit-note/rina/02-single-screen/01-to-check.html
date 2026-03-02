@@ -18,24 +18,19 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link"
                     href="">Home</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link"
                     href="">Claims</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link"
                     href="">Claim ID 6784</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link"
                     href="">Invoices</a></li>
         </ol>
-        <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="">
-                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
-                Claims
-            </a>
-        </p>
-    </div>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %}
@@ -46,16 +41,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <!-- Start back link -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-back-link">
-            <a class="nhsuk-back-link__link" href="javascript:history.back()">
-                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                    aria-hidden="true" height="24" width="24">
-                    <path
-                        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-                    </path>
-                </svg>
-                Go back</a>
-        </div>
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
     </div>
 </div>
 <!-- End back link -->
@@ -275,7 +261,7 @@ Credit note details                        </h3>
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="accepted">
                                                 Credit withdrawn from accepted
                                             </label>
                                             <input class="nhsuk-input" id="accepted" name="accepted" type="text" value="0">
@@ -283,7 +269,7 @@ Credit note details                        </h3>
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="contested">
                                                 Credit withdrawn from contested
                                             </label>
                                             <input class="nhsuk-input " id="contested" name="contested" type="text" value="0">
@@ -295,7 +281,7 @@ Credit note details                        </h3>
                                 <div class="nhsuk-grid-column-full">
                     
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contestation-reason">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="contestation-reason">
                                             Contestation reason
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-2" id="contact-hint">
@@ -337,7 +323,7 @@ Credit note details                        </h3>
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="accepted">
+                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="accepted">
                                                 Accepted amount
                                             </label>
                                             <input class="nhsuk-input" id="accepted" name="accepted" type="text"
@@ -346,7 +332,7 @@ Credit note details                        </h3>
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="contested">
+                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="contested">
                                                 Contested amount
                                             </label>
                                             <input class="nhsuk-input " id="contested" name="contested" type="text"
@@ -355,7 +341,7 @@ Credit note details                        </h3>
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="withdrawn">
+                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="withdrawn">
                                                 Withdrawn amount
                                             </label>
                                             <input class="nhsuk-input " id="withdrawn" name="withdrawn" type="text"
@@ -369,7 +355,7 @@ Credit note details                        </h3>
                                     <div class="nhsuk-grid-column-full">
 
                                         <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
-                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                 for="contestation-reason">
                                                 Contestation reason
                                             </label>
@@ -516,7 +502,7 @@ Credit note details                        </h3>
                                                         style="margin-top:24px;">
                                                         <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
                                                             role="group">
-                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                 for="duplicate-invoice">
                                                                 Date the costs are to be settled from
                                                             </label>
@@ -581,7 +567,7 @@ Credit note details                        </h3>
                                                         style="margin-top:24px;">
                                                         <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
                                                             role="group">
-                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                 for="duplicate-invoice">
                                                                 Date the costs are to be settled until
                                                             </label>
@@ -647,7 +633,7 @@ Credit note details                        </h3>
                                                         style="margin-top:24px;">
                                                         <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
                                                             role="group">
-                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                 for="duplicate-invoice">
                                                                 Date the entitlement in the state of residence
                                                                 started on
@@ -711,7 +697,7 @@ Credit note details                        </h3>
                                                 <div class="nhsuk-grid-column-one-third">
                                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
                                                         style="margin-top:24px;">
-                                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                             for="duplicate-claim">
                                                             Duplicate claim reference
                                                         </label>
@@ -720,7 +706,7 @@ Credit note details                        </h3>
                                                     </div>
                                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
                                                         style="margin-top:24px;">
-                                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                             for="duplicate-invoice">
                                                             Duplicate invoice reference
                                                         </label>
@@ -740,7 +726,7 @@ Credit note details                        </h3>
                                                         style="margin-top:24px;">
                                                         <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
                                                             role="group">
-                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                 for="duplicate-invoice">
                                                                 Date of accident at work
                                                             </label>
@@ -805,7 +791,7 @@ Credit note details                        </h3>
                                                         style="margin-top:24px;">
                                                         <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
                                                             role="group">
-                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                 for="duplicate-invoice">
                                                                 Date of death
                                                             </label>
@@ -870,7 +856,7 @@ Credit note details                        </h3>
                                                         style="margin-top:24px;">
                                                         <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
                                                             role="group">
-                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                 for="duplicate-invoice">
                                                                 Date of claim deadline
                                                             </label>
@@ -935,7 +921,7 @@ Credit note details                        </h3>
                                                         style="margin-top:24px;">
                                                         <fieldset class="nhsuk-fieldset" aria-describedby="example-hint"
                                                             role="group">
-                                                            <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                            <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                                 for="duplicate-invoice">
                                                                 Date of contestation reply deadline
                                                             </label>
@@ -998,7 +984,7 @@ Credit note details                        </h3>
                                                 <div class="nhsuk-grid-column-full">
                                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
                                                         style="margin-top:24px;">
-                                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1"
+                                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                                             for="duplicate-invoice">
                                                             Details
                                                         </label>

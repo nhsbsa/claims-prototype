@@ -19,21 +19,16 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container-fluid">
         <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Home</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claims</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Invoices</a></li>
-            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="">Invoice ID 20001554</a></li>
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="">Home</a></li>
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="">Claims</a></li>
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a></li>
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="">Invoices</a></li>
+            <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="">Invoice ID 20001554</a></li>
         </ol>
-        <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="">
-                <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
-                Claims
-            </a>
-        </p>
-    </div>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %}
@@ -111,7 +106,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                 </legend>
 
                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="last-name">
+                                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="last-name">
                                         Last name
                                     </label>
                                     <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="last-name-hint">
@@ -123,7 +118,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                 </div>
 
                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="first-name">
+                                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="first-name">
                                         First name
                                     </label>
                                     <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="first-name-hint">
@@ -135,7 +130,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                 </div>
 
                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="select-autocomplete">
+                                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="select-autocomplete">
                                         Residential country
                                     </label>
                                     <div class="nhsuk-u-width-two-thirds">
@@ -177,7 +172,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                 </div>
 
                                 <!-- <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="country">
+                                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="country">
                                         Residential country
                                     </label>
                                     <input class="nhsuk-input nhsuk-u-width-two-thirds" id="country" name="country"
@@ -186,7 +181,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
 
                                 <div class="nhsuk-form-group">
                                     <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                                        <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="dob">
+                                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="dob">
                                             Date of birth
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="dob-hint">
@@ -243,7 +238,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                 </legend>
 
                                 <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="pin">
+                                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="pin">
                                         PIN in UK
                                     </label>
                                     <div class="nhsuk-hint">
@@ -255,7 +250,7 @@ Search for a person - Manage incoming international healthcare claims - NHSBSA
                                 </div>
 
                                 <div class="nhsuk-form-group">
-                                    <label class="nhsuk-label--s nhsuk-u-margin-bottom-1" for="entitlement">
+                                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="entitlement">
                                         Entitlement issue number
                                     </label>
                                     <div class="nhsuk-hint">
