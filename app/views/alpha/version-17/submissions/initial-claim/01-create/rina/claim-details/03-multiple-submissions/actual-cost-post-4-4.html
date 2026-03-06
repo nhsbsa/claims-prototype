@@ -94,7 +94,7 @@ Manage incoming international healthcare claims - NHSBSA
                                             Type
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            Average cost - Sickness - Article 94
+                                            Actual cost - Sickness
                                         </dd>
                                     </div>
                                 </dl>
@@ -107,22 +107,6 @@ Manage incoming international healthcare claims - NHSBSA
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             19 July 2024
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Financial year
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            2023
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Age bracket
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            Mixed
                                         </dd>
                                     </div>
                                 </dl>
@@ -439,7 +423,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     <td class="nhsuk-table__cell" role="cell"><span
                                                             class="nhsuk-table-responsive__heading"
                                                             aria-hidden="true">Status
-                                                        </span>Payment updated
+                                                        </span>Completed
                                                     </td>
                                                     <td class="nhsuk-table__cell" role="cell"><span
                                                             class="nhsuk-table-responsive__heading"
@@ -475,7 +459,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     <td class="nhsuk-table__cell" role="cell"><span
                                                             class="nhsuk-table-responsive__heading"
                                                             aria-hidden="true">Status
-                                                        </span>Payment updated
+                                                        </span>Completed
                                                     </td>
                                                     <td class="nhsuk-table__cell" role="cell"><span
                                                             class="nhsuk-table-responsive__heading"
@@ -511,7 +495,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     <td class="nhsuk-table__cell" role="cell"><span
                                                             class="nhsuk-table-responsive__heading"
                                                             aria-hidden="true">Status
-                                                        </span>Payment updated
+                                                        </span>Completed
                                                     </td>
                                                     <td class="nhsuk-table__cell" role="cell"><span
                                                             class="nhsuk-table-responsive__heading"
@@ -693,7 +677,7 @@ Manage incoming international healthcare claims - NHSBSA
                                 <!-- Start header block-->
                                 <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
                                     <div class="nhsuk-grid-column-two-thirds">
-                                        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Showing 1 to 10 of 92,412
+                                        <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Showing 1 to 10 of 92,412
                                             results</h3>
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
@@ -711,10 +695,11 @@ Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                 </div>
                                 <!-- End header block -->
+
                                 <!-- Start of filter and sort options -->
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-full">
-                                        <details class="nhsuk-details nhsuk-u-margin-bottom-2">
+                                        <details class="nhsuk-details nhsuk-u-margin-bottom-4">
                                             <summary class="nhsuk-details__summary">
                                                 <span class="nhsuk-details__summary-text">
                                                     Filter and sort options
@@ -722,6 +707,80 @@ Manage incoming international healthcare claims - NHSBSA
                                             </summary>
                                             <div class="nhsuk-details__text">
                                                 <div class="nhsuk-grid-row">
+
+                                                    <!-- Start filter by entitlement -->
+                                                    <div class="nhsuk-grid-column-one-quarter">
+                                                        <div class="nhsuk-form-group">
+                                                            <fieldset class="nhsuk-fieldset"
+                                                                aria-describedby="example-hint">
+                                                                <legend
+                                                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+                                                                    <h1
+                                                                        class="nhsuk-fieldset__heading nhsuk-u-font-weight-bold">
+                                                                        Filter by entitlement
+                                                                    </h1>
+                                                                </legend>
+                                                                <div class="nhsuk-checkboxes nhsuk-checkboxes--small" data-module="nhsuk-checkboxes">
+                                                                    <div class="nhsuk-checkboxes__item">
+                                                                        <input class="nhsuk-checkboxes__input"
+                                                                            id="filter-entitlement-s1"
+                                                                            name="filter-entitlement" type="checkbox"
+                                                                            value="s1">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-checkboxes__label"
+                                                                            for="filter-entitlement-s1">
+                                                                            S1
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="nhsuk-checkboxes__item">
+                                                                        <input class="nhsuk-checkboxes__input"
+                                                                            id="filter-entitlement-ehic"
+                                                                            name="filter-entitlement" type="checkbox"
+                                                                            value="ehic">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-checkboxes__label"
+                                                                            for="filter-entitlement-ehic">
+                                                                            EHIC
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="nhsuk-checkboxes__item">
+                                                                        <input class="nhsuk-checkboxes__input"
+                                                                            id="filter-entitlement-prc"
+                                                                            name="filter-entitlement" type="checkbox"
+                                                                            value="prc">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-checkboxes__label"
+                                                                            for="filter-entitlement-prc">
+                                                                            PRC
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="nhsuk-checkboxes__item">
+                                                                        <input class="nhsuk-checkboxes__input"
+                                                                            id="filter-entitlement-s2"
+                                                                            name="filter-entitlement" type="checkbox"
+                                                                            value="s2">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-checkboxes__label"
+                                                                            for="filter-entitlement-s2">
+                                                                            S2
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="nhsuk-checkboxes__item">
+                                                                        <input class="nhsuk-checkboxes__input"
+                                                                            id="filter-entitlement-da1"
+                                                                            name="filter-entitlement" type="checkbox"
+                                                                            value="da1">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-checkboxes__label"
+                                                                            for="filter-entitlement-da1">
+                                                                            DA1
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End filter by entitlement -->
 
                                                     <!-- Start filter by status-->
                                                     <div class="nhsuk-grid-column-one-quarter">
@@ -735,7 +794,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         Filter by status
                                                                     </h1>
                                                                 </legend>
-                                                                <div class="nhsuk-checkboxes">
+                                                                <div class="nhsuk-checkboxes nhsuk-checkboxes--small" data-module="nhsuk-checkboxes">
                                                                     <div class="nhsuk-checkboxes__item">
                                                                         <input class="nhsuk-checkboxes__input"
                                                                             id="filter-status-tobechecked"
@@ -744,7 +803,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         <label
                                                                             class="nhsuk-label nhsuk-checkboxes__label"
                                                                             for="filter-status-tobechecked">
-                                                                            Accepted
+                                                                            To check
                                                                         </label>
                                                                     </div>
                                                                     <div class="nhsuk-checkboxes__item">
@@ -771,17 +830,6 @@ Manage incoming international healthcare claims - NHSBSA
                                                                     </div>
                                                                     <div class="nhsuk-checkboxes__item">
                                                                         <input class="nhsuk-checkboxes__input"
-                                                                            id="filter-status-partial"
-                                                                            name="filter-status" type="checkbox"
-                                                                            value="partial">
-                                                                        <label
-                                                                            class="nhsuk-label nhsuk-checkboxes__label"
-                                                                            for="filter-status-partial">
-                                                                            Partial
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="nhsuk-checkboxes__item">
-                                                                        <input class="nhsuk-checkboxes__input"
                                                                             id="filter-status-withdrawn"
                                                                             name="filter-status" type="checkbox"
                                                                             value="withdrawn">
@@ -799,7 +847,7 @@ Manage incoming international healthcare claims - NHSBSA
 
                                                     <!-- Start sort by -->
                                                     <div class="nhsuk-grid-column-one-quarter">
-                                                        <div class="nhsuk-form-group nhsuk-u-padding-bottom-5">
+                                                        <div class="nhsuk-form-group">
                                                             <fieldset class="nhsuk-fieldset">
                                                                 <legend
                                                                     class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
@@ -808,7 +856,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         Sort by
                                                                     </h1>
                                                                 </legend>
-                                                                <div class="nhsuk-radios">
+                                                                <div class="nhsuk-radios nhsuk-radios--small" data-module="nhsuk-radios">
                                                                     <div class="nhsuk-radios__item">
                                                                         <input class="nhsuk-radios__input"
                                                                             id="sort-by-id" name="sort-by" type="radio"
@@ -845,7 +893,15 @@ Manage incoming international healthcare claims - NHSBSA
                                                                             First name
                                                                         </label>
                                                                     </div>
-
+                                                                    <div class="nhsuk-radios__item">
+                                                                        <input class="nhsuk-radios__input"
+                                                                            id="sort-by-dob" name="sort-by"
+                                                                            type="radio" value="dob">
+                                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                                            for="sort-by-dob">
+                                                                            Date of birth
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
                                                             </fieldset>
                                                         </div>
@@ -863,7 +919,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         Order results
                                                                     </h1>
                                                                 </legend>
-                                                                <div class="nhsuk-radios">
+                                                                <div class="nhsuk-radios nhsuk-radios--small" data-module="nhsuk-radios">
                                                                     <div class="nhsuk-radios__item">
                                                                         <input class="nhsuk-radios__input"
                                                                             id="order-by-asc" name="order-by"
@@ -963,7 +1019,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
-                                                            class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                                                            class="nhsuk-table-responsive__heading">Entitlement</span>EHIC
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Status
@@ -998,7 +1054,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
-                                                            class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                                                            class="nhsuk-table-responsive__heading">Entitlement</span>EHIC
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Status
@@ -1032,14 +1088,15 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
-                                                            class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                                                            class="nhsuk-table-responsive__heading">Entitlement</span>EHIC
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Status </span>Partial
+                                                        <span class="nhsuk-table-responsive__heading">Status </span>To
+                                                        check
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">View </span><a
-                                                            href="#">View invoice</a>
+                                                            href="02-invoice-details">View invoice</a>
                                                     </td>
                                                 </tr>
                                                 <tr role="row" class="nhsuk-table__row">
@@ -1065,11 +1122,11 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
-                                                            class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                                                            class="nhsuk-table-responsive__heading">Entitlement</span>PRC
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Status
-                                                        </span>Contested
+                                                        </span>Accepted
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">View </span><a
@@ -1099,7 +1156,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
-                                                            class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                                                            class="nhsuk-table-responsive__heading">Entitlement</span>EHIC
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Status
@@ -1133,7 +1190,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
-                                                            class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                                                            class="nhsuk-table-responsive__heading">Entitlement</span>EHIC
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Status
@@ -1167,7 +1224,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
-                                                            class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                                                            class="nhsuk-table-responsive__heading">Entitlement</span>EHIC
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Status
@@ -1201,7 +1258,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
-                                                            class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                                                            class="nhsuk-table-responsive__heading">Entitlement</span>EHIC
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Status
@@ -1235,11 +1292,11 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
-                                                            class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                                                            class="nhsuk-table-responsive__heading">Entitlement</span>PRC
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Status
-                                                        </span>Contested
+                                                        </span>Accepted
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">View </span><a
@@ -1269,7 +1326,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span
-                                                            class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                                                            class="nhsuk-table-responsive__heading">Entitlement</span>EHIC
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Status

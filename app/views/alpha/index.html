@@ -47,6 +47,133 @@ Managing Member State claims
         <span class="nhsuk-caption-m nhsuk-caption--bottom">July 2023 - Current</span>
       </h2>
 
+      <!-- Start of version 17 -->
+
+      {% call details({
+      summaryText: "Version 17 - Current",
+      classes: "nhsuk-expander"
+      }) %}
+
+            <h3 class="nhsuk-heading-m">Summary</h3>
+
+      {% set SummaryCardDescriptionHtml %}
+      <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Primary focus - Design adaptations</h3>
+      <ul>
+        <li>Create a claim</li>
+        <li>Claim details (previously known as 'Claim summary')</li>
+      </ul>
+      <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Additional activities</h3>
+      <ul>
+        <li>Credit note processing iterations</li>
+      </ul>
+      <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Supporting documentation</h3>
+      <ul>
+        <li><a href="https://miro.com/app/board/uXjVG3IvEAw=/?share_link_id=122943360301" target="_blank">Miro board - MHIHC - UI - Version 17</a> </li>
+      </ul>
+      {% endset %}
+
+      {{ card({
+      descriptionHtml: SummaryCardDescriptionHtml
+      }) }}
+
+      <h3 class="nhsuk-heading-m">Design adaptations</h3>
+      <p class="nhsuk-body">The purpose of this work is to ensure alignment with the latest designs and bring
+        the
+        screens inline with the CDM 4.4 changes.</p>
+
+
+      {% set DesignAdaptationsCardDescriptionHtml %}
+      <h3 class="nhsuk-card__heading">Create a claim</h3>
+      <ul>
+        <li><a href="version-17/submissions/initial-claim/01-create/index">Start journey</a></li>
+      </ul>
+
+      <hr />
+
+            <h3 class="nhsuk-card__heading">Claim details</h3>
+
+      <p>Note: This screen was previously known as 'Claim summary'</p>
+
+      <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Scenario 1 - Initial claim status is 'Not started'
+      </h5>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a
+            href="version-17/submissions/initial-claim/01-create/rina/claim-details/01-not-started/actual-cost-pre-4-4">
+            Actual cost - Pre CDM 4.4</a></li>
+        <li><a
+            href="version-17/submissions/initial-claim/01-create/rina/claim-details/01-not-started/actual-cost-post-4-4">
+            Actual cost - Post CDM 4.4</a></li>
+        <li><a
+            href="version-17/submissions/initial-claim/01-create/rina/claim-details/01-not-started/average-cost">Average
+            cost</a></li>
+      </ul>
+
+      <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Scenario 2 - Initial claim status is 'Active'
+      </h5>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a
+            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/actual-cost-pre-4-4">
+            Actual cost - Pre CDM 4.4</a></li>
+        <li><a
+            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/actual-cost-post-4-4">
+            Actual cost - Post CDM 4.4</a></li>
+        <li><a
+            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/average-cost">Average
+            cost</a></li>
+      </ul>
+
+      <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Scenario 3 - Initial claim status is 'Reply sent' or
+        'Completed'
+      </h5>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a
+            href="version-17/submissions/initial-claim/01-create/rina/claim-details/03-multiple-submissions/actual-cost-pre-4-4">
+            Actual cost - Pre CDM 4.4</a></li>
+        <li><a
+            href="version-17/submissions/initial-claim/01-create/rina/claim-details/03-multiple-submissions/actual-cost-post-4-4">
+            Actual cost- Post CDM 4.4</a></li>
+        <li><a
+            href="version-17/submissions/initial-claim/01-create/rina/claim-details/03-multiple-submissions/average-cost">Average
+            cost</a></li>
+      </ul>
+
+
+
+      {% endset %}
+
+                  
+      {{ card({
+      descriptionHtml: DesignAdaptationsCardDescriptionHtml
+      }) }}
+<h3 class="nhsuk-heading-m">Credit note processing screens</h3>
+<p class="nhsuk-body">The purpose of this work is to incorporate feedback from the team while they are developing the BA tickets and to provide additional screen examples to support the ticket-writing process.</p>
+
+            {% set CreditNoteCardDescriptionHtml %}
+      <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Error message examples</h3>
+      <ul>
+        <li><a
+            href="version-17/submissions/credit-note/03-process/rina/error-messages/04c-20001563-months-partial">Withdraw
+            the credit months from the invoice</a></li>
+        <li><a
+            href="version-17/submissions/credit-note/03-process/rina/error-messages/04c-20001563-amount-partial-accepted">Withdraw
+            the credit amount from the invoice</a></li>
+      </ul>
+
+      <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Invoice details</h3>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a
+            href="version-17/proof-of-concept/invoice-details/19012026-edit-invoice=details/credit-note-processing-rina">While
+            processing a credit note</a></li>
+      </ul>
+      {% endset %}
+
+      {{ card({
+      descriptionHtml: CreditNoteCardDescriptionHtml
+      }) }}
+
+      {% endcall %}
+      <!-- End of version 17 -->
+
       <!-- Start of version 16-->
       <details class="nhsuk-details nhsuk-expander">
         <summary class="nhsuk-details__summary">
@@ -823,7 +950,8 @@ Managing Member State claims
               <span class="nhsuk-u-visually-hidden">Important:</span> Prototype kit upgrade
             </span>
           </h3>
-          <p class="nhsuk-card__description">As a result of the prototype kit upgrade, certain screens or components built on versions prior to v16 may not render exactly as they appeared during the design phase or UR.</p>
+          <p class="nhsuk-card__description">As a result of the prototype kit upgrade, certain screens or components
+            built on versions prior to v16 may not render exactly as they appeared during the design phase or UR.</p>
         </div>
       </div>
       <!-- End of warning callout -->

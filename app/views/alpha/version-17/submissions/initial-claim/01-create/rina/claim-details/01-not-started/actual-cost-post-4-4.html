@@ -94,7 +94,7 @@ Manage incoming international healthcare claims - NHSBSA
                                             Type
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            Average cost - Sickness - Article 94
+                                            Actual cost - Sickness
                                         </dd>
                                     </div>
                                 </dl>
@@ -107,22 +107,6 @@ Manage incoming international healthcare claims - NHSBSA
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             19 July 2024
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Financial year
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            2023
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Age bracket
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            Mixed
                                         </dd>
                                     </div>
                                 </dl>
@@ -208,7 +192,7 @@ Manage incoming international healthcare claims - NHSBSA
                                             <div class="nhsuk-details__text">
                                                 <div class="nhsuk-grid-row">
                                                     <!-- Start filter by type-->
-                                                    <div class="nhsuk-grid-column-one-quarter nhsuk-u-margin-bottom-5">
+                                                    <div class="nhsuk-grid-column-one-quarter">
                                                         <div class="nhsuk-form-group">
                                                             <fieldset class="nhsuk-fieldset"
                                                                 aria-describedby="example-hint">
@@ -219,37 +203,37 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         Filter by type
                                                                     </h1>
                                                                 </legend>
-                                                                <div class="nhsuk-checkboxes">
+                                                                <div class="nhsuk-checkboxes nhsuk-checkboxes--small" data-module="nhsuk-checkboxes">
                                                                     <div class="nhsuk-checkboxes__item">
                                                                         <input class="nhsuk-checkboxes__input"
-                                                                            id="filter-status-accepted"
-                                                                            name="filter-status" type="checkbox"
-                                                                            value="accepted">
+                                                                            id="filter-type-credit"
+                                                                            name="filter-credit" type="checkbox"
+                                                                            value="Credit note">
                                                                         <label
                                                                             class="nhsuk-label nhsuk-checkboxes__label"
-                                                                            for="filter-status-accepted">
+                                                                            for="filter-type-credit">
                                                                             Credit note
                                                                         </label>
                                                                     </div>
                                                                     <div class="nhsuk-checkboxes__item">
                                                                         <input class="nhsuk-checkboxes__input"
-                                                                            id="filter-status-accepted"
-                                                                            name="filter-status" type="checkbox"
-                                                                            value="accepted">
+                                                                            id="filter-type-initial"
+                                                                            name="filter-type" type="checkbox"
+                                                                            value="Initial claim">
                                                                         <label
                                                                             class="nhsuk-label nhsuk-checkboxes__label"
-                                                                            for="filter-status-accepted">
+                                                                            for="filter-type-initial">
                                                                             Initial claim
                                                                         </label>
                                                                     </div>
                                                                     <div class="nhsuk-checkboxes__item">
                                                                         <input class="nhsuk-checkboxes__input"
-                                                                            id="filter-status-contested"
-                                                                            name="filter-status" type="checkbox"
-                                                                            value="contested">
+                                                                            id="filter-type-contestation"
+                                                                            name="filter-type" type="checkbox"
+                                                                            value="Reply to contesation">
                                                                         <label
                                                                             class="nhsuk-label nhsuk-checkboxes__label"
-                                                                            for="filter-status-contested">
+                                                                            for="filter-type-contestation">
                                                                             Reply to contestation
                                                                         </label>
                                                                     </div>
@@ -270,7 +254,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         Sort by
                                                                     </h1>
                                                                 </legend>
-                                                                <div class="nhsuk-radios">
+                                                                <div class="nhsuk-radios nhsuk-radios--small" data-module="nhsuk-radios">
                                                                     <div class="nhsuk-radios__item">
                                                                         <input class="nhsuk-radios__input"
                                                                             id="sort-by-id" name="sort-by" type="radio"
@@ -282,10 +266,10 @@ Manage incoming international healthcare claims - NHSBSA
                                                                     </div>
                                                                     <div class="nhsuk-radios__item">
                                                                         <input class="nhsuk-radios__input"
-                                                                            id="sort-by-id" name="sort-by" type="radio"
+                                                                            id="sort-by-received" name="sort-by" type="radio"
                                                                             value="id" checked="checked">
                                                                         <label class="nhsuk-label nhsuk-radios__label"
-                                                                            for="sort-by-id">
+                                                                            for="sort-by-received">
                                                                             Date received
                                                                         </label>
                                                                     </div>
@@ -306,7 +290,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         Order results
                                                                     </h1>
                                                                 </legend>
-                                                                <div class="nhsuk-radios">
+                                                                <div class="nhsuk-radios nhsuk-radios--small" data-module="nhsuk-radios">
                                                                     <div class="nhsuk-radios__item">
                                                                         <input class="nhsuk-radios__input"
                                                                             id="order-by-asc" name="order-by"
