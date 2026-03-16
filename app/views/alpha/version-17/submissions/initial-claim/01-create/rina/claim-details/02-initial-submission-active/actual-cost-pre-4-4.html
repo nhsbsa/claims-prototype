@@ -184,8 +184,8 @@ Manage incoming international healthcare claims - NHSBSA
                             <div class="nhsuk-card__content">
                                 <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
                                     <div class="nhsuk-grid-column-two-thirds">
-                                        <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Showing 1 to 1 of 1 results
-                                        </h3>
+                                        <p class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Showing 1 to 1 of 1 results
+                                        <p>
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group" style="float:right;">
@@ -277,19 +277,19 @@ Manage incoming international healthcare claims - NHSBSA
                                                                 <div class="nhsuk-radios nhsuk-radios--small" data-module="nhsuk-radios">
                                                                     <div class="nhsuk-radios__item">
                                                                         <input class="nhsuk-radios__input"
-                                                                            id="sort-by-id" name="sort-by" type="radio"
+                                                                            id="submission-sort-by-id" name="submission-sort-by" type="radio"
                                                                             value="id" checked="checked">
                                                                         <label class="nhsuk-label nhsuk-radios__label"
-                                                                            for="sort-by-id">
-                                                                            ID
+                                                                            for="submission-sort-by-id">
+                                                                            Submission ID
                                                                         </label>
                                                                     </div>
                                                                     <div class="nhsuk-radios__item">
                                                                         <input class="nhsuk-radios__input"
-                                                                            id="sort-by-received" name="sort-by" type="radio"
+                                                                            id="submission-sort-by-received" name="submission-sort-by" type="radio"
                                                                             value="id" checked="checked">
                                                                         <label class="nhsuk-label nhsuk-radios__label"
-                                                                            for="sort-by-received">
+                                                                            for="submission-sort-by-received">
                                                                             Date received
                                                                         </label>
                                                                     </div>
@@ -313,20 +313,20 @@ Manage incoming international healthcare claims - NHSBSA
                                                                 <div class="nhsuk-radios nhsuk-radios--small" data-module="nhsuk-radios">
                                                                     <div class="nhsuk-radios__item">
                                                                         <input class="nhsuk-radios__input"
-                                                                            id="order-by-asc" name="order-by"
+                                                                            id="submission-order-by-asc" name="submission-order-by"
                                                                             type="radio" value="ascending">
                                                                         <label class="nhsuk-label nhsuk-radios__label"
-                                                                            for="order-by-asc">
+                                                                            for="submission-order-by-asc">
                                                                             Ascending
                                                                         </label>
                                                                     </div>
                                                                     <div class="nhsuk-radios__item">
                                                                         <input class="nhsuk-radios__input"
-                                                                            id="order-by-desc" name="order-by"
+                                                                            id="submission-order-by-desc" name="submission-order-by"
                                                                             type="radio" value="descending"
                                                                             checked="checked">
                                                                         <label class="nhsuk-label nhsuk-radios__label"
-                                                                            for="order-by-desc">
+                                                                            for="submission-order-by-desc">
                                                                             Descending
                                                                         </label>
                                                                     </div>
@@ -356,7 +356,7 @@ Manage incoming international healthcare claims - NHSBSA
                                             <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
                                             <thead class="nhsuk-table__head" role="rowgroup">
                                                 <tr role="row">
-                                                    <th scope="col" class="nhsuk-table__header" role="columnheader">ID
+                                                    <th scope="col" class="nhsuk-table__header" role="columnheader">Submission ID
                                                     </th>
                                                     <th scope="col" class="nhsuk-table__header" role="columnheader">
                                                         Reference
@@ -378,7 +378,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                 <tr class="nhsuk-table__row" role="row">
                                                     <td class="nhsuk-table__cell" role="cell"><span
                                                             class="nhsuk-table-responsive__heading"
-                                                            aria-hidden="true">ID
+                                                            aria-hidden="true">Submission ID
                                                         </span>6784
                                                     </td>
                                                     <td class="nhsuk-table__cell" role="cell"><span
@@ -490,8 +490,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                         Last name
                                                     </label>
                                                     <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="last-name-hint">
-                                                        Search using an initial, beginning of name or full name.<br>
-                                                        For example, S, Smi or Smith
+                                                        Search using an initial, beginning of last name or full name &ndash; for example, S, Smi or Smith
                                                     </div>
                                                     <input class="nhsuk-input nhsuk-u-width-two-thirds" id="last-name"
                                                         name="last-name" type="text">
@@ -504,8 +503,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </label>
                                                     <div class="nhsuk-hint nhsuk-u-margin-bottom-1"
                                                         id="first-name-hint">
-                                                        Search using an initial, beginning of name or full name.<br>
-                                                        For example J, Joh or John
+                                                        Search using an initial, beginning of first name or full name &ndash; for example J, Joh or John
                                                     </div>
                                                     <input class="nhsuk-input nhsuk-u-width-two-thirds" id="first-name"
                                                         name="first-name" type="text">
@@ -521,10 +519,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                             Date of birth
                                                         </label>
                                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="dob-hint">
-                                                            Always include the year if searching by date of birth – day
-                                                            and month
-                                                            are optional.<br>
-                                                            For example, 28 9 2023
+                                                            Always include the year (day and month are optional) &ndash; for example, 28 9 2023
                                                         </div>
                                                         <div class="nhsuk-date-input" id="example">
                                                             <div class="nhsuk-date-input__item">
@@ -592,8 +587,8 @@ Manage incoming international healthcare claims - NHSBSA
                                 <!-- Start header block-->
                                 <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
                                     <div class="nhsuk-grid-column-two-thirds">
-                                        <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Showing 1 to 10 of 92,412
-                                            results</h3>
+                                        <p class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Showing 1 to 10 of 92,412
+                                            results</p>
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group" style="float:right;">
