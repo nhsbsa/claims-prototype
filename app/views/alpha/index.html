@@ -67,6 +67,7 @@ Managing Member State claims
       </ul>
       <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Additional activities</h3>
       <ul>
+        <li>Invoice details iterations</li>
         <li>Credit note processing iterations</li>
       </ul>
       <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Supporting documentation</h3>
@@ -152,23 +153,49 @@ Managing Member State claims
       <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Invoice search
       </h5>
       <ul class="nhsuk-list nhsuk-list--bullet">
-                <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/invoice-search/single-result#invoices">Single result</a></li>
+        <li><a
+            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/invoice-search/single-result#invoices">Single
+            result</a></li>
         <li><a
             href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/invoice-search/no-results-found#invoices">No
             results found</a></li>
-                    <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/invoice-search/error-no-data-entered#invoices">Error - User hasnt entered any search criteria</a></li>
+        <li><a
+            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/invoice-search/error-no-data-entered#invoices">Error
+            - User hasnt entered any search criteria</a></li>
       </ul>
 
       <hr />
+
+      <!-- <h3 class="nhsuk-card__heading">Initial claim details</h3>
+      <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Status: Not started</h4>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="version-17/submissions/initial-claim/02-add-invoices/rina/01-not-started-actual">Actual/Average
+            cost - RINA/Non-RINA</a></li>
+      </ul>
+
+      <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Status: Active</h4>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="version-17/submissions/initial-claim/03-process/rina/01-active-actual">Actual cost -
+            RINA/Non-RINA</a></li>
+        <li><a href="version-17/submissions/initial-claim/03-process/rina/01-active-average-63">Average cost 63 2a/2b -
+            RINA/Non-RINA</a></li>
+        <li><a href="version-17/submissions/initial-claim/03-process/rina/01-active-average-94-95">Average cost 94/95 -
+            RINA/Non-RINA</a></li>
+      </ul>
+
+      <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Status: Processed</h4>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="version-17/submissions/initial-claim/04-outcomes/01-actual">Actual cost - RINA/Non-RINA</a></li>
+      </ul>
+
+      <hr /> -->
 
       <h3 class="nhsuk-card__heading">Add invoices</h3>
       <ul>
         <li><a href="version-17/submissions/initial-claim/02-add-invoices/rina/02-upload">Start journey</a></li>
       </ul>
 
-      <!-- <hr />
+      <hr />
       <h3 class="nhsuk-card__heading">Add a new submission</h3>
       <ul>
         <li><a href="version-17/submissions/01-create-new-type">Submission type - for all claim
@@ -177,14 +204,35 @@ Managing Member State claims
             cost</a></li>
         <li><a href="version-17/submissions/credit-note/01-create/rina/02-details-average">Credit note - RINA - Average
             cost</a></li>
-      </ul> -->
-
-
+                    <li><a href="version-17/submissions/credit-note/01-create/non-rina/02-details-actual">Credit note - Non-RINA - Actual
+            cost</a></li>
+        <li><a href="version-17/submissions/credit-note/01-create/non-rina/02-details-average">Credit note - Non-RINA - Average
+            cost</a></li>
+                    <li><a href="version-17/submissions/credit-note/01-create/cancel-confirmation">Credit note - cancel confirmation</a></li>
+      </ul>
       {% endset %}
 
       {{ card({
       descriptionHtml: DesignAdaptationsCardDescriptionHtml
       }) }}
+
+      <!-- <h3 class="nhsuk-heading-m">Invoice details iterations</h3>
+      <p class="nhsuk-body">The purpose of this work is to document which variation of the invoice screen the user
+        should see when the click 'View invoice' from the invoices tab within a variety of submissions</p>
+
+      {% set InvoiceDetailsDescriptionHtml %}
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="version-17/screen-variations/invoice-details/01-claim-level-actual">When viewed at claim level</a>
+        </li>
+                <li><a href="version-17/screen-variations/invoice-details/02-submission-level-read-only-actual">When viewed at submission level - read only</a>
+        </li>
+      </ul>
+      {% endset %}
+
+      {{ card({
+      descriptionHtml: InvoiceDetailsDescriptionHtml
+      }) }} -->
+
       <h3 class="nhsuk-heading-m">Credit note processing screens</h3>
       <p class="nhsuk-body">The purpose of this work is to incorporate feedback from the team while they are developing
         the BA tickets and to provide additional screen examples to support the ticket-writing process.</p>
@@ -198,6 +246,9 @@ Managing Member State claims
         <li><a
             href="version-17/submissions/credit-note/03-process/rina/error-messages/04c-20001563-amount-partial-accepted">Withdraw
             the credit amount from the invoice</a></li>
+                    <li><a
+            href="version-17/submissions/credit-note/03-process/rina/error-messages/04c-20001563-amount-partial-accepted2">Withdraw
+            the credit amount from the invoice - total entered</a></li>
       </ul>
 
       <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Invoice details</h3>
@@ -206,8 +257,6 @@ Managing Member State claims
             href="version-17/proof-of-concept/invoice-details/19012026-edit-invoice=details/credit-note-processing-rina">While
             processing a credit note</a></li>
       </ul>
-
-
       {% endset %}
 
       {{ card({
