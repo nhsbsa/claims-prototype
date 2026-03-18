@@ -17,20 +17,20 @@ Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-        <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Home</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
-            </li>
-        </ol>
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+        </li>
+    </ol>
     <a class="nhsuk-back-link" href="#">
         <span class="nhsuk-u-visually-hidden">Back to </span>claims
     </a>
@@ -113,7 +113,7 @@ Manage incoming international healthcare claims - NHSBSA
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">Current status</dt>
                                 <dd class="nhsuk-summary-list__value">
-                                    <strong class="nhsuk-tag nhsuk-tag--aqua-green">Active</strong>
+                                    <strong class="nhsuk-tag nhsuk-tag--yellow">Processed</strong>
                                 </dd>
                                 <dd class="nhsuk-summary-list__actions"></dd>
                             </div>
@@ -130,11 +130,11 @@ Manage incoming international healthcare claims - NHSBSA
                         <ul class="nhsuk-task-list">
                             <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
                                 <div class="nhsuk-task-list__name-and-hint"><a class="nhsuk-link nhsuk-task-list__link"
-                                        href="#invoices" aria-describedby="">Check invoices</a>
+                                        href="#/" aria-describedby="">Close initial claim</a>
                                 </div>
                                 <div class="nhsuk-task-list__status" id="select-invoices"><strong
-                                        class="nhsuk-tag nhsuk-tag--white">
-                                        In progress
+                                        class="nhsuk-tag nhsuk-tag--blue">
+                                        Not yet started
                                     </strong></div>
                             </li>
                         </ul>
@@ -183,7 +183,7 @@ Manage incoming international healthcare claims - NHSBSA
                 </div>
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-two-thirds">
-                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                        <div class="nhsuk-card">
                             <div class="nhsuk-card__content">
                                 <table class="nhsuk-table">
                                     <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-3"
@@ -206,36 +206,39 @@ Manage incoming international healthcare claims - NHSBSA
                                     <tbody class="nhsuk-table__body">
                                         <tr class="nhsuk-table__row">
                                             <th scope="row" class="nhsuk-table__header">To check</th>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">103</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">341</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><a href="">View
-                                                    invoices</a>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">No data
                                             </td>
                                         </tr>
                                         <tr class="nhsuk-table__row">
                                             <th scope="row" class="nhsuk-table__header">Accepted</th>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">92,309</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">221,541</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">10,472</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">35,839</td>
                                             <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><a href="">View
                                                     invoices</a>
                                             </td>
                                         </tr>
                                         <tr class="nhsuk-table__row">
                                             <th scope="row" class="nhsuk-table__header">Contested</th>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">No data</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">100</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">106</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><a href="">View
+                                                    invoices</a>
+                                            </td>
                                         </tr>
                                         <tr class="nhsuk-table__row">
                                             <th scope="row" class="nhsuk-table__header">Partial</th>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">5</td>
                                             <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Not applicable</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">No data</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><a href="">View
+                                                    invoices</a>
+                                            </td>
                                         </tr>
                                         <tr class="nhsuk-table__row">
                                             <th scope="row" class="nhsuk-table__header">Total</th>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">92,412</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">221,882</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">10,575</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">35,945</td>
                                             <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><a href="">View
                                                     invoices</a>
                                             </td>
@@ -246,6 +249,71 @@ Manage incoming international healthcare claims - NHSBSA
                         </div>
                     </div>
                 </div>
+                <!-- Start age bracket breakdown -->
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                            <div class="nhsuk-card__content">
+                                <table class="nhsuk-table">
+                                    <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-3"
+                                        style="border-bottom: 1px solid #d8dde0">Age bracket breakdown
+                                    </caption>
+                                    <thead role="rowgroup" class="nhsuk-table__head">
+                                        <tr role="row">
+                                            <th role="columnheader" class="" scope="col">
+                                                Age bracket
+                                            </th>
+                                            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                                                Total invoices
+                                            </th>
+                                            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                                                Total months
+                                            </th>
+                                            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                                                Accepted months
+                                            </th>
+                                            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                                                Contested months
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="nhsuk-table__body">
+                                        <tr role="row" class="nhsuk-table__row">
+                                            <th class="nhsuk-table__header" scope="row">0 to 19 years</th>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">914</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3,716</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3,713</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>
+                                        </tr>
+                                        <tr role="row" class="nhsuk-table__row">
+                                            <th class="nhsuk-table__header" scope="row">20 to 64 years</th>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1,524</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">7,473</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">7,435</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">38</td>
+                                        </tr>
+                                        <tr role="row" class="nhsuk-table__row">
+                                            <th class="nhsuk-table__header" scope="row">65 years and over</th>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">8,136</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">24,753</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">24,691</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">62</td>
+                                        </tr>
+                                        <tr role="row" class="nhsuk-table__row">
+                                            <th class="nhsuk-table__header" scope="row">Unknown</th>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End age bracket breakdown -->
             </div>
             <!-- *** End of summary tab *** -->
 
@@ -713,7 +781,7 @@ Always include the year (day and month are optional) &ndash; for example, 28 9 2
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Status
-                                                        </span>To check
+                                                        </span>Accepted
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">View </span><a
@@ -746,12 +814,11 @@ Always include the year (day and month are optional) &ndash; for example, 28 9 2
                                                             class="nhsuk-table-responsive__heading">Entitlement</span>S1
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
-                                                        <span class="nhsuk-table-responsive__heading">Status </span>To
-                                                        check
+                                                        <span class="nhsuk-table-responsive__heading">Status </span>Partial
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">View </span><a
-                                                            href="02-invoice-details">View invoice</a>
+                                                            href="#">View invoice</a>
                                                     </td>
                                                 </tr>
                                                 <tr role="row" class="nhsuk-table__row">
@@ -781,7 +848,7 @@ Always include the year (day and month are optional) &ndash; for example, 28 9 2
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Status
-                                                        </span>To check
+                                                        </span>Contested
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">View </span><a
@@ -883,7 +950,7 @@ Always include the year (day and month are optional) &ndash; for example, 28 9 2
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">Status
-                                                        </span>To check
+                                                        </span>Accepted
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">View </span><a
