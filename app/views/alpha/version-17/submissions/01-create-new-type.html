@@ -43,60 +43,53 @@ Add a new submission - Manage incoming international healthcare claims - NHSBSA
 <!-- Start of submission type -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
+        <span class="nhsuk-caption-l">Add a new submission</span>
         <!-- Start of form -->
-        <form action="#/" method="post">
-            <fieldset class="nhsuk-fieldset">
-                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-                    <h1 class="nhsuk-fieldset__heading">
-                        <span class="nhsuk-caption-l">Add a new submission</span>
-                        Submission type
-                    </h1>
-                </legend>
 
-                <!-- Start of card -->
-                <div class="nhsuk-card nhsuk-u-margin-bottom-3">
-                    <div class="nhsuk-card__content">
 
-                        <!-- Type of submission -->
-                        <div class="nhsuk-form-group">
-                            <fieldset class="nhsuk-fieldset">
-                                <legend
-                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-3">
-                                    <h1 class="nhsuk-fieldset__heading">
-                                        Which type of submission do you want to add?
-                                    </h1>
-                                </legend>
-                                <div class="nhsuk-radios">
-                                    <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="submission-type-contestation" name="type"
-                                            type="radio" value="Contestation">
-                                        <label class="nhsuk-label nhsuk-radios__label"
-                                            for="submission-type-contestation">
-                                            Reply to contestation
-                                        </label>
-                                    </div>
-                                    <div class="nhsuk-radios__item">
-                                        <input class="nhsuk-radios__input" id="submission-type-credit" name="type"
-                                            type="radio" value="Credit note">
-                                        <label class="nhsuk-label nhsuk-radios__label" for="submission-type-credit">
-                                            Credit note
-                                        </label>
-                                    </div>
+
+
+        <!-- Start of card -->
+        <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+            <div class="nhsuk-card__content">
+                <form action="#/" method="post">
+                    <!-- Type of submission -->
+                    <div class="nhsuk-form-group">
+                        <fieldset class="nhsuk-fieldset">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                                <h1 class="nhsuk-fieldset__heading">
+                                    Which type of submission do you want to add?
+                                </h1>
+                            </legend>
+                            <div class="nhsuk-radios">
+                                <div class="nhsuk-radios__item">
+                                    <input class="nhsuk-radios__input" id="submission-type-contestation" name="type"
+                                        type="radio" value="Contestation">
+                                    <label class="nhsuk-label nhsuk-radios__label" for="submission-type-contestation">
+                                        Reply to contestation
+                                    </label>
                                 </div>
-                            </fieldset>
-                        </div>
-
-                        <!-- Start button -->
-                        <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top:12px;">
-                            Continue
-                        </button>
-
+                                <div class="nhsuk-radios__item">
+                                    <input class="nhsuk-radios__input" id="submission-type-credit" name="type"
+                                        type="radio" value="Credit note">
+                                    <label class="nhsuk-label nhsuk-radios__label" for="submission-type-credit">
+                                        Credit note
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
                     </div>
-                </div>
-                <!-- End of card -->
+                    <!-- Start button -->
+                    <button class="nhsuk-button nhsuk-u-margin-bottom-3" data-module="nhsuk-button" type="submit">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- End of card -->
 
-            </fieldset>
-        </form>
+
+
         <!-- End of form-->
     </div>
 </div>

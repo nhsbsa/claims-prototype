@@ -42,18 +42,17 @@ Manage incoming international healthcare claims - NHSBSA
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <form action="../../../../route-create-type" method="post">
-            <div class="nhsuk-form-group">
-                <fieldset class="nhsuk-fieldset">
-                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-                        <h1 class="nhsuk-fieldset__heading">
-                            <span class="nhsuk-caption-l">Create a new claim</span>
-                            Which type of claim is it?
-                        </h1>
-                    </legend>
-                    <div class="nhsuk-card nhsuk-u-margin-bottom-3">
-                        <div class="nhsuk-card__content">
-
+        <span class="nhsuk-caption-l">Create a new claim</span>
+        <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+            <div class="nhsuk-card__content nhsuk-u-margin-bottom-0">
+                <form action="../../../../route-create-type" method="post">
+                    <div class="nhsuk-form-group">
+                        <fieldset class="nhsuk-fieldset">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                                <h1 class="nhsuk-fieldset__heading">
+                                    Which type of claim is it?
+                                </h1>
+                            </legend>
                             {% from "radios/macro.njk" import radios %}
                             {% from "input/macro.njk" import input %}
 
@@ -91,7 +90,8 @@ Manage incoming international healthcare claims - NHSBSA
                             {{ radios({
                             idPrefix: "claim-type",
                             name: "claim-type",
-                            classes: "nhsuk-u-margin-bottom-5",
+
+
 
                             items: [
                             {
@@ -120,16 +120,17 @@ Manage incoming international healthcare claims - NHSBSA
                             }
                             ]
                             }) }}
-
-                            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                                Continue
-                            </button>
-                        </div>
+                        </fieldset>
                     </div>
-                </fieldset>
+                    <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                        Continue
+                    </button>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
+
 </div>
+
 {% endblock %}
 <!-- End of central content -->
