@@ -1,31 +1,8 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-{% set mainNavigation = [
-{
-name: 'Summary',
-path: ''
-},
-{
-name: 'Invoices',
-path: ''
-},
-{
-name: 'Submissions',
-path: '',
-active: true
-},
-{
-name: 'Notes',
-path: ''
-},
-{
-name: 'History',
-path: ''
-}
-]
-%}
 
-<!-- Extends the layout from /views/layout-full-width-claim.html -->
-{% extends 'layout-full-width-claim.html' %}
+<!-- Extends the layout from /views/layout-full-width-logged-in.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -56,11 +33,9 @@ Manage incoming international healthcare claims - NHSBSA
             <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="">Submissions</a>
             </li>
         </ol>
-        <p class="nhsuk-breadcrumb__back">
-            <a class="nhsuk-breadcrumb__backlink" href="">
-                Claims
-            </a>
-        </p>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
 </nav>
 <!-- End of breadcrumb -->
 {% endblock %}

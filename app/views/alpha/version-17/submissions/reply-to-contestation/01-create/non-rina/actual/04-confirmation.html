@@ -1,30 +1,8 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-{% set mainNavigation = [
-{
-name: 'Summary',
-path: ''
-},
-{
-name: 'Invoices',
-path: ''
-},
-{
-name: 'Submissions',
-path: '',
-active: true
-},
-{
-name: 'Notes',
-path: ''
-},
-{
-name: 'History',
-path: ''
-}
-]
-%}
-<!-- Extends the layout from /views/layout-full-width-claim.html -->
-{% extends 'layout-full-width-claim.html' %}
+
+<!-- Extends the layout from /views/layout-full-width-logged-in.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -59,33 +37,21 @@ Manage incoming international healthcare claims - NHSBSA
 
 
 {% block content %}
-
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-two-thirds">
-                <div class="nhsuk-panel" style="background-color: #005EB8; text-align: center;">
-                    <h1 class="nhsuk-panel__title">Reply to contestation created for claim ID 6784</h1>
-                    <h2 class="nhsuk-heading-l">Reply to contestation ID 7766</h2>
-                </div>
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-panel">
+            <h1 class="nhsuk-panel__title">
+                Reply to contestation created for claim ID 6784
+            </h1>
+            <div class="nhsuk-panel__body">
+                Reply to contestation ID <strong>7766</strong>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <p class="nhsuk-body">You've created a new reply to contestation for Spain. The target date to complete this
+                <p class="nhsuk-body">You've created a new reply to contestation for France. The target date to complete this
             submission is 1 September 2025.</p>
-    </div>
-</div>
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <h2 class="heading-medium">What happens next</h2>
+        <h2 class="nhsuk-heading-m">What happens next</h2>
         <p class="nhsuk-body">You can now add invoices to this submission.</p>
         <a href="#" class="nhsuk-button" role="button" data-module="nhsuk-button">Manage reply to contestation</a>
     </div>
 </div>
-
 {% endblock %}
