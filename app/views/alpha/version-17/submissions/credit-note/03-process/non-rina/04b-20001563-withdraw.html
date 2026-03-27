@@ -17,26 +17,23 @@ Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-        <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Home</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6789</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9441</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Individual credit note ID 10003911</a>
-            </li>
-        </ol>
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6789</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Credit note ID 9441</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Individual credit note ID 10003911</a>
+        </li>
+    </ol>
     <a class="nhsuk-back-link" href="#">
         <span class="nhsuk-u-visually-hidden">Back to </span>claims
     </a>
@@ -55,25 +52,22 @@ Manage incoming international healthcare claims - NHSBSA
 </div>
 <!-- End back link -->
 
-<!-- Start of heading -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-            <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-4">
-                <span class="nhsuk-caption-l">Process an individual credit note</span>
-                Where should the credit months be withdrawn from?
-            </h1>
-        </legend>
+        <span class="nhsuk-caption-l">Process an individual credit note</span>
     </div>
 </div>
-<!-- End of heading -->
 
 <div class="nhsuk-grid-row">
-    <!-- Start question -->
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-card">
             <div class="nhsuk-card__content">
                 <form action="../../../../route_credit_amount_1003911" method="post">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                        <h1 class="nhsuk-fieldset__heading">
+                            Where should the credit months be withdrawn from?
+                        </h1>
+                    </legend>
                     <div class="nhsuk-form-group">
                         <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-5">
                             <div class="nhsuk-radios" data-module="nhsuk-radios">
@@ -120,7 +114,7 @@ Manage incoming international healthcare claims - NHSBSA
             </div>
         </div>
     </div>
-    <!-- End question -->
+
 
     <!-- Start details column -->
     <div class="nhsuk-grid-column-one-third">
