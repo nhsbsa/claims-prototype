@@ -17,23 +17,26 @@ Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-        <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Home</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
-            </li>
-        </ol>
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Outcomes</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Contestation ID 123</a>
+        </li>
+    </ol>
     <a class="nhsuk-back-link" href="#">
         <span class="nhsuk-u-visually-hidden">Back to </span>claims
     </a>
@@ -49,33 +52,24 @@ Manage incoming international healthcare claims - NHSBSA
 </div>
 <!-- End back link -->
 
-<!-- Start of title block -->
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-            <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-3">
-                <span class="nhsuk-caption-l">Create contestation - S082</span>
-                What date did you send the contestation to France?
-            </h1>
-        </legend>
-    </div>
-</div>
-<!-- End of title block -->
+
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
+        <span class="nhsuk-caption-l">Add submission date</span>
         <div class="nhsuk-card">
             <div class="nhsuk-card__content">
                 <form action="08-actual-sickness-submission-date-cya" method="post">
+
                     <div class="nhsuk-form-group">
-                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                            <legend class="nhsuk-fieldset__legend nhsuk-label--s nhsuk-u-margin-bottom-1">
+                        <fieldset class="nhsuk-fieldset" role="group" aria-describedby="submission-date-hint">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                                 <h1 class="nhsuk-fieldset__heading">
-                                    Submission date
+                                    What date did you send the contestation to France?
                                 </h1>
                             </legend>
-                            <div class="nhsuk-hint" id="target-date-hint">
-                                For example, 28 9 2023
+                            <div class="nhsuk-hint" id="submission-date-hint">
+                                For example, 15 3 2026
                             </div>
                             <div class="nhsuk-date-input" id="submission-date">
                                 <div class="nhsuk-date-input__item">
@@ -84,8 +78,8 @@ Manage incoming international healthcare claims - NHSBSA
                                             Day
                                         </label>
                                         <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                            id="submission-date-day" name="submission-date-day" type="text"
-                                            pattern="[0-9]*" inputmode="numeric" value="">
+                                            id="submission-date-day" name="submissionDate[day]" type="text"
+                                            inputmode="numeric">
                                     </div>
                                 </div>
                                 <div class="nhsuk-date-input__item">
@@ -94,8 +88,8 @@ Manage incoming international healthcare claims - NHSBSA
                                             Month
                                         </label>
                                         <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                            id="submission-date-month" name="submission-date-month" type="text"
-                                            pattern="[0-9]*" inputmode="numeric" value="">
+                                            id="submission-date-month" name="submissionDate[month]" type="text"
+                                            inputmode="numeric">
                                     </div>
                                 </div>
                                 <div class="nhsuk-date-input__item">
@@ -104,17 +98,13 @@ Manage incoming international healthcare claims - NHSBSA
                                             Year
                                         </label>
                                         <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                                            id="submission-date-year" name="submission-date-year" type="text"
-                                            pattern="[0-9]*" inputmode="numeric" value="">
+                                            id="submission-date-year" name="submissionDate[year]" type="text"
+                                            inputmode="numeric">
                                     </div>
                                 </div>
                             </div>
                         </fieldset>
                     </div>
-                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-
-
                     <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
                         Continue
                     </button>

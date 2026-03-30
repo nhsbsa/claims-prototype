@@ -6,6 +6,23 @@ const path = require('path');
 
 const axios = require('axios');
 
+///////CREATE A CONTESTATION///////
+
+//// How would you like to add the invoices? ////
+router.post('/route-contestation-invoices', function(req,res){
+    var invoices = req.session.data['invoices']
+    if (invoices == "all") {
+        res.redirect('/alpha/version-17/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/04-actual-sickness-cya')
+        }
+    else if (invoices == "manual") {
+        res.redirect('/alpha/version-17/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/04b-actual-sickness-cya')
+        }
+    else {
+        res.redirect('/alpha/version-17/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/03-actual-sickness-route')
+    }
+})
+
+
 ///////CREATE A NEW CLAIM ITERATIONS NOVEMBER 2025///////
 
 //// How did you receive the claim?  ////

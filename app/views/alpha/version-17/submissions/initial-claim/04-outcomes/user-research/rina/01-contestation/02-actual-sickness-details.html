@@ -17,23 +17,23 @@ Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-        <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Home</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
-            </li>
-        </ol>
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Outcomes</a>
+        </li>
+    </ol>
     <a class="nhsuk-back-link" href="#">
         <span class="nhsuk-u-visually-hidden">Back to </span>claims
     </a>
@@ -52,12 +52,8 @@ Manage incoming international healthcare claims - NHSBSA
 <!-- Start of title block -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-            <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-3">
-                <span class="nhsuk-caption-l">Create contestation - S082</span>
-                Contestation details
-            </h1>
-        </legend>
+        <span class="nhsuk-caption-l">Create contestation</span>
+        <!-- <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">Contestation details</h1> -->
     </div>
 </div>
 <!-- End of title block -->
@@ -68,14 +64,30 @@ Manage incoming international healthcare claims - NHSBSA
             <div class="nhsuk-card__content">
                 <form action="03-actual-sickness-route" method="post">
                     <div class="nhsuk-form-group">
-                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="ref">
-                            Global COC ref
-                        </label>
-                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text" value="">
+                        <h1 class="nhsuk-label-wrapper">
+                            <label class="nhsuk-label nhsuk-label--l" for="full-name">
+                                What is our reference?
+                            </label>
+                            <div class="nhsuk-hint">
+                                The global COC ref
+                            </div>
+                        </h1>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
+                            value="6784ID6784">
                     </div>
-                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-      
+
+
+                    <!-- <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="ref">
+                            Our reference
+                        </label>
+                        <div class="nhsuk-hint">
+                            Global COC ref
+                        </div>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="ref" name="ref" type="text"
+                            value="67846784">
+                    </div> -->
 
                     <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
                         Continue
@@ -85,9 +97,4 @@ Manage incoming international healthcare claims - NHSBSA
         </div>
     </div>
 </div>
-
-
-
-
-
 {% endblock %}

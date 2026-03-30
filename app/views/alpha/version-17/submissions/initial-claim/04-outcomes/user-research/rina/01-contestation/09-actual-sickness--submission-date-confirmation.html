@@ -17,23 +17,26 @@ Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-        <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Home</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
-            </li>
-        </ol>
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Outcomes</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Contestation ID 123</a>
+        </li>
+    </ol>
     <a class="nhsuk-back-link" href="#">
         <span class="nhsuk-u-visually-hidden">Back to </span>claims
     </a>
@@ -43,39 +46,24 @@ Manage incoming international healthcare claims - NHSBSA
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <div class="nhsuk-panel" style="background-color: #005EB8; text-align: center;">
+        <div class="nhsuk-panel">
             <h1 class="nhsuk-panel__title">
                 Submission date added
             </h1>
-            <h2 class="nhsuk-heading-l">Glocal COC reference<br>
-                123ABC567POF6</h2>
+            <div class="nhsuk-panel__body">
+                Our reference <strong>123ABC567POF6</strong>
+            </div>
         </div>
-    </div>
-</div>
-
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
         <p class="nhsuk-body">You have added the submission date of 2 December 2025.</p>
+        <h2 class="nhsuk-heading-m">What happens next</h2>
+        <p class="nhsuk-body">RINA - prepare the documents to share with DH and create the information of payment</p>
+        <p class="nhsuk-body">Non-RINA - prepare the documents to share with DH and log the received date</p>
+
+        <a href="11-actual-sickness" class="nhsuk-button" style="margin-right:8px;" role="button"
+            data-module="nhsuk-button">Return to submission</a>
+        <a href="10-actual-sickness-details-complete" class="nhsuk-button nhsuk-button--secondary" role="button"
+            data-module="nhsuk-button">View contestation</a>
     </div>
 </div>
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <h2 class="nhsuk-heading-l">What happens next</h2>
-        <p class="nhsuk-body">You can </p>
-    </div>
-</div>
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <a href="10-actual-sickness-details-complete" class="nhsuk-button" style="margin-right:8px;" role="button" data-module="nhsuk-button">View contestation</a>
-        <a href="11-actual-sickness" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Return to submission</a>
-    </div>
-</div>
-
-
-
-
 
 {% endblock %}

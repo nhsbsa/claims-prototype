@@ -17,23 +17,23 @@ Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-        <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Home</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
-            </li>
-        </ol>
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Outcomes</a>
+        </li>
+    </ol>
     <a class="nhsuk-back-link" href="#">
         <span class="nhsuk-u-visually-hidden">Back to </span>claims
     </a>
@@ -43,39 +43,22 @@ Manage incoming international healthcare claims - NHSBSA
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <div class="nhsuk-panel" style="background-color: #005EB8; text-align: center;">
+        <div class="nhsuk-panel">
             <h1 class="nhsuk-panel__title">
                 Contestation created
             </h1>
-            <h2 class="nhsuk-heading-l">Glocal COC reference<br>
-                123ABC567POF6</h2>
+            <div class="nhsuk-panel__body">
+                Our reference <strong>123ABC567POF6</strong>
+            </div>
         </div>
-    </div>
-</div>
-
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
         <p class="nhsuk-body">You have created a contestation.</p>
-    </div>
-</div>
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <h2 class="nhsuk-heading-l">What happens next</h2>
+        <h2 class="nhsuk-heading-m">What happens next</h2>
         <p class="nhsuk-body">You can now manage the contestation to add the invoices.</p>
+        <a href="06b-actual-sickness-details" class="nhsuk-button" style="margin-right:8px;" role="button"
+            data-module="nhsuk-button">Manage contestation</a>
+        <a href="" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Return to
+            submission</a>
     </div>
 </div>
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <a href="06b-actual-sickness-details" class="nhsuk-button" style="margin-right:8px;" role="button" data-module="nhsuk-button">Manage contestation</a>
-        <a href="" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Return to submission</a>
-    </div>
-</div>
-
-
-
-
 
 {% endblock %}

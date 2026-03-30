@@ -17,23 +17,23 @@ Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-        <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Home</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
-            </li>
-        </ol>
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Outcomes</a>
+        </li>
+    </ol>
     <a class="nhsuk-back-link" href="#">
         <span class="nhsuk-u-visually-hidden">Back to </span>claims
     </a>
@@ -49,38 +49,31 @@ Manage incoming international healthcare claims - NHSBSA
 </div>
 <!-- End back link -->
 
-<!-- Start of title block -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-            <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-3">
-                <span class="nhsuk-caption-l">Create contestation - S082</span>
-                How would you like to add the invoices?
-            </h1>
-        </legend>
-    </div>
-</div>
-<!-- End of title block -->
-
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <div class="nhsuk-card">
+        <span class="nhsuk-caption-l">Create contestation</span>
+        <div class="nhsuk-card nhsuk-u-margin-bottom-4">
             <div class="nhsuk-card__content">
-                <form action="04-actual-sickness-cya" method="post">
+                <form action="../../../../../../route-contestation-invoices" method="post">
                     <div class="nhsuk-form-group">
                         <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-5">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                                <h1 class="nhsuk-fieldset__heading">
+                                    How would you like to add the invoices?
+                                </h1>
+                            </legend>
                             <div class="nhsuk-radios" data-module="nhsuk-radios">
                                 <div class="nhsuk-radios__item">
-                                    <input class="nhsuk-radios__input" id="decision-accept" name="decision" type="radio"
-                                        value="accept">
-                                    <label class="nhsuk-label nhsuk-radios__label" for="decision-accept">
+                                    <input class="nhsuk-radios__input" id="invoices-all" name="invoices" type="radio"
+                                        value="all">
+                                    <label class="nhsuk-label nhsuk-radios__label" for="invoices-all">
                                         Add all invoices
                                     </label>
                                 </div>
                                 <div class="nhsuk-radios__item">
-                                    <input class="nhsuk-radios__input" id="decision-partial" name="decision"
-                                        type="radio" value="partial">
-                                    <label class="nhsuk-label nhsuk-radios__label" for="decision-partial">
+                                    <input class="nhsuk-radios__input" id="invoices-manual" name="invoices"
+                                        type="radio" value="manual">
+                                    <label class="nhsuk-label nhsuk-radios__label" for="invoices-manual">
                                         Manually select individual invoices
                                     </label>
                                 </div>
@@ -93,6 +86,7 @@ Manage incoming international healthcare claims - NHSBSA
                 </form>
             </div>
         </div>
+        <p class="nhsuk-body"><a href="">Cancel</a></p>
     </div>
 </div>
 
