@@ -10,7 +10,7 @@
 
 <!-- Start of page title -->
 {% block pageTitle %}
-Invoice details - Manage incoming international healthcare claims - NHSBSA
+Manage incoming international healthcare claims - NHSBSA
 {% endblock %}
 <!-- End of page title -->
 
@@ -28,10 +28,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
             <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
         </li>
         <li class="nhsuk-breadcrumb__list-item">
-            <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
+            <a class="nhsuk-breadcrumb__link" href="">Credit note ID 28</a>
         </li>
         <li class="nhsuk-breadcrumb__list-item">
-            <a class="nhsuk-breadcrumb__link" href="">Invoices</a>
+            <a class="nhsuk-breadcrumb__link" href="">Individual credit notes</a>
         </li>
     </ol>
     <a class="nhsuk-back-link" href="#">
@@ -47,42 +47,26 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 <!-- Start back link -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-        <a class="nhsuk-back-link" href="05-invoice-reply-to-contestation#submissions">Go back</a>
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
     </div>
 </div>
 <!-- End back link -->
 
 <!-- Start of header block -->
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <span class="nhsuk-caption-l">Initial claim ID 6784</span>
-        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-0">
-            Invoice ID 20001574 (version 1)
+    <div class="nhsuk-grid-column-one-half">
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">
+            <span class="nhsuk-caption-l">Credit note ID 28 - France</span>
+            Individual credit note ID 10003842
         </h1>
     </div>
-    <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-        <a href="#/" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
-            invoice</a>
+    <div class="nhsuk-grid-column-one-half" style="text-align:right;">
+        <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
+            individual
+            credit note</a>
     </div>
 </div>
 <!-- End of header block -->
-
-<!-- Start of warning callout -->
-<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-        <div class="nhsuk-card nhsuk-card--warning">
-            <div class="nhsuk-card__content">
-                <h2 class="nhsuk-card__heading">
-                    <span role="text">
-                        <span class="nhsuk-u-visually-hidden">Important:</span> Historical version
-                    </span>
-                </h2>
-                <p class="nhsuk-card__description">You're viewing an earlier version of this invoice from submission ID 6784. You cannot edit it.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End of warning callout -->
 
 <!-- Start of key information box-->
 <div class="nhsuk-grid-row">
@@ -92,32 +76,21 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 <dl class="nhsuk-summary-list">
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Invoice reference
+                            Individual credit note reference
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            0039795409
+                            11661234KK0001
                         </dd>
-                        <dd class="nhsuk-summary-list__actions"></dd>
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Status
+                            Current status
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            <strong class="nhsuk-tag nhsuk-tag--red">
-                                Contested
+                            <strong class="nhsuk-tag nhsuk-tag--green">
+                                Accepted
                             </strong>
                         </dd>
-                        <dd class="nhsuk-summary-list__actions"></dd>
-                    </div>
-                    <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                            Decision date
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                            21 July 2024
-                        </dd>
-                        <dd class="nhsuk-summary-list__actions"></dd>
                     </div>
                 </dl>
             </div>
@@ -141,9 +114,19 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         Summary
                     </a>
                 </li>
-                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                <li class="nhsuk-tabs__list-item">
                     <a class="nhsuk-tabs__tab" href="#import">
-                        Imported invoice
+                        Imported individual credit note
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#notes">
+                        Notes
+                    </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#history">
+                        History
                     </a>
                 </li>
             </ul>
@@ -155,66 +138,78 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                 <!-- Start of header block -->
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
-                        <h2 class="nhsuk-heading-l">Summary</h2>
+                        <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-5">Summary</h2>
                     </div>
                 </div>
                 <!-- End of header block -->
 
-                <!-- Start of decision -->
+                <!-- Start credit note decision -->
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-                            Decision
+                            Individual credit note decision
                         </h3>
-                        <div class="nhsuk-card" id="status">
-                            <div class="nhsuk-card__content" style="padding:18px 16px 16px 16px;">
-                                <div class="nhsuk-grid-row ">
-                                    <div class="nhsuk-grid-column-full">
-                                        <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-0">
-                                            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-                                                <div class="nhsuk-card nhsuk-u-margin-bottom-0">
-                                                    <div class="nhsuk-card__content">
-                                                        <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">0
-                                                            <span class="nhsuk-u-visually-hidden">Accepted
-                                                                amount</span>
-                                                        </p>Accepted amount
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-                                                <div class="nhsuk-card nhsuk-u-margin-bottom-0">
-                                                    <div class="nhsuk-card__content">
-                                                        <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">900.50 <span
-                                                                class="nhsuk-u-visually-hidden">Contested
-                                                                amount</span>
-                                                        </p>Contested amount
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="nhsuk-inset-text nhsuk-u-margin-bottom-1"
-                                            style="max-width:none; margin-top:16px;">
-                                            <span class="nhsuk-u-visually-hidden">Information:</span>
-                                            <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-3">Contestation reason
-                                            </h4>
-                                            <p>Entitlement document is unknown or not found. Please provide copy.</p>
+                    </div>
+                </div>
+                <div class="nhsuk-grid-row ">
+                    <div class="nhsuk-grid-column-full">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-9">
+                            <div class="nhsuk-card__content" style="padding:16px;">
+                                <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-0">
+                                    <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                                            <div class="nhsuk-card__content">
+                                                <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">0 <span
+                                                        class="nhsuk-u-visually-hidden">credit withdrawn from accepted
+                                                        amount</span>
+                                                </p>Credit withdrawn from accepted amount
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    </li>
+                                    <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                                            <div class="nhsuk-card__content">
+                                                <p class="nhsuk-heading-l nhsuk-u-margin-bottom-1">100.00 <span
+                                                        class="nhsuk-u-visually-hidden">credit withdrawn from contested
+                                                        amount</span>
+                                                </p>Credit withdrawn from contested amount
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- End of decision -->
+                <!-- End credit note decision -->
 
-                <!-- start data comparison -->
+                <!-- Start data comparison -->
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-one-half">
                         <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-                            Invoice details from France
+                            Individual credit note details from France
                         </h3>
-                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-5">
                             <div class="nhsuk-card__content" style="padding:16px;">
+                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-9">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Credit amount
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            100.00
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Invoice reference
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            0039795409
+                                        </dd>
+                                    </div>
+                                </dl>
+
                                 <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
                                     Person details
                                 </h4>
@@ -252,61 +247,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             JM 76 32 32 A
                                         </dd>
                                     </div>
-
                                 </dl>
 
                                 <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
-                                    Entitlement details
+                                    Invoice period
                                 </h4>
                                 <hr style="margin:0px 0px 10px 0px;">
-                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-9">
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Document
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            EHIC
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Issue number
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            80826000010168456876
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Start date
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            29 November 2019
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            End date
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            28 November 2024
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            Issue date
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            29 November 2019
-                                        </dd>
-                                    </div>
-                                </dl>
-
-                                <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
-                                    Invoice period and amount
-                                </h4>
-                                <hr style="margin:0px 0px 10px 0px;">
-                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+                                <dl class="nhsuk-summary-list">
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
                                             Start date
@@ -323,39 +270,58 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             16 August 2024
                                         </dd>
                                     </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nhsuk-grid-column-one-half">
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-two-thirds">
+                                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
+                                    Matched invoice
+                                </h3>
+                            </div>
+                            <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+                                <p class="nhsuk-body nhsuk-u-margin-bottom-0"><a href="07-invoice-credit-note" class="nhsuk-link">View
+                                        invoice</a></p>
+                            </div>
+                        </div>
+
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                            <div class="nhsuk-card__content" style="padding:16px;">
+                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-9">
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Total amount
+                                            Original amount
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             900.50
                                         </dd>
                                     </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Amount after credit
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            800.50
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Invoice reference
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            0039795409
+                                        </dd>
+                                    </div>
                                 </dl>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="nhsuk-grid-column-one-half">
-                        <div class="nhsuk-grid-row">
-                            <div class="nhsuk-grid-column-two-thirds">
-                                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-                                    Matched OHS person record
-                                </h3>
-                            </div>
-                            <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-                                <p class="nhsuk-body nhsuk-u-margin-bottom-0"><a href="#/" class="nhsuk-link">View
-                                        person record</a></p>
-                            </div>
-                        </div>
-                        <div class="nhsuk-card nhsuk-u-margin-bottom-3">
-                            <div class="nhsuk-card__content" style="padding:16px;">
 
                                 <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
                                     Person details
                                 </h4>
                                 <hr style="margin:0px 0px 10px 0px;">
-
-                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-9">
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
                                             Last name
@@ -382,26 +348,99 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            OHS reference
-                                        </dt>
-                                        <dd class="nhsuk-summary-list__value">
-                                            25046944
-                                        </dd>
-                                    </div>
-                                    <div class="nhsuk-summary-list__row">
-                                        <dt class="nhsuk-summary-list__key">
-                                            NI number
+                                            PIN in UK
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             JM 76 32 32 A
                                         </dd>
                                     </div>
+                                </dl>
+
+                                <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                    Invoice period
+                                </h4>
+                                <hr style="margin:0px 0px 10px 0px;">
+                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-9">
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Residential country
+                                            Start date
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
-                                            UK
+                                            12 August 2024
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            End date
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            16 August 2024
+                                        </dd>
+                                    </div>
+                                </dl>
+
+                                <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                    Status details
+                                </h4>
+                                <hr style="margin:0px 0px 10px 0px;">
+                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-9">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Invoice status
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            <strong class="nhsuk-tag nhsuk-tag--red">
+                                                Contested
+                                            </strong>
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Initial claim status
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            <strong class="nhsuk-tag nhsuk-tag--yellow">
+                                                Processed
+                                            </strong>
+                                        </dd>
+                                    </div>
+                                </dl>
+
+                                <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                    Invoice decision
+                                </h4>
+                                <hr style="margin:0px 0px 10px 0px;">
+                                <dl class="nhsuk-summary-list">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Accepted amount
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            0
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Contested amount
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            800.50
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Withdrawn amount
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            100.00
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Contestation reason
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Entitlement document is unknown or not found. Please provide a copy.
                                         </dd>
                                     </div>
                                 </dl>
@@ -409,22 +448,24 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </div>
                     </div>
                 </div>
-                <!-- end data comparison -->
+                <!-- End data comparison -->
             </div>
             <!-- *** End of summary tab *** -->
 
-            <!-- *** Start of import tab *** -->
+            <!-- *** Start of imported individual credit note tab *** -->
             <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="import">
-                <h2 class="nhsuk-heading-l">Imported invoice</h2>
+                <h2 class="nhsuk-heading-l">Imported individual credit note</h2>
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-two-thirds">
-                        <!-- start invoice summary expander -->
+
+
+                        <!-- start credit note summary expander -->
                         <div class="nhsuk-grid-row">
                             <div class="nhsuk-grid-column-full">
                                 <details class="nhsuk-details nhsuk-expander" open>
                                     <summary class="nhsuk-details__summary">
                                         <span class="nhsuk-details__summary-text">
-                                            Invoice summary
+                                            Credit note summary
                                         </span>
                                     </summary>
                                     <div class="nhsuk-details__text">
@@ -439,26 +480,42 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             </div>
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Invoice reference
+                                                    Credit note reference
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    0039795409
+                                                    11661234KK1892
                                                 </dd>
                                             </div>
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Date creditor recorded claim
+                                                    Total number of individual credit notes
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    19 July 2024
+                                                    2
                                                 </dd>
                                             </div>
                                             <div class="nhsuk-summary-list__row">
                                                 <dt class="nhsuk-summary-list__key">
-                                                    Provided benefits
+                                                    Total amount of individual credit notes
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    01 &ndash; sickness
+                                                    300.00
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Currency
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    Euro
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Date of submission
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    23 August 2024
                                                 </dd>
                                             </div>
                                         </dl>
@@ -466,7 +523,81 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 </details>
                             </div>
                         </div>
-                        <!-- end invoice summary expander -->
+                        <!-- end credit note summary expander -->
+
+                        <!-- start individual credit note summary expander -->
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-full">
+                                <details class="nhsuk-details nhsuk-expander" open>
+                                    <summary class="nhsuk-details__summary">
+                                        <span class="nhsuk-details__summary-text">
+                                            Individual credit note summary
+                                        </span>
+                                    </summary>
+                                    <div class="nhsuk-details__text">
+                                        <dl class="nhsuk-summary-list">
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Claim reference
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    11322249AT2301E
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Credit note reference
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    11661234KK1892
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Individual credit note reference
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    11661234KK001
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Invoice reference
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    20001574
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Credit amount
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    100.00
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Individual credit note currency
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    Euro
+                                                </dd>
+                                            </div>
+                                            <div class="nhsuk-summary-list__row">
+                                                <dt class="nhsuk-summary-list__key">
+                                                    Nature of benefits
+                                                </dt>
+                                                <dd class="nhsuk-summary-list__value">
+                                                    01 &ndash; Sickness
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        <!-- end individual credit note summary expander -->
 
                         <!-- start creditor expander -->
                         <div class="nhsuk-grid-row">
@@ -608,7 +739,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     PIN in member state
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-
+                                                    No data
                                                 </dd>
                                             </div>
                                         </dl>
@@ -617,64 +748,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             </div>
                         </div>
                         <!-- end person details expander -->
-
-                        <!-- start entitlement details expander -->
-                        <div class="nhsuk-grid-row">
-                            <div class="nhsuk-grid-column-full">
-                                <details class="nhsuk-details nhsuk-expander" open>
-                                    <summary class="nhsuk-details__summary">
-                                        <span class="nhsuk-details__summary-text">
-                                            Entitlement details
-                                        </span>
-                                    </summary>
-                                    <div class="nhsuk-details__text">
-                                        <dl class="nhsuk-summary-list">
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Entitlement document
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    EHIC
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Issue number
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    80826000010168456676
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Entitlement start date
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    29 November 2019
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Entitlement end date
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    30 November 2024
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Entitlement issue date
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    29 November 2019
-                                                </dd>
-                                            </div>
-                                        </dl>
-                                    </div>
-                                </details>
-                            </div>
-                        </div>
-                        <!-- end entitlement details expander -->
 
                         <!-- start invoice period and amount expander -->
                         <div class="nhsuk-grid-row">
@@ -701,22 +774,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
                                                     16 August 2024
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Total amount
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    900.50
-                                                </dd>
-                                            </div>
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Currency
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    Euro
                                                 </dd>
                                             </div>
                                         </dl>
@@ -758,7 +815,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     Hospitalisation 1 amount
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                    600.50
+                                                    500.50
                                                 </dd>
                                             </div>
                                         </dl>
@@ -800,7 +857,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     Dental care amount
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-
+                                                    No data
                                                 </dd>
                                             </div>
                                             <div class="nhsuk-summary-list__row">
@@ -808,7 +865,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     Long term care amount
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-
+                                                    No data
                                                 </dd>
                                             </div>
                                         </dl>
@@ -834,7 +891,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     Other benefits description
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-
+                                                    No data
                                                 </dd>
                                             </div>
                                             <div class="nhsuk-summary-list__row">
@@ -842,7 +899,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     Other benefits amount
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-
+                                                    No data
                                                 </dd>
                                             </div>
                                         </dl>
@@ -851,10 +908,34 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             </div>
                         </div>
                         <!-- end other benefits expander -->
+
                     </div>
                 </div>
             </div>
-            <!-- *** End of import tab *** -->
+            <!-- *** End of imported individual credit note tab *** -->
+
+            <!-- *** Start of notes tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <h2 class="nhsuk-heading-l">Notes</h2>
+                    </div>
+                    <div class="nhsuk-grid-column-one-third">
+                        <button style="float:right;" class="nhsuk-button nhsuk-button--secondary"
+                            data-module="nhsuk-button" type="submit">
+                            Add a new note
+                        </button>
+                    </div>
+                </div>
+                <p class="nhsuk-body">There are currently no notes.</p>
+            </div>
+            <!-- *** End of notes tab *** -->
+
+            <!-- *** Start of history tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="history">
+                <h2 class="nhsuk-heading-l">History</h2>
+            </div>
+            <!-- *** End of history tab *** -->
 
         </div>
     </div>
@@ -863,7 +944,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
 </div>
 </div>
-
 
 {% endblock %}
 <!-- End of central content -->
