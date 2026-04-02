@@ -12,10 +12,10 @@ const axios = require('axios');
 router.post('/route-contestation-invoices', function(req,res){
     var invoices = req.session.data['invoices']
     if (invoices == "all") {
-        res.redirect('/alpha/version-17/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/04-actual-sickness-cya')
+        res.redirect('/alpha/version-17/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/04a-actual-sickness-credit-notes')
         }
     else if (invoices == "manual") {
-        res.redirect('/alpha/version-17/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/04b-actual-sickness-cya')
+        res.redirect('/alpha/version-17/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/04b-actual-sickness-cya-manual')
         }
     else {
         res.redirect('/alpha/version-17/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/03-actual-sickness-route')

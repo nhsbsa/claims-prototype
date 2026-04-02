@@ -54,7 +54,7 @@ Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-card nhsuk-u-margin-bottom-4">
             <div class="nhsuk-card__content">
-                <form action="05b-actual-sickness-confirmation" method="post">
+                <form action="05-actual-sickness-confirmation" method="post">
                     <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">
                         Contestation details
                     </h2>
@@ -70,8 +70,18 @@ Manage incoming international healthcare claims - NHSBSA
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
                                 <a href="">
-                                    Change<span class="nhsuk-u-visually-hidden"> glocal COC ref</span>
+                                    Change<span class="nhsuk-u-visually-hidden"> our reference</span>
                                 </a>
+                            </dd>
+                        </div>
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Member state reference
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                MM67834933A
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
                             </dd>
                         </div>
                     </dl>
@@ -86,7 +96,7 @@ Manage incoming international healthcare claims - NHSBSA
                                 How would you like to add the invoices?
                             </dt>
                             <dd class="nhsuk-summary-list__value">
-                                Manually select individual invoices
+                                All invoices
                             </dd>
                             <dd class="nhsuk-summary-list__actions">
                                 <a href="">
@@ -94,6 +104,39 @@ Manage incoming international healthcare claims - NHSBSA
                                 </a>
                             </dd>
                         </div>
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Total number of contested invoices
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                103
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+
+                            </dd>
+                        </div>
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">Total amount of contested invoices
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                11,500.38
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+
+                            </dd>
+                        </div>
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Currency
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                Euro
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+
+                            </dd>
+                        </div>
+
                     </dl>
 
                     <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
@@ -104,11 +147,6 @@ Manage incoming international healthcare claims - NHSBSA
         </div>
         <p class="nhsuk-body"><a href="">Cancel</a></p>
     </div>
-
 </div>
-
-
-
-
 
 {% endblock %}
