@@ -47,323 +47,363 @@ Managing Member State claims
         <span class="nhsuk-caption-m nhsuk-caption--bottom">July 2023 - Current</span>
       </h2>
 
+      <!-- Start of version 18-->
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Version 18 - Current
+          </span>
+          <strong class="nhsuk-tag nhsuk-tag--yellow" style="float:right;">
+            In design
+          </strong>
+        </summary>
+        <div class="nhsuk-details__text">
+
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Summary
+              </h2>
+              <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                Primary focus
+              </h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Design the screens to enable a user to add a contestation to an initial claim</li>
+              </ul>
+              <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                Additional activities
+              </h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li></li>
+              </ul>
+              <h3 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-2">
+                Supporting documentation
+              </h3>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-2">
+                User research - Add a contestation
+              </h2>
+              <p class="nhsuk-body">The purpose of this work is to design the screens to enable the users to create a
+                contestation outcome from an initial claim.</p>
+
+              <ul>
+                <li><a
+                    href="version-18/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/01-actual-sickness">Start
+                    journey</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+
+      <!-- End of version 18 -->
+
       <!-- Start of version 17 -->
 
-      {% call details({
-      summaryText: "Version 17 - Current",
-      classes: "nhsuk-expander"
-      }) %}
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Version 17 - April 2026
+          </span>
+          <strong class="nhsuk-tag nhsuk-tag--purple" style="float:right;">
+            Ready for UR
+          </strong>
+        </summary>
+        <div class="nhsuk-details__text">
+          {% set SummaryCardDescriptionHtml %}
 
-      {% set SummaryCardDescriptionHtml %}
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Primary focus - Design adaptations</h3>
+          <ul>
+            <li>Create a claim</li>
+            <li>Claim search</li>
+            <li>Claim details (previously known as 'Claim summary')</li>
+            <li>Add invoices</li>
+            <li>Add a new submission</li>
+          </ul>
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Additional activities</h3>
+          <ul>
+            <li>Invoice details iterations</li>
+            <li>Credit note processing iterations</li>
+            <li>Reply to contestation - RINA - Individiual replies adaptations</li>
+          </ul>
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-3">Supporting documentation</h3>
+          <ul>
+            <li><a href="https://miro.com/app/board/uXjVG3IvEAw=/?share_link_id=122943360301" target="_blank">Miro board
+                -
+                MHIHC - UI - Version 17</a> </li>
+          </ul>
+          {% endset %}
 
-      <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Primary focus - Design adaptations</h3>
-      <ul>
-        <li>Create a claim</li>
-        <li>Claim search</li>
-        <li>Claim details (previously known as 'Claim summary')</li>
-        <li>Add invoices</li>
-        <li>Add a new submission</li>
-      </ul>
-      <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Additional activities</h3>
-      <ul>
-        <li>Invoice details iterations</li>
-        <li>Credit note processing iterations</li>
-        <li>Reply to contestation - RINA - Individiual replies adaptations</li>
-      </ul>
-      <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-3">Supporting documentation</h3>
-      <ul>
-        <li><a href="https://miro.com/app/board/uXjVG3IvEAw=/?share_link_id=122943360301" target="_blank">Miro board -
-            MHIHC - UI - Version 17</a> </li>
-      </ul>
-      {% endset %}
+          {{ card({
+          descriptionHtml: SummaryCardDescriptionHtml
+          }) }}
 
-      {{ card({
-      descriptionHtml: SummaryCardDescriptionHtml
-      }) }}
+          {% set UserResearchCardDescriptionHtml %}
+          <h3 class="nhsuk-heading-m">User research - Viewing historical invoice details</h3>
+          <p class="nhsuk-body">The purpose of this work is to validate our design decisions for enabling users to be
+            able
+            to quickly access historical invoice details as they were recorded for each specific submission.</p>
 
-      {% set UserResearchCardDescriptionHtml %}
-      <h3 class="nhsuk-heading-m">User research - Viewing historical invoice details</h3>
-      <p class="nhsuk-body">The purpose of this work is to validate our design decisions for enabling users to be able
-        to quickly access historical invoice details as they were recorded for each specific submission.</p>
+          <ul>
+            <li><a href="version-17/user-research/01-claim-search">Start journey</a></li>
 
-      <ul>
-        <li><a href="version-17/user-research/01-claim-search">Start journey</a></li>
+          </ul>
 
-      </ul>
+          {% endset %}
 
-      {% endset %}
+          {{ card({
+          descriptionHtml: UserResearchCardDescriptionHtml
+          }) }}
 
-      {{ card({
-      descriptionHtml: UserResearchCardDescriptionHtml
-      }) }}
+          {% set DesignAdaptationsCardDescriptionHtml %}
+          <h3 class="nhsuk-heading-m">Design adaptations</h3>
+          <p class="nhsuk-body">The purpose of this work is to ensure alignment with the latest designs and bring
+            the
+            screens inline with the CDM 4.4 changes.</p>
+          <hr />
+          <h3 class="nhsuk-card__heading">Create a claim</h3>
+          <ul>
+            <li><a href="version-17/submissions/initial-claim/01-create/index">Start journey</a></li>
+          </ul>
 
+          <hr />
 
-      <!-- <h3 class="nhsuk-heading-m">User research - Outcomes</h3>
+          <h3 class="nhsuk-card__heading">Claim search</h3>
+          <ul>
+            <li><a href="version-17/submissions/initial-claim/search/index">Search inputs</a></li>
+            <li><a href="version-17/submissions/initial-claim/search/results-with-pagination">Search results</a></li>
+          </ul>
 
-      {% set OutcomesCardDescriptionHtml %}
+          <hr />
 
-      <ul>
-        <li><a href="version-17/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/01-actual-sickness">Claim details</a></li>
-      </ul>
+          <h3 class="nhsuk-card__heading">Claim details</h3>
 
-      {% endset %}
+          <p>Note: This screen was previously known as 'Claim summary'</p>
 
-      {{ card({
-      descriptionHtml: OutcomesCardDescriptionHtml
-      }) }} -->
+          <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Scenario 1 - Initial claim status is 'Not started'
+          </h5>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a
+                href="version-17/submissions/initial-claim/01-create/rina/claim-details/01-not-started/actual-cost-pre-4-4">
+                Actual cost - Pre CDM 4.4</a></li>
+            <li><a
+                href="version-17/submissions/initial-claim/01-create/rina/claim-details/01-not-started/actual-cost-post-4-4">
+                Actual cost - Post CDM 4.4</a></li>
+            <li><a
+                href="version-17/submissions/initial-claim/01-create/rina/claim-details/01-not-started/average-cost">Average
+                cost</a></li>
+          </ul>
 
+          <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Scenario 2 - Initial claim status is 'Active'
+          </h5>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a
+                href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/actual-cost-pre-4-4">
+                Actual cost - Pre CDM 4.4</a></li>
+            <li><a
+                href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/actual-cost-post-4-4">
+                Actual cost - Post CDM 4.4</a></li>
+            <li><a
+                href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/average-cost">Average
+                cost</a></li>
+          </ul>
 
-      {% set DesignAdaptationsCardDescriptionHtml %}
-      <h3 class="nhsuk-heading-m">Design adaptations</h3>
-      <p class="nhsuk-body">The purpose of this work is to ensure alignment with the latest designs and bring
-        the
-        screens inline with the CDM 4.4 changes.</p>
-      <hr />
-      <h3 class="nhsuk-card__heading">Create a claim</h3>
-      <ul>
-        <li><a href="version-17/submissions/initial-claim/01-create/index">Start journey</a></li>
-      </ul>
+          <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Scenario 3 - Initial claim status is 'Reply sent' or
+            'Completed'
+          </h5>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a
+                href="version-17/submissions/initial-claim/01-create/rina/claim-details/03-multiple-submissions/actual-cost-pre-4-4">
+                Actual cost - Pre CDM 4.4</a></li>
+            <li><a
+                href="version-17/submissions/initial-claim/01-create/rina/claim-details/03-multiple-submissions/actual-cost-post-4-4">
+                Actual cost- Post CDM 4.4</a></li>
+            <li><a
+                href="version-17/submissions/initial-claim/01-create/rina/claim-details/03-multiple-submissions/average-cost">Average
+                cost</a></li>
+          </ul>
 
-      <hr />
+          <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Invoice search
+          </h5>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a
+                href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/invoice-search/single-result#invoices">Single
+                result</a></li>
+            <li><a
+                href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/invoice-search/no-results-found#invoices">No
+                results found</a></li>
+            <li><a
+                href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/invoice-search/error-no-data-entered#invoices">Error
+                - User hasnt entered any search criteria</a></li>
+          </ul>
 
-      <h3 class="nhsuk-card__heading">Claim search</h3>
-      <ul>
-        <li><a href="version-17/submissions/initial-claim/search/index">Search inputs</a></li>
-        <li><a href="version-17/submissions/initial-claim/search/results-with-pagination">Search results</a></li>
-      </ul>
+          <hr />
 
-      <hr />
+          <h3 class="nhsuk-card__heading">Initial claim details</h3>
+          <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Status: Not started</h4>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="version-17/submissions/initial-claim/02-add-invoices/rina/01-not-started-actual">Actual/Average
+                cost - RINA/Non-RINA</a></li>
+          </ul>
 
-      <h3 class="nhsuk-card__heading">Claim details</h3>
+          <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Status: Active</h4>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="version-17/submissions/initial-claim/03-process/rina/01-active-actual">Actual cost -
+                RINA/Non-RINA</a></li>
+            <li><a href="version-17/submissions/initial-claim/03-process/rina/01-active-average-63">Average cost 63
+                2a/2b -
+                RINA/Non-RINA</a></li>
+            <li><a href="version-17/submissions/initial-claim/03-process/rina/01-active-average-94-95">Average cost
+                94/95 -
+                RINA/Non-RINA</a></li>
+          </ul>
 
-      <p>Note: This screen was previously known as 'Claim summary'</p>
+          <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Status: Processed, Close initial claim: Not yet started
+          </h4>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="version-17/submissions/initial-claim/04-outcomes/01a-processed-actual">Actual cost -
+                RINA/Non-RINA</a></li>
+            <li><a href="version-17/submissions/initial-claim/04-outcomes/01a-processed-average-63">Average cost 63
+                2a/2b -
+                RINA/Non-RINA</a></li>
+            <li><a href="version-17/submissions/initial-claim/04-outcomes/01a-processed-average-94-95">Average cost
+                94/95 -
+                RINA/Non-RINA</a></li>
+          </ul>
 
-      <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Scenario 1 - Initial claim status is 'Not started'
-      </h5>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/01-not-started/actual-cost-pre-4-4">
-            Actual cost - Pre CDM 4.4</a></li>
-        <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/01-not-started/actual-cost-post-4-4">
-            Actual cost - Post CDM 4.4</a></li>
-        <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/01-not-started/average-cost">Average
-            cost</a></li>
-      </ul>
+          <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Status: Processed, Close initial claim: Completed</h4>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="version-17/submissions/initial-claim/04-outcomes/01b-processed-actual">Actual cost -
+                RINA/Non-RINA</a></li>
+            <li><a href="version-17/submissions/initial-claim/04-outcomes/01b-processed-average-63">Average cost 63
+                2a/2b -
+                RINA/Non-RINA</a></li>
+            <li><a href="version-17/submissions/initial-claim/04-outcomes/01b-processed-average-94-95">Average cost
+                94/95 -
+                RINA/Non-RINA</a></li>
+          </ul>
 
-      <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Scenario 2 - Initial claim status is 'Active'
-      </h5>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/actual-cost-pre-4-4">
-            Actual cost - Pre CDM 4.4</a></li>
-        <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/actual-cost-post-4-4">
-            Actual cost - Post CDM 4.4</a></li>
-        <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/average-cost">Average
-            cost</a></li>
-      </ul>
+          <hr />
 
-      <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Scenario 3 - Initial claim status is 'Reply sent' or
-        'Completed'
-      </h5>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/03-multiple-submissions/actual-cost-pre-4-4">
-            Actual cost - Pre CDM 4.4</a></li>
-        <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/03-multiple-submissions/actual-cost-post-4-4">
-            Actual cost- Post CDM 4.4</a></li>
-        <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/03-multiple-submissions/average-cost">Average
-            cost</a></li>
-      </ul>
+          <h3 class="nhsuk-card__heading">Add invoices</h3>
+          <ul>
+            <li><a href="version-17/submissions/initial-claim/02-add-invoices/rina/02-upload">Start journey</a></li>
+          </ul>
 
-      <h5 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Invoice search
-      </h5>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/invoice-search/single-result#invoices">Single
-            result</a></li>
-        <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/invoice-search/no-results-found#invoices">No
-            results found</a></li>
-        <li><a
-            href="version-17/submissions/initial-claim/01-create/rina/claim-details/02-initial-submission-active/invoice-search/error-no-data-entered#invoices">Error
-            - User hasnt entered any search criteria</a></li>
-      </ul>
+          <hr />
+          <h3 class="nhsuk-card__heading">Add a new submission</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="version-17/submissions/01-create-new-type">Submission type - for all claim
+                types</a></li>
+          </ul>
+          <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Credit note</h4>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="version-17/submissions/credit-note/01-create/rina/02-details-actual">RINA - Actual
+                cost</a></li>
+            <li><a href="version-17/submissions/credit-note/01-create/rina/02-details-average">RINA - Average
+                cost</a></li>
+            <li><a href="version-17/submissions/credit-note/01-create/non-rina/02-details-actual">Non-RINA -
+                Actual
+                cost</a></li>
+            <li><a href="version-17/submissions/credit-note/01-create/non-rina/02-details-average">Non-RINA -
+                Average
+                cost</a></li>
+            <li><a href="version-17/submissions/credit-note/01-create/cancel-confirmation">Cancel
+                confirmation</a></li>
+          </ul>
+          <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Reply to contestation</h4>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="version-17/submissions/reply-to-contestation/01-create/rina/actual/02-details">RINA - Actual
+                cost</a></li>
+            <li><a href="version-17/submissions/reply-to-contestation/01-create/rina/average/02-details">RINA - Average
+                cost</a></li>
+            <li><a href="version-17/submissions/reply-to-contestation/01-create/non-rina/actual/02-details">Non-RINA -
+                Actual
+                cost</a></li>
+            <li><a href="version-17/submissions/reply-to-contestation/01-create/non-rina/average/02-details">Non-RINA -
+                Average
+                cost</a></li>
+            <li><a href="version-17/submissions/reply-to-contestation/01-create/cancel-confirmation">Cancel
+                confirmation</a></li>
+          </ul>
+          {% endset %}
 
-      <hr />
+          {{ card({
+          descriptionHtml: DesignAdaptationsCardDescriptionHtml
+          }) }}
 
-      <h3 class="nhsuk-card__heading">Initial claim details</h3>
-      <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Status: Not started</h4>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="version-17/submissions/initial-claim/02-add-invoices/rina/01-not-started-actual">Actual/Average
-            cost - RINA/Non-RINA</a></li>
-      </ul>
+          {% set CreditNoteCardDescriptionHtml %}
+          <h3 class="nhsuk-heading-m">Credit note processing screens</h3>
+          <p class="nhsuk-body">The purpose of this work is to incorporate feedback from the team while they are
+            developing
+            the BA tickets and to provide additional screen examples to support the ticket-writing process.</p>
+          <hr />
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Error message examples</h3>
+          <ul>
+            <li><a
+                href="version-17/submissions/credit-note/03-process/rina/error-messages/04c-20001563-months-partial">Withdraw
+                the credit months from the invoice</a></li>
+            <li><a
+                href="version-17/submissions/credit-note/03-process/rina/error-messages/04c-20001563-amount-partial-accepted">Withdraw
+                the credit amount from the invoice</a></li>
+            <li><a
+                href="version-17/submissions/credit-note/03-process/rina/error-messages/04c-20001563-amount-partial-accepted2">Withdraw
+                the credit amount from the invoice - total entered</a></li>
+          </ul>
 
-      <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Status: Active</h4>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="version-17/submissions/initial-claim/03-process/rina/01-active-actual">Actual cost -
-            RINA/Non-RINA</a></li>
-        <li><a href="version-17/submissions/initial-claim/03-process/rina/01-active-average-63">Average cost 63 2a/2b -
-            RINA/Non-RINA</a></li>
-        <li><a href="version-17/submissions/initial-claim/03-process/rina/01-active-average-94-95">Average cost 94/95 -
-            RINA/Non-RINA</a></li>
-      </ul>
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Invoice details</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a
+                href="version-17/proof-of-concept/invoice-details/19012026-edit-invoice=details/credit-note-processing-rina">While
+                processing a credit note</a></li>
+          </ul>
 
-      <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Status: Processed, Close initial claim: Not yet started</h4>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="version-17/submissions/initial-claim/04-outcomes/01a-processed-actual">Actual cost -
-            RINA/Non-RINA</a></li>
-        <li><a href="version-17/submissions/initial-claim/04-outcomes/01a-processed-average-63">Average cost 63 2a/2b -
-            RINA/Non-RINA</a></li>
-        <li><a href="version-17/submissions/initial-claim/04-outcomes/01a-processed-average-94-95">Average cost 94/95 -
-            RINA/Non-RINA</a></li>
-      </ul>
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">One question per screen layout iterations</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="version-17/submissions/credit-note/03-process/rina/04b-001-decision">What do you want to do
+                with
+                this individual credit note?</a></li>
+            <li><a href="version-17/submissions/credit-note/03-process/non-rina/04b-20001563-withdraw">Where should the
+                credit months be withdrawn from?</a></li>
+            <li><a
+                href="version-17/submissions/credit-note/03-process/rina/additional-variations/08b-002-contestation-reason-actual-matched">Why
+                are you contesting this individual credit note?</a></li>
+          </ul>
+          {% endset %}
 
-      <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Status: Processed, Close initial claim: Completed</h4>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="version-17/submissions/initial-claim/04-outcomes/01b-processed-actual">Actual cost -
-            RINA/Non-RINA</a></li>
-        <li><a href="version-17/submissions/initial-claim/04-outcomes/01b-processed-average-63">Average cost 63 2a/2b -
-            RINA/Non-RINA</a></li>
-        <li><a href="version-17/submissions/initial-claim/04-outcomes/01b-processed-average-94-95">Average cost 94/95 -
-            RINA/Non-RINA</a></li>
-      </ul>
+          {{ card({
+          descriptionHtml: CreditNoteCardDescriptionHtml
+          }) }}
 
-      <hr />
+          {% set IndividualRepliesCardDescriptionHtml %}
+          <h3 class="nhsuk-heading-m">Reply to contestations - RINA - Individual replies adaptations</h3>
+          <p class="nhsuk-body">The purpose of this work is to update the content to align with RINA terminology.</p>
+          <hr />
 
-      <h3 class="nhsuk-card__heading">Add invoices</h3>
-      <ul>
-        <li><a href="version-17/submissions/initial-claim/02-add-invoices/rina/02-upload">Start journey</a></li>
-      </ul>
+          <ul>
+            <li><a href="version-17/submissions/reply-to-contestation/02-add-invoices/rina/01-not-started-actual">Actual
+                cost</a></li>
+            <li><a
+                href="version-17/submissions/reply-to-contestation/02-add-invoices/rina/01-not-started-average">Average
+                cost</a></li>
+          </ul>
 
-      <hr />
-      <h3 class="nhsuk-card__heading">Add a new submission</h3>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="version-17/submissions/01-create-new-type">Submission type - for all claim
-            types</a></li>
-      </ul>
-      <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Credit note</h4>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="version-17/submissions/credit-note/01-create/rina/02-details-actual">RINA - Actual
-            cost</a></li>
-        <li><a href="version-17/submissions/credit-note/01-create/rina/02-details-average">RINA - Average
-            cost</a></li>
-        <li><a href="version-17/submissions/credit-note/01-create/non-rina/02-details-actual">Non-RINA -
-            Actual
-            cost</a></li>
-        <li><a href="version-17/submissions/credit-note/01-create/non-rina/02-details-average">Non-RINA -
-            Average
-            cost</a></li>
-        <li><a href="version-17/submissions/credit-note/01-create/cancel-confirmation">Cancel
-            confirmation</a></li>
-      </ul>
-      <h4 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Reply to contestation</h4>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="version-17/submissions/reply-to-contestation/01-create/rina/actual/02-details">RINA - Actual
-            cost</a></li>
-        <li><a href="version-17/submissions/reply-to-contestation/01-create/rina/average/02-details">RINA - Average
-            cost</a></li>
-        <li><a href="version-17/submissions/reply-to-contestation/01-create/non-rina/actual/02-details">Non-RINA -
-            Actual
-            cost</a></li>
-        <li><a href="version-17/submissions/reply-to-contestation/01-create/non-rina/average/02-details">Non-RINA -
-            Average
-            cost</a></li>
-        <li><a href="version-17/submissions/reply-to-contestation/01-create/cancel-confirmation">Cancel
-            confirmation</a></li>
-      </ul>
-      {% endset %}
+          {% endset %}
 
-      {{ card({
-      descriptionHtml: DesignAdaptationsCardDescriptionHtml
-      }) }}
+          {{ card({
+          descriptionHtml: IndividualRepliesCardDescriptionHtml
+          }) }}
 
-      <!-- <h3 class="nhsuk-heading-m">Invoice details iterations</h3>
-      <p class="nhsuk-body">The purpose of this work is to document which variation of the invoice screen the user
-        should see when the click 'View invoice' from the invoices tab within a variety of submissions</p>
+      </details>
 
-      {% set InvoiceDetailsDescriptionHtml %}
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="version-17/screen-variations/invoice-details/01-claim-level-actual">When viewed at claim level</a>
-        </li>
-                <li><a href="version-17/screen-variations/invoice-details/02-submission-level-read-only-actual">When viewed at submission level - read only</a>
-        </li>
-      </ul>
-      {% endset %}
-
-      {{ card({
-      descriptionHtml: InvoiceDetailsDescriptionHtml
-      }) }} -->
-
-
-
-      {% set CreditNoteCardDescriptionHtml %}
-      <h3 class="nhsuk-heading-m">Credit note processing screens</h3>
-      <p class="nhsuk-body">The purpose of this work is to incorporate feedback from the team while they are developing
-        the BA tickets and to provide additional screen examples to support the ticket-writing process.</p>
-      <hr />
-      <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Error message examples</h3>
-      <ul>
-        <li><a
-            href="version-17/submissions/credit-note/03-process/rina/error-messages/04c-20001563-months-partial">Withdraw
-            the credit months from the invoice</a></li>
-        <li><a
-            href="version-17/submissions/credit-note/03-process/rina/error-messages/04c-20001563-amount-partial-accepted">Withdraw
-            the credit amount from the invoice</a></li>
-        <li><a
-            href="version-17/submissions/credit-note/03-process/rina/error-messages/04c-20001563-amount-partial-accepted2">Withdraw
-            the credit amount from the invoice - total entered</a></li>
-      </ul>
-
-      <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Invoice details</h3>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a
-            href="version-17/proof-of-concept/invoice-details/19012026-edit-invoice=details/credit-note-processing-rina">While
-            processing a credit note</a></li>
-      </ul>
-
-      <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">One question per screen layout iterations</h3>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="version-17/submissions/credit-note/03-process/rina/04b-001-decision">What do you want to do with
-            this individual credit note?</a></li>
-        <li><a href="version-17/submissions/credit-note/03-process/non-rina/04b-20001563-withdraw">Where should the
-            credit months be withdrawn from?</a></li>
-        <li><a
-            href="version-17/submissions/credit-note/03-process/rina/additional-variations/08b-002-contestation-reason-actual-matched">Why
-            are you contesting this individual credit note?</a></li>
-      </ul>
-      {% endset %}
-
-      {{ card({
-      descriptionHtml: CreditNoteCardDescriptionHtml
-      }) }}
-
-
-
-      {% set IndividualRepliesCardDescriptionHtml %}
-      <h3 class="nhsuk-heading-m">Reply to contestations - RINA - Individual replies adaptations</h3>
-      <p class="nhsuk-body">The purpose of this work is to update the content to align with RINA terminology.</p>
-      <hr />
-
-      <ul>
-        <li><a href="version-17/submissions/reply-to-contestation/02-add-invoices/rina/01-not-started-actual">Actual
-            cost</a></li>
-        <li><a href="version-17/submissions/reply-to-contestation/02-add-invoices/rina/01-not-started-average">Average
-            cost</a></li>
-      </ul>
-
-      {% endset %}
-
-      {{ card({
-      descriptionHtml: IndividualRepliesCardDescriptionHtml
-      }) }}
-
-      {% endcall %}
       <!-- End of version 17 -->
 
       <!-- Start of version 16-->

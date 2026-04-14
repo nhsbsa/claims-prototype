@@ -1,0 +1,66 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Submissions</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Reply to contestation ID 7766</a>
+        </li>
+    </ol>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-panel">
+            <h1 class="nhsuk-panel__title">
+                Individual replies uploaded
+            </h1>
+            <div class="nhsuk-panel__body">
+                The replies have been added to reply to contestation ID <strong>7766</strong>.
+            </div>
+        </div>
+        <p class="nhsuk-body">You've successfully uploaded a file of individual replies.</p>
+        <h2 class="nhsuk-heading-m">What happens next</h2>
+        <p class="nhsuk-body">Reply to contestation ID 7766 is pending.</p>
+        <p class="nhsuk-body">The replies will be matched to the relevant invoices.</p>
+        <p class="nhsuk-body">The invoices will be updated with the latest details, replacing any previous information.
+        </p>
+        <p class="nhsuk-body">To view the updated invoice details and begin working on the reply, you'll need to open
+            the reply to contestation.</p>
+        <a href="#" class="nhsuk-button" role="button" data-module="nhsuk-button">Manage reply to contestation</a>
+    </div>
+</div>
+{% endblock %}

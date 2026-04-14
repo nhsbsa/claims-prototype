@@ -1,0 +1,136 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-logged-in.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="#">Home</a></li>
+        <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="#">Claims
+            </a></li>
+    </ol>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content -->
+{% block content %}
+
+<!-- Start back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
+    </div>
+</div>
+<!-- End back link -->
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <span class="nhsuk-caption-l">Create a new claim</span>
+        <div class="nhsuk-card nhsuk-u-margin-bottom-3">
+            <div class="nhsuk-card__content nhsuk-u-margin-bottom-0">
+                <form action="../../../../route-create-type" method="post">
+                    <div class="nhsuk-form-group">
+                        <fieldset class="nhsuk-fieldset">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                                <h1 class="nhsuk-fieldset__heading">
+                                    Which type of claim is it?
+                                </h1>
+                            </legend>
+                            {% from "radios/macro.njk" import radios %}
+                            {% from "input/macro.njk" import input %}
+
+                            {% set averageCost %}
+                            {% from "select/macro.njk" import select %}
+
+                            {{ select({
+                            label: {
+                            text: "Article type"
+                            },
+                            id: "article-type",
+                            name: "article-type",
+                            value: "article-type",
+                            items: [
+                            {
+                            value: "Article 63 (2a)",
+                            text: "Article 63 (2a)"
+                            },
+                            {
+                            value: "Article 63 (2b)",
+                            text: "Article 63 (2b)"
+                            },
+                            {
+                            value: "Article 94",
+                            text: "Article 94"
+                            },
+                            {
+                            value: "Article 95",
+                            text: "Article 95"
+                            }
+                            ]
+                            }) }}
+                            {% endset -%}
+
+                            {{ radios({
+                            idPrefix: "claim-type",
+                            name: "claim-type",
+
+
+
+                            items: [
+                            {
+                            value: "Actual cost - Sickness",
+                            text: "Actual cost - Sickness",
+                            hint: {
+                            text: "S BUC 19"
+                            }
+                            },
+                            {
+                            value: "Average cost - Sickness",
+                            text: "Average cost - Sickness",
+                            hint: {
+                            text: "S BUC 21"
+                            },
+                            conditional: {
+                            html: averageCost
+                            }
+                            },
+                            {
+                            value: "Actual cost - Accident at work",
+                            text: "Actual cost - Accident at work",
+                            hint: {
+                            text: "AW BUC 05"
+                            }
+                            }
+                            ]
+                            }) }}
+                        </fieldset>
+                    </div>
+                    <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+<!-- End of central content -->
