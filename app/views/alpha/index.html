@@ -54,9 +54,8 @@ Managing Member State claims
       classes: "nhsuk-expander"
       }) %}
 
-      <h3 class="nhsuk-heading-m">Summary</h3>
-
       {% set SummaryCardDescriptionHtml %}
+
       <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Primary focus - Design adaptations</h3>
       <ul>
         <li>Create a claim</li>
@@ -82,12 +81,10 @@ Managing Member State claims
       descriptionHtml: SummaryCardDescriptionHtml
       }) }}
 
-
+      {% set UserResearchCardDescriptionHtml %}
       <h3 class="nhsuk-heading-m">User research - Viewing historical invoice details</h3>
       <p class="nhsuk-body">The purpose of this work is to validate our design decisions for enabling users to be able
         to quickly access historical invoice details as they were recorded for each specific submission.</p>
-
-      {% set UserResearchCardDescriptionHtml %}
 
       <ul>
         <li><a href="version-17/user-research/01-claim-search">Start journey</a></li>
@@ -101,7 +98,7 @@ Managing Member State claims
       }) }}
 
 
-      <h3 class="nhsuk-heading-m">User research - Outcomes</h3>
+      <!-- <h3 class="nhsuk-heading-m">User research - Outcomes</h3>
 
       {% set OutcomesCardDescriptionHtml %}
 
@@ -113,18 +110,15 @@ Managing Member State claims
 
       {{ card({
       descriptionHtml: OutcomesCardDescriptionHtml
-      }) }}
+      }) }} -->
 
 
-
-
+      {% set DesignAdaptationsCardDescriptionHtml %}
       <h3 class="nhsuk-heading-m">Design adaptations</h3>
       <p class="nhsuk-body">The purpose of this work is to ensure alignment with the latest designs and bring
         the
         screens inline with the CDM 4.4 changes.</p>
-
-
-      {% set DesignAdaptationsCardDescriptionHtml %}
+      <hr />
       <h3 class="nhsuk-card__heading">Create a claim</h3>
       <ul>
         <li><a href="version-17/submissions/initial-claim/01-create/index">Start journey</a></li>
@@ -306,11 +300,13 @@ Managing Member State claims
       descriptionHtml: InvoiceDetailsDescriptionHtml
       }) }} -->
 
+
+
+      {% set CreditNoteCardDescriptionHtml %}
       <h3 class="nhsuk-heading-m">Credit note processing screens</h3>
       <p class="nhsuk-body">The purpose of this work is to incorporate feedback from the team while they are developing
         the BA tickets and to provide additional screen examples to support the ticket-writing process.</p>
-
-      {% set CreditNoteCardDescriptionHtml %}
+      <hr />
       <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Error message examples</h3>
       <ul>
         <li><a
@@ -347,10 +343,12 @@ Managing Member State claims
       descriptionHtml: CreditNoteCardDescriptionHtml
       }) }}
 
-      <h3 class="nhsuk-heading-m">Reply to contestations - RINA - Individual replies adaptations</h3>
-      <p class="nhsuk-body">The purpose of this work is to update the content to align with RINA terminology.</p>
+
 
       {% set IndividualRepliesCardDescriptionHtml %}
+      <h3 class="nhsuk-heading-m">Reply to contestations - RINA - Individual replies adaptations</h3>
+      <p class="nhsuk-body">The purpose of this work is to update the content to align with RINA terminology.</p>
+      <hr />
 
       <ul>
         <li><a href="version-17/submissions/reply-to-contestation/02-add-invoices/rina/01-not-started-actual">Actual
