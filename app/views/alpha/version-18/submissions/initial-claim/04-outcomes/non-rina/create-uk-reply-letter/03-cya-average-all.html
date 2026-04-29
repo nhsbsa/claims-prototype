@@ -1,0 +1,139 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Outcomes</a>
+        </li>
+    </ol>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<!-- Start of title block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <span class="nhsuk-caption-l">Create a UK reply letter</span>
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">Check your answers</h1>
+    </div>
+</div>
+<!-- End of title block -->
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-card nhsuk-u-margin-bottom-4">
+            <div class="nhsuk-card__content">
+                <form action="04-confirmation-all" method="post">
+                    <dl class="nhsuk-summary-list">
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                How would you like to add the invoices?
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                All invoices
+                            </dd>
+                            <dd class="nhsuk-summary-list__actions">
+                                <a href="">
+                                    Change<span class="nhsuk-u-visually-hidden"> decision</span>
+                                </a>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <div class="nhsuk-card nhsuk-u-margin-bottom-6">
+                        <div class="nhsuk-card__content">
+                            <table class="nhsuk-table">
+                                <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-3"
+                                    style="border-bottom: 1px solid #d8dde0">All invoices breakdown
+                                </caption>
+                                <thead role="rowgroup" class="nhsuk-table__head">
+                                    <tr role="row">
+                                        <th role="columnheader" class="" scope="col">
+                                            Status
+                                        </th>
+                                        <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                                            Number
+                                        </th>
+                                        <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                                            Months
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="nhsuk-table__body">
+                                    <tr role="row" class="nhsuk-table__row">
+                                        <th class="nhsuk-table__header" scope="row">Accepted</th>
+                                        <td class="nhsuk-table__cell nhsuk-table__cell--numeric">400</td>
+                                        <td class="nhsuk-table__cell nhsuk-table__cell--numeric">2,120</td>
+                                    </tr>
+                                    <tr role="row" class="nhsuk-table__row">
+                                        <th class="nhsuk-table__header" scope="row">Contested</th>
+                                        <td class="nhsuk-table__cell nhsuk-table__cell--numeric">10</td>
+                                        <td class="nhsuk-table__cell nhsuk-table__cell--numeric">80</td>
+                                    </tr>
+                                    <tr role="row" class="nhsuk-table__row">
+                                        <th class="nhsuk-table__header" scope="row">Partial</th>
+                                        <td class="nhsuk-table__cell nhsuk-table__cell--numeric">50</td>
+                                        <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Not applicable</td>
+                                    </tr>
+                                    <tr role="row" class="nhsuk-table__row">
+                                        <th class="nhsuk-table__header" scope="row">Total</th>
+                                        <td class="nhsuk-table__cell nhsuk-table__cell--numeric">460</td>
+                                        <td class="nhsuk-table__cell nhsuk-table__cell--numeric">2,200</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="nhsuk-inset-text" style="max-width: none;">
+                                <span class="nhsuk-u-visually-hidden">Information: </span>
+                                <p>Any credit notes that have been processed before creating this UK reply letter will be
+                                    reflected in these figures.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+        <p class="nhsuk-body"><a href="">Cancel</a></p>
+    </div>
+</div>
+
+{% endblock %}

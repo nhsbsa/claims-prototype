@@ -12,13 +12,27 @@ const axios = require('axios');
 router.post('/route-contestation-invoices', function(req,res){
     var invoices = req.session.data['invoices']
     if (invoices == "all") {
-        res.redirect('/alpha/version-18/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/04a-actual-sickness-credit-notes')
+        res.redirect('/alpha/version-18/submissions/initial-claim/04-outcomes/rina/create-contestation/03-cya-actual-all')
         }
     else if (invoices == "manual") {
-        res.redirect('/alpha/version-18/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/04b-actual-sickness-cya-manual')
+        res.redirect('/alpha/version-18/submissions/initial-claim/04-outcomes/rina/create-contestation/03-cya-manual')
         }
     else {
-        res.redirect('/alpha/version-18/submissions/initial-claim/04-outcomes/user-research/rina/01-contestation/03-actual-sickness-route')
+        res.redirect('/alpha/version-18/submissions/initial-claim/04-outcomes/rina/create-contestation/02-add-invoices')
+    }
+})
+
+//// How would you like to add the invoices? ////
+router.post('/route-uk-reply-letter', function(req,res){
+    var invoices = req.session.data['invoices']
+    if (invoices == "all") {
+        res.redirect('/alpha/version-18/submissions/initial-claim/04-outcomes/non-rina/create-uk-reply-letter/03-cya-actual-all')
+        }
+    else if (invoices == "manual") {
+        res.redirect('/alpha/version-18/submissions/initial-claim/04-outcomes/non-rina/create-uk-reply-letter/03-cya-manual')
+        }
+    else {
+        res.redirect('/alpha/version-18/submissions/initial-claim/04-outcomes/non-rina/create-uk-reply-letter/02-add-invoices')
     }
 })
 
