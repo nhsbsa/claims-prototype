@@ -54,12 +54,13 @@ Manage incoming international healthcare claims - NHSBSA
             Contestation ID 123
         </h1>
     </div>
-    <div class="nhsuk-grid-column-one-half" style="text-align:right;">
-        <a href="delete-confirmation-contestation" class="nhsuk-button nhsuk-button--secondary"
-            style="margin-right:3px;" role="button" data-module="nhsuk-button">Delete
-            contestation</a>
-        <a href="#" class="nhsuk-button nhsuk-button" role="button" data-module="nhsuk-button">Exit
-            contestation</a>
+    <div class="nhsuk-grid-column-one-half">
+        <div class="nhsuk-button-group" style="float:right;">
+            <a href="delete-confirmation-contestation" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Delete
+                contestation</a>
+            <a href="#" class="nhsuk-button nhsuk-button" role="button" data-module="nhsuk-button">Exit
+                contestation</a>
+        </div>
     </div>
 </div>
 <!-- End of title block -->
@@ -195,7 +196,7 @@ Manage incoming international healthcare claims - NHSBSA
                                             <caption
                                                 class="nhsuk-table__caption nhsuk-u-margin-bottom-0 nhsuk-u-padding-bottom-2"
                                                 style="border-bottom: 1px solid #d8dde0">Number of invoices and claim
-                                                amount
+                                                months
                                             </caption>
                                             <thead role="rowgroup" class="nhsuk-table__head">
                                                 <tr role="row">
@@ -204,7 +205,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </th>
                                                     <th role="columnheader" class=" nhsuk-table__header--numeric"
                                                         scope="col">
-                                                        Number
+                                                        Invoices
                                                     </th>
                                                     <th role="columnheader" class=" nhsuk-table__header--numeric"
                                                         scope="col">
@@ -214,20 +215,20 @@ Manage incoming international healthcare claims - NHSBSA
                                             </thead>
                                             <tbody class="nhsuk-table__body">
                                                 <tr role="row" class="nhsuk-table__row">
-                                                    <th class="nhsuk-table__header" scope="row">Contested</th>
+                                                    <td class="nhsuk-table__header" scope="row">Contested</td>
                                                     <td class="nhsuk-table__cell nhsuk-table__cell--numeric">80</td>
                                                     <td class="nhsuk-table__cell nhsuk-table__cell--numeric">426</td>
                                                 </tr>
                                                 <tr role="row" class="nhsuk-table__row">
-                                                    <th class="nhsuk-table__header" scope="row">Partial</th>
+                                                    <td class="nhsuk-table__header" scope="row">Partial</td>
                                                     <td class="nhsuk-table__cell nhsuk-table__cell--numeric">23</td>
                                                     <td class="nhsuk-table__cell nhsuk-table__cell--numeric">Not
                                                         applicable</td>
                                                 </tr>
                                                 <tr role="row" class="nhsuk-table__row">
                                                     <th class="nhsuk-table__header" scope="row">Total</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">103</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">426</td>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><strong>103</strong></td>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><strong>426</strong></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -1276,11 +1277,13 @@ Manage incoming international healthcare claims - NHSBSA
                                             </th>
                                             <th scope="col" class="nhsuk-table__header" role="columnheader">Type
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric" role="columnheader">
-                                                Total contested <br />invoices (number)
+                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
+                                                role="columnheader">
+                                                Contested invoices
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric" role="columnheader">
-                                                Total contested <br />invoices (months)
+                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
+                                                role="columnheader">
+                                                Contested months
                                             </th>
                                         </tr>
                                     </thead>
