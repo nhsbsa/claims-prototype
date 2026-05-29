@@ -47,15 +47,16 @@ Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-xl">
-            <span class="nhsuk-caption-l">Claim ID 6784 &ndash; France</span>
-            Claim outcomes
+            Claim outcomes for claim ID 6784
         </h1>
     </div>
-    <div class="nhsuk-grid-column-one-third" style="text-align: right">
-        <a href="04-outcome-type" class="nhsuk-button " role="button" data-module="nhsuk-button">Add a new
-            outcome</a>
-        <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
-            outcomes</a>
+    <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-button-group" style="float:right;">
+            <a href="04-outcome-type" class="nhsuk-button " role="button" data-module="nhsuk-button">Add a new
+                outcome</a>
+            <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
+                outcomes</a>
+        </div>
     </div>
 </div>
 <!-- End of title block -->
@@ -153,10 +154,10 @@ Manage incoming international healthcare claims - NHSBSA
             <!-- Start of tab titles -->
             <ul class="nhsuk-tabs__list">
                 <li class="nhsuk-tabs__list-item">
-                    <a class="nhsuk-tabs__tab" href="#outstanding"> Outstanding </a>
+                    <a class="nhsuk-tabs__tab" href="#outstanding"> Submissions needing outcomes </a>
                 </li>
                 <li class="nhsuk-tabs__list-item">
-                    <a class="nhsuk-tabs__tab" href="#completed"> Active and completed </a>
+                    <a class="nhsuk-tabs__tab" href="#completed"> Created outcomes </a>
                 </li>
             </ul>
             <!-- End of tab titles -->
@@ -167,7 +168,7 @@ Manage incoming international healthcare claims - NHSBSA
             <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="outstanding">
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
-                        <h2 class="nhsuk-heading-l">Outstanding outcomes</h2>
+                        <h2 class="nhsuk-heading-l">Submissions needing outcomes</h2>
                     </div>
                 </div>
 
@@ -374,16 +375,13 @@ Manage incoming international healthcare claims - NHSBSA
                                                 Date received
                                             </th>
                                             <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                                Contestation<br />status
+                                                Contestation
                                             </th>
                                             <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                                Credit note contestation<br />status
+                                                Credit note contestation
                                             </th>
                                             <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                                Summary letter<br />status
-                                            </th>
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                                Information on payment<br />status
+                                                Information on payment
                                             </th>
                                         </tr>
                                     </thead>
@@ -416,12 +414,9 @@ Manage incoming international healthcare claims - NHSBSA
                                             <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading" aria-hidden="true">Credit
                                                     note contestation
-                                                </span>Not yet started
-                                            </td>
-                                            <td class="nhsuk-table__cell" role="cell">
-                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Summary
-                                                    letter
-                                                </span>Cannot start yet
+                                                </span><strong class="nhsuk-tag nhsuk-tag--blue">
+                                                    Not yet started
+                                                </strong>
                                             </td>
                                             <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading"
@@ -452,17 +447,14 @@ Manage incoming international healthcare claims - NHSBSA
                                             <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading"
                                                     aria-hidden="true">Contestation
-                                                </span>Not yet started
+                                                </span><strong class="nhsuk-tag nhsuk-tag--blue">
+                                                    Not yet started
+                                                </strong>
                                             </td>
                                             <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading" aria-hidden="true">Credit
                                                     note contestation
                                                 </span>Not applicable
-                                            </td>
-                                            <td class="nhsuk-table__cell" role="cell">
-                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Summary
-                                                    letter
-                                                </span>Cannot start yet
                                             </td>
                                             <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading"
@@ -493,17 +485,14 @@ Manage incoming international healthcare claims - NHSBSA
                                             <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading"
                                                     aria-hidden="true">Contestation
-                                                </span>Not yet started
+                                                </span><strong class="nhsuk-tag nhsuk-tag--blue">
+                                                    Not yet started
+                                                </strong>
                                             </td>
                                             <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading" aria-hidden="true">Credit
                                                     note contestation
                                                 </span>Not applicable
-                                            </td>
-                                            <td class="nhsuk-table__cell" role="cell">
-                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Summary
-                                                    letter
-                                                </span>Cannot start yet
                                             </td>
                                             <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading"
@@ -534,7 +523,9 @@ Manage incoming international healthcare claims - NHSBSA
                                             <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading"
                                                     aria-hidden="true">Contestation
-                                                </span>Not yet started
+                                                </span><strong class="nhsuk-tag nhsuk-tag--blue">
+                                                    Not yet started
+                                                </strong>
                                             </td>
                                             <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading" aria-hidden="true">Credit
@@ -542,14 +533,9 @@ Manage incoming international healthcare claims - NHSBSA
                                                 </span>Not applicable
                                             </td>
                                             <td class="nhsuk-table__cell" role="cell">
-                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Summary
-                                                    letter
-                                                </span>Cannot start yet
-                                            </td>
-                                            <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading"
                                                     aria-hidden="true">Information on payment
-                                                </span>Cannot start yet
+                                                </span><span style="color: #4c6272">Cannot start yet</span>
                                             </td>
                                         </tr>
 
@@ -567,7 +553,7 @@ Manage incoming international healthcare claims - NHSBSA
             <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="completed">
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
-                        <h2 class="nhsuk-heading-l">Active and completed outcomes</h2>
+                        <h2 class="nhsuk-heading-l">Created outcomes</h2>
                     </div>
                 </div>
                 <div class="nhsuk-grid-row">
