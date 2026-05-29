@@ -50,11 +50,13 @@ Manage incoming international healthcare claims - NHSBSA
             Claim outcomes for claim ID 6784
         </h1>
     </div>
-    <div class="nhsuk-grid-column-one-third" style="text-align: right">
-        <a href="04-outcome-type" class="nhsuk-button " role="button" data-module="nhsuk-button">Add a new
-            outcome</a>
-        <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
-            outcomes</a>
+    <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-button-group" style="float:right;">
+            <a href="04-outcome-type" class="nhsuk-button" role="button" data-module="nhsuk-button">Add a new
+                outcome</a>
+            <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
+                outcomes</a>
+        </div>
     </div>
 </div>
 <!-- End of title block -->
@@ -324,7 +326,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         <input class="nhsuk-radios__input"
                                                                             id="outstanding-order-by-desc"
                                                                             name="outstanding-order-by" type="radio"
-                                                                            value="descending" >
+                                                                            value="descending">
                                                                         <label class="nhsuk-label nhsuk-radios__label"
                                                                             for="outstanding-order-by-desc">
                                                                             Descending
@@ -482,22 +484,22 @@ Manage incoming international healthcare claims - NHSBSA
                                                                     data-nhsuk-checkboxes-init="">
                                                                     <div class="nhsuk-checkboxes__item">
                                                                         <input class="nhsuk-checkboxes__input"
-                                                                            id="filter-letter" name="filter2"
-                                                                            type="checkbox" value="DH letter">
-                                                                        <label
-                                                                            class="nhsuk-label nhsuk-checkboxes__label"
-                                                                            for="filter-letter">
-                                                                            DH letter
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="nhsuk-checkboxes__item">
-                                                                        <input class="nhsuk-checkboxes__input"
                                                                             id="filter-down" name="filter2"
                                                                             type="checkbox" value="Down payment">
                                                                         <label
                                                                             class="nhsuk-label nhsuk-checkboxes__label"
                                                                             for="filter-down">
                                                                             Down payment
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="nhsuk-checkboxes__item">
+                                                                        <input class="nhsuk-checkboxes__input"
+                                                                            id="filter-letter" name="filter2"
+                                                                            type="checkbox" value="Summary letter">
+                                                                        <label
+                                                                            class="nhsuk-label nhsuk-checkboxes__label"
+                                                                            for="filter-letter">
+                                                                            Summary letter
                                                                         </label>
                                                                     </div>
                                                                     <div class="nhsuk-checkboxes__item">
@@ -669,13 +671,13 @@ Manage incoming international healthcare claims - NHSBSA
                                                 Date created
                                             </th>
                                             <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                                Creator
+                                                Updated by
                                             </th>
                                             <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                                Sent date
+                                                Date sent
                                             </th>
                                             <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                                Received date
+                                                Date delivered
                                             </th>
                                             <th scope="col" class="nhsuk-table__header" role="columnheader">
                                                 Status
@@ -702,17 +704,18 @@ Manage incoming international healthcare claims - NHSBSA
                                                 </span>20 Dec 2024
                                             </td>
                                             <td class="nhsuk-table__cell" role="cell">
-                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Creator
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Updated
+                                                    by
                                                 </span>Marion Jackson
                                             </td>
                                             <td class="nhsuk-table__cell" role="cell">
-                                                <span class="nhsuk-table-responsive__heading"
-                                                    aria-hidden="true">Sent date
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                    sent
                                                 </span>No data
                                             </td>
                                             <td class="nhsuk-table__cell" role="cell">
-                                                <span class="nhsuk-table-responsive__heading"
-                                                    aria-hidden="true">Received date
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                    delivered
                                                 </span>No data
                                             </td>
                                             <td class="nhsuk-table__cell" role="cell">
