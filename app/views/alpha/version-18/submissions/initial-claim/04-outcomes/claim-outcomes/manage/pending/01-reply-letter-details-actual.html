@@ -49,17 +49,18 @@ Manage incoming international healthcare claims - NHSBSA
 <!-- Start of title block -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-half">
+        <span class="nhsuk-caption-l">Claim ID 6784 &ndash; France</span>
         <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2">
-            <span class="nhsuk-caption-l">Claim ID 6784 &ndash; France</span>
             UK reply letter ID 123
         </h1>
     </div>
-    <div class="nhsuk-grid-column-one-half" style="text-align:right;">
-        <a href="" class="nhsuk-button nhsuk-button--secondary" style="margin-right:3px;" role="button"
-            data-module="nhsuk-button">Delete
-            UK reply letter</a>
-        <a href="#" class="nhsuk-button nhsuk-button" role="button" data-module="nhsuk-button">Exit
-            UK reply letter</a>
+    <div class="nhsuk-grid-column-one-half">
+        <div class="nhsuk-button-group" style="float:right;">
+            <a href="" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Delete
+                UK reply letter</a>
+            <a href="#" class="nhsuk-button nhsuk-button" role="button" data-module="nhsuk-button">Exit
+                UK reply letter</a>
+        </div>
     </div>
 </div>
 <!-- End of title block -->
@@ -70,8 +71,8 @@ Manage incoming international healthcare claims - NHSBSA
         <h3 class="nhsuk-card__heading">
             UK reply letter is pending
         </h3>
-        <p class="nhsuk-card__description">This UK reply letter is pending. You cannot work on it until all the attached
-            invoices have been marked complete.</p>
+        <p class="nhsuk-card__description">This UK reply letter is pending. You cannot work on it until all invoices are
+            completed.</p>
     </div>
 </div>
 
@@ -116,7 +117,7 @@ Manage incoming international healthcare claims - NHSBSA
                             </div>
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key" style="width:55%">
-                                    Sent date
+                                    Date sent
                                 </dt>
                                 <dd class="nhsuk-summary-list__value">
                                     No data
@@ -126,7 +127,7 @@ Manage incoming international healthcare claims - NHSBSA
                             </div>
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key" style="width:55%">
-                                    Received date
+                                    Date delivered
                                 </dt>
                                 <dd class="nhsuk-summary-list__value">
                                     No data
@@ -181,7 +182,7 @@ Manage incoming international healthcare claims - NHSBSA
                             <li class="nhsuk-task-list__item">
                                 <div class="nhsuk-task-list__name-and-hint">
                                     <div>
-                                        Add received date
+                                        Add date delivered
                                     </div>
                                 </div>
                                 <div class="nhsuk-task-list__status nhsuk-task-list__status--cannot-start-yet"
@@ -237,99 +238,52 @@ Manage incoming international healthcare claims - NHSBSA
                             <div class="nhsuk-grid-column-two-thirds">
                                 <div class="nhsuk-card nhsuk-u-margin-bottom-0">
                                     <div class="nhsuk-card__content">
-<table class="nhsuk-table">
-                                    <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-0 nhsuk-u-padding-bottom-2" style="border-bottom: 1px solid #d8dde0">Number of invoices and claim amount
-                                    </caption>
-                                    <thead role="rowgroup" class="nhsuk-table__head">
-                                        <tr role="row">
-                                            <th role="columnheader" class="" scope="col">
-                                                Status
-                                            </th>
-                                            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
-                                                Number
-                                            </th>
-                                            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
-                                                Amount
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="nhsuk-table__body">
-                                        <tr role="row" class="nhsuk-table__row">
-                                            <th class="nhsuk-table__header" scope="row">Accepted</th>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">400</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">5,300.50</td>
-                                        </tr>
-                                        <tr role="row" class="nhsuk-table__row">
-                                            <th class="nhsuk-table__header" scope="row">Contested</th>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">10</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1,200.50</td>
-                                        </tr>
-                                        <tr role="row" class="nhsuk-table__row">
-                                            <th class="nhsuk-table__header" scope="row">Total</th>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">410</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">6,501.00</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <!-- <div class="nhsuk-grid-row">
-                            <div class="nhsuk-grid-column-two-thirds">
-                                <div class="nhsuk-card nhsuk-u-margin-bottom-5">
-                                    <div class="nhsuk-card__content">
-                                        <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
-                                            Claim level number of invoices and amount
-                                        </h3>
-                                        <hr
-                                            class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible nhsuk-u-margin-bottom-3">
                                         <table class="nhsuk-table">
-                                            <thead class="nhsuk-table__head">
-                                                <tr>
-                                                    <th scope="col" class="nhsuk-table__header">Status</th>
-                                                    <th scope="col"
-                                                        class="nhsuk-table__header nhsuk-table__header--numeric">
+                                            <caption
+                                                class="nhsuk-table__caption nhsuk-u-margin-bottom-0 nhsuk-u-padding-bottom-2"
+                                                style="border-bottom: 1px solid #d8dde0">Number of invoices and claim
+                                                amount
+                                            </caption>
+                                            <thead role="rowgroup" class="nhsuk-table__head">
+                                                <tr role="row">
+                                                    <th role="columnheader" class="" scope="col">
+                                                        Status
+                                                    </th>
+                                                    <th role="columnheader" class=" nhsuk-table__header--numeric"
+                                                        scope="col">
                                                         Invoices
                                                     </th>
-                                                    <th scope="col"
-                                                        class="nhsuk-table__header nhsuk-table__header--numeric">
+                                                    <th role="columnheader" class=" nhsuk-table__header--numeric"
+                                                        scope="col">
                                                         Amount
                                                     </th>
-
                                                 </tr>
                                             </thead>
                                             <tbody class="nhsuk-table__body">
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">Accepted</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">92,309</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                                                        32,987,999.62</td>
-
-                                                </tr>
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">Contested</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">103</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">12,000.38
+                                                <tr role="row" class="nhsuk-table__row">
+                                                    <td class="nhsuk-table__header" scope="row">Accepted</td>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">400</td>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">5,300.50
                                                     </td>
-
                                                 </tr>
-                                                <tr class="nhsuk-table__row">
-                                                    <th scope="row" class="nhsuk-table__header">Total</th>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">92,412</td>
-                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">33,000,000
+                                                <tr role="row" class="nhsuk-table__row">
+                                                    <td class="nhsuk-table__header" scope="row">Contested</td>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">10</td>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1,200.50
                                                     </td>
-
+                                                </tr>
+                                                <tr role="row" class="nhsuk-table__row">
+                                                    <th class="nhsuk-table__header" scope="row">Total</th>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><strong>410</strong></td>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric"><strong>6,501.00</strong>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1449,11 +1403,11 @@ Manage incoming international healthcare claims - NHSBSA
                                             </th>
                                             <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
                                                 role="columnheader">
-                                                Total contested <br />invoices (number)
+                                                Contested invoices
                                             </th>
                                             <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
                                                 role="columnheader">
-                                                Total contested <br />invoices (amount)
+                                                Contested amount
                                             </th>
                                         </tr>
                                     </thead>
@@ -1536,8 +1490,7 @@ Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <h2 class="nhsuk-heading-l">Documents</h2>
-                        <p class="nhsuk-body nhsuk-u-margin-bottom-0">Documents are not available while the UK reply letter
-                            is pending.</p>
+                        <p class="nhsuk-body nhsuk-u-margin-bottom-0">You cannot view documents while this UK reply letter is pending.</p>
                     </div>
                 </div>
 
