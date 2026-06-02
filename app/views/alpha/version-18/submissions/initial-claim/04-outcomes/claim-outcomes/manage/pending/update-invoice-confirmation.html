@@ -44,25 +44,25 @@ Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <span class="nhsuk-caption-l">Claim ID 6784 &ndash; France</span>
-        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">
+        <h1 class="nhsuk-heading-xl">
             Editing invoice ID 20001563
         </h1>
-        <p class="nhsuk-body">Editing this invoice means any active outcomes will not be correct anymore.</p>
-        <p class="nhsuk-body">Those outcomes will be set to 'Pending' while this invoice is being processed.</p>
-        <p class="nhsuk-body nhsuk-u-margin-bottom-7">Once all invoices are completed, the outcomes will automatically update with the new
-            details.</p>
-
+        <p class="nhsuk-body">Editing this invoice will affect any active outcomes.</p>
+        <p class="nhsuk-body">This means:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet ">
+            <li>any active outcomes will not be correct anymore</li>
+            <li>outcomes will be set to pending while this invoice is being processed</li>
+            <li>once all invoices are completed, outcomes will update automatically with the new details</li>
+        </ul>
         <form action="" method="post">
             <div class="nhsuk-form-group">
                 <fieldset class="nhsuk-fieldset">
-                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
                         <h2 class="nhsuk-fieldset__heading">
                             Are you sure you want to edit this invoice?
 
                         </h2>
                     </legend>
-
-
                     <div class="nhsuk-radios">
                         <div class="nhsuk-radios__item">
                             <input class="nhsuk-radios__input" id="open-yes" name="open" type="radio" value="yes">
@@ -85,7 +85,4 @@ Manage incoming international healthcare claims - NHSBSA
         </form>
     </div>
 </div>
-
-
-
 {% endblock %}
