@@ -154,7 +154,7 @@ Manage incoming international healthcare claims - NHSBSA
             <!-- Start of tab titles -->
             <ul class="nhsuk-tabs__list">
                 <li class="nhsuk-tabs__list-item">
-                    <a class="nhsuk-tabs__tab" href="#outstanding"> Submissions needing outcomes </a>
+                    <a class="nhsuk-tabs__tab" href="#outstanding"> Submissions that need outcomes </a>
                 </li>
                 <li class="nhsuk-tabs__list-item">
                     <a class="nhsuk-tabs__tab" href="#completed"> Created outcomes </a>
@@ -168,17 +168,16 @@ Manage incoming international healthcare claims - NHSBSA
             <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="outstanding">
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
-                        <h2 class="nhsuk-heading-l">Submissions needing outcomes</h2>
+                        <h2 class="nhsuk-heading-l">Submissions that need outcomes</h2>
                     </div>
                 </div>
-
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <div class="nhsuk-card nhsuk-u-margin-bottom-0">
                             <div class="nhsuk-card__content">
                                 <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
                                     <div class="nhsuk-grid-column-two-thirds">
-                                        <p class="nhsuk-heading-s nhsuk-u-margin-bottom-4">Showing 1 to 1 of 1 results
+                                        <p class="nhsuk-heading-s nhsuk-u-margin-bottom-4">Showing 1 to 3 of 3 results
                                         </p>
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
@@ -314,21 +313,21 @@ Manage incoming international healthcare claims - NHSBSA
                                                                     data-nhsuk-radios-init="">
                                                                     <div class="nhsuk-radios__item">
                                                                         <input class="nhsuk-radios__input"
-                                                                            id="outstanding-order-by-asc"
-                                                                            name="outstanding-order-by" type="radio"
+                                                                            id="submission-order-by-asc"
+                                                                            name="submission-order-by" type="radio"
                                                                             value="ascending" checked="checked">
                                                                         <label class="nhsuk-label nhsuk-radios__label"
-                                                                            for="outstanding-order-by-asc">
+                                                                            for="submission-order-by-asc">
                                                                             Ascending
                                                                         </label>
                                                                     </div>
                                                                     <div class="nhsuk-radios__item">
                                                                         <input class="nhsuk-radios__input"
-                                                                            id="outstanding-order-by-desc"
-                                                                            name="outstanding-order-by" type="radio"
+                                                                            id="submission-order-by-desc"
+                                                                            name="submission-order-by" type="radio"
                                                                             value="descending">
                                                                         <label class="nhsuk-label nhsuk-radios__label"
-                                                                            for="outstanding-order-by-desc">
+                                                                            for="submission-order-by-desc">
                                                                             Descending
                                                                         </label>
                                                                     </div>
@@ -366,7 +365,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                 Submission ID
                                             </th>
                                             <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                                Reference
+                                                Submission reference
                                             </th>
                                             <th scope="col" class="nhsuk-table__header" role="columnheader">
                                                 Type
@@ -375,14 +374,67 @@ Manage incoming international healthcare claims - NHSBSA
                                                 Date received
                                             </th>
                                             <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                                UK reply letter<br />status
-                                            </th>
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                                Summary letter<br />status
+                                                UK reply letter
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody class="nhsuk-table__body">
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Submission ID
+                                                </span>32
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Reference
+                                                </span>11661234KK1905
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+                                                </span>Credit note
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                    received
+                                                </span>23 Sep 2024
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">UK
+                                                    reply letter status
+                                                </span><strong class="nhsuk-tag nhsuk-tag--white">
+                                                    In progress
+                                                </strong>
+                                            </td>
+                                        </tr>
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Submission ID
+                                                </span>28
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell">
+                                                <span class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Reference
+                                                </span>11661234KK1892
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+                                                </span>Credit note
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                    received
+                                                </span>21 Sep 2024
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell">
+                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">UK
+                                                    reply letter status
+                                                </span><strong class="nhsuk-tag nhsuk-tag--white">
+                                                    In progress
+                                                </strong>
+                                            </td>
+                                        </tr>
                                         <tr class="nhsuk-table__row" role="row">
                                             <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading"
@@ -406,12 +458,9 @@ Manage incoming international healthcare claims - NHSBSA
                                             <td class="nhsuk-table__cell" role="cell">
                                                 <span class="nhsuk-table-responsive__heading" aria-hidden="true">UK
                                                     reply letter
-                                                </span>Active
-                                            </td>
-                                            <td class="nhsuk-table__cell" role="cell">
-                                                <span class="nhsuk-table-responsive__heading" aria-hidden="true">Summary
-                                                    letter
-                                                </span>Cannot start yet
+                                                </span><strong class="nhsuk-tag nhsuk-tag--white">
+                                                    In progress
+                                                </strong>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -420,6 +469,7 @@ Manage incoming international healthcare claims - NHSBSA
                         </div>
                     </div>
                 </div>
+
             </div>
             <!-- *** End of outstanding tab *** -->
 
@@ -490,16 +540,6 @@ Manage incoming international healthcare claims - NHSBSA
                                                                             class="nhsuk-label nhsuk-checkboxes__label"
                                                                             for="filter-down">
                                                                             Down payment
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="nhsuk-checkboxes__item">
-                                                                        <input class="nhsuk-checkboxes__input"
-                                                                            id="filter-letter" name="filter2"
-                                                                            type="checkbox" value="Summary letter">
-                                                                        <label
-                                                                            class="nhsuk-label nhsuk-checkboxes__label"
-                                                                            for="filter-letter">
-                                                                            Summary letter
                                                                         </label>
                                                                     </div>
                                                                     <div class="nhsuk-checkboxes__item">
