@@ -1,0 +1,241 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+    </ol>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<!-- Start back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
+    </div>
+</div>
+<!-- End back link -->
+
+<!-- Start of title block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl">
+            Claim outcomes for claim ID 6784
+        </h1>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-button-group" style="float:right;">
+           
+            <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
+                outcomes</a>
+        </div>
+    </div>
+</div>
+<!-- End of title block -->
+
+<!-- Start header block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+            <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-full">
+                                <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                                    Claim details
+                                </h2>
+                            </div>
+                        </div>
+                        <hr
+                            class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible nhsuk-u-margin-bottom-3">
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-one-half">
+                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-0">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Claim reference
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            11322249AT2301E
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Country
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            France
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Type
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Actual cost - Sickness
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                            <div class="nhsuk-grid-column-one-half">
+                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-0">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Date received
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            19 July 2024
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Period
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            First half year
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Financial year
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            2023
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<!-- End header block -->
+
+<!-- Start of tabs-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+            <h2 class="nhsuk-tabs__title">Contents</h2>
+
+            <!-- Start of tab titles -->
+            <ul class="nhsuk-tabs__list">
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#outstanding"> Outcomes needing creating </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#completed"> Created outcomes </a>
+                </li>
+            </ul>
+            <!-- End of tab titles -->
+
+
+
+            <!-- *** Start of outstanding tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="outstanding">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">Outcomes needing creating</h2>
+                    </div>
+                </div>
+
+                     <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-one-half">
+                                        <ul class="nhsuk-task-list">
+                                                                                        <li class="nhsuk-task-list__item">
+                                                <div class="nhsuk-task-list__name-and-hint">
+                                                    <div>
+                                                        Information on payment
+                                                         <div class="nhsuk-task-list__hint" id="your-health-3-hint">
+                                                        Included submissions: 1
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div class="nhsuk-task-list__status nhsuk-task-list__status--cannot-start-yet"
+                                                    id="your-health-5-status">
+                                                    Cannot start yet
+                                                </div>
+                                            </li>
+                                            <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+                                                <div class="nhsuk-task-list__name-and-hint">
+                                                    <a class="nhsuk-link nhsuk-task-list__link" href="#"
+                                                        aria-describedby="your-health-4-status">
+                                                        Contestation
+                                                    </a>
+                                                    <div class="nhsuk-task-list__hint" id="your-health-3-hint">
+                                                        Included submissions: 3
+                                                    </div>
+                                                </div>
+                                                <div class="nhsuk-task-list__status" id="your-health-4-status">
+                                                    <strong class="nhsuk-tag nhsuk-tag--blue">
+                                                        Not yet started
+                                                    </strong>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+          
+            </div>
+            <!-- *** End of outstanding tab *** -->
+
+            <!-- *** Start of completed outcomes tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="completed">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">Created outcomes</h2>
+                    </div>
+                </div>
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <p class="nhsuk-body nhsuk-u-margin-bottom-0">There are no active or completed outcomes for
+                            claim ID 6784
+                            yet.
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- *** End of completed tab *** -->
+
+        </div>
+    </div>
+</div>
+<!-- End of tabs-->
+
+{% endblock %}
