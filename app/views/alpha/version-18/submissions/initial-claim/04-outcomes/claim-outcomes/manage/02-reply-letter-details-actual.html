@@ -253,9 +253,11 @@ Manage incoming international healthcare claims - NHSBSA
                                         <tr role="row" class="nhsuk-table__row">
                                             <th class="nhsuk-table__header" scope="row">Total</th>
                                             <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                                                <strong>410</strong></td>
+                                                <strong>410</strong>
+                                            </td>
                                             <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                                                <strong>6,501.00</strong></td>
+                                                <strong>6,501.00</strong>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1296,10 +1298,30 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         <input class="nhsuk-radios__input"
                                                                             id="submission-sort-by-id"
                                                                             name="submission-sort-by" type="radio"
-                                                                            value="id" checked="checked">
+                                                                            value="id">
                                                                         <label class="nhsuk-label nhsuk-radios__label"
                                                                             for="submission-sort-by-id">
                                                                             Submission ID
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="nhsuk-radios__item">
+                                                                        <input class="nhsuk-radios__input"
+                                                                            id="submission-sort-by-ref"
+                                                                            name="submission-sort-by" type="radio"
+                                                                            value="ref">
+                                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                                            for="submission-sort-by-ref">
+                                                                            Submission reference
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="nhsuk-radios__item">
+                                                                        <input class="nhsuk-radios__input"
+                                                                            id="submission-sort-by-date"
+                                                                            name="submission-sort-by" type="radio"
+                                                                            value="date" checked="checked">
+                                                                        <label class="nhsuk-label nhsuk-radios__label"
+                                                                            for="submission-sort-by-date">
+                                                                            Date received
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -1326,7 +1348,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         <input class="nhsuk-radios__input"
                                                                             id="submission-order-by-asc"
                                                                             name="submission-order-by" type="radio"
-                                                                            value="ascending">
+                                                                            value="ascending" checked="checked">
                                                                         <label class="nhsuk-label nhsuk-radios__label"
                                                                             for="submission-order-by-asc">
                                                                             Ascending
@@ -1336,7 +1358,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         <input class="nhsuk-radios__input"
                                                                             id="submission-order-by-desc"
                                                                             name="submission-order-by" type="radio"
-                                                                            value="descending" checked="checked">
+                                                                            value="descending">
                                                                         <label class="nhsuk-label nhsuk-radios__label"
                                                                             for="submission-order-by-desc">
                                                                             Descending
@@ -1379,21 +1401,8 @@ Manage incoming international healthcare claims - NHSBSA
                                             </th>
                                             <th scope="col" class="nhsuk-table__header" role="columnheader">Type
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
-                                                role="columnheader">
-                                                Total contested <br />invoices (number)
-                                            </th>
-                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
-                                                role="columnheader">
-                                                Total contested <br />invoices (amount)
-                                            </th>
-                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
-                                                role="columnheader">
-                                                Total accepted <br />invoices (number)
-                                            </th>
-                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
-                                                role="columnheader">
-                                                Total accepted <br />invoices (amount)
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Date
+                                                received
                                             </th>
                                         </tr>
                                     </thead>
@@ -1412,22 +1421,10 @@ Manage incoming international healthcare claims - NHSBSA
                                             <td class="nhsuk-table__cell" role="cell"><span
                                                     class="nhsuk-table-responsive__heading" aria-hidden="true">Type
                                                 </span>Credit note</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Total
-                                                    contested invoices (number)
-                                                </span>1</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Total
-                                                    contested invoices (amount)
-                                                </span>100.50</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Total
-                                                    accepted invoices (number)
-                                                </span>0</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Total
-                                                    accepted invoices (amount)
-                                                </span>0</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                    received
+                                                </span>23 Sep 2024</td>
                                         </tr>
                                         <tr class="nhsuk-table__row" role="row">
                                             <td class="nhsuk-table__cell" role="cell"><span
@@ -1442,22 +1439,10 @@ Manage incoming international healthcare claims - NHSBSA
                                             <td class="nhsuk-table__cell" role="cell"><span
                                                     class="nhsuk-table-responsive__heading" aria-hidden="true">Type
                                                 </span>Credit note</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Total
-                                                    contested invoices (number)
-                                                </span>3</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Total
-                                                    contested invoices (amount)
-                                                </span>300.50</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Total
-                                                    accepted invoices (number)
-                                                </span>0</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Total
-                                                    accepted invoices (amount)
-                                                </span>0</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                    received
+                                                </span>21 Sep 2024</td>
                                         </tr>
                                         <tr class="nhsuk-table__row" role="row">
                                             <td class="nhsuk-table__cell" role="cell"><span
@@ -1472,22 +1457,10 @@ Manage incoming international healthcare claims - NHSBSA
                                             <td class="nhsuk-table__cell" role="cell"><span
                                                     class="nhsuk-table-responsive__heading" aria-hidden="true">Type
                                                 </span>Initial claim</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Total
-                                                    contested invoices (number)
-                                                </span>100</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Total
-                                                    contested invoices (amount)
-                                                </span>11,200.38</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Total
-                                                    accepted invoices (number)
-                                                </span>3</td>
-                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Total
-                                                    accepted invoices (amount)
-                                                </span>800.00</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                    received
+                                                </span>19 Jul 2024</td>
                                         </tr>
                                     </tbody>
                                 </table>
