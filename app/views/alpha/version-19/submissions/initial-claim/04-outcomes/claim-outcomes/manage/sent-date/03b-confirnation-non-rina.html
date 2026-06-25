@@ -1,0 +1,71 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim outcomes</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">UK reply letter ID 123</a>
+        </li>
+    </ol>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-panel">
+            <h1 class="nhsuk-panel__title">
+                Sent date added to UK reply letter
+            </h1>
+            <div class="nhsuk-panel__body">
+                Our UK reply letter reference <strong>6784ID6784</strong>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <p class="nhsuk-body">You confirmed the UK reply letter was sent on 2 December 2025.</p>
+        <h2 class="nhsuk-heading-m">What happens next</h2>
+        <p class="nhsuk-body">Once you've had confirmation, you'll need to log the date the UK reply letter was
+            delivered to France.</p>
+        <p class="nhsuk-body">You can do this on the UK reply letter page.</p>
+        <div class="nhsuk-button-group">
+            <a href="#/" class="nhsuk-button" role="button" data-module="nhsuk-button">Return to claim outcomes</a>
+            <a href="" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">View UK
+                reply letter</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
