@@ -31,32 +31,31 @@ Claim created - Manage incoming international healthcare claims - NHSBSA
 
 <!-- Start of central content  -->
 {% block content %}
-
-
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-
-        <!-- Start of panel -->
         <div class="nhsuk-panel">
             <h1 class="nhsuk-panel__title">
-                Claim created for {% if data['country'] %}{{
-                data['country'] }}{% else %}France{% endif %}
+                Claim created for France
             </h1>
             <div class="nhsuk-panel__body">
                 Claim ID <strong>6784</strong>
             </div>
         </div>
-        <!-- End of panel -->
-        <p class="nhsuk-body">The claim reference is {% if data['ref'] %}{{ data['ref'] }}{% else
-            %}0039795410{% endif %}.</p>
+        <p class="nhsuk-body">The claim reference is 0039795410.</p>
+        <p class="nhsuk-body">An initial submission has been created for this claim. The initial claim ID is 95673.</p>
         <h2 class="nhsuk-heading-m">What happens next</h2>
-        <p class="nhsuk-body">You can now add invoices to this claim.</p>
-        <a href="#/" class="nhsuk-button" role="button" data-module="nhsuk-button">Manage
-            claim</a>
-        <a href="index" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Create a
-            new claim</a>
+                <p>You can:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet" style="font-weight:normal;">
+            <li>download the invoice XML file from RINA</li>
+            <li>upload invoices to the initial claim</li>
+        </ul>
+        <div class="nhsuk-button-group">
+            <a href="#/" class="nhsuk-button" role="button" data-module="nhsuk-button">Manage
+                initial claim</a>
+            <a href="#/" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">View
+                claim</a>
+        </div>
     </div>
 </div>
-
 {% endblock %}
 <!-- End of central content -->
