@@ -28,7 +28,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
             <a class="nhsuk-breadcrumb__link" href="#">Claim ID 6784</a>
         </li>
         <li class="nhsuk-breadcrumb__list-item">
-            <a class="nhsuk-breadcrumb__link" href="">Reply to contestation ID 7766</a>
+            <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
         </li>
     </ol>
     <a class="nhsuk-back-link" href="#">
@@ -59,7 +59,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
             </h1>
         </div>
         <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-            <a href="05a-confirmation" class="nhsuk-button" role="button" data-module="nhsuk-button">Mark complete</a>
+            <a href="02-invoice-details-credit-note" class="nhsuk-button" role="button" data-module="nhsuk-button">Mark complete</a>
             <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
                 invoice</a>
         </div>
@@ -83,42 +83,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 0039795412
-                            </dd>
-                            <dd class="nhsuk-summary-list__actions"></dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Date of first contestation
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                9 August 2024
-                            </dd>
-                            <dd class="nhsuk-summary-list__actions"></dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Date of first reply
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                15 July 2025
-                            </dd>
-                            <dd class="nhsuk-summary-list__actions"></dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Initial total amount
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                600.00
-                            </dd>
-                            <dd class="nhsuk-summary-list__actions"></dd>
-                        </div>
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Total amount before this submission
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                                500.00
                             </dd>
                             <dd class="nhsuk-summary-list__actions"></dd>
                         </div>
@@ -216,10 +180,10 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     Contested amount
                                                 </label>
                                                 <input class="nhsuk-input " id="contested" name="contested" type="text"
-                                                    value="450.00">
+                                                    value="600.00">
                                             </div>
                                         </div>
-                                        <div class="nhsuk-grid-column-one-third">
+                                        <!-- <div class="nhsuk-grid-column-one-third">
                                             <div class="nhsuk-form-group">
                                                 <label
                                                     class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
@@ -230,7 +194,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     style="background-color: #f0f4f5;" name="withdrawn" type="text"
                                                     value="150.00" readonly>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
 
                                     <!-- Start of contestation reasons -->
@@ -1053,6 +1017,33 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 </div>
 <!-- End of decision -->
 
+<!-- Start of reply reason -->
+<!-- <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
+            Contestation reply reason
+        </h3>
+        <div class="nhsuk-card" id="">
+            <div class="nhsuk-card__content nhsuk-u-padding-bottom-3" style="padding:18px 16px 16px 16px;">
+                <p class="nhsuk-body">Enclosed you find the entitlement document</p>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- End of reply reason -->
+
+<!-- Start of reply reason hint text-->
+<!-- <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-inset-text" style="margin-top:0px;">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">Contestation reply reason</h3>
+            <p>Enclosed you find the entitlement document</p>
+        </div>
+    </div>
+</div> -->
+<!-- End of reply reason hint text-->
+
 <!-- start data comparison -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-half">
@@ -1107,7 +1098,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 
                 </dl>
 
-                <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                <!-- <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
                     Contestation reply details
                 </h4>
                 <hr style="margin:0px 0px 10px 0px;">
@@ -1120,25 +1111,9 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Enclosed you find the entitlement document
                         </dd>
                     </div>
-                    <!-- <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                            Reply reason
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                            Other
-                        </dd>
-                    </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Details
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                            The additional information that the submitting country has sent will appear here. This can be up to 500 characters.
-                        </dd>
-                    </div> -->
-                    <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                            Withdrawn amount
+                            Amount of accepted contestations
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             50.00
@@ -1146,13 +1121,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Amount still requested
+                            Amount after accepted contestation
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             450.00
                         </dd>
                     </div>
-                </dl>
+                </dl> -->
 
                 <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
                     Entitlement details
@@ -1227,7 +1202,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Total amount
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                            450.00
+                            600.00
                         </dd>
                     </div>
                 </dl>

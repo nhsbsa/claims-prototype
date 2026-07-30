@@ -146,7 +146,7 @@ Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
                                         <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                             for="uk-pin">
-                                            PIN in UK
+                                            PIN in UK (if provided)
                                         </label> <input class="nhsuk-input nhsuk-u-width-two-thirds" id="uk-pin"
                                             name="uk-pin" type="text" value="JM 76 32 32 A">
                                     </div>
@@ -172,11 +172,13 @@ Manage incoming international healthcare claims - NHSBSA
                                             Document
                                         </label> <select class="nhsuk-select nhsuk-u-width-two-thirds" id="document"
                                             name="document">
-                                            <option value="S1">S1</option>
+                                            <option value="None">Choose entitlement</option>
+                                            <option value="DA1">DA1</option>
                                             <option value="EHIC" selected>EHIC</option>
                                             <option value="PRC">PRC</option>
+                                            <option value="S1">S1</option>
                                             <option value="S2">S2</option>
-                                            <option value="DA1">DA1</option>
+
                                         </select>
                                     </div>
                                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible"
@@ -184,7 +186,7 @@ Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
                                         <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                             for="issue-number">
-                                            Issue number
+                                            Issue number (if provided)
                                         </label> <input class="nhsuk-input nhsuk-u-width-two-thirds" id="issue-number"
                                             name="issue-number" type="text" value="80826000010168456876">
                                     </div>
@@ -193,7 +195,7 @@ Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
                                         <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                             for="document-start">
-                                            Start date
+                                            Start date (if provided)
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="document-start-hint">
                                             For example, 15 3 1984
@@ -240,7 +242,7 @@ Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
                                         <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                             for="document-end">
-                                            End date
+                                            End date (if provided)
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="document-end-hint">
                                             For example, 15 3 1984
@@ -288,7 +290,7 @@ Manage incoming international healthcare claims - NHSBSA
                                     <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
                                         <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                             for="issue">
-                                            Issue date
+                                            Issue date (if provided)
                                         </label>
                                         <div class="nhsuk-hint nhsuk-u-margin-bottom-1" id="document-issue-hint">
                                             For example, 15 3 1984
