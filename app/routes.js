@@ -29,6 +29,7 @@ router.use('/alpha/version-16', require('./views/alpha/version-16/_routes'));
 router.use('/alpha/version-17', require('./views/alpha/version-17/_routes'));
 router.use('/alpha/version-18', require('./views/alpha/version-18/_routes'));
 router.use('/alpha/version-19', require('./views/alpha/version-19/_routes'));
+router.use('/alpha/version-20', require('./views/alpha/version-20/_routes'));
 router.use('/alpha/accessibility-testing/may-2025', require('./views/alpha/accessibility-testing/may-2025/_routes'));
 
 // clear session data - link in footer
