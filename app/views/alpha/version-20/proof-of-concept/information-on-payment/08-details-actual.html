@@ -147,7 +147,8 @@ Manage incoming international healthcare claims - NHSBSA
                         <ul class="nhsuk-task-list">
                             <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
                                 <div class="nhsuk-task-list__name-and-hint">
-                                    <a class="nhsuk-task-list__link nhsuk-link" href="09-dhsc-reply" aria-describedby="">
+                                    <a class="nhsuk-task-list__link nhsuk-link" href="09-dhsc-reply"
+                                        aria-describedby="">
                                         Add DHSC reply
                                     </a>
                                 </div>
@@ -212,55 +213,82 @@ Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <h2 class="nhsuk-heading-l">Summary</h2>
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-two-thirds">
+                                <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                                    <div class="nhsuk-card__content">
 
-
-                        
-                        <table class="nhsuk-table">
-  <caption class="nhsuk-table__caption">
-    Payment breakdown
-  </caption>
-  <thead class="nhsuk-table__head">
-    <tr class="nhsuk-table__row">
-      <th class="nhsuk-table__header" scope="col">
-        Item
-      </th>
-      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">
-        Amount
-      </th>
-    </tr>
-  </thead>
-  <tbody class="nhsuk-table__body">
-    <tr class="nhsuk-table__row">
-      <th class="nhsuk-table__header" scope="row">
-        3-month
-      </th>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        £31.25
-      </td>
-
-    </tr>
-    <tr class="nhsuk-table__row">
-      <th class="nhsuk-table__header" scope="row">
-        12-month
-      </th>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        £111.60
-      </td>
-
-    </tr>
-    <tr class="nhsuk-table__row">
-      <th class="nhsuk-table__header" scope="row">
-        HRT
-      </th>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        £19.30
-      </td>
-
-    </tr>
-  </tbody>
-</table>
-
-
+                                        <table class="nhsuk-table">
+                                            <!-- <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-3"
+                                                style="border-bottom: 1px solid #d8dde0">
+                                                Payment breakdown
+                                            </caption> -->
+                                            <thead class="nhsuk-table__head">
+                                                <tr class="nhsuk-table__row">
+                                                    <th class="nhsuk-table__header" scope="col">
+                                                        Item
+                                                    </th>
+                                                    <th class="nhsuk-table__header nhsuk-table__header--numeric"
+                                                        scope="col">
+                                                        Amount
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="nhsuk-table__body">
+                                                <tr class="nhsuk-table__row">
+                                                    <th class="nhsuk-table__header" scope="row">
+                                                        Credit note after payment
+                                                    </th>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                        100.00
+                                                    </td>
+                                                </tr>
+                                                <tr class="nhsuk-table__row">
+                                                    <th class="nhsuk-table__header" scope="row">
+                                                        Down payment
+                                                    </th>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                        100.00
+                                                    </td>
+                                                </tr>
+                                                <tr class="nhsuk-table__row">
+                                                    <th class="nhsuk-table__header" scope="row">
+                                                        Former payment
+                                                    </th>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                        0
+                                                    </td>
+                                                </tr>
+                                                <tr class="nhsuk-table__row">
+                                                    <th class="nhsuk-table__header" scope="row">
+                                                        Offsetting
+                                                    </th>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                        0
+                                                    </td>
+                                                </tr>
+                                                <tr class="nhsuk-table__row">
+                                                    <th class="nhsuk-table__header" scope="row">
+                                                        Overpayment
+                                                    </th>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                        0
+                                                    </td>
+                                                </tr>
+                                                <tr class="nhsuk-table__row">
+                                                    <th class="nhsuk-table__header" scope="row">
+                                                        Total
+                                                    </th>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                        200.00
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -271,6 +299,155 @@ Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <h2 class="nhsuk-heading-l">Deductions</h2>
+                    </div>
+                </div>
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Credit note after payment
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <table class="nhsuk-table-responsive" role="table">
+                                    <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
+                                    <thead class="nhsuk-table__head" role="rowgroup">
+                                        <tr role="row">
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                                Original claim reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Global
+                                                credit note reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Individual
+                                                credit note reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                                Added by
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                                Amount
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="nhsuk-table__body">
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Original
+                                                    claim
+                                                    reference
+                                                </span>11322249CR0501E
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Global
+                                                    credit note reference
+                                                </span>6784</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Individual credit note reference
+                                                </span>123456PA</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
+                                                </span>System</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
+                                                </span>100.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Down payment
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <table class="nhsuk-table-responsive" role="table">
+                                    <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
+                                    <thead class="nhsuk-table__head" role="rowgroup">
+                                        <tr role="row">
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Global
+                                                IDP reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                                Added by
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                                Amount
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="nhsuk-table__body">
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Global
+                                                    IDP reference
+                                                </span>12345678ABC</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Added by
+                                                </span>Isla Fields</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
+                                                </span>100.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Former payment
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <p class="nhsuk-body">There are former payment deductions.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Offsetting
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <p class="nhsuk-body">There are former offsetting deductions.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-expander">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    Overpayment
+                                </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <p class="nhsuk-body">There are overpayment deductions.</p>
+                            </div>
+                        </details>
                     </div>
                 </div>
 
