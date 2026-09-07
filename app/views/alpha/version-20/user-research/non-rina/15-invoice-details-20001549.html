@@ -60,7 +60,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
         </div>
         <div class="nhsuk-grid-column-one-third" style="text-align:right;">
             <div class="nhsuk-button-group" style="float:right;">
-                <a href="#/" class="nhsuk-button" role="button" data-module="nhsuk-button">Mark complete</a>
+                <a href="16-confirmation" class="nhsuk-button" role="button" data-module="nhsuk-button">Mark complete</a>
                 <a href="#/" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
                     invoice</a>
             </div>
@@ -184,7 +184,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             for="accepted">
                                             Accepted months
                                         </label>
-                                        <input class="nhsuk-input" id="accepted" name="accepted" type="text" value="0">
+                                        <input class="nhsuk-input" id="accepted" name="accepted" type="text" value="12">
                                     </div>
                                 </div>
                                 <div class="nhsuk-grid-column-one-third">
@@ -194,7 +194,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             Contested months
                                         </label>
                                         <input class="nhsuk-input " id="contested" name="contested" type="text"
-                                            value="12">
+                                            value="0">
                                     </div>
                                 </div>
                                 <div class="nhsuk-grid-column-one-third">
@@ -224,7 +224,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         <select class="nhsuk-select nhsuk-u-width-full" id="contestation-reason"
                                             name="contestation-reason">
                                             <option value="">Select contestation reason</option>
-                                            <option value="None">None - not contested.</option>
+                                            <option value="None" selected>None - not contested.</option>
 
                                             <option value="This document does not concern us.">
                                                 This document does not concern us.</option>
@@ -236,8 +236,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 code.</option>
 
                                             <option
-                                                value="Unable to identify the person from the information provided. Please check."
-                                                selected>
+                                                value="Unable to identify the person from the information provided. Please check.">
                                                 Unable to identify the person from the information
                                                 provided.
                                                 Please
@@ -1009,7 +1008,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </h2>
                                     <ul class="nhsuk-card__actions">
                                         <li class="nhsuk-card__action">
-                                            <a class="nhsuk-link" href="12-edit-invoice-details">Edit<span
+                                            <a class="nhsuk-link" href="#/">Edit<span
                                                     class="nhsuk-u-visually-hidden">
                                                     Edit</span></a>
                                         </li>
@@ -1043,7 +1042,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                 Date of birth
                                             </dt>
                                             <dd class="nhsuk-summary-list__value">
-                                                14 January 1973
+                                                14 April 1972
                                             </dd>
                                         </div>
                                         <div class="nhsuk-summary-list__row">
@@ -1144,13 +1143,77 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     <h2 class="nhsuk-card__heading nhsuk-heading-m">
                                         Matched OHS person record
                                     </h2>
-                                    
+                                                                    <ul class="nhsuk-card__actions">
+                                    <li class="nhsuk-card__action">
+                                        <a class="nhsuk-link" href="#/">View<span class="nhsuk-u-visually-hidden">
+                                                View</span></a>
+                                    </li>
+                                    <li class="nhsuk-card__action">
+                                        <a class="nhsuk-link" href="#/">Unlink<span class="nhsuk-u-visually-hidden">
+                                                Unlink</span></a>
+                                    </li>
+                                </ul>
                                 </div>
-                                <div class="nhsuk-card__content" style="padding:0px 16px 16px 16px;">
-                                    <p class="nhsuk-body">No match found.</p>
-                                    <a href="#/" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3 "
-                                        role="button" data-module="nhsuk-button" data-nhsuk-button-init="">Search for a
-                                        person</a>
+             <div class="nhsuk-card__content" style="padding:0px 16px 16px 16px;">
+                                    <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
+                                        Person details
+                                    </h4>
+                                    <hr style="margin:0px 0px 10px 0px;">
+
+                                    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-5">
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Last name
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                Harrison
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                First name
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                Oliver
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Date of birth
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                14 April 1972
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                OHS reference
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                25032991
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                National Insurance number
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                JL 76 42 19 A
+                                            </dd>
+                                        </div>
+                                        <div class="nhsuk-summary-list__row">
+                                            <dt class="nhsuk-summary-list__key">
+                                                Residential country
+                                            </dt>
+                                            <dd class="nhsuk-summary-list__value">
+                                                UK
+                                            </dd>
+                                        </div>
+                                    </dl>
+
+                                    <a href="#/" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3"
+                                        role="button" data-module="nhsuk-button" data-nhsuk-button-init="">Search for
+                                        another person</a>
                                 </div>
                             </div>
                         </div>
