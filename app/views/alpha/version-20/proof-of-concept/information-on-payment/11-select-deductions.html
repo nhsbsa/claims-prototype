@@ -55,7 +55,7 @@ Manage incoming international healthcare claims - NHSBSA
     </div>
 </div>
 
-<form action="12-manual-deduction-1" method="post">
+<form action="12-deduction-type" method="post">
     <div class="nhsuk-form-group">
         <div class="nhsuk-card nhsuk-u-margin-bottom-3">
             <div class="nhsuk-card__content">
@@ -64,234 +64,266 @@ Manage incoming international healthcare claims - NHSBSA
                     <fieldset class="nhsuk-fieldset">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                             <h1 class="nhsuk-fieldset__heading">
-                                Which deductions would you like to include?
+                                Which deductions would you like to include from the list?
                             </h1>
                         </legend>
 
 
                         <div class="nhsuk-card">
-  <div class="nhsuk-card__content">
-    <h3 class="nhsuk-card__heading">
-      Offsetting
-    </h3>
-    <p class="nhsuk-card__description">   <table class="nhsuk-table-responsive" role="table" >
-                            <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
-                            <thead class="nhsuk-table__head" role="rowgroup">
-                                <tr role="row">
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                        Select
-                                    </th>
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                        Original claim reference
-                                    </th>
-                                                                        <th scope="col" class="nhsuk-table__header" role="columnheader">Global pay reference
-                                    </th>
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">Latest submission ID
-                                    </th>
+                            <div class="nhsuk-card__content">
+                                <h3 class="nhsuk-card__heading">
+                                    Offsetting
+                                </h3>
+                                <p class="nhsuk-card__description">
+                                <table class="nhsuk-table-responsive" role="table">
+                                    <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
+                                    <thead class="nhsuk-table__head" role="rowgroup">
+                                        <tr role="row">
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:10%">
+                                                Select
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:25%">
+                                                Original claim reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:25%">Global pay
+                                                reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:25%">Latest
+                                                submission ID
+                                            </th>
 
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                        Amount
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="nhsuk-table__body">
-                                <tr class="nhsuk-table__row" role="row">
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Select
-                                        </span>
-                                        <div class="nhsuk-checkboxes nhsuk-checkboxes--small"
-                                            data-module="nhsuk-checkboxes">
-                                            <div class="nhsuk-checkboxes__item">
-                                                <input class="nhsuk-checkboxes__input" id="example" name="example"
-                                                    type="checkbox" value="ambulance or urgent and emergency care">
-                                                <label class="nhsuk-label nhsuk-checkboxes__label" for="example">
+                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric" role="columnheader" style="width:15%">
+                                                Amount
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="nhsuk-table__body">
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Select
+                                                </span>
+                                                <div class="nhsuk-checkboxes nhsuk-checkboxes--small"
+                                                    data-module="nhsuk-checkboxes">
+                                                    <div class="nhsuk-checkboxes__item">
+                                                        <input class="nhsuk-checkboxes__input" id="example"
+                                                            name="example" type="checkbox"
+                                                            value="ambulance or urgent and emergency care">
+                                                        <label class="nhsuk-label nhsuk-checkboxes__label"
+                                                            for="example">
 
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Original claim
-                                            reference
-                                        </span>11322249CR0501E
-                                    </td>
-                                                <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Global pay
-                                            reference
-                                        </span>123456PA</td>
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Latest submission
-                                            ID
-                                        </span>6784</td>
-                        
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Original
+                                                    claim
+                                                    reference
+                                                </span>11322249CR0501E
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Global
+                                                    pay
+                                                    reference
+                                                </span>123456PA</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Latest
+                                                    submission
+                                                    ID
+                                                </span>6784</td>
 
-                                        </span>100.00</td>
-                                </tr>
-                                <tr class="nhsuk-table__row" role="row">
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Select
-                                        </span>
-                                        <div class="nhsuk-checkboxes nhsuk-checkboxes--small"
-                                            data-module="nhsuk-checkboxes">
-                                            <div class="nhsuk-checkboxes__item">
-                                                <input class="nhsuk-checkboxes__input" id="example" name="example"
-                                                    type="checkbox" value="ambulance or urgent and emergency care">
-                                                <label class="nhsuk-label nhsuk-checkboxes__label" for="example">
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
 
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Original claim
-                                            reference
-                                        </span>11322249CR0501E
-                                    </td>
-                                                                        <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Global pay
-                                            reference
-                                        </span>123456PA</td>
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Latest submission
-                                            ID
-                                        </span>6784</td>
+                                                </span>100.00</td>
+                                        </tr>
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Select
+                                                </span>
+                                                <div class="nhsuk-checkboxes nhsuk-checkboxes--small"
+                                                    data-module="nhsuk-checkboxes">
+                                                    <div class="nhsuk-checkboxes__item">
+                                                        <input class="nhsuk-checkboxes__input" id="example"
+                                                            name="example" type="checkbox"
+                                                            value="ambulance or urgent and emergency care">
+                                                        <label class="nhsuk-label nhsuk-checkboxes__label"
+                                                            for="example">
 
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Original
+                                                    claim
+                                                    reference
+                                                </span>11322249CR0501E
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Global
+                                                    pay
+                                                    reference
+                                                </span>123456PA</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Latest
+                                                    submission
+                                                    ID
+                                                </span>6784</td>
 
-                                        </span>50.00</td>
-                                </tr>
-                            </tbody>
-                        </table></p>
-  </div>
-</div>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
 
-<div class="nhsuk-card">
-  <div class="nhsuk-card__content">
-    <h3 class="nhsuk-card__heading">
-      Credit note after payment
-    </h3>
-    <p class="nhsuk-card__description">   <table class="nhsuk-table-responsive" role="table" >
-                            <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
-                            <thead class="nhsuk-table__head" role="rowgroup">
-                                <tr role="row">
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                        Select
-                                    </th>
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                        Original claim reference
-                                    </th>
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">Global credit note reference
-                                    </th>
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">Individual credit note reference
-                                    </th>
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                        Amount
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="nhsuk-table__body">
-                                <tr class="nhsuk-table__row" role="row">
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Select
-                                        </span>
-                                        <div class="nhsuk-checkboxes nhsuk-checkboxes--small"
-                                            data-module="nhsuk-checkboxes">
-                                            <div class="nhsuk-checkboxes__item">
-                                                <input class="nhsuk-checkboxes__input" id="example" name="example"
-                                                    type="checkbox" value="ambulance or urgent and emergency care">
-                                                <label class="nhsuk-label nhsuk-checkboxes__label" for="example">
+                                                </span>50.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </p>
+                            </div>
+                        </div>
 
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Original claim
-                                            reference
-                                        </span>11322249CR0501E
-                                    </td>
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Global credit note reference
-                                        </span>6784</td>
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Individual credit note reference
-                                        </span>123456PA</td>
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
+                        <div class="nhsuk-card">
+                            <div class="nhsuk-card__content">
+                                <h3 class="nhsuk-card__heading">
+                                    Credit note after payment
+                                </h3>
+                                <p class="nhsuk-card__description">
+                                <table class="nhsuk-table-responsive" role="table">
+                                    <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
+                                    <thead class="nhsuk-table__head" role="rowgroup">
+                                        <tr role="row">
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:10%">
+                                                Select
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:25%">
+                                                Original claim reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:25%">Global
+                                                credit note reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:25%">Individual
+                                                credit note reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric" role="columnheader" style="width:15%">
+                                                Amount
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="nhsuk-table__body">
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Select
+                                                </span>
+                                                <div class="nhsuk-checkboxes nhsuk-checkboxes--small"
+                                                    data-module="nhsuk-checkboxes">
+                                                    <div class="nhsuk-checkboxes__item">
+                                                        <input class="nhsuk-checkboxes__input" id="example"
+                                                            name="example" type="checkbox"
+                                                            value="ambulance or urgent and emergency care">
+                                                        <label class="nhsuk-label nhsuk-checkboxes__label"
+                                                            for="example">
 
-                                        </span>100.00</td>
-                                </tr>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Original
+                                                    claim
+                                                    reference
+                                                </span>11322249CR0501E
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Global
+                                                    credit note reference
+                                                </span>6784</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Individual credit note reference
+                                                </span>123456PA</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
 
-                            </tbody>
-                        </table></p>
-  </div>
-</div>
+                                                </span>100.00</td>
+                                        </tr>
 
-      <div class="nhsuk-card">
-  <div class="nhsuk-card__content">
-    <h3 class="nhsuk-card__heading">
-      Former payment
-    </h3>
-    <p class="nhsuk-card__description">  <table class="nhsuk-table-responsive" role="table" >
-                            <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
-                            <thead class="nhsuk-table__head" role="rowgroup">
-                                <tr role="row">
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                        Select
-                                    </th>
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                        Original claim reference
-                                    </th>
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">Global pay reference
-                                    </th>
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">Individual pay reference
-                                    </th>
-                                    <th scope="col" class="nhsuk-table__header" role="columnheader">
-                                        Amount
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="nhsuk-table__body">
-                                <tr class="nhsuk-table__row" role="row">
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Select
-                                        </span>
-                                        <div class="nhsuk-checkboxes nhsuk-checkboxes--small"
-                                            data-module="nhsuk-checkboxes">
-                                            <div class="nhsuk-checkboxes__item">
-                                                <input class="nhsuk-checkboxes__input" id="example" name="example"
-                                                    type="checkbox" value="ambulance or urgent and emergency care">
-                                                <label class="nhsuk-label nhsuk-checkboxes__label" for="example">
+                                    </tbody>
+                                </table>
+                                </p>
+                            </div>
+                        </div>
 
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Original claim
-                                            reference
-                                        </span>11322249CR0501E
-                                    </td>
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Global pay reference
-                                        </span>6784</td>
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Individual pay reference
-                                        </span>123456PA</td>
-                                    <td class="nhsuk-table__cell" role="cell"><span
-                                            class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
+                        <div class="nhsuk-card">
+                            <div class="nhsuk-card__content">
+                                <h3 class="nhsuk-card__heading">
+                                    Former payment
+                                </h3>
+                                <p class="nhsuk-card__description">
+                                <table class="nhsuk-table-responsive" role="table">
+                                    <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
+                                    <thead class="nhsuk-table__head" role="rowgroup">
+                                        <tr role="row">
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:10%">
+                                                Select
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:25%">
+                                                Original claim reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:25%">Global pay
+                                                reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:25%">Individual
+                                                pay reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric" role="columnheader" style="width:15%">
+                                                Amount
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="nhsuk-table__body">
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Select
+                                                </span>
+                                                <div class="nhsuk-checkboxes nhsuk-checkboxes--small"
+                                                    data-module="nhsuk-checkboxes">
+                                                    <div class="nhsuk-checkboxes__item">
+                                                        <input class="nhsuk-checkboxes__input" id="example"
+                                                            name="example" type="checkbox"
+                                                            value="ambulance or urgent and emergency care">
+                                                        <label class="nhsuk-label nhsuk-checkboxes__label"
+                                                            for="example">
 
-                                        </span>100.00</td>
-                                </tr>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Original
+                                                    claim
+                                                    reference
+                                                </span>11322249CR0501E
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Global
+                                                    pay reference
+                                                </span>6784</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Individual pay reference
+                                                </span>123456PA</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
 
-                            </tbody>
-                        </table></p>
-  </div>
-</div>
-                
+                                                </span>100.00</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                </p>
+                            </div>
+                        </div>
+
 
 
 

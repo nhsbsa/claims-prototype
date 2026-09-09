@@ -155,7 +155,8 @@ Manage incoming international healthcare claims - NHSBSA
                             </li>
                             <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
                                 <div class="nhsuk-task-list__name-and-hint">
-                                    <a class="nhsuk-task-list__link nhsuk-link" href="22-add-sent-date" aria-describedby="">
+                                    <a class="nhsuk-task-list__link nhsuk-link" href="22-add-sent-date"
+                                        aria-describedby="">
                                         Add sent date
                                     </a>
                                 </div>
@@ -213,14 +214,60 @@ Manage incoming international healthcare claims - NHSBSA
                         <h2 class="nhsuk-heading-l">Summary</h2>
                         <div class="nhsuk-grid-row">
                             <div class="nhsuk-grid-column-two-thirds">
+                                <div class="nhsuk-card nhsuk-u-margin-bottom-8">
+                                    <div class="nhsuk-card__content">
+                                        <table class="nhsuk-table">
+                                            <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-3"
+                                                style="border-bottom: 1px solid #d8dde0">
+                                                Title
+                                            </caption>
+                                            <thead class="nhsuk-table__head">
+                                                <tr class="nhsuk-table__row">
+                                                    <th class="nhsuk-table__header" scope="col">
+                                                        Item
+                                                    </th>
+                                                    <th class="nhsuk-table__header nhsuk-table__header--numeric"
+                                                        scope="col">
+                                                        Amount
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="nhsuk-table__body">
+                                                <tr class="nhsuk-table__row">
+                                                    <th class="nhsuk-table__header" scope="row">
+                                                        Initial claim
+                                                    </th>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                        1,000.00
+                                                    </td>
+                                                </tr>
+                                                <tr class="nhsuk-table__row">
+                                                    <th class="nhsuk-table__header" scope="row">
+                                                        Credit notes
+                                                    </th>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                        100.00
+                                                    </td>
+                                                </tr>
+                                                <tr class="nhsuk-table__row">
+                                                    <th class="nhsuk-table__header" scope="row">
+                                                        Accepted contestations
+                                                    </th>
+                                                    <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                        100.00
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                                 <div class="nhsuk-card nhsuk-u-margin-bottom-0">
                                     <div class="nhsuk-card__content">
-
                                         <table class="nhsuk-table">
-                                            <!-- <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-3"
+                                            <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-3"
                                                 style="border-bottom: 1px solid #d8dde0">
-                                                Payment breakdown
-                                            </caption> -->
+                                                Deductions
+                                            </caption>
                                             <thead class="nhsuk-table__head">
                                                 <tr class="nhsuk-table__row">
                                                     <th class="nhsuk-table__header" scope="col">
@@ -238,7 +285,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                         Credit note after payment
                                                     </th>
                                                     <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                                                        200.00
+                                                        150.00
                                                     </td>
                                                 </tr>
                                                 <tr class="nhsuk-table__row">
@@ -254,7 +301,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                         Former payment
                                                     </th>
                                                     <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                                                        0
+                                                        100.00
                                                     </td>
                                                 </tr>
                                                 <tr class="nhsuk-table__row">
@@ -262,7 +309,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                         Offsetting
                                                     </th>
                                                     <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                                                        150.00
+                                                        100.00
                                                     </td>
                                                 </tr>
                                                 <tr class="nhsuk-table__row">
@@ -270,21 +317,57 @@ Manage incoming international healthcare claims - NHSBSA
                                                         Overpayment
                                                     </th>
                                                     <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                                                        0
+                                                        50.00
                                                     </td>
                                                 </tr>
                                                 <tr class="nhsuk-table__row">
                                                     <th class="nhsuk-table__header" scope="row">
-                                                        Total
+                                                        Total deductions
                                                     </th>
                                                     <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                                                        200.00
+                                                        500.00
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="nhsuk-grid-column-one-third">
+                                <ul class="nhsuk-grid-row nhsuk-card-group">
+                                    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+                                        <div class="nhsuk-card">
+                                            <div class="nhsuk-card__content">
+                                                <h2
+                                                    class="nhsuk-card__heading nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1">
+                                                    <span role="text">
+                                                        <span class="nhsuk-u-visually-hidden">Total number of
+                                                            invoices:</span> 500
+                                                    </span>
+                                                </h2>
+                                                Total number of invoices
+
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+                                        <div class="nhsuk-card">
+                                            <div class="nhsuk-card__content">
+                                                <h2
+                                                    class="nhsuk-card__heading nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1">
+                                                    <span role="text">
+                                                        <span class="nhsuk-u-visually-hidden">Total amount to be
+                                                            paid:</span> 300.00
+                                                    </span>
+                                                </h2>
+                                                Total amount to be paid
+
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -294,12 +377,9 @@ Manage incoming international healthcare claims - NHSBSA
 
             <!-- *** Start of deductions tab *** -->
             <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="deductions">
-<div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-two-thirds">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
                         <h2 class="nhsuk-heading-l">Deductions</h2>
-                    </div>
-                    <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-                        <a href="17-deduction-type" class="nhsuk-button nhsuk-u-margin-bottom-4" role="button" data-module="nhsuk-button" data-nhsuk-button-init="">Add a new deduction</a>
                     </div>
                 </div>
 
@@ -316,19 +396,24 @@ Manage incoming international healthcare claims - NHSBSA
                                     <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
                                     <thead class="nhsuk-table__head" role="rowgroup">
                                         <tr role="row">
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader"
+                                                style="width:30%;">
                                                 Original claim reference
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Global
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader"
+                                                style="width:20%;">Global
                                                 credit note reference
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Individual
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader"
+                                                style="width:30%;">Individual
                                                 credit note reference
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader"
+                                                style="width:10%;">
                                                 Added by
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
+                                                role="columnheader" style="width:10%;">
                                                 Amount
                                             </th>
                                         </tr>
@@ -339,24 +424,24 @@ Manage incoming international healthcare claims - NHSBSA
                                                     class="nhsuk-table-responsive__heading" aria-hidden="true">Original
                                                     claim
                                                     reference
-                                                </span>36284249CR0501E
+                                                </span>11322249CR0501E
                                             </td>
                                             <td class="nhsuk-table__cell" role="cell"><span
                                                     class="nhsuk-table-responsive__heading" aria-hidden="true">Global
                                                     credit note reference
-                                                </span>6784</td>
+                                                </span>6786</td>
                                             <td class="nhsuk-table__cell" role="cell"><span
                                                     class="nhsuk-table-responsive__heading"
                                                     aria-hidden="true">Individual credit note reference
-                                                </span>675456UI</td>
+                                                </span>765456LK</td>
                                             <td class="nhsuk-table__cell" role="cell"><span
                                                     class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
-                                                </span>Isla Fields</td>
-                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                </span>DHSC</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
                                                     class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
-                                                </span>100.00</td>
+                                                </span>50.00</td>
                                         </tr>
-                                                                                <tr class="nhsuk-table__row" role="row">
+                                        <tr class="nhsuk-table__row" role="row">
                                             <td class="nhsuk-table__cell" role="cell"><span
                                                     class="nhsuk-table-responsive__heading" aria-hidden="true">Original
                                                     claim
@@ -374,7 +459,7 @@ Manage incoming international healthcare claims - NHSBSA
                                             <td class="nhsuk-table__cell" role="cell"><span
                                                     class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
                                                 </span>System</td>
-                                            <td class="nhsuk-table__cell" role="cell"><span
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
                                                     class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
                                                 </span>100.00</td>
                                         </tr>
@@ -398,13 +483,16 @@ Manage incoming international healthcare claims - NHSBSA
                                     <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
                                     <thead class="nhsuk-table__head" role="rowgroup">
                                         <tr role="row">
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Global
+                                            <th scope="col" class="nhsuk-table__header " role="columnheader"
+                                                style="width:80%;">Global
                                                 IDP reference
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader"
+                                                style="width:10%;">
                                                 Added by
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
+                                                role="columnheader" style="width:10%;">
                                                 Amount
                                             </th>
                                         </tr>
@@ -418,7 +506,7 @@ Manage incoming international healthcare claims - NHSBSA
                                             <td class="nhsuk-table__cell" role="cell"><span
                                                     class="nhsuk-table-responsive__heading" aria-hidden="true">Added by
                                                 </span>Isla Fields</td>
-                                            <td class="nhsuk-table__cell" role="cell"><span
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
                                                     class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
                                                 </span>100.00</td>
                                         </tr>
@@ -438,7 +526,57 @@ Manage incoming international healthcare claims - NHSBSA
                                 </span>
                             </summary>
                             <div class="nhsuk-details__text">
-                                <p class="nhsuk-body">There are former payment deductions.</p>
+                                <table class="nhsuk-table-responsive" role="table">
+                                    <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
+                                    <thead class="nhsuk-table__head" role="rowgroup">
+                                        <tr role="row">
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader"
+                                                style="width:30%;">
+                                                Original claim reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader"
+                                                style="width:20%;">Global
+                                                credit note reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader"
+                                                style="width:30%;">Individual
+                                                credit note reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader"
+                                                style="width:10%;">
+                                                Added by
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
+                                                role="columnheader" style="width:10%;">
+                                                Amount
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="nhsuk-table__body">
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Original
+                                                    claim
+                                                    reference
+                                                </span>11322249CR0501E
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Global
+                                                    pay reference
+                                                </span>6784</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading"
+                                                    aria-hidden="true">Individual pay reference
+                                                </span>123456PA</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
+                                                </span>DHSC</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
+                                                </span>100.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </details>
                     </div>
@@ -457,80 +595,49 @@ Manage incoming international healthcare claims - NHSBSA
                                     <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
                                     <thead class="nhsuk-table__head" role="rowgroup">
                                         <tr role="row">
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:30%">
                                                 Original claim reference
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Global pay
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:20%">Global pay
                                                 reference
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Latest
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader" style="width:30%">Latest
                                                 submission ID
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+    <th scope="col" class="nhsuk-table__header" role="columnheader"
+                                                style="width:10%;">
                                                 Added by
                                             </th>
-                                            <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric" role="columnheader" style="width:10%">
                                                 Amount
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody class="nhsuk-table__body">
                                         <tr class="nhsuk-table__row" role="row">
-
-                                            <td class="nhsuk-table__cell" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Original
+                                       
+                                            <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Original
                                                     claim
                                                     reference
                                                 </span>11322249CR0501E
                                             </td>
-                                            <td class="nhsuk-table__cell" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Global
+                                            <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Global
                                                     pay
                                                     reference
                                                 </span>123456PA</td>
-                                            <td class="nhsuk-table__cell" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Latest
+                                            <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Latest
                                                     submission
                                                     ID
                                                 </span>6784</td>
-                                                                                            <td class="nhsuk-table__cell" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Added by
-
+                                                <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
                                                 </span>DHSC</td>
 
-                                            <td class="nhsuk-table__cell" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
 
                                                 </span>100.00</td>
                                         </tr>
-                                        <tr class="nhsuk-table__row" role="row">
-
-                                            <td class="nhsuk-table__cell" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Original
-                                                    claim
-                                                    reference
-                                                </span>11322249CR0501E
-                                            </td>
-                                            <td class="nhsuk-table__cell" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Global
-                                                    pay
-                                                    reference
-                                                </span>123456PA</td>
-                                            <td class="nhsuk-table__cell" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Latest
-                                                    submission
-                                                    ID
-                                                </span>6784</td>
-                                            <td class="nhsuk-table__cell" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Added by
-
-                                                </span>DHSC</td>
-
-                                            <td class="nhsuk-table__cell" role="cell"><span
-                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
-
-                                                </span>50.00</td>
-                                        </tr>
+                         
                                     </tbody>
                                 </table>
                             </div>
@@ -547,7 +654,38 @@ Manage incoming international healthcare claims - NHSBSA
                                 </span>
                             </summary>
                             <div class="nhsuk-details__text">
-                                <p class="nhsuk-body">There are overpayment deductions.</p>
+                                                               <table class="nhsuk-table-responsive" role="table">
+                                    <!-- <caption class="nhsuk-table__caption">Latest submissions</caption> -->
+                                    <thead class="nhsuk-table__head" role="rowgroup">
+                                        <tr role="row">
+                                            <th scope="col" class="nhsuk-table__header " role="columnheader"
+                                                style="width:80%;">Individual reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader"
+                                                style="width:10%;">
+                                                Added by
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric"
+                                                role="columnheader" style="width:10%;">
+                                                Amount
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="nhsuk-table__body">
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Global
+                                                    Individual reference
+                                                </span>12345678ABC</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Added by
+                                                </span>DHSC</td>
+                                            <td class="nhsuk-table__cell nhsuk-table__cell--numeric" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Amount
+                                                </span>50.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </details>
                     </div>
@@ -724,7 +862,7 @@ Manage incoming international healthcare claims - NHSBSA
                                 <!-- Start header block-->
                                 <div class="nhsuk-grid-row nhsuk-u-padding-bottom-0">
                                     <div class="nhsuk-grid-column-two-thirds">
-                                        <p class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Showing 1 to 10 of 103
+                                        <p class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Showing 1 to 10 of 500
                                             results</p>
                                     </div>
                                     <div class="nhsuk-grid-column-one-third">
@@ -1442,7 +1580,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                         <li class="nhsuk-pagination__item">
                                                             <a class="nhsuk-link nhsuk-pagination__link" href="#"
                                                                 aria-label="Page 9000">
-                                                                11
+                                                                50
                                                             </a>
                                                         </li>
                                                     </ul>
