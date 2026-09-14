@@ -30,6 +30,9 @@ Manage incoming international healthcare claims - NHSBSA
         <li class="nhsuk-breadcrumb__list-item">
             <a class="nhsuk-breadcrumb__link" href="">Claim outcomes</a>
         </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Information on payment ID 1234</a>
+        </li>
     </ol>
     <a class="nhsuk-back-link" href="#">
         <span class="nhsuk-u-visually-hidden">Back to </span>claims
@@ -48,8 +51,8 @@ Manage incoming international healthcare claims - NHSBSA
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <span class="nhsuk-caption-l">Add a new outcome</span>
-        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">Down payment details</h1>
+        <span class="nhsuk-caption-l">Add a DHSC reply</span>
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">Overpayment details</h1>
     </div>
 </div>
 
@@ -57,33 +60,33 @@ Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-card nhsuk-u-margin-bottom-4">
             <div class="nhsuk-card__content">
-                <form action="06-create-cya" method="post">
-                    <div class="nhsuk-form-group">
-                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="input-1">
-                            Global IDP reference
-                        </label>
-                        <input class="nhsuk-input nhsuk-u-width-one-half" id="input-1" name="input-1" type="text">
-                    </div>
-                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                    <div class="nhsuk-form-group">
-                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="input-2">
-                            Down payment amount
-                        </label>
-                        <input class="nhsuk-input nhsuk-u-width-one-half" id="input-2" name="input-2" type="text">
-                    </div>
-                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                    <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit"
-                        data-nhsuk-button-init="">
-                        Continue
-                    </button>
-                </form>
+                <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-4">Overpayment 1</h2>
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="input-1">
+                        Individual reference
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-one-half" id="input-1" name="input-1" type="text">
+                </div>
+                <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="input-2">
+                        Amount
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-one-half" id="input-2" name="input-2" type="text">
+                </div>
+                <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+                <div class="nhsuk-button-group nhsuk-u-margin-bottom-0">
+                    <a href="#/" class="nhsuk-button" role="button" data-module="nhsuk-button"
+                        data-nhsuk-button-init="">Continue</a>
+
+                    <a href="12b-deduction-overpayment" class="nhsuk-button nhsuk-button--secondary" role="button"
+                        data-module="nhsuk-button" data-nhsuk-button-init="">Add another overpayment</a>
+                </div>
             </div>
         </div>
         <p class="nhsuk-body"><a href="#/">Cancel</a></p>
     </div>
 </div>
-
-
-
 
 {% endblock %}

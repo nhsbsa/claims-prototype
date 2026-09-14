@@ -49,7 +49,7 @@ Manage incoming international healthcare claims - NHSBSA
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <span class="nhsuk-caption-l">Add a new outcome</span>
-        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">Claim for reimbursement of fixed amount details</h1>
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">Down payment details</h1>
     </div>
 </div>
 
@@ -57,36 +57,21 @@ Manage incoming international healthcare claims - NHSBSA
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-card nhsuk-u-margin-bottom-4">
             <div class="nhsuk-card__content">
-                <form action="04-create-down-payment" method="post">
+                <form action="05-create-fixed-amount-details" method="post">
                     <div class="nhsuk-form-group">
                         <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="input-1">
-                            Lump sum amount
+                            Global IDP reference
                         </label>
                         <input class="nhsuk-input nhsuk-u-width-one-half" id="input-1" name="input-1" type="text">
                     </div>
                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
                     <div class="nhsuk-form-group">
                         <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="input-2">
-                            Total amount of claim
+                            Down payment amount
                         </label>
                         <input class="nhsuk-input nhsuk-u-width-one-half" id="input-2" name="input-2" type="text">
                     </div>
                     <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                    <div class="nhsuk-form-group">
-                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="input-3">
-                            Bank account number (IBAN)
-                        </label>
-                        <input class="nhsuk-input nhsuk-u-width-one-half" id="input-3" name="input-3" type="text">
-                    </div>
-                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-                    <div class="nhsuk-form-group">
-                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="input-4">
-                            BIC-SWIFT (optional)
-                        </label>
-                        <input class="nhsuk-input nhsuk-u-width-one-half" id="input-4" name="input-4" type="text">
-                    </div>
-                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
                     <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit"
                         data-nhsuk-button-init="">
                         Continue
