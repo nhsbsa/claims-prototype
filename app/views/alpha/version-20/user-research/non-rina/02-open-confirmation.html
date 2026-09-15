@@ -17,20 +17,20 @@ Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-        <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Home</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6791</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Reply to contestation ID 7813</a>
-            </li>
-        </ol>
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6791</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Reply to contestation ID 7813</a>
+        </li>
+    </ol>
     <a class="nhsuk-back-link" href="#">
         <span class="nhsuk-u-visually-hidden">Back to </span>claims
     </a>
@@ -39,19 +39,25 @@ Manage incoming international healthcare claims - NHSBSA
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
+        <span class="nhsuk-caption-l">Claim ID 6791 &ndash; Spain</span>
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">Open the reply to contestation ID 7813</h1>
+        <p>If you select yes:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-6">
+            <li>you cannot work on any other submissions for claim ID 6791 until this one is closed</li>
+            <li>the system will not check this submission automatically</li>
+            <li>you must review and update the invoices yourself</li>
+        </ul>
+
         <form action="03-details-active" method="post">
             <div class="nhsuk-form-group">
 
                 <fieldset class="nhsuk-fieldset">
-                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-                        <h1 class="nhsuk-fieldset__heading">
-                            <span class="nhsuk-caption-l">Claim ID 6791 &ndash; Spain</span>
-                            Are you sure you want to open reply to contestation ID 7813?
-                        </h1>
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h2 class="nhsuk-fieldset__heading">
+                            Are you sure you want to continue?
+                        </h2>
                     </legend>
-                    <div class="nhsuk-hint" id="contact-hint">
-                        If you select yes, you cannot work on any other submissions for Claim ID 6791 until this one is closed
-                    </div>
+
                     <div class="nhsuk-radios">
                         <div class="nhsuk-radios__item">
                             <input class="nhsuk-radios__input" id="open-yes" name="open" type="radio" value="yes">
