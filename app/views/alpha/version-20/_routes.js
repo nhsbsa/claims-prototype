@@ -6,6 +6,21 @@ const path = require('path');
 
 const axios = require('axios');
 
+///////CREATE AN INTERNAL REVIEW SUBMISSION ///////
+//// How would you like to add the invoices? ////
+router.post('/route-internal-review-invoices', function(req,res){
+    var method = req.session.data['method']
+    if (method == "all") {
+        res.redirect('/alpha/version-20/proof-of-concept/internal-review/all-invoices/05-create-cya')
+        }
+    else if (method == "manual") {
+        res.redirect('/alpha/version-20/proof-of-concept/internal-review/manual-invoices/05-create-cya')
+        }
+    else {
+        res.redirect('/alpha/version-20/proof-of-concept/internal-review/04-create-invoices-option')
+    }
+})
+
 ///////CREATE A CONTESTATION///////
 
 //// How would you like to add the invoices? ////

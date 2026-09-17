@@ -39,19 +39,25 @@ Manage incoming international healthcare claims - NHSBSA
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <form action="#/" method="post">
+        <span class="nhsuk-caption-l">Claim ID 6784 – France</span>
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">Open internal review ID 3172</h1>
+        <p>If you select yes:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-6">
+            <li>you cannot work on any other submissions for claim ID 6784 until this one is closed</li>
+            <li>the system will not check this submission automatically</li>
+            <li>you must review and update the invoices yourself</li>
+        </ul>
+
+        <form action="16-details-active" method="post">
             <div class="nhsuk-form-group">
 
                 <fieldset class="nhsuk-fieldset">
-                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-                        <h1 class="nhsuk-fieldset__heading">
-                            <span class="nhsuk-caption-l">Claim ID 6784 &ndash; France</span>
-                            Are you sure you want to open internal review ID 3172?
-                        </h1>
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                        <h2 class="nhsuk-fieldset__heading">
+                            Are you sure you want to open this submission?
+                        </h2>
                     </legend>
-                    <div class="nhsuk-hint" id="contact-hint">
-                        If you select yes, you cannot work on any other submissions for Claim ID 6784 until this one is closed.
-                    </div>
+
                     <div class="nhsuk-radios">
                         <div class="nhsuk-radios__item">
                             <input class="nhsuk-radios__input" id="open-yes" name="open" type="radio" value="yes">
@@ -69,7 +75,7 @@ Manage incoming international healthcare claims - NHSBSA
                 </fieldset>
             </div>
 
-            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit" data-nhsuk-button-init="">
                 Submit
             </button>
         </form>
