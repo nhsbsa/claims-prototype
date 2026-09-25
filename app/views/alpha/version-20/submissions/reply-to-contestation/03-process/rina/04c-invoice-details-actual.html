@@ -59,9 +59,11 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
             </h1>
         </div>
         <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-            <a href="#" class="nhsuk-button" role="button" data-module="nhsuk-button">Manage invoice</a>
-            <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
-                invoice</a>
+            <div class="nhsuk-button-group" style="float:right;">
+                <a href="#/" class="nhsuk-button" role="button" data-module="nhsuk-button">Manage invoice</a>
+                <a href="#/" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
+                    invoice</a>
+            </div>
         </div>
     </div>
     <!-- End of header block -->
@@ -106,7 +108,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Initial total amount
+                                Initial amount requested
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 600.00
@@ -114,7 +116,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Total amount before this submission
+                                Amount requested before this submission
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 500.00
@@ -187,12 +189,15 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     <!-- Start of decision -->
                     <div class="nhsuk-grid-row">
                         <div class="nhsuk-grid-column-full">
-                            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-                                Decision
-                            </h3>
                             <div class="nhsuk-card" id="status">
-                                <div class="nhsuk-card__content nhsuk-u-padding-bottom-3"
+                                <div class="nhsuk-card__heading-container nhsuk-u-padding-bottom-0"
                                     style="padding:18px 16px 16px 16px;">
+                                    <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                                        Decision
+                                    </h2>
+                                </div>
+                                <div class="nhsuk-card__content nhsuk-u-padding-bottom-3"
+                                    style="padding:0px 16px 16px 16px;">
                                     <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-0">
                                         <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
                                             <div class="nhsuk-card nhsuk-u-margin-bottom-0">
@@ -238,16 +243,13 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     <!-- start data comparison -->
                     <div class="nhsuk-grid-row">
                         <div class="nhsuk-grid-column-one-half">
-                            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-                                Invoice details from France
-                            </h3>
                             <div class="nhsuk-card nhsuk-u-margin-bottom-0">
-                                <div class="nhsuk-card__content" style="padding:16px;">
-
-
-
-
-
+                                <div class="nhsuk-card__heading-container" style="padding:18px 16px 0px 16px;">
+                                    <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                                        Invoice details from France
+                                    </h2>
+                                </div>
+                                <div class="nhsuk-card__content" style="padding:0px 16px 16px 16px;">
 
                                     <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
                                         Person details
@@ -371,7 +373,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         Invoice period and amount
                                     </h4>
                                     <hr style="margin:0px 0px 10px 0px;">
-                                    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+                                    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
                                         <div class="nhsuk-summary-list__row">
                                             <dt class="nhsuk-summary-list__key">
                                                 Start date
@@ -390,7 +392,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         </div>
                                         <div class="nhsuk-summary-list__row">
                                             <dt class="nhsuk-summary-list__key">
-                                                Total amount
+                                                Requested amount
                                             </dt>
                                             <dd class="nhsuk-summary-list__value">
                                                 0
@@ -401,26 +403,25 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             </div>
                         </div>
                         <div class="nhsuk-grid-column-one-half">
-                            <div class="nhsuk-grid-row">
-                                <div class="nhsuk-grid-column-two-thirds">
-                                    <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-                                        Matched OHS person record
-                                    </h3>
-                                </div>
-                                <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-                                    <p class="nhsuk-body nhsuk-u-margin-bottom-0"><a href="#/" class="nhsuk-link">View
-                                            person record</a></p>
-                                </div>
-                            </div>
                             <div class="nhsuk-card nhsuk-u-margin-bottom-3">
-                                <div class="nhsuk-card__content" style="padding:16px;">
+                                <div class="nhsuk-card__heading-container" style="padding:18px 16px 0px 16px;">
+                                    <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                                        Matched OHS person record
+                                    </h2>
+                                    <ul class="nhsuk-card__actions">
+                                        <li class="nhsuk-card__action">
+                                            <a class="nhsuk-link" href="#/">View<span class="nhsuk-u-visually-hidden">
+                                                    View</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="nhsuk-card__content" style="padding:0px 16px 16px 16px;">
 
                                     <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
                                         Person details
                                     </h4>
                                     <hr style="margin:0px 0px 10px 0px;">
-
-                                    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+                                    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
                                         <div class="nhsuk-summary-list__row">
                                             <dt class="nhsuk-summary-list__key">
                                                 Last name

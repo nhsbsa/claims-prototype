@@ -59,9 +59,12 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
             </h1>
         </div>
         <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-            <a href="05a-confirmation" class="nhsuk-button" role="button" data-module="nhsuk-button">Mark complete</a>
-            <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
-                invoice</a>
+            <div class="nhsuk-button-group" style="float:right;">
+                <a href="05a-confirmation" class="nhsuk-button" role="button" data-module="nhsuk-button">Mark
+                    complete</a>
+                <a href="#/" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
+                    invoice</a>
+            </div>
         </div>
     </div>
     <!-- End of header block -->
@@ -106,7 +109,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Initial total months
+                                Initial months requested
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 6
@@ -115,7 +118,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </div>
                         <div class="nhsuk-summary-list__row">
                             <dt class="nhsuk-summary-list__key">
-                                Total months before this submission
+                                Months requested before this submission
                             </dt>
                             <dd class="nhsuk-summary-list__value">
                                 6
@@ -189,12 +192,15 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     <!-- Start of decision -->
                     <div class="nhsuk-grid-row">
                         <div class="nhsuk-grid-column-full">
-                            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-                                Decision
-                            </h3>
                             <div class="nhsuk-card" id="status">
-                                <div class="nhsuk-card__content nhsuk-u-padding-bottom-0"
+                                <div class="nhsuk-card__heading-container nhsuk-u-padding-bottom-0"
                                     style="padding:18px 16px 16px 16px;">
+                                    <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                                        Decision
+                                    </h2>
+                                </div>
+                                <div class="nhsuk-card__content nhsuk-u-padding-bottom-0"
+                                    style="padding:0px 16px 16px 16px;">
 
                                     <div class="nhsuk-grid-row">
                                         <div class="nhsuk-grid-column-one-third">
@@ -1053,46 +1059,17 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
 </div>
 <!-- End of decision -->
 
-<!-- Start of reply reason -->
-<!-- <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-            Contestation reply reason
-        </h3>
-        <div class="nhsuk-card" id="">
-            <div class="nhsuk-card__content nhsuk-u-padding-bottom-3" style="padding:18px 16px 16px 16px;">
-                <p class="nhsuk-body">Enclosed you find the entitlement document</p>
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- End of reply reason -->
-
-<!-- Start of reply reason hint text-->
-<!-- <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-inset-text" style="margin-top:0px;">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">Contestation reply reason</h3>
-            <p>Enclosed you find the entitlement document</p>
-        </div>
-    </div>
-</div> -->
-<!-- End of reply reason hint text-->
 
 <!-- start data comparison -->
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-half">
-        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-            Invoice details from France
-        </h3>
         <div class="nhsuk-card nhsuk-u-margin-bottom-0">
-            <div class="nhsuk-card__content" style="padding:16px;">
-
-
-
-
-
+            <div class="nhsuk-card__heading-container" style="padding:18px 16px 0px 16px;">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                    Invoice details from France
+                </h2>
+            </div>
+            <div class="nhsuk-card__content" style="padding:0px 16px 16px 16px;">
 
                 <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
                     Person details
@@ -1147,22 +1124,6 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                             Enclosed you find the entitlement document
                         </dd>
                     </div>
-                    <!-- <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                            Reply reason
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                            Other
-                        </dd>
-                    </div>
-                    <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                            Details
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                            The additional information that the submitting country has sent will appear here. This can be up to 500 characters.
-                        </dd>
-                    </div> -->
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
                             Months still requested
@@ -1224,7 +1185,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     Invoice period and amount
                 </h4>
                 <hr style="margin:0px 0px 10px 0px;">
-                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-2">
+                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
                             Start date
@@ -1243,7 +1204,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Total amount
+                            Requested months
                         </dt>
                         <dd class="nhsuk-summary-list__value">
                             6
@@ -1254,20 +1215,23 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
         </div>
     </div>
     <div class="nhsuk-grid-column-one-half">
-        <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-two-thirds">
-                <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-3">
-                    Matched OHS person record
-                </h3>
-            </div>
-            <div class="nhsuk-grid-column-one-third" style="text-align:right;">
-                <p class="nhsuk-body nhsuk-u-margin-bottom-0"><a href="#/" class="nhsuk-link">View
-                        person record</a></p>
-            </div>
-        </div>
         <div class="nhsuk-card nhsuk-u-margin-bottom-3">
-            <div class="nhsuk-card__content" style="padding:16px;">
-
+            <div class="nhsuk-card__heading-container" style="padding:18px 16px 0px 16px;">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                    Matched OHS person record
+                </h2>
+                <ul class="nhsuk-card__actions">
+                    <li class="nhsuk-card__action">
+                        <a class="nhsuk-link" href="#/">View<span class="nhsuk-u-visually-hidden">
+                                View</span></a>
+                    </li>
+                    <li class="nhsuk-card__action">
+                        <a class="nhsuk-link" href="#/">Unlink<span class="nhsuk-u-visually-hidden">
+                                Unlink</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nhsuk-card__content" style="padding:0px 16px 16px 16px;">
                 <h4 class="nhsuk-card__heading nhsuk-heading-s nhsuk-u-margin-bottom-1">
                     Person details
                 </h4>
@@ -1323,13 +1287,9 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         </dd>
                     </div>
                 </dl>
-                <div class="nhsuk-button-group">
-                    <a href="#" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-2" role="button"
-                        data-module="nhsuk-button" data-nhsuk-button-init="">Unlink person
-                        from invoice</a>
-                    <a href="#/" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-2 " role="button"
-                        data-module="nhsuk-button" data-nhsuk-button-init="">Search for another person</a>
-                </div>
+                <a href="#/" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-3" role="button"
+                    data-module="nhsuk-button" data-nhsuk-button-init="">Search for
+                    another person</a>
             </div>
         </div>
     </div>
