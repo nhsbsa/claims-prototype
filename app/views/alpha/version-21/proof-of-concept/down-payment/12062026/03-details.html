@@ -1,0 +1,86 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim outcomes</a>
+        </li>
+    </ol>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<!-- Start of title block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <span class="nhsuk-caption-l">Add a new outcome</span>
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">Down payment details</h1>
+    </div>
+</div>
+<!-- End of title block -->
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-card nhsuk-u-margin-bottom-4">
+            <div class="nhsuk-card__content">
+                <form action="04-create-cya" method="post">
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="ref">
+                            Global IDP reference
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-one-half" id="ref" name="ref" type="text">
+                    </div>
+                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="amount">
+                            Total amount
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-one-half" id="amount" name="amount" type="text">
+                    </div>
+                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1" for="percentage">
+                            Percentage of total amount of benefits
+                        </label>
+                        <input class="nhsuk-input nhsuk-u-width-one-half" id="percentage" name="percentage" type="text">
+                    </div>
+                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                    <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+        <p class="nhsuk-body"><a href="cancel-confirmation">Cancel</a></p>
+    </div>
+</div>
+
+{% endblock %}

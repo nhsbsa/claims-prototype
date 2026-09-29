@@ -1,0 +1,77 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Internal review ID 3172</a>
+        </li>
+    </ol>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-panel">
+            <h1 class="nhsuk-panel__title">
+                Invoices added to internal review
+            </h1>
+            <div class="nhsuk-panel__body">
+                Internal review reference <strong>123456789E</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <p class="nhsuk-body"> The invoices have been added to the internal review.</p>
+        <h2 class="nhsuk-heading-m">What happens next</h2>
+        <p class="nhsuk-body">You can continue to add and remove invoices.</p>
+        <p class="nhsuk-body">Once you confirm all the invoices are added you will be able to open the internal review and start processing them.</p>
+        <div class="nhsuk-button-group">
+            <a href="12-details-pending" class="nhsuk-button" role="button" data-module="nhsuk-button" data-nhsuk-button-init="">Return to
+                internal review</a>
+            <a href="#/" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button" data-nhsuk-button-init="">Return to claim</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

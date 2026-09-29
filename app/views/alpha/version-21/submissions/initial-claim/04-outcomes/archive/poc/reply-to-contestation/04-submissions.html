@@ -1,0 +1,163 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Outcomes</a>
+        </li>
+    </ol>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<!-- Start back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
+    </div>
+</div>
+<!-- End back link -->
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <span class="nhsuk-caption-l">Add a new outcome</span>
+        <div class="nhsuk-card nhsuk-u-margin-bottom-4">
+            <div class="nhsuk-card__content">
+                <form action="" method="post">
+                    <div class="nhsuk-form-group">
+                        <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-9">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                                <h1 class="nhsuk-fieldset__heading">
+                                    Which submissions would you like to include?
+                                </h1>
+                            </legend>
+                            <div class="nhsuk-radios" data-module="nhsuk-radios">
+                                <div class="nhsuk-radios__item">
+                                    <input class="nhsuk-radios__input" id="invoices-all" name="invoices" type="radio"
+                                        value="all">
+                                    <label class="nhsuk-label nhsuk-radios__label" for="invoices-all">
+                                        All available submissions
+                                    </label>
+                                </div>
+                                <div class="nhsuk-radios__item">
+                                    <input class="nhsuk-radios__input" id="invoices-manual" name="invoices" type="radio"
+                                        value="manual">
+                                    <label class="nhsuk-label nhsuk-radios__label" for="invoices-manual">
+                                        Select individual submissions
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-0" role="table">
+                                            <caption class="nhsuk-table__caption">All available submissions</caption>
+                                            <thead class="nhsuk-table__head" role="rowgroup">
+                                                <tr role="row">
+                                                    <th scope="col" class="nhsuk-table__header" role="columnheader">Submission ID
+                                                    </th>
+                                                    <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                                        Reference
+                                                    </th>
+                                                    <th scope="col" class="nhsuk-table__header" role="columnheader">Type
+                                                    </th>
+                                                    <th scope="col" class="nhsuk-table__header" role="columnheader">Date
+                                                        received</th>
+                                                    <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                                        Target date
+                                                    </th>
+                                                    <th scope="col" class="nhsuk-table__header" role="columnheader">
+                                                        Status</th>
+                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody class="nhsuk-table__body">
+                                                <tr class="nhsuk-table__row" role="row">
+                                                    <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Submission ID
+                                                        </span>7766
+                                                    </td>
+                                                    <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Reference
+                                                        </span>1234567898
+                                                    </td>
+                                                    <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+                                                        </span>Reply to contestation</td>
+                                                    <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                            received
+                                                        </span>19 Jun 2025</td>
+                                                    <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Target
+                                                            date
+                                                        </span>19 Jun 2026</td>
+                                                    <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                                        </span>Processed
+                                                    </td>
+                                               
+
+                                                </tr>
+                                                                                                <tr class="nhsuk-table__row" role="row">
+                                                    <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Submission ID
+                                                        </span>6801
+                                                    </td>
+                                                    <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Reference
+                                                        </span>547433678
+                                                    </td>
+                                                    <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+                                                        </span>Reply to contestation</td>
+                                                    <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                            received
+                                                        </span>15 Jun 2025</td>
+                                                    <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Target
+                                                            date
+                                                        </span>15 Jun 2026</td>
+                                                    <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                                        </span>Processed
+                                                    </td>
+                                                   
+
+                                                </tr>
+                                                                           
+
+                                            </tbody>
+                                        </table>
+                    </div>
+                    <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

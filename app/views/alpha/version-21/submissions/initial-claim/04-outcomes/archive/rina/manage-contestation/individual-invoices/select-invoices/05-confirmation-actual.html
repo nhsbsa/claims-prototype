@@ -1,0 +1,83 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Initial claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Outcomes</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Contestation ID 123</a>
+        </li>
+    </ol>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-panel">
+            <h1 class="nhsuk-panel__title">
+                Invoices added to contestation
+            </h1>
+            <div class="nhsuk-panel__body">
+                Our contestation reference <strong>6784ID6784</strong>
+            </div>
+        </div>
+        <p>You've successfully added invoices to contestation ID 123 for France.</p>
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <p class="nhsuk-heading-xl nhsuk-u-font-size-54 nhsuk-u-margin-bottom-1">1 <span class="nhsuk-u-visually-hidden">Total invoices</span></p>Total invoices
+                    </div>
+                </div>
+            </li>
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <p class="nhsuk-heading-xl nhsuk-u-font-size-54 nhsuk-u-margin-bottom-1">109.43 <span class="nhsuk-u-visually-hidden">Total amount</span></p>Total amount
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <h2 class="nhsuk-heading-m">What happens next</h2>
+        <p class="nhsuk-body">You can continue to add and remove invoices.</p>
+        <p class="nhsuk-body">Once you've added the invoices you need, you can mark all the invoices as added.</p>
+        <p class="nhsuk-body">You will then be able to manage the contestation to copy and paste the information into RINA and download the XML to upload to RINA?</p>
+
+        <a href="" class="nhsuk-button" role="button" data-module="nhsuk-button">Return to contestation</a>
+    </div>
+</div>
+
+{% endblock %}
