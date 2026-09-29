@@ -17,20 +17,20 @@ Manage incoming international healthcare claims - NHSBSA
 {% block beforeContent %}
 <!-- Start of breadcrumb -->
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-        <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Home</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claims</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
-            </li>
-            <li class="nhsuk-breadcrumb__list-item">
-                <a class="nhsuk-breadcrumb__link" href="">Internal review ID 3172</a>
-            </li>
-        </ol>
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claim ID 6784</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Internal review ID 3172</a>
+        </li>
+    </ol>
     <a class="nhsuk-back-link" href="#">
         <span class="nhsuk-u-visually-hidden">Back to </span>claims
     </a>
@@ -39,19 +39,22 @@ Manage incoming international healthcare claims - NHSBSA
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
+        <span class="nhsuk-caption-l">Claim ID 6784 &ndash; France</span>
+        <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">Open internal review ID 3172</h1>
+        <p>If you select yes:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-6">
+            <li>you cannot work on any other submissions for claim ID 6784 until this one is closed</li>
+            <li>the system will automatically review each invoice</li>
+            <li>you'll need to check any invoices the system cannot automatically accept, contest or withdraw</li>
+        </ul>
         <form action="09-details-active" method="post">
             <div class="nhsuk-form-group">
-
                 <fieldset class="nhsuk-fieldset">
-                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-                        <h1 class="nhsuk-fieldset__heading">
-                            <span class="nhsuk-caption-l">Claim ID 6784 &ndash; France</span>
-                            Are you sure you want to open internal review ID 3172?
-                        </h1>
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                        <h2 class="nhsuk-fieldset__heading">
+                            Are you sure you want to open this submission?
+                        </h2>
                     </legend>
-                    <div class="nhsuk-hint" id="contact-hint">
-                        If you select yes, you cannot work on any other submissions for Claim ID 6784 until this one is closed.
-                    </div>
                     <div class="nhsuk-radios">
                         <div class="nhsuk-radios__item">
                             <input class="nhsuk-radios__input" id="open-yes" name="open" type="radio" value="yes">
@@ -68,8 +71,7 @@ Manage incoming international healthcare claims - NHSBSA
                     </div>
                 </fieldset>
             </div>
-
-            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit" data-nhsuk-button-init="">
                 Submit
             </button>
         </form>
