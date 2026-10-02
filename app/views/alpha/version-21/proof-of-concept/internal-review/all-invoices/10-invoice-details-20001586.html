@@ -166,7 +166,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         for="accepted">
                                         Accepted amount
                                     </label>
-                                    <input class="nhsuk-input" id="accepted" name="accepted" type="text" value="100.00">
+                                    <input class="nhsuk-input" id="accepted" name="accepted" type="text" value="0">
                                 </div>
                             </div>
                             <div class="nhsuk-grid-column-one-third">
@@ -175,7 +175,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                         for="contested">
                                         Contested amount
                                     </label>
-                                    <input class="nhsuk-input " id="contested" name="contested" type="text" value="0">
+                                    <input class="nhsuk-input " id="contested" name="contested" type="text" value="100.00">
                                 </div>
                             </div>
                             <div class="nhsuk-grid-column-one-third">
@@ -193,7 +193,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                         <div class="nhsuk-grid-row">
                             <div class="nhsuk-grid-column-full">
 
-                                <div class="nhsuk-form-group nhsuk-u-margin-bottom-2">
+                                <div class="nhsuk-form-group nhsuk-u-margin-bottom-4">
                                     <label class="nhsuk-label nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1"
                                         for="contestation-reason">
                                         Contestation reason
@@ -224,7 +224,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             check.</option>
 
                                         <option
-                                            value="Entitlement document is unknown or not found. Please provide copy.">
+                                            value="Entitlement document is unknown or not found. Please provide copy." selected>
                                             Entitlement document is unknown or not found. Please
                                             provide
                                             copy.
@@ -323,7 +323,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                             Person moved to another state &ndash; enter date.
                                         </option>
 
-                                        <option value="Other" selected>Other &ndash; enter details.</option>
+                                        <option value="Other">Other &ndash; enter details.</option>
 
                                     </select>
                                 </div>
@@ -927,7 +927,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                 </div>
 
                                 <!-- Other -->
-                                <div id="Other" class="vis">
+                                <div id="Other" class="inv">
                                     <div class="nhsuk-grid-row">
                                         <div class="nhsuk-grid-column-full">
                                             <div class="nhsuk-form-group nhsuk-u-margin-bottom-0"
@@ -941,7 +941,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                                     data-maxlength="255">
                                                     <textarea
                                                         class="nhsuk-textarea form-control nhsuk-js-character-count"
-                                                        id="other-details" name="other-details" rows="5">Entitlement reviewed, needs to be accepted
+                                                        id="other-details" name="other-details" rows="5">
                                                                 </textarea>
                                                     <div class="nhsuk-hint nhsuk-character-count__message"
                                                         id="other-details-info">
@@ -1081,7 +1081,7 @@ Invoice details - Manage incoming international healthcare claims - NHSBSA
                                     </div>
                                     <div class="nhsuk-summary-list__row">
                                         <dt class="nhsuk-summary-list__key">
-                                            Total amount
+                                            Requested amount
                                         </dt>
                                         <dd class="nhsuk-summary-list__value">
                                             100.00
