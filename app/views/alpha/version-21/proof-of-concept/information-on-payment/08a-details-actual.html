@@ -56,14 +56,32 @@ Manage incoming international healthcare claims - NHSBSA
     </div>
     <div class="nhsuk-grid-column-one-half">
         <div class="nhsuk-button-group" style="float:right;">
-            <a href="#/" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Delete
-                information on payment</a>
-            <a href="#" class="nhsuk-button nhsuk-button" role="button" data-module="nhsuk-button">Exit
+            <a href="#" class="nhsuk-button nhsuk-button nhsuk-button--secondary" role="button"
+                data-module="nhsuk-button">Exit
                 information on payment</a>
         </div>
     </div>
 </div>
 <!-- End of title block -->
+
+<!-- Start of warning callout -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-warning-callout" style="margin-top:0;">
+            <h2 class="nhsuk-warning-callout__label">
+                <span role="text">
+                    <span class="nhsuk-u-visually-hidden">Important: </span>
+                    System is creating documents
+                </span>
+            </h2>
+            <p class="nhsuk-body">The system is creating the summary letter and RINA file.</p>
+            <label class="nhsuk-label" for="upload">90% done.</label>
+            <progress class="nhsuk-u-width-one-third" id="upload" value="90" max="100"> 90% </progress>
+            <p><a href="08b-details-actual">Refresh page</a></p>
+        </div>
+    </div>
+</div>
+<!-- End of warning callout -->
 
 <!-- Start header block -->
 <div class="nhsuk-grid-row">
@@ -113,6 +131,16 @@ Manage incoming international healthcare claims - NHSBSA
                                 </dd>
                             </div>
                             <div class="nhsuk-summary-list__row">
+                                <dt class="nhsuk-summary-list__key" style="width:55%">
+                                    Lump sum amount
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    200.00
+                                </dd>
+                                <dd class="nhsuk-summary-list__actions">
+                                </dd>
+                            </div>
+                            <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">
                                     Currency
                                 </dt>
@@ -145,7 +173,7 @@ Manage incoming international healthcare claims - NHSBSA
                             Task list
                         </h2>
                         <ul class="nhsuk-task-list">
-                            <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
+                            <!-- <li class="nhsuk-task-list__item nhsuk-task-list__item--with-link">
                                 <div class="nhsuk-task-list__name-and-hint">
                                     <a class="nhsuk-task-list__link nhsuk-link" href="09-dhsc-reply"
                                         aria-describedby="">
@@ -156,6 +184,16 @@ Manage incoming international healthcare claims - NHSBSA
                                     <strong class="nhsuk-tag nhsuk-tag--blue">
                                         Not yet started
                                     </strong>
+                                </div>
+                            </li> -->
+                            <li class="nhsuk-task-list__item">
+                                <div class="nhsuk-task-list__name-and-hint">
+                                    <div>
+                                        Add DHSC reply
+                                    </div>
+                                </div>
+                                <div class="nhsuk-task-list__status nhsuk-task-list__status--cannot-start-yet" id="">
+                                    Cannot start yet
                                 </div>
                             </li>
                             <li class="nhsuk-task-list__item">
@@ -1759,30 +1797,10 @@ Manage incoming international healthcare claims - NHSBSA
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full">
                         <h2 class="nhsuk-heading-l">Documents</h2>
-
-
                         <div class="nhsuk-grid-row">
                             <div class="nhsuk-grid-column-two-thirds">
-                                <div class="nhsuk-card nhsuk-u-margin-bottom-0">
-                                    <div class="nhsuk-card__content">
-                                        <dl class="nhsuk-summary-list">
-                                            <div class="nhsuk-summary-list__row">
-                                                <dt class="nhsuk-summary-list__key">
-                                                    Summary letter
-                                                </dt>
-                                                <dd class="nhsuk-summary-list__value">
-                                                    filename.doc (1MB)
-                                                </dd>
-                                                <dd class="nhsuk-summary-list__actions">
-                                                    <a class="nhsuk-link" href="#">Download<span
-                                                            class="nhsuk-u-visually-hidden"> contested
-                                                            invoices</span></a>
-                                                </dd>
-                                            </div>
-                                        </dl>
-
-                                    </div>
-                                </div>
+                                <p class="nhsuk-body nhsuk-u-margin-bottom-0">Documents will appear here once the system
+                                    has created them.</p>
                             </div>
                         </div>
                     </div>
