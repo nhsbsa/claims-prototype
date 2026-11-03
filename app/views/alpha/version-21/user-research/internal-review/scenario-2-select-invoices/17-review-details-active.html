@@ -114,7 +114,7 @@ Manage incoming international healthcare claims - NHSBSA
                         <ul class="nhsuk-task-list">
                             <li class="nhsuk-task-list__item">
                                 <div class="nhsuk-task-list__name-and-hint"><a class="nhsuk-link nhsuk-task-list__link"
-                                        href="#invoices">Check
+                                        href="17-review-details-active?filter=check#invoices">Check
                                         invoices</a>
                                 </div>
                                 <div class="nhsuk-task-list__status"><strong class="nhsuk-tag nhsuk-tag--white">
@@ -403,10 +403,27 @@ Manage incoming international healthcare claims - NHSBSA
                             <div class="nhsuk-card__content">
                                 <!-- Start header block-->
                                 <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
+
+
+
+
+                                    {% if (data['filter'] == "check") %}
+                                    <div class="nhsuk-grid-column-two-thirds">
+                                        <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Showing 1 to 1 of 1
+                                            results</h3>
+                                        <p class="nhsuk-u-margin-bottom-2 nhsuk-body-s">Filtered by: <strong
+                                                class="nhsuk-tag nhsuk-tag--aqua-green">
+                                                To check
+                                            </strong></p>
+                                    </div>
+
+                                    {% else %}
                                     <div class="nhsuk-grid-column-two-thirds">
                                         <p class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Showing 1 to 2 of 2
                                             results</p>
                                     </div>
+                                    {% endif %}
+
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group" style="float:right;">
                                             <label class="nhsuk-label" for="results">
@@ -453,7 +470,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         <input class="nhsuk-checkboxes__input"
                                                                             id="filter-status-tobechecked"
                                                                             name="filter-status" type="checkbox"
-                                                                            value="check">
+                                                                            value="check" {% if (data['filter'] == "check") %}checked{% endif %}>
                                                                         <label
                                                                             class="nhsuk-label nhsuk-checkboxes__label"
                                                                             for="filter-status-tobechecked">
@@ -592,14 +609,16 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </div>
                                                     <!-- End sort order -->
                                                     <div class="nhsuk-grid-column-full">
-                                                        <a href="#/">
+                                                        <a href="17-review-details-active?filter=check#invoices">
                                                             <button class="nhsuk-button nhsuk-button--secondary"
                                                                 data-module="nhsuk-button" type="submit"
                                                                 data-nhsuk-button-init="">
                                                                 Apply filters
                                                             </button>
                                                         </a>
-                                                        <p class="nhsuk-u-margin-bottom-0"><a href="">Reset all
+                                                        <p class="nhsuk-u-margin-bottom-0"><a
+                                                                href="17-review-details-active?filter=none#invoices">Reset
+                                                                all
                                                                 filters</a></p>
                                                     </div>
                                                 </div>
@@ -613,6 +632,76 @@ Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-full">
 
+                                        {% if (data['filter'] == "check") %}
+                                        <table role="table" class="nhsuk-table-responsive">
+                                            <!-- <caption class="nhsuk-table__caption">Showing results for: All treatments</caption>  -->
+                                            <thead role="rowgroup" class="nhsuk-table__head">
+                                                <tr role="row">
+                                                    <th role="columnheader" class="" scope="col">
+                                                        Invoice ID
+                                                    </th>
+                                                    <th role="columnheader" class="" scope="col">
+                                                        Invoice reference
+                                                    </th>
+                                                    <th role="columnheader" class="" scope="col">
+                                                        Last name
+                                                    </th>
+                                                    <th role="columnheader" class="" scope="col">
+                                                        First name
+                                                    </th>
+                                                    <th role="columnheader" class="" scope="col">
+                                                        Date of birth
+                                                    </th>
+                                                    <th role="columnheader" class="" scope="col">
+                                                        Entitlement
+                                                    </th>
+                                                    <th role="columnheader" class="" scope="col">
+                                                        Status
+                                                    </th>
+                                                    <th role="columnheader" class="" scope="col">
+                                                        View
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="nhsuk-table__body">
+                                                <tr role="row" class="nhsuk-table__row">
+                                                    <td role="cell" class="nhsuk-table__cell">
+                                                        <span class="nhsuk-table-responsive__heading">Invoice
+                                                            ID</span>20001577
+                                                    </td>
+                                                    <td role="cell" class="nhsuk-table__cell">
+                                                        <span class="nhsuk-table-responsive__heading">Invoice
+                                                            reference</span>26685694
+                                                    </td>
+                                                    <td role="cell" class="nhsuk-table__cell">
+                                                        <span class="nhsuk-table-responsive__heading">Last
+                                                            name</span>Jones
+                                                    </td>
+                                                    <td role="cell" class="nhsuk-table__cell">
+                                                        <span class="nhsuk-table-responsive__heading">First
+                                                            name</span>Elizabeth
+                                                    </td>
+                                                    <td role="cell" class="nhsuk-table__cell">
+                                                        <span class="nhsuk-table-responsive__heading">Date of
+                                                            birth</span>20 Jan 1972
+                                                    </td>
+                                                    <td role="cell" class="nhsuk-table__cell">
+                                                        <span
+                                                            class="nhsuk-table-responsive__heading">Entitlement</span>S1
+                                                    </td>
+                                                    <td role="cell" class="nhsuk-table__cell">
+                                                        <span class="nhsuk-table-responsive__heading">Status</span>To
+                                                        check
+                                                    </td>
+                                                    <td role="cell" class="nhsuk-table__cell">
+                                                        <span class="nhsuk-table-responsive__heading">View</span><a
+                                                            href="18-invoice-details-20001577">View invoice</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        {% else %}
                                         <table role="table" class="nhsuk-table-responsive">
                                             <!-- <caption class="nhsuk-table__caption">Showing results for: All treatments</caption>  -->
                                             <thead role="rowgroup" class="nhsuk-table__head">
@@ -710,11 +799,15 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </td>
                                                     <td role="cell" class="nhsuk-table__cell">
                                                         <span class="nhsuk-table-responsive__heading">View</span><a
-                                                            href="#/">View invoice</a>
+                                                            href="accepted-invoices/invoice-details-20001576">View
+                                                            invoice</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        {% endif %}
+
+
                                     </div>
                                 </div>
                                 <!-- End of table data -->
