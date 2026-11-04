@@ -399,10 +399,22 @@ Manage incoming international healthcare claims - NHSBSA
                             <div class="nhsuk-card__content">
                                 <!-- Start header block-->
                                 <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
+                                    {% if (data['filter'] == "check") %}
+                                    <div class="nhsuk-grid-column-two-thirds">
+                                        <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">No results found</h3>
+                                        <p class="nhsuk-u-margin-bottom-2 nhsuk-body-s">Filtered by: <strong
+                                                class="nhsuk-tag nhsuk-tag--aqua-green">
+                                                To check
+                                            </strong></p>
+                                    </div>
+
+                                    {% else %}
                                     <div class="nhsuk-grid-column-two-thirds">
                                         <p class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Showing 1 to 10 of 2,109
                                             results</p>
                                     </div>
+                                    {% endif %}
+
                                     <div class="nhsuk-grid-column-one-third">
                                         <div class="nhsuk-form-group" style="float:right;">
                                             <label class="nhsuk-label" for="results">
@@ -525,7 +537,7 @@ Manage incoming international healthcare claims - NHSBSA
                                                                         <input class="nhsuk-checkboxes__input"
                                                                             id="filter-status-tobechecked"
                                                                             name="filter-status" type="checkbox"
-                                                                            value="check">
+                                                                            value="check" {% if (data['filter'] == "check") %}checked{% endif %}>
                                                                         <label
                                                                             class="nhsuk-label nhsuk-checkboxes__label"
                                                                             for="filter-status-tobechecked">
@@ -664,14 +676,14 @@ Manage incoming international healthcare claims - NHSBSA
                                                     </div>
                                                     <!-- End sort order -->
                                                     <div class="nhsuk-grid-column-full">
-                                                        <a href="invoice-list-to-check#download-results">
+                                                        <a href="12-review-details-processed?filter=none#invoices">
                                                             <button class="nhsuk-button nhsuk-button--secondary"
                                                                 data-module="nhsuk-button" type="submit"
                                                                 data-nhsuk-button-init="">
                                                                 Apply filters
                                                             </button>
                                                         </a>
-                                                        <p class="nhsuk-u-margin-bottom-0"><a href="">Reset all
+                                                        <p class="nhsuk-u-margin-bottom-0"><a href="12-review-details-processed?filter=none#invoices">Reset all
                                                                 filters</a></p>
                                                     </div>
                                                 </div>
@@ -685,6 +697,11 @@ Manage incoming international healthcare claims - NHSBSA
                                 <div class="nhsuk-grid-row">
                                     <div class="nhsuk-grid-column-full">
 
+
+                                                                            {% if (data['filter'] == "check") %}
+                       
+
+                                    {% else %}
                                         <table role="table" class="nhsuk-table-responsive">
                                             <!-- <caption class="nhsuk-table__caption">Showing results for: All treatments</caption>  -->
                                             <thead role="rowgroup" class="nhsuk-table__head">
@@ -1138,6 +1155,9 @@ Manage incoming international healthcare claims - NHSBSA
                                             </div>
                                         </div>
                                         <!-- End of pagination -->
+                                    {% endif %}
+
+
 
                                     </div>
                                 </div>
