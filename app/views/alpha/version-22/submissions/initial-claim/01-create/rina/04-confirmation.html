@@ -1,0 +1,61 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-logged-in.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Claim created - Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="#">Home</a></li>
+        <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="#">Claims
+            </a></li>
+    </ol>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %}
+
+<!-- Start of central content  -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-panel">
+            <h1 class="nhsuk-panel__title">
+                Claim created for France
+            </h1>
+            <div class="nhsuk-panel__body">
+                Claim ID <strong>6784</strong>
+            </div>
+        </div>
+        <p class="nhsuk-body">The claim reference is 0039795410.</p>
+        <p class="nhsuk-body">An initial submission has been created for this claim. The initial claim ID is 95673.</p>
+        <h2 class="nhsuk-heading-m">What happens next</h2>
+                <p>You can:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet" style="font-weight:normal;">
+            <li>download the invoice XML file from RINA</li>
+            <li>upload invoices to the initial claim</li>
+        </ul>
+        <div class="nhsuk-button-group">
+            <a href="#/" class="nhsuk-button" role="button" data-module="nhsuk-button">Manage
+                initial claim</a>
+            <a href="#/" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">View
+                claim</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- End of central content -->
