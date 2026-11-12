@@ -1,0 +1,45 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-out.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-half">
+        <div style="border: solid; border-color: black; border-width: 6px; padding: 36px;">
+        <h1 class=" nhsuk-heading-xl">
+        You're about to be signed out
+        </h1>
+        <p class="nhsuk-body">To keep our service secure, we will sign you out in <strong>5 minutes</strong>.</p>
+        <p class="nhsuk-body">Any answers you have not submitted will be lost.</p>
+        <div class="nhsuk-button-group nhsuk-u-margin-bottom-0">
+            <button class="nhsuk-button nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                Stay signed in
+            </button>
+            <a href="signed-out" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" role="button" data-module="nhsuk-button" data-nhsuk-button-init="">Sign out</a>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

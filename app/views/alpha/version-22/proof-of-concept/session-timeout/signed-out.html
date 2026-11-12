@@ -1,0 +1,41 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-out.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- Start of title block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl">
+            You have been signed out
+        </h1>
+        <p class="nhsuk-body">Any answers you did not submit have not been saved.</p>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Sign back in
+        </button>
+    </div>
+</div>
+<!-- End of title block -->
+
+
+
+{% endblock %}
