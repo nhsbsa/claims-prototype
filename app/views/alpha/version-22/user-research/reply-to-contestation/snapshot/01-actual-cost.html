@@ -1,0 +1,620 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout-full-width-claim.html -->
+{% extends 'layout-full-width-logged-in.html' %}
+<!-- 
+    In /views/layout.html you can:
+      - change the header and footer 
+      - add custom CSS and JavaScript
+  -->
+
+<!-- Start of page title -->
+{% block pageTitle %}
+Manage incoming international healthcare claims - NHSBSA
+{% endblock %}
+<!-- End of page title -->
+
+{% block beforeContent %}
+<!-- Start of breadcrumb -->
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Home</a>
+        </li>
+        <li class="nhsuk-breadcrumb__list-item">
+            <a class="nhsuk-breadcrumb__link" href="">Claims</a>
+        </li>
+    </ol>
+    <a class="nhsuk-back-link" href="#">
+        <span class="nhsuk-u-visually-hidden">Back to </span>claims
+    </a>
+</nav>
+<!-- End of breadcrumb -->
+{% endblock %} {% block content %}
+
+<!-- Start back link -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <a class="nhsuk-back-link" href="javascript:history.back()">Go back</a>
+    </div>
+</div>
+<!-- End back link -->
+
+<!-- Start of title block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl">
+            Claim ID 6784
+        </h1>
+    </div>
+    <div class="nhsuk-grid-column-one-third" style="text-align: right">
+        <a href="#" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button">Exit
+            claim</a>
+    </div>
+</div>
+<!-- End of title block -->
+
+<!-- Start header block -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+            <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-full">
+                                <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-bottom-1">
+                                    Claim details
+                                </h2>
+                            </div>
+                        </div>
+                        <hr
+                            class="nhsuk-section-break nhsuk-section-break--s nhsuk-section-break--visible nhsuk-u-margin-bottom-3">
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-one-half">
+                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-0">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Claim reference
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            11433349AT2302K
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Country
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Spain
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Type
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            Average cost - Sickness - Article 63 (2a)
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                            <div class="nhsuk-grid-column-one-half">
+                                <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-0">
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Date received
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            19 July 2024
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Financial year
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            2024
+                                        </dd>
+                                    </div>
+                                    <div class="nhsuk-summary-list__row">
+                                        <dt class="nhsuk-summary-list__key">
+                                            Age bracket
+                                        </dt>
+                                        <dd class="nhsuk-summary-list__value">
+                                            20 to 64 years
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<!-- End header block -->
+
+<!-- Start of tabs-->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+            <h2 class="nhsuk-tabs__title">Contents</h2>
+
+            <!-- Start of tab titles -->
+            <ul class="nhsuk-tabs__list">
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#submissions"> Submissions </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#invoices"> Invoices </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#outcomes"> Outcomes </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#snapshot"> Snapshot </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#notes"> Notes </a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#history"> History </a>
+                </li>
+            </ul>
+            <!-- End of tab titles -->
+
+            <!-- *** Start of submissions tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="submissions">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <h2 class="nhsuk-heading-l">Submissions</h2>
+                    </div>
+                    <div class="nhsuk-grid-column-one-third" style="text-align:right;">
+                        <a href="#" class="nhsuk-button nhsuk-u-margin-bottom-4" role="button"
+                            data-module="nhsuk-button">Add a new submission</a>
+                    </div>
+                </div>
+            </div>
+            <!-- *** End of submissions tab *** -->
+
+            <!-- *** Start of invoices tab *** -->
+            <div class="nhsuk-tabs__panel" id="invoices" role="tabpanel" aria-labelledby="tab_invoices">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">Invoices</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- *** End of invoices tab *** -->
+
+            <!-- *** Start of outcomes tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="outcomes">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">Outcomes</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- *** End of outcomes tab *** -->
+
+            <!-- *** Start of snapshot tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="snapshot">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">Snapshot</h2>
+                    </div>
+                </div>
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <div class="nhsuk-card nhsuk-u-margin-bottom-0">
+                            <div class="nhsuk-card__content">
+                                <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-4" role="table">
+                                    <!-- <caption class="nhsuk-table__caption">Submissions</caption> -->
+                                    <thead class="nhsuk-table__head" role="rowgroup">
+                                        <tr role="row">
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Submission
+                                                ID</th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Submission
+                                                reference
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Type</th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Date
+                                                received</th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Date
+                                                closed
+                                            </th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">Status</th>
+                                            <th scope="col" class="nhsuk-table__header" role="columnheader">View</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="nhsuk-table__body">
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">ID
+                                                </span>7441
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Reference
+                                                </span>11661234MM1904
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+                                                </span>Reply to contestation</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                    received
+                                                </span>14 May 2025</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Target
+                                                    date
+                                                </span>14 Dec 2025</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                                </span>Pending
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                                    details
+                                                </span>Not applicable
+
+                                            </td>
+                                        </tr>
+                                        <tr role="row"
+                                            class="nhsuk-table__row nhsuk-table__row-expander nhsuk-u-visually-hidden"
+                                            id="rowExpander4" style="background-color:#f0f4f5">
+                                            <td colspan="7">
+                                                <div class="nhsuk-grid-row">
+                                                </div>
+                                            </td>
+
+                                        <tr role="row"
+                                            class="nhsuk-table__row nhsuk-table__row-expander nhsuk-u-visually-hidden"
+                                            id="rowExpander3" style="background-color:#f0f4f5">
+                                            <td colspan="7">
+                                                <div class="nhsuk-grid-row">
+                                                </div>
+                                            </td>
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">ID
+                                                </span>7329
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Reference
+                                                </span>11661234KK1892
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+                                                </span>Reply to contestation</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                    received
+                                                </span>24 Nov 2024</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Target
+                                                    date
+                                                </span>23 Nov 2025</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                                </span>Completed
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                                    details
+                                                </span>
+                                                {{ details({
+                                                "text": "View details",
+                                                "attributes": {
+                                                rowExpander: "rowExpander2"
+                                                }
+                                                }) }} <a href="" style="padding-left:20px;">View details</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row"
+                                            class="nhsuk-table__row nhsuk-table__row-expander nhsuk-u-visually-hidden"
+                                            id="rowExpander2" style="background-color:#f0f4f5;">
+                                            <td colspan="7" style="padding-left:16px; padding-right:16px;">
+                                                <div class="nhsuk-grid-row">
+                                                    <div class="nhsuk-grid-column-full">
+
+                                                        <div class="nhsuk-card" style="background: none;">
+                                                            <div class="nhsuk-card__content">
+                                                                <table class="nhsuk-table">
+                                                                    <caption
+                                                                        class="nhsuk-table__caption nhsuk-u-margin-bottom-3"
+                                                                        style="border-bottom: 1px solid #d8dde0">
+                                                                        Submission ID 7329 - Invoices across the whole
+                                                                        claim
+                                                                        <div class="nhsuk-hint">
+                                                                            These figures cover the whole claim as it
+                                                                            was when submission ID 7329 was closed -
+                                                                            they
+                                                                            include every earlier submission
+                                                                        </div>
+                                                                    </caption>
+                                                                    <thead class="nhsuk-table__head">
+                                                                        <tr>
+                                                                            <th scope="col"
+                                                                                class="nhsuk-table__header nhsuk-u-width-one-half">
+                                                                                Status</th>
+                                                                            <th scope="col"
+                                                                                class="nhsuk-table__header nhsuk-u-width-one-quarter nhsuk-table__header--numeric"
+                                                                                style="text-align:right;">
+                                                                                Invoices
+                                                                            </th>
+                                                                            <th scope="col"
+                                                                                class="nhsuk-table__header nhsuk-u-width-one-quarter nhsuk-table__header--numeric"
+                                                                                style="text-align:right;">
+                                                                                Months
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody class="nhsuk-table__body">
+                                                                        <tr class="nhsuk-table__row">
+                                                                            <th scope="row" class="nhsuk-table__header">
+                                                                                Accepted</th>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                300</td>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                3,550</td>
+                                                                        </tr>
+                                                                        <tr class="nhsuk-table__row">
+                                                                            <th scope="row" class="nhsuk-table__header">
+                                                                                Contested</th>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                100</td>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                1,200</td>
+                                                                        </tr>
+                                                                        <tr class="nhsuk-table__row">
+                                                                            <th scope="row" class="nhsuk-table__header">
+                                                                                Partial</th>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                40</td>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                Not applicable</td>
+                                                                        </tr>
+                                                                        <tr class="nhsuk-table__row">
+                                                                            <th scope="row" class="nhsuk-table__header">
+                                                                                Withdrawn</th>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                10</td>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                100</td>
+                                                                        </tr>
+                                                                        <tr class="nhsuk-table__row">
+                                                                            <th scope="row" class="nhsuk-table__header">
+                                                                                Total</th>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                450</td>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                4,800
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="nhsuk-card nhsuk-u-margin-bottom-0"
+                                                            style="background: none;">
+                                                            <div class="nhsuk-card__content">
+                                                                <table class="nhsuk-table">
+                                                                    <caption
+                                                                        class="nhsuk-table__caption nhsuk-u-margin-bottom-3"
+                                                                        style="border-bottom: 1px solid #d8dde0">
+                                                                        Submission ID 7329 - Invoices in this submission
+                                                                        only
+                                                                        <div class="nhsuk-hint">
+                                                                            These figures cover submission ID 7329 only,
+                                                                            as it was when it closed
+                                                                        </div>
+                                                                    </caption>
+                                                                    <thead class="nhsuk-table__head">
+                                                                        <tr>
+                                                                            <th scope="col"
+                                                                                class="nhsuk-table__header nhsuk-u-width-one-half">
+                                                                                Status</th>
+                                                                            <th scope="col"
+                                                                                class="nhsuk-table__header nhsuk-u-width-one-quarter nhsuk-table__header--numeric"
+                                                                                style="text-align:right;">
+                                                                                Invoices
+                                                                            </th>
+                                                                            <th scope="col"
+                                                                                class="nhsuk-table__header nhsuk-u-width-one-quarter nhsuk-table__header--numeric"
+                                                                                style="text-align:right;">
+                                                                                Months
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody class="nhsuk-table__body">
+                                                                        <tr class="nhsuk-table__row">
+                                                                            <th scope="row" class="nhsuk-table__header">
+                                                                                Accepted</th>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                6</td>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                70</td>
+                                                                        </tr>
+                                                                        <tr class="nhsuk-table__row">
+                                                                            <th scope="row" class="nhsuk-table__header">
+                                                                                Contested</th>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                3</td>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                42</td>
+                                                                        </tr>
+                                                                        <tr class="nhsuk-table__row">
+                                                                            <th scope="row" class="nhsuk-table__header">
+                                                                                Partial</th>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                1</td>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                No applicable</td>
+                                                                        </tr>
+                                                                        <tr class="nhsuk-table__row">
+                                                                            <th scope="row" class="nhsuk-table__header">
+                                                                                Withdrawn</th>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                0</td>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                0</td>
+                                                                        </tr>
+                                                                        <tr class="nhsuk-table__row">
+                                                                            <th scope="row" class="nhsuk-table__header">
+                                                                                Total</th>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                10</td>
+                                                                            <td
+                                                                                class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                                                                                112</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">ID
+                                                </span>8144
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Reference
+                                                </span>11661234KK1905
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+                                                </span>Credit note</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                    received
+                                                </span>9 Oct 2024</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Target
+                                                    date
+                                                </span>9 Oct 2025</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                                </span>Completed
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                                    details
+                                                </span>
+                                                {{ details({
+                                                "text": "View details",
+                                                "attributes": {
+                                                rowExpander: "rowExpander3"
+                                                }
+                                                }) }} <a href="" style="padding-left:20px;">View details</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="nhsuk-table__row" role="row">
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">ID
+                                                </span>6784
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Reference
+                                                </span>11322249AT2301E
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Type
+                                                </span>Initial</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Date
+                                                    received
+                                                </span>19 Jul 2024</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Target
+                                                    date
+                                                </span>19 Jan 2025</td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">Status
+                                                </span>Completed
+                                            </td>
+                                            <td class="nhsuk-table__cell" role="cell"><span
+                                                    class="nhsuk-table-responsive__heading" aria-hidden="true">View
+                                                    details
+                                                </span>
+                                                {{ details({
+                                                "text": "View details",
+                                                "attributes": {
+                                                rowExpander: "rowExpander1"
+                                                }
+                                                }) }} <a href="" style="padding-left:20px;">View details</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row"
+                                            class="nhsuk-table__row nhsuk-table__row-expander nhsuk-u-visually-hidden"
+                                            id="rowExpander1" style="background-color:#f0f4f5">
+                                            <td colspan="7">
+                                                <div class="nhsuk-grid-row">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- *** End of snapshot tab *** -->
+
+            <!-- *** Start of notes tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="notes">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">Notes</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- *** End of notes tab *** -->
+
+            <!-- *** Start of history tab *** -->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="history">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <h2 class="nhsuk-heading-l">History</h2>
+                    </div>
+                </div>
+
+            </div>
+            <!-- *** End of history tab *** -->
+        </div>
+    </div>
+</div>
+<!-- End of tabs-->
+
+{% endblock %}
